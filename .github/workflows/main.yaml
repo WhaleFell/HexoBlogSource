@@ -18,7 +18,7 @@ jobs:
           ref: main # 这是你的 Hexo 源文件所在的分支
 
       # 安装 Node
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: [18.x]

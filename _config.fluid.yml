@@ -224,10 +224,10 @@ color:
 # 主题字体配置
 # Font
 font:
-  font_size: 20px
+  font_size: 17px
   font_family:
   letter_spacing: 0.02em
-  code_font_size: 92%
+  code_font_size: 87%
 
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
@@ -245,7 +245,7 @@ web_analytics:  # 网页访问统计
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
   # Follow the "Do Not Track" setting of the visitor's browser
   # See: https://www.w3.org/TR/tracking-dnt/
-  follow_dnt: true
+  follow_dnt: false
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
@@ -255,7 +255,7 @@ web_analytics:  # 网页访问统计
   # Google 统计的 Tracking ID
   # Google analytics, set Tracking ID
   # See: https://developers.google.com/analytics/devguides/collection/analyticsjs
-  google:
+  google: G-Q6KQ3FW2SP
 
   # Google gtag.js 的媒体资源 ID
   # Google gtag.js GA_MEASUREMENT_ID

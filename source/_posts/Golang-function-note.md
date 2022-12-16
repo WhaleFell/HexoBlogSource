@@ -4,7 +4,7 @@ date: 2022-05-2 2:17:48
 updated: 2022-05-2 2:17:48
 categories: Golang
 tags: [Golang, Coding]
-description: Golang 学习笔记——func函数
+description: 
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ---

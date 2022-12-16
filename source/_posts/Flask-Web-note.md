@@ -4,7 +4,7 @@ date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Flask, Coding]
-description: Flask Web 框架全学习笔记(不断更新)
+description: 
 index_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
 ---

@@ -4,7 +4,7 @@ date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
-description: 树莓派折腾手册 3——搭建离线下载器 👀
+description: 
 index_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 ---

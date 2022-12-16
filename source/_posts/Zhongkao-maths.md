@@ -4,7 +4,7 @@ date: 2021-06-28 19:37:48
 updated: 2021-06-28 19:37:48
 categories: Study
 tags: [Maths, Study]
-description: 😭2021年广东数学中考体验
+description: 
 index_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 ---

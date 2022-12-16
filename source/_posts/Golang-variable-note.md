@@ -4,7 +4,7 @@ date: 2022-04-25 18:30:48
 updated: 2022-04-25 18:30:48
 categories: Golang
 tags: [Golang, Coding]
-description: Golang 学习笔记——变量
+description: 
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ---

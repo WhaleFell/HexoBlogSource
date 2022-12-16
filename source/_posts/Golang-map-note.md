@@ -4,12 +4,14 @@ date: 2022-05-1 18:30:48
 categories: Golang
 updated: 2022-05-1 18:30:48
 tags: [Golang, Coding]
-description: Golang 学习笔记——map映射数据结构
+description: 
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ---
 
 # Go map 数据类型  
+
+map: 映射/哈希表，是一种转码用于存储键值对的结合，属于引用类型。
 
 ## 定义 Map 对象
 

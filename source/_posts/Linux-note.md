@@ -4,7 +4,7 @@ date: 2022-03-20 16:37:48
 updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
-description: Linux 配置笔记
+description: 
 index_img: https://tse4-mm.cn.bing.net/th/id/OIP-C.KLeyJiJnwY9iH6bHb6HWKwEsCd?pid=ImgDet&rs=1
 banner_img: https://tse4-mm.cn.bing.net/th/id/OIP-C.KLeyJiJnwY9iH6bHb6HWKwEsCd?pid=ImgDet&rs=1
 ---

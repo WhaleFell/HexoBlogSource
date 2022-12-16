@@ -4,7 +4,7 @@ date: 2022-04-21 18:30:48
 categories: Golang
 updated: 2022-04-21 18:30:48
 tags: [Golang, Coding]
-description: Golang 学习笔记——数据类型
+description: 
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ---

@@ -4,7 +4,7 @@ date: 2021-12-19 19:37:48
 updated: 2021-12-19 19:37:48
 categories: Linux
 tags: [WKY, Linux]
-description: 记一次配置玩客云的经历....
+description: 
 index_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
 banner_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
 ---

@@ -4,7 +4,7 @@ date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
 categories: Python,GUI
 tags: [Python, Coding, GUI]
-description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
+description: Python Tkinter 是一个 Python 自带GUI包，十分轻量。
 index_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 ---

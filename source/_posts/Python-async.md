@@ -11,9 +11,9 @@ excerpt: Python 异步百万并发全文最详细笔记！！
 ---
 # Python asyncio 异步协程百万并发
 
-## **协程（coroutine）**
+## 协程（coroutine）
 
-> 本质就是一个**函数**
+本质就是一个 **函数**  
 
 ## **事件循环**——(event_loop)
 

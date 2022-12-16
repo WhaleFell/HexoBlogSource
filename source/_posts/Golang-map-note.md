@@ -24,6 +24,7 @@ map: 映射/哈希表，是一种转码用于存储键值对的结合，属于�
 ![](http://pic.lskyl.xyz/blog/Golang/map-4.png)  
 
 ## Map 的遍历
+
 > 使用 `sort` 包进行排序.  
 
 ![](http://pic.lskyl.xyz/blog/Golang/map-6.png)  

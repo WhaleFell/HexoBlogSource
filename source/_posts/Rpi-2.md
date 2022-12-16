@@ -13,11 +13,11 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 
 ## 1.挂载硬盘/U盘
 
->**注意：开始之前先把存储设备格式化成** **fat32文件系统** 
+>**注意：开始之前先把存储设备格式化成** **fat32文件系统**
 
 - 树莓派4B Debian10系统插上储存设备后默认自动挂载到  `/media` 目录我们先卸载U盘：
 
-  查询硬盘状态:   `sudo fdisk -l` 
+  查询硬盘状态:   `sudo fdisk -l`
 
   ![9XBTemAzD6R8yot](http://pic.lskyl.xyz/blog/old/20210619153119.png)
 
@@ -28,7 +28,7 @@ sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更�
 sudo fuser -mv -k /media/U盘 名字    # 然后再执行umount卸载命令 
 ```
 
-- 编辑`/etc/fstab`中添加像下面这样的挂载配置： 
+- 编辑`/etc/fstab`中添加像下面这样的挂载配置：
 
 ```
 sudo nano /etc/fstab
@@ -44,7 +44,7 @@ mount /dev/sda1 /home/pi/disk -o utf8,uid=1000,gid=1000,umask=000 -t vfat
 
   ![3ilg9S1UJ2EcHPV](http://pic.lskyl.xyz/blog/old/20210619153142.png)
 
-## 2.部署Aria2离线下载器 
+## 2.部署Aria2离线下载器
 
 - 下载安装`Aria2`:
 
@@ -61,7 +61,7 @@ sudo apt-get install aria2
 sudo apt-get install nginx
 ```
 
-- 配置Aria2， 创建配置文件： 
+- 配置Aria2， 创建配置文件：
 
   ```
   #创建目录 
@@ -108,7 +108,7 @@ sudo apt-get install nginx
   bt-save-metadata=true
   ```
 
-- 创建**systemd**文件在 `/lib/systemd/system/aria2.service` 为如下: 
+- 创建**systemd**文件在 `/lib/systemd/system/aria2.service` 为如下:
 
   ```
   sudo nano /lib/systemd/system/aria2.service
@@ -161,7 +161,7 @@ sudo apt-get install nginx
   sudo chmod 777 -R /website
   ```
 
-> 为了方便使用，我把**AriaNg**和**jsonrpc**都配置在了 **80 端口**，利用nginx的**代理功能**，把本机 6800 端口隐藏,对外**只暴露 80 端口.** 
+> 为了方便使用，我把**AriaNg**和**jsonrpc**都配置在了 **80 端口**，利用nginx的**代理功能**，把本机 6800 端口隐藏,对外**只暴露 80 端口.**
 
 ```shell
 #修改nginx配置文件 

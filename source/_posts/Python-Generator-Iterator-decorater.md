@@ -43,7 +43,7 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 
 迭代器是用来**迭代取值**的工具，而涉及到把多个值循环取出来的类型
 
-> 有：列表、字符串、元组、字典、集合、打开文件 
+> 有：列表、字符串、元组、字典、集合、打开文件
 
 ```python
 l = ['egon', 'liu', 'alex']
@@ -91,12 +91,12 @@ with open('a.txt',mode='w') as f:
 ```python
 d={'a':1,'b':2,'c':3}
 d_iterator=d.__iter__()
-print(d_iterator)				# <dict_keyiterator object at 0x0000022FF0E13A90>
+print(d_iterator)    # <dict_keyiterator object at 0x0000022FF0E13A90>
 
-print(d_iterator.__next__())	# a
-print(d_iterator.__next__())	# b
-print(d_iterator.__next__())	# c
-print(d_iterator.__next__())	# 抛出异常StopIteration,值取完了
+print(d_iterator.__next__()) # a
+print(d_iterator.__next__()) # b
+print(d_iterator.__next__()) # c
+print(d_iterator.__next__()) # 抛出异常StopIteration,值取完了
 d={'a':1,'b':2,'c':3}
 d_iterator=d.__iter__()
 
@@ -167,7 +167,7 @@ with open('a.txt',mode='w') as f:
 
    `StopIteration` 异常用于标识**迭代的完成**，防止出现无限循环的情况，在 **next**() 方法中我们可以设置在完成指定循环次数后触发 `StopIteration` 异常来结束迭代。
 
->  创建一个返回数字的迭代器，初始值为 1，逐步递增 1
+> 创建一个返回数字的迭代器，初始值为 1，逐步递增 1
 
 ```python
 class MyNumbers:
@@ -214,8 +214,8 @@ d = {'a':1,'b':2,'c':3}
 
 ```python
 d = {'a':1,'b':2,'c':3}
-for k in d:			# d_it = d.__iter__()
-    print(k)		# 循环k = d_it.__next__()直到抛出异常结束循环
+for k in d:   # d_it = d.__iter__()
+    print(k)  # 循环k = d_it.__next__()直到抛出异常结束循环
 
 with open('a.txt',mode='rt',encoding='utf-8') as f:
     for line in f: # f.__iter__()
@@ -308,13 +308,13 @@ yield关键字的作用是**函数与调用者**的通信，它不光能够将**
 
 ```python
 >>> def test():
-	number = 0
-	while True:
-		n = yield number
-		print('我是yield关键字下面一行代码')
-		print('调用者传递过来的值为:', n)
+ number = 0
+ while True:
+  n = yield number
+  print('我是yield关键字下面一行代码')
+  print('调用者传递过来的值为:', n)
  
-		
+  
 >>> t = test()
 >>> t.send(None)  
 # 当第一次执行生成器的时候，需要传入None
@@ -505,6 +505,7 @@ StopIteration
    StopIteration: 这是错误说明
    '''
    ```
+
 > **注意：**生成器没有办法使用`return`来返回值。因为`return`返回的那个值是通过**StopIteration的异常信息**返回的，所以没办法**直接获取这个return返回的值**。
 
 当然上面所说的无法获取**return返回值**，我们指的是没有办法通过`result=g3()`这种形式获取**return的返回值**。实际上还是有手段获取这个**return的值的**，有两种方法：
@@ -878,4 +879,3 @@ mian()
 ![](http://pic.lskyl.xyz/blog/old/20210818144548.png)
 
 > 在函数中嵌套闭包函数
-

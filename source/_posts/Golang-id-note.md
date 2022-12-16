@@ -12,12 +12,14 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 # go标识符-关键字-命名规则
 
 ## 标识符
+
 标识符的英文是identifier,通俗的讲，就是给变量、常量、函数、方法、结构体、数组、切片、接口起名
 字。  
 
 标识符的组成:  
+
 1. 标识符由数字、字母和下划线(_) 组成。`123abc_`  
-2. 只能以字母和下划线(_)开头。`abc123_sysVar123abc`    
+2. 只能以字母和下划线(_)开头。`abc123_sysVar123abc`
 3. 标识符区分大小写。`nameName NAMET`  
 
 ## 标识符的命名
@@ -26,16 +28,16 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 package main
 
 func main() {
-	// 正确的标识符
-	var name string
-	var age int
-	var _sys int
+ // 正确的标识符
+ var name string
+ var age int
+ var _sys int
 
-	/*
-		错误的标识符
-		var 1name string
-		var &age int
-	*/
+ /*
+  错误的标识符
+  var 1name string
+  var &age int
+ */
 
 }
 ```

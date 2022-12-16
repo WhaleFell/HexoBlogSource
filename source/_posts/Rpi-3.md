@@ -11,15 +11,15 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 
 # 😜 树莓派折腾手册 (二)——手动搭建LNMP网站服务器环境 🙏
 
->前言：这个东西我折腾了很久，试过一键部署脚本: [https://lnmp.org/auto](https://lnmp.org/auto.html)但是我想在局域网+frp穿透的外网，访问树莓派的网站，但是只能绑定一个域名，反正用多了就出各种问题，可能我不会用 
+>前言：这个东西我折腾了很久，试过一键部署脚本: [https://lnmp.org/auto](https://lnmp.org/auto.html)但是我想在局域网+frp穿透的外网，访问树莓派的网站，但是只能绑定一个域名，反正用多了就出各种问题，可能我不会用
 
 ```shell
 sudo apt-get update   #好习惯，安装软件前先更新源列表 
 ```
 
- ## **1.安装PHP7.3** 
+## **1.安装PHP7.3**
 
->**这里跳了很多坑，后来查文档才发现Debian 10 buster只能安装PHP7.0以上的版本** 
+>**这里跳了很多坑，后来查文档才发现Debian 10 buster只能安装PHP7.0以上的版本**
 
 ```shell
 sudo apt install -y -t buster php7.3-fpm php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-mysql php7.3-imap php7.3-opcache php7.3-sqlite3 php7.3-xml php7.3-xmlrpc php7.3-zip 
@@ -42,7 +42,7 @@ sudo systemctl restart php7.3-fpm
 sudo nano /etc/php/7.3/fpm/php.ini 
 ```
 
- ## **2.安装nginx:** 
+## **2.安装nginx:**
 
 ```shell
 sudo apt-get install nginx
@@ -50,7 +50,7 @@ sudo apt-get install nginx
 
 >安装完成后，会自动开启nginx。在浏览器输入树莓派的IP地址，可以看到“Welcome to nginx!”
 
-**nginx常用管理命令：** 
+**nginx常用管理命令：**
 
 ```shell
 启动nginx: sudo systemctl start nginx 
@@ -65,29 +65,29 @@ nginx主配置文件位置：/etc/nginx/nginx.conf
 
 ## 3.配置nginx解析php (关键)
 
-- 编辑配置nginx文件: 
+- 编辑配置nginx文件:
 
 ```shell
 sudo nano /etc/nginx/sites-enabled/default 
 ```
 
-找到`# pass PHP scripts to FastCGI server`后面的 `location` ，删除注释。修改后如下： 
+找到`# pass PHP scripts to FastCGI server`后面的 `location` ，删除注释。修改后如下：
 
->PHP的默认路径转发有问题导致的,因为很多nginx的默认PHP配置文件的写法为 **location ~ \.php** 要改成 **location~.*\.php(\/.*)*$** 
+>PHP的默认路径转发有问题导致的,因为很多nginx的默认PHP配置文件的写法为 **location ~ \.php** 要改成 **location~.*\.php(\/.*)*$**
 
 ```shell
 index index.php index.html index.htm index.nginx-debian.html; 
 location ~ .*\.php(\/.*)*$ { 
 include snippets/fastcgi-php.conf; 
 # 
-#	# With php-fpm (or other unix sockets): 
+# # With php-fpm (or other unix sockets): 
     fastcgi_pass unix:/run/php/php7.3-fpm.sock; 
-#	# With php-cgi (or other tcp sockets): 
+# # With php-cgi (or other tcp sockets): 
 #fastcgi_pass 127.0.0.1:9000; 
 } 
 ```
 
-- 保存后重启nginx： 
+- 保存后重启nginx：
 
 ```shell
 sudo systemctl restart nginx
@@ -96,13 +96,13 @@ sudo systemctl restart nginx
 **重启无报错则修改成功啦:**
 ![](http://pic.lskyl.xyz/blog/old/20210619152804.png)
 
-- 在网站根目录创建一个php文件： 
+- 在网站根目录创建一个php文件：
 
 ```shell
 sudo nano /var/www/html/index.php 
 ```
 
-写入以下php代码并保存： 
+写入以下php代码并保存：
 
 ```shell
 <?php phpinfo(); 
@@ -111,9 +111,9 @@ sudo nano /var/www/html/index.php
 在浏览器中输入树莓派的IP地址即可看到phpinfo:
 ![](http://pic.lskyl.xyz/blog/old/20210619152811.png)
 
-## **4.安装mariaDB数据库** 
+## **4.安装mariaDB数据库**
 
-- 使用以下命令安装`mariadb`: 
+- 使用以下命令安装`mariadb`:
 
 ```shell
 sudo apt-get install mariadb-server mariadb-client 
@@ -125,7 +125,7 @@ sudo apt-get install mariadb-server mariadb-client
 sudo mysql_secure_installation 
 ```
 
-> 根据提示设置数据库`root用户密码`、`是否允许外网访问`等，建议用**翻译软件**，一步步翻译。  `回车 n Y n Y Y`   
+> 根据提示设置数据库`root用户密码`、`是否允许外网访问`等，建议用**翻译软件**，一步步翻译。  `回车 n Y n Y Y`
 
 - 尝试用**普通用户pi**登录数据库:
   `mysql -u root -p`
@@ -146,8 +146,8 @@ sudo mysql -u root# 登入数据库后，依次执行以下SQL： use mysql;upda
 
  ![](http://pic.lskyl.xyz/blog/old/20210619152823.png)
 
- - 设置**数据库密码**
-   **依次执行以下SQL：** 
+- 设置**数据库密码**
+   **依次执行以下SQL：**
 
 ```sql
 use mysql;   UPDATE user SET password=password('123456') WHERE user='root';   flush privileges;   exit; 
@@ -235,14 +235,12 @@ cd /var/www/html/mv phpMyAdmin-5.0.2-all-languages phpmyadmincd phpmyadminmv con
 sudo chmod 744 config.inc.php
 ```
 
-- 尝试访问 http://你的树莓派ip/phpmyadmin
+- 尝试访问 <http://你的树莓派ip/phpmyadmin>
   ![](http://pic.lskyl.xyz/blog/old/20210619152752.png)
   **启动高级功能** 会新建一个phpmyadmin数据库
   ![](http://pic.lskyl.xyz/blog/old/20210619152912.png)
   **安装成功！**
   ![](http://pic.lskyl.xyz/blog/old/20210619152920.png)
-
-
 
 ## 6.搭建多个`nginx`虚拟主机
 
@@ -271,7 +269,7 @@ mkdir /home/pi/nginx-confnano /home/pi/nginx-conf/kodbox.conf
 写入以下内容:           ***(贴出一份完整的nginx虚拟主机配置，需要自行修改两个参数)***
 
 ```shell
-# 监听端口 两个都要改server {	listen 88 default_server;	listen [::]:88 default_server;	# SSL configuration	#	# listen 443 ssl default_server;	# listen [::]:443 ssl default_server;	#	# include snippets/snakeoil.conf;	root /home/pi/kodbox; #网站根目录位置	# Add index.php to the list if you are using PHP	index index.php index.html index.htm index.nginx-debian.html;	server_name _;	location / {		try_files $uri $uri/ =404;	}	# pass PHP scripts to FastCGI server	#	location ~ .*\.php(\/.*)*$ {		include snippets/fastcgi-php.conf;		fastcgi_pass unix:/run/php/php7.3-fpm.sock;	}}
+# 监听端口 两个都要改server { listen 88 default_server; listen [::]:88 default_server; # SSL configuration # # listen 443 ssl default_server; # listen [::]:443 ssl default_server; # # include snippets/snakeoil.conf; root /home/pi/kodbox; #网站根目录位置 # Add index.php to the list if you are using PHP index index.php index.html index.htm index.nginx-debian.html; server_name _; location / {  try_files $uri $uri/ =404; } # pass PHP scripts to FastCGI server # location ~ .*\.php(\/.*)*$ {  include snippets/fastcgi-php.conf;  fastcgi_pass unix:/run/php/php7.3-fpm.sock; }}
 ```
 
 重启`nginx`，愿一切安好:
@@ -326,7 +324,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 
 ![image-20200807134107318](http://pic.lskyl.xyz/blog/old/20210619153007.png)
 
-- 更改完成后重启 `nginx+php-fpm` 
+- 更改完成后重启 `nginx+php-fpm`
 
   ```
   max_input_time = 3600;sudo systemctl restart nginxsudo systemctl restart php7.3-fpm
@@ -350,7 +348,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.1.11.zipunzip kodbox.1.11.zipunzip kodbox.1.11.ziprm kodbox.1.11.zipchmod 777 ~/kodbox
 ```
 
-尝试访问 **http://树莓派ip:88** :
+尝试访问 **<http://树莓派ip:88>** :
 
 ![image-20200805163537543](http://pic.lskyl.xyz/blog/old/20210619153018.png)
 
@@ -366,7 +364,7 @@ cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.
 
 **redis服务会自动运行自动添加开机启动项，省心！！！**
 
-**编辑**`sudo nano /etc/php/7.3/fpm/php.ini `文件加入：
+**编辑**`sudo nano /etc/php/7.3/fpm/php.ini`文件加入：
 
 ![image-20200807211906533](http://pic.lskyl.xyz/blog/old/20210619153032.png)
 
@@ -379,4 +377,3 @@ extension=redis.so#重启php-fpmsudo systemctl restart php7.3-fpm
 > #### 数据库选择**MySQL**，填入自己的密码
 >
 > #### 系统缓存类型选择Redis
-

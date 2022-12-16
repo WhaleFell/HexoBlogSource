@@ -11,17 +11,17 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 
 # 😃 树莓派折腾手册 (一)——准备系统 😃
 
-## 烧录官方`Debian 10 buster`系统镜像：
+## 烧录官方`Debian 10 buster`系统镜像
 
  先用 **SDFormatter** 格式化一下内存卡叭:
 
 ![hZkDB8qxtRgQz3S](http://pic.lskyl.xyz/blog/old/20210619152409.png)
 
-### 1. 烧写镜像用到的软件： **Win32 Disk Image** 
+### 1. 烧写镜像用到的软件： **Win32 Disk Image**
 
 ![Zb6CEHnf17oqO5Q](http://pic.lskyl.xyz/blog/old/20210619152403.png)
 
- - 然后在U盘的根目录建立一个空白的 **ssh文件  方便ssh远程连接** 
+- 然后在U盘的根目录建立一个空白的 **ssh文件  方便ssh远程连接**
    ![FV5qpvWz7LtsOgi](http://pic.lskyl.xyz/blog/old/sasw.png)
 - 用 **Windows PowerShell** 连接树莓派ssh
   `shift+右键` 呼出**Windows PowerShell**
@@ -33,10 +33,10 @@ ssh -p 端口号 用户名@主机地址
 
 > 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://pic.lskyl.xyz/blog/old/20210619152448.png)
 
- - 树莓派扩展TF卡分区:
+- 树莓派扩展TF卡分区:
    sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
 
-### 2. 启动树莓派HDMI功能 : 
+### 2. 启动树莓派HDMI功能
 
 - 编辑`config.txt`文件，修改以下参数:
   sudo nano /boot/config.txt
@@ -48,7 +48,7 @@ ssh -p 端口号 用户名@主机地址
   > 不出意外的话应该可以接上，但是我的没有声音输出诶
   > 注：如果还是不能的话，找到#hdmi_group=1这句话，把前面的#注释符号去掉，把数字改成 2强行指定显示器类型：1是连接老式电视，2代表连接新电视。
 
-## 树莓派 `Debian 10 buster` 换清华源：
+## 树莓派 `Debian 10 buster` 换清华源
 
 ```shell
 sudo nano /etc/apt/sources.list
@@ -64,7 +64,7 @@ deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
 
 ## 树莓派`rasp-config`相关设置
 
-### 1. 设置pi，root用户密码，并解锁:
+### 1. 设置pi，root用户密码，并解锁
 
 ```shell
 #树莓派修改密码，顺便解锁root用户
@@ -77,9 +77,9 @@ sudo nano /etc/ssh/sshd_config
 修改 PermitRootLogin without-password 为 PermitRootLogin yes
 ```
 
- ### 2. **respi本地化**操作 :
+### 2. **respi本地化**操作
 
- - 安装中文字体，提供几个Linux中文字体库:
+- 安装中文字体，提供几个Linux中文字体库:
 
  ```shell
 sudo apt-get install xfonts-wqy
@@ -185,7 +185,7 @@ vncconfig -nowin -iconic &
 sudo service tightvncserver restart
 ```
 
-### 4.部署**novnc网页** :
+### 4.部署**novnc网页**
 
 > 方便在网页上控制树莓派屏幕，但是**不支持realvnc**
 
@@ -197,7 +197,7 @@ sudo apt-get install git
 
 - **克隆** novnc项目:
 
-> 在中国大陆听说~~加上 *https://gproxy.cn* 就可以加速 **克隆** 速度丫~~ 改口 应换成  [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
+> 在中国大陆听说~~加上 *<https://gproxy.cn>* 就可以加速 **克隆** 速度丫~~ 改口 应换成  [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
 
 ```shell
 git clone https://github.com/kanaka/noVNC #源地址
@@ -307,6 +307,7 @@ sudo pip install XXX   #Python2版本
 ```
 
 ## 部署zsh
+
 ```shell
 sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 
@@ -316,4 +317,3 @@ git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions $ZSH_CUSTO
  
  ZSH_DISABLE_COMPFIX=true
 ```
-

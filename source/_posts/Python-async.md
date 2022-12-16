@@ -50,6 +50,7 @@ loop.close()
 ```
 loop = asyncio.get_event_loop()
 ```
+
 它是python3.7中新添加的，**获得一个事件循环**，如果当前线程**还没有事件循环**，则**创建一个新的事件循环loop；**
 
 ### 通过事件循环运行协程函数的两种方式
@@ -59,9 +60,8 @@ loop = asyncio.get_event_loop()
 2. 直接通过`asyncio.run(function_name)`运行**协程函数。**
 
    > **但是需要注意的是，首先run函数是python3.7版本新添加的，前面的版本是没有的；**
-   
 
-	其次，这个run函数总是**会创建一个新的事件循环并在run结束之后关闭事件循环**，所以，如果在**同一个线程**中已经有了一个事件循环，则**不能再使用这个函数**了，因为**同一个线程不能有两个事件循环**，而且这个run函数**不能同时运行两次**，因为他已经创建一个了。即**同一个线程中是不允许有多个事件循环loop的**。
+ 其次，这个run函数总是**会创建一个新的事件循环并在run结束之后关闭事件循环**，所以，如果在**同一个线程**中已经有了一个事件循环，则**不能再使用这个函数**了，因为**同一个线程不能有两个事件循环**，而且这个run函数**不能同时运行两次**，因为他已经创建一个了。即**同一个线程中是不允许有多个事件循环loop的**。
 
 ## Task任务
 
@@ -123,37 +123,38 @@ loop = asyncio.get_event_loop()
    15
    '''
    ```
-   
+
 2. 通过定义**回调函数**来获取
-	```python
-	import asyncio
-	import time
+
+ ```python
+ import asyncio
+ import time
     
    async def hello1(a,b):
        print("Hello world 01 begin")
        await asyncio.sleep(3)  #模拟耗时任务3秒
        print("Hello again 01 end")
-	    return a+b
+     return a+b
     
-	def callback(future):   #定义的回调函数,需要传future参数
-	    print(future.result())
-	 
-	loop = asyncio.get_event_loop()                #第一步：创建事件循环
-	task=asyncio.ensure_future(hello1(10,5))       #第二步:将多个协程函数包装成任务
-	task.add_done_callback(callback)                      #并被任务绑定一个回调函数，默认传入结果参数
-	 
-	loop.run_until_complete(task)                  #第三步：通过事件循环运行
-	loop.close()                                   #第四步：关闭事件循环
-	 
-	 
-	'''运行结果为：
-	Hello world 01 begin
-	Hello again 01 end
-	15
-	'''
-	```
-	
-	> **注意：**所谓的**回调函数**，就是指协程函数coroutine**执行结束时候会调用回调函数**。并通过**参数future获取协程执行的结果**。我们创建的**task和回调里的future对象**，实际上是**同一个对象**，因为task是future的子类。
+ def callback(future):   #定义的回调函数,需要传future参数
+     print(future.result())
+  
+ loop = asyncio.get_event_loop()                #第一步：创建事件循环
+ task=asyncio.ensure_future(hello1(10,5))       #第二步:将多个协程函数包装成任务
+ task.add_done_callback(callback)                      #并被任务绑定一个回调函数，默认传入结果参数
+  
+ loop.run_until_complete(task)                  #第三步：通过事件循环运行
+ loop.close()                                   #第四步：关闭事件循环
+  
+  
+ '''运行结果为：
+ Hello world 01 begin
+ Hello again 01 end
+ 15
+ '''
+ ```
+
+ > **注意：**所谓的**回调函数**，就是指协程函数coroutine**执行结束时候会调用回调函数**。并通过**参数future获取协程执行的结果**。我们创建的**task和回调里的future对象**，实际上是**同一个对象**，因为task是future的子类。
 
 ## asyncio异步编程的基本模板
 
@@ -163,11 +164,11 @@ loop = asyncio.get_event_loop()
 
    > 返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7中新添加的**
 
-2. `loop = asyncio.get_event_loop() `
+2. `loop = asyncio.get_event_loop()`
 
    > **获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环loop**；
 
-3. `loop=asyncio.set_event_loop(thread) `
+3. `loop=asyncio.set_event_loop(thread)`
 
    > 设置一个事件循环**为当前线程的事件循环**；
 
@@ -177,7 +178,7 @@ loop = asyncio.get_event_loop()
 
 ### **第二步：将一个或者是多个协程函数包装成任务Task**
 
-1. `task = asyncio.create_task(coro(参数列表))` 
+1. `task = asyncio.create_task(coro(参数列表))`
 
    > **这是3.7版本新添加的**
 
@@ -195,7 +196,7 @@ loop = asyncio.get_event_loop()
 
    > 通过`asyncio.gather()`**整合多个task**
 
-3. `loop.run_until_complete(task_1)  `
+3. `loop.run_until_complete(task_1)`
 
    > **单个任务则不需要整合**
 
@@ -206,40 +207,42 @@ loop = asyncio.get_event_loop()
 #### 使用`gather`和`wait`整合task注册多个服务
 
 1. #### **参数形式不一样**
-   
+
     **gather**的参数为 coroutines_or_futures,即如这种形式：
-    
+
     ```python
     tasks = asyncio.gather(*[task1,task2,task3])
     tasks = asyncio.gather(task1,task2,task3)
     loop.run_until_complete(tasks)
    ```
+
    **wait**的参数为**列表或者集合**的形式，如下:
-   
+
     ```python
     tasks = asyncio.wait([task1,task2,task3])
     loop.run_until_complete(tasks)
     ```
-   
+
 2. #### **返回的值不一样**
-   
+
    **gather返回的是每一个任务运行的结果**：
-   
+
    > ###### 要以传入一个列表可变参数
-   
+
    **可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个tuple**
-   
-   `results = await asyncio.gather(*[tasks])` 
-   
-   `results = await asyncio.gather(task1,task2,task3)` 
-   
+
+   `results = await asyncio.gather(*[tasks])`
+
+   `results = await asyncio.gather(task1,task2,task3)`
+
    **wait返回dones是已经完成的任务，pending是未完成的任务，都是集合类型**：
    `done, pending = yield from asyncio.wait(fs)`
+
 > 简单来说：**async.wait会返回两个值:done和pending**，done为已完成的协程Task，pending为超时未完成的协程Task，**需通过future.result调用Task的result。**
    >
    > 而`async.gather`返回的是**已完成Task的result**。
 
-###    **第四步：关闭事件循环**
+### **第四步：关闭事件循环**
 
 ```python
 loop.close()

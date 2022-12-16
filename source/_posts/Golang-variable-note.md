@@ -18,6 +18,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 G0语言中的**变量需要声明后才能使用**，同一作用域内不支持重复声明。并且G0语言的**变量声明后必须使用**。
 
 ## 声明变量的语法
+
 ```go
 var identifier type
 /* 
@@ -26,39 +27,42 @@ var:声明变量关键字
 type:变量类型
 */
 ```
+
 e.g.  
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-	var name string
-	fmt.Printf("name: %v\n", name)
+ var name string
+ fmt.Printf("name: %v\n", name)
 }
 ```
 
 ## 批量声明
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-	// 批量声明
-	var (
-		name string
-		age  int
-		b    bool
-	)
+ // 批量声明
+ var (
+  name string
+  age  int
+  b    bool
+ )
 
-	name = "hyy"
-	age = 14
-	b = false
+ name = "hyy"
+ age = 14
+ b = false
 
-	fmt.Printf("name: %v\n", name)
-	fmt.Printf("age: %v\n", age)
-	fmt.Printf("b: %v\n", b)
+ fmt.Printf("name: %v\n", name)
+ fmt.Printf("age: %v\n", age)
+ fmt.Printf("b: %v\n", b)
 }
 ```
 
@@ -73,16 +77,17 @@ var 变量名 类型 = 表达式
 ```
 
 e.g.  
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-	//变量初始化 赋初始值
-	var title string = "lovehyy"
-	var site string = "http://baidu.com"
-	var agge int = 30
+ //变量初始化 赋初始值
+ var title string = "lovehyy"
+ var site string = "http://baidu.com"
+ var agge int = 30
 }
 ```
 
@@ -94,28 +99,29 @@ package main
 import "fmt"
 
 func main() {
-	// 类型推断
-	var name = "hyy"
-	var age = 20
-	var b = true
-	fmt.Printf("name: %v\n", name)
-	fmt.Printf("age: %v\n", age)
-	fmt.Printf("b: %v\n", b)
+ // 类型推断
+ var name = "hyy"
+ var age = 20
+ var b = true
+ fmt.Printf("name: %v\n", name)
+ fmt.Printf("age: %v\n", age)
+ fmt.Printf("b: %v\n", b)
 }
 ```
 
 ### 批量初始化
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-	//批量初始化
-	var name, age, b = "tom", 20, true
-	fmt.Printf("name: %v\n", name)
-	fmt.Printf("age: %v\n", age)
-	fmt.Printf("b: %v\n", b)
+ //批量初始化
+ var name, age, b = "tom", 20, true
+ fmt.Printf("name: %v\n", name)
+ fmt.Printf("age: %v\n", age)
+ fmt.Printf("b: %v\n", b)
 }
 ```
 
@@ -131,13 +137,13 @@ import "fmt"
 // name := "hyy" 不能用于函数外部
 
 func main() {
-	//短变量声明 := 不能用于函数外部
-	name := "hyy"
-	age := 51
-	b := true
-	fmt.Printf("name: %v\n", name)
-	fmt.Printf("age: %v\n", age)
-	fmt.Printf("b: %v\n", b)
+ //短变量声明 := 不能用于函数外部
+ name := "hyy"
+ age := 51
+ b := true
+ fmt.Printf("name: %v\n", name)
+ fmt.Printf("age: %v\n", age)
+ fmt.Printf("b: %v\n", b)
 }
 ```
 
@@ -148,30 +154,34 @@ func main() {
 如果我们接收到**多个变量**，有一些**变量使用不到**，可以**使用下划线_表示变量名称**，这种变量叫做匿名变量。e.g.  
 
 1. 函数定义  
+
 ```go
 func getNameAndAge() (name string, age int) {
-	return "hyy", 30
+ return "hyy", 30
 }
 ```  
-等价于： 
+
+等价于：
+
 ```go
 func getNameAndAge() (string, int) {
-	return "hyy", 30
+ return "hyy", 30
 }
 ```  
 
 2. 接收函数返回值
+
 ```go
 package main
 
 import "fmt"
 
 func getNameAndAge() (string, int) {
-	return "hyy", 30
+ return "hyy", 30
 }
 func main() {
-	// 调用函数,匿名变量,丢弃age
-	name, _ := getNameAndAge()
-	fmt.Printf("name: %v\n", name)
+ // 调用函数,匿名变量,丢弃age
+ name, _ := getNameAndAge()
+ fmt.Printf("name: %v\n", name)
 }
 ```

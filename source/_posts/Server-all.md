@@ -41,7 +41,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
           inet 192.168.5.124  netmask 255.255.255.0  broadcast 192.168.5.255
   ```
 
-  - enp2s0：主网卡，跑 **qBittorrent** 
+  - enp2s0：主网卡，跑 **qBittorrent**
   - enp1s0：副网卡，docker network —— macnet （openwrt），网心云docker
 
 ## 运行服务
@@ -54,7 +54,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 
 1. Port: 80  
 
-   Desc: 运行探针服务。 
+   Desc: 运行探针服务。
 
    Path: `/var/www/html`  
 
@@ -63,13 +63,13 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Desc: python3-cookbook 3.0.0 文档。  
 
    Path: `/www/openvpn_admin/`  
-   
+
 3. Port: 88
 
    Desc: 可道云 Kodcloud.
 
    Path: `/www/kodcloud`
-   
+
 4. Port: 89
 
    Desc: AiraNg 下载器。（已反向代理Aira2 6800）[配置文件](#AiraNg-download-config)
@@ -103,7 +103,6 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Desc：openwrt 软路由
 
    coomand：[source](#run-openwrt-by-docker)
-
 
 # 部分配置文件
 
@@ -247,14 +246,3 @@ sudo docker run -d \
   --restart=always \
   tiptime/ttnode:latest
 ```
-
-
-
-
-
-
-
-
-
-
-

@@ -11,6 +11,8 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 
 # Go error 错误
 
+Go使用控制流机制（如if和 return）处理异常，这使得编码人员能更多的关注错误处理。
+
 在实际工程项目中，我们希望通过程序的错误信息快速定位问题，但是又不喜欢错误处理代码写的冗余而又啰嗦。Go语言没有提供像`Java`、`c#` 语言中的 `try..catch` 异常处理方式，而是通过 **函数返回值** 逐层往上抛。这种设计，鼓励工程师在代码中 **显式的检查错误** ，而非忽略错误，好处就是避免漏掉本应处理的错误。但是带来一个弊端，让 **代码啰嗦** 。
 
 ## 错误&异常
@@ -81,8 +83,8 @@ type error interface {
 ```go
 package main
 import (
-"path/filepath"
-"fmt"
+  "path/filepath"
+  "fmt"
 )
 func main() {
   files,err := filepath.Glob("[")
@@ -113,50 +115,50 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"math"
+ "fmt"
+ "math"
 )
 
 func main() {
-	r := -2.0
-	area, err := circleArea(r)
-	if err != nil {
-		// 打印 err 就是调用错误struct的Error()方法,返回字符串
+ r := -2.0
+ area, err := circleArea(r)
+ if err != nil {
+  // 打印 err 就是调用错误struct的Error()方法,返回字符串
         //错误值其实就是错误对象调用Error方法执行的结果
-		// fmt.Println(err)
-		// 通过接口断言判断错误类型,获取错误类型中的属性,运行错误类型中的方法
-		if err, ok := err.(*areaError); ok {
-			fmt.Println(err)
-			fmt.Printf("半径是:%.2f\n", err.radius)
-		} else {
-			fmt.Println(err)
-			fmt.Printf("其他错误类型:%s,%T\n", err, err)
-		}
-		return
-	}
-	fmt.Println("圆的的面积是:", area)
+  // fmt.Println(err)
+  // 通过接口断言判断错误类型,获取错误类型中的属性,运行错误类型中的方法
+  if err, ok := err.(*areaError); ok {
+   fmt.Println(err)
+   fmt.Printf("半径是:%.2f\n", err.radius)
+  } else {
+   fmt.Println(err)
+   fmt.Printf("其他错误类型:%s,%T\n", err, err)
+  }
+  return
+ }
+ fmt.Println("圆的的面积是:", area)
 }
 
 //1. 定义一个struct,表示错误类型
 type areaError struct {
-	msg    string // 错误的描述
-	radius float64  //半径
+ msg    string // 错误的描述
+ radius float64  //半径
 }
 
 //2. 实现error接口，就是实现Error方法，该方法返回字符串
 // 需要传入结构体指针
 func (e *areaError) Error() string {
-	// 返回一个格式化的字符串
-	return fmt.Sprintf("error: 半径,%.2f,%s", e.radius, e.msg)
+ // 返回一个格式化的字符串
+ return fmt.Sprintf("error: 半径,%.2f,%s", e.radius, e.msg)
 }
 
 // 3.定义一个求圆面积的函数,注意，第二个返回值是go内置的 error接口实现类型
 func circleArea(r float64) (float64, error) {
-	if r < 0 {
-		// 用 & 返回error对象指针
-		return 0, &areaError{"半径是非法的", r}
-	}
-	return math.Pi * r * r, nil
+ if r < 0 {
+  // 用 & 返回error对象指针
+  return 0, &areaError{"半径是非法的", r}
+ }
+ return math.Pi * r * r, nil
 }
 ```
 
@@ -176,44 +178,44 @@ package main
 import "fmt"
 
 func main() {
-	// 处理 panic 的 defer 匿名函数
-	defer func() {
-		// reconver() 接受 panic() 的信息
-		if msg := recover(); msg != nil {
-			fmt.Println(msg, "程序恢复啦。。")
-		}
-	}()
-	// funB的panic传递到此处,引起panic时需要执行完所有defer主函数才会报错
-	funB()
+ // 处理 panic 的 defer 匿名函数
+ defer func() {
+  // reconver() 接受 panic() 的信息
+  if msg := recover(); msg != nil {
+   fmt.Println(msg, "程序恢复啦。。")
+  }
+ }()
+ // funB的panic传递到此处,引起panic时需要执行完所有defer主函数才会报错
+ funB()
 
 }
 
 func myprint(s string) {
-	fmt.Println(s)
+ fmt.Println(s)
 }
 
 func funB() { //外围函数
-	// 匿名函数,处理pianic的recover()也可以放在main函数中
-	// defer是逆序执行的
-	defer func() {
-		// reconver() 接受 panic() 的信息
-		if msg := recover(); msg != nil {
-			fmt.Println(msg, "程序恢复啦。。")
-		}
-	}()
+ // 匿名函数,处理pianic的recover()也可以放在main函数中
+ // defer是逆序执行的
+ defer func() {
+  // reconver() 接受 panic() 的信息
+  if msg := recover(); msg != nil {
+   fmt.Println(msg, "程序恢复啦。。")
+  }
+ }()
 
-	fmt.Println("我是函数funB()..")
-	defer myprint("defer funB()...1.....")
-	for i := 1; i <= 10; i++ {
-		fmt.Println("i:", i)
-		if i == 5 {
-			//让程序中断
-			panic("funB函数,恐慌了")
-		}
-	}
-	//当外围函数的代码中发生了运行恐慌，只有其中所有的已经`defer`的函数全部都执行完毕后，
-	//该运行恐慌才会真正被扩展至调用处。
-	defer myprint("defer funB():2.....")
+ fmt.Println("我是函数funB()..")
+ defer myprint("defer funB()...1.....")
+ for i := 1; i <= 10; i++ {
+  fmt.Println("i:", i)
+  if i == 5 {
+   //让程序中断
+   panic("funB函数,恐慌了")
+  }
+ }
+ //当外围函数的代码中发生了运行恐慌，只有其中所有的已经`defer`的函数全部都执行完毕后，
+ //该运行恐慌才会真正被扩展至调用处。
+ defer myprint("defer funB():2.....")
 }
 ```
 
@@ -229,3 +231,71 @@ func funB() { //外围函数
 > 5. 输入不应该引起函数错误  
 
 其他场景我们使用错误处理，这使得我们的函数接口很精炼。对于异常，我们可以选择在一个合适的上游去`recover()` .并打印堆栈信息，使得部署后的程序不会终止。  
+
+## 偶然异常重试机制
+
+如果错误的发生是偶然性的，或由不可预知的问题导致的。一个明智的选择是重新尝试失败的操作。在重试时，我们需要限制重试的时间间隔或重试的次数，防止无限制的重试。
+
+```go
+func WaitForServer(url string) error {
+  const timeout = 1 * time.Minute
+  deadline := time.Now().Add(timeout)  //设定异常最大重试时间
+
+  for tries := 0; time.Now().Before(deadline); tries++ {
+    _, err := http.Head(url)
+    if err == nil {
+      return nil // success
+    }
+    log.Printf("server not responding (%s);retrying…", err)
+    time.Sleep(time.Second << uint(tries)) // exponential back-off
+  }
+
+  return fmt.Errorf("server %s failed to respond after %s", url, timeout)
+}
+```
+
+## 无法运行的重大错误
+
+如果错误发生后，程序无法继续运行，我们就可以采用第三种策略：输出错误信息并结束程序。需要注意的是，这种策略只应在 main 中执行。对库函数而言，应仅向上传播错误，除非该错误意味着程序内部包含不一致性，即遇到了bug，才能在库函数中结束程序。
+
+log包中的所有函数会为没有换行符的字符串增加换行符。
+
+```go
+// (In function main.)
+if err := WaitForServer(url); err != nil {
+  // fmt.Fprintf(os.Stderr, "Site is down: %v\n", err)
+  log.Fatalf("Site is down: %v\n", err)
+  os.Exit(1)
+}
+```
+
+只需要输出错误信息就足够了，不需要中断程序的运行。
+
+```go
+log.Printf("ping failed: %v; networking disabled",err)
+```
+
+或者向标准错误流输出错误信息。
+
+```go
+fmt.Fprintf(os.Stderr, "ping failed: %v; networking disabled\n", err)
+```
+
+## 文件结尾错误（EOF）
+
+读取文件时，调用者会重复的读取固定大小的数据直到文件结束，io包保证任何由文件结束引起的读取失败都返回同一个错误—— `io.EOF`.
+
+```go
+// 标准输入中读取字符，以及判断文件结束。
+in := bufio.NewReader(os.Stdin)
+for {
+  r, _, err := in.ReadRune()
+  if err == io.EOF {
+    break // finished reading
+  }
+  if err != nil {
+    return fmt.Errorf("read failed:%v", err)
+  }
+  // ...use r…
+}
+```

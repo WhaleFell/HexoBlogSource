@@ -5,11 +5,12 @@ updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
 description: 
-index_img: https://tse4-mm.cn.bing.net/th/id/OIP-C.KLeyJiJnwY9iH6bHb6HWKwEsCd?pid=ImgDet&rs=1
-banner_img: https://tse4-mm.cn.bing.net/th/id/OIP-C.KLeyJiJnwY9iH6bHb6HWKwEsCd?pid=ImgDet&rs=1
+index_img: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall
+banner_img: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall
 ---
+# Linux Operation Note
 
-# Linux Notes
+![Banner](http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall)
 
 ## 硬盘操作
 
@@ -85,7 +86,7 @@ systemctl enable ttnode
 
 服务端：`server.conf`  
 
-```shell
+```ini
 server 192.168.255.0 255.255.255.0
 verb 3
 key /etc/openvpn/pki/private/0.0.0.0.key
@@ -116,7 +117,7 @@ route 192.168.254.0 225.225.225.0
 
 客户端：`client.conf`  
 
-```
+```ini
 client
 nobind
 dev tun

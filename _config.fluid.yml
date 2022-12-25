@@ -724,7 +724,7 @@ post:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: gitalk
+    type: twikoo
 
 
 #---------------------------
@@ -866,8 +866,9 @@ remark42:
 # 基于腾讯云开发
 # Based on Tencent CloudBase
 # See: https://twikoo.js.org
+# mongodb+srv://root:xzwal123456@cluster0.hnv8kgf.mongodb.net/?retryWrites=true&w=majority
 twikoo:
-  envId:
+  envId: https://twikoo-repo-ten.vercel.app/
   region: ap-shanghai
   path: window.location.pathname
 
@@ -1079,7 +1080,7 @@ links:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: gitalk
+    type: twikoo
 
 
 #---------------------------

@@ -10,7 +10,7 @@ banner_img: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsm
 ---
 # Linux Operation Note
 
-![Banner](http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall)
+![Banner](http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall-picsmall)
 
 ## 硬盘操作
 

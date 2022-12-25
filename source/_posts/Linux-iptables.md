@@ -10,7 +10,7 @@ banner_img: http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall
 ---
 # Linux iptables 命令笔记
 
-![banner](http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall)
+![banner](http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall-picsmall)
 
 ## 认识
 
@@ -22,7 +22,7 @@ banner_img: http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall
 
 iptables 的原理主要是对数据包的控制，看下图：
 
-![iptables 原理](http://pic.lskyl.xyz/blog/img/linux-iptables-1.png-picsmall)  
+![iptables 原理](http://pic.lskyl.xyz/blog/img/linux-iptables-1.png-picsmall-picsmall)  
 
 1. 一个数据包进入网卡时，它首先进入 **PREROUTING(预路由)** 链，内核根据数据包目的IP判断是否需要转发出去.
 2. 如果数据包就是进入本机的，它就会沿着图向下移动，到达 **INPUT** 链。数据包到了 INPUT 链后，任何进程都会收到它。本机上运行的程序可以发送数据包，这些数据包会经过 OUTPUT 链，然后到达 **POSTROUTING(路由后)** 链输出。
@@ -32,7 +32,7 @@ iptables 的原理主要是对数据包的控制，看下图：
 
 > iptables 由链组成,链中有规则
 
-![iptables 结构](http://pic.lskyl.xyz/blog/img/linux-iptables-2.png-picsmall)
+![iptables 结构](http://pic.lskyl.xyz/blog/img/linux-iptables-2.png-picsmall-picsmall)
 
 ### 规则(rules)
 
@@ -126,9 +126,9 @@ FORWARD链 – 将数据转发到本机的其他网卡设备上。
 
 -o 输出接口
 
-![扩展参数1](http://pic.lskyl.xyz/blog/img/linux-iptable-3.jpeg-picsmall)  
+![扩展参数1](http://pic.lskyl.xyz/blog/img/linux-iptable-3.jpeg-picsmall-picsmall)  
 
-![扩展参数2](http://pic.lskyl.xyz/blog/img/linux-iptables-4.jpeg-picsmall)
+![扩展参数2](http://pic.lskyl.xyz/blog/img/linux-iptables-4.jpeg-picsmall-picsmall)
 
 ### 目标值
 

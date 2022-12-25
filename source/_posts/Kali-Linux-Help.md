@@ -9,7 +9,7 @@ index_img: http://pic.lskyl.xyz/blog/old/20210619154844.jpg
 banner_img: http://pic.lskyl.xyz/blog/old/20210619154844.jpg
 ---
 
-![Kali](http://pic.lskyl.xyz/blog/old/20210619154844.jpg)
+![Kali](http://pic.lskyl.xyz/blog/old/20210619154844.jpg-picsmall)
 
 # Kali Linux 漏洞审计 批量扫描 弱密码撞库 教程
 

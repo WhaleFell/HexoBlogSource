@@ -17,59 +17,59 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 
 ## 指针初步
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-1.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-2.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-3.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-1.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-2.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-3.png-picsmall)  
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-7.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-7.png-picsmall)  
 
 ## 数组指针
 
 "首先是一个指针,一个数组的地址."  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-4.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-5.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-4.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-5.png-picsmall)  
 
 ## 指针数组
 
 "首先是一个数组,存储的数据类型是指针."
-![](http://pic.lskyl.xyz/blog/Golang/pointer-6.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-6.png-picsmall)  
 
 ## 函数指针
 
 "一个指针,指向一个函数的指针."
-![](http://pic.lskyl.xyz/blog/Golang/pointer-8.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-8.png-picsmall)  
 
 ## 指针函数
 
 "一个函数,该函数的返回值是一个指针."
-![](http://pic.lskyl.xyz/blog/Golang/pointer-9.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-9.png-picsmall)  
 
 ### 普通函数的执行分析
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-10.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-10.png-picsmall)  
 
 ### 指针函数的执行分析
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-11.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-11.png-picsmall)  
 
 ## 指针作为参数
 
 ### 普通函数的值传递
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-12.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-13.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-12.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-13.png-picsmall)  
 
 ### 指针作为参数时的引用传递
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-14.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-15.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-14.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-15.png-picsmall)  
 
 ### 应用
 
-![](http://pic.lskyl.xyz/blog/Golang/pointer-16.png)  
-![](http://pic.lskyl.xyz/blog/Golang/pointer-17.png)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-16.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/pointer-17.png-picsmall)  
 > 切片本来就是 **引用类型**,**不必传递指针.**
 
 ```go

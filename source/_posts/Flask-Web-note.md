@@ -11,15 +11,16 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
 
 # Flask Web 框架学习笔记
 
-![](http://pic.lskyl.xyz/blog/old/20210818152255.png)
+![](http://pic.lskyl.xyz/blog/old/20210818152255.png-picsmall)
 
 ## 1. Flask 初始化参数
 
 > **Flask程序实例**在创建的时候，需要**默认传入当前Flask程序所指定的包**(模块).
+
 - import name
   - Flask程序所在的包(模块),传 `__name__` 就可以
   - 其可以决定Flask在访问静态文件时查找的路径
-- static_ _url_ _path
+- static__url__path
   - 静态文件访问路径，可以不传，默认为: /+静态文件目录名
 - static_ folder
   -静态文件存储的文件夹，可以不传，默认为 static
@@ -37,11 +38,11 @@ app = Flask(__name__)
 # 装饰器的作用是将路由映射到视图函数index
 @app.route('/')
 def index() :
-	return 'Hello World'
+ return 'Hello World'
 
 # Flask应用程序实例的run方法启动WEB服务器
 if __name__ == '__main__':
-	app.run()
+ app.run()
 ```
 
 ## 2. Flask 工程配置加载的方式
@@ -207,11 +208,12 @@ flask run # 在项目文件下执行
 
   `print(app.url_map)`
   如果想在程序中遍历路由信息，可以采用如下方式：
+
   ```python
   for rule in app.url_map.iter_rules():
       # endpoint 视图函数的名字
       # rule 路由的路径
-  	print( 'name={} path={}'. format(rule.endpoint, rule.rule))
+   print( 'name={} path={}'. format(rule.endpoint, rule.rule))
 
 - 搭建一个**返回所有路由信息**的json接口
 
@@ -229,7 +231,6 @@ flask run # 在项目文件下执行
       # 利用jsonify返回json数据
       return jsonify(dic)
   ```
-
 
 ## 5. 路由 options 限定请求方式 methods
 
@@ -304,23 +305,23 @@ def index():
 
 可以将创建蓝图对象与定义视图函数放在一个文件中。
 
-###  目录（包）蓝图
+### 目录（包）蓝图
 
 对于一个打算包含**多个文件的蓝图**，通常将**创建蓝图对象**放到Python包的`__init__.py` 文件中
 
 ```
 --------- project # 工程目录
-	|---- main.py # 启动文件
-	|---- user # 用户蓝图
-	|	|---- __init__.py # 此处创建蓝图对象
-	|	|---- views.py
+ |---- main.py # 启动文件
+ |---- user # 用户蓝图
+ | |---- __init__.py # 此处创建蓝图对象
+ | |---- views.py
 ```
 
-![蓝图包目录实例](http://pic.lskyl.xyz/blog/old/20210725224412.png)
+![蓝图包目录实例](http://pic.lskyl.xyz/blog/old/20210725224412.png-picsmall)
 
 #### 循环引用问题
 
-![循环引用问题](http://pic.lskyl.xyz/blog/old/20210725224744.png)
+![循环引用问题](http://pic.lskyl.xyz/blog/old/20210725224744.png-picsmall)
 
 > 所以导入视图函数要放在 `__init__.py` 文件的最后
 
@@ -329,6 +330,7 @@ def index():
 和**应用对象**不同，蓝图对象创建时**不会默认注册静态目录的路由**。需要我们在创建时指定`static_folder`参数。
 
 下面的示例将蓝图所在目录下的`static_admin`目录设置为静态目录
+
 ```python
 admin = Blueprint ("admin",__ name__ , static_folder='static_admin')
 app.register_blueprint (admin, url_prefix='/admin' )

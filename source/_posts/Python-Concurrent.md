@@ -13,7 +13,7 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 
 ## 各并发技术
 
-![](http://pic.lskyl.xyz/blog/old/20210630200927.png)
+![](http://pic.lskyl.xyz/blog/old/20210630200927.png-picsmall)
 
 ## 1. 多线程 Thread（threading）
 
@@ -53,9 +53,9 @@ for thread in threads:
 
 - 原理
 
-  ![](http://pic.lskyl.xyz/blog/old/20210630204323.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210630204323.png-picsmall)
 
-  ![](http://pic.lskyl.xyz/blog/old/20210630204353.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210630204353.png-picsmall)
 
 - 代码实现
 
@@ -73,7 +73,7 @@ for thread in threads:
   > >
   > > 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 ***** 号操作符，可以将元组解压为列表。
   >
-  > !["形象"](http://pic.lskyl.xyz/blog/old/20210630211154.png)
+  > !["形象"](http://pic.lskyl.xyz/blog/old/20210630211154.png-picsmall)
   
   ```python
   from concurrent.futures import ThreadPoolExecutor
@@ -148,9 +148,9 @@ for thread in threads:
 
    > 复杂的事情一般都不会一下子做完，而是会分**很多中间步骤一步步完成**
 
-   ![](http://pic.lskyl.xyz/blog/old/20210703065209.png)
+   ![](http://pic.lskyl.xyz/blog/old/20210703065209.png-picsmall)
 
-   ![](http://pic.lskyl.xyz/blog/old/20210703065255.png)
+   ![](http://pic.lskyl.xyz/blog/old/20210703065255.png-picsmall)
 
 2. **多线程数据通信的`queue.Queue`**
 
@@ -249,7 +249,7 @@ for thread in threads:
 - 规避方法2： 使用`multiprocessing`多进程，对CPU密集型计算，单独启动子进程解释器去执行
 - 规避方法2： ﻿将计算密集型的任务转移到**C语言**中，因为C语言比Python快得多，注意要在C语言中自己释放GIL
 
-![](http://pic.lskyl.xyz/blog/old/20210701000441.png)
+![](http://pic.lskyl.xyz/blog/old/20210701000441.png-picsmall)
 
 > ### 多进程适用于 CPU密集型计算
 >
@@ -301,7 +301,7 @@ if __name__ == "__main__":
 >
 > 由于**线程的执行随时会发生切换**，就造成了不可预料的结果，出现**线程不安全**(简单来说就是程序串行)
 
-![](http://pic.lskyl.xyz/blog/old/20210702130844.png)
+![](http://pic.lskyl.xyz/blog/old/20210702130844.png-picsmall)
 
 ```python
 import threading
@@ -340,7 +340,7 @@ with lock:
 
 只是操作**共享变量**部分的代码要**上锁**,而不是多线程中所有代码都要上锁,并**不影响多线程**的执行效果.
 
-![image-20210702143100587](http://pic.lskyl.xyz/blog/old/20210702143102.png)
+![image-20210702143100587](http://pic.lskyl.xyz/blog/old/20210702143102.png-picsmall)
 
 ## 4. 异步协程
 
@@ -349,9 +349,9 @@ with lock:
 > 同步：执行 IO 操作时，**必须等待执行完成才得到返回结果**。
 > 异步：执行 IO 操作时，**不必等待执行就能得到返回结果**。
 
-![](http://pic.lskyl.xyz/blog/old/20210702150837.jpeg)
+![](http://pic.lskyl.xyz/blog/old/20210702150837.jpeg-picsmall)
 
-![image-20210702143832079](http://pic.lskyl.xyz/blog/old/20210702143833.png)
+![image-20210702143832079](http://pic.lskyl.xyz/blog/old/20210702143833.png-picsmall)
 
 > 注意：要用在**异步IO编程中**,依赖的**库必须支持异步IO特性.**
 >

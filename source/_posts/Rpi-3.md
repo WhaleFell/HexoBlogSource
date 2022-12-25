@@ -94,7 +94,7 @@ sudo systemctl restart nginx
 ```
 
 **重启无报错则修改成功啦:**
-![](http://pic.lskyl.xyz/blog/old/20210619152804.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152804.png-picsmall)
 
 - 在网站根目录创建一个php文件：
 
@@ -109,7 +109,7 @@ sudo nano /var/www/html/index.php
 ```
 
 在浏览器中输入树莓派的IP地址即可看到phpinfo:
-![](http://pic.lskyl.xyz/blog/old/20210619152811.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152811.png-picsmall)
 
 ## **4.安装mariaDB数据库**
 
@@ -140,11 +140,11 @@ sudo mysql_secure_installation
 sudo mysql -u root# 登入数据库后，依次执行以下SQL： use mysql;update user set plugin='mysql_native_password';flush privileges;exit;
 ```
 
-![](http://pic.lskyl.xyz/blog/old/20210619152818.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152818.png-picsmall)
 
 再次使用普通用户pi `mysql -u root -p` 即可通过密码登录数据库，无需root权限执行:
 
- ![](http://pic.lskyl.xyz/blog/old/20210619152823.png)
+ ![](http://pic.lskyl.xyz/blog/old/20210619152823.png-picsmall)
 
 - 设置**数据库密码**
    **依次执行以下SQL：**
@@ -158,7 +158,7 @@ use mysql;   UPDATE user SET password=password('123456') WHERE user='root';   fl
 > 根据官方的说法， MariaDB为了**提高安全性**，默认只监听127.0.0.1中的3306端口并且禁止了远程的TCP链接，我们可以通过下面两步来开启**MySQL的远程服务**
 
 1. 打开文件`sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf`，注释掉bind-address项，如下:
-   ![](http://pic.lskyl.xyz/blog/old/20210619152829.png)
+   ![](http://pic.lskyl.xyz/blog/old/20210619152829.png-picsmall)
 2. 开启了**MySQL监听远程连接**的选项，接下来需要给对应的**MySQL账户分配权限**，允许使用该账户**远程连接**到MySQL:
    查看**用户账号信息**：
 
@@ -166,14 +166,14 @@ use mysql;   UPDATE user SET password=password('123456') WHERE user='root';   fl
 select User,host from mysql.user;
 ```
 
-![](http://pic.lskyl.xyz/blog/old/20210619152834.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152834.png-picsmall)
 **root账户**中的host项是**localhost**表示该账号只能进行**本地登录**，我们需要**修改权限**，执行MySQL命令:
 
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;FLUSH PRIVILEGES;exit;
 ```
 
-![](http://pic.lskyl.xyz/blog/old/20210619152851.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152851.png-picsmall)
 
 > 这个时候发现相比之前**多了一项**，它的**host项是%**，这个时候说明配置成功了，我们可以用该账号进行**远程访问**了
 
@@ -225,7 +225,7 @@ cd /var/www/html/mv phpMyAdmin-5.0.2-all-languages phpmyadmincd phpmyadminmv con
 ```
 
 编辑`config.inc.php`文件，修改密钥字段:
-![](http://pic.lskyl.xyz/blog/old/20210619152859.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152859.png-picsmall)
 
 > 修改**blowfish_secret**字段，后面的密钥无仅仅用于加密而已，**尽量足够长**。**当然偷偷插入~~喜欢的女孩子~~名字也是可以的哦**
 
@@ -236,11 +236,11 @@ sudo chmod 744 config.inc.php
 ```
 
 - 尝试访问 <http://你的树莓派ip/phpmyadmin>
-  ![](http://pic.lskyl.xyz/blog/old/20210619152752.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210619152752.png-picsmall)
   **启动高级功能** 会新建一个phpmyadmin数据库
-  ![](http://pic.lskyl.xyz/blog/old/20210619152912.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210619152912.png-picsmall)
   **安装成功！**
-  ![](http://pic.lskyl.xyz/blog/old/20210619152920.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210619152920.png-picsmall)
 
 ## 6.搭建多个`nginx`虚拟主机
 
@@ -252,7 +252,7 @@ sudo chmod 744 config.inc.php
   sudo nano /etc/nginx/nginx.conf
   ```
 
-  ![image-20200805160257592](http://pic.lskyl.xyz/blog/old/20210619152925.png)
+  ![image-20200805160257592](http://pic.lskyl.xyz/blog/old/20210619152925.png-picsmall)
 
 找到`include`字段就是每个**虚拟主机配置文件**，为了方便管理，我们在**用户家目录**新建一个`nginx-conf`存放我们的**nginx虚拟主机文件**
 
@@ -260,7 +260,7 @@ sudo chmod 744 config.inc.php
 # 在配置文件插入include /home/pi/nginx-conf/*;
 ```
 
-![image-20200805160615360](http://pic.lskyl.xyz/blog/old/20210619152933.png)
+![image-20200805160615360](http://pic.lskyl.xyz/blog/old/20210619152933.png-picsmall)
 
 ```shell
 mkdir /home/pi/nginx-confnano /home/pi/nginx-conf/kodbox.conf
@@ -294,7 +294,7 @@ sudo systemctl restart nginxwget --content-disposition https://packagecloud.io/h
 
 **尝试**访问 `http://树莓派ip` :
 
-![image-20200807132503823](http://pic.lskyl.xyz/blog/old/20210619152940.png)
+![image-20200807132503823](http://pic.lskyl.xyz/blog/old/20210619152940.png-picsmall)
 
 > 可以看到这些参数都是好   **鸡肋的**
 
@@ -306,23 +306,23 @@ sudo nano /etc/php/7.3/fpm/php.ini
 
 修改 ***post 方式提交的数据大小***，查找：`post_max_size` **酌情修改为2000M**
 
-![image-20200807133234597](http://pic.lskyl.xyz/blog/old/20210619152945.png)
+![image-20200807133234597](http://pic.lskyl.xyz/blog/old/20210619152945.png-picsmall)
 
 修改 ***运行超时秒数*** ，查找：`max_execution_time` **酌情修改为3600s**
 
-![image-20200807133453326](http://pic.lskyl.xyz/blog/old/20210619152950.png)
+![image-20200807133453326](http://pic.lskyl.xyz/blog/old/20210619152950.png-picsmall)
 
 修改 ***上传文件限制*** ，查找：`upload_max_filesize` **酌情修改为2000M**
 
-![image-20200807133741086](http://pic.lskyl.xyz/blog/old/20210619152956.png)
+![image-20200807133741086](http://pic.lskyl.xyz/blog/old/20210619152956.png-picsmall)
 
 修改 ***运行内存限制*** ，查找：`memory_limit` **酌情修改为2000M**
 
-![image-20200807133917750](http://pic.lskyl.xyz/blog/old/20210619153003.png)
+![image-20200807133917750](http://pic.lskyl.xyz/blog/old/20210619153003.png-picsmall)
 
 开启 ***文件上传***  ,查找：`file_uploads` 更改为`On`
 
-![image-20200807134107318](http://pic.lskyl.xyz/blog/old/20210619153007.png)
+![image-20200807134107318](http://pic.lskyl.xyz/blog/old/20210619153007.png-picsmall)
 
 - 更改完成后重启 `nginx+php-fpm`
 
@@ -332,7 +332,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 
 **更改后的探针页面**：
 
-![image-20200807134706542](http://pic.lskyl.xyz/blog/old/20210619153012.png)
+![image-20200807134706542](http://pic.lskyl.xyz/blog/old/20210619153012.png-picsmall)
 
 ## 8.搭建`kodbox`云私有云盘
 
@@ -350,7 +350,7 @@ cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.
 
 尝试访问 **<http://树莓派ip:88>** :
 
-![image-20200805163537543](http://pic.lskyl.xyz/blog/old/20210619153018.png)
+![image-20200805163537543](http://pic.lskyl.xyz/blog/old/20210619153018.png-picsmall)
 
 > 除了PHP版本外其他都可以通过哒~
 
@@ -360,19 +360,19 @@ cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.
   sudo apt-get install redis php-redis
   ```
 
-  ![image-20200805164115135](http://pic.lskyl.xyz/blog/old/20210619153025.png)
+  ![image-20200805164115135](http://pic.lskyl.xyz/blog/old/20210619153025.png-picsmall)
 
 **redis服务会自动运行自动添加开机启动项，省心！！！**
 
 **编辑**`sudo nano /etc/php/7.3/fpm/php.ini`文件加入：
 
-![image-20200807211906533](http://pic.lskyl.xyz/blog/old/20210619153032.png)
+![image-20200807211906533](http://pic.lskyl.xyz/blog/old/20210619153032.png-picsmall)
 
 ```
 extension=redis.so#重启php-fpmsudo systemctl restart php7.3-fpm 
 ```
 
-![image-20200805164305612](http://pic.lskyl.xyz/blog/old/20210619153038.png)
+![image-20200805164305612](http://pic.lskyl.xyz/blog/old/20210619153038.png-picsmall)
 
 > #### 数据库选择**MySQL**，填入自己的密码
 >

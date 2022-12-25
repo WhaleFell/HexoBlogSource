@@ -18,13 +18,13 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 
 ## 图示
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-1.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-1.png-picsmall)  
 
 ## 示例
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-2.png)  
-![](http://pic.lskyl.xyz/blog/Golang/interface-4.png)  
-![](http://pic.lskyl.xyz/blog/Golang/interface-3.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-2.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-4.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-3.png-picsmall)  
 > Go语言中接口和类型的实现方式是**非侵入式**的,接口定义的方法没有具体代码.
 
 ## 通过接口模拟多态
@@ -32,7 +32,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ### 多态的定义
 
 "一个事物的多种形态"  
-![](http://pic.lskyl.xyz/blog/Golang/interface-5.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-5.png-picsmall)  
 
 就一个接口的实现:  
 
@@ -50,17 +50,17 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
 ## 空接口
 
 `interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.  
-![](http://pic.lskyl.xyz/blog/Golang/interface-7.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-7.png-picsmall)  
 
 ### 空接口定义任意类型的数据
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-6.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-6.png-picsmall)  
 
 ### 空接口作为函数的参数
 
 表示函数的参数可以是任意类型,相当于 Python 的 `typing.Any`  
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-8.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-8.png-picsmall)  
 `fmt` 包就是应用了空接口,可以传入任何参数.  
 `fmt` 包下的 `Print` 系列函数:  
 
@@ -72,25 +72,25 @@ func Println(a ...interface{}) (n int,err error)
 
 ### 复合数据结构使用空接口
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-9.png)  
-![](http://pic.lskyl.xyz/blog/Golang/interface-10.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-9.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-10.png-picsmall)  
 
 ## 接口嵌套
 
 接口允许多继承.  
-![](http://pic.lskyl.xyz/blog/Golang/interface-11.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-11.png-picsmall)  
 如果 Cat 想实现接口C,不仅要实现接口C自己的方法,还要实现接口C继承的接口A B中的方法.  
-![](http://pic.lskyl.xyz/blog/Golang/interface-12.png)  
-![](http://pic.lskyl.xyz/blog/Golang/interface-13.png)  
-![](http://pic.lskyl.xyz/blog/Golang/insterface-14.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-12.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-13.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/insterface-14.png-picsmall)  
 
 ## 接口断言
 
 前面说过，因为空接口 `interface` 没有定义任何函数，因此 `Go` 中**所有类型都实现了空接口**。当一个函数的形参是 `interface{}` ,那么在函数中，需要对形参**进行断言**，从而**得到它的真实类型**。
 
-![](http://pic.lskyl.xyz/blog/Golang/interface-15.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-15.png-picsmall)  
 
 方法一:  
-![](http://pic.lskyl.xyz/blog/Golang/interface-16.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-16.png-picsmall)  
 方法二:  
-![](http://pic.lskyl.xyz/blog/Golang/interface-17.png)  
+![](http://pic.lskyl.xyz/blog/Golang/interface-17.png-picsmall)  

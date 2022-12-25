@@ -15,14 +15,14 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 
  先用 **SDFormatter** 格式化一下内存卡叭:
 
-![hZkDB8qxtRgQz3S](http://pic.lskyl.xyz/blog/old/20210619152409.png)
+![hZkDB8qxtRgQz3S](http://pic.lskyl.xyz/blog/old/20210619152409.png-picsmall)
 
 ### 1. 烧写镜像用到的软件： **Win32 Disk Image**
 
-![Zb6CEHnf17oqO5Q](http://pic.lskyl.xyz/blog/old/20210619152403.png)
+![Zb6CEHnf17oqO5Q](http://pic.lskyl.xyz/blog/old/20210619152403.png-picsmall)
 
 - 然后在U盘的根目录建立一个空白的 **ssh文件  方便ssh远程连接**
-   ![FV5qpvWz7LtsOgi](http://pic.lskyl.xyz/blog/old/sasw.png)
+   ![FV5qpvWz7LtsOgi](http://pic.lskyl.xyz/blog/old/sasw.png-picsmall)
 - 用 **Windows PowerShell** 连接树莓派ssh
   `shift+右键` 呼出**Windows PowerShell**
   **完整连接语法**:
@@ -31,7 +31,7 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 ssh -p 端口号 用户名@主机地址
 ```
 
-> 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://pic.lskyl.xyz/blog/old/20210619152448.png)
+> 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://pic.lskyl.xyz/blog/old/20210619152448.png-picsmall)
 
 - 树莓派扩展TF卡分区:
    sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
@@ -89,7 +89,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 - 设置终端中文显示: `sudo raspi-config`:
   选择change_locale，在Default locale for the system environment:中选择zh_CN.UTF-8。
   往下翻一会儿直到找到zh_CN UTF-8把光标移动到前面，然后按下空格键打上*
-  ![3hQeD8k9L1mgTZc](http://pic.lskyl.xyz/blog/old/20210619152513.png)
+  ![3hQeD8k9L1mgTZc](http://pic.lskyl.xyz/blog/old/20210619152513.png-picsmall)
 
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
@@ -172,8 +172,8 @@ sudo service tightvncserver status #查看服务运行状态
 > [vnc官网](https://www.realvnc.com/en/connect/download/viewer/)
 
 连接成功惹~:
-![](http://pic.lskyl.xyz/blog/old/20210619152521.png)
-![](http://pic.lskyl.xyz/blog/old/20210619152531.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152521.png-picsmall)
+![](http://pic.lskyl.xyz/blog/old/20210619152531.png-picsmall)
 编辑 ./vnc/xstartup 配置文件使其能与windown共享剪贴板
 
 ```shell
@@ -212,10 +212,10 @@ cd noVNC
 ./utils/launch.sh --vnc localhost:5901 #监听5901 vnc端口
 ```
 
-![](http://pic.lskyl.xyz/blog/old/20210619152538.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152538.png-picsmall)
 
 - 尝试访问: [http://raspiberry:6080](http://raspiberry:6080)  可
-  ![](http://pic.lskyl.xyz/blog/old/20210619152542.png)
+  ![](http://pic.lskyl.xyz/blog/old/20210619152542.png-picsmall)
 - 一些**高级设置** :
 
 ```shell
@@ -234,7 +234,7 @@ sudo nano /etc/rc.local
 su pi -c "/home/pi/noVNC/utils/launch.sh --vnc localhost:5901" &
 ```
 
-![fEVci5dlNCMaUs4](http://pic.lskyl.xyz/blog/old/20210619152617.png)
+![fEVci5dlNCMaUs4](http://pic.lskyl.xyz/blog/old/20210619152617.png-picsmall)
 
 ### 5.安装`cockpit` web可视化管理
 
@@ -264,7 +264,7 @@ sudo systemctl start cockpit.socket
 
 - 页面
 
-  ![image-20200805174634421](http://pic.lskyl.xyz/blog/old/20210619152626.png)
+  ![image-20200805174634421](http://pic.lskyl.xyz/blog/old/20210619152626.png-picsmall)
 
 ## Python设置
 
@@ -272,7 +272,7 @@ sudo systemctl start cockpit.socket
 
 > 树莓派默认安装了两个版本的**Python**
 
-![](http://pic.lskyl.xyz/blog/old/20210619152632.png)
+![](http://pic.lskyl.xyz/blog/old/20210619152632.png-picsmall)
 
 ### 树莓派pip换源
 
@@ -297,7 +297,7 @@ mirrors = https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 python3 -m pip install --upgrade pip
 ```
 
-![seVOiSZrBKgE827](http://pic.lskyl.xyz/blog/old/20210619152649.png)
+![seVOiSZrBKgE827](http://pic.lskyl.xyz/blog/old/20210619152649.png-picsmall)
 
 - **树莓派指定Python版本安装模块**
 

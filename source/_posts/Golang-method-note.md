@@ -37,12 +37,12 @@ func (接收者) 方法名(参数列表)(返回值列表){
 
 ### 接收者为一个值
 
-![](http://pic.lskyl.xyz/blog/Golang/method-1.png)  
+![](http://pic.lskyl.xyz/blog/Golang/method-1.png-picsmall)  
 
 ### 接收者为一个指针
 
-![](http://pic.lskyl.xyz/blog/Golang/method-2.png)  
-![](http://pic.lskyl.xyz/blog/Golang/method-3.png)  
+![](http://pic.lskyl.xyz/blog/Golang/method-2.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/method-3.png-picsmall)  
 
 ## 方法的继承性
 
@@ -57,6 +57,6 @@ func (接收者) 方法名(参数列表)(返回值列表){
 ### 示例
 
 `method` 是可以继承的，如果匿名字段实现了一个`method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`  
-![](http://pic.lskyl.xyz/blog/Golang/method-4.png)  
-![](http://pic.lskyl.xyz/blog/Golang/method-5.png)  
-![](http://pic.lskyl.xyz/blog/Golang/method-6.png)  
+![](http://pic.lskyl.xyz/blog/Golang/method-4.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/method-5.png-picsmall)  
+![](http://pic.lskyl.xyz/blog/Golang/method-6.png-picsmall)  

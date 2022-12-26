@@ -44,21 +44,25 @@ banner_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
 
    **修改源配置文件**
 
-   ```shell
-   sudo nano /etc/apt/sources.list
-   
-   deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free
-   deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
-   deb http://mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free
-   deb http://mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free
-   
-   sudo nano /etc/apt/sources.list.d/armbian.list
-   deb [trusted=yes] http://apt.armbian.com bionic main bionic-utils bionic-desktop
-   
-   # 更新源
-   sudo apt update
-   sudo apu upgrade
-   ```
+```shell
+vim /etc/apt/sources.list
+
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
+deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
+deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
+deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
+deb http://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main contrib non-free
+deb-src http://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main contrib non-free
+
+vim /etc/apt/sources.list.d/armbian.list
+deb [trusted=yes] http://apt.armbian.com bionic main bionic-utils bionic-desktop
+
+# 更新源
+sudo apt update
+sudo apu upgrade
+```
 
 2. **卸载自带的宝塔面板**
 

@@ -76,13 +76,15 @@ systemctl enable ttnode
 
 ## 网络相关
 
-### OpenVPN 配置
+### OpenVPN
 
 > 参考：[窗口 - 使用OpenVPN，我如何只能让局域网通过VPN？- 服务器故障 (serverfault.com)](https://serverfault.com/questions/785767/with-openvpn-how-can-i-only-let-lan-go-through-the-vpn) **重要**
 >
 > [ROUTE: route addition failed - lsgxeva - 博客园 (cnblogs.com)](https://www.cnblogs.com/lsgxeva/p/11378768.html)
 >
 > [networking - How to route only subnet in OpenVPN and not internet traffic - Super User](https://superuser.com/questions/1608345/how-to-route-only-subnet-in-openvpn-and-not-internet-traffic)
+
+安装脚本:[Nyr/openvpn-install](https://github.com/Nyr/openvpn-install)
 
 服务端：`server.conf`  
 
@@ -143,4 +145,54 @@ key-direction 1
 dhcp-option DNS 114.114.114.114 # 自定义DNS
 route 192.168.1.0 255.255.255.0  # 添加路由
 route 192.168.0.0 255.255.255.0
+```
+
+### FRP
+
+#### 服务端配置
+
+frps.ini
+
+```ini
+[common]
+bind_addr = 0.0.0.0
+bind_port = 57700
+bind_udp_port= 57711
+
+token = lovehyy
+
+dashboard_port = 57710
+dashboard_user = admin
+dashboard_pwd = lovehyy
+
+max_pool_count = 9999
+max_ports_per_client = 0
+
+tls_only = true
+allow_ports = 57700-57800
+```
+
+#### 客户端
+
+frpc.ini
+
+```ini
+[common]
+server_addr = vps.lskyl.xyz
+server_port = 57700
+token = lovehyy
+user = dlgz-nas
+login_fail_exit = false
+protocol = tcp
+tcp_mux = true
+dns_server = 223.5.5.5
+tls_enable = true
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 57722
+use_encryption = false
+use_compression = true
 ```

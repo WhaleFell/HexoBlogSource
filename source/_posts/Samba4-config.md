@@ -9,7 +9,7 @@ banner_img: http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall
 ---
 # Samba4 服务器配置最佳实践
 
-![banner](http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall-picsmall)
+![banner](http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall)
 
 ## 具体配置文件
 

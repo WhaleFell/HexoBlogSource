@@ -5,8 +5,8 @@ categories: Golang
 updated: 2022-12-17 12:17:48
 tags: [Golang, Coding]
 description: 
-index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png
+index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
 
 # Golang 解析 JSON 数据

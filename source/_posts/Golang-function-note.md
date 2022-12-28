@@ -234,7 +234,7 @@ recover 函数用于恢复程序的执行，`recover()`语法上要求必须在 
 1. 如果多个 defer 函数：
 2. defer 函数传递参数的时候：
 
-如果在 deferred 函数中调用了内置函数 recover，并且定义该 defer 语句的函数发生了 panic 异常，recover 会使程序从 panic 中恢复，并返回 panic value。导致 panic 异常的函数**不会继续运行，但能正常返回**。在未发生panic时调用recover，recover会返回nil。
+如果在 deferred 函数中调用了内置函数 recover，并且定义该 defer 语句的函数发生了 panic 异常，recover 会使程序从 panic 中恢复，并返回 panic value。导致 panic 异常的函数**不会继续运行，但能正常返回**。在未发生panic时调用recover，recover 会返回nil。
 
 ```go
 func Parse(input string) (s *Syntax, err error) {
@@ -250,14 +250,14 @@ err = fmt.Errorf("internal error: %v", p)
 
 安全的做法是有选择性的 recover 。换句话说，只恢复应该被恢复的panic异常.
 
-可以将 panic value 设置成特殊类型。在 recover 时对 panic value 进行检查，如果发现panic value 是特殊类型，就将这个panic作为errror处理，如果不是，则按照正常的panic进行处理.
+可以将 panic value 设置成特殊类型。在 recover 时对 panic value 进行检查，如果发现panic value 是特殊类型，就将这个 panic 作为 error 处理，如果不是，则按照正常的panic进行处理.
 
 ```go
 func soleTitle(doc *html.Node) (title string, err error) {
 type bailout struct{}
 defer func() {
     // 通过 switch 语句 判断 panic 的类型
-    // 进行有选择的 reco
+    // 进行有选择的 recover
 switch p := recover(); p {
 case nil: // no panic
 case bailout{}: // "expected" panic

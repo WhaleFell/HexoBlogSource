@@ -24,7 +24,7 @@ fmt.Println(hypot(3,4)) // "5"
 
 函数调用时，Go语言没有默认参数值，也没有任何方法可以通过参数名指定形参，因此形参和返回值的变量名对于函数调用者而言没有意义。
 
-实参通过值的方式传递，因此函数的 **形参是实参的拷贝** 。对形参进行修改不会影响实参。但是，如果实参包括引用类型，如指针，slice(切片)、map、function、channel等类型，实参可能会由于函数的简介引用被修改。
+实参通过值的方式传递，因此函数的 **形参是实参的拷贝** 。对形参进行修改不会影响实参。但是，如果实参包括 **引用类型**，如指针，slice(切片)、map、function、channel等类型，实参可能会由于函数的简介引用被修改。
 
 偶尔遇到没有函数体的函数声明，这表示该函数不是以Go实现的。这样的声明定义了函数标识符。
 
@@ -72,6 +72,8 @@ fmt.Println(sum(values...)) // "10"
 ![](http://pic.lskyl.xyz/blog/Golang/func-10.png-picsmall)  
 
 ## 参数传递
+
+实参通过值的方式传递，因此函数的 **形参是实参的拷贝** 。对形参进行修改不会影响实参。但是，如果实参包括 **引用类型**，如指针，slice(切片)、map、function、channel 等类型，实参可能会由于函数的间接引用被修改。
 
 ![](http://pic.lskyl.xyz/blog/Golang/func-13.png-picsmall)  
 
@@ -123,12 +125,20 @@ fmt.Println(sum(values...)) // "10"
 
 ![](http://pic.lskyl.xyz/blog/Golang/func-20.png-picsmall)  
 > 全局变量 **不支持简短定义的写法**
+>
+> ```go
+> // s := 0.12 全局变量不能使用类型推断
+> var s float64 = 0.12  // 全局变量定义正确方式
+> ```
 
 ## 递归函数
 
 ![](http://pic.lskyl.xyz/blog/Golang/func-21.png-picsmall)  
 ![](http://pic.lskyl.xyz/blog/Golang/func-22.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-23.png-picsmall)  
+
+递归函数实现 fibonacci 数列(斐波那契数列)
+
+![斐波那契数列](http://pic.lskyl.xyz/blog/Golang/func-23.png-picsmall)  
 ![](http://pic.lskyl.xyz/blog/Golang/func-24.png-picsmall)  
 
 ## defer(延迟函数)
@@ -185,14 +195,82 @@ func bigSlowOperation() {
 
 ### 语言中关于异常的处理
 
-使用 `panic()` 和 `recover()`
+虽然Go的 panic 机制类似于其他语言的异常，但panic的适用场景有一些不同。由于panic会引起程序的崩溃，因此 panic 一般用于严重错误，如程序内部的逻辑不一致.对于大部分漏洞，我们应该使用 Go 提供的错误机制，而不是 panic ，**尽量避免程序的崩溃**。
+
+`regexp`  包提供了包装函数 `regexp.MustCompile` 检查输入的合法性。输入错误就立马 panic,函数名中的 **Must 前缀是一种针对此类函数输入错误的立马 panic**
+
+```go
+package regexp
+func Compile(expr string) (*Regexp, error) { /* ... */ }
+func MustCompile(expr string) *Regexp {
+re, err := Compile(expr)
+if err != nil {
+panic(err)
+}
+return re
+}
+```
+
+#### runtime 输出堆栈信息
+
+```go
+func main() {
+defer printStack()
+f(3)
+}
+func printStack() {
+var buf [4096]byte  // 字节切片储存信息
+n := runtime.Stack(buf[:], false) // 写入
+os.Stdout.Write(buf[:n]) // 写入到输出流
+}
+```
+
+#### 使用 `panic()` 和 `recover()`
 
 panic函数用于引发恐慌，导致程序中断执行
 
-recover函数用于恢复程序的执行，`recover()`语法上要求必须在 `defer` 中执行。
+recover 函数用于恢复程序的执行，`recover()`语法上要求必须在 `defer` 中执行。
 
-1. 如果多个defer函数：
-2. deferi函数传递参数的时候：
+1. 如果多个 defer 函数：
+2. defer 函数传递参数的时候：
+
+如果在 deferred 函数中调用了内置函数 recover，并且定义该 defer 语句的函数发生了 panic 异常，recover 会使程序从 panic 中恢复，并返回 panic value。导致 panic 异常的函数**不会继续运行，但能正常返回**。在未发生panic时调用recover，recover会返回nil。
+
+```go
+func Parse(input string) (s *Syntax, err error) {
+defer func() {
+if p := recover(); p != nil {
+err = fmt.Errorf("internal error: %v", p)
+}
+}()
+// ...parser...
+    panic("错误") // 程序不会停止,会转到 defer recover 处理
+}
+```
+
+安全的做法是有选择性的 recover 。换句话说，只恢复应该被恢复的panic异常.
+
+可以将 panic value 设置成特殊类型。在 recover 时对 panic value 进行检查，如果发现panic value 是特殊类型，就将这个panic作为errror处理，如果不是，则按照正常的panic进行处理.
+
+```go
+func soleTitle(doc *html.Node) (title string, err error) {
+type bailout struct{}
+defer func() {
+    // 通过 switch 语句 判断 panic 的类型
+    // 进行有选择的 reco
+switch p := recover(); p {
+case nil: // no panic
+case bailout{}: // "expected" panic
+err = fmt.Errorf("multiple title elements")
+default:
+panic(p) // unexpected panic; carry on panicking
+}
+}()
+
+panic(bailout{})
+}
+
+```
 
 ### 栈的结构(先进后出!后进先出!)
 
@@ -210,6 +288,23 @@ recover函数用于恢复程序的执行，`recover()`语法上要求必须在 `
 3. 当外围函数中的代码引发运行恐慌时，只有其中所有的延迟函数都执行完毕后，该运行时恐慌才会真正被扩展至调用函数。
 
 ## 函数的数据类型
+
+在Go中，函数被看作第一类值(一等公民)（first-class values）：函数像其他值一样，拥有类型，可以被赋值给其他变量，传递给函数，从函数返回。
+
+`strings.Map` **对字符串中的每个字符** 调用 add1 函数，并将每个 add1 函数的返回值组成一个新的字符串返回给调用者。
+
+```go
+type rune = int32
+func Map(mapping func(rune) rune, s string) string
+```
+
+```go
+func add1(r rune) rune { return r + 1 }
+
+fmt.Println(strings.Map(add1, "HAL-9000")) // "IBM.:111"
+fmt.Println(strings.Map(add1, "VMS")) // "WNT"
+fmt.Println(strings.Map(add1, "Admix")) // "Benjy"
+```
 
 函数的类型：  
 `func(参数列表的数据类型)(返回值列表的数据类型)`  
@@ -240,11 +335,11 @@ recover函数用于恢复程序的执行，`recover()`语法上要求必须在 `
 strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
 ```
 
-通过这种方式定义的函数可以访问完整的词法环境（lexical environment），这意味着在函数中定义的内部函数可以引用该函数的变量，如下例所示：
+通过这种方式定义的函数可以访问 **完整的词法环境**（lexical environment），这意味着在函数中定义的内部函数可以引用该函数的变量，如下例所示：
 
 在squares中定义的匿名内部函数可以访问和更新squares中的局部变量，匿名函数和squares中，存在变量引用。
 
-变量的生命周期不由它的作用域决定：squares返回后，变量x仍然隐式的存在于f中。
+变量的生命周期不由它的作用域决定：squares 返回后，变量 x 仍然隐式的存在于 f 中。
 
 Go使用闭包（closures）技术实现函数值，Go程序员也把函数值叫做闭包。
 
@@ -298,7 +393,7 @@ func main() {
 
 支持将一个函数作为另一个函数的参数,也支持将一个函数作为另一个函数的返回值.
 
-strings.Map 对字符串中的每个字符调用 add1 函数，并将每个add1函数的返回值组成一个新的字符串返回给调用者。
+strings.Map **对字符串中的每个字符调用** add1 函数，并将每个add1函数的返回值组成一个新的字符串返回给调用者。
 
 ```go
 func add1(r rune) rune { return r + 1 }
@@ -309,11 +404,11 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")) // 使�
 
 ### 闭包(closure)
 
-一个外层函数中,有内层函数,该内层函数中,会操作外层函数的**局部变量**(外层函数中的参数，或者外层函数中直接定义的变量),并且该外层函数的返回值就是这个内层函数.
+一个外层函数中,有内层函数,该内层函数中,会操作外层函数的 **局部变量** (外层函数中的参数，或者外层函数中直接定义的变量),并且该外层函数的返回值就是这个内层函数.
 
 这个**内层函数和外层函数的局部变量**，统称为**闭包结构**。
 
-局部变量的**生命周期**会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁  
+局部变量的 **生命周期** 会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁  
 
 但是闭包结构中的外层函数的局部变量并不会随着外层函数的结束销毁，因为内层函数还要**继续使用**。
 
@@ -325,9 +420,9 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")) // 使�
 
 ## 捕获迭代变量
 
-> 将介绍Go词法作用域的一个陷阱。请务必仔细的阅读，弄清楚发生问题的原因。即使是经验丰富的程序员也会在这个问题上犯错误。
+> **将介绍Go词法作用域的一个陷阱。请务必仔细的阅读，弄清楚发生问题的原因。即使是经验丰富的程序员也会在这个问题上犯错误。**
 
-循环中的 d 函数值记录的是循环变量的内存地址，不是循环变量某一时刻的值。for 循环结束时，d 指向循环最后一次迭代的值。而需要一个局部变量 dir 将 d 进行深拷贝保存作为循环变量的副本。
+循环中的 d 函数值记录的是 **循环变量的内存地址** ，不是循环变量某一时刻的值。for 循环结束时，d 指向循环最后一次迭代的值。而需要一个局部变量 dir 将 d **进行深拷贝保存作为循环变量的副本**。
 
 ```go
 var rmdirs []func()
@@ -340,8 +435,8 @@ for _, d := range tempDirs() {
 }
 // ...do some work…
 for _, rmdir := range rmdirs {
-rmdir() // clean up
+ rmdir() // clean up
 }
 ```
 
-这个问题不仅存在基于range的循环，go语句或者defer语句会经常遇到此类问题。这不是go或defer本身导致的，而是因为它们都会 **等待循环结束后** ，再执行函数值。
+这个问题不仅存在基于range的循环，go 语句或者 defer 语句会经常遇到此类问题。这不是go或defer 本身导致的，而是因为它们都会 **等待循环结束后** ，再执行函数值。

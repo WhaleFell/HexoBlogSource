@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # GO 文本和HTML模板
 
 前面的例子，只是最简单的格式化，使用Printf 是完全足够的。但是有时候会需要复杂的打印格式，这时候一般需要将格式化代码分离出来以便更安全地修改。这写功能是由 text/template 和 html/template 等模板包提供的，它们提供了一个将变量值填充到一个文本或 HTML 格式的模板的机制。

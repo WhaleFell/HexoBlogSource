@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # Go map 数据类型  
 
 map: 映射/哈希表，是一种转码用于存储键值对的结合，属于引用类型。

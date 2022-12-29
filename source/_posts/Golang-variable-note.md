@@ -8,8 +8,7 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
-# golang 变量
+# Golang 变量
 
 变量是计算机语言中能储存计算结果或能表示值的抽象概念。不同的变量保存的数据类型可能会不一样。  
 

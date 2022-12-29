@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # go 语言常量
 
 常量，就是在程序**编译阶段**就确定下来的值，而程序在**运行时则无法改变该值**。在G0程序中，常量可以是数值类型(包括整型、浮点型和复数类型)、布尔类型、字符串类型等。

@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # go 函数
 
 ```go

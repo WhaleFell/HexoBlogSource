@@ -52,8 +52,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ![New函数构建结构体指针1](http://pic.lskyl.xyz/blog/Golang/struct-7.png-picsmall)  
 ![New函数构建结构体指针2](http://pic.lskyl.xyz/blog/Golang/struct-8.png-picsmall)  
 
-通过, `new()` 函数(不为 `nil`,空指针)
-指向了 **新分配的类型的内存空间** ,里面存该类型的零值.
+通过, `new()` 函数(不为 `nil`,空指针)指向了 **新分配的类型的内存空间** ,里面存该类型的零值.
 
 ![New函数详解](http://pic.lskyl.xyz/blog/Golang/struct-10.png-picsmall)  
 

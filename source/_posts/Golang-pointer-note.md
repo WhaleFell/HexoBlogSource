@@ -96,7 +96,7 @@ func test(slice []int) {
 output:  
 切片地址都是一样的,切片发生的是引用传递
 
-```
+```txt
 Hello, World!
 main()数值:[1 2 3 4] 地址:0xc000098000
 进入test()数值:[1 2 3 4] 地址:0xc000098000

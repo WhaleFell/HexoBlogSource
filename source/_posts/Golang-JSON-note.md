@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # Golang 解析 JSON 数据
 
 `JSON` 是对 `JavaScript` 中各种类型的值——字符串、数字、布尔值和对象—— Unicode 本文编码。它可以用有效可读的方式表示基础数据类型和数组、slice、结构体和 map 等聚合数据类型。

@@ -8,7 +8,6 @@ description:
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
-
 # Go error 错误
 
 Go使用控制流机制（如if和 return）处理异常，这使得编码人员能更多的关注错误处理。

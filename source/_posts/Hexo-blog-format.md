@@ -32,6 +32,10 @@ banner_img:
 ---
 ```
 
+## Blog banner img 生成
+
+使用 [CoverView](https://coverview.vercel.app/) 设计博客 banner 图片，统一头图风格！
+
 ## MarkDown 语法
 
 ## 插入图片并储存在 七牛云OSS+坚果云 上

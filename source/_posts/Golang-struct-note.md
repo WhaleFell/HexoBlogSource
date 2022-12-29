@@ -1,8 +1,8 @@
 ---
 title: Golang 学习笔记——struct结构体
-date: 2022-05-2 18:30:48
+date: 2022-12-30 18:30:48
 categories: Golang
-updated: 2022-05-2 18:30:48
+updated: 2022-12-30 18:30:48
 tags: [Golang, Coding]
 description: 
 index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall

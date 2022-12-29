@@ -11,7 +11,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 
 # go 数据类型
 
-在G0编程语言中，数据类型用于**声明函数和变量**，数据类型的出现是为了把数据分成所需**内存大小**不同的数据，编程的时候需要用大数据的时候才需要申请大内存，就可以**充分利用内存**。 
+在G0编程语言中，数据类型用于**声明函数和变量**，数据类型的出现是为了把数据分成所需**内存大小**不同的数据，编程的时候需要用大数据的时候才需要申请大内存，就可以**充分利用内存**。
 
 G0语言按类别有以下几种数据类型：  
 
@@ -40,14 +40,14 @@ package main
 import "fmt"
 
 func main() {
-	var name string = "tom"
-	age := 20
-	b := true
-	// 格式化输出
-	// %T 类型
-	fmt.Printf("%T\n", name)
-	fmt.Printf("%T\n", age)
-	fmt.Printf("%T\n", b)
+ var name string = "tom"
+ age := 20
+ b := true
+ // 格式化输出
+ // %T 类型
+ fmt.Printf("%T\n", name)
+ fmt.Printf("%T\n", age)
+ fmt.Printf("%T\n", b)
 }
 ```
 

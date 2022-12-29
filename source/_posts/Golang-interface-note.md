@@ -114,3 +114,107 @@ func Println(a ...interface{}) (n int,err error)
 ![](http://pic.lskyl.xyz/blog/Golang/interface-16.png-picsmall)  
 方法二:  
 ![](http://pic.lskyl.xyz/blog/Golang/interface-17.png-picsmall)  
+
+## 接口值
+
+接口值由两部分组成：一个具体的类型（type）和这个类型的值（value）。**接口是动态类型。**一个接口值可以持有任意大的动态值。实现了这个接口的类型都可以赋值这个接口。
+
+![](http://pic.lskyl.xyz/blog/img/20221229121130.png-picsmall)
+
+定义一个 nil 接口：
+
+```go
+var w io.Writer // 空接口
+w.Writer([]byte("hello")) // panic: nil pointer
+// 可以通过 w == nil 判断接口值是否为空
+```
+
+将 `*os.File` 类型赋值给变量 w，因为 `*os.File` 实现了 `io.Writer` 接口，所以赋值合法。赋值过程调用了一个 **具体类型到接口类型** 的隐式转换（变成T类型 `T(type)` ） `io.Writer(os.Stdout)`
+
+```go
+w = os.Stdout
+// 隐式转换 
+io.Writer(os.Stdout)
+```
+
+接口的 value 持有 `os.Stdout` 的拷贝，这是一个代表处理标准输出的 `os.File` 类型的指针。
+
+![接口的赋值](http://pic.lskyl.xyz/blog/img/20221229122508.png-picsmall)
+
+调用一个包含 `*os.File` 类型指针的接口值的 `Write` 方法，得`(*os.File).Write` 方法被调用。这个调用输出 “hello”。
+
+```go
+w.Write([]byte("hello")) // "hello"
+(*os.File).Write // 等效
+```
+
+当我们处理错误或者调试的过程中，得知接口值的动态类型是非常有帮助的。所以我们使用 `fmt` 包的 `%T` 动作，在fmt包内部，使用反射来获取接口动态类型的名称。
+
+```go
+var w io.Writer
+fmt.Printf("%T\n", w) // "<nil>"
+w = os.Stdout
+fmt.Printf("%T\n", w) // "*os.File"
+w = new(bytes.Buffer)
+fmt.Printf("%T\n", w) // "*bytes.Buffer"
+```
+
+### ⚠️一个包含nil指针的接口不是nil接口
+
+一个不包含任何值的 nil 接口值：
+
+![一个不包含任何值的 nil 接口值](http://pic.lskyl.xyz/blog/img/20221229121130.png-picsmall)
+
+一个刚好包含nil指针的接口值：
+
+![](http://pic.lskyl.xyz/blog/img/20221229123705.png-picsmall)
+
+```go
+var w io.Writer
+w = new(bytes.Buffer)  // new函数返回类型的初始化值的指针 nil w: *bytes.Buffer
+// w not nil
+```
+
+```go
+func main() {
+    var w io.Writer
+    w = new(bytes.Buffer)
+    fmt.Printf("w: %T\n", w)
+    if w == nil{
+        fmt.Println("w is nil")
+    } else {
+        fmt.Println("w not nil")
+    }
+}
+
+// output:
+// w: *bytes.Buffer
+// w not nil
+```
+
+## 应用
+
+### `sort.Interface`  接口
+
+在很多语言中，排序算法都是和序列数据类型关联，但 Go 语言的 `sort.Sort` 函数不会对具体的序列和它的元素做限定。它使用一个接口类型 `sort.Interface` 来指定通用的序列算法。
+
+一个内置的排序算法需要知道三个东西：序列的长度，表示两个元素比较的结果，一种交换两个元素的方式；这就是 `sort.Interface` 接口的三个方法：
+
+```go
+package sort
+type Interface interface {
+    Len() int // 序列长度
+    Less(i, j int) bool // 两个元素比较的结果
+    Swap(i, j int) // 交换两个元素
+}
+```
+
+排列字符串切片：
+
+```go
+sort.Sort(StringSlice(names)) // 将切片转换为实现 `sort.Interface` 接口的类型
+sort.Strings(names) // 简化
+```
+
+### `http.Handler` 接口
+

@@ -218,3 +218,127 @@ sort.Strings(names) // 简化
 
 ### `http.Handler` 接口
 
+<u>*net/http*</u>
+
+```go
+package http
+type Handler interface { 
+    ServeHTTP(w ResponseWriter, r*Request)
+} 
+func ListenAndServe(address string, h Handler) error
+```
+
+`ListenAndServe` 函数需要一个例如“localhost:8000”的服务器地址，和一个所有请求都可以分派的 Handler 接口实例。它会一直运行，直到这个服务因为一个错误而失败（或者启动失败），它的返回值一定是一个非空的错误。
+
+使用不同的 URL 触发不同的行为
+
+```go
+func (db database) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+switch req.URL.Path {
+case "/list":
+    for item, price := range db {
+    fmt.Fprintf(w, "%s: %s\n", item, price)
+    }
+case "/price":
+    // Quary 方法可以将 http 请求参数解析为一个 map
+    item := req.URL.Query().Get("item")
+    price, ok := db[item]
+    if !ok {
+    w.WriteHeader(http.StatusNotFound) // 404
+    fmt.Fprintf(w, "no such item: %q\n", item)
+    return
+    }
+    fmt.Fprintf(w, "%s\n", price)
+default:
+    w.WriteHeader(http.StatusNotFound) // 404
+    fmt.Fprintf(w, "no such page: %s\n", req.URL)
+}
+}
+```
+
+现在 handler 基于URL的路径部分（`req.URL.Path`）来决定执行什么逻辑。如果不能识别，调用 `w.WriteHeader(http.StatusNotFound)` 返回客户端一个 HTTP 404 错误。
+
+`http.ResponseWriter` 是另一个接口。它在 `io.Writer` 上增加了发送HTTP相应头的方法。另外，还可以使用 `http.Error` 函数。
+
+```go
+http.Error(w, msg, http.StatusNotFound)
+```
+
+net/http 包提供了一个请求多路器 `ServeMux` 来简化 URL 和 handlers 的联系（路由映射）。一个 ServeMux 将一批 `http.Handler` 聚集到一个单一 `http.Handler` 中。
+
+```go
+func main() {
+    mux := http.NewServeMux()
+    mux.Handle("/list", http.HandlerFunc(db.list))
+    mux.Handle("/price", http.HandlerFunc(db.price))
+    log.Fatal(http.ListenAndServe("localhost:8000", mux))
+}
+```
+
+所以 `db.list` 是一个实现了handler类似行为的函数，但是因为它没有方法，所以它不满足 `http.Handler` 接口并且不能直接传给 `mux.Handle`。
+
+语句`http.HandlerFunc(db.list)`是一个转换而非一个函数调用，因为`http.HandlerFunc`是一个类型。它有如下的定义：
+
+```go
+package http
+type HandlerFunc func(w ResponseWriter, r *Request)
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
+    f(w, r)
+}
+```
+
+因为handler通过这种方式注册非常普遍，ServeMux有一个方便的HandleFunc方法，它帮我们简化handler注册代码成这样：
+
+```go
+mux.HandleFunc("/list", db.list)
+mux.HandleFunc("/price", db.price)
+```
+
+为了方便，net/http包提供了一个全局的ServeMux实DefaultServerMux和包级别的`http.Handle`和`http.HandleFunc`函数。现在，为了使用DefaultServeMux作为服务器的主handler，我们不需要将它传给ListenAndServe函数；nil值就可以工作。
+
+使用包级别的 `http.HandleFunc` 注册路由：
+
+```go
+func main() {
+    db := database{"shoes": 50, "socks": 5}
+    http.HandleFunc("/list", db.list)
+    http.HandleFunc("/price", db.price)
+    log.Fatal(http.ListenAndServe("localhost:8000", nil))
+}
+```
+
+最后，web服务器在一个新的协程 Goruntine 中调用每一个 handler，所以当 handler 获取其它协程的共享变量时一定要使用预防措施比如 **锁机制**。
+
+### Error 接口
+
+```go
+type error interface {
+    Error() string
+}
+```
+
+创建一个 error 最简单的方法就是 `error.New` 函数，其实整个 error 包只有 4 行：
+
+```go
+package errors
+func New(text string) error { return &errorString{text} }
+type errorString struct { text string }
+func (e *errorString) Error() string { return e.text }
+```
+
+指针类型`*errorString`满足error接口而非`errorString`类型，承载`errorString` 的类型是一个结构体而非一个字符串，所以每个 New 函数的调用都分配了一个独一无二的错误示例。
+
+```go
+fmt.Println(errors.New("EOF") == errors.New("EOF")) // "false"
+```
+
+有一个方便的封装函数 `fmt.Errorf`，允许对错误信息进行字符串格式化 ：
+
+```go
+package fmt
+import "errors"
+func Errorf(format string, args ...interface{}) error {
+    return errors.New(Sprintf(format, args...))
+}
+```
+

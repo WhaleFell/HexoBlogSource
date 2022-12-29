@@ -106,13 +106,98 @@ func Println(a ...interface{}) (n int,err error)
 
 ## 接口断言
 
-前面说过，因为空接口 `interface` 没有定义任何函数，因此 `Go` 中**所有类型都实现了空接口**。当一个函数的形参是 `interface{}` ,那么在函数中，需要对形参**进行断言**，从而**得到它的真实类型**。
+前面说过，因为空接口 `interface` 没有定义任何函数，因此 `Go` 中 **所有类型都实现了空接口**。当一个函数的形参是 `interface{}` ，那么在函数中，需要对形参 **进行断言**，从而 **得到它的真实类型**。
 
 ![](http://pic.lskyl.xyz/blog/Golang/interface-15.png-picsmall)  
 
-方法一:  
-![](http://pic.lskyl.xyz/blog/Golang/interface-16.png-picsmall)  
-方法二:  
+方法一:  通过 `x.(T)` 的方式断言
+
+```go
+var w io.Writer
+w = os.Stdout
+f := w.(*os.File)      // success: f == os.Stdout
+c := w.(*bytes.Buffer) // panic: interface holds *os.File, not *bytes.Buffer
+```
+
+**如果断言的类型T是一个接口类型**，然后类型断言检查是否x的动态类型满足T。如果这个检查成功了，动态值没有获取到；这个结果仍然是一个有相同动态类型（type）和值部分（value）的接口值，但是结果为类型T。
+
+用于判断 `x.(T)` x 是否满足 T 接口。
+
+```go
+var w io.Writer // io.Writer 接口
+w = os.Stdout // os.Stdout接口 实现了 io.Writer 接口
+rw := w.(io.ReadWriter) // success: *os.File has both Read and Write
+w = new(ByteCounter)
+rw = w.(io.ReadWriter) // panic: *ByteCounter has no Read method
+```
+
+如果一个类型满足下面的这个接口，然后 `WriteString(s)` 方法就必须和`Write([]byte(s))`有相同的效果。
+
+Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用`[]byte(...)`进行转换。**这个转换分配内存并且做一个拷贝**，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。
+
+我们知道在这个程序中的 w 变量持有的动态类型也有一个**允许字符串高效写入**的 `WriteString` 方法；这个方法会避免去分配一个临时的拷贝。
+
+许多满足io.Writer接口的重要类型同时也有 WriteString 方法，包括`*bytes.Buffer`，`*os.File`和`*bufio.Writer`。
+
+我们不能对任意实现 `io.Writer` 接口类型的变量w，假设它也拥有`WriteString` 方法。但是我们可以定义一个只有这个方法的新接口并且使用类型断言来检测是否 w 的动态类型满足这个新接口。
+
+```go
+func writeString(w io.Writer, s string) (n int, err error) {
+    // 定义一个实现了 WriteString 方法的接口
+    type stringWriter interface {
+        WriteString(string) (n int, err error)
+    }
+    // 检查 w 是否实现了 WriteString 方法
+    if sw, ok := w.(stringWriter); ok {
+        // 实现了就调用这个方法
+        return sw.WriteString(s) // avoid a copy
+    }
+    // 没有实现 WriteString 方法就回退到使用 w.Write 方法
+    return w.Write([]byte(s)) // allocate temporary copy
+}
+```
+
+它太有用了以致于标准库将它作为 `io.WriteString` 函数提供。**这是向一个 io.Writer 接口写入字符串的推荐方法。**
+
+上面的 writeString 函数使用一个**类型断言来获知一个普遍接口类型的值是否满足一个更加具体的接口类型**；并且如果满足，它会使用这个更具体接口的行为。
+
+**如果断言操作的对象是一个nil接口值**，那么不论被断言的类型是什么这个类型断言都会失败。
+
+![通过x.(T)方式断言](http://pic.lskyl.xyz/blog/Golang/interface-16.png-picsmall)  
+
+```go
+var w io.Writer = os.Stdout
+f, ok := w.(*os.File)      // success:  ok, f == os.Stdout
+b, ok := w.(*bytes.Buffer) // failure: !ok, b == nil
+
+// 更简洁的结构
+if f, ok := w.(*os.File); ok {
+    // ...use f...
+}
+```
+
+当类型断言的操作对象是一个变量时，if 内层其实是声明了一个同名的新的本地变量，外层原来的 w 不会被改变。
+
+```go
+if w, ok := w.(*os.File); ok {
+    // ...use w...
+}
+```
+
+方法二：使用 `switch...case...` 语句，断言类型分支。
+
+一个类型分支隐式的创建了一个词法块，因此新变量 x 的定义不会和外面块中的 x 变量冲突。每一个 case 也会隐式的创建一个单独的词法块。
+
+```go
+switch x := x.(type) {
+    case nil:       // ...
+    case int, uint: // ...
+    case bool:      // ...
+    case string:    // ...
+    default:        // ...
+}
+```
+
 ![](http://pic.lskyl.xyz/blog/Golang/interface-17.png-picsmall)  
 
 ## 接口值
@@ -342,3 +427,8 @@ func Errorf(format string, args ...interface{}) error {
 }
 ```
 
+[详解 Go 语言的 rune 类型](https://www.cnblogs.com/cheyunhua/p/16007219.html)
+
+## 建议
+
+当设计一个新的包时，小白 Gopher 总是先创建一套接口，然后再定义一些满足它们的具体类型。这种方式的结果就是有很多的接口，它们中的每一个仅只有一个实现。**接口只有当有两个或两个以上的具体类型必须以相同的方式进行处理时才需要**。

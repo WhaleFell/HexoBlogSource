@@ -49,7 +49,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 1. `add.go` 中的Add函数名首字母必须大写，只有大写的才是Public权限，外面的包才能访问，否则只能自己文件夹下代码才能访问。
 2. `add.go` 的改名为addyyy.go也可以，查找add包的时候，**并不会根据add.go这个文件名来查找**。而是根据文件夹名来查找，一个文件夹下的所有文件都属于同一个包。所以函数变量自然不能重复。
 3. `main` 中调用 `add.Add(1,2)` 时，add是包， 必须跟`add.go`中的`package`处的包名一致，否则报错。
-4. import后， 根据`GOROOT`和`GOPATH`查找对应的包，**src这个目录名可不是能随便取的**。
+4. import 后， 根据`GOROOT`和`GOPATH`查找对应的包，**src这个目录名可不是能随便取的**。
 
 ### 引用第三方项目
 
@@ -61,7 +61,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 
 1. 使用 go mod 仓库中可以不用再上传依赖代码包，防止代码仓库过大浪费以及多个项目同时用包时的浪费。
 2. 可以管理引用包的版本，这一点是gopath（src模式）和 `vendor` 做不到的
-3. 如果依赖 `gopath` 不同项目如果引用了同一个软件包的不同版本，就会造成编译麻烦
+3. 如果依赖 `GOPATH` 不同项目如果引用了同一个软件包的不同版本，就会造成编译麻烦
 
 **gopath是go之前的默认策略，每个项目在运行时都要严格放在`src`目录下，而go mod不用。**
 
@@ -72,6 +72,7 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 - 项目内会生成一个 `go.mod` 文件，列出包依赖。
 - 第三方包会准确的指定版本号。
 - 对于已经转移的包，可以用 `replace` 申明替换，不需要改代码。
+- 在使用模块的时候，GOPATH 是无意义的，不过它还是会把下载的依赖储存在 `$GOPATH/pkg/mod` 中，也会把 go install 的结果放在 `$GOPATH/bin` 中。
 
 ### 配置
 

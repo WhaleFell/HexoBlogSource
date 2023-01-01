@@ -71,4 +71,71 @@ chlose(ch)
 
 ### 不带缓存的 Channels
 
-[[8.4.1. 不带缓存的Channels](https://gopl-zh.github.io/ch8/ch8-04.html#841-不带缓存的channels)] 未完待续。。。。
+一个无缓冲的 channel 的发送操作会导致发送者的 goroutine 堵塞，直到另一个 goruntine 在相同的 channel 上执行接收操作，堵塞才会解除，反之亦然。
+
+当发送的值通过 channel 成功传输之后，两个 goroutine 才可以继续执行后面的语句。
+
+```go
+func main() {
+    // 建立 tcp 服务器
+    conn, err := net.Dial("tcp", "localhost:8000")
+    if err != nil {
+        log.Fatal(err)
+    }
+    // 信息事件
+    done := make(chan int)
+    go func() {
+        io.Copy(os.Stdout, conn)
+        log.Println("done")
+        done <- 1 // 发送一个 goruntine 已经完成的信息
+    }()
+    mustCopy(conn, os.Stdin)
+    conn.Close()
+    <-done // 等待后台 goruntine 完成
+}
+```
+
+### 检查 Channels 是否关闭
+
+接收 channels 的语句可以写成：第二个结果的一个 bool ，ture表示成功从 channels 接收到值，false 表示 channels 已经被关闭并且里面没有值可接收。
+
+```go
+// 方法一
+x, ok := <-channel
+if !ok {
+    // channel error do something....
+}
+// 方法二
+if x, ok := <-channel;ok{
+    // channel succues do something.....
+}
+```
+
+因为这种处理模式很常见，Go 语言的 range 循环可以直接在 channels 上面迭代，它依次从 channel 接收数据，当 channel 被关闭并且没有值可接收时跳出循环。
+
+```go
+for x := range channel {
+    // rev channel to x and do something....
+}
+// 当 channel 被关闭时会主动跳出循环
+close(channel)
+```
+
+不管一个channel是否被关闭，当它没有被引用时将会被Go语言的垃圾自动回收器回收。所以不需要显性的 `close(channel)`
+
+不要将关闭一个打开文件的操作和关闭一个channel操作混淆。**对于每个打开的文件，都需要在不使用的时候调用对应的Close方法来关闭文件。**
+
+### 单方向的 channel
+
+当一个 channel **作为一个函数参数** 时，它一般总是被专门用于只发送或者只接收。这是为了防止滥用，可以定义只接收或只发送的 channel ，这种限制将在编译期检测。
+
+```go
+chan <- int // 只发送 int 的 channel
+<-chan int // 只接收 int 的 channel
+```
+
+close channel 只用于停止向 channel 发送新数据。但不能阻止接收 channel 的数据。所以 **对一个只接受的 channel 调用 close 将引起编译错误**。
+
+### 带缓存的 channels
+
+[带缓存的channels](https://gopl-zh.github.io/ch8/ch8-04.html#844-%E5%B8%A6%E7%BC%93%E5%AD%98%E7%9A%84channels) 未完待续。。。。

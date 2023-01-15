@@ -136,6 +136,20 @@ chan <- int // 只发送 int 的 channel
 
 close channel 只用于停止向 channel 发送新数据。但不能阻止接收 channel 的数据。所以 **对一个只接受的 channel 调用 close 将引起编译错误**。
 
-### 带缓存的 channels
+```go
+channel := make(chan int)
+// 单方向的 channel 通常用于函数参数
+func inChannel(in <-chan int) // 仅接收
+func outChannel(out chan<-int) // 仅发送
+```
 
-[带缓存的channels](https://gopl-zh.github.io/ch8/ch8-04.html#844-%E5%B8%A6%E7%BC%93%E5%AD%98%E7%9A%84channels) 未完待续。。。。
+调用 `inChannel` 时 in 的类型将隐式地从 chan int 转换成 chan<- int。任何双向 channel 向单向 channel 变量的赋值操作都将导致该隐式转换。但是反之不能将单向 channel 赋值给 双向 channel
+
+### 带缓存 (*buffer*) 的 channels
+
+```go
+ch = make(chan string, 3)
+```
+
+
+

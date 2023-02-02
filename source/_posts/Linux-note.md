@@ -196,3 +196,148 @@ remote_port = 57722
 use_encryption = false
 use_compression = true
 ```
+
+## Shell 相关
+
+### SSH 链接超时设置
+
+修改 server 端的 `/etc/ssh/sshd_config`
+
+```shell
+# server每隔60秒发送一次请求给client，然后client响应，从而保持连接
+ClientAliveInterval 60 
+
+# server发出请求后，客户端没有响应得次数达到3，就自动断开连接，正常情况下，client不会不响应
+ClientAliveCountMax 3 
+```
+
+### SSH 配置密钥登陆
+
+客户端运行
+
+```shell
+# WAY1
+ssh-copy-id username@remote_host
+
+# WAY2
+mkdir -p ~/.ssh
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+# WAY3
+scp ./file root@192.168.1.1:/path_on_host/
+```
+
+编辑 /etc/ssh/sshd_config 文件，进行如下设置：
+
+```shell
+RSAAuthentication yes
+PubkeyAuthentication yes
+```
+
+重启 ssh 服务：
+
+```shell
+service sshd restart
+```
+
+### ZSH 终端美化
+
+安装
+
+```shell
+cd ~
+sudo apt-get install git zsh wget
+sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+
+# 从马云安装
+export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git 
+sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+
+# 原Github安装
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 解决 OpenWRT git 异常
+opkg update  
+opkg remove git  
+opkg install git-http  
+opkg install ca-bundle
+
+# 解决收手机字体问题
+sudo apt-get install fonts-powerline
+
+# 安装插件
+cd ~/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+
+# 编辑配置
+vim ~/.zshrc
+ZSH_THEME="agnoster" or "ys"
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions sudo)
+
+# 刷新
+source ~/.zshrc
+
+# 设置 ZSH 为默认 shell
+cat /etc/shells
+chsh -s /bin/zsh
+
+# OpenWRT 设置 ZSH 为默认 shell
+which zsh && sed -i -- 's:/bin/ash:'`which zsh`':g' /etc/passwd
+```
+
+## Docker
+
+### 安装
+
+国内加速: [https://get.daocloud.io/](https://get.daocloud.io/)
+
+### Image 各种镜像
+
+#### Portainer 管理 UI
+
+```shell
+docker run -d -p 9000:9000 \
+--name portainer \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+portainer/portainer:latest
+```
+
+#### Frps 服务端
+
+```shell
+docker run --restart=always --network host -d \
+-v /etc/frp/frps.ini:/etc/frp/frps.ini \
+--name frps snowdreamtech/frps
+```
+
+frps.ini
+
+```ini
+[common]
+bind_addr = 0.0.0.0
+bind_port = 37700
+bind_udp_port = 37711
+
+token = lovecyx
+
+dashboard_port = 37710
+dashboard_user = admin
+dashboard_pwd = lovehyy
+
+max_pool_count = 9999
+max_ports_per_client = 0
+
+tls_only = true
+allow_ports = 30000-50000
+```
+
+#### 到服务器的网速测试
+
+```shell
+sudo docker run --restart=unless-stopped \
+--name openspeedtest \
+-d -p 3000:3000 \
+-p 3001:3001 openspeedtest/latest
+```

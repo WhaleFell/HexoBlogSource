@@ -18,6 +18,12 @@ banner_img:
 > 参考：[WhaleFell/vimrc](https://github.com/WhaleFell/vimrc/blob/main/.vimrc)
 > raw: [https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc](https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc)
 
+设置中文字符集
+
+```shell
+dpkg-reconfigure locales
+```
+
 在用户目录下创建配置。
 
 ```shell

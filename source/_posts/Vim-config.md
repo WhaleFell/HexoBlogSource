@@ -66,7 +66,7 @@ set showcmd
 set ruler
 
 " 粘贴时保持格式
-set paste
+set nopaste
 
 " 高亮显示匹配的括号
 set showmatch

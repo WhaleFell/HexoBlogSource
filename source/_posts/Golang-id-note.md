@@ -1,5 +1,5 @@
 ---
-title: Golang 学习笔记——go标识符-关键字-命名规则
+title: Golang 学习笔记——标识符-关键字-命名规则
 date: 2022-04-20 18:30:48
 updated: 2022-04-20 18:30:48
 categories: Golang
@@ -9,7 +9,7 @@ index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
 
-# go标识符-关键字-命名规则
+# Go标识符-关键字-命名规则
 
 ## 标识符
 

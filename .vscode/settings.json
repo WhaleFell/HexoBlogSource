@@ -16,5 +16,6 @@
             "command": "extension.executeFile",
             "priority": 3.5
         }
-    ]
+    ],
+    "commentTranslate.multiLineMerge": true
 }

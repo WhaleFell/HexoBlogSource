@@ -4,7 +4,8 @@ date: 2022-12-11 15:51:48
 updated: 2022-12-11 15:59:48
 categories: Hexo
 tags: [Hexo, Blog]
-description: 
+sticky: 100
+description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。 
 # index_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 # banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 ---
@@ -14,6 +15,8 @@ description:
 于 2022/12/11 重新拾起荒废已久的 Hexo 博客，就当是给自己的笔记、想法一个家叭。还是得规范一下博客写作的格式方便自己收纳的。
 
 ## 头注
+
+> reference: [Fluid 主题文档](https://fluid-dev.github.io/hexo-fluid-docs/guide/)
 
 头注必须注明 `title` 、`data` 、`categories`(分类)、`tags`(标签)，其中分类和标签需要统一使用英文字符，`post_/` 目录下的 `markdown` 文件名需要使用英文，`hexo` 会根据文件名生成路径。  
 
@@ -32,10 +35,16 @@ banner_img:
 ---
 ```
 
+该参数可以设置置顶文章，sticky 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。
+
+```text
+sticky: 100
+```
+
 ## Blog banner img 生成
 
 使用 [CoverView](https://coverview.vercel.app/) 设计博客 banner 图片，统一头图风格！
 
 ## MarkDown 语法
 
-## 插入图片并储存在 七牛云OSS+坚果云 上
+## 插入图片并储存在 七牛云OSS 上

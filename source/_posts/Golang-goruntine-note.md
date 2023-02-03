@@ -150,6 +150,3 @@ func outChannel(out chan<-int) // 仅发送
 ```go
 ch = make(chan string, 3)
 ```
-
-
-

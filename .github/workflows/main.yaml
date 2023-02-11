@@ -36,9 +36,10 @@ jobs:
           git config --global user.email "whalefall9420@outlook.com"
           git config --global user.name "WhaleFell"
           npm install hexo-cli yarn -g
-          npm update --save hexo-theme-fluid
           npm install --save hexo-generator-feed
-          git submodule update --remote
+          wget "https://github.com/ChrAlpha/hexo-theme-cards/archive/refs/tags/v1.4.0.zip" -O temp.zip
+          unzip -o temp.zip -d themes/cards
+          rm temp.zip
 
       - name: Deploy
         run: |

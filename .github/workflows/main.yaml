@@ -37,7 +37,7 @@ jobs:
           git config --global user.name "WhaleFell"
           npm install hexo-cli yarn -g
           # npm update --save hexo-theme-fluid
-          npm install hexo-generator-feed
+          npm install --save hexo-generator-feed
           git submodule update --remote
 
       - name: Deploy

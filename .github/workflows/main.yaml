@@ -36,7 +36,9 @@ jobs:
           git config --global user.email "whalefall9420@outlook.com"
           git config --global user.name "WhaleFell"
           npm install hexo-cli yarn -g
-          npm update --save hexo-theme-fluid
+          # npm update --save hexo-theme-fluid
+          npm install hexo-generator-feed
+          git submodule update --remote
 
       - name: Deploy
         run: |

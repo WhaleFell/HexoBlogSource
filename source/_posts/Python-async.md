@@ -5,7 +5,7 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python 异步协程百万并发
-index_img: http://pic.lskyl.xyz/blog/img/Python-Asyncio-banner.png-picsmall
+thumbnail: http://pic.lskyl.xyz/blog/img/Python-Asyncio-banner.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/img/Python-Asyncio-banner.png-picsmall
 excerpt: Python 异步百万并发全文最详细笔记！！
 ---

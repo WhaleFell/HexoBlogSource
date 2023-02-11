@@ -5,7 +5,7 @@ updated: 2022-04-20 18:30:48
 categories: Golang
 tags: [Golang, Coding]
 description: 
-index_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ---
 

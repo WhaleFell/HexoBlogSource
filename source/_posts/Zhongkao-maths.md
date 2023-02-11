@@ -5,7 +5,7 @@ updated: 2021-06-28 19:37:48
 categories: Study
 tags: [Maths, Study]
 description: 
-index_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20210629014311.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 ---
 

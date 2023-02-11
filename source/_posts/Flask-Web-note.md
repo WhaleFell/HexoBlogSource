@@ -5,7 +5,7 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Flask, Coding]
 description: 
-index_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20210818152255.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
 ---
 

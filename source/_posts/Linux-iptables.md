@@ -5,7 +5,7 @@ updated: 2022-12-25 22:59:48
 categories: Linux
 tags: [Network, Linux]
 description: 
-index_img: http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall
+thumbnail: http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/img/Iptables-banner.png-picsmall
 ---
 # Linux iptables 命令笔记

@@ -6,7 +6,7 @@ categories: Hexo
 tags: [Hexo, Blog]
 sticky: 100
 description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。 
-# index_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
+# thumbnail: http://pic.lskyl.xyz/blog/old/20210629014311.png
 # banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 ---
 
@@ -30,7 +30,7 @@ updated: 2022-12-11 15:59:48
 categories: Hexo
 tags: [Hexo, Blog]
 description: Hexo 博客写作规范约定
-index_img: 
+thumbnail: 
 banner_img: 
 ---
 ```

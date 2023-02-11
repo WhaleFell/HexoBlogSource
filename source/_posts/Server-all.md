@@ -4,7 +4,7 @@ date: 2022-03-20 19:37:48
 updated: 2022-03-20 19:37:48
 categories: Server
 tags: [Server, Linux]
-index_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
+thumbnail: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
 banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
 ---
 # 服务器备忘录
@@ -88,7 +88,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 
    Desc：qBittorrent download
 
-   command：[source](#run-qBittorrent-command)
+   command：[source](#run-qbittorrent-command)
 
 3. Port：18888
 

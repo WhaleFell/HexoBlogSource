@@ -5,7 +5,7 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
-index_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20210630201524.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 ---
 

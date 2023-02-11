@@ -5,7 +5,7 @@ updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
 description: 
-index_img: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall
+thumbnail: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall
 banner_img: http://pic.lskyl.xyz//blog/img/Linux-Operation-Note-Banner.png-picsmall
 ---
 # Linux Operation Note

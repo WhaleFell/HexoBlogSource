@@ -5,7 +5,7 @@ updated: 2021-08-18 19:37:48
 categories: Python,GUI
 tags: [Python, Coding, GUI]
 description: Python Tkinter 是一个 Python 自带GUI包，十分轻量。
-index_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20210630201524.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 ---
 

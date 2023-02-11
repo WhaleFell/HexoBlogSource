@@ -5,7 +5,7 @@ updated: 2022-12-30 22:16:49
 categories: 无线电
 tags: [无线电, UV5R, HAM, 火腿]
 description: 
-index_img: 
+thumbnail: 
 banner_img: 
 ---
 # HAM无线电初识——UV5R手台使用

@@ -5,7 +5,7 @@ updated: 2021-12-19 19:37:48
 categories: Linux
 tags: [WKY, Linux]
 description: 
-index_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20220329204745.png
 banner_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
 ---
 

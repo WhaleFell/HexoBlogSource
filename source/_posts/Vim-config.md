@@ -4,7 +4,7 @@ date: 2023-01-29 1:37:48
 updated: 2023-01-29 1:37:48
 categories: Linux
 tags: [Vim, Linux]
-index_img: 
+thumbnail: 
 banner_img: 
 ---
 

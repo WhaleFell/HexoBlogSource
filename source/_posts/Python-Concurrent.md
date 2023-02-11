@@ -5,7 +5,7 @@ updated: 2021-06-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python并发编程(多线程,多进程,多协程)
-index_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
+thumbnail: http://pic.lskyl.xyz/blog/old/20210630201524.png
 banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
 ---
 

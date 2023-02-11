@@ -5,7 +5,7 @@ updated: 2022-08-11 15:59:48
 categories: GFW
 tags: [GFW, Freedom]
 description: 
-index_img: http://pic.lskyl.xyz/blog/img/Freedom-network-banner.png-picsmall
+thumbnail: http://pic.lskyl.xyz/blog/img/Freedom-network-banner.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/img/Freedom-network-banner.png-picsmall
 ---
 # 自由上网指北——21世纪网民天赋的权力

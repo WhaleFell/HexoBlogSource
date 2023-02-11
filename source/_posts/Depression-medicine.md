@@ -5,14 +5,13 @@ updated: 2021-06-18 19:37:48
 categories: Depression
 tags: [Depression, Medicine]
 description: 抑郁症所有用药对照表
-index_img: http://pic.lskyl.xyz/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
+thumbnail: http://pic.lskyl.xyz/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
 banner_img: http://pic.lskyl.xyz/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
 ---
 
 # 抑郁症常用药物对照表
 
 利用 Python 爬取,项目地址:[WhaleFell/dxyMedicineSpider](https://github.com/WhaleFell/dxyMedicineSpider)
-
 
 ## 正文
 

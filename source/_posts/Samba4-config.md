@@ -4,7 +4,7 @@ date: 2022-12-25 19:37:48
 updated: 2022-12-25 19:37:48
 categories: Server
 tags: [Server, Linux]
-index_img: http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall
+thumbnail: http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall
 banner_img: http://pic.lskyl.xyz/blog/img/Smb-banner.png-picsmall
 ---
 # Samba4 服务器配置最佳实践

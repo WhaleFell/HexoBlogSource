@@ -5,7 +5,7 @@ updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
 description: 
-index_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
+thumbnail: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 banner_img: http://pic.lskyl.xyz/blog/old/20210619154345.jpg
 ---
 

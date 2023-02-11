@@ -101,9 +101,19 @@ exclude:
 ignore:
 
 # Extensions
-## Plugins: https://hexo.io/plugins/
+Plugins: 
+  # npm install hexo-generator-feed RSS 订阅插件
+  # npm install git+ssh://git@github.com:CodeFalling/hexo-asset-image.git
+  # https://cosysn.github.io/2017/07/17/hexo-chinese-unintelligible-text/ 乱码问题
+  - hexo-generator-feed
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: cards
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -4,7 +4,7 @@ date: 2023-01-11 1:37:48
 updated: 2023-01-11 1:37:48
 categories: Study
 tags: [Study, Chinese]
-index_img: 
+thumbnail: 
 banner_img: 
 ---
 

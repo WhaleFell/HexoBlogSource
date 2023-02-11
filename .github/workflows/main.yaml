@@ -37,9 +37,7 @@ jobs:
           git config --global user.name "WhaleFell"
           npm install hexo-cli yarn -g
           npm install --save hexo-generator-feed
-          wget "https://github.com/ChrAlpha/hexo-theme-cards/archive/refs/tags/v1.4.0.zip" -O temp.zip
-          unzip -o temp.zip -d themes/cards
-          rm temp.zip
+          git clone https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards
 
       - name: Deploy
         run: |

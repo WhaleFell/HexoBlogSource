@@ -46,6 +46,7 @@ jobs:
           hexo deploy
           git add .
           git commit -m "Auto deploy" || ! echo '🈲 Repo commit error' || exit 0
+          rm -rf themes/cards
       
       # 提交更改
       - name: Push changes 

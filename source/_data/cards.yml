@@ -88,9 +88,9 @@ cover:
 
 highlight:
   enable: true
-  line_number: false
+  line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: '    '
   wrap: true
   hljs: false
 prismjs:
@@ -416,6 +416,7 @@ footer:
 # 图片懒加载插件
 lazyload:
   enable: true
+  onlypost: false
   loadingImage: https://pic.lskyl.xyz/blog/loading.gif
 
 # 站内搜索插件

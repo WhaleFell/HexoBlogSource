@@ -48,3 +48,9 @@ sticky: 100
 ## MarkDown 语法
 
 ## 插入图片并储存在 七牛云OSS 上
+
+## 本地部署
+
+```shell
+hexo generate --watch --deploy
+```

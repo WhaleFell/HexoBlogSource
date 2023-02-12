@@ -17,10 +17,10 @@ url: https://lskyl.xyz/
 # permalink: :year/:month/:day/:title/
 # permalink_defaults:
 # 根据 避免过长的文件路径
-# https://cloud.tencent.com/developer/article/1952241
+# https://hexo.io/zh-cn/docs/permalinks
 permalink: :title/
 permalink_defaults:
-  # urlname: :id/
+  default_category: article
 
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -92,13 +92,18 @@ ignore:
 Plugins: 
   # npm install hexo-generator-feed RSS 订阅插件
   # npm install git+ssh://git@github.com:CodeFalling/hexo-asset-image.git
-  # https://cosysn.github.io/2017/07/17/hexo-chinese-unintelligible-text/ 乱码问题
   - hexo-generator-feed
+  - hexo-permalink-pinyin
 
 feed:
   type: atom
   path: atom.xml
   limit: 20
+
+permalink_pinyin:
+  enable: true             # Enable this plugin
+  separator: '-'           # Separator of the slug, default: '-'
+  exclude:    # Regex for which post should skip
 
 ## Themes: https://hexo.io/themes/
 theme: cards

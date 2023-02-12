@@ -1,5 +1,3 @@
----
-layout: links
 # 友情链接
 links:
     - name: 'zikin'
@@ -42,4 +40,3 @@ links:
       url: https://blog.fwder.cn
       avatar: https://cdn.fwder.cn/images/header.jpg
     
----

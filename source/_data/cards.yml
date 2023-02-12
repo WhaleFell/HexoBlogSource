@@ -57,6 +57,8 @@ navbar:
       url: /tags/
     - name: 归档
       url: /archives/
+    - name: 主题
+      url: /categories/
     - name: 友链
       url: /friends/
     - name: 关于
@@ -88,7 +90,7 @@ cover:
 
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: '    '
   wrap: true
@@ -178,13 +180,13 @@ meta:
 
   # 文章过时提醒
   expire: 
-    enable: true
+    enable: false
     duration: 120  # 超过此天数则显示过期提醒
 
   # 文章自动摘要
   auto_excerpt: 
     enable: true
-    length: 150
+    length: 300
 
   # 文章目录
   toc: 

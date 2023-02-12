@@ -36,7 +36,8 @@ jobs:
           git config --global user.email "whalefall9420@outlook.com"
           git config --global user.name "WhaleFell"
           npm install hexo-cli yarn -g
-          npm install --save hexo-generator-feed
+          npm install --save hexo-generator-feed  # rss 订阅
+          npm install hexo-permalink-pinyin --save  # 拼音
           rm -rf themes/cards
           git clone https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards
 

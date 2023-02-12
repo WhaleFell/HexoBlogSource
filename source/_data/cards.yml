@@ -61,6 +61,8 @@ navbar:
       url: /categories/
     - name: 友链
       url: /friends/
+    - name: 说说
+      url: /ss/
     - name: 关于
       url: /about/
     - name: RSS

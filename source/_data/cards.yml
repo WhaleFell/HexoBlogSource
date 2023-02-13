@@ -182,7 +182,7 @@ meta:
 
   # 文章过时提醒
   expire: 
-    enable: false
+    enable: true
     duration: 120  # 超过此天数则显示过期提醒
 
   # 文章自动摘要

@@ -61,8 +61,6 @@ navbar:
       url: /categories/
     - name: 友链
       url: /friends/
-    - name: 说说
-      url: /ss/
     - name: 关于
       url: /about/
     - name: RSS
@@ -82,7 +80,7 @@ cover:
   avatar: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
   
   # sitename/avatar 下方的一句话介绍
-  description: 教堂的白鸽会不会亲吻乌鸦?
+  description: 于无常处知有情,于有情处知众生.
 
 
 

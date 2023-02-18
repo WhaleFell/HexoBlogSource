@@ -90,19 +90,6 @@ cover:
 # 样式自定义
 # ---------------------------------------------------------------
 
-highlight:
-  enable: true
-  line_number: false
-  auto_detect: false
-  tab_replace: '    '
-  wrap: true
-  hljs: false
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: false
-  tab_replace: ''
-
 style: 
 
   # 颜色配置
@@ -133,19 +120,19 @@ style:
   # highlight.js 代码高亮
   hljs: 
     # 默认代码高亮主题
-    default: 
+    default: atom-one-light
 
     # 暗色代码高亮主题
-    darkmode: 
+    darkmode: atom-one-dark
 
   # prismjs 代码高亮
   prismjs: 
 
     # 默认代码高亮主题
-    default: 
+    # default: prism
 
     # 暗色代码高亮主题
-    darkmode: 
+    # darkmode: prism-tomorrow
 
 
 
@@ -378,7 +365,7 @@ footer:
   statistics: 
 
     # 选择 LeanCloud/busuanzi 为网站计数。如果你完全不想启用，将 `use` 项留空即可
-    use:  # leancloud | busuanzi
+    use: busuanzi # leancloud | busuanzi
 
     # 如果选择使用 LeanCloud，则需完善下面的配置项
     leancloud: 

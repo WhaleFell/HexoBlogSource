@@ -24,19 +24,6 @@ description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规�
 
 md 文件名遵从 `Key-word.md` 格式，单词之间用 `-` 分隔，首字母大写。
 
-<!-- ```md
----
-title: Hexo 博客写作规范约定
-date: 2022-12-11 15:51:48
-updated: 2022-12-11 15:59:48
-categories: Hexo
-tags: [Hexo, Blog]
-description: Hexo 博客写作规范约定
-thumbnail: 
-banner_img: 
----
-``` -->
-
 ```md
 ---
 title: Hexo 博客写作规范约定

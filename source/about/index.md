@@ -1,5 +1,5 @@
 ---
-title: about
+title: About
 date: 2021-07-29 01:43:47
 layout: about
 comment: true

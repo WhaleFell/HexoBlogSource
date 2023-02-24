@@ -1,5 +1,6 @@
 ---
 layout: links
+title: 友链 | Friends Link
 # 友情链接
 links:
     - name: 'zikin'

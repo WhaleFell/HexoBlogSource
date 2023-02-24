@@ -4,7 +4,7 @@ date: 2018-12-11 15:51:48
 updated: 2018-12-11 15:59:48
 categories: Hexo
 tags: [Hexo, Blog]
-sticky: 100
+# sticky: 100
 description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。 
 # thumbnail: http://pic.lskyl.xyz/blog/old/20210629014311.png
 ---
@@ -37,6 +37,12 @@ thumbnail: http://....jpg
 ```
 
 根据时间排序文章.
+
+该参数可以设置置顶文章，sticky 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。
+
+```text
+sticky: 100
+```
 
 ## Blog banner img 生成
 

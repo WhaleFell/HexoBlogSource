@@ -108,16 +108,43 @@ Plugins:
   # npm install git+ssh://git@github.com:CodeFalling/hexo-asset-image.git
   - hexo-generator-feed
   - hexo-permalink-pinyin
+  - hexo-neat
 
+# RSS
 feed:
   type: atom
   path: atom.xml
   limit: 20
 
+# 拼音
 permalink_pinyin:
   enable: true             # Enable this plugin
   separator: '-'           # Separator of the slug, default: '-'
   exclude:    # Regex for which post should skip
+
+# 代码压缩
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/index.js'
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 ## Themes: https://hexo.io/themes/
 theme: cards

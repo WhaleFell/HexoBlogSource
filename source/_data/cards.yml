@@ -376,7 +376,7 @@ footer:
       enable: true
       before_text: '' # 展示在数据前的内容，支持 HTML
       after_text: Viewers  # 展示在数据后的内容，支持 HTML
-      divider: '&nbsp;&nbsp;&nbsp;|' # 分隔符，HTML 语法支持
+      divider: '|' # 分隔符，HTML 语法支持
     
     # 全站 PV（Page Views）
     site_pv:

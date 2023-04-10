@@ -11,9 +11,11 @@ description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规�
 
 # Hexo 博客写作规范约定
 
-于 2022/12/11 重新拾起荒废已久的 Hexo 博客，就当是给自己的笔记、想法一个家叭。还是得规范一下博客写作的格式方便自己收纳的。
+于 2023/4/11 因为原域名 [lskyl.xyz](https://lskyl.xyz) 到期了,故把博客域名和oss域名整体迁移到 [whaleluo.top](https://whaleluo.top) 取鲸落之意.其中带 www 前缀 [www.whaleluo.top](https://www.whaleluo.top) 经过 cloudflare 加速,用于某些不能直接访问到 github pages 的场景.
 
 于 2023/2/10 更换了更快的博客主题 **Card** [Card](https://github.com/ChrAlpha/hexo-theme-cards).[主题文档](https://theme-cards.ichr.me/)
+
+于 2022/12/11 重新拾起荒废已久的 Hexo 博客，就当是给自己的笔记、想法一个家叭。还是得规范一下博客写作的格式方便自己收纳的。
 
 ## 头注
 

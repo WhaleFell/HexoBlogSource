@@ -5,8 +5,8 @@ categories: Golang
 updated: 2022-12-17 12:17:48
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 # Golang 解析 JSON 数据
 
@@ -82,7 +82,7 @@ Color 成员的 Tag 还带了一个额外的 omitempty 选项，表示当Go 语�
 
 基于流式的解码器 `json.Decoder`，它可以从一个输入流解码JSON 数据，尽管这不是必须的。如您所料，还有一个针对输出流的 `json.Encoder` 编码对象。  
 
-![流式 JSON 解码器](http://pic.lskyl.xyz//blog/Golang/json-1.png-picsmall)
+![流式 JSON 解码器](http://oss.whaleluo.top//blog/Golang/json-1.png-picsmall)
 
 ```go
 if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {

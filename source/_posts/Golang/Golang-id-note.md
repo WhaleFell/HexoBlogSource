@@ -5,8 +5,8 @@ updated: 2022-04-20 18:30:48
 categories: Golang
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 
 # Go标识符-关键字-命名规则

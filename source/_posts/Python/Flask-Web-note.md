@@ -5,13 +5,13 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Flask, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/old/20210818152255.png
-banner_img: http://pic.lskyl.xyz/blog/old/20210818152255.png
+thumbnail: http://oss.whaleluo.top/blog/old/20210818152255.png
+banner_img: http://oss.whaleluo.top/blog/old/20210818152255.png
 ---
 
 # Flask Web 框架学习笔记
 
-![](http://pic.lskyl.xyz/blog/old/20210818152255.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210818152255.png-picsmall)
 
 ## 1. Flask 初始化参数
 
@@ -317,11 +317,11 @@ def index():
  | |---- views.py
 ```
 
-![蓝图包目录实例](http://pic.lskyl.xyz/blog/old/20210725224412.png-picsmall)
+![蓝图包目录实例](http://oss.whaleluo.top/blog/old/20210725224412.png-picsmall)
 
 #### 循环引用问题
 
-![循环引用问题](http://pic.lskyl.xyz/blog/old/20210725224744.png-picsmall)
+![循环引用问题](http://oss.whaleluo.top/blog/old/20210725224744.png-picsmall)
 
 > 所以导入视图函数要放在 `__init__.py` 文件的最后
 

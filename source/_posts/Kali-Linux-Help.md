@@ -5,11 +5,11 @@ updated: 2021-06-18 22:16:49
 categories: Linux
 tags: [Linux, Kali]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/old/20210619154844.jpg
-banner_img: http://pic.lskyl.xyz/blog/old/20210619154844.jpg
+thumbnail: http://oss.whaleluo.top/blog/old/20210619154844.jpg
+banner_img: http://oss.whaleluo.top/blog/old/20210619154844.jpg
 ---
 
-![Kali](http://pic.lskyl.xyz/blog/old/20210619154844.jpg-picsmall)
+![Kali](http://oss.whaleluo.top/blog/old/20210619154844.jpg-picsmall)
 
 # Kali Linux 漏洞审计 批量扫描 弱密码撞库 教程
 

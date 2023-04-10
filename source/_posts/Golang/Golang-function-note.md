@@ -5,8 +5,8 @@ updated: 2022-05-2 2:17:48
 categories: Golang
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 # go 函数
 
@@ -29,26 +29,26 @@ fmt.Println(hypot(3,4)) // "5"
 
 Go使用控制流机制（如if和 return）处理异常，这使得编码人员能更多的关注错误处理。
 
-![](http://pic.lskyl.xyz/blog/Golang/func-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-2.png-picsmall)  
 
 ## 函数调用过程
 
-![](http://pic.lskyl.xyz/blog/Golang/func-1.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-3.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-4.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-4.png-picsmall)  
 
 ## 函数的参数使用
 
-![](http://pic.lskyl.xyz/blog/Golang/func-5.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-5.png-picsmall)  
 
 ## 实参和形参  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-6.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-6.png-picsmall)  
 
 ## 函数传参  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-7.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-8.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-7.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-8.png-picsmall)  
 
 ## 可变参数
 
@@ -67,42 +67,42 @@ values := []int{1, 2, 3, 4}
 fmt.Println(sum(values...)) // "10"
 ```
 
-![](http://pic.lskyl.xyz/blog/Golang/func-9.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-10.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-9.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-10.png-picsmall)  
 
 ## 参数传递
 
 实参通过值的方式传递，因此函数的 **形参是实参的拷贝** 。对形参进行修改不会影响实参。但是，如果实参包括 **引用类型**，如指针，slice(切片)、map、function、channel 等类型，实参可能会由于函数的间接引用被修改。
 
-![](http://pic.lskyl.xyz/blog/Golang/func-13.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-13.png-picsmall)  
 
 ### 参数的值传递  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-11.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-11.png-picsmall)  
 
 ### 参数的引用传递  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-12.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-12.png-picsmall)  
 
 ## 函数的返回值
 
-![](http://pic.lskyl.xyz/blog/Golang/func-17.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-17.png-picsmall)  
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/func-14.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-15.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-14.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-15.png-picsmall)  
 > 在定义参数返回值的时候已经初始化了.
 
 ### 函数多返回值
 
 如果一个函数将所有的返回值都显示的变量名，那么该函数的 return 语句可以省略操作数。这称之为 bare return。
 
-![](http://pic.lskyl.xyz/blog/Golang/func-16.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-16.png-picsmall)  
 
 ### Return 语句
 
-![](http://pic.lskyl.xyz/blog/Golang/func-18.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-18.png-picsmall)  
 `return`语句：词义"返回"  
 
 1. 一个函数有返回值，那么使用return将返回值返回给调用处
@@ -117,12 +117,12 @@ fmt.Println(sum(values...)) // "10"
 
 ## 函数中变量的作用域
 
-![](http://pic.lskyl.xyz/blog/Golang/func-19.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-19.png-picsmall)  
 > 随着函数的结束,函数内的变量自己会销毁.
 
 ### 全局变量和局部变量
 
-![](http://pic.lskyl.xyz/blog/Golang/func-20.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-20.png-picsmall)  
 > 全局变量 **不支持简短定义的写法**
 >
 > ```go
@@ -132,13 +132,13 @@ fmt.Println(sum(values...)) // "10"
 
 ## 递归函数
 
-![](http://pic.lskyl.xyz/blog/Golang/func-21.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-22.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-21.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-22.png-picsmall)  
 
 递归函数实现 fibonacci 数列(斐波那契数列)
 
-![斐波那契数列](http://pic.lskyl.xyz/blog/Golang/func-23.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-24.png-picsmall)  
+![斐波那契数列](http://oss.whaleluo.top/blog/Golang/func-23.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-24.png-picsmall)  
 
 ## defer(延迟函数)
 
@@ -273,12 +273,12 @@ panic(bailout{})
 
 ### 栈的结构(先进后出!后进先出!)
 
-![](http://pic.lskyl.xyz/blog/Golang/func-25.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-25.png-picsmall)  
 当一个函数有多个延迟调用时，它们被添加到一
 个堆栈中，并Last In First Out(LIFO) **先进后出!后进先出!** 的顺序中执行。
 
-![](http://pic.lskyl.xyz/blog/Golang/func-26.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-27.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-26.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-27.png-picsmall)  
 
 ### defer 注意点
 
@@ -308,22 +308,22 @@ fmt.Println(strings.Map(add1, "Admix")) // "Benjy"
 函数的类型：  
 `func(参数列表的数据类型)(返回值列表的数据类型)`  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-31.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-31.png-picsmall)  
 
 ### 基本类型回顾
 
-![](http://pic.lskyl.xyz/blog/Golang/func-28.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-28.png-picsmall)  
 
 ## 函数的本质
 
-![](http://pic.lskyl.xyz/blog/Golang/func-30.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-30.png-picsmall)  
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/func-29.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/func-29.png-picsmall)
 > "说到底,函数也是一种特殊类型的变量."  
 
-![](http://pic.lskyl.xyz/blog/Golang/func-32.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-32.png-picsmall)  
 
 ## 匿名函数
 
@@ -362,23 +362,23 @@ func main() {
 }
 ```
 
-![](http://pic.lskyl.xyz/blog/Golang/func-36.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-36.png-picsmall)  
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/func-34.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-35.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-34.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-35.png-picsmall)  
 
 ## 回调函数
 
-![](http://pic.lskyl.xyz/blog/Golang/func-41.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-41.png-picsmall)  
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/func-37.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-38.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-39.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-40.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-37.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-38.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-39.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-40.png-picsmall)  
 
 ## 闭包
 
@@ -413,9 +413,9 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")) // 使�
 
 ---
 
-![](http://pic.lskyl.xyz/blog/Golang/func-43.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-42.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/func-44.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-43.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-42.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/func-44.png-picsmall)  
 
 ## 捕获迭代变量
 

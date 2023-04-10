@@ -5,8 +5,8 @@ updated: 2022-05-21 8:30:48
 categories: Golang
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 # Go Type关键字
 
@@ -19,12 +19,12 @@ type 类型名 Typde
 type myint int  //定义了一共 `myint` 类型它是 `int` 类型
 ```
 
-![](http://pic.lskyl.xyz/blog/Golang/type-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/type-2.png-picsmall)  
 
 ## 通过 type 定义函数类型
 
 Go 语言支持 **高阶函数** ,所以可以把函数作为一个函数的返回值,或者一个函数的参数.
-![](http://pic.lskyl.xyz/blog/Golang/type-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/type-1.png-picsmall)  
 
 ## 类型别名
 
@@ -39,8 +39,8 @@ type myint = int
 
 `time` 包下的 `Duration` 类型不是 `main` 包下的类型,所以不是本地类型.不能定义方法.
 
-![](http://pic.lskyl.xyz/blog/Golang/type-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/type-3.png-picsmall)  
 
 ## 在结构体成员嵌入时使用别名
 
-![](http://pic.lskyl.xyz/blog/Golang/type-4.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/type-4.png-picsmall)  

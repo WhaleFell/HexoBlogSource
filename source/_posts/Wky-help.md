@@ -5,8 +5,8 @@ updated: 2021-12-19 19:37:48
 categories: Linux
 tags: [WKY, Linux]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/old/20220329204745.png
-banner_img: http://pic.lskyl.xyz/blog/old/20220329204745.png
+thumbnail: http://oss.whaleluo.top/blog/old/20220329204745.png
+banner_img: http://oss.whaleluo.top/blog/old/20220329204745.png
 ---
 
 # 学校玩客云修复计划

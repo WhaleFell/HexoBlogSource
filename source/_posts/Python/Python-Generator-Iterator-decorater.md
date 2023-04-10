@@ -5,8 +5,8 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
-thumbnail: http://pic.lskyl.xyz/blog/old/20210630201524.png
-banner_img: http://pic.lskyl.xyz/blog/old/20210630201524.png
+thumbnail: http://oss.whaleluo.top/blog/old/20210630201524.png
+banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
 ---
 
 ## 迭代器
@@ -740,7 +740,7 @@ main(wrap_g)  #调用
 
 > 调用方：**调用委派生成器的客户端代码**；即上面的**main调用方函数**
 
-![](http://pic.lskyl.xyz/blog/old/20210814184753.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210814184753.png-picsmall)
 
 #### 2. yield from的管道传输用法示例
 
@@ -814,15 +814,15 @@ None
    func(100)
    ```
 
-   ![](http://pic.lskyl.xyz/blog/old/20210719211704.png-picsmall)
+   ![](http://oss.whaleluo.top/blog/old/20210719211704.png-picsmall)
 
-![](http://pic.lskyl.xyz/blog/old/20210719215011.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210719215011.png-picsmall)
 
-![](http://pic.lskyl.xyz/blog/old/20210719215459.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210719215459.png-picsmall)
 
-![](http://pic.lskyl.xyz/blog/old/20210719215842.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210719215842.png-picsmall)
 
-![](http://pic.lskyl.xyz/blog/old/20210719220126.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210719220126.png-picsmall)
 
 ```python
 # 编写闭包函数
@@ -854,28 +854,28 @@ mian()
 
 ### 多个修饰器，从下到上修饰
 
-![](http://pic.lskyl.xyz/blog/old/20210720161511.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210720161511.png-picsmall)
 
 > **装饰是倒着装的，执行是顺着执行的。**
 
 ### 装饰有参数的函数
 
-![](http://pic.lskyl.xyz/blog/old/20210720162540.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210720162540.png-picsmall)
 
 > 对不定长参数的传递
 
-![](http://pic.lskyl.xyz/blog/old/20210720162754.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210720162754.png-picsmall)
 
 ### 装饰有返回值的参数
 
-![image-20210720163327239](http://pic.lskyl.xyz/blog/old/20210720163328.png-picsmall)
+![image-20210720163327239](http://oss.whaleluo.top/blog/old/20210720163328.png-picsmall)
 
 ### 通用修饰器
 
-![](http://pic.lskyl.xyz/blog/old/20210720164146.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210720164146.png-picsmall)
 
 ### 带参数的修饰器
 
-![](http://pic.lskyl.xyz/blog/old/20210818144548.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210818144548.png-picsmall)
 
 > 在函数中嵌套闭包函数

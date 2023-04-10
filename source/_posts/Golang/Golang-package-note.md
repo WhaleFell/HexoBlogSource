@@ -5,8 +5,8 @@ updated: 2022-05-28 21:54:48
 categories: Golang
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 
 # Go 包的使用
@@ -38,16 +38,16 @@ banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
 ## 两个函数的执行顺序
 
 1. 对于同一个 Go 文件,从上到下执行
-![](http://pic.lskyl.xyz/blog/Golang/package-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/package-1.png-picsmall)  
 
 2. 对于同一个 package 中的不同文件,将文件名按字符串进行从小到大排序,之后顺序调用各文件中的 `init()` 函数.
-![](http://pic.lskyl.xyz/blog/Golang/package-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/package-2.png-picsmall)  
 
 3. 对于不同的 package,如果不相互依赖的话，按照 main 包中 import 的顺序调用其他包中的 `init()` 函数。
 
 4. 如果 package 存在依赖,调用顺序为最后被依赖的最先被初始化.  
 例如：导入顺序 main->A->B->C ,则初始化顺序为 C->B->A->main ,一次执行对应的init方法。main包总是被最后一个初始化，因为它总是依赖别的包.
-![](http://pic.lskyl.xyz/blog/Golang/package-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/package-3.png-picsmall)  
 
 5. 避免出现 **循环 import** ,例如：`A->B->C->A`.  
 一个包被其它多个包 import ,.但只能被初始化一次  

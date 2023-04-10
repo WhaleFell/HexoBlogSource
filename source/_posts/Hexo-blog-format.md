@@ -6,7 +6,7 @@ categories: Hexo
 tags: [Hexo, Blog]
 # sticky: 100
 description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。 
-# thumbnail: http://pic.lskyl.xyz/blog/old/20210629014311.png
+# thumbnail: http://oss.whaleluo.top/blog/old/20210629014311.png
 ---
 
 # Hexo 博客写作规范约定

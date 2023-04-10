@@ -6,8 +6,8 @@ categories: Golang
 tags: [Golang, Coding]
 sticky: 1
 description: 博客中 Golang 学习内容相关笔记的索引
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 # 【Catalogue】 Golang 学习笔记目录
 

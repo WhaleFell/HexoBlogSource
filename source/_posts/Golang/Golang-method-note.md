@@ -5,8 +5,8 @@ categories: Golang
 updated: 2022-05-6 21:54:48
 tags: [Golang, Coding]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
-banner_img: http://pic.lskyl.xyz/blog/Golang/icon_img.png-picsmall
+thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ---
 
 # Go 方法
@@ -44,7 +44,7 @@ func (接收者) 方法名(参数列表)(返回值列表){
 
 ### 接收者为一个值
 
-![](http://pic.lskyl.xyz/blog/Golang/method-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-1.png-picsmall)  
 
 ### 接收者为一个指针
 
@@ -66,8 +66,8 @@ type P *int
 func (P) f() { /* ... */ } // compile error: invalid receiver type
 ```
 
-![](http://pic.lskyl.xyz/blog/Golang/method-2.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/method-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-3.png-picsmall)  
 
 ### 注意点
 
@@ -98,6 +98,6 @@ func (c *Counter) Reset() { c.n = 0 }
 ### 示例
 
 `method` 是可以继承的，如果匿名字段实现了一个`method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`  
-![](http://pic.lskyl.xyz/blog/Golang/method-4.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/method-5.png-picsmall)  
-![](http://pic.lskyl.xyz/blog/Golang/method-6.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-6.png-picsmall)  

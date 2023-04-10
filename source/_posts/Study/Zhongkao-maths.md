@@ -5,8 +5,8 @@ updated: 2021-06-28 19:37:48
 categories: Study
 tags: [Maths, Study]
 description: 
-thumbnail: http://pic.lskyl.xyz/blog/old/20210629014311.png
-banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
+thumbnail: http://oss.whaleluo.top/blog/old/20210629014311.png
+banner_img: http://oss.whaleluo.top/blog/old/20210629014311.png
 ---
 
 
@@ -22,13 +22,13 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 
 > **数学最后一题，深圳18年高三一模原题**
 
-![img](http://pic.lskyl.xyz/blog/old/20210629023311.jpeg-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629023311.jpeg-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629023333.jpeg-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629023333.jpeg-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629023357.jpeg-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629023357.jpeg-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629023434.jpeg-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629023434.jpeg-picsmall)
 
 ------
 
@@ -101,40 +101,40 @@ banner_img: http://pic.lskyl.xyz/blog/old/20210629014311.png
 
 ## **2021** 年 **广东中考数学**  (**今年**) 题目+解析
 
-![](http://pic.lskyl.xyz/blog/old/20210629015828.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210629015828.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629015859.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629015859.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629015950.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629015950.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020000.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020000.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020011.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020011.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020026.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020026.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020045.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020045.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020057.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020057.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020109.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020109.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020123.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020123.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020134.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020134.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020207.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020207.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020229.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020229.png-picsmall)
 
-![img](http://pic.lskyl.xyz/blog/old/20210629020320.png-picsmall)
+![img](http://oss.whaleluo.top/blog/old/20210629020320.png-picsmall)
 
 > 附: **2020**年 **广东中考数学** (去年的,对比一下)
 
-![第1页(共4页)](http://pic.lskyl.xyz/blog/old/20210629014918.jpg-picsmall)
+![第1页(共4页)](http://oss.whaleluo.top/blog/old/20210629014918.jpg-picsmall)
 
-![第2页(共4页)](http://pic.lskyl.xyz/blog/old/20210629014936.jpg-picsmall)
+![第2页(共4页)](http://oss.whaleluo.top/blog/old/20210629014936.jpg-picsmall)
 
-![第3页(共4页)](http://pic.lskyl.xyz/blog/old/20210629015036.jpg-picsmall)
+![第3页(共4页)](http://oss.whaleluo.top/blog/old/20210629015036.jpg-picsmall)
 
-![第4页(共4页)](http://pic.lskyl.xyz/blog/old/20210629015051.jpeg-picsmall)
+![第4页(共4页)](http://oss.whaleluo.top/blog/old/20210629015051.jpeg-picsmall)

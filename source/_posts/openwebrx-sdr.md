@@ -12,14 +12,14 @@ tags: [Ham, Radio, 业余无线电, 软件无线电]
 
 ## 安装依赖
 
-```shell
+```sh
 sudo apt-get update
 sudo apt-get install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config libsamplerate-dev libpython3-dev
 ```
 
 ## Install csdr
 
-```shell
+```sh
 git clone -b master https://github.com/jketterl/csdr.git
 cd csdr
 mkdir build
@@ -33,7 +33,7 @@ sudo ldconfig
 
 ## Install pysdr
 
-```shell
+```sh
 git clone -b master https://github.com/jketterl/pycsdr.git
 cd pycsdr
 sudo python3 setup.py install install_headers
@@ -42,7 +42,7 @@ cd ..
 
 ## Install Python js8py module
 
-```shell
+```sh
 git clone -b master https://github.com/jketterl/js8py.git
 cd js8py
 sudo python3 setup.py install
@@ -55,7 +55,7 @@ cd ..
 
 [Sdrplay 官网网站](https://www.sdrplay.com/software)
 
-```shell
+```sh
 wget https://www.sdrplay.com/software/SDRplay_RSP_API-Linux-3.07.1.run
 chmod 777 SDRplay_RSP_API-Linux-3.07.1.run
 sudo ./SDRplay_RSP_API-Linux-3.07.1.run
@@ -67,7 +67,7 @@ sudo ./SDRplay_RSP_API-Linux-3.07.1.run
 
 通过编译安装 SoapySdr 驱动, ~~或者通过 `apt-get` 软件包管理安装~~
 
-```shell
+```sh
 git clone https://github.com/pothosware/SoapySDR
 cd SoapySDR
 mkdir build
@@ -83,7 +83,7 @@ cd ..
 
 用于使得 Soapysdr 使得支持 sdrplay 设备.
 
-```shell
+```sh
 git clone https://github.com/pothosware/SoapySDRPlay.git
 cd SoapySDRPlay
 mkdir build
@@ -95,7 +95,7 @@ sudo make install
 
 ## Install rx_tools
 
-```shell
+```sh
 git clone https://github.com/rxseger/rx_tools
 cd rx_tools
 mkdir build
@@ -111,14 +111,14 @@ cd ..
 
 rtl_sdr 设备
 
-```shell
+```sh
 nano /etc/modprobe.d/blacklist-rtlsdr.conf
 blacklist dvb_usb_rtl28xxu
 ```
 
 sdrplay 设备
 
-```shell
+```sh
 nano /etc/modprobe.d/blacklist-sdrplay.conf
 blacklist sdr_msi3101
 blacklist msi001
@@ -127,13 +127,13 @@ blacklist msi2500
 
 ## 重启后测试是否可以识别 SDR 设备
 
-```shell
+```sh
 SoapySDRUtil --find
 ```
 
 ## 安装 Openwebrx 主程序
 
-```shell
+```sh
 # 新建数据文件
 mkdir /var/lib/openwebrx
 sudo sh -c "echo [] > /var/lib/openwebrx/users.json"
@@ -149,7 +149,7 @@ cd openwebrx
 
 ## Install owrx_connector 链接组件
 
-```shell
+```sh
 git clone -b master https://github.com/jketterl/owrx_connector.git
 cd owrx_connector
 mkdir build
@@ -163,7 +163,7 @@ sudo ldconfig
 
 ## 运行 openwebrx
 
-```shell
+```sh
 ./openwebrx.py
 ```
 

@@ -2,8 +2,8 @@
 title: HAM无线电初识——UV5R手台使用
 date: 2022-12-30 22:16:49
 updated: 2022-12-30 22:16:49
-categories: 无线电
-tags: [无线电, UV5R, HAM, 火腿]
+categories: Ham
+tags: [业余无线电, UV5R, Ham, 火腿]
 description: 
 thumbnail: 
 banner_img: 

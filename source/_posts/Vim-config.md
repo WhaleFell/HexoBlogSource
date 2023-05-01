@@ -66,7 +66,7 @@ set showcmd
 set ruler
 
 " 粘贴时保持格式
-set nopaste
+set paste
 
 " 高亮显示匹配的括号
 set showmatch
@@ -116,7 +116,7 @@ set scrolloff=3
 " 设定默认解码
 set fenc=utf-8
 set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
-
+ 
 " 设定编码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -147,8 +147,12 @@ set number
 " 突出显示
 set cursorline
 
+" 关闭鼠标
+set mouse=c
+
 " 启动鼠标
-set mouse=a
+" set mouse=a
+
 set selection=exclusive
 set selectmode=mouse,key
 

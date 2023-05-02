@@ -434,6 +434,12 @@ map $http_upgrade $connection_upgrade {
          }
 ```
 
+自动添加 `/` 在 server 字段下添加:
+
+```conf
+server_name_in_redirect off;
+```
+
 ### 添加证书
 
 ```conf
@@ -484,4 +490,12 @@ http {
 
     }
 }
+```
+
+### 跨域
+
+```conf
+add_header Access-Control-Allow-Origin *;
+add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
+add_header Access-Control-Allow-Headers Content-Type,Authorization;
 ```

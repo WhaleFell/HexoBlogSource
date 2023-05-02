@@ -333,6 +333,10 @@ tls_only = true
 allow_ports = 30000-50000
 ```
 
+#### Frpc 客户端
+
+[docker frpc 中文文档](https://www.itcoder.tech/posts/docker-frp/)
+
 #### 到服务器的网速测试
 
 ```shell
@@ -340,4 +344,144 @@ sudo docker run --restart=unless-stopped \
 --name openspeedtest \
 -d -p 3000:3000 \
 -p 3001:3001 openspeedtest/latest
+```
+
+## Nginx
+
+docker running
+
+```sh
+docker run -d -p 8080:80 \
+--name nginx-proxy \
+--restart=always \
+-v /root/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /root/nginx/www:/usr/share/nginx/html \
+-v /root/nginx/cert:/usr/local/nginx/cert \
+nginx:latest
+```
+
+### 反向代理
+
+```conf
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    gzip on;
+
+    # include /etc/nginx/conf.d/*.conf;
+        server {
+        listen 80;
+        server_name _;
+
+        # location / {
+        #     root   /usr/share/nginx/html;
+        #     index  index.html index.htm;
+        # }
+
+        location / {
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Range $http_range;
+            proxy_set_header If-Range $http_if_range;
+            proxy_redirect off;
+            proxy_pass http://172.17.0.1:5244/;
+            # the max size of file to upload
+            client_max_body_size 20000m;
+        }
+    }
+
+}
+```
+
+反向代理 ws
+
+```conf
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $connection_upgrade;
+```
+
+或许需要在 http 字段下添加:
+
+```conf
+map $http_upgrade $connection_upgrade {
+           default upgrade;
+           ''      close;
+         }
+```
+
+### 添加证书
+
+```conf
+user  nginx;
+worker_processes  auto;
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+events {
+    worker_connections  1024;
+}
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+    sendfile        on;
+    keepalive_timeout  65;
+    gzip on;
+
+    server {
+        listen 80 ssl http2;
+        server_name _;
+
+        ssl                      off;
+        ssl_certificate     /usr/local/nginx/cert/cert.pem;
+        ssl_certificate_key  /usr/local/nginx/cert/private.key;
+        
+        ssl_session_timeout  5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        error_page 497 https://$host:8080$uris;
+        
+        if ($scheme = http) {
+            return 301 https://$host$request_uri;
+        }
+
+
+        location / {
+                root   /usr/share/nginx/html;
+                index  index.html index.htm;
+        }
+
+    }
+}
 ```

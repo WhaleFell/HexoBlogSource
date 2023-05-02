@@ -337,6 +337,14 @@ allow_ports = 30000-50000
 
 [docker frpc 中文文档](https://www.itcoder.tech/posts/docker-frp/)
 
+```shell
+docker run --network host -d \
+-v /root/frpc/frpc.ini:/etc/frp/frpc.ini \
+--name frpc \
+--restart=always \
+snowdreamtech/frpc
+```
+
 #### 到服务器的网速测试
 
 ```shell

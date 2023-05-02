@@ -169,4 +169,17 @@ sudo ldconfig
 
 访问 IP:8073 打开页面进行 setting.
 
+## Openwebrx 自动控制瀑布增益
+
+在 `openwebrx/htdocs/index.html` 末尾加入以下 JS 代码即可实现.
+
+```html
+<script type="text/javascript">
+    $('#openwebrx-waterfall-colors-auto').contextmenu();
+    setInterval(function(){
+    $('#openwebrx-waterfall-colors-auto').click();
+    },1000);
+</script>
+```
+
 ## 参考引用 Reference

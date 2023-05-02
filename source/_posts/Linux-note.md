@@ -426,20 +426,15 @@ http {
 }
 ```
 
-反向代理 ws
+反向代理 ws.[nginx docs](http://nginx.org/en/docs/http/websocket.html)
 
 ```conf
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection $connection_upgrade;
-```
-
-或许需要在 http 字段下添加:
-
-```conf
-map $http_upgrade $connection_upgrade {
-           default upgrade;
-           ''      close;
-         }
+location /chat/ {
+    proxy_pass http://backend;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
 ```
 
 自动添加 `/` 在 server 字段下添加:
@@ -506,4 +501,98 @@ http {
 add_header Access-Control-Allow-Origin *;
 add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
 add_header Access-Control-Allow-Headers Content-Type,Authorization;
+```
+
+### 自用完整的 nginx.conf
+
+```conf
+user  nginx;
+worker_processes  auto;
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+events {
+    worker_connections  1024;
+}
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+    sendfile        on;
+    keepalive_timeout  65;
+    gzip on;
+
+    server {
+        listen 8080 ssl http2;
+        server_name _;
+
+        ssl                      off;
+        ssl_certificate     /usr/local/nginx/cert/cert.pem;
+        ssl_certificate_key  /usr/local/nginx/cert/private.key;
+
+        ssl_session_timeout  5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        error_page 497 https://$host:8080$request_uri;
+
+        location / {
+                root   /usr/share/nginx/html;
+                index  index.html index.htm;
+        }
+
+        location /sdr/ {
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Range $http_range;
+            proxy_set_header If-Range $http_if_range;
+
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            
+            proxy_redirect off;
+            proxy_http_version 1.1;
+            proxy_pass http://192.168.8.10:8073/;
+            # the max size of file to upload
+            client_max_body_size 20000m;
+        }
+        location /wss/ {
+            proxy_redirect off;
+            proxy_pass http://192.168.8.1:10000/wss/;
+            proxy_http_version 1.1;
+
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+
+            proxy_set_header Host $http_host;
+
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        location /dav/ {
+           proxy_pass http://192.168.8.1:5244/dav/;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header x-wiz-real-ip $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_set_header X-NginX-Proxy true;
+
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "upgrade";
+           # proxy_set_header Connection "keep-alive";
+
+           proxy_set_header Host $http_host;
+           proxy_ssl_session_reuse off;
+           proxy_cache_bypass $http_upgrade;
+           proxy_redirect off;
+        }
+    }
+}
 ```

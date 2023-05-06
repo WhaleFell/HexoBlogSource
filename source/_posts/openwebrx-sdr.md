@@ -2,8 +2,8 @@
 title: 基于 Openwebrx 搭建 Rsp1 Websdr
 date: 2023-04-29 15:51:48
 updated: 2023-04-29 15:59:48
-categories: Ham
-tags: [Ham, Radio, 业余无线电, 软件无线电]
+categories: Radio
+tags: [Ham, Radio, 业余无线电, 软件无线电, Openwebrx]
 ---
 
 # 基于 Openwebrx 搭建 Rsp1 Websdr

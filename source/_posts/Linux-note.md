@@ -368,6 +368,19 @@ docker run -d -p 8080:80 \
 nginx:latest
 ```
 
+### 调优
+
+在 server 字段下添加
+
+```conf
+client_max_body_size 5G;
+client_header_timeout 1m;
+client_body_timeout 1m;
+proxy_connect_timeout 60s;
+proxy_read_timeout 1m;
+proxy_send_timeout 1m;        
+```
+
 ### 反向代理
 
 ```conf
@@ -540,6 +553,13 @@ http {
         ssl_prefer_server_ciphers on;
 
         error_page 497 https://$host:8080$request_uri;
+        
+        client_max_body_size 5G;
+        client_header_timeout    1m;
+        client_body_timeout      1m;
+        proxy_connect_timeout     60s;
+        proxy_read_timeout      1m;
+        proxy_send_timeout      1m;        
 
         location / {
                 root   /usr/share/nginx/html;
@@ -559,9 +579,8 @@ http {
             proxy_redirect off;
             proxy_http_version 1.1;
             proxy_pass http://192.168.8.10:8073/;
-            # the max size of file to upload
-            client_max_body_size 20000m;
         }
+
         location /wss/ {
             proxy_redirect off;
             proxy_pass http://192.168.8.1:10000/wss/;
@@ -575,24 +594,45 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
+
         location /dav/ {
-           proxy_pass http://192.168.8.1:5244/dav/;
-           proxy_set_header X-Real-IP $remote_addr;
-           proxy_set_header x-wiz-real-ip $remote_addr;
-           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-           proxy_set_header X-Forwarded-Proto $scheme;
-           proxy_set_header X-NginX-Proxy true;
+            proxy_pass http://192.168.8.1:5244/dav/;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header x-wiz-real-ip $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
 
-           proxy_http_version 1.1;
-           proxy_set_header Upgrade $http_upgrade;
-           proxy_set_header Connection "upgrade";
-           # proxy_set_header Connection "keep-alive";
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Connection "keep-alive";
 
-           proxy_set_header Host $http_host;
-           proxy_ssl_session_reuse off;
-           proxy_cache_bypass $http_upgrade;
-           proxy_redirect off;
+            proxy_set_header Host $http_host;
+            proxy_ssl_session_reuse off;
+            proxy_cache_bypass $http_upgrade;
+            proxy_redirect off;
         }
+
+        location /test/ {
+            proxy_pass http://192.168.8.1:8989/;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header x-wiz-real-ip $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
+
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Connection "keep-alive";
+
+            proxy_set_header Host $http_host;
+            proxy_ssl_session_reuse off;
+            proxy_cache_bypass $http_upgrade;
+            proxy_redirect off;
+        }
+
     }
 }
 ```

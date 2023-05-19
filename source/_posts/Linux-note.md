@@ -450,6 +450,14 @@ location /chat/ {
 }
 ```
 
+解决 WS 反向代理超时问题, 在 server 字段下添加
+
+```conf
+proxy_connect_timeout 60s;
+proxy_read_timeout 60m;
+proxy_send_timeout 60m; 
+``
+
 自动添加 `/` 在 server 字段下添加:
 
 ```conf

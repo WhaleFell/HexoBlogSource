@@ -1,4 +1,5 @@
 ---
+
 title: Samba4 服务器配置最佳实践
 date: 2022-12-25 19:37:48
 updated: 2022-12-25 19:37:48
@@ -6,7 +7,9 @@ categories: Server
 tags: [Server, Linux]
 thumbnail: http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall
+
 ---
+
 # Samba4 服务器配置最佳实践
 
 ![banner](http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall)

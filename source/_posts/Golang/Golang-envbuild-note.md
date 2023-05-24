@@ -1,18 +1,19 @@
 ---
+
 title: Golang 学习笔记——Go环境搭建
 date: 2022-04-19 18:30:48
 updated: 2022-04-19 18:30:48
 categories: Golang
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
 
 # Go环境搭建
 
 1. 安装完Go,添加 `bin` 目录到环境变量.
-
 2. CMD 配置go环境
 
 ```shell

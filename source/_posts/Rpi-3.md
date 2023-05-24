@@ -1,17 +1,19 @@
 ---
+
 title: 😜 树莓派折腾手册 (二)——手动搭建LNMP网站服务器环境 🙏
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
+
 ---
 
 # 😜 树莓派折腾手册 (二)——手动搭建LNMP网站服务器环境 🙏
 
->前言：这个东西我折腾了很久，试过一键部署脚本: [https://lnmp.org/auto](https://lnmp.org/auto.html)但是我想在局域网+frp穿透的外网，访问树莓派的网站，但是只能绑定一个域名，反正用多了就出各种问题，可能我不会用
+> 前言：这个东西我折腾了很久，试过一键部署脚本: [https://lnmp.org/auto](https://lnmp.org/auto.html)但是我想在局域网+frp穿透的外网，访问树莓派的网站，但是只能绑定一个域名，反正用多了就出各种问题，可能我不会用
 
 ```shell
 sudo apt-get update   #好习惯，安装软件前先更新源列表 
@@ -19,7 +21,7 @@ sudo apt-get update   #好习惯，安装软件前先更新源列表
 
 ## **1.安装PHP7.3**
 
->**这里跳了很多坑，后来查文档才发现Debian 10 buster只能安装PHP7.0以上的版本**
+> **这里跳了很多坑，后来查文档才发现Debian 10 buster只能安装PHP7.0以上的版本**
 
 ```shell
 sudo apt install -y -t buster php7.3-fpm php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-mysql php7.3-imap php7.3-opcache php7.3-sqlite3 php7.3-xml php7.3-xmlrpc php7.3-zip 
@@ -27,7 +29,7 @@ sudo apt install -y -t buster php7.3-fpm php7.3-curl php7.3-gd php7.3-intl php7.
 
 通过命令`php -v`能够看到PHP版本号7.3，说明安装完成:
 
->输出显示配置文件在/etc/php/7.3/cli/php.ini。注意，实际上配置文件有两个，另外一个在/etc/php/7.3/fpm/php.ini。通过命令行调用php时，会使用第一个配置文件；通过fpm调用php（例如nginx）会使用第二个配置文件。  
+> 输出显示配置文件在/etc/php/7.3/cli/php.ini。注意，实际上配置文件有两个，另外一个在/etc/php/7.3/fpm/php.ini。通过命令行调用php时，会使用第一个配置文件；通过fpm调用php（例如nginx）会使用第二个配置文件。
 
 php-fpm常用管理命令:
 
@@ -48,7 +50,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 sudo apt-get install nginx
 ```
 
->安装完成后，会自动开启nginx。在浏览器输入树莓派的IP地址，可以看到“Welcome to nginx!”
+> 安装完成后，会自动开启nginx。在浏览器输入树莓派的IP地址，可以看到“Welcome to nginx!”
 
 **nginx常用管理命令：**
 
@@ -73,7 +75,7 @@ sudo nano /etc/nginx/sites-enabled/default
 
 找到`# pass PHP scripts to FastCGI server`后面的 `location` ，删除注释。修改后如下：
 
->PHP的默认路径转发有问题导致的,因为很多nginx的默认PHP配置文件的写法为 **location ~ \.php** 要改成 **location~.*\.php(\/.*)*$**
+> PHP的默认路径转发有问题导致的,因为很多nginx的默认PHP配置文件的写法为 **location ~ ​**​**php** 要改成 **location~.**​***php(***​***.***​**)*$**
 
 ```shell
 index index.php index.html index.htm index.nginx-debian.html; 
@@ -144,10 +146,10 @@ sudo mysql -u root# 登入数据库后，依次执行以下SQL： use mysql;upda
 
 再次使用普通用户pi `mysql -u root -p` 即可通过密码登录数据库，无需root权限执行:
 
- ![](http://oss.whaleluo.top/blog/old/20210619152823.png-picsmall)
+![](http://oss.whaleluo.top/blog/old/20210619152823.png-picsmall)
 
 - 设置**数据库密码**
-   **依次执行以下SQL：**
+  **依次执行以下SQL：**
 
 ```sql
 use mysql;   UPDATE user SET password=password('123456') WHERE user='root';   flush privileges;   exit; 
@@ -201,7 +203,7 @@ mysql -h主机地址 -u用户名 －p用户密码
 
 > **官方网站**:  [phpmyadmin官网](https://www.phpmyadmin.net/)
 >
-> - 用**wget**下载源码包包到web目录  
+> - 用**wget**下载源码包包到web目录
 >   (请自行到官网获取最新下载链接)，截至2020/8/4版本为:
 >   **phpMyAdmin-5.0.2-all-languages.zip**
 
@@ -227,7 +229,7 @@ cd /var/www/html/mv phpMyAdmin-5.0.2-all-languages phpmyadmincd phpmyadminmv con
 编辑`config.inc.php`文件，修改密钥字段:
 ![](http://oss.whaleluo.top/blog/old/20210619152859.png-picsmall)
 
-> 修改**blowfish_secret**字段，后面的密钥无仅仅用于加密而已，**尽量足够长**。**当然偷偷插入~~喜欢的女孩子~~名字也是可以的哦**
+> 修改**blowfish_secret**字段，后面的密钥无仅仅用于加密而已，**尽量足够长**。**当然偷偷插入**​**~~喜欢的女孩子~~**​**名字也是可以的哦**
 
 - 把**config.inc.php文件权限修改**为744
 
@@ -235,7 +237,7 @@ cd /var/www/html/mv phpMyAdmin-5.0.2-all-languages phpmyadmincd phpmyadminmv con
 sudo chmod 744 config.inc.php
 ```
 
-- 尝试访问 <http://你的树莓派ip/phpmyadmin>
+- 尝试访问 [http://你的树莓派ip/phpmyadmin](http://%E4%BD%A0%E7%9A%84%E6%A0%91%E8%8E%93%E6%B4%BEip/phpmyadmin)
   ![](http://oss.whaleluo.top/blog/old/20210619152752.png-picsmall)
   **启动高级功能** 会新建一个phpmyadmin数据库
   ![](http://oss.whaleluo.top/blog/old/20210619152912.png-picsmall)
@@ -287,6 +289,7 @@ sudo systemctl restart nginxwget --content-disposition https://packagecloud.io/h
   > 部署服务器探针推荐X探针，GitHub项目地址：
   >
   > [GitHub X刘海探针](https://github.com/kmvan/x-prober)
+  >
 
 ```shell
 #克隆项目到www目录cd /var/www/htmlwget https://github.com/kmvan/x-prober/raw/master/dist/prober.php#删除默认页rm index.phpmv prober.php index.phpsudo chmod 777 index.php
@@ -340,7 +343,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 >
 > #### 即刻下载，开启私有云盘之旅
 >
-> **官网:[可道云官网](http://kodcloud.com/download/)**
+> **官网:**​****
 
 - **下载源码**
 
@@ -348,7 +351,7 @@ sudo nano /etc/php/7.3/fpm/php.ini
 cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.1.11.zipunzip kodbox.1.11.zipunzip kodbox.1.11.ziprm kodbox.1.11.zipchmod 777 ~/kodbox
 ```
 
-尝试访问 **<http://树莓派ip:88>** :
+尝试访问 **** :
 
 ![image-20200805163537543](http://oss.whaleluo.top/blog/old/20210619153018.png-picsmall)
 
@@ -364,7 +367,7 @@ cd ~mkdir kodboxcd kodboxwget http://static.kodcloud.com/update/download/kodbox.
 
 **redis服务会自动运行自动添加开机启动项，省心！！！**
 
-**编辑**`sudo nano /etc/php/7.3/fpm/php.ini`文件加入：
+**编辑**​`sudo nano /etc/php/7.3/fpm/php.ini`文件加入：
 
 ![image-20200807211906533](http://oss.whaleluo.top/blog/old/20210619153032.png-picsmall)
 

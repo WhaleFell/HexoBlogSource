@@ -1,16 +1,19 @@
 ---
+
 title: 自由上网指北——21世纪网民天赋的权力
 date: 2022-08-11 15:51:48
 updated: 2022-08-11 15:59:48
 categories: GFW
 tags: [GFW, Freedom]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall
+
 ---
+
 # 自由上网指北——21世纪网民天赋的权力
 
-![Banner](http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall)
+​![Banner](http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall)​
 
 {% note warning WARNING %}
 WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。

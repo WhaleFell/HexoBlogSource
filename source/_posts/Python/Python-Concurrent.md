@@ -1,4 +1,5 @@
 ---
+
 title: Python 并发编程笔记
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
@@ -7,6 +8,7 @@ tags: [Python, Coding]
 description: Python并发编程(多线程,多进程,多协程)
 thumbnail: http://oss.whaleluo.top/blog/old/20210630201524.png
 banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
+
 ---
 
 # Python 并发编程
@@ -18,11 +20,10 @@ banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
 ## 1. 多线程 Thread（threading）
 
 > - 优点：**相比进程，更轻量级、占用资源少.**
->
 > - 缺点：
+>
 >   - 相比进程：多线程只能**并发执行**，**不能利用多CPU（GIL）**
 >   - 相比协程：启动数目**有限制**，占用内存资源，**有线程切换开销**
->
 > - 适用于：**IO密集型计算**、同时运行的任务数目要求不多
 
 ### 多进程普通写法
@@ -56,25 +57,27 @@ for thread in threads:
   ![](http://oss.whaleluo.top/blog/old/20210630204323.png-picsmall)
 
   ![](http://oss.whaleluo.top/blog/old/20210630204353.png-picsmall)
-
 - 代码实现
 
   1. **map方式提交**
-  
+
   > `map` 的结果和入参是顺序对应的,且map传入函数参数时要传入**参数列表**
+  >
 
   > [Python Zip()函数](https://www.runoob.com/python3/python3-func-zip.html)
   >
-  > > **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
-  > >
-  > > 我们可以使用 `list()` 转换来输出列表。
-  > >
-  > > **元素个数与最短的列表一致**.
-  > >
-  > > 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 ***** 号操作符，可以将元组解压为列表。
+  >> **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
+  >>
+  >> 我们可以使用 `list()` 转换来输出列表。
+  >>
+  >> **元素个数与最短的列表一致**.
+  >>
+  >> 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 ***** 号操作符，可以将元组解压为列表。
+  >>
   >
   > !["形象"](http://oss.whaleluo.top/blog/old/20210630211154.png-picsmall)
-  
+  >
+
   ```python
   from concurrent.futures import ThreadPoolExecutor
   # 可以设置线程数
@@ -87,19 +90,22 @@ for thread in threads:
       for url, html in htmls:
           print(url, len(html))
   ```
-  
+
   2. **submit 方式提交**
-  
+
   > **future模式，更强大**,注意如果用`as_completed`顺序是不定的
-  
+  >
+
   > [Python3 字典 items方法](https://www.runoob.com/python3/python3-att-dictionary-items.html)
   >
-  > > Python 字典 items() 方法以列表**返回视图对象**，是一个**可遍历的 key/value 对**。
+  >> Python 字典 items() 方法以列表**返回视图对象**，是一个**可遍历的 key/value 对**。
+  >>
   >
   > 将: `{'Name': 'Runoob', 'Age': 7}` 变为: `[('Age', 7), ('Name', 'Runoob')]`
-  
+  >
+
   - **方法一**
-  
+
     ```python
     from concurrent.futures import ThreadPoolExecutor,as_completed
     with ThreadPoolExecutor() as pool:
@@ -108,21 +114,21 @@ for thread in threads:
             pool.submit(craw,url)
             for url in urls
         ]
-    
+
         # 通过遍历线程列表取出结果(要等所有结果运行完才有)
         for future in futures:
             print(future.result())
-            
+
         # as_completed 不需要等待所有结果运行完才输出结果
         # 一旦有结果运行完就会输出
         for future in as_completed(futures):
             print(future.result())
     ```
-  
   - **方法二**
-  
+
     > **适合需要与某一个量一一对应建立联系**
-  
+    >
+
     ```python
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor() as pool:
@@ -134,7 +140,7 @@ for thread in threads:
             future = pool.submit(parse, html)
             # 使用字典 将 future 对象与链接一一对应
             futures[future] = url
-        
+
         # 将转化为元组的字典遍历出来
         # future->线程对象 url->线程对应的url
         for future,url in futures.items():
@@ -147,16 +153,17 @@ for thread in threads:
 1. 多组件的`Pipeline`技术架构
 
    > 复杂的事情一般都不会一下子做完，而是会分**很多中间步骤一步步完成**
+   >
 
    ![](http://oss.whaleluo.top/blog/old/20210703065209.png-picsmall)
 
    ![](http://oss.whaleluo.top/blog/old/20210703065255.png-picsmall)
-
-2. **多线程数据通信的`queue.Queue`**
+2. **多线程数据通信的**​**`queue.Queue`**
 
    > `queue.Queue`可以用于**多线程之间**的、**线程安全**的数据通信
    >
    > **多个线程** 可以 **同时** 读取 **同一个队列**
+   >
 
    ```python
    # 1、导入类库
@@ -175,14 +182,13 @@ for thread in threads:
    # 判断是否已满
    q.full()
    ```
-
 3. 实例:
 
    ```python
    import threading
    import queue
    import random,time
-   
+
    # 传入 url 队列 和 Html 队列
    def do_craw(url_queue: queue.Queue, html_queue: queue.Queue):
        while True:
@@ -195,8 +201,8 @@ for thread in threads:
            print(threading.current_thread().name, f"craw {url}",
                  "url_queue.size=", url_queue.qsize())
            time.sleep(random.randint(1, 2))
-   
-   
+
+
    def do_parse(html_queue: queue.Queue, fout):
        while True:
            html = html_queue.get()
@@ -206,21 +212,21 @@ for thread in threads:
            print(threading.current_thread().name, f"results.size", len(results),
                  "html_queue.size=", html_queue.qsize())
            time.sleep(random.randint(1, 2))
-   
-   
+
+
    if __name__ == "__main__":
        url_queue = queue.Queue() # 链接队列
        html_queue = queue.Queue() # Html 文件队列
        # 将所有链接添加到链接队列里面
        for url in urls:
            url_queue.put(url)
-   
+
        # 创建链接访问线程
        for idx in range(3):
            t = threading.Thread(target=do_craw, args=(url_queue, html_queue),
                                 name=f"craw{idx}")
            t.start()
-   
+
        # 创建 HTML 解析线程
        fout = open("02.data.txt", "w")
        for idx in range(2):
@@ -228,7 +234,7 @@ for thread in threads:
            t = threading.Thread(target=do_parse, args=(html_queue, fout),
                                 name=f"parse{idx}")
            t.start()
-   
+
    ```
 
 ## 2. 多进程 (MultiProcess)
@@ -255,13 +261,13 @@ for thread in threads:
 >
 > 多进程的API与 **多线程的实现十分类似**
 
-| 语法条目             |                                                                                                                  多线程                                                                                                                  |                                                                                                                  多进程                                                                                                                   |
-| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| 引入模块             |                                                                                                       from threading import Thread                                                                                                       |                                                                                                    from multiprocessing import Process                                                                                                    |
-| 新建  启动  等待结束 |                                                                                         t=Thread(target=func, args=(100, ))  t.start()  t.join()                                                                                         |                                                                                         p = Process(target=f, args=('bob',))  p.start()  p.join()                                                                                         |
-| 数据通信             |                                                                                       import queue  q = queue.Queue()  q.put(item)  item = q.get()                                                                                       |                                                                        from multiprocessing import Queue  q = Queue()  q.put([42, None, 'hello'])  item = q.get()                                                                         |
-| 线程安全加锁         |                                                                                from threading import Lock  lock = Lock()  with lock:      # do something                                                                                 |                                                                              from multiprocessing import Lock  lock = Lock()  with lock:      # do something                                                                              |
-| 池化技术             | from concurrent.futures import  ThreadPoolExecutor    with ThreadPoolExecutor() as executor:      # 方法1      results = executor.map(func, [1,2,3])        # 方法2      future = executor.submit(func, 1)      result = future.result() | from concurrent.futures import ProcessPoolExecutor    with ProcessPoolExecutor() as executor:      # 方法1      results = executor.map(func, [1,2,3])        # 方法2      future = executor.submit(func, 1)      result = future.result() |
+|语法条目|多线程|多进程|
+| :-------------------| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|引入模块|from threading import Thread|from multiprocessing import Process|
+|新建  启动  等待结束|t=Thread(target=func, args=(100, ))  t.start()  t.join()|p = Process(target=f, args=('bob',))  p.start()  p.join()|
+|数据通信|import queue  q = queue.Queue()  q.put(item)  item = q.get()|from multiprocessing import Queue  q = Queue()  q.put([42, None, 'hello'])  item = q.get()|
+|线程安全加锁|from threading import Lock  lock = Lock()  with lock:      # do something|from multiprocessing import Lock  lock = Lock()  with lock:      # do something|
+|池化技术|from concurrent.futures import  ThreadPoolExecutor    with ThreadPoolExecutor() as executor:      # 方法1      results = executor.map(func, [1,2,3])        # 方法2      future = executor.submit(func, 1)      result = future.result()|from concurrent.futures import ProcessPoolExecutor    with ProcessPoolExecutor() as executor:      # 方法1      results = executor.map(func, [1,2,3])        # 方法2      future = executor.submit(func, 1)      result = future.result()|
 
 ### **利用进程池技术实现多进程**
 
@@ -367,7 +373,7 @@ with lock:
 
 当你程序中方法需要等待时间的话，就可以用**协程**，**效率高，消耗资源少。**
 
-**洗衣房 ==> 进程 | 洗衣工 ==> 线程 | 洗衣机 ==> 方法(函数)**
+**洗衣房 ==&gt; 进程 | 洗衣工 ==&gt; 线程 | 洗衣机 ==&gt; 方法(函数)**
 
 #### 2. `async` \ `await`的使用
 

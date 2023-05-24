@@ -1,19 +1,21 @@
 ---
+
 title: 😃 树莓派折腾手册 (一)——准备系统 😃
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
+
 ---
 
 # 😃 树莓派折腾手册 (一)——准备系统 😃
 
 ## 烧录官方`Debian 10 buster`系统镜像
 
- 先用 **SDFormatter** 格式化一下内存卡叭:
+先用 **SDFormatter** 格式化一下内存卡叭:
 
 ![hZkDB8qxtRgQz3S](http://oss.whaleluo.top/blog/old/20210619152409.png-picsmall)
 
@@ -22,7 +24,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 ![Zb6CEHnf17oqO5Q](http://oss.whaleluo.top/blog/old/20210619152403.png-picsmall)
 
 - 然后在U盘的根目录建立一个空白的 **ssh文件  方便ssh远程连接**
-   ![FV5qpvWz7LtsOgi](http://oss.whaleluo.top/blog/old/sasw.png-picsmall)
+  ![FV5qpvWz7LtsOgi](http://oss.whaleluo.top/blog/old/sasw.png-picsmall)
 - 用 **Windows PowerShell** 连接树莓派ssh
   `shift+右键` 呼出**Windows PowerShell**
   **完整连接语法**:
@@ -34,7 +36,7 @@ ssh -p 端口号 用户名@主机地址
 > 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://oss.whaleluo.top/blog/old/20210619152448.png-picsmall)
 
 - 树莓派扩展TF卡分区:
-   sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
+  sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
 
 ### 2. 启动树莓派HDMI功能
 
@@ -47,6 +49,7 @@ ssh -p 端口号 用户名@主机地址
 
   > 不出意外的话应该可以接上，但是我的没有声音输出诶
   > 注：如果还是不能的话，找到#hdmi_group=1这句话，把前面的#注释符号去掉，把数字改成 2强行指定显示器类型：1是连接老式电视，2代表连接新电视。
+  >
 
 ## 树莓派 `Debian 10 buster` 换清华源
 
@@ -81,16 +84,15 @@ sudo nano /etc/ssh/sshd_config
 
 - 安装中文字体，提供几个Linux中文字体库:
 
- ```shell
+```shell
 sudo apt-get install xfonts-wqy
 sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
- ```
+```
 
 - 设置终端中文显示: `sudo raspi-config`:
   选择change_locale，在Default locale for the system environment:中选择zh_CN.UTF-8。
   往下翻一会儿直到找到zh_CN UTF-8把光标移动到前面，然后按下空格键打上*
   ![3hQeD8k9L1mgTZc](http://oss.whaleluo.top/blog/old/20210619152513.png-picsmall)
-
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
 ### 3. 设置 vnc桌面 连接
@@ -104,7 +106,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 
 - 设置**开机自启动** :
 
->设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**:  (启动脚本的名称，有和程序名一致的习惯)
+> 设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**:  (启动脚本的名称，有和程序名一致的习惯)
 
 ```sh
 sudo nano /etc/init.d/tightvncserver
@@ -197,7 +199,7 @@ sudo apt-get install git
 
 - **克隆** novnc项目:
 
-> 在中国大陆听说~~加上 *<https://gproxy.cn>* 就可以加速 **克隆** 速度丫~~ 改口 应换成  [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
+> 在中国大陆听说~~加上 ​~~​~~**~~​~~​ 就可以加速 ​~~​~~**克隆**~~​~~​ 速度丫~~ 改口 应换成  [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
 
 ```shell
 git clone https://github.com/kanaka/noVNC #源地址
@@ -223,7 +225,7 @@ cd noVNC
 ./utils/websockify --web ./ 8787 192.168.1.10:5901 #可以讲localhost改成所有安装了vncserver的IP地址
 ```
 
- **连接速度太慢可以安装Python的numpy库解决**
+**连接速度太慢可以安装Python的numpy库解决**
 
 - 设置**开机启动**：
 
@@ -276,7 +278,7 @@ sudo systemctl start cockpit.socket
 
 ### 树莓派pip换源
 
->**pip**更换为**国内源**，可以大大的提高安装成功率和速度。不管你用的是**pip3还是pip，方法都是一样的**
+> **pip**更换为**国内源**，可以大大的提高安装成功率和速度。不管你用的是**pip3还是pip，方法都是一样的**
 
 ```shell
 mkdir ~/.pip

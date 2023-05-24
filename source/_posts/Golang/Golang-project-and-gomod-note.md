@@ -1,13 +1,16 @@
 ---
+
 title: Golang 学习笔记——Go 项目结构和 Go mod
 date: 2022-05-28 21:54:48
 updated: 2022-05-28 21:54:48
 categories: Golang
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # Go 项目结构和go mod最佳实践
 
 ## 项目目录
@@ -24,9 +27,8 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ## 环境变量
 
 - GOROOT：安装的`go`路径
-
 - GOPATA：项目的根目录`go-test`
-细心的人注意到，这里有一个`Project GOPATH`，还有一个`Global GOPATH`，把你的项目配置在`Project GOPATH`里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。
+  细心的人注意到，这里有一个`Project GOPATH`，还有一个`Global GOPATH`，把你的项目配置在`Project GOPATH`里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。
 
 `Global GOPATH`可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
 
@@ -44,7 +46,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ![引用自己写的包](http://oss.whaleluo.top/blog/img/Golang-project-gomod-2.png-picsmall)
 
-### 注意点  
+### 注意点
 
 1. `add.go` 中的Add函数名首字母必须大写，只有大写的才是Public权限，外面的包才能访问，否则只能自己文件夹下代码才能访问。
 2. `add.go` 的改名为addyyy.go也可以，查找add包的时候，**并不会根据add.go这个文件名来查找**。而是根据文件夹名来查找，一个文件夹下的所有文件都属于同一个包。所以函数变量自然不能重复。
@@ -63,7 +65,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 2. 可以管理引用包的版本，这一点是gopath（src模式）和 `vendor` 做不到的
 3. 如果依赖 `GOPATH` 不同项目如果引用了同一个软件包的不同版本，就会造成编译麻烦
 
-**gopath是go之前的默认策略，每个项目在运行时都要严格放在`src`目录下，而go mod不用。**
+**gopath是go之前的默认策略，每个项目在运行时都要严格放在**​**`src`**​**目录下，而go mod不用。**
 
 `Go mod`的优点：
 
@@ -139,4 +141,4 @@ golang.org/x/text v0.3.0 = > github.com/golang/text v0.3.0
 - 你只要在项目中有 import 并使用或者使用下划线强制占用，然后 go build 时 go module 就会自动下载并添加。
 - `go mod tidy`
 
-参考：[Go mod用法](https://golang-minibear2333.github.io/1.base/1-3-go-mod/#134-go-mod-%e5%91%bd%e4%bb%a4%e7%9a%84%e4%bd%bf%e7%94%a8)
+参考：[Go mod用法](https://golang-minibear2333.github.io/1.base/1-3-go-mod/#134-go-mod-%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8)

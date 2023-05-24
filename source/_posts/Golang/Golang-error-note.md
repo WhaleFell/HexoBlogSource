@@ -1,13 +1,16 @@
 ---
+
 title: Golang 学习笔记——Go error 错误
 date: 2022-05-22 0:44:48
 updated: 2022-05-22 0:44:48
 categories: Golang
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # Go error 错误
 
 Go使用控制流机制（如if和 return）处理异常，这使得编码人员能更多的关注错误处理。
@@ -16,15 +19,15 @@ Go使用控制流机制（如if和 return）处理异常，这使得编码人员
 
 ## 错误&异常
 
-- **错误**: 指的是**可能出现问题**的地方出现了问题。比如打开一个文件时失败，这种情况在人们的意料之中。  
-- **异常**: 指的是不**应该出现问题**的地方出现了问题。比如引用了空指针，这种情况**在人们的意料之外**。可见，错误是业务过程的一部分，而异常不是。  
+- **错误**: 指的是**可能出现问题**的地方出现了问题。比如打开一个文件时失败，这种情况在人们的意料之中。
+- **异常**: 指的是不**应该出现问题**的地方出现了问题。比如引用了空指针，这种情况**在人们的意料之外**。可见，错误是业务过程的一部分，而异常不是。
 
 Go中的错误 **也是一种类型** 。错误用内置的 `error` 类型表示。就像其他类型的，如`int`,`floate64`.错误值可以**存储在变量中，从函数中返回**，等等。
 
 ## 处理 OS 模块异常
 
-如果一个函数或方法返回一个错误，那么按照惯例，它必须是 **函数返回的最后一个值**。因此，`Open` 函数返回的值是最后一个值。  
-处理错误的惯用方法是将 **返回的错误与 `nil` 进行比较** 。`nil` 值表示没有发生错误，而 `非nil` 值表示出现错误。在我们的例子中，我们检查错误是否为`nil`。如果它不是 `nil` ,我们只需 **打印错误并从主函数返回**。
+如果一个函数或方法返回一个错误，那么按照惯例，它必须是 **函数返回的最后一个值**。因此，`Open` 函数返回的值是最后一个值。
+处理错误的惯用方法是将 **返回的错误与 ​**​**`nil`**​**​ 进行比较** 。`nil` 值表示没有发生错误，而 `非nil` 值表示出现错误。在我们的例子中，我们检查错误是否为`nil`。如果它不是 `nil` ,我们只需 **打印错误并从主函数返回**。
 
 ```go
 package main
@@ -50,8 +53,8 @@ func main() {
 
 ## 错误类型表示
 
-G0语言通过 **内置的错误接口** 提供了非常简单的错误处理机制。  
-**定义错误类型** 的构建。错误是一个带有以下定义的接口类型:  
+G0语言通过 **内置的错误接口** 提供了非常简单的错误处理机制。
+**定义错误类型** 的构建。错误是一个带有以下定义的接口类型:
 
 ```go
 type error interface {
@@ -59,9 +62,9 @@ type error interface {
 }
 ```
 
-> `fmt.Println(err)` 会在内部执行 Error() 方法,返回错误的字符串信息.  
+> `fmt.Println(err)` 会在内部执行 Error() 方法,返回错误的字符串信息.
 
-![](http://oss.whaleluo.top/blog/Golang/error-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/error-1.png-picsmall)
 
 ### 从错误中获取更多信息
 
@@ -69,15 +72,15 @@ type error interface {
 
 #### 使用 `struct` 类型属性
 
-![](http://oss.whaleluo.top/blog/Golang/error-4.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/error-4.png-picsmall)
 
 #### 调用 `struct` 类型的方法
 
-![](http://oss.whaleluo.top/blog/Golang/error-5.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/error-5.png-picsmall)
 
 #### 直接比较
 
-直接与错误类型的变量进行比较.  
+直接与错误类型的变量进行比较.
 
 ```go
 package main
@@ -102,11 +105,11 @@ func main() {
 
 ![](http://oss.whaleluo.top/blog/Golang/error-2.png-picsmall)
 
-### 2. 通过 `fmt.Errorf()`  
+### 2. 通过 `fmt.Errorf()`
 
-也可以使用 `fmt.Errorf()` 输出的错误更详细,支持格式化输出错误.  
+也可以使用 `fmt.Errorf()` 输出的错误更详细,支持格式化输出错误.
 
-![](http://oss.whaleluo.top/blog/Golang/error-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/error-3.png-picsmall)
 
 ### 3. 定义错误
 
@@ -220,16 +223,16 @@ func funB() { //外围函数
 
 ## 什么时候使用错误/异常
 
-什么情况下用错误表达，什么情况下用异常表达，就得有一套规则，否则很容易出现一切皆错误或一切皆异常的情况。  
-以下给出异常处理的作用域（场景）:  
+什么情况下用错误表达，什么情况下用异常表达，就得有一套规则，否则很容易出现一切皆错误或一切皆异常的情况。
+以下给出异常处理的作用域（场景）:
 
 > 1. 空指针引用
 > 2. 下标越界
 > 3. 除数为0
 > 4. 不应该出现的分支，比如default
-> 5. 输入不应该引起函数错误  
+> 5. 输入不应该引起函数错误
 
-其他场景我们使用错误处理，这使得我们的函数接口很精炼。对于异常，我们可以选择在一个合适的上游去`recover()` .并打印堆栈信息，使得部署后的程序不会终止。  
+其他场景我们使用错误处理，这使得我们的函数接口很精炼。对于异常，我们可以选择在一个合适的上游去`recover()` .并打印堆栈信息，使得部署后的程序不会终止。
 
 ## 偶然异常重试机制
 

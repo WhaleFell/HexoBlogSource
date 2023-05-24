@@ -1,4 +1,5 @@
 ---
+
 title: 服务器备忘录✨
 date: 2022-03-20 19:37:48
 updated: 2022-03-20 19:37:48
@@ -6,24 +7,23 @@ categories: Server
 tags: [Server, Linux]
 thumbnail: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
 banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
+
 ---
+
 # 服务器备忘录
 
-> **2022年3月19日** Update.  
+> **2022年3月19日** Update.
 
 # 落落家X86
 
 ## 服务器配置
 
 - **运行内存(RAM)：**4GB（笔记本ddr3内存条）
-
 - **CPU：**4 x Intel(R) Atom(TM) CPU D2550 @ 1.86GHz / 512 KB cache [英特尔凌动® 处理器 D2550 (intel.cn)](https://www.intel.cn/content/www/cn/zh/products/sku/65470/intel-atom-processor-d2550-1m-cache-1-86-ghz/specifications.html) 2核4线程
-
 - **服务器系统**：Ubuntu 18.04 Server
 
   Linux whalefall 4.15.0-171-generic #180-Ubuntu SMP Wed Mar 2 17:25:05 UTC 2022 x86_64
-
-- **硬盘：**`df -h`
+- **硬盘：**​`df -h`
 
   ```shell
   Filesystem      Size  Used Avail Use% Mounted on
@@ -31,7 +31,6 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
   /dev/sda1       299G  294G  5.0G  99% /mnt/disk  # 3.5寸硬盘1 300GB (跑wx)
   /dev/sdc1       466G  129G  338G  28% /mnt/mainDisk  # 2.5寸硬盘2 500GB (NAS)
   ```
-
 - **网络：** `ifconfig`
 
   ```shell
@@ -52,24 +51,21 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 >
 > 默认配置：[Nginx默认配置](#Nginx-default-config)
 
-1. Port: 80  
+1. Port: 80
 
    Desc: 运行探针服务。
 
-   Path: `/var/www/html`  
+   Path: `/var/www/html`
+2. Port: 86
 
-2. Port: 86  
+   Desc: python3-cookbook 3.0.0 文档。
 
-   Desc: python3-cookbook 3.0.0 文档。  
-
-   Path: `/www/openvpn_admin/`  
-
+   Path: `/www/openvpn_admin/`
 3. Port: 88
 
    Desc: 可道云 Kodcloud.
 
    Path: `/www/kodcloud`
-
 4. Port: 89
 
    Desc: AiraNg 下载器。（已反向代理Aira2 6800）[配置文件](#AiraNg-download-config)
@@ -83,19 +79,16 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Desc：Portainer web admin
 
    command：[source](#run-portainer-command)
-
 2. Port：8989
 
    Desc：qBittorrent download
 
    command：[source](#run-qbittorrent-command)
-
 3. Port：18888
 
    Desc：网心云（容器魔方）
 
    command：[source](#run-wxedge-command)
-
 4. network：macnet
 
    ip：192.168.5.66

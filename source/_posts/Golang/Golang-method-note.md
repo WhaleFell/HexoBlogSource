@@ -1,12 +1,14 @@
 ---
+
 title: Golang 学习笔记——method方法
 date: 2022-05-6 21:54:48
 categories: Golang
 updated: 2022-05-6 21:54:48
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
 
 # Go 方法
@@ -15,26 +17,26 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 一个对象其实也就是一个简单的值或者一个变量，在这个对象中会包含一些方法，而一个方法则是一个一个和特殊类型关联的函数。
 
-G0语言中同时有函数和方法。一个方法就是一个**包含了接受者的函数**，接受者可以是**命名类型或者结构体类型**的一个**值**或者是一个**指针**。所有给定类型的方法属于**该类型的方法集**.  
+G0语言中同时有函数和方法。一个方法就是一个**包含了接受者的函数**，接受者可以是**命名类型或者结构体类型**的一个**值**或者是一个**指针**。所有给定类型的方法属于**该类型的方法集**.
 
-方法只是一个**函数**，它带有一个**特殊的接收器类型**，它是在 `func` 关键字和方法名之间编写的。接收器可以是 `struct` 类型或非 `struct` 类型。**接收方可以在方法内部访问**。  
+方法只是一个**函数**，它带有一个**特殊的接收器类型**，它是在 `func` 关键字和方法名之间编写的。接收器可以是 `struct` 类型或非 `struct` 类型。**接收方可以在方法内部访问**。
 
 ## 对比函数
 
-- 意义  
-方法：某个类别的行为功能，需要**指定的接受者调用**.  
-函数：一段**独立功能**的代码，可以直接调用.  
-- 语法  
-方法：方法名可以相同，只要接受者不同.  
-函数：命名不能冲突.  
+- 意义
+  方法：某个类别的行为功能，需要**指定的接受者调用**.
+  函数：一段**独立功能**的代码，可以直接调用.
+- 语法
+  方法：方法名可以相同，只要接受者不同.
+  函数：命名不能冲突.
 
-> 方法可以模拟 `class` 继承结构.  
+> 方法可以模拟 `class` 继承结构.
 
 ## 定义一个方法
 
 Go 能够给任意类型定义方法，Go和很多其它的面向对象的语言不太一样。因此在Go语言里，我们为一些简单的数值、字符串、slice、map来定义一些附加行为。**方法可以被声明到任意类型**，**只要不是一个指针或者一个interface。**
 
-语法:  
+语法:
 
 ```go
 func (接收者) 方法名(参数列表)(返回值列表){
@@ -44,7 +46,7 @@ func (接收者) 方法名(参数列表)(返回值列表){
 
 ### 接收者为一个值
 
-![](http://oss.whaleluo.top/blog/Golang/method-1.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-1.png-picsmall)
 
 ### 接收者为一个指针
 
@@ -66,8 +68,8 @@ type P *int
 func (P) f() { /* ... */ } // compile error: invalid receiver type
 ```
 
-![](http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall)  
-![](http://oss.whaleluo.top/blog/Golang/method-3.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/method-2.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/method-3.png-picsmall)
 
 ### 注意点
 
@@ -97,7 +99,7 @@ func (c *Counter) Reset() { c.n = 0 }
 
 ### 示例
 
-`method` 是可以继承的，如果匿名字段实现了一个`method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`  
-![](http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall)  
-![](http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall)  
-![](http://oss.whaleluo.top/blog/Golang/method-6.png-picsmall)  
+`method` 是可以继承的，如果匿名字段实现了一个`method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`
+![](http://oss.whaleluo.top/blog/Golang/method-4.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/method-5.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/method-6.png-picsmall)

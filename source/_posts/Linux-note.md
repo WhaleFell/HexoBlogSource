@@ -1,16 +1,19 @@
 ---
+
 title: Linux 运维笔记(持续更新)
 date: 2022-03-20 16:37:48
 updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall
+
 ---
+
 # Linux Operation Note
 
-![Banner](http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall)
+​![Banner](http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall)​
 
 ## 硬盘操作
 
@@ -86,7 +89,7 @@ systemctl enable ttnode
 
 安装脚本:[Nyr/openvpn-install](https://github.com/Nyr/openvpn-install)
 
-服务端：`server.conf`  
+服务端：`server.conf`
 
 ```ini
 server 192.168.255.0 255.255.255.0
@@ -117,7 +120,7 @@ route 192.168.254.0 225.225.225.0
 ### Push Configurations Below
 ```
 
-客户端：`client.conf`  
+客户端：`client.conf`
 
 ```ini
 client
@@ -456,9 +459,9 @@ location /chat/ {
 proxy_connect_timeout 60s;
 proxy_read_timeout 60m;
 proxy_send_timeout 60m; 
-``
+```
 
-自动添加 `/` 在 server 字段下添加:
+自动添加 `/`​ 在 server 字段下添加:
 
 ```conf
 server_name_in_redirect off;
@@ -561,13 +564,13 @@ http {
         ssl_prefer_server_ciphers on;
 
         error_page 497 https://$host:8080$request_uri;
-        
+      
         client_max_body_size 5G;
         client_header_timeout    1m;
         client_body_timeout      1m;
         proxy_connect_timeout     60s;
         proxy_read_timeout      1m;
-        proxy_send_timeout      1m;        
+        proxy_send_timeout      1m;      
 
         location / {
                 root   /usr/share/nginx/html;
@@ -583,7 +586,7 @@ http {
 
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
-            
+          
             proxy_redirect off;
             proxy_http_version 1.1;
             proxy_pass http://192.168.8.10:8073/;
@@ -644,3 +647,5 @@ http {
     }
 }
 ```
+
+‍

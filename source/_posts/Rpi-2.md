@@ -1,19 +1,21 @@
 ---
+
 title: 😏 树莓派折腾手册（三）——搭建离线下载器 👀
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
+
 ---
 
 # 😏 树莓派折腾手册（三）——搭建离线下载器 👀
 
 ## 1.挂载硬盘/U盘
 
->**注意：开始之前先把存储设备格式化成** **fat32文件系统**
+> **注意：开始之前先把存储设备格式化成** **fat32文件系统**
 
 - 树莓派4B Debian10系统插上储存设备后默认自动挂载到  `/media` 目录我们先卸载U盘：
 
@@ -56,6 +58,7 @@ sudo apt-get install aria2
 - 安装nginx：
 
   > 上面已经安装过的**小可爱**可以**跳过**
+  >
 
 ```
 sudo apt-get install nginx
@@ -75,14 +78,13 @@ sudo apt-get install nginx
   #修改文件拥有者为aria2： 
   sudo chown aria2 /etc/aria2 /etc/aria2/aria2.session
   ```
-
 - 编辑`Aria2配置`文件:
 
   ```
   #根据需要编辑文件: 
   sudo nano /etc/aria2/aria2.conf 
   #配置实例
-  
+
   #默认下载位置，需要改这里！！ 
   dir=/home/pi/disk 
   #断点续传 
@@ -107,12 +109,11 @@ sudo apt-get install nginx
   bt-seed-unverified=true 
   bt-save-metadata=true
   ```
-
 - 创建**systemd**文件在 `/lib/systemd/system/aria2.service` 为如下:
 
   ```
   sudo nano /lib/systemd/system/aria2.service
-  
+
   #配置实例 
   [Unit] 
   Description=Aria2c download manager 
@@ -123,7 +124,6 @@ sudo apt-get install nginx
   ExecStart=/usr/bin/aria2c  --conf-path=/etc/aria2/aria2.conf  [Install] 
   WantedBy=multi-user.target 
   ```
-
 - 启动**Aria2**:
 
   ```
@@ -134,10 +134,10 @@ sudo apt-get install nginx
   #如果要关闭开机启动 
   sudo systemctl disable aria2.service
   ```
-
 - 配置**nginx+ariaNg**可视化管理页面：
 
-  > 到[**AriaNG**开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
+  > 到[**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
+  >
 
   ![UO7c5EItjBHRsgN](http://oss.whaleluo.top/blog/old/20210619153158.png-picsmall)
 
@@ -149,15 +149,15 @@ sudo apt-get install nginx
   cd /website
   mkdir AriaNg
   cd AriaNg
-  
-  #自己复制最新版链接
+
+  # 自己复制最新版链接
   wget https://github.com/mayswind/AriaNg/releases/download/1.1.6/AriaNg-1.1.6.zip
-  #祖国加速通道
+  # 祖国加速通道
   wget https://gproxy.cn/https://github.com/mayswind/AriaNg/releases/download/1.1.6/AriaNg-1.1.6.zip
-  #解压
+  # 解压
   unzip AriaNg-1.1.6.zip
   rm AriaNg-1.1.6.zip
-  #授权
+  # 授权
   sudo chmod 777 -R /website
   ```
 
@@ -189,8 +189,7 @@ location /jsonrpc {
 sudo systemctl restart nginx 
 ```
 
-- 尝试访问 [http://树莓派ip/aria2](http://树莓派ip/aria2) ，**设置参数**
-
+- 尝试访问 [http://树莓派ip/aria2](http://%E6%A0%91%E8%8E%93%E6%B4%BEip/aria2) ，**设置参数**
 - ![wNbqhBl7KWL6Jcx](http://oss.whaleluo.top/blog/old/20210619153219.png-picsmall)
 
 ![2o7a8c3qpFODP4Y](http://oss.whaleluo.top/blog/old/20210619153228.png-picsmall)

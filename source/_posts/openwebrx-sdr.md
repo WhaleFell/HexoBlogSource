@@ -1,14 +1,18 @@
 ---
+
 title: 基于 Openwebrx 搭建 Rsp1 Websdr
 date: 2023-04-29 15:51:48
 updated: 2023-04-29 15:59:48
 categories: Radio
 tags: [Ham, Radio, 业余无线电, 软件无线电, Openwebrx]
+
 ---
 
 # 基于 Openwebrx 搭建 Rsp1 Websdr
 
 [Openwebrx](https://www.openwebrx.de/)
+
+本文参考：[https://github.com/jketterl/openwebrx/wiki/](https://github.com/jketterl/openwebrx/wiki/)
 
 ## 安装依赖
 
@@ -65,7 +69,7 @@ sudo ./SDRplay_RSP_API-Linux-3.07.1.run
 
 [SoapySDR](https://github.com/pothosware/SoapySDR)
 
-通过编译安装 SoapySdr 驱动, ~~或者通过 `apt-get` 软件包管理安装~~
+通过编译安装 SoapySdr 驱动, ~~或者通过 ​~~​~~`apt-get`~~​~~​ 软件包管理安装~~
 
 ```sh
 git clone https://github.com/pothosware/SoapySDR

@@ -1,21 +1,24 @@
 ---
+
 title: Golang 学习笔记——const常量
 date: 2022-04-22 18:30:48
 categories: Golang
 updated: 2022-04-22 18:30:48
 tags: [Golang, Coding]
-description: 
+description:
 
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # go 语言常量
 
 常量，就是在程序**编译阶段**就确定下来的值，而程序在**运行时则无法改变该值**。在G0程序中，常量可以是数值类型(包括整型、浮点型和复数类型)、布尔类型、字符串类型等。
 
 ## 定义常量的语法
 
-定义一个常量使用const关键字，语法格式如下：  
+定义一个常量使用const关键字，语法格式如下：
 
 ```go
 const constantName [type] = value
@@ -50,7 +53,7 @@ func main() {
 
 ## `iota` 关键字
 
-`iota`比较特殊，可以被认为是一个可被编译器修改的常量，它默认开始值是`0`，每调用一次加`1`。遇到`const`关键字时被重置为`0`。e.g.  
+`iota`比较特殊，可以被认为是一个可被编译器修改的常量，它默认开始值是`0`，每调用一次加`1`。遇到`const`关键字时被重置为`0`。e.g.
 
 ```go
 package main
@@ -71,7 +74,7 @@ func main() {
 }
 ```
 
-### 使用 `_` 跳过某些值  
+### 使用 `_` 跳过某些值
 
 ```go
 package main

@@ -1,16 +1,19 @@
 ---
+
 title: Golang 学习笔记——变量
 date: 2022-04-25 18:30:48
 updated: 2022-04-25 18:30:48
 categories: Golang
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # Golang 变量
 
-变量是计算机语言中能储存计算结果或能表示值的抽象概念。不同的变量保存的数据类型可能会不一样。  
+变量是计算机语言中能储存计算结果或能表示值的抽象概念。不同的变量保存的数据类型可能会不一样。
 
 ## 声明变量
 
@@ -27,7 +30,7 @@ type:变量类型
 */
 ```
 
-e.g.  
+e.g.
 
 ```go
 package main
@@ -75,7 +78,7 @@ G0语言在声明变量的时候，会**自动对变量对应的内存区域进�
 var 变量名 类型 = 表达式
 ```
 
-e.g.  
+e.g.
 
 ```go
 package main
@@ -126,7 +129,7 @@ func main() {
 
 ## 短变量声明
 
-在函数内部，可以使用`:=`运算符对变量进行声明和初始化。  
+在函数内部，可以使用`:=`运算符对变量进行声明和初始化。
 
 ```go
 package main
@@ -150,15 +153,15 @@ func main() {
 
 ## 匿名变量
 
-如果我们接收到**多个变量**，有一些**变量使用不到**，可以**使用下划线_表示变量名称**，这种变量叫做匿名变量。e.g.  
+如果我们接收到**多个变量**，有一些**变量使用不到**，可以**使用下划线_表示变量名称**，这种变量叫做匿名变量。e.g.
 
-1. 函数定义  
+1. 函数定义
 
 ```go
 func getNameAndAge() (name string, age int) {
  return "hyy", 30
 }
-```  
+```
 
 等价于：
 
@@ -166,7 +169,7 @@ func getNameAndAge() (name string, age int) {
 func getNameAndAge() (string, int) {
  return "hyy", 30
 }
-```  
+```
 
 2. 接收函数返回值
 

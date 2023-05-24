@@ -1,13 +1,15 @@
 ---
+
 title: Python Tkinter 框架学习
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
-categories: 
-    - Python
+categories:
+- Python
 tags: [Python, Coding, GUI]
 description: Python Tkinter 是一个 Python 自带GUI包，十分轻量。
 thumbnail: http://oss.whaleluo.top/blog/old/20210630201524.png
 banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
+
 ---
 
 # Tkinter 框架学习
@@ -125,4 +127,4 @@ if __name__ == "__main__":
 
 属性的双向关联
 
-![image-20210705223506326](C:\Users\WhaleFall\AppData\Roaming\Typora\typora-user-images\image-20210705223506326.png-picsmall)
+![image-20210705223506326](C:/Users/WhaleFall/AppData/Roaming/Typora/typora-user-images/image-20210705223506326.png-picsmall)

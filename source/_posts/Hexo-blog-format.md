@@ -1,12 +1,17 @@
 ---
+
 title: Hexo 博客写作规范约定
 date: 2018-12-11 15:51:48
 updated: 2018-12-11 15:59:48
 categories: Hexo
 tags: [Hexo, Blog]
+
 # sticky: 100
-description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。 
+
+description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。
+
 # thumbnail: http://oss.whaleluo.top/blog/old/20210629014311.png
+
 ---
 
 # Hexo 博客写作规范约定
@@ -21,7 +26,7 @@ description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规�
 
 > reference: [Fluid 主题文档](https://fluid-dev.github.io/hexo-fluid-docs/guide/)
 
-头注必须注明 `title` 、`data` 、`categories`(分类)、`tags`(标签)，其中分类和标签需要统一使用英文字符，`post_/` 目录下的 `markdown` 文件名需要使用英文，`hexo` 会根据文件名生成路径。  
+头注必须注明 `title` 、`data` 、`categories`(分类)、`tags`(标签)，其中分类和标签需要统一使用英文字符，`post_/` 目录下的 `markdown` 文件名需要使用英文，`hexo` 会根据文件名生成路径。
 
 md 文件名遵从 `Key-word.md` 格式，单词之间用 `-` 分隔，首字母大写。
 

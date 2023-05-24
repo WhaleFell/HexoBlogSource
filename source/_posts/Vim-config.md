@@ -1,11 +1,13 @@
 ---
+
 title: 个人常用的 Vim 配置
 date: 2023-01-29 1:37:48
 updated: 2023-01-29 1:37:48
 categories: Linux
 tags: [Vim, Linux]
-thumbnail: 
-banner_img: 
+thumbnail:
+banner_img:
+
 ---
 
 # Vim 常用配置
@@ -14,7 +16,7 @@ banner_img:
 
 ## 配置
 
-> **自用 `.vimrc` 已上传到 GitHub 仓库**
+> **自用 ​**​**`.vimrc`**​**​ 已上传到 GitHub 仓库**
 > 参考：[WhaleFell/vimrc](https://github.com/WhaleFell/vimrc/blob/main/.vimrc)
 > raw: [https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc](https://raw.githubusercontent.com/WhaleFell/vimrc/main/.vimrc)
 

@@ -1,12 +1,14 @@
 ---
+
 title: Kali 平台渗透教程
 date: 2021-06-18 22:16:49
 updated: 2021-06-18 22:16:49
 categories: Linux
 tags: [Linux, Kali]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210619154844.jpg
 banner_img: http://oss.whaleluo.top/blog/old/20210619154844.jpg
+
 ---
 
 ![Kali](http://oss.whaleluo.top/blog/old/20210619154844.jpg-picsmall)
@@ -26,17 +28,11 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154844.jpg
 ## 扫描类型
 
 - -sT    TCP connect() 扫描，这是最基本的 TCP 扫描方式。这种扫描很容易被检测到，在目标主机的日志中会记录大批的连接请求以及错误信息。
-
 - -sS    TCP 同步扫描 (TCP SYN)，因为不必全部打开一个 TCP 连接，所以这项技术通常称为半开扫描 (half-open)。这项技术最大的好处是，很少有系统能够把这记入系统日志。不过，你需要 root 权限来定制 SYN 数据包。
-
 - -sF,-sX,-sN    秘密 FIN 数据包扫描、圣诞树 (Xmas Tree)、空 (Null) 扫描模式。这些扫描方式的理论依据是：关闭的端口需要对你的探测包回应 RST 包，而打开的端口必需忽略有问题的包（参考 RFC 793 第 64 页）。
-
 - -sP    ping 扫描，用 ping 方式检查网络上哪些主机正在运行。当主机阻塞 ICMP echo 请求包是 ping 扫描是无效的。nmap 在任何情况下都会进行 ping 扫描，只有目标主机处于运行状态，才会进行后续的扫描。
-
 - -sU    UDP 的数据包进行扫描，如果你想知道在某台主机上提供哪些 UDP（用户数据报协议，RFC768) 服务，可以使用此选项。
-
 - -sA    ACK 扫描，这项高级的扫描方法通常可以用来穿过防火墙。     -sW    滑动窗口扫描，非常类似于 ACK 的扫描。
-
 - -sR    RPC 扫描，和其它不同的端口扫描方法结合使用。     -b    FTP 反弹攻击 (bounce attack)，连接到防火墙后面的一台 FTP 服务器做代理，接着进行端口扫描。
 
 ## 扫描参数
@@ -62,7 +58,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154844.jpg
 ## 端口状态
 
 - Open（开放的）意味着目标机器上的应用程序正在该端口监听连接 / 报文。
-- filtered（被过滤的） 意味着防火墙，过滤器或者其它网络障碍阻止了该端口被访问，Nmap 无法得知 它是 open（开放的） 还是 closed（关闭的）。  
+- filtered（被过滤的） 意味着防火墙，过滤器或者其它网络障碍阻止了该端口被访问，Nmap 无法得知 它是 open（开放的） 还是 closed（关闭的）。
 - closed（关闭的） 端口没有应用程序在它上面监听，但是他们随时可能开放。
 - unfiltered（未被过滤的）当端口对 Nmap 的探测做出响应，但是 Nmap 无法确定它们是关闭还是开放时 open filtered 开放或者被过滤的 closed filtered 关闭或者被过滤的
 
@@ -104,7 +100,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154844.jpg
 - service： 指定服务名，支持的服务和协议
 - OPT： 可选项
 
----------
+---
 
 ## 实例分析
 

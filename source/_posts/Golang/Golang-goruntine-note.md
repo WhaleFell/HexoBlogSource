@@ -1,13 +1,16 @@
 ---
+
 title: Golang 学习笔记——Goruntine并发协程
 date: 2022-12-30 11:11:48
 updated: 2022-12-30 11:11:48
 categories: Golang
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # Golang 学习笔记——Goruntine并发协程
 
 并发程序指同时进行多个任务的程序，Web服务器会一次处理成千上万的请求。

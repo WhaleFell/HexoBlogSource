@@ -1,4 +1,5 @@
 ---
+
 title: Python 迭代器生成器修饰器
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
@@ -7,6 +8,7 @@ tags: [Python, Coding]
 description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
 thumbnail: http://oss.whaleluo.top/blog/old/20210630201524.png
 banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
+
 ---
 
 ## 迭代器
@@ -20,23 +22,20 @@ banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
    元组;列表;字典;集合;字符串等
 
    生成器.
-
 2. 用 for 循环迭代
-
 3. 验证一个东西是否可迭代
 
    > **可迭代不一定是迭代对象**
    >
    > (列表不是可迭代对象,但是可迭代.)
+   >
 
    ```python
    from collections import Iterable
    # 判断是否是可迭代对象(迭代器)
    isinstance("adb",Iterable) # instance:实例
    ```
-
 4. 生成器可迭代,但可以迭代的不一定是生成器
-
 5. `iter()` 可以将列表变成可迭代对象
 
 ### 迭代器的作用
@@ -160,9 +159,7 @@ with open('a.txt',mode='w') as f:
 把一个类作为一个迭代器使用需要在类中实现两个方法 `iter()` 与 `next()` 。
 
 1. `iter()`方法返回一个特殊的迭代器对象,这个迭代器对象实现了`next()`方法并通过`StopIteration`异常标识迭代的完成。
-
 2. `next()`方法会返回**下一个迭代器对象**。
-
 3. **StopIteration**
 
    `StopIteration` 异常用于标识**迭代的完成**，防止出现无限循环的情况，在 **next**() 方法中我们可以设置在完成指定循环次数后触发 `StopIteration` 异常来结束迭代。
@@ -230,7 +227,7 @@ list('hello') # 原理同for循环
 
 跟普通函数不同的是，生成器是**一个返回迭代器的函数**，只能用于**迭代操作**，更简单点理解**生成器就是一个迭代器**。
 
-在**调用生成器**运行的过程中，每次遇到 `yield` 时函数会**暂停并保存当前所有的运行信息**，**返回 `yield` 的值**, 并在下一次执行 `next()` 方法时**从当前位置继续运行**。
+在**调用生成器**运行的过程中，每次遇到 `yield` 时函数会**暂停并保存当前所有的运行信息**，**返回 ​**​**`yield`**​**​ 的值**, 并在下一次执行 `next()` 方法时**从当前位置继续运行**。
 
 **调用一个生成器函数，返回的是一个迭代器对象。**
 
@@ -334,14 +331,11 @@ t.close() 关闭generator后再调用，会出现StopIteration异常
 
 > 可以发现，`send`函数和`next`函数的区别就是 `send`函数可以在执行generator的**过程中**，给**generator**发送消息。**而next仅仅是接收yield右边的变量值**。
 
-### `send()`**方法用法**
+### `send()`​**方法用法**
 
 0. **send过来的数值 = yield next出来的数值**
-
 1. 它的主要作用是，当我需要**手动更改生成器里面的某一个值并且使用它**，则**send发送进去一个数据**，然后**保存到yield语句的返回值**，以提供使用.
-
 2. `send()`的返回值就是那个**本来应该被迭代出来的那个值**。这样既可以**保证我能够传入新的值，原来的值也不会弄丢.**
-
 3. 实例:
 
    ```python
@@ -351,7 +345,7 @@ t.close() 关闭generator后再调用，会出现StopIteration异常
            # send来的数值 = yield 数值
            num = yield i
            print(f'传入的{num}')
-   
+
    g = my_generator(5)
    print(next(g))
    print(next(g))
@@ -401,9 +395,9 @@ StopIteration
 
 1. **生成器的启动**
 
-   **方法1：**直接使用`next(g)`，这会**直接开始迭代第一个元素**（**推荐使用这个启动**）
+   **方法1：**​****直接使用****​****`next(g)`****​****，这会****​**直接开始迭代第一个元素**（**推荐使用这个启动**）
 
-   **方法2：**使用`g.send(None)`进行启动，注意**第一次启动的时候只能传入`None`**，如果传入其他具体的指则会**报错**哦！
+   **方法2：**​****使用****​****`g.send(None)`****​****进行启动，注意****​**第一次启动的时候只能传入**​**`None`**，如果传入其他具体的指则会**报错**哦！
 
    ```python
    def my_generator():
@@ -411,20 +405,19 @@ StopIteration
        yield 2
        yield 3
        yield 4
-    
+
    g = my_generator()
    g.send(None)   #第一次启动，本来第一次应该迭代的1，这里被取代了，但是send(None)会返回1
    print(next(g))
    print(next(g))
    print(next(g))
-    
+
    '''运行结果为：
    2
    3
    4
    '''
    ```
-
 2. **生成器的关闭**
 
    如果一个生成器被**中途关闭**之后，在此调用`next()`方法，则会显示错误，如下：
@@ -435,7 +428,7 @@ StopIteration
        yield 2
        yield 3
        yield 4
-    
+
    g = my_generator()
    print(next(g))
    print(next(g))
@@ -449,69 +442,68 @@ StopIteration
    '''
    ```
 
-### **生成器的终止迭代——`StopIteration`**
+### **生成器的终止迭代——**​**`StopIteration`**
 
-   > 前面讲的手动关闭生成器，使用`close()`方法，后面的迭代会抛出`StopIteration`异常。
+> 前面讲的手动关闭生成器，使用`close()`方法，后面的迭代会抛出`StopIteration`异常。
 
 在一个生成器中，如果没有`return`，则默认执行到函数完毕时返回`StopIteration`:
 
-   ```python
-   def g1():
-       yield 1
-   g = g1()
-   next(g)    #第一次调用next(g)时，会在执行完yield语句后挂起，所以此时程序并没有执行结束。
-   next(g)    #程序试图从yield语句的下一条语句开始执行，发现已经到了结尾，所以抛出StopIteration异常。
-   '''运行结果为：
-   1
-   Traceback (most recent call last):
-     File "<stdin>", line 1, in <module>
-   StopIteration
-   '''
-   ```
+```python
+def g1():
+    yield 1
+g = g1()
+next(g)    #第一次调用next(g)时，会在执行完yield语句后挂起，所以此时程序并没有执行结束。
+next(g)    #程序试图从yield语句的下一条语句开始执行，发现已经到了结尾，所以抛出StopIteration异常。
+'''运行结果为：
+1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+'''
+```
 
- 如果遇到`return`,如果在执行过程中return，则直接抛出 `StopIteration` 终止迭代:
+如果遇到`return`,如果在执行过程中return，则直接抛出 `StopIteration` 终止迭代:
 
-   ```python
-   def g2():
-       yield 'a'
-       return
-       yield 'b'
-   g=g2()
-   next(g)    #程序停留在执行完yield 'a'语句后的位置。
-   next(g)    #程序发现下一条语句是return，所以抛出StopIteration异常，这样yield 'b'语句永远也不会执行。
-   '''运行结果为：
-   a
-   b
-   Traceback (most recent call last):
-     File "<stdin>", line 1, in <module>
-   StopIteration
-   '''
-   ```
+```python
+def g2():
+    yield 'a'
+    return
+    yield 'b'
+g=g2()
+next(g)    #程序停留在执行完yield 'a'语句后的位置。
+next(g)    #程序发现下一条语句是return，所以抛出StopIteration异常，这样yield 'b'语句永远也不会执行。
+'''运行结果为：
+a
+b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+'''
+```
 
 如果在`return`后返回一个值，那么这个值为`StopIteration`异常的说明，不是程序的返回值。
 
-   ```python
-   def g3():
-    yield 'a'
-    return '这是错误说明'
-    yield 'b'   #有一些编辑器会提示错误，此处为unreachable code，即不可到达的代码
-   g=g3()
-   next(g)
-   next(g)
-   '''运行结果为：
-   a
-   Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-   StopIteration: 这是错误说明
-   '''
-   ```
+```python
+def g3():
+ yield 'a'
+ return '这是错误说明'
+ yield 'b'   #有一些编辑器会提示错误，此处为unreachable code，即不可到达的代码
+g=g3()
+next(g)
+next(g)
+'''运行结果为：
+a
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+StopIteration: 这是错误说明
+'''
+```
 
-> **注意：**生成器没有办法使用`return`来返回值。因为`return`返回的那个值是通过**StopIteration的异常信息**返回的，所以没办法**直接获取这个return返回的值**。
+> **注意：**​****生成器没有办法使用****​****`return`****​****来返回值。因为****​****`return`****​****返回的那个值是通过****​**StopIteration的异常信息**返回的，所以没办法**直接获取这个return返回的值**。
 
 当然上面所说的无法获取**return返回值**，我们指的是没有办法通过`result=g3()`这种形式获取**return的返回值**。实际上还是有手段获取这个**return的值的**，有两种方法：
 
 1. 使用`yield from`语句
-
 2. 因为`return`返回的值是作为**StopIteration的一个value属性存在的**，StopIteration本质上是**一个类**，所以可以通过访问它的**value属性获取这个return返回的值**。使用下面的代码：
 
    ```python
@@ -520,7 +512,7 @@ StopIteration
        return '这是错误说明'
        yield 'b'
    g=g3()
-    
+
    try:   
        print(next(g))  #a
        print(next(g))  #触发异常
@@ -533,7 +525,7 @@ StopIteration
    '''
    ```
 
-### **`yield`实现协程**
+### **`yield`**​**实现协程**
 
 在Python中，协程通过`yield`实现。因为当**一个函数中有yield存在**的时候，这个函数是**生成器**，那么当你调用这个函数的时候，你在函数体中写的代码**并没有被执行**，而是**只返回了一个生成器对象**，这个需要特别注意。然后，你的代码将会在每次使用这个生成器的时候被执行。
 
@@ -554,7 +546,7 @@ StopIteration
                return
            print('[消费者] 正在消费:{0}'.format(n))
            r = '200 人民币'
-    
+
    def produce(c):
        c.send(None)  #启动消费者（生成器）——实际上是函数调用，只不过生成器不是直接象函数那般调用的
        n = 0
@@ -565,10 +557,10 @@ StopIteration
            print('[生产者] 消费者返回:{0}'.format(r))
            print('-------------------------------------------------')
        c.close()
-    
+
    c = consumer()#构造一个生成器
    produce(c)
-    
+
    '''运行结果为：
    [生产者] 正在生产:1
    [消费者] 正在消费:1
@@ -664,7 +656,7 @@ main(g)
 
 **for迭代语句不会显式触发异常**，故而无法获取到**return的值**，迭代到2的时候**遇到return语句**，**隐式的触发了StopIteration异常**，就**终止迭代**了，但是在程序中**不会显示出来**。
 
-如果是使用`next()`**一次一次迭代**，则会**显式触发异常**，但要获取return的返回值，我需要如下操作：
+如果是使用`next()`​**一次一次迭代**，则会**显式触发异常**，但要获取return的返回值，我需要如下操作：
 
 ```python
 def my_generator():
@@ -728,10 +720,8 @@ main(wrap_g)  #调用
 
 从上面的比较可以看出，`yield from`具有以下几个**特点**：
 
-1. **单独`yield`时**：的my_generator是原始的生成器，main是调用方，使用yield的时候，只涉及到这两个函数，即“调用方”与“生成器（协程函数）”是**直接进行交互的，不涉及其他方法**，即**“调用方——>生成器函数(协程函数)”；**
-
-2. **在使用`yield from`的时**：多了一个对原始my_generator的**包装函数**，然后**调用方是通过这个包装函数**（后面会讲到它专有的名词）来与**生成器进行交互**的，即**“调用方——>生成器包装函数——>生成器函数(协程函数)”**；
-
+1. **单独**​**`yield`**​**时**：的my_generator是原始的生成器，main是调用方，使用yield的时候，只涉及到这两个函数，即“调用方”与“生成器（协程函数）”是**直接进行交互的，不涉及其他方法**，即**“调用方——>生成器函数(协程函数)”；**
+2. **在使用**​**`yield from`**​**的时**：多了一个对原始my_generator的**包装函数**，然后**调用方是通过这个包装函数**（后面会讲到它专有的名词）来与**生成器进行交互**的，即**“调用方——>生成器包装函数——>生成器函数(协程函数)”**；
 3. `yield from iteration`结构会在内部**自动捕获 iteration生成器的StopIteration 异常**。这种处理方式与 for 循环处理 StopIteration 异常的方式一样。而且对 `yield from`结构来说，**解释器不仅会捕获 StopIteration 异常，还会把return返回的值或者是StopIteration的value 属性的值变成 yield from 表达式的值，即上面的result。**
 
 > 委派生成器：包含 `yield from` <iterable> **表达式的生成器函数**；即上面的wrap_my_generator**生成器包装函数**
@@ -781,40 +771,40 @@ None
 '''
 ```
 
-从上面我们可以发现，调用方发送的数据是发给`wrap_average`的，怎么依然到了生成器函数`average`里面呢？这就是**“数据传输管道的作用”**。即**主函数调用方main把各个value传给grouper** ，而这个传入的值**最终到达averager函数中**； **grouper并不知道传入的是什么值**，因为从上面的代码看出，**`wrap_average`里面完全没有处理这个值的任何代码！**
+从上面我们可以发现，调用方发送的数据是发给`wrap_average`的，怎么依然到了生成器函数`average`里面呢？这就是**“数据传输管道的作用”**。即**主函数调用方main把各个value传给grouper** ，而这个传入的值**最终到达averager函数中**； **grouper并不知道传入的是什么值**，因为从上面的代码看出，**`wrap_average`**​**里面完全没有处理这个值的任何代码！**
 
 ## 装饰器
 
 ### 函数引用
 
-   ```python
-   def test():
-       print("1")
-   print(test)
-   # <function __main__.test>
-   a = test # 变量A指向函数对象
-   a() # 变量A可调用函数
-   ```
+```python
+def test():
+    print("1")
+print(test)
+# <function __main__.test>
+a = test # 变量A指向函数对象
+a() # 变量A可调用函数
+```
 
 ### 什么是闭包
 
-   > **在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这些函数以及用到的一些变量称之为闭包。**
+> **在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这些函数以及用到的一些变量称之为闭包。**
 
 ### 闭包的应用
 
-   ```python
-   def parse(number: int):
-       print("第一层函数", number)
-   
-       def sum(number2):
-           print("第二层函数加和后", number+number2)
-       return sum
-   # 接受函数对象的引用
-   func = parse(100)
-   func(100)
-   ```
+```python
+def parse(number: int):
+    print("第一层函数", number)
 
-   ![](http://oss.whaleluo.top/blog/old/20210719211704.png-picsmall)
+    def sum(number2):
+        print("第二层函数加和后", number+number2)
+    return sum
+# 接受函数对象的引用
+func = parse(100)
+func(100)
+```
+
+![](http://oss.whaleluo.top/blog/old/20210719211704.png-picsmall)
 
 ![](http://oss.whaleluo.top/blog/old/20210719215011.png-picsmall)
 

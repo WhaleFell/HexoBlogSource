@@ -1,12 +1,14 @@
 ---
+
 title: Flask Web 框架学习笔记
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Flask, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210818152255.png
 banner_img: http://oss.whaleluo.top/blog/old/20210818152255.png
+
 ---
 
 # Flask Web 框架学习笔记
@@ -67,13 +69,12 @@ app.config[name] # 修改
       SECRET_KET = 'lovehyy2021209classpzezprem'
   app = Flask(__name__)
   app.config.from_object(DefaultConfig) # 从配置对象中加载
-  
+
   @app.route('/') # 装饰器->路由
   def index(): # 视图函数
       print(app.config['SECRET_KEY'])
       return 'hello world'
   ```
-  
 - **从配置文件中加载**
 
   在项目目录下新建`setting.py`文件，存放大写常量
@@ -88,10 +89,10 @@ app.config[name] # 修改
   app = Flask(__name__)
   app.config.from_pyfile('setting.py') # 从配置文件加载
   ```
-
 - **从环境变量中加载**
 
   > **环境变量(environment variables)** 一般是指在操作系统中用来指定操作系统运行环境的一些参数，如:临时文件夹位置和系统文件夹位置等。环境变量是在操作系统中一个具有特定名字的对象，它包含了一个或者多个应用程序所将使用到的信息。
+  >
 
   **通俗的理解，环境变量就是我们设置在操作系统中，由操作系统代为保存的变量值**:
 
@@ -115,16 +116,15 @@ app.config[name] # 修改
   app = Flask(__ name__)
   app.config.from_envvar('PROJECT_ SETTING', silent=True)
   ```
-  
 - **各配置方式优缺点**
-  
+
   - **app.config.from _object(配置对象)**
     - 继承- ->优点复用
     - 敏感数据暴露缺点
   - **app.config.from_pyfile(配置文件)**
     - 优点 --> 独立文件保护敏感数据
     - 缺点 --> 不能继承文件路径固定不灵活
-  - **app.config.from_envvar("环境变量名")**
+  - **app.config.from_envvar(&quot;环境变量名&quot;)**
     - 优点 --> 独立文件保护敏感数据文件路径不固定灵活
     - 缺点 --> 不方便要记得设置环境量
   - **设置环境变量**
@@ -203,7 +203,6 @@ flask run # 在项目文件下执行
   ```shell
   flask routes
   ```
-
 - 在应用中的`url_ map`属性中保存着整个Flask应用的**路由映射信息**，可以通过读取这个属性获取**路由信息**。
 
   `print(app.url_map)`
@@ -215,6 +214,7 @@ flask run # 在项目文件下执行
       # rule 路由的路径
    print( 'name={} path={}'. format(rule.endpoint, rule.rule))
 
+  ```
 - 搭建一个**返回所有路由信息**的json接口
 
   ```python
@@ -237,17 +237,17 @@ flask run # 在项目文件下执行
 ### 请求方式
 
 - **GET**(自带)
-
 - **OPTIONS**(自带)  -> 简化版的GET请求用于询问服务器接口信息的
   比如接口允许的请求方式允许的
 
   > CORS跨域:
   > www.meiduo.site -> api.meiduo.site/users/1
   > options api.meiduo.site/uses/1
-
+  >
 - **HEAD**(自带) -> 简化版的GET请求
 
   > 只返回GET请求处理时的响应头，不返回响应体。
+  >
 
 ### 指定接口请求方式
 
@@ -286,7 +286,6 @@ def index():
    ```python
    user_bp = Blueprint('user', __name__)
    ```
-
 2. 在这个**蓝图对象上进行操作**,**注册路由**,**指定静态文件夹**,**注册模版过滤器**
 
    ```python
@@ -294,7 +293,6 @@ def index():
    def user_profile():
        return 'user_profile'
    ```
-
 3. 在应用对象中注册这个蓝图对象
 
    ```python

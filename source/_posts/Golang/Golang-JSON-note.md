@@ -1,13 +1,16 @@
 ---
+
 title: Golang 学习笔记——JSON的解析
 date: 2022-12-17 12:17:48
 categories: Golang
 updated: 2022-12-17 12:17:48
 tags: [Golang, Coding]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+
 ---
+
 # Golang 解析 JSON 数据
 
 `JSON` 是对 `JavaScript` 中各种类型的值——字符串、数字、布尔值和对象—— Unicode 本文编码。它可以用有效可读的方式表示基础数据类型和数组、slice、结构体和 map 等聚合数据类型。
@@ -80,7 +83,7 @@ Color 成员的 Tag 还带了一个额外的 omitempty 选项，表示当Go 语�
 
 ## 流式 JSON 解码器
 
-基于流式的解码器 `json.Decoder`，它可以从一个输入流解码JSON 数据，尽管这不是必须的。如您所料，还有一个针对输出流的 `json.Encoder` 编码对象。  
+基于流式的解码器 `json.Decoder`，它可以从一个输入流解码JSON 数据，尽管这不是必须的。如您所料，还有一个针对输出流的 `json.Encoder` 编码对象。
 
 ![流式 JSON 解码器](http://oss.whaleluo.top//blog/Golang/json-1.png-picsmall)
 

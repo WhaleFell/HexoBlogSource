@@ -1,14 +1,15 @@
 ---
+
 title: 😭2021年广东数学中考体验
 date: 2021-06-28 19:37:48
 updated: 2021-06-28 19:37:48
 categories: Study
 tags: [Maths, Study]
-description: 
+description:
 thumbnail: http://oss.whaleluo.top/blog/old/20210629014311.png
 banner_img: http://oss.whaleluo.top/blog/old/20210629014311.png
----
 
+---
 
 # 😭😭😭2021年广东数学中考体验
 
@@ -30,7 +31,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210629014311.png
 
 ![img](http://oss.whaleluo.top/blog/old/20210629023434.jpeg-picsmall)
 
-------
+---
 
 **好吧。当我见到答题卡的时候，简单的图形，没有圆，尺规作图在第二十题（因为那里是个孤零零的直角三角形），二十四题貌似是个手拉手，二十五题没有图。**
 
@@ -54,7 +55,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210629014311.png
 
 第十题类型题我刷过，那个AB会过定点，**辅助线是三垂直**，但是没有记的情况是定点(0,1)，当时为了赶时间（**别问为什么这么赶**，只有90分钟啊，90分钟！！！）我跳了这题。
 
-**第十五题**为什么不是  $ x^{2}+\frac{1}{x^{2}} $ 而是 $ x^{2}-\frac{1}{x^{2}} $
+**第十五题**为什么不是  $x^{2}+\frac{1}{x^{2}}$ 而是 $x^{2}-\frac{1}{x^{2}}$
 完了，**硬算很费时间**，跳了。
 
 第十六题**暴力三角函数相似勾股**，有点费。但是算对了.

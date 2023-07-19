@@ -13,7 +13,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 
 # 😃 树莓派折腾手册 (一)——准备系统 😃
 
-## 烧录官方`Debian 10 buster`系统镜像
+## 烧录官方 `Debian 10 buster` 系统镜像
 
 先用 **SDFormatter** 格式化一下内存卡叭:
 
@@ -23,10 +23,10 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 
 ![Zb6CEHnf17oqO5Q](http://oss.whaleluo.top/blog/old/20210619152403.png-picsmall)
 
-- 然后在U盘的根目录建立一个空白的 **ssh文件  方便ssh远程连接**
+- 然后在 U 盘的根目录建立一个空白的 **ssh 文件 方便 ssh 远程连接**  
   ![FV5qpvWz7LtsOgi](http://oss.whaleluo.top/blog/old/sasw.png-picsmall)
-- 用 **Windows PowerShell** 连接树莓派ssh
-  `shift+右键` 呼出**Windows PowerShell**
+- 用 **Windows PowerShell** 连接树莓派 ssh  
+  `shift+右键` 呼出**Windows PowerShell**  
   **完整连接语法**:
 
 ```shell
@@ -35,20 +35,20 @@ ssh -p 端口号 用户名@主机地址
 
 > 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://oss.whaleluo.top/blog/old/20210619152448.png-picsmall)
 
-- 树莓派扩展TF卡分区:
+- 树莓派扩展 TF 卡分区:  
   sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
 
-### 2. 启动树莓派HDMI功能
+### 2. 启动树莓派 HDMI 功能
 
-- 编辑`config.txt`文件，修改以下参数:
+- 编辑 `config.txt` 文件，修改以下参数:  
   sudo nano /boot/config.txt
 
-  - 把下面#注释符号去掉
-    hdmi_force_hotplug=1  #启用HDMI热插拔功能
-    config_hdmi_boost=4    #启用加强HDMI信号
+  - 把下面#注释符号去掉  
+    hdmi_force_hotplug=1 #启用HDMI热插拔功能  
+    config_hdmi_boost=4 #启用加强HDMI信号
 
-  > 不出意外的话应该可以接上，但是我的没有声音输出诶
-  > 注：如果还是不能的话，找到#hdmi_group=1这句话，把前面的#注释符号去掉，把数字改成 2强行指定显示器类型：1是连接老式电视，2代表连接新电视。
+  > 不出意外的话应该可以接上，但是我的没有声音输出诶  
+  > 注：如果还是不能的话，找到#hdmi_group=1 这句话，把前面的#注释符号去掉，把数字改成 2 强行指定显示器类型：1 是连接老式电视，2 代表连接新电视。
   >
 
 ## 树莓派 `Debian 10 buster` 换清华源
@@ -65,9 +65,9 @@ deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
 - 更新源列表: `sudo apt-get update`
 - 更新软件版本，升级软件包: `sudo apt-get upgrade`
 
-## 树莓派`rasp-config`相关设置
+## 树莓派 `rasp-config` 相关设置
 
-### 1. 设置pi，root用户密码，并解锁
+### 1. 设置 pi，root 用户密码，并解锁
 
 ```shell
 #树莓派修改密码，顺便解锁root用户
@@ -80,33 +80,33 @@ sudo nano /etc/ssh/sshd_config
 修改 PermitRootLogin without-password 为 PermitRootLogin yes
 ```
 
-### 2. **respi本地化**操作
+### 2. **respi 本地化**操作
 
-- 安装中文字体，提供几个Linux中文字体库:
+- 安装中文字体，提供几个 Linux 中文字体库:
 
 ```shell
 sudo apt-get install xfonts-wqy
 sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 ```
 
-- 设置终端中文显示: `sudo raspi-config`:
-  选择change_locale，在Default locale for the system environment:中选择zh_CN.UTF-8。
-  往下翻一会儿直到找到zh_CN UTF-8把光标移动到前面，然后按下空格键打上*
+- 设置终端中文显示: `sudo raspi-config`:  
+  选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。  
+  往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *  
   ![3hQeD8k9L1mgTZc](http://oss.whaleluo.top/blog/old/20210619152513.png-picsmall)
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
-### 3. 设置 vnc桌面 连接
+### 3. 设置 Vnc 桌面 连接
 
-> 注:这里放弃了树莓派自带的 **realvnc** 因为不支持网页 **novnc** 且功能很少，所以用 **Tightvnc** 代替
+> 注: 这里放弃了树莓派自带的 **realvnc** 因为不支持网页 **novnc** 且功能很少，所以用 **Tightvnc** 代替
 
 - 安装**Tightvncserver**: `sudo apt-get install tightvncserver`
-- 安装好之后设置一个**VNC密码**:  vncpasswd
+- 安装好之后设置一个**VNC 密码**: vncpasswd
 
-> 注: 先输入操作密码两次，然后会询问是否设置一个查看(view-only)密码，按自己喜欢，一般没必要。
+> 注: 先输入操作密码两次，然后会询问是否设置一个查看 (view-only) 密码，按自己喜欢，一般没必要。
 
 - 设置**开机自启动** :
 
-> 设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**:  (启动脚本的名称，有和程序名一致的习惯)
+> 设置**开机启动**，需要在 **/etc/init.d/** 中创建一个文件。例如**tightvncserver**: (启动脚本的名称，有和程序名一致的习惯)
 
 ```sh
 sudo nano /etc/init.d/tightvncserver
@@ -150,7 +150,7 @@ esac
 exit 0
 ```
 
-然后给**tightvncserver文件**加**执行权限**：
+然后给**tightvncserver 文件**加**执行权限**：
 
 ```shell
 sudo chmod 755 /etc/init.d/tightvncserver
@@ -162,7 +162,7 @@ sudo chmod 755 /etc/init.d/tightvncserver
 sudo update-rc.d tightvncserver defaults
 ```
 
-一些**service命令** :
+一些**service 命令** :
 
 ```shell
 sudo service tightvncserver restart #重启服务
@@ -170,13 +170,13 @@ sudo service tightvncserver start/stop #关闭/开启服务
 sudo service tightvncserver status #查看服务运行状态
 ```
 
-> 附:   vnc客户端下载
+> 附: vnc 客户端下载  
 > [vnc官网](https://www.realvnc.com/en/connect/download/viewer/)
 
-连接成功惹~:
-![](http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall)
-![](http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall)
-编辑 ./vnc/xstartup 配置文件使其能与windown共享剪贴板
+连接成功惹~:  
+![](http://oss.whaleluo.top/blog/old/20210619152521.png-picsmall)  
+![](http://oss.whaleluo.top/blog/old/20210619152531.png-picsmall)  
+编辑 ./vnc/xstartup 配置文件使其能与 windown 共享剪贴板
 
 ```shell
 sudo nano .vnc/xstartup
@@ -187,9 +187,9 @@ vncconfig -nowin -iconic &
 sudo service tightvncserver restart
 ```
 
-### 4.部署**novnc网页**
+### 4.部署**novnc 网页**
 
-> 方便在网页上控制树莓派屏幕，但是**不支持realvnc**
+> 方便在网页上控制树莓派屏幕，但是**不支持 realvnc**
 
 - 安装 **git 支持**
 
@@ -197,9 +197,9 @@ sudo service tightvncserver restart
 sudo apt-get install git
 ```
 
-- **克隆** novnc项目:
+- **克隆** novnc 项目:
 
-> 在中国大陆听说~~加上 ​~~​~~**~~​~~​ 就可以加速 ​~~​~~**克隆**~~​~~​ 速度丫~~ 改口 应换成  [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
+> 在中国大陆听说~~加上 ​~~​~~**~~​~~​ 就可以加速 ​~~​~~**克隆**~~​~~​ 速度丫~~ 改口 应换成 [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
 
 ```shell
 git clone https://github.com/kanaka/noVNC #源地址
@@ -216,7 +216,7 @@ cd noVNC
 
 ![](http://oss.whaleluo.top/blog/old/20210619152538.png-picsmall)
 
-- 尝试访问: [http://raspiberry:6080](http://raspiberry:6080)  可
+- 尝试访问: [http://raspiberry:6080](http://raspiberry:6080) 可  
   ![](http://oss.whaleluo.top/blog/old/20210619152542.png-picsmall)
 - 一些**高级设置** :
 
@@ -225,7 +225,7 @@ cd noVNC
 ./utils/websockify --web ./ 8787 192.168.1.10:5901 #可以讲localhost改成所有安装了vncserver的IP地址
 ```
 
-**连接速度太慢可以安装Python的numpy库解决**
+**连接速度太慢可以安装 Python 的 numpy 库解决**
 
 - 设置**开机启动**：
 
@@ -238,16 +238,16 @@ su pi -c "/home/pi/noVNC/utils/launch.sh --vnc localhost:5901" &
 
 ![fEVci5dlNCMaUs4](http://oss.whaleluo.top/blog/old/20210619152617.png-picsmall)
 
-### 5.安装`cockpit` web可视化管理
+### 5.安装 `cockpit` Web 可视化管理
 
 ```shell
 sudo apt-get update
 sudo apt-get install cockpit
 ```
 
-> 安装的依赖有  **一丢丢多**
+> 安装的依赖有 **一丢丢多**
 
-- 默认是用`https`访问，需要修改配置文件使其能`http`访问
+- 默认是用 `https` 访问，需要修改配置文件使其能 `http` 访问
 
 ```shell
 sudo nano /etc/cockpit/cockpit.conf #这个文件默认是不存在的需要新建
@@ -268,7 +268,7 @@ sudo systemctl start cockpit.socket
 
   ![image-20200805174634421](http://oss.whaleluo.top/blog/old/20210619152626.png-picsmall)
 
-## Python设置
+## Python 设置
 
 ### 概况
 
@@ -276,9 +276,9 @@ sudo systemctl start cockpit.socket
 
 ![](http://oss.whaleluo.top/blog/old/20210619152632.png-picsmall)
 
-### 树莓派pip换源
+### 树莓派 Pip 换源
 
-> **pip**更换为**国内源**，可以大大的提高安装成功率和速度。不管你用的是**pip3还是pip，方法都是一样的**
+> **pip**更换为**国内源**，可以大大的提高安装成功率和速度。不管你用的是**pip3 还是 pip，方法都是一样的**
 
 ```shell
 mkdir ~/.pip
@@ -293,7 +293,7 @@ use-mirrors = true
 mirrors = https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 ```
 
-- **更新pip版本**
+- **更新 pip 版本**
 
 ```shell
 python3 -m pip install --upgrade pip
@@ -301,14 +301,14 @@ python3 -m pip install --upgrade pip
 
 ![seVOiSZrBKgE827](http://oss.whaleluo.top/blog/old/20210619152649.png-picsmall)
 
-- **树莓派指定Python版本安装模块**
+- **树莓派指定 Python 版本安装模块**
 
 ```shell
 sudo pip3 install XXX   #Python3版本
 sudo pip install XXX   #Python2版本
 ```
 
-## 部署zsh
+## 部署 Zsh
 
 ```shell
 sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"

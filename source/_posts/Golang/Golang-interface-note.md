@@ -13,9 +13,9 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 # Go 接口
 
-**面向对象** 世界中的接口的一般定义是"**接口定义对象的行为**"。它表示让指定对象应该做什么。实现这种行为的方法（实现细节）是**针对对象**的。
+**面向对象** 世界中的接口的一般定义是 "**接口定义对象的行为**"。它表示让指定对象应该做什么。实现这种行为的方法（实现细节）是**针对对象**的。
 
-在 `Go` 中，接口是 **一组方法签名**。当类型为接口中的所有方法提供定义时，它被称为 **实现接口**。它与OOP非常相似。接口指定了类型 **应该具有** 的方法，类型决定了 **如何实现** 这些方法。
+在 `Go` 中，接口是 **一组方法签名**。当类型为接口中的所有方法提供定义时，它被称为 **实现接口**。它与 OOP 非常相似。接口指定了类型 **应该具有** 的方法，类型决定了 **如何实现** 这些方法。
 
 > 它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口
 >
@@ -40,17 +40,17 @@ rwc = os.Stdout // OK: *os.File has Read, Write, Close methods
 rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 ```
 
-![](http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-2.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/interface-4.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/interface-3.png-picsmall)
 
-> Go语言中接口和类型的实现方式是 **非侵入式** 的,接口定义的方法没有具体代码.
+> Go 语言中接口和类型的实现方式是 **非侵入式** 的,接口定义的方法没有具体代码.
 
 ## 通过接口模拟多态
 
 ### 多态的定义
 
-"一个事物的多种形态"
+" 一个事物的多种形态 "
 
 ![](http://oss.whaleluo.top/blog/Golang/interface-5.png-picsmall)
 
@@ -66,11 +66,11 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 
 鸭子类型:
 
-> 待补充...
+> 待补充…
 
 ## 空接口
 
-`interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.
+`interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.  
 ![](http://oss.whaleluo.top/blog/Golang/interface-7.png-picsmall)
 
 ### 空接口定义任意类型的数据
@@ -81,8 +81,8 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 
 表示函数的参数可以是任意类型,相当于 Python 的 `typing.Any`
 
-![](http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall)
-`fmt` 包就是应用了空接口,可以传入任何参数.
+![](http://oss.whaleluo.top/blog/Golang/interface-8.png-picsmall)  
+`fmt` 包就是应用了空接口,可以传入任何参数.  
 `fmt` 包下的 `Print` 系列函数:
 
 ```go
@@ -93,7 +93,7 @@ func Println(a ...interface{}) (n int,err error)
 
 ### 复合数据结构使用空接口
 
-![](http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-9.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/interface-10.png-picsmall)
 
 ## 接口嵌套
@@ -102,10 +102,10 @@ func Println(a ...interface{}) (n int,err error)
 
 ![](http://oss.whaleluo.top/blog/Golang/interface-11.png-picsmall)
 
-如果 Cat 想实现接口C,不仅要实现接口C自己的方法,还要实现接口C继承的接口A B中的方法.
+如果 Cat 想实现接口 C,不仅要实现接口 C 自己的方法,还要实现接口 C 继承的接口 A B 中的方法.
 
-![](http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall)
-![](http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall)
+![](http://oss.whaleluo.top/blog/Golang/interface-12.png-picsmall)  
+![](http://oss.whaleluo.top/blog/Golang/interface-13.png-picsmall)  
 ![](http://oss.whaleluo.top/blog/Golang/insterface-14.png-picsmall)
 
 ## 接口断言
@@ -114,7 +114,7 @@ func Println(a ...interface{}) (n int,err error)
 
 ![](http://oss.whaleluo.top/blog/Golang/interface-15.png-picsmall)
 
-方法一:  通过 `x.(T)` 的方式断言
+方法一: 通过 `x.(T)` 的方式断言
 
 ```go
 var w io.Writer
@@ -123,7 +123,7 @@ f := w.(*os.File)      // success: f == os.Stdout
 c := w.(*bytes.Buffer) // panic: interface holds *os.File, not *bytes.Buffer
 ```
 
-**如果断言的类型T是一个接口类型**，然后类型断言检查是否x的动态类型满足T。如果这个检查成功了，动态值没有获取到；这个结果仍然是一个有相同动态类型（type）和值部分（value）的接口值，但是结果为类型T。
+**如果断言的类型 T 是一个接口类型**，然后类型断言检查是否 x 的动态类型满足 T。如果这个检查成功了，动态值没有获取到；这个结果仍然是一个有相同动态类型（type）和值部分（value）的接口值，但是结果为类型 T。
 
 用于判断 `x.(T)` x 是否满足 T 接口。
 
@@ -135,15 +135,15 @@ w = new(ByteCounter)
 rw = w.(io.ReadWriter) // panic: *ByteCounter has no Read method
 ```
 
-如果一个类型满足下面的这个接口，然后 `WriteString(s)` 方法就必须和`Write([]byte(s))`有相同的效果。
+如果一个类型满足下面的这个接口，然后 `WriteString(s)` 方法就必须和 `Write([]byte(s))` 有相同的效果。
 
-Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用`[]byte(...)`进行转换。**这个转换分配内存并且做一个拷贝**，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。
+Write 方法需要传入一个 byte 切片而我们希望写入的值是一个字符串，所以我们需要使用 `[]byte(…)` 进行转换。**这个转换分配内存并且做一个拷贝**，但是这个拷贝在转换后几乎立马就被丢弃掉，会影响一丢丢性能。
 
 我们知道在这个程序中的 w 变量持有的动态类型也有一个**允许字符串高效写入**的 `WriteString` 方法；这个方法会避免去分配一个临时的拷贝。
 
-许多满足io.Writer接口的重要类型同时也有 WriteString 方法，包括`*bytes.Buffer`，`*os.File`和`*bufio.Writer`。
+许多满足 io.Writer 接口的重要类型同时也有 WriteString 方法，包括 `*bytes.Buffer`，`*os.File` 和 `*bufio.Writer`。
 
-我们不能对任意实现 `io.Writer` 接口类型的变量w，假设它也拥有`WriteString` 方法。但是我们可以定义一个只有这个方法的新接口并且使用类型断言来检测是否 w 的动态类型满足这个新接口。
+我们不能对任意实现 `io.Writer` 接口类型的变量 w，假设它也拥有 `WriteString` 方法。但是我们可以定义一个只有这个方法的新接口并且使用类型断言来检测是否 w 的动态类型满足这个新接口。
 
 ```go
 func writeString(w io.Writer, s string) (n int, err error) {
@@ -165,7 +165,7 @@ func writeString(w io.Writer, s string) (n int, err error) {
 
 上面的 writeString 函数使用一个**类型断言来获知一个普遍接口类型的值是否满足一个更加具体的接口类型**；并且如果满足，它会使用这个更具体接口的行为。
 
-**如果断言操作的对象是一个nil接口值**，那么不论被断言的类型是什么这个类型断言都会失败。
+**如果断言操作的对象是一个 nil 接口值**，那么不论被断言的类型是什么这个类型断言都会失败。
 
 ![通过x.(T)方式断言](http://oss.whaleluo.top/blog/Golang/interface-16.png-picsmall)
 
@@ -188,7 +188,7 @@ if w, ok := w.(*os.File); ok {
 }
 ```
 
-方法二：使用 `switch...case...` 语句，断言类型分支。
+方法二：使用 `switch…case…` 语句，断言类型分支。
 
 一个类型分支隐式的创建了一个词法块，因此新变量 x 的定义不会和外面块中的 x 变量冲突。每一个 case 也会隐式的创建一个单独的词法块。
 
@@ -218,7 +218,7 @@ w.Writer([]byte("hello")) // panic: nil pointer
 // 可以通过 w == nil 判断接口值是否为空
 ```
 
-将 `*os.File` 类型赋值给变量 w，因为 `*os.File` 实现了 `io.Writer` 接口，所以赋值合法。赋值过程调用了一个 **具体类型到接口类型** 的隐式转换（变成T类型 `T(type)` ） `io.Writer(os.Stdout)`
+将 `*os.File` 类型赋值给变量 w，因为 `*os.File` 实现了 `io.Writer` 接口，所以赋值合法。赋值过程调用了一个 **具体类型到接口类型** 的隐式转换（变成 T 类型 `T(type)` ） `io.Writer(os.Stdout)`
 
 ```go
 w = os.Stdout
@@ -230,14 +230,14 @@ io.Writer(os.Stdout)
 
 ![接口的赋值](http://oss.whaleluo.top/blog/img/20221229122508.png-picsmall)
 
-调用一个包含 `*os.File` 类型指针的接口值的 `Write` 方法，得`(*os.File).Write` 方法被调用。这个调用输出 “hello”。
+调用一个包含 `*os.File` 类型指针的接口值的 `Write` 方法，得 `(*os.File).Write` 方法被调用。这个调用输出 “hello”。
 
 ```go
 w.Write([]byte("hello")) // "hello"
 (*os.File).Write // 等效
 ```
 
-当我们处理错误或者调试的过程中，得知接口值的动态类型是非常有帮助的。所以我们使用 `fmt` 包的 `%T` 动作，在fmt包内部，使用反射来获取接口动态类型的名称。
+当我们处理错误或者调试的过程中，得知接口值的动态类型是非常有帮助的。所以我们使用 `fmt` 包的 `%T` 动作，在 fmt 包内部，使用反射来获取接口动态类型的名称。
 
 ```go
 var w io.Writer
@@ -248,13 +248,13 @@ w = new(bytes.Buffer)
 fmt.Printf("%T\n", w) // "*bytes.Buffer"
 ```
 
-### ⚠️一个包含nil指针的接口不是nil接口
+### ⚠️一个包含 Nil 指针的接口不是 Nil 接口
 
 一个不包含任何值的 nil 接口值：
 
 ![一个不包含任何值的 nil 接口值](http://oss.whaleluo.top/blog/img/20221229121130.png-picsmall)
 
-一个刚好包含nil指针的接口值：
+一个刚好包含 nil 指针的接口值：
 
 ![](http://oss.whaleluo.top/blog/img/20221229123705.png-picsmall)
 
@@ -283,7 +283,7 @@ func main() {
 
 ## 应用
 
-### `sort.Interface`  接口
+### `sort.Interface` 接口
 
 在很多语言中，排序算法都是和序列数据类型关联，但 Go 语言的 `sort.Sort` 函数不会对具体的序列和它的元素做限定。它使用一个接口类型 `sort.Interface` 来指定通用的序列算法。
 
@@ -345,9 +345,9 @@ default:
 }
 ```
 
-现在 handler 基于URL的路径部分（`req.URL.Path`）来决定执行什么逻辑。如果不能识别，调用 `w.WriteHeader(http.StatusNotFound)` 返回客户端一个 HTTP 404 错误。
+现在 handler 基于 URL 的路径部分（`req.URL.Path`）来决定执行什么逻辑。如果不能识别，调用 `w.WriteHeader(http.StatusNotFound)` 返回客户端一个 HTTP 404 错误。
 
-`http.ResponseWriter` 是另一个接口。它在 `io.Writer` 上增加了发送HTTP相应头的方法。另外，还可以使用 `http.Error` 函数。
+`http.ResponseWriter` 是另一个接口。它在 `io.Writer` 上增加了发送 HTTP 相应头的方法。另外，还可以使用 `http.Error` 函数。
 
 ```go
 http.Error(w, msg, http.StatusNotFound)
@@ -364,9 +364,9 @@ func main() {
 }
 ```
 
-所以 `db.list` 是一个实现了handler类似行为的函数，但是因为它没有方法，所以它不满足 `http.Handler` 接口并且不能直接传给 `mux.Handle`。
+所以 `db.list` 是一个实现了 handler 类似行为的函数，但是因为它没有方法，所以它不满足 `http.Handler` 接口并且不能直接传给 `mux.Handle`。
 
-语句`http.HandlerFunc(db.list)`是一个转换而非一个函数调用，因为`http.HandlerFunc`是一个类型。它有如下的定义：
+语句 `http.HandlerFunc(db.list)` 是一个转换而非一个函数调用，因为 `http.HandlerFunc` 是一个类型。它有如下的定义：
 
 ```go
 package http
@@ -376,14 +376,14 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 }
 ```
 
-因为handler通过这种方式注册非常普遍，ServeMux有一个方便的HandleFunc方法，它帮我们简化handler注册代码成这样：
+因为 handler 通过这种方式注册非常普遍，ServeMux 有一个方便的 HandleFunc 方法，它帮我们简化 handler 注册代码成这样：
 
 ```go
 mux.HandleFunc("/list", db.list)
 mux.HandleFunc("/price", db.price)
 ```
 
-为了方便，net/http包提供了一个全局的ServeMux实DefaultServerMux和包级别的`http.Handle`和`http.HandleFunc`函数。现在，为了使用DefaultServeMux作为服务器的主handler，我们不需要将它传给ListenAndServe函数；nil值就可以工作。
+为了方便，net/http 包提供了一个全局的 ServeMux 实 DefaultServerMux 和包级别的 `http.Handle` 和 `http.HandleFunc` 函数。现在，为了使用 DefaultServeMux 作为服务器的主 handler，我们不需要将它传给 ListenAndServe 函数；nil 值就可以工作。
 
 使用包级别的 `http.HandleFunc` 注册路由：
 
@@ -396,7 +396,7 @@ func main() {
 }
 ```
 
-最后，web服务器在一个新的协程 Goruntine 中调用每一个 handler，所以当 handler 获取其它协程的共享变量时一定要使用预防措施比如 **锁机制**。
+最后，web 服务器在一个新的协程 Goruntine 中调用每一个 handler，所以当 handler 获取其它协程的共享变量时一定要使用预防措施比如 **锁机制**。
 
 ### Error 接口
 
@@ -415,7 +415,7 @@ type errorString struct { text string }
 func (e *errorString) Error() string { return e.text }
 ```
 
-指针类型`*errorString`满足error接口而非`errorString`类型，承载`errorString` 的类型是一个结构体而非一个字符串，所以每个 New 函数的调用都分配了一个独一无二的错误示例。
+指针类型 `*errorString` 满足 error 接口而非 `errorString` 类型，承载 `errorString` 的类型是一个结构体而非一个字符串，所以每个 New 函数的调用都分配了一个独一无二的错误示例。
 
 ```go
 fmt.Println(errors.New("EOF") == errors.New("EOF")) // "false"

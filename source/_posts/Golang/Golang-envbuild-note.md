@@ -11,10 +11,10 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ---
 
-# Go环境搭建
+# Go 环境搭建
 
-1. 安装完Go,添加 `bin` 目录到环境变量.
-2. CMD 配置go环境
+1. 安装完 Go,添加 `bin` 目录到环境变量.
+2. CMD 配置 go 环境
 
 ```shell
 go version # 输出版本
@@ -23,7 +23,7 @@ set GO111MODULE=on  # 包管理
 set GOPROXY=http://goproxy.cn  # 设置镜像源
 ```
 
-3. Vscode 安装 `Go` `Run code` 插件
+1. Vscode 安装 `Go` `Run code` 插件
 
 ## Hello Go
 

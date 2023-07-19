@@ -11,12 +11,12 @@ banner_img: http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall
 
 ---
 
-# 自由上网指北——21世纪网民天赋的权力
+# 自由上网指北——21 世纪网民天赋的权力
 
 ​![Banner](http://oss.whaleluo.top/blog/img/Freedom-network-banner.png-picsmall)​
 
-{% note warning WARNING %}
-WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。
+{% note warning WARNING %}  
+WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。  
 {% endnote %}
 
 ![KeyWord](http://oss.whaleluo.top/blog/img/Freedom-Network-1.png-picsmall)
@@ -71,7 +71,7 @@ FQ 对于个人而言是十分重要的，您可以第一时间知道世界上�
 
 ![点击左上角进行设置](http://oss.whaleluo.top/blog/img/Freedom-network-5.png-picsmall)
 
-VPN设置 -> 启动本地 DNS
+VPN 设置 -> 启动本地 DNS
 
 路由设置 -> 域名策略（IPIfNonMatch）
 

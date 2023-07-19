@@ -12,14 +12,14 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 
 # 服务器备忘录
 
-> **2022年3月19日** Update.
+> **2022 年 3 月 19 日** Update.
 
-# 落落家X86
+# 落落家 X86
 
 ## 服务器配置
 
-- **运行内存(RAM)：**4GB（笔记本ddr3内存条）
-- **CPU：**4 x Intel(R) Atom(TM) CPU D2550 @ 1.86GHz / 512 KB cache [英特尔凌动® 处理器 D2550 (intel.cn)](https://www.intel.cn/content/www/cn/zh/products/sku/65470/intel-atom-processor-d2550-1m-cache-1-86-ghz/specifications.html) 2核4线程
+- **运行内存 (RAM)：**4GB（笔记本 ddr3 内存条）
+- **CPU：**4 x Intel(R) Atom(TM) CPU D2550 @ 1.86GHz / 512 KB cache [英特尔凌动® 处理器 D2550 (intel.cn)](https://www.intel.cn/content/www/cn/zh/products/sku/65470/intel-atom-processor-d2550-1m-cache-1-86-ghz/specifications.html) 2 核 4 线程
 - **服务器系统**：Ubuntu 18.04 Server
 
   Linux whalefall 4.15.0-171-generic #180-Ubuntu SMP Wed Mar 2 17:25:05 UTC 2022 x86_64
@@ -31,6 +31,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
   /dev/sda1       299G  294G  5.0G  99% /mnt/disk  # 3.5寸硬盘1 300GB (跑wx)
   /dev/sdc1       466G  129G  338G  28% /mnt/mainDisk  # 2.5寸硬盘2 500GB (NAS)
   ```
+
 - **网络：** `ifconfig`
 
   ```shell
@@ -41,7 +42,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
   ```
 
   - enp2s0：主网卡，跑 **qBittorrent**
-  - enp1s0：副网卡，docker network —— macnet （openwrt），网心云docker
+  - enp1s0：副网卡，docker network —— macnet （openwrt），网心云 docker
 
 ## 运行服务
 
@@ -68,7 +69,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Path: `/www/kodcloud`
 4. Port: 89
 
-   Desc: AiraNg 下载器。（已反向代理Aira2 6800）[配置文件](#AiraNg-download-config)
+   Desc: AiraNg 下载器。（已反向代理 Aira2 6800）[配置文件](#AiraNg-download-config)
 
    Path: `/www/kodcloud`
 
@@ -95,7 +96,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 
    Desc：openwrt 软路由
 
-   coomand：[source](#run-openwrt-by-docker)
+   command：[source](#run-openwrt-by-docker)
 
 # 部分配置文件
 
@@ -154,7 +155,7 @@ server {
 }
 ```
 
-### run qBittorrent command
+### Run qBittorrent Command
 
 ```shell
 # 运行 qbittorrent docker 版

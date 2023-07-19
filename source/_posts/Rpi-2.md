@@ -13,13 +13,13 @@ banner_img: http://oss.whaleluo.top/blog/old/20210619154345.jpg
 
 # 😏 树莓派折腾手册（三）——搭建离线下载器 👀
 
-## 1.挂载硬盘/U盘
+## 1.挂载硬盘/U 盘
 
-> **注意：开始之前先把存储设备格式化成** **fat32文件系统**
+> **注意：开始之前先把存储设备格式化成** **fat32 文件系统**
 
-- 树莓派4B Debian10系统插上储存设备后默认自动挂载到  `/media` 目录我们先卸载U盘：
+- 树莓派 4B Debian10 系统插上储存设备后默认自动挂载到 `/media` 目录我们先卸载 U 盘：
 
-  查询硬盘状态:   `sudo fdisk -l`
+  查询硬盘状态: `sudo fdisk -l`
 
   ![9XBTemAzD6R8yot](http://oss.whaleluo.top/blog/old/20210619153119.png-picsmall)
 
@@ -30,7 +30,7 @@ sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更�
 sudo fuser -mv -k /media/U盘 名字    # 然后再执行umount卸载命令 
 ```
 
-- 编辑`/etc/fstab`中添加像下面这样的挂载配置：
+- 编辑 `/etc/fstab` 中添加像下面这样的挂载配置：
 
 ```
 sudo nano /etc/fstab
@@ -42,20 +42,20 @@ sudo reboot
 mount /dev/sda1 /home/pi/disk -o utf8,uid=1000,gid=1000,umask=000 -t vfat
 ```
 
-- 重启 ，不出意外的话开机 应该 会自动挂载，且有写权限，用户是pi：如图挂载至 `/home/pi/disk` 目录，有**777权限**
+- 重启 ，不出意外的话开机 应该 会自动挂载，且有写权限，用户是 pi：如图挂载至 `/home/pi/disk` 目录，有**777 权限**
 
   ![3ilg9S1UJ2EcHPV](http://oss.whaleluo.top/blog/old/20210619153142.png-picsmall)
 
-## 2.部署Aria2离线下载器
+## 2.部署 Aria2 离线下载器
 
-- 下载安装`Aria2`:
+- 下载安装 `Aria2`:
 
 ```
 sudo apt-get update
 sudo apt-get install aria2
 ```
 
-- 安装nginx：
+- 安装 nginx：
 
   > 上面已经安装过的**小可爱**可以**跳过**
   >
@@ -64,7 +64,7 @@ sudo apt-get install aria2
 sudo apt-get install nginx
 ```
 
-- 配置Aria2， 创建配置文件：
+- 配置 Aria2， 创建配置文件：
 
   ```
   #创建目录 
@@ -78,7 +78,8 @@ sudo apt-get install nginx
   #修改文件拥有者为aria2： 
   sudo chown aria2 /etc/aria2 /etc/aria2/aria2.session
   ```
-- 编辑`Aria2配置`文件:
+
+- 编辑 `Aria2配置` 文件:
 
   ```
   #根据需要编辑文件: 
@@ -109,6 +110,7 @@ sudo apt-get install nginx
   bt-seed-unverified=true 
   bt-save-metadata=true
   ```
+
 - 创建**systemd**文件在 `/lib/systemd/system/aria2.service` 为如下:
 
   ```
@@ -124,6 +126,7 @@ sudo apt-get install nginx
   ExecStart=/usr/bin/aria2c  --conf-path=/etc/aria2/aria2.conf  [Install] 
   WantedBy=multi-user.target 
   ```
+
 - 启动**Aria2**:
 
   ```
@@ -134,9 +137,10 @@ sudo apt-get install nginx
   #如果要关闭开机启动 
   sudo systemctl disable aria2.service
   ```
+
 - 配置**nginx+ariaNg**可视化管理页面：
 
-  > 到[**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
+  > 到 [**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
   >
 
   ![UO7c5EItjBHRsgN](http://oss.whaleluo.top/blog/old/20210619153158.png-picsmall)
@@ -161,7 +165,7 @@ sudo apt-get install nginx
   sudo chmod 777 -R /website
   ```
 
-> 为了方便使用，我把**AriaNg**和**jsonrpc**都配置在了 **80 端口**，利用nginx的**代理功能**，把本机 6800 端口隐藏,对外**只暴露 80 端口.**
+> 为了方便使用，我把**AriaNg**和**jsonrpc**都配置在了 **80 端口**，利用 nginx 的**代理功能**，把本机 6800 端口隐藏,对外**只暴露 80 端口.**
 
 ```shell
 #修改nginx配置文件 

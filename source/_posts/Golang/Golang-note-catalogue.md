@@ -16,7 +16,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ## 前言
 
-本博客用了大量的章节记录了我学习 Golang 语言的笔记，参考书是 **《Go语言圣经》** ，非常详细实用的一本书。强烈安利！部分截图来自 Bilibili 一些教程的视频。算是自己学习 Golang 的一个速查册。
+本博客用了大量的章节记录了我学习 Golang 语言的笔记，参考书是 **《Go 语言圣经》** ，非常详细实用的一本书。强烈安利！部分截图来自 Bilibili 一些教程的视频。算是自己学习 Golang 的一个速查册。
 
 ## Catalogue
 

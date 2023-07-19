@@ -11,7 +11,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ---
 
-# Go 项目结构和go mod最佳实践
+# Go 项目结构和 Go mod 最佳实践
 
 ## 项目目录
 
@@ -22,15 +22,15 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
   |--src 存放项目源文件
 ```
 
-**一般地bin和pkg目录可以不创建，go命令会自动创建（爽否？），只需要创建src目录放代码即可。**
+**一般地 bin 和 pkg 目录可以不创建，go 命令会自动创建（爽否？），只需要创建 src 目录放代码即可。**
 
 ## 环境变量
 
-- GOROOT：安装的`go`路径
-- GOPATA：项目的根目录`go-test`
-  细心的人注意到，这里有一个`Project GOPATH`，还有一个`Global GOPATH`，把你的项目配置在`Project GOPATH`里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。
+- GOROOT：安装的 `go` 路径
+- GOPATA：项目的根目录 `go-test`  
+  细心的人注意到，这里有一个 `Project GOPATH`，还有一个 `Global GOPATH`，把你的项目配置在 `Project GOPATH` 里，每个项目都不一样，创建另一个项目时这个路径要配置成新项目的。
 
-`Global GOPATH`可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
+`Global GOPATH` 可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
 
 ![GOPATH 设置](http://oss.whaleluo.top/blog/img/Golang-project-gomod-1.png-picsmall)
 
@@ -48,10 +48,10 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ### 注意点
 
-1. `add.go` 中的Add函数名首字母必须大写，只有大写的才是Public权限，外面的包才能访问，否则只能自己文件夹下代码才能访问。
-2. `add.go` 的改名为addyyy.go也可以，查找add包的时候，**并不会根据add.go这个文件名来查找**。而是根据文件夹名来查找，一个文件夹下的所有文件都属于同一个包。所以函数变量自然不能重复。
-3. `main` 中调用 `add.Add(1,2)` 时，add是包， 必须跟`add.go`中的`package`处的包名一致，否则报错。
-4. import 后， 根据`GOROOT`和`GOPATH`查找对应的包，**src这个目录名可不是能随便取的**。
+1. `add.go` 中的 Add 函数名首字母必须大写，只有大写的才是 Public 权限，外面的包才能访问，否则只能自己文件夹下代码才能访问。
+2. `add.go` 的改名为 addyyy.go 也可以，查找 add 包的时候，**并不会根据 add.go 这个文件名来查找**。而是根据文件夹名来查找，一个文件夹下的所有文件都属于同一个包。所以函数变量自然不能重复。
+3. `main` 中调用 `add.Add(1,2)` 时，add 是包， 必须跟 `add.go` 中的 `package` 处的包名一致，否则报错。
+4. import 后， 根据 `GOROOT` 和 `GOPATH` 查找对应的包，**src 这个目录名可不是能随便取的**。
 
 ### 引用第三方项目
 
@@ -62,12 +62,12 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 ### Why?
 
 1. 使用 go mod 仓库中可以不用再上传依赖代码包，防止代码仓库过大浪费以及多个项目同时用包时的浪费。
-2. 可以管理引用包的版本，这一点是gopath（src模式）和 `vendor` 做不到的
+2. 可以管理引用包的版本，这一点是 gopath（src 模式）和 `vendor` 做不到的
 3. 如果依赖 `GOPATH` 不同项目如果引用了同一个软件包的不同版本，就会造成编译麻烦
 
-**gopath是go之前的默认策略，每个项目在运行时都要严格放在**​**`src`**​**目录下，而go mod不用。**
+**gopath 是 go 之前的默认策略，每个项目在运行时都要严格放在**​**`src`**​**目录下，而 go mod 不用。**
 
-`Go mod`的优点：
+`Go mod` 的优点：
 
 - 自动下载依赖包。
 - 项目不必放在 `$GOPATH/src` 内了。
@@ -93,7 +93,7 @@ go mod init [packetName]
 go mod tidy
 ```
 
-注意：只要在本地 **设置一个公用gopath目录** 就可以了，**全部的包都会下载到那里**，其他本地项目用到时就可以共享了，并且会自动根据 `go.mod` 选择对应版本的第三方库。
+注意：只要在本地 **设置一个公用 gopath 目录** 就可以了，**全部的包都会下载到那里**，其他本地项目用到时就可以共享了，并且会自动根据 `go.mod` 选择对应版本的第三方库。
 
 ### go.mod
 
@@ -128,15 +128,15 @@ golang.org/x/text v0.3.0 = > github.com/golang/text v0.3.0
 
 ### Go mod 命令使用
 
-`go mod init`：初始化go mod， 生成go.mod文件，后可接参数指定 module 名，上面已经演示过。
-`go mod download`：手动触发下载依赖包到本地cache（默认为$GOPATH/pkg/mod目录）
-`go mod graph`：打印项目的模块依赖结构
-`go mod tidy` ：添加缺少的包，且删除无用的包
-`go mod verify` ：校验模块是否被篡改过
-`go mod why`：查看为什么需要依赖
-`go mod vendor` ：导出项目所有依赖到vendor下
+`go mod init`：初始化 go mod， 生成 go.mod 文件，后可接参数指定 module 名，上面已经演示过。  
+`go mod download`：手动触发下载依赖包到本地 cache（默认为 $GOPATH/pkg/mod 目录）  
+`go mod graph`：打印项目的模块依赖结构  
+`go mod tidy` ：添加缺少的包，且删除无用的包  
+`go mod verify` ：校验模块是否被篡改过  
+`go mod why`：查看为什么需要依赖  
+`go mod vendor` ：导出项目所有依赖到 vendor 下
 
-写入go.mod有两种方法：
+写入 go.mod 有两种方法：
 
 - 你只要在项目中有 import 并使用或者使用下划线强制占用，然后 go build 时 go module 就会自动下载并添加。
 - `go mod tidy`

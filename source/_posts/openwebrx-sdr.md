@@ -21,7 +21,7 @@ sudo apt-get update
 sudo apt-get install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config libsamplerate-dev libpython3-dev
 ```
 
-## Install csdr
+## Install Csdr
 
 ```sh
 git clone -b master https://github.com/jketterl/csdr.git
@@ -35,7 +35,7 @@ cd ../..
 sudo ldconfig
 ```
 
-## Install pysdr
+## Install Pysdr
 
 ```sh
 git clone -b master https://github.com/jketterl/pycsdr.git
@@ -44,7 +44,7 @@ sudo python3 setup.py install install_headers
 cd ..
 ```
 
-## Install Python js8py module
+## Install Python js8py Module
 
 ```sh
 git clone -b master https://github.com/jketterl/js8py.git
@@ -53,7 +53,7 @@ sudo python3 setup.py install
 cd ..
 ```
 
-## Install rsp1 device
+## Install Rsp1 Device
 
 安装 rsp1 的 linux API 驱动,使用 API 3.07.
 
@@ -111,7 +111,7 @@ sudo ldconfig
 cd ..
 ```
 
-## 加入内核 blacklist
+## 加入内核 Blacklist
 
 rtl_sdr 设备
 
@@ -165,7 +165,7 @@ cd ../..
 sudo ldconfig
 ```
 
-## 运行 openwebrx
+## 运行 Openwebrx
 
 ```sh
 ./openwebrx.py

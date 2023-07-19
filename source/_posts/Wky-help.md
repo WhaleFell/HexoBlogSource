@@ -19,18 +19,18 @@ banner_img: http://oss.whaleluo.top/blog/old/20220329204745.png
 2. 玩客云通过网线直连一体机，参考：[树莓派使用网线直连电脑的方法 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/37761024)
 
    - 手机开热点一体机连接
-   - Win10可以直接从【设置->网络和Internet->状态->更改适配器设置】进入可以看到，我们的本地网络连接方式有 **WLAN无线连接** 和 **以太网有线连接** 两种方式。
+   - Win10 可以直接从【设置 ->网络和 Internet->状态 ->更改适配器设置】进入可以看到，我们的本地网络连接方式有 **WLAN 无线连接** 和 **以太网有线连接** 两种方式。
    - 记录当前我们的网络连接状况：`arp -a`
-   - **共享WLAN网络给以太网**
+   - **共享 WLAN 网络给以太网**
 
      更改适配器设置 界面中选择修改 WLAN 属性。选择共享，设置共享网络给以太网。（其他选项全部选择）
-   - **查询树莓派的IP地址**
+   - **查询树莓派的 IP 地址**
 
-     将树莓派的网线插到一体机的PC端口后再查询一次：`arp -a`
+     将树莓派的网线插到一体机的 PC 端口后再查询一次：`arp -a`
 3. 利用 **Putty** 连接玩客云。
 
-   SSH远程账号 `root`  ：密码1234
-   宝塔账号 `onecloud`  ：密码123456
+   SSH 远程账号 `root` ：密码 1234  
+   宝塔账号 `onecloud` ：密码 123456
 
 ## 玩客云配置
 
@@ -61,14 +61,15 @@ sudo apt update
 sudo apu upgrade
 ```
 
-2. **卸载自带的宝塔面板**
+1. **卸载自带的宝塔面板**
 
    ```shell
    apt-get install wget git nginx -y
    wget http://download.bt.cn/install/bt-uninstall.sh
    sh bt-uninstall.sh
    ```
-3. **部署 ​**​**`Frpc`**​**​ 内网穿透**
+
+2. **部署 ​**​**`Frpc`**​**​ 内网穿透**
 
    **下载并解压**
 
@@ -140,7 +141,8 @@ sudo apu upgrade
    sudo systemctl status frpc  # 查看状态
    sudo systemctl enable frpc  # 设置开机自启
    ```
-4. **Python** 调优
+
+3. **Python** 调优
 
    **Python** 更换国内 `pip` 源：
 
@@ -159,7 +161,8 @@ sudo apu upgrade
    python3 -m pip install --upgrade pip  # 更新pip
    pip3 install httpx  # 测试
    ```
-5. 部署**校园网自动登录 ​**​**`FRPC`**​**​ 配置自动获取脚本**
+
+4. 部署**校园网自动登录 ​**​**`FRPC`**​**​ 配置自动获取脚本**
 
    > 项目地址：[AdminWhaleFall/rpi-ping: 树莓派自动上传信息工具. (github.com)](https://github.com/AdminWhaleFall/rpi-ping)
    >
@@ -198,9 +201,9 @@ sudo apu upgrade
 
 ## 玩客云网络配置（重要）
 
-1. 设置静态ip：
+1. 设置静态 ip：
 
-   > 我们学校的校园网没有 dhcp 服务器，要手动设置IP，教学楼的网段是：**192.168.5.0/24**
+   > 我们学校的校园网没有 dhcp 服务器，要手动设置 IP，教学楼的网段是：**192.168.5.0/24**
    >
 
    ```shell
@@ -218,10 +221,11 @@ sudo apu upgrade
    # address: 地址；netmask: 子网掩码；gateway:路由
    systemctl restart NetworkManager  # 重启网络服务
    ```
-   然后把玩客云插到讲台下面的网线处.访问 `192.168.5.12` 测试
-2. 永久修改dns：
 
-   禁用 dhcp 分配的dns服务器：
+   然后把玩客云插到讲台下面的网线处.访问 `192.168.5.12` 测试
+2. 永久修改 dns：
+
+   禁用 dhcp 分配的 dns 服务器：
 
    ```shell
    nano /etc/dhcp/dhclient.conf
@@ -230,6 +234,7 @@ sudo apu upgrade
    supersede domain-name-servers 114.114.114.114, 8.8.8.8;
    dhclient
    ```
+
    在 Resolvconf 中设置永久 DNSNameservers ：
 
    ```shell

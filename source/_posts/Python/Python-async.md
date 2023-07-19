@@ -14,7 +14,7 @@ excerpt: Python 异步百万并发全文最详细笔记！！
 
 ![banner](http://oss.whaleluo.top/blog/img/Python-Asyncio-banner.png-picsmall)
 
-# Python asyncio 异步协程百万并发
+# Python Asyncio 异步协程百万并发
 
 ## 协程（coroutine）
 
@@ -43,7 +43,7 @@ loop.run_until_complete(main())  #通过事件循环对象运行协程函数
 loop.close()
 ```
 
-在python3.6版本中，如果我们单独像执行普通函数那样执行一个协程函数，只会返回一个coroutine对象（python3.7）如下所示：
+在 python3.6 版本中，如果我们单独像执行普通函数那样执行一个协程函数，只会返回一个 coroutine 对象（python3.7）如下所示：
 
 ```python
 >>> main()
@@ -56,26 +56,27 @@ loop.close()
 loop = asyncio.get_event_loop()
 ```
 
-它是python3.7中新添加的，**获得一个事件循环**，如果当前线程**还没有事件循环**，则**创建一个新的事件循环loop；**
+它是 python3.7 中新添加的，**获得一个事件循环**，如果当前线程**还没有事件循环**，则**创建一个新的事件循环 loop；**
 
 ### 通过事件循环运行协程函数的两种方式
 
-1. 创建事件循环对象loop，即`asyncio.get_event_loop()`，**通过事件循环运行协程函数**.
-2. 直接通过`asyncio.run(function_name)`运行**协程函数。**
+1. 创建事件循环对象 loop，即 `asyncio.get_event_loop()`，**通过事件循环运行协程函数**.
+2. 直接通过 `asyncio.run(function_name)` 运行**协程函数。**
 
-   > **但是需要注意的是，首先run函数是python3.7版本新添加的，前面的版本是没有的；**
+   > **但是需要注意的是，首先 run 函数是 python3.7 版本新添加的，前面的版本是没有的；**
    >
 
-其次，这个run函数总是**会创建一个新的事件循环并在run结束之后关闭事件循环**，所以，如果在**同一个线程**中已经有了一个事件循环，则**不能再使用这个函数**了，因为**同一个线程不能有两个事件循环**，而且这个run函数**不能同时运行两次**，因为他已经创建一个了。即**同一个线程中是不允许有多个事件循环loop的**。
+其次，这个 run 函数总是**会创建一个新的事件循环并在 run 结束之后关闭事件循环**，所以，如果在**同一个线程**中已经有了一个事件循环，则**不能再使用这个函数**了，因为**同一个线程不能有两个事件循环**，而且这个 run 函数**不能同时运行两次**，因为他已经创建一个了。即**同一个线程中是不允许有多个事件循环 loop 的**。
 
-## Task任务
+## Task 任务
 
 ### 创建任务（两种方法）
 
 1. `task = asyncio.create_task(coro())`
 
-   > **这是3.7版本新添加的**,**可以传协程函数**
+   > **这是 3.7 版本新添加的**,**可以传协程函数**
    >
+
 2. `task = asyncio.ensure_future(coro())`
 3. 也可以：
 
@@ -88,19 +89,20 @@ loop = asyncio.get_event_loop()
 
 1. `task=asyncio.current_task(loop=None)`
 
-   > 返回在某一个指定的loop中，**当前正在运行的任务**，**如果没有任务正在运行，则返回None**；
-   > 如果loop为None，**则默认为在当前的事件循环中获取**.
+   > 返回在某一个指定的 loop 中，**当前正在运行的任务**，**如果没有任务正在运行，则返回 None**；  
+   > 如果 loop 为 None，**则默认为在当前的事件循环中获取**.
    >
+
 2. `asyncio.all_tasks(loop=None)`
 
-   > 返回某一个**loop中还没有结束的任务**
+   > 返回某一个**loop 中还没有结束的任务**
    >
 
 ## 异步函数的结果获取
 
-对于异步编程、异步函数而言，最重要的就是**异步函数调用结束之后，获取异步函数的返回值**，我们可以有以下几种方式**来获取函数的返回值**，第一是直接通过`Task.result()`来获取；第二种是**绑定一个回调函数**来获取，**即函数执行完毕后调用一个函数来获取异步函数的返回值。**
+对于异步编程、异步函数而言，最重要的就是**异步函数调用结束之后，获取异步函数的返回值**，我们可以有以下几种方式**来获取函数的返回值**，第一是直接通过 `Task.result()` 来获取；第二种是**绑定一个回调函数**来获取，**即函数执行完毕后调用一个函数来获取异步函数的返回值。**
 
-1. 直接通过`result`来获取.
+1. 直接通过 `result` 来获取.
 
    ```python
    import asyncio
@@ -128,6 +130,7 @@ loop = asyncio.get_event_loop()
    15
    '''
    ```
+
 2. 通过定义**回调函数**来获取
 
 ```python
@@ -158,59 +161,66 @@ Hello again 01 end
 '''
 ```
 
-> **注意：**​****所谓的****​**回调函数**，就是指协程函数coroutine**执行结束时候会调用回调函数**。并通过**参数future获取协程执行的结果**。我们创建的**task和回调里的future对象**，实际上是**同一个对象**，因为task是future的子类。
+> **注意：**​****所谓的****​**回调函数**，就是指协程函数 coroutine**执行结束时候会调用回调函数**。并通过**参数 future 获取协程执行的结果**。我们创建的**task 和回调里的 future 对象**，实际上是**同一个对象**，因为 task 是 future 的子类。
 
-## asyncio异步编程的基本模板
+## Asyncio 异步编程的基本模板
 
 ### **第一步：构造事件循环**
 
 1. `loop = asyncio.get_running_loop()`
 
-   > 返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7中新添加的**
+   > 返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7 中新添加的**
    >
+
 2. `loop = asyncio.get_event_loop()`
 
-   > **获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环loop**；
+   > **获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环 loop**；
    >
+
 3. `loop=asyncio.set_event_loop(thread)`
 
    > 设置一个事件循环**为当前线程的事件循环**；
    >
+
 4. `loop=asyncio.new_event_loop()`
 
    > **创建一个新的事件循环**
    >
 
-### **第二步：将一个或者是多个协程函数包装成任务Task**
+### **第二步：将一个或者是多个协程函数包装成任务 Task**
 
 1. `task = asyncio.create_task(coro(参数列表))`
 
-   > **这是3.7版本新添加的**
+   > **这是 3.7 版本新添加的**
    >
+
 2. `task = asyncio.ensure_future(coro(参数列表))`
 
-> 需要注意的是，在使用`Task.result()`获取**协程函数结果**的时候，使用`asyncio.create_task()`却会显示错，但是使用`asyncio.ensure_future`却正确
+> 需要注意的是，在使用 `Task.result()` 获取**协程函数结果**的时候，使用 `asyncio.create_task()` 却会显示错，但是使用 `asyncio.ensure_future` 却正确
 
 ### **第三步：通过事件循环运行**
 
 1. `loop.run_until_complete(asyncio.wait(tasks))`
 
-   > 通过`asyncio.wait()`​**整合多个task**
+   > 通过 `asyncio.wait()`​**整合多个 task**
    >
+
 2. `loop.run_until_complete(asyncio.gather(tasks))`
 
-   > 通过`asyncio.gather()`​**整合多个task**
+   > 通过 `asyncio.gather()`​**整合多个 task**
    >
+
 3. `loop.run_until_complete(task_1)`
 
    > **单个任务则不需要整合**
    >
+
 4. ~~loop.run_forever()~~
 
    > ~~但是这个方法在新版本已经取消，不再推荐使用，因为使用起来不简洁~~
    >
 
-#### 使用`gather`和`wait`整合task注册多个服务
+#### 使用 `gather` 和 `wait` 整合 Task 注册多个服务
 
 1. #### **参数形式不一样**
 
@@ -228,25 +238,26 @@ Hello again 01 end
    tasks = asyncio.wait([task1,task2,task3])
    loop.run_until_complete(tasks)
    ```
+
 2. #### **返回的值不一样**
 
-   **gather返回的是每一个任务运行的结果**：
+   **gather 返回的是每一个任务运行的结果**：
 
    > ###### 要以传入一个列表可变参数
    >
 
-   **可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个tuple**
+   **可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个 tuple**
 
    `results = await asyncio.gather(*[tasks])`
 
    `results = await asyncio.gather(task1,task2,task3)`
 
-   **wait返回dones是已经完成的任务，pending是未完成的任务，都是集合类型**：
+   **wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型**：  
    `done, pending = yield from asyncio.wait(fs)`
 
-> 简单来说：**async.wait会返回两个值:done和pending**，done为已完成的协程Task，pending为超时未完成的协程Task，**需通过future.result调用Task的result。**
+> 简单来说：**async.wait 会返回两个值:done 和 pending**，done 为已完成的协程 Task，pending 为超时未完成的协程 Task，**需通过 future.result 调用 Task 的 result。**
 >
-> 而`async.gather`返回的是**已完成Task的result**。
+> 而 `async.gather` 返回的是**已完成 Task 的 result**。
 
 ### **第四步：关闭事件循环**
 
@@ -259,13 +270,13 @@ loop.close()
 
 ### 协程阻塞问题
 
-**异步方式依然会有阻塞的**，当我们定义的很多个异步方法**彼此之间有一来**的时候，比如，我必须要等到函数1执行完毕，**函数2需要用到函数1的返回值**，就会造成**阻塞**，这也是异步编程的难点之一，如何合理配置这些资源，尽量**减少函数之间的明确依赖**，这是很重要的。
+**异步方式依然会有阻塞的**，当我们定义的很多个异步方法**彼此之间有一来**的时候，比如，我必须要等到函数 1 执行完毕，**函数 2 需要用到函数 1 的返回值**，就会造成**阻塞**，这也是异步编程的难点之一，如何合理配置这些资源，尽量**减少函数之间的明确依赖**，这是很重要的。
 
-**结论**：在有**很多个异步方式**的时候，一定要尽量避免这种**异步函数的直接调用**，这和同步是没什么区别的，一定要**通过事件循环loop**，**“让事件循环在各个异步函数之间不停游走”**，这样才不会造成阻塞。
+**结论**：在有**很多个异步方式**的时候，一定要尽量避免这种**异步函数的直接调用**，这和同步是没什么区别的，一定要**通过事件循环 loop**，**“让事件循环在各个异步函数之间不停游走”**，这样才不会造成阻塞。
 
 ## 代码片段
 
-### 使用gather同时注册多个任务，实现并发
+### 使用 Gather 同时注册多个任务，实现并发
 
 ```python
 import asyncio
@@ -304,7 +315,7 @@ loop.run_until_complete(main())
 loop.close()
 ```
 
-### 异步+多线程
+### 异步 + 多线程
 
 ```python
 import asyncio 
@@ -354,9 +365,9 @@ u
 '''
 ```
 
-### httpx aiohttp 之异步请求
+### Httpx Aiohttp 之异步请求
 
-- **aiohttp实现**
+- **aiohttp 实现**
 
 ```python
 import aiohttp
@@ -370,7 +381,7 @@ async def main():
               print(html)
 ```
 
-- **httpx实现**
+- **httpx 实现**
 
 ```python
 async with httpx.AsyncClient() as client:
@@ -379,9 +390,9 @@ async with httpx.AsyncClient() as client:
     html = resp.text
 ```
 
-感觉总体上比较`aiohttp`写起来舒服多了**，少写很多异步代码。**
+感觉总体上比较 `aiohttp` 写起来舒服多了**，少写很多异步代码。**
 
-> 之前使用 aiohttp 中的 resp.status 来获取状态码的时候写了status_code，应该是使用 requests 习惯了吧，这下好了使用 httpx 不用担心这个写错的问题了。
+> 之前使用 aiohttp 中的 resp.status 来获取状态码的时候写了 status_code，应该是使用 requests 习惯了吧，这下好了使用 httpx 不用担心这个写错的问题了。
 
 # 深入理解 Python 协程
 
@@ -438,7 +449,7 @@ async def main():
 
 ### 协程
 
-**协程函数**: 定义形式为 `async def` 的函数;
+**协程函数**: 定义形式为 `async def` 的函数;  
 **协程对象**: 调用 **协程函数** 所返回的对象。
 
 ```python
@@ -460,7 +471,7 @@ asyncio.run(main())
 
 ### 任务
 
-**任务**: 被用来 “并行的” 调度协程
+**任务**: 被用来 “并行的” 调度协程  
 当一个协程通过 `asyncio.create_task(coro,*,name=None)` 等函数被封装为一个任务，该协程会被 **自动调度** 执行:
 
 该任务会在 `get_running_loop()` 返回的循环中执行，如果当前线程没有在运行的循环则会引发 **RuntimeError**。
@@ -512,10 +523,10 @@ if __name__ == "__main__":
 
 **通常情况下没有必要在应用层级的代码中创建 ​**​**`Future`**​**​ 对象。**
 
-## 运行 asyncio 协程
+## 运行 Asyncio 协程
 
-`asyncio.run(coro, *, debug=False)`
-执行 `coroutine coro` 并返回结果。
+`asyncio.run(coro, *, debug=False)`  
+执行 `coroutine coro` 并返回结果。  
 此函数会运行传入的协程，负责管理 asyncio 事件循环，终结异步生成器，并关闭线程池。
 
 当有其他 `asyncio` 事件循环在同一线程中运行时，此函数不能被调用。
@@ -528,8 +539,8 @@ if __name__ == "__main__":
 
 `asyncio.gather(*aws, return_exceptions=False)`
 
-并发运行 aws 序列中的可等待对象。
-如果 aws 中的某个可等待对象为协程，它将自动被作为一个任务(asyncio.create_task)调度。
+并发运行 aws 序列中的可等待对象。  
+如果 aws 中的某个可等待对象为协程，它将自动被作为一个任务 (asyncio.create_task) 调度。
 
 如果 `return_exceptions` 为 False (默认)，所引发的首个异常会立即传播给**等待 gather() 的任务**。aws 序列中的其他可等待对象 不会被取消 并将继续运行。
 
@@ -586,10 +597,10 @@ if name == "error":
 
 ## 超时
 
-协程(可等待对象) `asyncio.wait_for(aw, timeout)`
+协程 (可等待对象) `asyncio.wait_for(aw, timeout)`
 
-等待 aw 可等待对象 完成，指定 `timeout` 秒数后超时。
-如果 aw 是一个协程，它将自动被作为任务((asyncio.create_task))调度。
+等待 aw 可等待对象 完成，指定 `timeout` 秒数后超时。  
+如果 aw 是一个协程，它将自动被作为任务 ((asyncio.create_task)) 调度。  
 `timeout` 可以为 None，也可以为 float 或 int 型数值表示的等待秒数。如果 timeout 为 None，则等待直到完成。
 
 如果发生超时，任务将取消并引发 asyncio.TimeoutError.
@@ -614,7 +625,7 @@ return_when 指定此函数应在何时返回:
 
 aws 可迭代对象必须不为空。 返回两个 Task/Future 集合: (done, pending)
 
-`(done, panding)`: done:已完成的协程;panding:正在等待的协程;支持通过 `if` 判断
+`(done, panding)`: done: 已完成的协程;panding: 正在等待的协程; 支持通过 `if` 判断
 
 ```python
 import asyncio
@@ -646,5 +657,5 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)........
+(和男朋友出去喝奶茶了,未完待续,可能会继续写一些应用场景,或者和 Golang 的 Goruntine 进行对比)……..  
 2022/8/24 18:34

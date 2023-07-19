@@ -11,9 +11,9 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ---
 
-# GO 文本和HTML模板
+# GO 文本和 HTML 模板
 
-前面的例子，只是最简单的格式化，使用Printf 是完全足够的。但是有时候会需要复杂的打印格式，这时候一般需要将格式化代码分离出来以便更安全地修改。这写功能是由 text/template 和 html/template 等模板包提供的，它们提供了一个将变量值填充到一个文本或 HTML 格式的模板的机制。
+前面的例子，只是最简单的格式化，使用 Printf 是完全足够的。但是有时候会需要复杂的打印格式，这时候一般需要将格式化代码分离出来以便更安全地修改。这写功能是由 text/template 和 html/template 等模板包提供的，它们提供了一个将变量值填充到一个文本或 HTML 格式的模板的机制。
 
 一个模板是一个字符串或一个文件，里面包含了一个或多个由双花括号包含的 `{{action}}` 对象。
 
@@ -23,7 +23,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 const templ = `{{.TotalCount}} issues:{{range .Items}}----------------------------------------Number: {{.Number}}User: {{.User.Login}}Title: {{.Title | printf "%.64s"}}Age: {{.CreatedAt | daysAgo}} days{{end}}`
 ```
 
-对于每一个action，都有一个当前值的概念，对应点操作符，写作“.”,模板中 `{{.TotalCount}}` 对应 action 将展开为结构体中 TotalCount 成员
+对于每一个 action，都有一个当前值的概念，对应点操作符，写作“.”,模板中 `{{.TotalCount}}` 对应 action 将展开为结构体中 TotalCount 成员
 
 模板中 `{{range .Items}}` 和 `{{end}}` 对应一个循环 action ，因此它们直接的内容可能会被展开多次，循环每次迭代的当前值对应当前的 Items 元素的值。
 
@@ -43,18 +43,18 @@ if err := report.Execute(os.Stdout, result); err != nil {
 }
 ```
 
-**方法调用链** ：template.New 先创建并返回一个模板；Funcs 方法将 daysAgo 等自定义函数注册到模板中，并返回模板；最后调用Parse 函数分析模板。
+**方法调用链** ：template.New 先创建并返回一个模板；Funcs 方法将 daysAgo 等自定义函数注册到模板中，并返回模板；最后调用 Parse 函数分析模板。
 
 ```go
 func Must(t *Template, err error) *Template {....}
 var report = template.Must(report)
 ```
 
-因为模板通常在编译时就测试好了，如果模板解析失败将是一个致命的错误。template.Must 辅助函数可以简化这个致命错误的处理：它接受一个模板和一个 error 类型的参数，检测 error 是否为nil（如果不是nil则发出panic异常），然后返回传入的模板。
+因为模板通常在编译时就测试好了，如果模板解析失败将是一个致命的错误。template.Must 辅助函数可以简化这个致命错误的处理：它接受一个模板和一个 error 类型的参数，检测 error 是否为 nil（如果不是 nil 则发出 panic 异常），然后返回传入的模板。
 
 ## html/template
 
-使用和text/template包相同的API和模板语言，但是增加了一个将 **字符串自动转义特性**，这可以避免输入字符串和HTML JavaScript、CSS或URL语法产生冲突的问题。
+使用和 text/template 包相同的 API 和模板语言，但是增加了一个将 **字符串自动转义特性**，这可以避免输入字符串和 HTML JavaScript、CSS 或 URL 语法产生冲突的问题。
 
 ```go
 func main() {

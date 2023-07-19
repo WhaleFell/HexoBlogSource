@@ -99,7 +99,7 @@ if __name__ == "__main__":
     root.mainloop()  # 调用组件的方法,进入事件循环.
 ```
 
-## label ( 标签 ) 用法
+## Label ( 标签 ) 用法
 
 ![](http://oss.whaleluo.top/blog/old/20210704193103.png-picsmall)
 

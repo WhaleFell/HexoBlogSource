@@ -24,6 +24,7 @@ banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
    元组; 列表; 字典; 集合; 字符串等
 
    生成器.
+
 2. 用 for 循环迭代
 3. 验证一个东西是否可迭代
 

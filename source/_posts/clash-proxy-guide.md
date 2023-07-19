@@ -82,7 +82,7 @@ chmod 777
 
 ## Config File
 
-## Fake-IP 
+## Fake-IP
 
 ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https://blog.skk.moe/post/what-happend-to-dns-in-proxy/)
 

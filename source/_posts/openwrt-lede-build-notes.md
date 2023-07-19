@@ -213,7 +213,7 @@ make defconfig
 
 ```
 
-## 使用 GitHub Action 
+## 使用 GitHub Action
 
 使用 p3terx 大佬的脚本。
 

@@ -23,6 +23,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 - **服务器系统**：Ubuntu 18.04 Server
 
   Linux whalefall 4.15.0-171-generic #180-Ubuntu SMP Wed Mar 2 17:25:05 UTC 2022 x86_64
+
 - **硬盘：**​`df -h`
 
   ```shell
@@ -57,16 +58,19 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Desc: 运行探针服务。
 
    Path: `/var/www/html`
+
 2. Port: 86
 
    Desc: python3-cookbook 3.0.0 文档。
 
    Path: `/www/openvpn_admin/`
+
 3. Port: 88
 
    Desc: 可道云 Kodcloud.
 
    Path: `/www/kodcloud`
+
 4. Port: 89
 
    Desc: AiraNg 下载器。（已反向代理 Aira2 6800）[配置文件](#AiraNg-download-config)
@@ -80,16 +84,19 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
    Desc：Portainer web admin
 
    command：[source](#run-portainer-command)
+
 2. Port：8989
 
    Desc：qBittorrent download
 
    command：[source](#run-qbittorrent-command)
+
 3. Port：18888
 
    Desc：网心云（容器魔方）
 
    command：[source](#run-wxedge-command)
+
 4. network：macnet
 
    ip：192.168.5.66

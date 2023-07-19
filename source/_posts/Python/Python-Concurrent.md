@@ -57,6 +57,7 @@ for thread in threads:
   ![](http://oss.whaleluo.top/blog/old/20210630204323.png-picsmall)
 
   ![](http://oss.whaleluo.top/blog/old/20210630204353.png-picsmall)
+
 - 代码实现
 
   1. **map 方式提交**
@@ -65,6 +66,7 @@ for thread in threads:
   >
 
   > [Python Zip()函数](https://www.runoob.com/python3/python3-func-zip.html)
+>>
 >>
   >> **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
   >>
@@ -160,6 +162,7 @@ for thread in threads:
    ![](http://oss.whaleluo.top/blog/old/20210703065209.png-picsmall)
 
    ![](http://oss.whaleluo.top/blog/old/20210703065255.png-picsmall)
+
 2. **多线程数据通信的**​**`queue.Queue`**
 
    > `queue.Queue` 可以用于**多线程之间**的、**线程安全**的数据通信

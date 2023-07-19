@@ -120,7 +120,6 @@ app.config[name] # 修改
   ```
 
 - **各配置方式优缺点**
-
   - **app.config.from _object(配置对象)**
     - 继承 - ->优点复用
     - 敏感数据暴露缺点

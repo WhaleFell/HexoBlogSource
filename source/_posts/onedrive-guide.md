@@ -31,6 +31,7 @@ Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、
 5c160d06-e2cf-4dbf-a987-5b672cd6bb5e
 ```
 -->
+
 首先访问 [Microsoft Azure 应用注册](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)，登录账号后点击 **应用注册**
 
 填写以下信息：
@@ -657,7 +658,7 @@ Quick Start：[https://ovi.swo.moe/docs/getting-started](https://ovi.swo.moe/doc
 > 把裡面的 token 都刪除  
 > 就可以重新認證了
 
-一查是因为 redis 在线网站限额。改用 [ https://app.redislabs.com/](https://app.redislabs.com/)
+一查是因为 redis 在线网站限额。改用 [https://app.redislabs.com/](https://app.redislabs.com/)
 
 discuss 当站点访问量过大时： [https://github.com/spencerwooo/onedrive-vercel-index/discussions/595](https://github.com/spencerwooo/onedrive-vercel-index/discussions/595) 使用：[https://redis.com/try-free/](https://redis.com/try-free/)
 
@@ -681,4 +682,3 @@ set HTTPS_PROXY=$http_proxy
 
 D:\rclone-v1.62.2-windows-amd64\rclone.exe copy --verbose --transfers 16 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s --stats-file-name-length 0 --fast-list Z:\sdb1\2022.11.26白纸革命 onedrive:政治/2022.11.26白纸革命
 ```
-s

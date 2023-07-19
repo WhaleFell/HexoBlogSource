@@ -136,6 +136,7 @@ sudo mysql_secure_installation
 > ERROR 1698 (28000): Access denied for user ‘root’@’localhost’
 
 原因: 数据库默认使用**特权用户 root 登录**，需要修改为**普通用户使用密码登录**
+
 - 尝试用**特权用户 root**登录数据库:
 
 ```shell

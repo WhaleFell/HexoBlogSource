@@ -26,11 +26,9 @@ Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、
 
 ### 获取 client_id
 
-<!--
 ```text
-5c160d06-e2cf-4dbf-a987-5b672cd6bb5e
+5c160d06-e2cf-4dbf-a987-5b672cd6bb5ehyy
 ```
--->
 
 首先访问 [Microsoft Azure 应用注册](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)，登录账号后点击 **应用注册**
 
@@ -42,11 +40,9 @@ Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、
 
 ### 获取 client_secret
 
-<!--
 ```text
-dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEo
+dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEohxy
 ```
--->
 
 依次点击 **证书和密码**，**新客户端密码**，在截止期限中将时间选择为最长（即两年）
 

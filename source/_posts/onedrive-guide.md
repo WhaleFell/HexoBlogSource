@@ -19,39 +19,41 @@ banner_img:
 
 就选择了 Onedrive 这个云盘，在小咸鱼买了一年 39 CNY 的 office365 家庭版拼车。Onedirve 家庭版可以支持 6 个用户，每个用户有 1T 的 onedrive 空间和 5 台设备的 office365 授权。
 
-Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、oneindex。可以支持直链共享，目测在中国大陆的网速也不错。
-
-​![office-365-family](assets/office-365-family-20230603111727-bvx828p.png)
+Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、oneindex。可以支持直链共享，目测在中国大陆的网速也不错。  
+​![office-365-family](http://oss.whaleluo.top/blog/img/202307191615973.png-picsmall)
 
 ## 创建 OneDrive API
 
 ### 获取 client_id
 
+<!--
 ```text
 5c160d06-e2cf-4dbf-a987-5b672cd6bb5e
 ```
-
+-->
 首先访问 [Microsoft Azure 应用注册](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)，登录账号后点击 **应用注册**
 
 填写以下信息：
 
-​![image](assets/image-20230603121827-4uupgar.png)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ==，这个就是== client_id。
+​![image](http://oss.whaleluo.top/blog/img/202307191615975.png-picsmall)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ==，这个就是== client_id。
 
-​![image](assets/image-20230603122025-5ttlo3x.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615976.png-picsmall)​
 
 ### 获取 client_secret
 
+<!--
 ```text
 dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEo
 ```
+-->
 
 依次点击 **证书和密码**，**新客户端密码**，在截止期限中将时间选择为最长（即两年）
 
-​![image](assets/image-20230603122156-l8i2dav.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615977.png-picsmall)​
 
 然后就可以看见值和机密 ID，我们只需要记录下 **值** 就可以，这个就是 client_secret。
 
-​![image](assets/image-20230603122300-ehu9f42.png)​
+​![image](http://oss.whaleluo.top//blog/img/202307191615978.png-picsmall)​
 
 ### 添加 API 权限
 
@@ -59,19 +61,19 @@ dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEo
 
 需要 **Files.Read, Files.ReadWrite,Files.Read.All, Files.ReadWrite.All, offline_access, User.Read** 。
 
-​​![image](assets/image-20230603122711-tj9rghl.png)​
+​​![image](http://oss.whaleluo.top/blog/img/202307191615979.png-picsmall)​
 
 添加以下权限：
 
-​![image](assets/image-20230603122846-9023t7e.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615980.png-picsmall)​
 
 ### 添加身份验证
 
 依次点击 **身份验证**，**添加平台**，**Web**
 
-​![image](assets/image-20230603123016-bad8v93.png)​在重定向 URI 中输入 ==http://localhost==
+​![image](http://oss.whaleluo.top/blog/img/202307191615981.png-picsmall)​在重定向 URI 中输入 ==http://localhost==
 
-​![image](assets/image-20230603123052-toj0bbq.png)​至此，OneDrive API 创建完成
+​![image](http://oss.whaleluo.top/blog/img/202307191615982.png-picsmall)​至此，OneDrive API 创建完成
 
 ## 使用 Rclone
 
@@ -115,7 +117,7 @@ docker run -d \
 
 打开 http://IP:5573 并登录显示以下页面：
 
-​![image](assets/image-20230603121328-se9pcvl.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615983.png-picsmall)​
 
 进入 docker bash：`docker exec -it rclone sh`​, 输入 rclone config ，按照提示进行 onedrive 设置。
 
@@ -123,7 +125,7 @@ docker run -d \
 
 验证完毕后可以在 Explorer 查看文件：
 
-​![image](assets/image-20230603132149-vtzej16.png)### Rclone 常用命令
+​![image](http://oss.whaleluo.top/blog/img/202307191615985.png-picsmall)### Rclone 常用命令
 
 语法：
 
@@ -187,7 +189,7 @@ rclone copy source:sourcepath dest:destpsth
 rclone copy onedrive:/ /data/sdb1/onedrive_old --transfers=8 -P
 ```
 
-​![image](assets/image-20230603133919-v4x6k3n.png)​​
+​![image](http://oss.whaleluo.top/blog/img/202307191615986.png-picsmall)​​
 
 速度还行，将旧的 onedrive 文件一同迁移到本地硬盘。
 
@@ -228,7 +230,7 @@ rclone sync SOURCE remote:DESTINATION
 rclone sync /data/sdb1/Yellow/ onedrive:/Yellow/ --cache-chunk-size 20M --transfers=8 -P
 ```
 
-​![image](assets/image-20230603152700-ovc8da8.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615987.png-picsmall)​
 
 这是一个关于 `bisync`​ 命令的错误信息。该错误信息表明，在上一次运行 `bisync`​ 命令时出现了致命错误，导致无法找到先前的 `Path1`​ 或 `Path2`​ 列表。因此，`bisync`​ 命令无法确定哪些文件需要同步，因此它需要使用 `--resync`​ 选项来恢复同步操作。
 
@@ -639,7 +641,7 @@ Quick Start：[https://ovi.swo.moe/docs/getting-started](https://ovi.swo.moe/doc
 
 今天是 2023/6/6 日，上去云盘看突然显示部署错误了：
 
-​![image](assets/image-20230606182934-abkwlpv.png)​
+​![image](http://oss.whaleluo.top/blog/img/202307191615988.png-picsmall)​
 
 经过 Github Issue 查找，[#772](https://github.com/spencerwooo/onedrive-vercel-index/discussions/722) 也同样存在这个问题，解决方法：
 
@@ -661,7 +663,7 @@ discuss 当站点访问量过大时： [https://github.com/spencerwooo/onedrive-
 
 ## OneManager Serverless
 
-<https://github.com/qkqpttgf/OneManager-php/blob/master/readme_cn.md>
+[OneManager Serverless](https://github.com/qkqpttgf/OneManager-php/blob/master/readme_cn.md)
 
 ## 使用 Alist
 
@@ -679,3 +681,4 @@ set HTTPS_PROXY=$http_proxy
 
 D:\rclone-v1.62.2-windows-amd64\rclone.exe copy --verbose --transfers 16 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s --stats-file-name-length 0 --fast-list Z:\sdb1\2022.11.26白纸革命 onedrive:政治/2022.11.26白纸革命
 ```
+s

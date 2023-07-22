@@ -20,7 +20,7 @@ excerpt: Python 异步百万并发全文最详细笔记！！
 
 本质就是一个 **函数**
 
-## **事件循环**——(event_loop)
+## 事件循环——(event_loop)
 
 **协程函数**，不是像普通函数那样直接调用运行的，必须**添加到事件循环**中，然后由**事件循环**去运行，单独运行协程函数是不会有结果的，看一个简单的例子：
 
@@ -165,29 +165,26 @@ Hello again 01 end
 
 ## Asyncio 异步编程的基本模板
 
-### **第一步：构造事件循环**
+### 第一步：构造事件循环
 
 1. `loop = asyncio.get_running_loop()`
-
+	
    > 返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7 中新添加的**
-   >
 
 2. `loop = asyncio.get_event_loop()`
 
    > **获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环 loop**；
-   >
 
 3. `loop=asyncio.set_event_loop(thread)`
 
    > 设置一个事件循环**为当前线程的事件循环**；
-   >
 
 4. `loop=asyncio.new_event_loop()`
 
    > **创建一个新的事件循环**
    >
 
-### **第二步：将一个或者是多个协程函数包装成任务 Task**
+### 第二步：将一个或者是多个协程函数包装成任务 Task
 
 1. `task = asyncio.create_task(coro(参数列表))`
 
@@ -198,7 +195,7 @@ Hello again 01 end
 
 > 需要注意的是，在使用 `Task.result()` 获取**协程函数结果**的时候，使用 `asyncio.create_task()` 却会显示错，但是使用 `asyncio.ensure_future` 却正确
 
-### **第三步：通过事件循环运行**
+### 第三步：通过事件循环运行
 
 1. `loop.run_until_complete(asyncio.wait(tasks))`
 
@@ -239,7 +236,7 @@ Hello again 01 end
    loop.run_until_complete(tasks)
    ```
 
-2. #### **返回的值不一样**
+2. **返回的值不一样**
 
    **gather 返回的是每一个任务运行的结果**：
 
@@ -259,7 +256,7 @@ Hello again 01 end
 >
 > 而 `async.gather` 返回的是**已完成 Task 的 result**。
 
-### **第四步：关闭事件循环**
+### 第四步：关闭事件循环
 
 ```python
 loop.close()

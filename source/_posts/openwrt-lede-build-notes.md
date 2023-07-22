@@ -243,3 +243,20 @@ src/gz openwrt_koolshare_mod_packages http://downloads.openwrt.org/snapshots/pac
 src/gz openwrt_koolshare_mod_routing http://downloads.openwrt.org/snapshots/packages/x86_64/routing
 src/gz openwrt_koolshare_mod_telephony http://downloads.openwrt.org/snapshots/packages/x86_64/telephony
 ```
+
+## OpenClash 定时任务
+
+```shell
+# 定时重启
+0 0 * * * sh /usr/share/openclash/openclash_rule.sh
+0 7 * * * sh /usr/share/openclash/openclash_ipdb.sh
+0 4 * * * sh /usr/share/openclash/openclash_geosite.sh
+0 8 * * * sh /usr/share/openclash/openclash_geoip.sh
+0 9 * * * sh /usr/share/openclash/openclash_chnroute.sh
+*/10 * * * * sh /usr/share/openclash/openclash.sh
+00 5 * * * sleep 5 && touch /etc/banner && reboot
+```
+
+## OpenClash Docs
+
+[DNS污染对Clash（for Windows）的影响 · Fndroid/clash\_for\_windows\_pkg Wiki · GitHub](https://github.com/Fndroid/clash_for_windows_pkg/wiki/DNS%E6%B1%A1%E6%9F%93%E5%AF%B9Clash%EF%BC%88for-Windows%EF%BC%89%E7%9A%84%E5%BD%B1%E5%93%8D)

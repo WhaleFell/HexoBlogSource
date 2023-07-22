@@ -370,11 +370,12 @@ snowdreamtech/frpc
 
 #### 到服务器的网速测试
 
+[Docker](https://hub.docker.com/r/ilemonrain/html5-speedtest/)
+
 ```shell
 sudo docker run --restart=unless-stopped \
 --name openspeedtest \
--d -p 3000:3000 \
--p 3001:3001 openspeedtest/latest
+-d -p 6688:80 ilemonrain/html5-speedtest
 ```
 
 #### FileBrowser 文件管理
@@ -740,31 +741,12 @@ http {
 		proxy_send_timeout 60m;
 
 
-		location /main {
+		location / {
 
 			alias /usr/share/nginx/html;
 			index index.html;
 		}
 
-		location / {
-
-			proxy_pass http://192.168.8.1:6806/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
-
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
-
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
 
 		location /sdr/ {
 
@@ -828,7 +810,7 @@ http {
 
 		location /test/ {
 
-			proxy_pass http://192.168.8.1:8989/;
+			proxy_pass http://192.168.8.1:3300/;
 			proxy_set_header X-Real-IP $remote_addr;
 			proxy_set_header x-wiz-real-ip $remote_addr;
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -845,45 +827,6 @@ http {
 			proxy_cache_bypass $http_upgrade;
 			proxy_redirect off;
 		}
-		location /note/ {
-
-			proxy_pass http://192.168.8.1:6806/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
-
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
-
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
-		location /status/ {
-
-			proxy_pass http://192.168.8.1:19999/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
-
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
-
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
-
 	}
 }
 ```

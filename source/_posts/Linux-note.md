@@ -373,7 +373,7 @@ snowdreamtech/frpc
 [Docker](https://hub.docker.com/r/ilemonrain/html5-speedtest/)
 
 ```shell
-sudo docker run --restart=unless-stopped \
+sudo docker run --restart=always \
 --name openspeedtest \
 -d -p 6688:80 ilemonrain/html5-speedtest
 ```

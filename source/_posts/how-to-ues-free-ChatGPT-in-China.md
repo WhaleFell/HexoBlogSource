@@ -51,7 +51,7 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 笔者自用的是 [EasyGPT地址发布页](https://site.easygpt.work/) 用了几个月比较稳定，3.5 模型也是免费的，点进去就会出现一个 EasyGPT 的导航页，挑一个延时小的使用。如果一个网址不可使用，返回引导页再尝试另一个。若服务完全不可用，请尝试下文提供的 GitHub 镜像网址合集。
 
-![](assets/how-to-ues-free-ChatGPT-in-China-index.png)
+![](http://oss.whaleluo.top/blog/img/how-to-ues-free-ChatGPT-in-China-index.png-picsmall)
 
 **WAN**: 使用第三方 ChatGPT 国内套壳服务时 **请勿提交敏感信息**，网站运营者 **会查看的到你提交的任何内容**. 若提交一些 **NSFW** (NOT SEE FOR WORK) 及一些涉政的内容，**网站运营者可能会把你的 IP 地址提交给网安国保之类的机构，请鼠鼠们注意！**
 

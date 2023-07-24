@@ -43,7 +43,7 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 下面是一些网站的 URL，**请注意时效性**。
 
-![](assets/how-to-ues-free-ChatGPT-in-China-url.png)
+![](http://oss.whaleluo.top/blog/img/how-to-ues-free-ChatGPT-in-China-url.png-picsmall)
 
 ### 自用
 

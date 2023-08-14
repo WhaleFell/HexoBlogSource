@@ -179,11 +179,24 @@ sudo ldconfig
 
 ```html
 <script type="text/javascript">
+$(document).ready(function() {
+$('#openwebrx-waterfall-colors-auto').contextmenu();
+  setTimeout(function() { 
     $('#openwebrx-waterfall-colors-auto').contextmenu();
-    setInterval(function(){
-    $('#openwebrx-waterfall-colors-auto').click();
-    },1000);
+		$('#openwebrx-waterfall-colors-auto').click(); 
+		}, 2000);
+  $('#openwebrx-sdr-profiles-listbox').change(function() {
+		console.log("change profiles!");
+    $('#openwebrx-waterfall-colors-auto').contextmenu();
+		setTimeout(function() { 
+    $('#openwebrx-waterfall-colors-auto').contextmenu();
+		$('#openwebrx-waterfall-colors-auto').click(); 
+		}, 2000);
+  });
+});
 </script>
 ```
 
 ## 参考引用 Reference
+
+HamCQ.cn

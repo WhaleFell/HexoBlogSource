@@ -576,13 +576,16 @@ onedrive:/AMediaBack/ \
 rclone --config="/root/rclone/rclone.conf" \
 --checkers=16 --cache-dir="/root/rclone/" \
 --transfers=10 --verbose --cache-chunk-size=20M \
-
 rclone bisync --config="/root/rclone/rclone.conf" \
 --checkers=80 --cache-dir="/root/rclone/" \
---transfers=10 --verbose --cache-chunk-size=20M --check-first --stats=3s --checksum \
+--transfers=10 --verbose --cache-chunk-size=20M --check-first --stats=1s --checksum --retries 3 --low-level-retries 10 \
 /mnt/sdb1/Onedrive-Sync \
 onedrive: \
 --resync --check-access --dry-run -vvv --localtime --timeout=10s 
+
+
+# rclone browser generate command
+D:\rclone-v1.62.2-windows-amd64\rclone.exe copy --ignore-existing --verbose --transfers 2 --checkers 80 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s --stats-file-name-length 0 --fast-list jgy:我的坚果云 E:\jgy\我的坚果云\
 
 ```
 

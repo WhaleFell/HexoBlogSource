@@ -315,6 +315,25 @@ which zsh && sed -i -- 's:/bin/ash:'`which zsh`':g' /etc/passwd
 
 国内加速: [https://get.daocloud.io/](https://get.daocloud.io/)
 
+官方命令安装：
+
+```shell
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+### Useful Command
+
+```shell
+# 强制停止并删除镜像
+docker rm -f 名称
+# entry shell and rm
+docker run -it --rm --name tgbot /bin/sh
+
+# 复制文件
+docker cp ./TGBot.session tgbot:/wkdir/
+```
+
 ### Image 各种镜像
 
 #### Portainer 管理 UI

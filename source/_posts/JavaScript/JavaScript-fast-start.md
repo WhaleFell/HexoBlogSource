@@ -297,7 +297,9 @@ while (i<5);
 
 ## 函数&模块 （Functions）
 
-JS return 只能返回一个数据
+1. JS return 只能返回一个数据
+2. JS Function 是一个函数对象： `typeof -> function`
+3. JavaScript 函数有 **属性** 和 **方法**。`.length->返回接收的参数个数` `.toString()->将函数作为一个字符串返回`
 
 ```javascript
 function functionname()  
@@ -319,6 +321,183 @@ function myFunction()
 }
 var myVar=myFunction();
 ```
+
+### 函数表达式
+
+JavaScript 函数可以通过一个表达式定义。  
+函数表达式可以 **存储在变量** 中：
+
+```javascript
+// 以分号结尾，因为这是一个执行语句
+var x = function (a, b) {return a * b};
+var z = x(4, 3);
+```
+
+以上函数实际上是一个 **匿名函数**  (类似 Python `limbda a:a+1` 函数没有名称)。  
+函数存储在变量中，不需要函数名称，通常通过变量名来调用。
+
+### Function 构造函数 （最好不用）
+
+> 在 JavaScript 中，很多时候，你需要避免使用 **new** 关键字。
+
+函数本质上是一个 object ，可以通过 `new Function()` 函数构造器定义。 
+
+```javascript
+var myFunction = new Function("a", "b", "return a * 
+	b");
+var x = myFunction(4, 3);
+```
+
+### 函数提升 （Hoisting）
+
+类似 `var` 时的变量提升，使用表达式定义函数时无法提升。
+
+- 提升（Hoisting）是 JavaScript 默认将当前作用域提升到前面去的行为。
+- 提升（Hoisting）应用在变量的声明与函数的声明。
+
+```javascript
+myFunction(5);
+
+function myFunction(y) {
+    return y * y;
+}
+```
+
+### 自调用函数 （self invoking）
+
+- **函数表达式** 可以 " 自调用 "。
+- 自调用表达式会自动调用。
+- 如果表达式后面紧跟 () ，则会自动调用。
+- 不能自调用声明的函数。
+- **通过添加括号，来说明它是一个函数表达式**：
+
+```javascript
+(function () {
+    var x = "Hello!!";      // 我将调用自己
+})();
+```
+
+以上函数实际上是一个 **匿名自我调用的函数** (没有函数名)。
+
+### 箭头函数 ES6
+
+```javascript
+(参数1, 参数2, …, 参数N) => { 函数声明 }
+(参数1, 参数2, …, 参数N) => 表达式(单一)
+// 相当于：(参数1, 参数2, …, 参数N) =>{ return 表达式; }
+```
+
+当只有一个参数时，圆括号是可选的：
+
+```javascript
+(单一参数) => {函数声明}
+单一参数 => {函数声明}
+```
+
+没有参数的函数应该写成一对圆括号:
+
+```javascript
+() => {函数声明}
+```
+
+e.g.
+
+```javascript
+// ES5
+var x = function(x, y) {
+     return x * y;
+}
+ 
+// ES6
+const x = (x, y) => x * y;
+```
+
+1. 箭头函数都**没有**自己的 **this**。 不适合定义一个 **对象的方法**。
+2. 当我们使用箭头函数的时候，箭头函数会默认帮我们**绑定外层 this 的值**，所以在箭头函数中 this 的值和外层的 this 是一样的。
+3. 箭头函数是**不能提升**的，所以需要在使用之前定义。
+4. 使用 **const** 比使用 **var** 更安全，因为函数表达式始终是一个常量。
+5. 如果**函数部分只是一个语句**，则可以省略 return 关键字和大括号 {}，这样做是一个比较好的习惯:
+
+```javascript
+const x = (x, y) => x * y;
+const x = (x, y) => { return x * y };
+```
+
+### 函数参数 (args ==> arguments)
+
+#### Parameters （显性参数） Arguments （隐式参数）
+
+JavaScript 函数有个内置的对象 arguments 对象。  
+arguments 对象包含了函数调用的参数数组，**可以传入不定数量的参数。**
+
+```javascript
+// 找到最大的数
+x = findMax(1, 123, 500, 115, 44, 88);
+ 
+function findMax() {
+	// arguments 包含传入函数参数的数组;
+    let arg = arguments[0];
+    
+    if(arguments.length < 2) return arg;
+	 
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+
+// 计算加和
+x = sumAll(1, 123, 500, 115, 44, 88);
+ 
+function sumAll() {
+    let i, sum = 0;
+    for (i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+```
+
+#### Default Args (默认参数)
+
+如果函数在调用时未提供隐式参数，参数会默认设置为： **undefined**
+
+```javascript
+function myFunction(x, y) {
+    if (y === undefined) {
+          y = 0;
+    } 
+}
+
+// simple way
+// 如果 y 已经定义，y || 0 返回 y，因为 y 是 true，否则返回 0，因为 undefined 为 false。
+function myFunction(x, y) {
+    y = y || 0; 
+}
+
+// in ES6
+// ES6 支持函数带有默认参数，就判断 undefined 和 || 的操作：
+function myFunction(x, y = 10) {
+    // y is 10 if not passed or undefined
+    return x + y;
+}
+ 
+myFunction(0, 2) // 输出 2
+myFunction(5); // 输出 15, y 参数的默认值
+```
+
+#### 值传递和引用对象传递
+
+- 通过值传递给函数，函数对值的更改，在函数外部是不可见的。
+- 通过引用对象传递给函数，函数接收到的是 **引用对象的指针**，在函数内部对引用对象的修改是可以影响到函数外部原本的对象的。
+
+### 函数调用（function invoking）
+
+in general. `this` 指向函数执行时当前的对象。  
+在浏览器环境 …….  
+[JavaScript 函数调用 | 菜鸟教程](https://www.runoob.com/js/js-function-invocation.html)
 
 ## 类 （class）对象
 
@@ -418,3 +597,238 @@ setTimeout(function () {
 ```
 
 [JavaScript Promise | 菜鸟教程](https://www.runoob.com/js/js-promise.html)
+
+### JS Promise
+
+**Promise** 是一个 ECMAScript 6 提供的类，目的是更加优雅地书写复杂的异步任务。
+
+Promise 对象代表一个异步操作，有三种状态：**Pending**（进行中）、**Resolved**（已完成，又称 Fulfilled）和 **Rejected**（已失败）。
+
+通过回调里的 **resolve(data)** 将这个 Promise 标记为 **resolverd**，然后进行下一步 then((data)=>{//do something})，resolve 里的参数就是你要传入 then 的数据。
+
+```javascript
+new Promise(function (resolve, reject) {
+    // 要做的事情…
+});
+```
+
+用于多次调用异步函数，避免回调地狱，如：
+
+```javascript
+setTimeout(function () {
+    console.log("First");
+    setTimeout(function () {
+        console.log("Second");
+        setTimeout(function () {
+            console.log("Third");
+        }, 3000);
+    }, 4000);
+}, 1000);
+```
+
+用 Promise 实现相同功能：
+
+ **Promise 将嵌套格式的代码变成了顺序格式的代码。**
+
+```javascript
+new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("First");
+        resolve();
+    }, 1000);
+}).then(function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Second");
+            resolve();
+        }, 4000);
+    });
+}).then(function () {
+    setTimeout(function () {
+        console.log("Third");
+    }, 3000);
+});
+```
+
+Promise 构造函数是 JavaScript 中用于创建 Promise 对象的内置构造函数。
+
+Promise 构造函数接受一个函数作为参数，该函数是同步的并且会被立即执行，所以我们称之为**起始函数**。起始函数包含两个参数 `resolve` 和 `reject`，分别表示 `Promise` 成功和失败的状态。
+
+起始函数执行成功时，它应该调用 `resolve` 函数并传递成功的结果。当起始函数执行失败时，它应该调用 `reject` 函数并传递失败的原因。
+
+Promise 构造函数返回一个 Promise 对象，该对象具有以下几个方法：
+
+- `then`：用于处理 Promise 成功状态的回调函数。
+- `catch`：用于处理 Promise 失败状态的回调函数。
+- `finally`：无论 Promise 是成功还是失败，都会执行的回调函数。
+
+```javascript
+// new Promise obj 需要传入一个起始函数作为参数
+// 下面使用了 Javascript 匿名函数 (函数参数) =>{ 函数体 }
+const promise = new Promise((resolve, reject) => {
+  // 异步操作
+  // 使用 setTimeout 模拟了一个异步操作。如果异步操作成功，则调用 resolve 函数并传递成功的结果；如果异步操作失败，则调用 reject 函数并传递失败的原因。
+  setTimeout(() => {
+    if (Math.random() < 0.5) {
+      resolve('success'); // 执行成功传递给 than 方法 result
+    } else {
+      reject('error'); // 执行错误传递给 catch 方法 error
+    }
+  }, 1000);
+});
+
+// 使用 then 方法处理 Promise 成功状态的回调函数，使用 catch 方法处理 Promise 失败状态的回调函数。
+promise.then(result => {
+  console.log(result);
+}).catch(error => {
+  console.log(error);
+}).finally(
+// 成功与否都会执行的函数
+() => { 
+	console.log("End"); 
+}
+);
+```
+
+- resolve 和 reject 的作用域只有起始函数，不包括 then 以及其他序列；
+- resolve 和 reject 并不能够使起始函数停止运行，别忘了 return。
+
+then 方法可以接收两个回调函数作为参数，第一个回调函数是 Promise 对象的状态改变为 resoved 是调用，第二个回调函数是 Promise 对象的状态变为 rejected 时调用。**其中第二个参数可以省略**。
+
+```javascript
+var promise =new Promise(function(resolve,reject){
+    //To Do 要异步执行的事情，这个异步执行的事情有可能成功执行完毕，那么Promise将是fulfilled状态，如果执行失败则是rejected;
+    //下面测试代码，人为设置为rejected状态;
+    reject("将当前构建的Promise对象的状态由pending（进行中）设置为rejected（已拒绝）"); //当然此处也可以设置为fulfilled(已完成)状态
+})
+
+promise.then(//调用第一个then()
+    success=>{
+        console.log("异步执行成功，状态为：fulfilled，成功后返回的结果是："+success);
+        return(" 当前 success ");
+    },
+    error=>{
+        console.log("异步执行失败，状态为rejected，失败后返回的结果是："+error);
+        return(" 当前 error ");
+    }
+).then(
+    //调用第二个then() 因为调用第一个then()方法返回的是一个新的promise对象，此对象的状态由上面的success或者error两个回调函数的执行情况决定的：
+    //如果回调函数能正常执行完毕，则新的promise对象的状态为fulfilled，下面执行success2,如果回调函数无法正常执行，则promise状态为rejected;下面执行error2
+    success2=>{
+        console.log("第一个then的回调函数执行成功 成功返回结果："+success2);
+        throw(" 当前 success2 ");//自定义异常抛出
+    },
+    error2=>{
+        console.log("第一个then的回调函数执行失败 失败返回结果："+error2);
+        return(" 当前 error2 ");
+    }
+).catch(err=>{
+    //当success2或者error2执行报错时，catch会捕获异常;
+    console.log("捕获异常："+err);
+});
+
+//上述代码,打印如下:
+//异步执行失败，状态为rejected，失败后返回的结果是：将当前构建的Promise对象的状态由pending（进行中）设置为rejected（已拒绝）
+//第一个then的回调函数执行成功 成功返回结果： 当前 error
+//捕获异常： 当前 success2
+```
+
+这种返回值为一个 `Promise` 对象的函数称作 `Promise` 函数，它常常用于开发基于异步操作的库。
+
+```javascript
+function print(delay, message) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log(message);
+            resolve();
+        }, delay);
+    });
+}
+
+print(1000, "First").then(function () {
+    return print(4000, "Second");
+}).then(function () {
+    print(3000, "Third");
+});
+
+```
+
+### 异步函数 async function
+
+一个返回 Promise 对象的 Promise 函数：
+
+```javascript
+function print(delay, message){
+	return new Promise(
+		(resolve, reject) => {
+		
+			setTimeout(
+				() => {
+					console.log(message);
+					resolve();
+				}
+			)
+			return;
+		}
+	)
+
+}
+```
+
+用不同的时间将 **顺序输出** 三行文本：
+
+```javascript
+print(1000, "First").than(
+	() => { return print(4000, "Second"); }
+).than(
+	() => { return print(3000,"Third"); }
+)
+```
+
+可以使用 `await` 等待异步函数的执行完成，增加代码可读性：  
+异步函数 `async function` 中可以使用 await 指令，`await` 指令后必须跟着一个 `Promise`，异步函数会在这个 `Promise` 运行中暂停，直到其运行结束再继续运行。
+
+```javascript
+async function asyncFunc(){
+	await print(1000, "First");
+	await print(4000, "Second");
+	await print(3000, "Third");
+}
+
+asyncFunc();
+```
+
+处理异常也可以用 `thy-catch` 机制实现：
+
+```javascript
+async function asyncFunc(){
+	try {
+		await new Promise(
+			(resolve, reject) => {
+				throw "Some Error";
+				// 或者 reject("Some Eroor");
+			} 
+		);
+	} catch (err) {
+		// 输出 "Some Error"
+		console.log(err);
+	}
+}
+
+asyncFunc();
+```
+
+如果 Promise 有一个正常的返回值，await 语句也会返回它：
+
+```javascript
+async function asyncFunc() {
+    let value = await new Promise(
+        function (resolve, reject) {
+			// 相当于 return "Return value"
+            resolve("Return value");
+        }
+    );
+    console.log(value);
+}
+asyncFunc();
+```

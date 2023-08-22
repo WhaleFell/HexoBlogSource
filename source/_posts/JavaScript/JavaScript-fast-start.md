@@ -363,6 +363,8 @@ function myFunction(y) {
 }
 ```
 
+### 匿名函数（Anonymous function）
+
 ### 自调用函数 （self invoking）
 
 - **函数表达式** 可以 " 自调用 "。
@@ -496,11 +498,307 @@ myFunction(5); // 输出 15, y 参数的默认值
 ### 函数调用（function invoking）
 
 in general. `this` 指向函数执行时当前的对象。  
-在浏览器环境 …….  
-[JavaScript 函数调用 | 菜鸟教程](https://www.runoob.com/js/js-function-invocation.html)
+在浏览器环境，`this` 指向的是 windows 对象，为浏览器环境的全局对象。
+
+```javascript
+function myFunction(a, b) {
+    return a * b;
+}
+window.myFunction(10, 2);    // window.myFunction(10, 2) 返回 20
+```
+
+全局对象：
+
+```javascript
+function myFunction() {
+    return this;
+}
+myFunction();                // 返回 window 对象
+```
+
+func as obj methods invoking:
+
+```javascript
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+	    // this 值为对象本身
+        return this;
+    }
+}
+myObject.fullName();          // 返回 [object Object] (所有者对象)
+```
+
+使用构造函数调用函数：  
+如果在函数调用前使用了 `new` 关键字，就是调用了构造函数。
+
+```javascript
+// 构造函数:
+// 构造函数中 this 关键字没有任何的值。
+// this 的值在实例化 new object 时候创建
+function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName  = arg2;
+}
+ 
+// This creates a new object
+var x = new myFunction("John","Doe");
+x.firstName;                             // 返回 "John"
+```
+
+作为函数方法调用函数：
+
+function 就是一个 object 他有自己的 attribute 和 methods.
+
+`call()` `apply()` 是预定义的函数方法，这两个方法用于调用函数，第一个参数必须是函数 this 的对象本身：
+
+```javascript
+myObject = {
+name: "21211",
+method: args => {
+	console.log("test"+args);
+}
+}
+
+function myFunction(a, b) {
+	// 输出 21211
+	console.log(this.name)
+    return a * b;
+}
+// call() 按顺序传入参数 第一个参数会成为函数 this 的值
+myObject = myFunction.call(myObject, 10, 2);     // 返回 20
+
+function myFunction(a, b) {
+    return a * b;
+}
+myArray = [10, 2];
+// apply() 传入一个参数数组
+myObject = myFunction.apply(myObject, myArray);  // 返回 20
+```
+
+### 函数闭包 （Function Closure）
+
+1. 变量的生命周期
+2. 变量的作用域：所有函数都能访问全局变量。在 JavaScript 中，所有函数 **都能访问它们上一层的作用域**。
+
+```javascript
+function add() {
+    var counter = 0;
+    function plus() {
+	    // 可以访问到父函数的 counter 变量
+	    counter += 1;
+    }
+    plus();
+    return counter; 
+}
+```
+
+闭包是一种保护函数私有变量的机制，在函数执行时形成私有的作用域，保护里面的私有变量不受外界干扰：
+
+> 匿名函数内部定义的变量和函数 **只能在函数内部访问**，外部无法直接访问，从而实现了信息的封装和隐藏。  
+> 如果要实现外部访问，可以通过 `return` 一个函数或者 obj 来实现外部访问。
+
+```javascript
+// 自调用函数
+// 使得 add() 函数拥有私有变量 counter
+// 计数器受匿名函数的作用域保护，只能通过 add 方法修改。
+var add = (function () {
+    let counter = 0; // 立即 invoke 且只会执行一次,设置计数器为0并返回函数表达式
+    return function () {
+	    return counter += 1;
+    }
+})();
+ 
+add();
+add();
+add();
+ 
+// 计数器为 3
+```
 
 ## 类 （class）对象
 
+### Create class 创建类
+
+**类是用于创建对象的模板。**
+
+使用 class 关键字来创建一个类，类体在一对大括号 {} 中，我们可以在大括号 {} 中定义类成员的位置，如方法或构造函数。
+
+每个类中包含了一个特殊的方法 `constructor()` （构造器），它是类的 **构造函数** （类似 Py `def __init__(self)`），这种方法用于创建和初始化一个由 **class** 创建的对象，初始化对象的 attribute。
+
+```javascript
+// 创建一个类并初始化了两个属性
+class ClassName{
+	constructor(name, url) {
+		this.name = name;
+		this.url = url;
+		this.year = 2023;	
+	}
+	// add methods
+	method_1() { … } 
+	method_2() { … } 
+	method_3() { … }
+	age() { let date = new Date(); return date.getFullYear() - this.year; }
+}
+
+// 创建对象时自动运行 constructor method
+let site = new ClassName("落落の博客", "https://whaleluo.top");
+console.log(site.age())
+```
+
+类表达式：  
+类表达式是定义类的另一种方法。类表达式 **可以命名或不命名**。命名类表达式的名称是该类体的局部名称。
+
+```javascript
+// 未命名/匿名类
+let Runoob = class {
+  constructor(name, url) {
+    this.name = name;
+    this.url = url;
+  }
+};
+console.log(Runoob.name);
+// output: "Runoob"
+ 
+// 命名类
+let Runoob = class Runoob2 {
+  constructor(name, url) {
+    this.name = name;
+    this.url = url;
+  }
+};
+console.log(Runoob.name);
+// 输出: "Runoob2"
+```
+
+### Extends class 继承类
+
+`super()` 用于调用父类的构造函数 `constructor()` 
+
+```javascript
+// 基类
+class Animal {
+    constructor(where) {
+	    this.where = where;
+    }
+    eat() { ... }
+    sleep() { ... }
+};
+
+// 派生类 Dog 类继承自 Animal
+class Dog extends Animal {
+    constructor(where, age) {
+	    super(where); // 调用父类的初始化函数
+	    this.age = age;
+    }
+    bark() {
+	    console.log("The dog in"+this.where+" age:"+this.age);
+    }
+};
+
+let dog = new Dog("china","21");
+```
+
+JavaScript 并没有像其他编程语言一样具有传统的类，而是基于 **原型的继承模型**。  
+**ES6** 引入了类和 class 关键字，但底层机制仍然基于原型继承。  
+**ES6** 引入了 class 关键字，使得定义类和继承更加清晰，`extends` 关键字用于建立继承关系，`super` 关键字用于在子类构造函数中调用父类的构造函数。
+
+基于 **原型链 (prototype `/ˈprəʊ.tə.taɪp/` )** 的继承：
+
+在下面实例中，Animal 是一个基类，Dog 是一个继承自 Animal 的子类  
+`Dog.prototype` 使用 `Object.create(Animal.prototype)` 来创建一个新对象，它继承了 `Animal.prototype` 的方法和属性，通过将 `Dog.prototype.constructor` 设置为 Dog，确保继承链上的构造函数正确。
+
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+ 
+Animal.prototype.eat = function() {
+  console.log(this.name + " is eating.");
+};
+ 
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+ 
+// 建立原型链，让 Dog 继承 Animal
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+ 
+Dog.prototype.bark = function() {
+  console.log(this.name + " is barking.");
+};
+ 
+var dog = new Dog("Buddy", "Labrador");
+dog.eat();  // 调用从 Animal 继承的方法
+dog.bark(); // 调用 Dog 的方法
+```
+
+### Getter and setter
+
+类中我们可以使用 `getter` 和 `setter` 来获取和设置值，`getter` 和 `setter` 都需要在严格模式下执行。`getter` 和 `setter` 可以使得我们对属性的操作变的很灵活。
+
+1. 类中添加 getter 和 setter 使用的是 `get` 和 `set` 关键字。
+2. 即使 getter 是一个方法，当你想 **获取属性值时也不要使用括号**。
+3. 使用 setter，请使用与设置属性值时相同的语法，虽然 set 是一个方法，但需要 **不带括号**
+4. `getter/setter` 方法的名称不能与属性的名称相同，在本例中属名为 `sitename`。
+5. 很多开发者在属性名称前使用下划线字符 `_` 将 `getter/setter` 与实际属性分开：
+
+```javascript
+class Runoob {
+  constructor(name) {
+    this._sitename = name;
+  }
+  get sitename() {
+    return this.sitename;
+  }
+  set sitename(x) {
+    this.sitename = x;
+  }
+}
+ 
+let noob = new Runoob("菜鸟教程");
+noob.sitename = "121" // 相当于调用 sitename("121")
+documen2t.getElementById("demo").innerHTML = noob.sitename;
+```
+
+### 类提升（class hoisting）
+
+函数声明和类声明之间的一个重要区别在于, **函数声明会提升，类声明不会。**  
+你首先需要声明你的类，然后再访问它，否则将抛出 ReferenceError
+
+### Class static method (类静态方法)
+
+静态方法是使用 static 关键字修饰的方法，又叫类方法，**属于类的，但不属于对象**，在实例化对象之前可以通过 `类名.方法名` 调用静态方法。
+
+**静态方法不能在对象上调用，只能在类中调用。**
+
+```javascript
+class Animal {
+	constructor(name) {
+		this._name = name;
+	}
+	// 类初始化后对象的方法
+	hello() {
+		return "The "+this.name+"say hello!"
+	}
+	// 类的静态方法
+	static state() {
+		return "static method"
+	}
+	get name() {
+		return this._name()
+	}
+}
+
+// 可以在类上直接调用 static 方法,不用 new 实例化类
+Animal.state()
+
+let dog = new Animal();
+dog.state() // 不可以在类实例化后的对象中调用类的静态方法
+```
 ### This keyword this 关键字
 
 面向对象语言中 this 表示当前对象的一个引用。
@@ -512,7 +810,7 @@ in general. `this` 指向函数执行时当前的对象。
 - 在函数中，this 表示全局对象。
 - 在函数中，在严格模式下，this 是未定义的 (undefined)。
 - 在事件中，this 表示接收事件的元素。
-- 类似 call() 和 apply() 方法可以将 this 引用到任何对象。（#1）
+- 类似 `call()` 和 `apply()` 方法可以将 this 引用到任何对象。（#1）
 
 ```javascript
 // 单独使用 this 在浏览器中，window 就是该全局对象为 [**object Window**]:
@@ -531,7 +829,7 @@ var person = {
 
 显式函数绑定：
 
-在 JavaScript 中函数也是对象，对象则有方法，apply 和 call 就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象。  
+在 JavaScript 中函数也是对象，对象则有方法，`apply 和 call 就是函数对象的方法`。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象。  
 在下面实例中，当我们使用 person2 作为参数来调用 person1.fullName 方法时, **this** 将指向 person2, 即便它是 person1 的方法：
 
 ```javascript

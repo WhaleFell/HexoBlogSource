@@ -617,6 +617,10 @@ add();
 // 计数器为 3
 ```
 
+### JS import 模块
+
+Ref：[import - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)
+
 ## 类 （class）对象
 
 ### Create class 创建类
@@ -799,6 +803,7 @@ Animal.state()
 let dog = new Animal();
 dog.state() // 不可以在类实例化后的对象中调用类的静态方法
 ```
+
 ### This keyword this 关键字
 
 面向对象语言中 this 表示当前对象的一个引用。

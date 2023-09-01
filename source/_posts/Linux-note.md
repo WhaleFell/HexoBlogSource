@@ -467,6 +467,14 @@ Running the container with `--network host`​ *might* improve network performan
 
 在 Windows 上配置 NFS 客户端： [https://cloud.tencent.com/developer/article/1840455](https://cloud.tencent.com/developer/article/1840455)
 
+#### DDNS-GO
+
+基于 Golang 语言开发的 DDNS 程序。[GitHub - jeessy2/ddns-go: 简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)](https://github.com/jeessy2/ddns-go)
+
+```shell
+docker run -d --name ddns-go --restart=always --net=host -v /root/ddns-go:/root jeessy/ddns-go
+```
+
 ## Nginx
 
 docker running

@@ -1,5 +1,5 @@
 ---
-title: Vue 正式学习笔记
+title: Vue3 正式学习笔记
 date: 2023-08-22 15:35:04
 updated: 2023-08-22 15:35:04
 categories: Vue
@@ -9,12 +9,14 @@ thumbnail:
 banner_img: 
 ---
 
-# Vue 正式学习笔记
+# Vue3 正式学习笔记
 
 经过了前面 Javascript 和 Nodejs 前置知识的铺垫，我想我应该可以正式学习 Vue 这个前端框架了叭。
 
 先看视频放松下过一遍：  
 [【2023最新版】Vue3从入门到精通，零基础小白也能听得懂，写得出，web前端快速入门教程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Rs4y127j8/?)
+
+> 上面的视频虽然说得是 Vue3 但是是按照 **组合式 API** 讲解的，Vue3 文档推荐使用 **响应式 API** 编写代码。
 
 reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essentials/application.html)
 
@@ -93,4 +95,86 @@ import { createApp } from 'vue'
 import App from './App.vue'
 const app = createApp(App);
 app.mount('#app');
+```
+
+## 声明响应式状态
+
+在组合式 API 中，推荐使用 [`ref()`](https://cn.vuejs.org/api/reactivity-core.html#ref) 函数来声明响应式状态，定义响应式依赖。
+
+```javascript
+import { ref } from 'vue'
+const count = ref(0) // 初始化数值
+```
+
+## 计算属性 computed
+
+返回值为一个**计算属性 ref**，通过 `publishedBooksMessage.value` 访问计算结果，计算属性 ref 也会在模板中自动解包，因此在模板表达式中引用时无需添加 `.value`。
+
+**计算属性值会基于其响应式依赖被缓存**
+
+```javascript
+const publishedBooksMessage = computed(
+// 依赖于 author 对象
+// 只要 `author.books` 不改变，无论多少次访问 `publishedBooksMessage` 都会立即返回先前的计算结果，而不用重复执行 getter 函数。
+() => { return author.books.length > 0 ? 'Yes' : 'No' }
+)
+```
+
+计算属性默认是只读的。当你尝试修改一个计算属性时，你会收到一个运行时警告。只在某些特殊场景中你可能才需要用到“可写”的属性，你可以通过同时提供 getter 和 setter 来创建。
+
+```javascript
+<script setup>
+import { ref, computed } from 'vue'
+
+const firstName = ref('John')
+const lastName = ref('Doe')
+
+const fullName = computed({
+  // getter
+  // 应只做计算而没有任何其他的副作用
+  // **不要在 getter 中做异步请求或者更改 DOM**！
+  get() {
+    return firstName.value + ' ' + lastName.value
+  },
+  // setter
+  set(newValue) {
+    // 注意：我们这里使用的是解构赋值语法
+    [firstName.value, lastName.value] = newValue.split(' ')
+  }
+})
+</script>
+```
+
+## watch 监听器
+
+每次响应式状态变化时触发回调函数：
+
+```javascript
+<script setup>
+import { ref, watch } from 'vue'
+
+const question = ref('')
+const answer = ref('Questions usually contain a question mark. ;-)')
+
+// 可以直接侦听一个 ref
+watch(question, async (newQuestion, oldQuestion) => {
+  if (newQuestion.indexOf('?') > -1) {
+    answer.value = 'Thinking…'
+    try {
+      const res = await fetch('https://yesno.wtf/api')
+      answer.value = (await res.json()).answer
+    } catch (error) {
+      answer.value = 'Error! Could not reach the API. ' + error
+    }
+  }
+})
+</script>
+
+<template>
+  <p>
+    Ask a yes/no question:
+    <input v-model="question" />
+  </p>
+  <p>{{ answer }}</p>
+</template>
 ```

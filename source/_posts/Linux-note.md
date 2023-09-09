@@ -332,6 +332,10 @@ docker run -it --rm --name tgbot /bin/sh
 
 # 复制文件
 docker cp ./TGBot.session tgbot:/wkdir/
+
+docker run -it --rm --name tg_forwardMsgBot -v /wfwork/tgbot_base/:/wkdir/ tgbot_base /bin/sh
+
+docker run -d --name tg_forwardMsgBot -v /wfwork/tgbot_base/:/wkdir/ tgbot_base python3 main.py
 ```
 
 ### Image 各种镜像

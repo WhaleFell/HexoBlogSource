@@ -12,7 +12,7 @@ description:
 thumbnail: 
 banner_img:
 ---
-
+****
 # Python database 数据库 ORM 框架
 
 **ORM** (**O**object **R**elational **M**apper) 对象关系映射，用于在 Code 中通过 Object 来操作**关系型数据库**，将用户定义的 Python 类映射到数据库表和其他构造 ，而不用直接手撕 SQL 语句。增加安全性和可维护性。
@@ -354,7 +354,7 @@ session.commit()
 从主键获取对象：
 
 ```python
-some_squidward = session.get(User, 4)
+some_squidward = session.get(User, 4) # 直接返回数据库对象类型
 some_squidward = User(id=4, name='squidward', fullname='Squidward Tentacles')
 ```
 
@@ -435,7 +435,7 @@ async def async_main() -> None:
 asyncio.run(async_main())
 ```
 
-完整示例 Complete example：
+### Complete example 完整示例：
 
 ```python
 from __future__ import annotations

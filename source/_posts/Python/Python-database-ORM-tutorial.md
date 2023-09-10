@@ -13,6 +13,7 @@ thumbnail:
 banner_img:
 ---
 ****
+
 # Python database 数据库 ORM 框架
 
 **ORM** (**O**object **R**elational **M**apper) 对象关系映射，用于在 Code 中通过 Object 来操作**关系型数据库**，将用户定义的 Python 类映射到数据库表和其他构造 ，而不用直接手撕 SQL 语句。增加安全性和可维护性。
@@ -40,6 +41,10 @@ pip install SQLAlchemy
 from sqlalchemy import create_engine
 engine = create_engine("sqlite+pysqlite:///:memory:", echo=True)
 ```
+
+### Connect mysql server
+
+reference: [MySQL and MariaDB — SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/dialects/mysql.html)
 
 ## Transactions 事务操作
 
@@ -435,7 +440,7 @@ async def async_main() -> None:
 asyncio.run(async_main())
 ```
 
-### Complete example 完整示例：
+### Complete example 完整示例
 
 ```python
 from __future__ import annotations
@@ -546,6 +551,7 @@ async def async_main() -> None:
 
 asyncio.run(async_main())
 ```
+
 ## Legacy query API 旧版查询 API
 
 [Legacy Query API — SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/orm/queryguide/query.html#legacy-query-api)
@@ -556,6 +562,16 @@ asyncio.run(async_main())
 
 SQLAlchemy 2.0 中最大的明显变化是使用 `Session.execute()` 与 `select()` 结合使用来运行 ORM 查询，而不是使用 `Session.query()` 。正如其他地方提到的，没有计划实际删除 `Session.query()` API 本身，因为它现在是通过在内部使用新 API 来实现的，它将保留为旧版 API，并且这两个 API 都可以自由使用。
 
+## SQLAlchemy Extansion 扩展
+
+### Sqlalchemy-utils
+
+看样子比较老了。
+
+[GitHub - kvesteri/sqlalchemy-utils: Various utility functions and datatypes for SQLAlchemy.](https://github.com/kvesteri/sqlalchemy-utils)
+
+> Various utility **functions** and **datatypes** for SQLAlchemy. SQLAlchemy 的各种实用函数和数据类型。
+
 ## Q&A
 
 ### Is the Session thread-safe (线程安全)? Is AsyncSession safe(异步并发安全) to share in concurrent tasks?[¶](https://docs.sqlalchemy.org/en/20/orm/session_basics.html#is-the-session-thread-safe-is-asyncsession-safe-to-share-in-concurrent-tasks "Permalink to this heading")
@@ -565,3 +581,43 @@ SQLAlchemy 2.0 中最大的明显变化是使用 `Session.execute()` 与 `sel
 在设计并发数据库应用程序时，适当的模型是 **每个并发任务/线程都处理自己的数据库事务 `Session`**。
 
 确保这种使用的最佳方法是在线程或任务内部的顶级 Python 函数中本地使用 **标准上下文管理器** 模式。
+
+### sqlalchemy.exc.CompileError: VARCHAR(varchar 变长字符串) Requires a length on dialect(方言) mysql
+
+[python - InvalidRequestError: VARCHAR requires a length on dialect mysql - Stack Overflow](https://stackoverflow.com/questions/16472725/invalidrequesterror-varchar-requires-a-length-on-dialect-mysql)
+
+official docs: [ORM Mapped Class Overview — SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/orm/mapping_styles.html#imperative-mapping)
+
+在 mysql 中使用 **变长字符串** 时需要使用 `String(100)` 来定义字符串长度：
+
+```python
+class TGForwardConfig(Base):
+    __tablename__ = 'forward_config'
+
+    id: Mapped[int] = mapped_column(primary_key=True, doc="主键")
+    source: Mapped[int] = mapped_column(doc="源群聊ID")
+    dest: Mapped[int] = mapped_column(doc="目标群聊ID")
+    forward_history_count: Mapped[int] = mapped_column(doc="转发历史信息的数量")
+    interval_second: Mapped[int] = mapped_column(doc="间隔时间单位 s", default=20)
+
+    remove_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc="删除的文字,用,分隔", nullable=True)
+    cut_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc="截断词,用 , 分隔", nullable=True)
+    skip_word: Mapped[Optional[str]] = mapped_column(
+        String(100), doc="跳过词,用 , 分隔", nullable=True)
+    add_text: Mapped[Optional[str]] = mapped_column(
+        String(100), doc="跳过语,用 , 分隔", nullable=True)
+```
+
+### Default timestamp
+
+[python - SQLAlchemy default DateTime - Stack Overflow](https://stackoverflow.com/questions/13370317/sqlalchemy-default-datetime)
+
+使用 `server_default` 而不是 `default` ，因此值将由数据库本身处理。
+
+```python
+create_at: Mapped[datetime] = mapped_column(
+	server_default=func.now(), default=None, nullable=False
+)
+```

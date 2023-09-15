@@ -344,6 +344,16 @@ delete_stmt = (
 print(delete_stmt)
 ```
 
+#### Delete 删除
+
+```python
+delete_stmt = (
+    delete(user_table)
+    .where(user_table.id == address_table.user_id)
+    .where(address_table.email_address == "patrick@aol.com")
+)
+```
+
 ### Woking with ORM
 
 Instances of Classes represent Rows 表类的实例代表行。
@@ -389,6 +399,15 @@ install:
 
 ```shell
 pip install sqlalchemy[asyncio]
+```
+
+install Asynchronous DBAPI:
+
+```python
+
+# SQLTIE3 sqlite+aiosqlite:///database.db  # 数据库文件名为 database.db 不存在的新建一个
+# 异步 mysql+aiomysql://user:password@host:port/dbname
+DB_URL = "mysql+aiomysql://root:123456@localhost:3306/tgconfigs"
 ```
 
 uses:
@@ -620,4 +639,12 @@ class TGForwardConfig(Base):
 create_at: Mapped[datetime] = mapped_column(
 	server_default=func.now(), default=None, nullable=False
 )
+```
+
+### Optimize
+
+数据库连接方面，可以避免出现 `sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')` 的错误，reference: [sqlalchemy 报错 Lost connection to MySQL server during query 解决 - 金色旭光 - 博客园](https://www.cnblogs.com/goldsunshine/p/17304427.html)
+
+```python
+engine = create_async_engine(DB_URL, pool_pre_ping=True, pool_recycle=600)
 ```

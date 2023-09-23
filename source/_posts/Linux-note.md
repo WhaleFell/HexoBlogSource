@@ -676,10 +676,10 @@ docker exec -it acme.sh sh
 docker exec acme.sh --upgrade --auto-upgrade 
 
 # 使用 letsencrypt 签发证书
-docker exec acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf -d *.whaleluo.top -d www.whaleluo.top
+docker exec acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf -d *.whaleluo.top
 
 # 导出 nginx 使用的证书
-docker exec acme.sh --install-cert -d whaleluo.top --key-file /acme.sh/private.key --fullchain-file /acme.sh/cert.pem
+docker exec acme.sh --install-cert -d "*.whaleluo.top" --key-file /acme.sh/private.key --fullchain-file /acme.sh/cert.pem
 
 # 导出 uhttpd 使用的证书
 acme.sh --install-cert -d *.whaleluo.top \

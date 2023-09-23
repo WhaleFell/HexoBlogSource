@@ -12,7 +12,6 @@ description:
 thumbnail: 
 banner_img:
 ---
-****
 
 # Python database 数据库 ORM 框架
 
@@ -352,6 +351,20 @@ delete_stmt = (
     .where(user_table.id == address_table.user_id)
     .where(address_table.email_address == "patrick@aol.com")
 )
+```
+
+#### Count 计数
+
+[python - How to count rows with SELECT COUNT(\*) with SQLAlchemy? - Stack Overflow](https://stackoverflow.com/questions/12941416/how-to-count-rows-with-select-count-with-sqlalchemy/76155009#76155009?newreg=931f85ad102d493db5aaa753479640f9)
+
+```python
+from sqlalchemy import func, select
+
+class MyModel(Base):
+	...
+
+statement = select(func.count()).select_from(MyModel)
+count: int = session.execute(statement).scalar()
 ```
 
 ### Woking with ORM

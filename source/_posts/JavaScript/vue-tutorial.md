@@ -24,7 +24,7 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
 需要用到的组件库、UI、AJAX 请求库 文档。
 
 1. Element-UI 组件库
-2. axios  /ˈæksɪos/  AJAX 请求库
+2. axios  /ˈæksɪos/ AJAX 请求库
 3. Vue Route 路由
 
 粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
@@ -154,7 +154,7 @@ const fullName = computed({
 </script>
 ```
 
-## watch 监听器
+## Watch 监听器
 
 每次响应式状态变化时触发回调函数：
 
@@ -186,4 +186,27 @@ watch(question, async (newQuestion, oldQuestion) => {
   </p>
   <p>{{ answer }}</p>
 </template>
+```
+
+## 使用 Vite 脚手架 创建项目
+
+```shell
+npm create vite
+cd myself-vite
+pnpm install
+pnpm run dev
+
+# install element ui
+[快速开始 | Element Plus](https://element-plus.org/zh-CN/guide/quickstart.html#%E5%AE%8C%E6%95%B4%E5%BC%95%E5%85%A5)
+
+pnpm install -D unplugin-vue-components unplugin-auto-import
+pnpm install -D @types/node
+pnpm install element-plus
+
+# icons
+pnpm install @element-plus/icons-vue
+
+# route
+pnpm install vue-route
+
 ```

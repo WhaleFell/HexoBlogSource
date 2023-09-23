@@ -24,7 +24,7 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
 需要用到的组件库、UI、AJAX 请求库 文档。
 
 1. Element-UI 组件库
-2. axios  /ˈæksɪos/ AJAX 请求库
+2. axios  `/ˈæksɪos/` AJAX 请求库
 3. Vue Route 路由
 
 粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)

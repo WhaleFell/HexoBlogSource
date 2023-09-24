@@ -9,6 +9,7 @@ tags:
   - 中共
   - 纪录片
   - 政治
+  - CCP
 description: 
 thumbnail: 
 banner_img:

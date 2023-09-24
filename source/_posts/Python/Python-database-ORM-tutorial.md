@@ -231,6 +231,9 @@ Base.metadata.create_all(engine)
 用于识别已有数据库的映射。
 
 ```python
+# `MetaData` 对象是表的集合,元数据
+from sqlalchemy import MetaData
+metadata_obj = MetaData()
 # 将创建一个新的 `Table` 对象 自动识别
 some_table = Table("some_table", metadata_obj, autoload_with=engine)
 ```
@@ -302,8 +305,6 @@ print(
 
 # ORDER BY 排序依据
 print(select(user_table).order_by(user_table.c.name))
-
-
 ```
 
 #### Update 更新

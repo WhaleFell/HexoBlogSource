@@ -2,8 +2,13 @@
 title: 纪实、深度、冷门——中国独立纪录片推荐
 date: 2023-09-19 21:43:79
 updated: 2023-09-19 21:43:79
-categories: [Documentary, China, 中国, 纪录片, 中共]
-tags: 
+categories:
+  - Documentary
+tags:
+  - Documentary
+  - 中共
+  - 纪录片
+  - 政治
 description: 
 thumbnail: 
 banner_img:

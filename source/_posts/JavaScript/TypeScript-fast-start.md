@@ -15,6 +15,8 @@ banner_img:
 
 reference: [TypeScript 教程 | 菜鸟教程](https://www.runoob.com/typescript/ts-tutorial.html)
 
+最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)
+
 1. TypeScript ==> JavaScript 的一个 **超集**，支持 ECMAScript 6 标准
 2. TypeScript 由 **微软** 爸爸开发。
 3. TypeScript 设计目标是开发大型应用，它可以 **编译成纯 JavaScript**，编译出来的 JavaScript 可以运行在任何浏览器上。

@@ -525,13 +525,15 @@ docker run -d --name ddns-go --restart=always --net=host -v /root/ddns-go:/root 
 
 docker running
 
+TODO: 这边的 Docker 部署还需要优化
+
 ```sh
 docker run -d -p 8080:8080 \
---name nginx-proxy \
+--name nginx \
 --restart=always \
--v /root/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
--v /root/nginx/www:/usr/share/nginx/html \
--v /root/nginx/cert:/usr/local/nginx/cert \
+-v /wfwork/nginx/conf/:/etc/nginx/ \
+-v /wfwork/nginx/www:/usr/share/nginx/html \
+-v /wfwork/nginx/cert:/usr/local/nginx/cert \
 nginx:latest
 ```
 
@@ -581,7 +583,7 @@ http {
     gzip on;
 
     # include /etc/nginx/conf.d/*.conf;
-        server {
+    server {
         listen 80;
         server_name _;
 

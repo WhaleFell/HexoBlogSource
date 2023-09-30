@@ -25,9 +25,19 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
 
 1. Element-UI 组件库
 2. axios  `/ˈæksɪos/` AJAX 请求库
+	- [基本用例 | Axios 中文文档 | Axios 中文网](https://www.axios-http.cn/docs/example)
+	- [Vue.js 3 HTTP & Axios Tutorial | KoderHQ](https://www.koderhq.com/tutorial/vue/http-axios/)
 3. Vue Route 路由
+4. Pinia 全局状态管理，类似于 LocalStore ？  
+	[Pinia | The intuitive store for Vue.js](https://pinia.vuejs.org/zh/)
+
+## How to study vue?
 
 粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
+
+但是上文没有介绍 axios 请求等操作，需要再补充下面的书籍：
+
+
 
 ## Fast Start
 

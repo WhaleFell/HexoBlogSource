@@ -571,6 +571,7 @@ async def async_main() -> None:
     # expire_on_commit - don't expire objects after transaction commit
     async_session = async_sessionmaker(engine, expire_on_commit=False)
 
+	# 异步使用同步方法
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
@@ -661,4 +662,37 @@ create_at: Mapped[datetime] = mapped_column(
 
 ```python
 engine = create_async_engine(DB_URL, pool_pre_ping=True, pool_recycle=600)
+```
+
+### `relationship` 延迟加载
+
+```python
+class User(Base):
+    __tablename__ = 'user'
+    __table_args__ = {'comment': '转载用户表'}
+
+    id: Mapped[str] = mapped_column(
+        String(20), primary_key=True, comment="用户 ID")
+        
+	# lazy='subquery'
+    configs: Mapped[List["TGForwardConfig"]] = relationship(
+        'TGForwardConfig', backref='user', lazy='subquery')
+    
+    reg_at: Mapped[datetime] = mapped_column(
+        nullable=False, server_default=func.now(), comment='注册时间'
+    )
+
+    auth_time: Mapped[datetime] = mapped_column(
+        default=lambda: datetime.now() + timedelta(days=7), nullable=True, comment='授权时间')
+
+    def __repr__(self):
+        return f'<User(user_id={self.id}, reg_at={self.reg_at}, auth_time={self.auth_time})>'
+```
+
+### DatabaseURL 数据库 URL
+
+```python
+# SQLTIE3 sqlite+aiosqlite:///database.db  # 数据库文件名为 database.db 不存在的新建一个
+# 异步 mysql+aiomysql://user:password@host:port/dbname
+DB_URL = os.environ.get("DB_URL") or "mysql+aiomysql://root:123456@localhost/tgforward?charset=utf8mb4"
 ```

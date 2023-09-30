@@ -27,6 +27,19 @@ Pydantic Official Document：[Welcome to Pydantic - Pydantic](https://docs.pydan
 
 Python `Typing` Official Document：[typing — Support for type hints — Python 3.11.5 documentation](https://docs.python.org/3/library/typing.html)
 
+## Vscode Support Pydantic
+
+使用 VS Code 的 **Pylance** 扩展。它是推荐的下一代 Python 官方 VS Code 插件。
+
+- Open the "User Settings"  
+    打开“用户设置”
+- Search for `Type Checking Mode`  
+	搜索 `Type Checking Mode`
+- You will find an option under `Python › Analysis: Type Checking Mode`  
+    您将在 `Python › Analysis: Type Checking Mode` 下找到一个选项
+- Set it to `basic` or `strict` (by default it's `off`)  
+    将其设置为 `basic` 或 `strict` （默认情况下为 `off` ）
+
 ## Callable 回调函数签名注释
 
 `Callable[[int], str]` 表示采用 `int` 类型的单个参数并返回 `str` 的函数，例如可以注释以下函数。

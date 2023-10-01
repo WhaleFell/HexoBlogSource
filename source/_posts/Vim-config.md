@@ -12,7 +12,23 @@ banner_img:
 
 # Vim 常用配置
 
-经常在服务端上修改文件，苦于 vim 默认的界面很不友好，又不想重现手捏配置文件，就分享一下个人常用的简单配置吧。
+经常在服务端上修改文件，苦于 vim 默认的界面很不友好，又不想重新手捏配置文件，就分享一下个人常用的简单配置吧。
+
+## 解决乱码问题
+
+Reference： [Ubuntu的中文乱码问题 [完美解决]\_lubuntu 终端乱码-CSDN博客](https://blog.csdn.net/weixin_39792252/article/details/80415550)
+
+```shell
+sudo apt-get install language-pack-zh-hans
+
+export LANG="zh_CN.UTF-8"
+export LANGUAGE="zh_CN:zh:en_US:en"
+export LC_ALL="zh_CN.UTF-8"
+
+sudo locale-gen
+
+sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+```
 
 ## 配置
 
@@ -259,9 +275,13 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 ```
 
+
+
 ## 使用现成的配置
 
 利用了 [amix/vimrc](https://github.com/amix/vimrc) 这个开源项目。
+
+
 
 ## 参考 Reference
 

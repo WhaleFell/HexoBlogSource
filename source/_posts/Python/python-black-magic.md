@@ -146,3 +146,18 @@ pip install aiosqlite
 ## Python enum 枚举类型
 
 [enum --- 枚举类型支持 — Python 3.7.13 文档](https://docs.python.org/zh-cn/3.7/library/enum.html)
+
+## AsyncGenerator func hint
+
+异步生成器、异步迭代器函数注解：
+
+`AsyncGenerator` 类型应该使用 `AsyncGenerator[YieldType, SendType]` 的形式来表示，其中 `YieldType` 是生成器产出的值的类型，而 `SendType` 是使用 `yield` 语句发送给生成器的值的类型。
+
+```python
+from typing import AsyncIterator, AsyncGenerator  # 异步迭代器 异步生成器
+
+# FastAPI Dependent
+async def get_session() -> AsyncGenerator[AsyncSession, None]:
+    async with AsyncSessionMaker() as session:
+        yield session
+```

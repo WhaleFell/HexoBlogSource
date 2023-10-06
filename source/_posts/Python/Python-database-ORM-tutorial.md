@@ -19,6 +19,8 @@ banner_img:
 
 SQLAlchemy （SQL 炼金术 `/ˈæl.kə.mi/` ）是 Python 中用于操作各种 **关系型数据库** 的 **ORM**
 
+[SQLAlchemy 2.0 教程 - Yifei's Notes](https://yifei.me/note/2652)
+
 [SQLAlchemy Offical Tutorial](https://docs.sqlalchemy.org/en/20/intro.html)
 
 ![](http://oss.whaleluo.top/blog/img/Python-database-ORM-tutorial-components.png-picsmall)

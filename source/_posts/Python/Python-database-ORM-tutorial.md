@@ -698,3 +698,135 @@ class User(Base):
 # 异步 mysql+aiomysql://user:password@host:port/dbname
 DB_URL = os.environ.get("DB_URL") or "mysql+aiomysql://root:123456@localhost/tgforward?charset=utf8mb4"
 ```
+
+## Alembic [英 /ə'lembɪk/ 蒸馏器] sqlalchemy 数据库迁移
+
+reference: 
+
+1. [FastAPI with Async SQLAlchemy, SQLModel, and Alembic | TestDriven.io](https://testdriven.io/blog/fastapi-sqlmodel/)
+2. using asyncio with alembic（异步支持）： [Cookbook — Alembic 1.12.0 documentation](https://alembic.sqlalchemy.org/en/latest/cookbook.html#using-asyncio-with-alembic)
+3. 官方文档: [https://alembic.sqlalchemy.org/en/latest/index.html](https://alembic.sqlalchemy.org/en/latest/index.html)
+4. 相关项目: [https://github.com/python-gino/gino](https://github.com/python-gino/gino) - [文档](https://www.bookstack.cn/read/gino-1.0-zh/3d56d5fe80ab5932.md)
+
+alembic [英 /ə'lembɪk/] 是 sqlalchemy 的作者开发的。用来做 OMR 模型与数据库的迁移与映射。`alembic` 使用方式跟 `git` 有点了类似，表现在两个方面，第一个，`alembic` 的所有命令都是以 `alembic` 开头；第二，`alembic` 的迁移文件也是通过版本进行控制的。首先，通过 `pip install alembic` 进行安装。以下将解释 `alembic` 的用法：
+
+### 初始化 alembic 仓库
+
+在终端中，`cd` 到你的项目目录中，然后执行命令 `alembic init alembic`，创建一个名叫 `alembic` 的仓库。
+
+### 创建模型类
+
+创建一个 `models.py` 模块，然后在里面定义你的模型类，示例代码如下：
+
+```python
+import asyncio
+from typing import List, Dict, Optional, Mapping, Type, TypeVar, Tuple
+import typing
+from typing_extensions import Annotated
+from datetime import datetime, timedelta
+
+# sqlalchemy type
+import sqlalchemy.orm
+from sqlalchemy import (
+    ForeignKey,
+    func,
+    select,
+    update,
+    String,
+    DateTime,
+    Integer,
+    Float,
+    Boolean,
+)
+
+# sqlalchemy asynchronous support
+from sqlalchemy.ext.asyncio import (
+    AsyncAttrs,
+    async_sessionmaker,
+    AsyncSession,
+    create_async_engine,
+)
+
+# sqlalchemy ORM
+from sqlalchemy.orm import (
+    DeclarativeBase,
+    Mapped,
+    mapped_column,
+    relationship,
+)
+
+import inspect
+
+from .string_template import StringTemplate, CustomParam, getBeijingTime
+
+IDPK = Annotated[
+    int,
+    mapped_column(primary_key=True, autoincrement=True, comment="ID主键"),
+]
+
+
+class Base(AsyncAttrs, DeclarativeBase):
+    """ORM 基类 | 详见[1]、[3]"""
+
+    __table_args__ = {
+        "mysql_engine": "InnoDB",  # MySQL引擎
+        "mysql_charset": "utf8mb4",  # 设置表的字符集
+        "mysql_collate": "utf8mb4_general_ci",  # 设置表的校对集
+    }
+
+```
+
+### 设置数据库连接
+
+在 [alembic.ini](https://alembic.sqlalchemy.org/en/latest/tutorial.html#editing-the-ini-file "alembic.ini") 中设置数据库的连接，`sqlalchemy.url = driver://user:pass@localhost/dbname`，比如以 mysql 数据库为例，则配置后的代码为：
+
+`sqlalchemy.url = mysql+mysqldb://root:root@localhost/alembic_demo?charset=utf8`
+
+### 设置 target_metadata
+
+为了使用模型类更新数据库，需要在 `env.py` 文件中设置 [target_metadata](https://alembic.sqlalchemy.org/en/latest/ops.html?highlight=target_metadata#alembic.operations.Operations.f "target_metadata")，默认为 `target_metadata=None`。使用 `sys` 模块把当前项目的路径导入到 `path` 中：
+
+```python
+# add your model's MetaData object here
+# for 'autogenerate' support
+# from myapp import mymodel
+# target_metadata = mymodel.Base.metadata
+from app.database.model import Base
+target_metadata = Base.metadata
+```
+
+### 自动生成迁移文件
+
+使用 `alembic revision --autogenerate -m "message"` 将当前模型中的状态生成迁移文件。
+
+异步 Base 支持：
+
+```shell
+alembic init -t async alembic
+```
+
+### 更新数据库
+
+使用 `alembic upgrade head` 将刚刚生成的迁移文件，真正映射到数据库中。同理，如果要降级，那么使用 `alembic downgrade head`。
+
+### 命令和参数解释
+
+1. `init`：创建一个 alembic 仓库。
+2. `revision`：创建一个新的版本文件。
+3. `–autogenerate`：自动将当前模型的修改，生成迁移脚本。
+4. `-m`：本次迁移做了哪些修改，用户可以指定这个参数，方便回顾。
+5. `upgrade`：将指定版本的迁移文件映射到数据库中，会执行版本文件中的 upgrade 函数。如果有多个迁移脚本没有被映射到数据库中，那么会执行多个迁移脚本。
+6. `[head]`：代表最新的迁移脚本的版本号。
+7. `downgrade`：会执行指定版本的迁移文件中的 downgrade 函数。
+8. `heads`：展示 head 指向的脚本文件版本号。
+9. `history`：列出所有的迁移版本及其信息。
+10. `current`：展示当前数据库中的版本号。
+
+另外，在你第一次执行 `upgrade` 的时候，就会在数据库中创建一个名叫 `alembic_version` 表，这个表只会有一条数据，记录当前数据库映射的是哪个版本的迁移文件。
+
+### 经典错误
+
+|错误描述|原因|解决办法|
+|---|---|---|
+|`FAILED: Target database is not up to date.`|主要是 `heads` 和 `current` 不相同。`current` 落后于 heads 的版本。|将 `current` 移动到 `head` 上。`alembic upgrade head`|
+|`FAILED: Can't locate revision identified by '77525ee61b5b'`|数据库中存的版本号不在迁移脚本文件中|删除数据库的 `alembic_version` 表中的数据，重新执行 `alembic upgrade head`|

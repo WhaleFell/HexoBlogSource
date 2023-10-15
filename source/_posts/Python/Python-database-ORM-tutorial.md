@@ -830,3 +830,18 @@ alembic init -t async alembic
 |---|---|---|
 |`FAILED: Target database is not up to date.`|主要是 `heads` 和 `current` 不相同。`current` 落后于 heads 的版本。|将 `current` 移动到 `head` 上。`alembic upgrade head`|
 |`FAILED: Can't locate revision identified by '77525ee61b5b'`|数据库中存的版本号不在迁移脚本文件中|删除数据库的 `alembic_version` 表中的数据，重新执行 `alembic upgrade head`|
+
+### Is it possible to store the alembic connect string outside of `alembic.ini`
+
+ref: [python - Is it possible to store the alembic connect string outside of alembic.ini? - Stack Overflow](https://stackoverflow.com/questions/22178339/is-it-possible-to-store-the-alembic-connect-string-outside-of-alembic-ini)
+
+```python
+# this is the Alembic Config object, which provides
+# access to the values within the .ini file in use.
+config = context.config
+
+# this will overwrite the ini-file sqlalchemy.url path
+# with the path given in the config of the main code
+import config as ems_config
+config.set_main_option('sqlalchemy.url', ems_config.config.get('sql', 'database'))
+```

@@ -16,6 +16,7 @@ banner_img:
 reference: [TypeScript 教程 | 菜鸟教程](https://www.runoob.com/typescript/ts-tutorial.html)
 
 最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)
+[阮一峰](https://www.ruanyifeng.com/) ES6 入门教程：[ES6 入门教程](https://es6.ruanyifeng.com/#docs/class)
 
 1. TypeScript ==> JavaScript 的一个 **超集**，支持 ECMAScript 6 标准
 2. TypeScript 由 **微软** 爸爸开发。

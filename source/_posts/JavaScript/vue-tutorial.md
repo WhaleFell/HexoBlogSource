@@ -29,15 +29,15 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
 	- [Vue.js 3 HTTP & Axios Tutorial | KoderHQ](https://www.koderhq.com/tutorial/vue/http-axios/)
 3. Vue Route 路由
 4. Pinia 全局状态管理，类似于 LocalStore ？  
-	[Pinia | The intuitive store for Vue.js](https://pinia.vuejs.org/zh/)
+	- [Pinia | The intuitive store for Vue.js](https://pinia.vuejs.org/zh/)
+	- [一文搞懂pinia状态管理（保姆级教程） - 知乎](https://zhuanlan.zhihu.com/p/533233367)
+5. JavaScript ES6 Asynchronous Promise：[箭头函数 - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions#%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F)
 
 ## How to study vue?
 
 粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
 
 但是上文没有介绍 axios 请求等操作，需要再补充下面的书籍：
-
-
 
 ## Fast Start
 
@@ -205,9 +205,6 @@ npm create vite
 cd myself-vite
 pnpm install
 pnpm run dev
-
-# install element ui
-[快速开始 | Element Plus](https://element-plus.org/zh-CN/guide/quickstart.html#%E5%AE%8C%E6%95%B4%E5%BC%95%E5%85%A5)
 
 pnpm install -D unplugin-vue-components unplugin-auto-import
 pnpm install -D @types/node

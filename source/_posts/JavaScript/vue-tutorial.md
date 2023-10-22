@@ -37,7 +37,11 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
 
 粗略的过了一遍上述文档就可以看这个 《Vue3 入门指南与实战案例》 ：[出版说明 | Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
 
-但是上文没有介绍 axios 请求等操作，需要再补充下面的书籍：
+但是上文没有介绍 axios 请求等操作，请看我的文章：Vue-Project-Start-Tutorial Vue 项目快速搭建指南
+
+笔者是用了大概 2 周的业余时间看完以上的文档的，理论知识有了，接下来就是具体的项目实践，推荐阅读 `Vue-Admin` 的源代码和具体的文章：[介绍 | vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E5%89%8D%E5%BA%8F%E5%87%86%E5%A4%87) 这个项目还是用 webpack + vuex 的，待寻找更好的替代品
+
+web full stack：web 全栈开发学习路线 [1. 前言(Preface) | web全栈体系](https://senior-frontend.pages.dev/guide/)
 
 ## Fast Start
 

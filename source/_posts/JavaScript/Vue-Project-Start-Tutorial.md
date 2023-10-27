@@ -46,12 +46,13 @@ npm install -g pnpm
 
 安装以下 extension：
 
-1. Volar -- Vue3 支持
-2. Auto Close Tag -- 标签自动合并
-3. Auto Rename Tag -- 标签自动修改
-4. EditorConfig for VSCode -- editorconfig code rule
-5. Prettier for VSCode -- prettier `.prettierrc` code rule
-6. ESLint for VSCode -- ESLint VSC 支持，需要安装 ESLint package
+1. `Vue Language Features (Volar)` Volar -- Vue3 支持
+2.  `TypeScript Vue Plugin (Volar)` Volar -- TS 支持
+3. Auto Close Tag -- 标签自动合并
+4. Auto Rename Tag -- 标签自动修改
+5. EditorConfig for VSCode -- editorconfig code rule
+6. Prettier for VSCode -- prettier `.prettierrc` code rule
+7. ESLint for VSCode -- ESLint VSC 支持，需要安装 ESLint package
 
 ## Create Vite Framework
 
@@ -59,6 +60,8 @@ npm install -g pnpm
 
 ```shell
 pnpm create vite
+pnpm init vite@lastest
+
 pnpm install
 pnpm install -D typescript ts-node
 ```
@@ -75,20 +78,20 @@ reference: [javascript - \`Vue3 - Vite\` project alias src to @ not working - St
 import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-
+const pathSrc = path.resolve(__dirname, "src");
 
 export default defineConfig({
   // …
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, "./src"),// 源码根目录
+      '@': pathSrc,// 源码根目录
     },
   },
   // …
 })
 ```
 
-`tsconfig.json`：
+### tsconfig.json TS 配置
 
 ```json
 {
@@ -192,6 +195,108 @@ pnpm install -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plug
 
 ```
 dist/*
+```
+
+## Auto import 自动导入
+
+### Install Module
+
+```shell
+pnpm install -D unplugin-auto-import unplugin-vue-components
+```
+
+### Modify config file
+
+`vite.config.ts`：
+
+```js
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+
+plugins: [
+  AutoImport({
+    // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+    imports: ["vue"],
+    eslintrc: {
+      enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false 
+      filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件
+    },
+    dts: path.resolve(pathSrc, "types", "auto-imports.d.ts"), // 指定自动导入函数TS类型声明文件路径
+  }),
+  Components({
+    dts: path.resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
+  }),
+]
+```
+
+`.eslintrc.cjs`
+
+```json
+"extends": [
+    "./.eslintrc-auto-import.json"
+],
+```
+
+`tsconfig.json`
+
+```shell
+{
+  "include": ["src/**/*.d.ts"]
+}
+```
+
+## SCSS
+
+> 一款 CSS 预处理语言，SCSS 是 Sass 3 引入新的语法，其语法完全兼容 CSS3，并且继承了 Sass 的强大功能。
+
+```shell
+pnpm i -D sass
+```
+
+## Environment variate
+
+项目根目录新建 `.env.development` 、`.env.production`
+
+- 开发环境变量配置：.env.development
+
+```js
+# 变量必须以 VITE_ 为前缀才能暴露给外部读取 VITE_APP_TITLE = 'vue3-element-admin'
+VITE_APP_PORT = 3000
+VITE_APP_BASE_API = '/dev-api'
+```
+
+- 生产环境变量配置：.env.production
+
+```properties
+VITE_APP_TITLE = 'vue3-element-admin'
+VITE_APP_PORT = 3000
+VITE_APP_BASE_API = '/prod-api'
+```
+
+**环境变量智能提示**
+
+新建 `src/types/env.d.ts` 文件存放环境变量 TS 类型声明。
+
+```js
+// src/types/env.d.ts
+interface ImportMetaEnv {
+  /**
+   * 应用标题
+   */
+  VITE_APP_TITLE: string;
+  /**
+   * 应用端口
+   */
+  VITE_APP_PORT: number;
+  /**
+   * API基础路径(反向代理)
+   */
+  VITE_APP_BASE_API: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
 ```
 
 ## Vue3-router 路由
@@ -345,7 +450,7 @@ pnpm install element-plus
 pnpm install -D unplugin-vue-components unplugin-auto-import
 ```
 
-修改 vite.config.js：
+修改 `vite.config.js`：
 
 ```js
 import { defineConfig } from 'vite'
@@ -354,18 +459,34 @@ import path from 'path'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+
+// element UI
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import IconsResolver from "unplugin-icons/resolver";
+import Icons from "unplugin-icons/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+      ElementPlusResolver(), // element func
+      IconsResolver({}), // element Icon
+      ],
+	  vueTemplate: true, // 是否在 vue 模板中自动导入
+	  dts: path.resolve(pathSrc, 'types', 'auto-imports.d.ts') // 自动导入组件类型声明文件位置，默认根目录
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+      ElementPlusResolver()
+	  IconsResolver({ enabledCollections: ["ep"] // element-plus图标库，其他图标库 https://icon-sets.iconify.design/ }),
+	  })
+      dts: path.resolve(pathSrc, "types", "components.d.ts"), // 自动导入组件类型声明文件位置，默认根目录
+      ],
     }),
+    // 自动安装图标库
+	Icons({ autoInstall: true, }),
   ],
   resolve: {
     alias: {
@@ -373,7 +494,6 @@ export default defineConfig({
     },
   },
 })
-
 ```
 
 ### Import
@@ -395,15 +515,19 @@ createApp(App)
 
 ## Axois 请求库
 
+> Axios 基于 promise 可以用于浏览器和 node.js 的网络请求库
+
 ### Install
 
 ```
 pnpm install axios
 ```
 
-### Import
+### Axios 工具类封装
 
-src/plugins/useRequest.js 初始化 axios instance 实例，包含异常处理等：
+`src/utils/request.js`  
+
+初始化 axios instance 实例，包含异常处理等：
 
 ```js
 import axios from 'axios'
@@ -485,6 +609,74 @@ request.interceptors.response.use(
 
 ```
 
+高级封装：
+
+```js
+//  src/utils/request.ts
+import axios, { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
+import { useUserStoreHook } from '@/store/modules/user';
+
+// 创建 axios 实例
+const service = axios.create({
+  baseURL: import.meta.env.VITE_APP_BASE_API,
+  timeout: 50000,
+  headers: { 'Content-Type': 'application/json;charset=utf-8' }
+});
+
+// 请求拦截器
+service.interceptors.request.use(
+  (config: InternalAxiosRequestConfig) => {
+    // 使用 Token
+    const userStore = useUserStoreHook();
+    if (userStore.token) {
+      config.headers.Authorization = userStore.token;
+    }
+    return config;
+  },
+  (error: any) => {
+    return Promise.reject(error);
+  }
+);
+
+// 响应拦截器
+service.interceptors.response.use(
+  (response: AxiosResponse) => {
+    const { code, msg } = response.data;
+    // 登录成功
+    if (code === '00000') {
+      return response.data;
+    }
+
+    ElMessage.error(msg || '系统出错');
+    return Promise.reject(new Error(msg || 'Error'));
+  },
+  (error: AxiosError) => {
+    if (error.response.data) {
+      const { code, msg } = error.response.data;
+      // token 过期，跳转登录页
+      if (code === 'A0230') {
+        ElMessageBox.confirm('当前页面已失效，请重新登录', '提示', {
+          confirmButtonText: '确定',
+          type: 'warning'
+        }).then(() => {
+          localStorage.clear(); // @vueuse/core 自动导入
+          window.location.href = '/';
+        });
+      }else{
+          ElMessage.error(msg || '系统出错');
+      }
+    }
+    return Promise.reject(error.message);
+  }
+);
+
+// 导出 axios 实例
+export default service;
+
+
+```
+
+
 src/plugins/api.ts 具体请求：
 
 ```js
@@ -511,3 +703,7 @@ export async function getChats(): Promise<Array<ChatInfo> | void> {
 ```shell
 pnpm install @vueuse/core
 ```
+
+## Reference
+
+1. CSDN 博文：[Vue3.3 + Vite4.3 + TypeScript5+ Element-Plus：从零到一构建企业级后台管理系统（前后端开源）](https://blog.csdn.net/u013737132/article/details/130191394)

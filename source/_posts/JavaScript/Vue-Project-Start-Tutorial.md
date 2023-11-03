@@ -60,7 +60,6 @@ npm install -g pnpm
 
 ```shell
 pnpm create vite
-pnpm init vite@lastest
 
 pnpm install
 pnpm install -D typescript ts-node
@@ -110,6 +109,8 @@ export default defineConfig({
 
 ## Code rule 代码规范
 
+规范先行：[【vue3-element-admin】ESLint+Prettier+Stylelint+EditorConfig 约束和统一前端代码规范\_有来技术的博客-CSDN博客](https://blog.csdn.net/u013737132/article/details/130190788)
+
 ### .editorconfig
 
 `.editorconfig`：这个文件的作用是强制编辑器以该配置来进行编码，比如缩进统一为空格而不是 Tab ，每次缩进都是 2 个空格而不是 4 个等等。
@@ -119,19 +120,19 @@ VSCode 需要安装 [EditorConfig for VSCode 扩展](https://vue3.chengpeiquan.
 ```ini
 # http://editorconfig.org
 root = true
-
+# 表示所有文件适用
 [*]
-charset = utf-8
-end_of_line = lf
-indent_size = 2
-indent_style = space
-insert_final_newline = true
-max_line_length = 80
-trim_trailing_whitespace = true
+charset = utf-8 # 设置文件字符集为 utf-8
+end_of_line = lf # 控制换行类型(lf | cr | crlf)
+indent_size = 4 # 缩进空格数
+indent_style = space # 缩进风格（tab | space）
+insert_final_newline = true # 始终在文件末尾插入一个新行
+max_line_length = 60 # 一行最大数
 
+# 表示仅 md 文件适用以下规则
 [*.md]
-max_line_length = 0
-trim_trailing_whitespace = false
+max_line_length = off # 关闭最大行长度限制
+trim_trailing_whitespace = false # 关闭末尾空格修剪
 ```
 
 ### Prettier [英 /'prɪtɪ/ 漂亮]
@@ -675,7 +676,6 @@ export default service;
 
 
 ```
-
 
 src/plugins/api.ts 具体请求：
 

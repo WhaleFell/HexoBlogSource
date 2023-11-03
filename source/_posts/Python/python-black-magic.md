@@ -161,3 +161,8 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
     async with AsyncSessionMaker() as session:
         yield session
 ```
+
+
+## @dataclass 装饰器
+
+reference： [微信推文 用好 Python 标准库！少写几百行](https://mp.weixin.qq.com/s?__biz=Mzk0NjI5NTE0Ng==&amp;mid=2247483979&amp;idx=1&amp;sn=4e858741765c44552a12df957013a8ff&amp;chksm=c3091a4ef47e93582695c6998f25d661541baa06ae25c48697e734d92d17b771ecf773a142a1&amp;scene=21#wechat_redirect)

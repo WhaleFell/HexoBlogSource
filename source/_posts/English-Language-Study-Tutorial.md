@@ -82,22 +82,23 @@ banner_img:
 
 #### V.动词后缀
 
-1. `-ate` 表动词，“做，造成”。cre**ate** v. 创造
+1. `-ate` 表动词，“做，造成”。cre **ate** v. 创造
 2. `-ise/-ize` 动词后缀，一般**缀于形容词后**。-ise 是英式英语，-ize 是美式英语： modern**ize** v. 现代化
-3. `-ify` beaut**ify** v. 美化 
+3. `-fy/-ify` beaut**ify** v. 美化 
 4. `-ish` abolish v. 废止、废除
 
 #### Adj. 形容词后缀
 
 - 名词转形容词：n. => adj. `-ed/-ful(充满)/-ish(类似)/-ly(似的)/-y/-al/-ial/-ic/-ous`
-	- point**ed** adj. 语言尖锐的 (表示具有)
+	- point**ed** adj. 语言尖锐的 (表示具有) satis**fy** v.使满意的 => satisfi**ed** adj. 感到满意的
 	- use**ful** adj. 有用的 success**ful** adj. 成功的
 	- child**ish** adj. 孩子气
-- 动词转形容词：v. => adj. `-able/-ive`
+	- pract**ice** n. 练习、实习 => pract**ial** adj. 实用的、实践的
+- 动词转形容词：v. => adj. `-able/-ive` 可、能够
 	- drink**able** adj. 可饮用的
 	- attract**ive** adj. 吸引人的
 - 表示 `….的`  
-	- ent/ful/ous/al/lve/ible/able/ant/ic
+	- ent/ful/ous/al/lve/ible/able/ant/ic/ry
 
 ### Adv. 副词
 
@@ -107,9 +108,11 @@ banner_img:
 
 - 形容词转名词：adj. => n. `-ity/-ness`
 	- electric adj.电动的 -> electric**ity**. n. 电力
-	- happi**ness** n. 幸福 useful**ness** n. 有用 careless**ness** 粗心
+	- happi**ness** n. 幸福 useful**ness** n. 有用 careless**ness** n. 粗心 busi**ness** n. 生意 商务
+- 动词转名词：v. => n. `-tion/-ation`
+	- satis**fy** v.使满意的 => satisfac**tion** n. 满意 => satisfacto**ry** adj. 满意的 satisfi**ed** adj. 感到满意的
 
-lon/tion/ation/ness/ity/ality/meant/ence 表状态/ance/ism
+lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 /ance/ism/ **-ice** (行为状态) pract**ice** n. 练习、实践
 
 ---
 

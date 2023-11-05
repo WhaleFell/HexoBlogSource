@@ -83,7 +83,7 @@ banner_img:
 #### V.动词后缀
 
 1. `-ate` 表动词，“做，造成”。cre **ate** v. 创造
-2. `-ise/-ize` 动词后缀，一般**缀于形容词后**。-ise 是英式英语，-ize 是美式英语： modern**ize** v. 现代化
+2. `-ise/-ize` 动词后缀，一般**缀于形容词后**。-ise 是英式英语，-ize 是美式英语： modern**ize** v. 现代化 exerc**ise** v. 锻炼、使用
 3. `-fy/-ify` beaut**ify** v. 美化 
 4. `-ish` abolish v. 废止、废除
 
@@ -97,8 +97,9 @@ banner_img:
 - 动词转形容词：v. => adj. `-able/-ive` 可、能够
 	- drink**able** adj. 可饮用的
 	- attract**ive** adj. 吸引人的
+	- expens**ive** adj. 昂贵的
 - 表示 `….的`  
-	- ent/ful/ous/al/lve/ible/able/ant/ic/ry
+	- ent/ful/ous/al/ial spec**ial** adj. 特别的 /lve/ible/able/ant/ic/ry
 
 ### Adv. 副词
 
@@ -106,13 +107,15 @@ banner_img:
 
 #### N. 名词后缀
 
-- 形容词转名词：adj. => n. `-ity/-ness`
+- 形容词转名词：adj. => n. `-ity/-lty/-ness`
 	- electric adj.电动的 -> electric**ity**. n. 电力
+	- spec**ial** adj. 特别的
 	- happi**ness** n. 幸福 useful**ness** n. 有用 careless**ness** n. 粗心 busi**ness** n. 生意 商务
-- 动词转名词：v. => n. `-tion/-ation`
+- 动词转名词：v. => n. `-sion/-tion/-ation`
 	- satis**fy** v.使满意的 => satisfac**tion** n. 满意 => satisfacto**ry** adj. 满意的 satisfi**ed** adj. 感到满意的
+	- decide v. 决定 => deci**sion** n. 决心
 
-lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 /ance/ism/ **-ice** (行为状态) pract**ice** n. 练习、实践
+lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 audi**ence** n. 听众 experi**ence** n. 经历 /ance/ism/ **-ice** (行为状态) pract**ice** n. 练习、实践
 
 ---
 
@@ -127,7 +130,7 @@ lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 /ance/ism/ **-ice** (行
 9. ic（形 …的 
 10. ion（名 抽象名词 
 11. ism（名 …主义，流派，特性 
-12. ist（名 人，…家 ….主义
+12. ist（名 人，…家 ….主义 python**ist**a n. python 爱好者
 13. ive (形 有…性质的/作用的 
 14. ize(动 …化 
 15. less(形 无…的 

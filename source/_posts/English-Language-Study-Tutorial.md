@@ -51,9 +51,9 @@ banner_img:
 	2. 静态 -- 在前/预先 ：`pre per` => **pre**pare 准备 **per**mission n.允许
 4. 回/重新/再次：`re` => **re**turn 返回 **re**duce 减少 **re**ply 回复
 5. 聚集 (一起/共同)：`co/con/com/col` => **con**nect 联系 **col**lect 收集 
-6. 分散 (分开)：`di/dis/dif` => **dis**tract 分心
+6. 分散 (分开)：`di/dis/dif` => **dis**tract 分心 **di**vide v. 使分开
 7. 上/超过：`super/over/sur` => **sur** real ism [英 /sə'rɪəlɪz(ə)m/] 超现实主义 surpass 超过
-8. 下/不足：`under/de/sub/sup` => **de**crease 下降
+8. 下/不足：`under/de/sub/sup` => **de**crease 下降 **de**press v. 压下、使沮丧
 9. 转移/转变：`trans` => **trans**fer 转移、转账、换乘 **trans**late 翻译
 10. 相互之间：`inter` => **inter** net 互联网
 11. `a+ 双写辅音字母`=强调/无意义 => **acc**ompany

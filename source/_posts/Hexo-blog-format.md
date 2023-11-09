@@ -12,7 +12,7 @@ date updated: 2023-06-29 23:18
 
 # Hexo 博客写作规范约定
 
-于 2023/4/11 因为原域名 [lskyl.xyz](https://lskyl.xyz) 到期了,故把博客域名和 oss 域名整体迁移到 [whaleluo.top](https://whaleluo.top) 取鲸（Whale 英）落（Luo 中）之意.其中带 www 前缀 [www.whaleluo.top](https://www.whaleluo.top) 经过 cloudflare 加速，用于某些不能直接访问到 github pages 的场景。同时搭建在 vercel `/vɜː'sel/` 上的 [https://blog.whaleluo.top)](https://blog.whaleluo.top)作为备份。
+于 2023/4/11 因为原域名 [lskyl.xyz](https://lskyl.xyz) 到期了,故把博客域名和 oss 域名整体迁移到 [whaleluo.top](https://whaleluo.top) 取鲸（Whale 英）落（Luo 中）之意.其中带 www 前缀 [www.whaleluo.top](https://www.whaleluo.top) 经过 cloudflare 加速，用于某些不能直接访问到 github pages 的场景。同时搭建在 vercel `/vɜː'sel/` 上的 [https://blog.whaleluo.top)](https://blog.whaleluo.top) 作为备份。
 
 于 2023/2/10 更换了更快的博客主题 **Card** [Card](https://github.com/ChrAlpha/hexo-theme-cards).[主题文档](https://theme-cards.ichr.me/)
 
@@ -22,9 +22,9 @@ date updated: 2023-06-29 23:18
 
 > reference: [Fluid 主题文档](https://fluid-dev.github.io/hexo-fluid-docs/guide/)
 
-头注必须注明 `title` 、`data` 、`categories`(分类)、`tags`(标签)，其中分类和标签需要统一使用英文字符，`post_/` 目录下的 `markdown` 文件名需要使用英文，`hexo` 会根据文件名生成路径。
+头注必须注明 `title` 、`data` 、`categories`(分类)、`tags`(标签)，其中分类和标签需要统一使用英文字符，`post_/` 目录下的 `Markdown` 文件名需要使用英文，`hexo` 会根据文件名生成路径。
 
-md 文件名遵从 `Key-word.md` 格式，单词之间用 `-` 分隔，首字母大写。
+md 文件名遵从 `Key-Word.md` 格式，单词之间用 `-` 分隔，每个单词需要首字母大写。
 
 ```md
 ---

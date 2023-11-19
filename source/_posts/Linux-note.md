@@ -17,6 +17,11 @@ banner_img: http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-pic
 
 ## 硬盘操作
 
+了解两个特殊的设备：
+
+1. /dev/null：回收站、无底洞。  
+2. /dev/zero：产生字符。
+
 ### 格式化硬盘为 ETX4 格式
 
 ```shell
@@ -63,6 +68,96 @@ tar -xzvf backup.tar.gz -C /path/to/destination
 ```
 
 这将使用 `tar` 命令解压缩备份文件 `backup.tar.gz` 并将文件还原到目标目录 `/path/to/destination`。使用 `-x` 参数表示解压缩，`-z` 参数表示使用 gzip 解压缩，`-v` 参数表示显示还原过程中的详细信息，`-C` 参数指定还原到的目标目录。
+
+### HDParm 硬盘休眠
+
+让你的硬盘冷静下来，不要让服务器呼噜呼噜！
+
+```shell
+apt-get install hdparm
+
+# 5 分钟无操作自动休眠
+hdparm -S 60 /dev/sda1
+
+# 进入待机
+hdparm -y /dev/sda1
+
+# 进入睡眠
+hdparm -Y /dev/sda1
+
+# 查看配置
+vim /etc/hdparm.conf
+```
+
+### 硬盘自动挂载
+
+在 `/etc/fstab` 文件中为硬盘指定了 `nofail` 选项，系统将忽略找不到硬盘的错误，并继续启动过程。
+
+```shell
+mkdir /mnt/disk/
+
+# 获取分区 UUID 和 Type
+blkid
+
+# 编辑 /etc/fstab
+UUID=7673-85E5 /mnt/disk exfat defaults,nofail 0 2
+
+# 执行全部挂载
+mount -a
+```
+
+如果不幸 `/etc/fstab` 没有正确设置时，Ubuntu 仍然会启动，但是文件系统变为只读 read-only，需要把文件系统重新挂载为读写将 `/etc/fstab` 设置正确后重启保存。
+
+```shell
+mount -o remount rw /
+```
+
+### 测试硬盘读写
+
+```shell
+hdparm -Tt /dev/sda
+```
+
+### SMB 文件共享
+
+```shell
+sudo apt update
+sudo apt install samba
+
+# 用户添加
+sudo smbpasswd -a root
+```
+
+> NOTE: Whenever you modify this file you should run the command `testparm` to check that you have not made any basic syntactic errors.
+
+```ini
+[mntReadDir]
+comment = Ubuntu mnt dir
+path = /mnt/
+read only = yes
+browsable = yes
+guest ok = yes
+create mask = 0777
+directory mask = 0777
+
+[tmp]
+comment = Ubuntu Tmp
+path = /tmp/
+read only = no
+browsable = yes
+guest ok = yes
+create mask = 0777
+directory mask = 0777
+
+[mntPrivate]
+comment = Ubuntu mnt dir
+path = /mnt/
+read only = no
+browsable = yes
+guest ok = no
+create mask = 0777
+directory mask = 0777
+```
 
 ## 进程相关
 
@@ -270,7 +365,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 scp ./file root@192.168.1.1:/path_on_host/
 ```
 
-编辑 /etc/ssh/sshd_config 文件，进行如下设置：
+编辑 `/etc/ssh/sshd_config` 文件，进行如下设置：
 
 ```shell
 RSAAuthentication yes
@@ -337,6 +432,17 @@ chsh -s /bin/zsh
 
 # OpenWRT 设置 ZSH 为默认 shell
 which zsh && sed -i -- 's:/bin/ash:'`which zsh`':g' /etc/passwd
+
+# 迁移到其他用户
+cd ~
+cp .oh-my-zsh /home/wf/.oh-my-zsh -r
+cp .zshrc /home/wf/.zshrc
+cp .vimrc /home/wf/.vimrc
+
+# 修复权限
+sudo chown -R wf /home/wf/.oh-my-zsh
+compaudit | xargs chmod g-w,o-w
+
 ```
 
 ### SSH 设置密钥登陆并添加 hacker account
@@ -431,12 +537,18 @@ snowdreamtech/frpc
 
 #### 到服务器的网速测试
 
-[Docker](https://hub.docker.com/r/ilemonrain/html5-speedtest/)
+1. 使用 html5-speedtest [Docker](https://hub.docker.com/r/ilemonrain/html5-speedtest/)
 
 ```shell
 sudo docker run --restart=always \
 --name openspeedtest \
 -d -p 6688:80 ilemonrain/html5-speedtest
+```
+
+1. 使用 HomeBox [GitHub - XGHeaven/homebox: A Toolbox for Home Local Networks](https://github.com/XGHeaven/homebox)
+
+```shell
+docker run -d -p 3300:3300 --name homebox xgheaven/homebox
 ```
 
 #### FileBrowser 文件管理
@@ -517,6 +629,139 @@ Running the container with `--network host`​ *might* improve network performan
 docker run -d --name ddns-go --restart=always --net=host -v /wfwork/ddns-go:/root jeessy/ddns-go
 ```
 
+#### AdGuardHome DNS
+
+[Docker · AdguardTeam/AdGuardHome Wiki · GitHub](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker)
+
+```shell
+
+```
+
+#### SmartDNS
+
+[SmartDNS](https://pymumu.github.io/smartdns/)
+
+国内用 UDP DNS 国外用 https tls 的 DNS
+
+```shell
+server 223.5.5.5 -bootstrap-dns
+server 114.114.114.114
+server 202.96.128.166:53
+server-https https://dns.google/dns-query
+server-https https://1.1.1.1/dns-query
+```
+
+修改本机 DNS：
+
+```shell
+# 编辑 并关闭监听
+vim /etc/systemd/resolved.conf
+```
+
+#### QBittorent 种子下载
+
+[GitHub - SuperNG6/Docker-qBittorrent-Enhanced-Edition: Docker-qBittorrent-Enhanced-Edition](https://github.com/SuperNG6/Docker-qBittorrent-Enhanced-Edition)
+
+因为涉及大量 UDP 之类的链接，请使用 host 网络。用 `id` 命令确定用户 UID
+
+```shell
+docker run  \
+    --name=qbittorrentee  \
+    -e WEBUIPORT=8600  \
+    -e PUID=0 \
+    -e PGID=0 \
+    -e TZ=Asia/Shanghai \
+    -v /root/configs/qb:/config  \
+    -v /mnt/disk/downloads:/downloads  \
+    --restart always  \
+    --network host \
+    superng6/qbittorrentee:latest
+```
+
+或者不使用 IPV6，在后期设置 IPV6
+
+```shell
+docker create  \
+    --name=qbittorrent  \
+    -e WEBUIPORT=8600  \
+    -e PUID=0 \
+    -e PGID=0 \
+    -e TZ=Asia/Shanghai \
+    -p 6881:6881  \
+    -p 6881:6881/udp  \
+    -p 8600:8600  \
+	-v /root/configs/qb:/config  \
+    -v /mnt/disk/downloads:/downloads  \
+    --restart always  \
+	superng6/qbittorrentee:latest
+```
+
+#### Alist
+
+[Home | AList文档](https://alist.nn.ci/zh)
+
+```shell
+docker run -d \
+--restart=always \
+-v /root/configs/alist:/opt/alist/data \
+-v /mnt/:/mnt/ \
+-e PUID=0 \
+-e PGID=0 \
+-e UMASK=022 \
+--name="alist" \
+--network=host \
+xhofe/alist:latest
+```
+
+## V2ray / Xray Server
+
+一个 代理工具，推荐使用 Xray 内核。
+
+1. [Project X Official Docs](https://xtls.github.io/document/)
+
+### 更新 geoip.dat geosite.dat
+
+[Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
+
+```shell
+wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+```
+
+#### Aria2 下载
+
+一个用 C++ 编写的全平台全协议兼容的下载器。
+
+1. 源 aria2 项目：[GitHub - aria2/aria2: aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.](https://github.com/aria2/aria2)
+2. Docker Aria2 Pro Docker 优化版： [Aria2 Pro - 更好用的 Aria2 Docker 容器镜像 - P3TERX ZONE](https://p3terx.com/archives/docker-aria2-pro.html)
+
+```shell
+docker run -d \
+--name aria2-pro \
+--restart always \
+--log-opt max-size=1m \
+--network host \
+-e PUID=$UID \
+-e PGID=$GID \
+-e RPC_SECRET=lovehyy9420 \
+-e RPC_PORT=6800 \
+-e LISTEN_PORT=6888 \
+-e DISK_CACHE=128M \
+-v /root/config/aria2-config:/config \
+-v /mnt/disk/downloads:/downloads \
+p3terx/aria2-pro
+```
+
+WebGUI AriaNG
+
+```shell
+docker run -d \
+--name ariang \
+--restart unless-stopped \
+--log-opt max-size=1m \
+-p 6880:6880 \
+p3terx/ariang
+```
 ## Nginx
 
 docker running

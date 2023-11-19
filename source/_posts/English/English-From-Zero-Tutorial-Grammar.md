@@ -30,7 +30,7 @@ banner_img:
 
 1. 复合句 compound sentence 简单句型的叠加
 2. 复杂句 complex sentence 一个简单句套一个简单句 主句、从句，从属关系  
-	![](English-From-Zero-Tutorial-Grammar-12.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-12.png-picsmall)
 
 ## Clause Element 句子成分
 

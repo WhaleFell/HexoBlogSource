@@ -38,7 +38,7 @@ banner_img:
 
 **主语** 人/物 + **谓语** 动作 Verbs / 发生了什么事
 
-![](English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png-picsmall)
 
 ### 成分
 
@@ -48,12 +48,12 @@ banner_img:
 4. 宾语补语
 5. 主语补语/标语
 6. 定语：修饰名词，提供额外信息  
-	![](English-From-Zero-Tutorial-Grammar-8.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-8.png-picsmall)
 7. 状语：修饰谓语动词  
 	quickly 修饰谓语动词 ate。吃的快  
-	![](English-From-Zero-Tutorial-Grammar-9.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-9.png-picsmall)
 8. 同位语：再把主语或宾语说一遍和主语同等地位  
-	![](English-From-Zero-Tutorial-Grammar-10.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-10.png-picsmall)
 
 ## 5 种基本句型 Simple Sentences 简单句
 
@@ -62,32 +62,32 @@ banner_img:
 1. 可以独立完成的动作 不及物动词  
 	主语 + **不及物动词（谓语）**  
 	Papa Rabbit **sleep**. 兔老爹睡觉  
-	![](English-From-Zero-Tutorial-Grammar-1.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-1.png-picsmall)
 
 2. 有 1 个动作的承受者 （**动作承受者就是宾语**）  
 	主语 + **单及物动词 (谓语)** + **宾语**(动作承受者)  
-	![](English-From-Zero-Tutorial-Grammar-2.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-2.png-picsmall)
 
 3. 有 2 个动作承受者  
 	主语 + **双及物动词 (谓语)** + 间接宾语 + 直接宾语  
 
 	> Teaches English，English 是直接宾语，承受 teaches，已经句意完整了，但是如果要准确描述教的对象就要加上 you 称为间接宾语。
 
-	![](English-From-Zero-Tutorial-Grammar-3.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-3.png-picsmall)
 
 4. 只有 1 个动作承受者（**但需要补充才能使句意完整**）  
 	主语 + **复杂及物动词 (谓语)** + 宾语 + 宾语补语 (宾补)  
 
 	> considers you 认为你，不能构造一个完整的句子，需要加上一个补语 smart 才能构成完整的句子。considers you smart.
 
-	![](English-From-Zero-Tutorial-Grammar-5.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-5.png-picsmall)
 
 5. 非 “动作” （赋值）赋予主语某种状态  
 	主语 + **连系动词 (系动词)** + (主语) 补语/表语
 
 	> 将 nice 赋值给主语 Rabbit ，中间用 smells **系动词** 连接，也可以使用 is ，相当于编程中的赋值符号 `=`。而赋值给主语的状态词 nice 称作**主语补语**补充说明主语，或称**表语**。
 
-	![](English-From-Zero-Tutorial-Grammar-6.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-6.png-picsmall)
 
 ### 总结
 
@@ -102,7 +102,7 @@ banner_img:
 5. 非“动作”，**用于赋予状态之前是主语之后是主语补语 (表语)**：系动词
 
 5 种基本句型：  
-![](English-From-Zero-Tutorial-Grammar-7.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-7.png-picsmall)
 
 ## 词性 (词类)
 
@@ -119,10 +119,10 @@ banner_img:
 
 ## 谓语动词 (verb) 时态 tense
 
-![](English-From-Zero-Tutorial-Grammar-13.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-13.png-picsmall)
 
 1. 动作假设、情感等 **语法的语气**  
-	![](English-From-Zero-Tutorial-Grammar-15.png)
+	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-15.png-picsmall)
 
 ### 助动词
 
@@ -130,31 +130,31 @@ banner_img:
 
 做 **助动词**，**没有实义**，只是帮助谓语动词而已。还可以做**实义动词**，表其他词意。
 
-![](English-From-Zero-Tutorial-Grammar-16.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-16.png-picsmall)
 
 ## 非谓语动词
 
 取代几乎所有从句，简化句子。
 
-![](English-From-Zero-Tutorial-Grammar.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar.png-picsmall)
 
 非谓语动词丧失了谓语动词的本领
 
-![](English-From-Zero-Tutorial-Grammar-17.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-17.png-picsmall)
 
 ## 总结
 
-![](English-From-Zero-Tutorial-Grammar-18.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-18.png-picsmall)
 
 ## 动词
 
 ### 及物动词和不及物动词
 
-![](English-From-Zero-Tutorial-Grammar-19.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-19.png-picsmall)
 
 ### 动词分类
 
-![](English-From-Zero-Tutorial-Grammar-20.png)
+![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-20.png-picsmall)
 
 ### 动词时态
 

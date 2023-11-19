@@ -713,6 +713,32 @@ docker run -d \
 xhofe/alist:latest
 ```
 
+#### Homarr 导航页
+
+Official Document: [👋 Welcome to Homarr | Homarr Docs](https://homarr.dev/docs/about)
+
+```shell
+docker run \
+--name homarr \
+--restart always \
+-p 7575:7575 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /root/configs/homarr/configs:/app/data/configs \
+-v /root/configs/homarr/data:/data \
+-v /root/configs/homarr/icons:/app/public/icons \
+-d ghcr.io/ajnart/homarr:latest
+```
+
+另外，国产的 flare 特别轻量，只不过要编写 yaml 文件。
+
+[GitHub - soulteary/docker-flare: Flare ✨ Lightweight, high performance and fast self-hosted navigation pages, resource utilization rate is <1% CPU, MEM <30 M, Docker Image < 10M](https://github.com/soulteary/docker-flare)
+
+```shell
+docker pull soulteary/flare
+
+docker run -d -p 5005:5005 -v /root/configs/flare/:/app soulteary/flare
+```
+
 ## V2ray / Xray Server
 
 一个 代理工具，推荐使用 Xray 内核。
@@ -762,6 +788,7 @@ docker run -d \
 -p 6880:6880 \
 p3terx/ariang
 ```
+
 ## Nginx
 
 docker running

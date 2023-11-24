@@ -124,7 +124,7 @@ root = true
 [*]
 charset = utf-8 # 设置文件字符集为 utf-8
 end_of_line = lf # 控制换行类型(lf | cr | crlf)
-indent_size = 4 # 缩进空格数
+indent_size = 2 # 缩进空格数
 indent_style = space # 缩进风格（tab | space）
 insert_final_newline = true # 始终在文件末尾插入一个新行
 max_line_length = 60 # 一行最大数
@@ -448,7 +448,7 @@ pnpm install element-plus
 按需要引入，安装在开发环境中：
 
 ```shell
-pnpm install -D unplugin-vue-components unplugin-auto-import
+pnpm install -D unplugin-vue-components unplugin-auto-import unplugin-icons
 ```
 
 修改 `vite.config.js`：
@@ -456,45 +456,66 @@ pnpm install -D unplugin-vue-components unplugin-auto-import
 ```js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
 
+import path from 'path'
+const pathSrc = path.resolve(__dirname, 'src')
+
+// Auto import
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
-// element UI
+// Element UI
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import IconsResolver from "unplugin-icons/resolver";
-import Icons from "unplugin-icons/vite";
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
+      // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+      imports: ['vue'],
+      eslintrc: {
+        enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false
+        filepath: './.eslintrc-auto-import.json', // 指定自动导入函数 eslint 规则的文件
+      },
+      // 指定自动导入函数TS类型声明文件路径
+      dts: path.resolve(
+        pathSrc,
+        'types',
+        'auto-imports.d.ts',
+      ),
       resolvers: [
-      ElementPlusResolver(), // element func
-      IconsResolver({}), // element Icon
+        ElementPlusResolver(), // element func
+        IconsResolver({}), // element Icon
       ],
-	  vueTemplate: true, // 是否在 vue 模板中自动导入
-	  dts: path.resolve(pathSrc, 'types', 'auto-imports.d.ts') // 自动导入组件类型声明文件位置，默认根目录
+      vueTemplate: true, // 在 vue 模板中自动导入
     }),
     Components({
+      dts: path.resolve(
+        pathSrc,
+        'types',
+        'components.d.ts',
+      ), // 指定自动导入组件TS类型声明文件路径
       resolvers: [
-      ElementPlusResolver()
-	  IconsResolver({ enabledCollections: ["ep"] // element-plus图标库，其他图标库 https://icon-sets.iconify.design/ }),
-	  })
-      dts: path.resolve(pathSrc, "types", "components.d.ts"), // 自动导入组件类型声明文件位置，默认根目录
+        ElementPlusResolver(),
+        IconsResolver({
+          enabledCollections: ['ep'],
+        }),
+        // 自动安装图标库
       ],
     }),
-    // 自动安装图标库
-	Icons({ autoInstall: true, }),
+    Icons({ autoInstall: true }),
   ],
+
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // 源码根目录
+      '@': pathSrc,
     },
   },
 })
+
 ```
 
 ### Import
@@ -514,6 +535,53 @@ createApp(App)
   .mount('#app')
 ```
 
+### 封装一个 Element UI 的 notice
+
+src/utils/notice.ts
+
+```js
+// src/plugin/notice.ts 系统级提醒
+
+import { ElNotification } from 'element-plus'
+import {
+  NotificationParams,
+  MessageParams,
+} from 'element-plus'
+import { ElMessage } from 'element-plus'
+
+export enum NoticeType {
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  INFO = 'info',
+  ERROR = 'error',
+}
+
+export const useNotice = (
+  title: string,
+  content: string,
+  type: NoticeType | string = NoticeType.INFO,
+) => {
+  ElNotification({
+    title: title,
+    message: content,
+    type: type,
+    duration: 1000,
+  } as NotificationParams)
+}
+
+export const useMsg = (
+  content: string,
+  type: NoticeType | string = NoticeType.INFO,
+) => {
+  ElMessage({
+    showClose: true,
+    message: content,
+    type: type,
+    duration: 1000,
+  } as MessageParams)
+}
+
+```
 ## Axois 请求库
 
 > Axios 基于 promise 可以用于浏览器和 node.js 的网络请求库

@@ -285,6 +285,17 @@ route 192.168.1.0 255.255.255.0  # 添加路由
 route 192.168.0.0 255.255.255.0
 ```
 
+### 命令行测速
+
+使用南开大学的命令行测速： [南大测速 NJU Test](https://test.nju.edu.cn/)  
+[使用命令行工具测速 | e-Science Document](https://doc.nju.edu.cn/books/07cdf/page/d1f25)
+
+```shell
+wget https://github.com/librespeed/speedtest-cli/releases/download/v1.0.10/librespeed-cli_1.0.10_linux_amd64.tar.gz
+tar -xzvf // unpack
+./librespeed-cli --server-json http://test.nju.edu.cn/cli.json --server 1
+```
+
 ### FRP
 
 #### 服务端配置
@@ -482,6 +493,27 @@ docker run -it --rm --name tg_forwardMsgBot -v /wfwork/tgbot_base/:/wkdir/ tgbot
 docker run -d --name tg_forwardMsgBot -v /wfwork/tgbot_base/:/wkdir/ tgbot_base python3 main.py
 ```
 
+### 开启 IPV6
+
+[【有用的小知识】Docker-qBittorrent 开启IPv6 笔记 | 我不是咕咕鸽](https://blog.laoda.de/archives/docker-qbittorrent-ipv6/index.html)
+
+编辑 `/etc/docker/daemon.json` ，添加以下内容：（如果没有这个文件直接创建）
+
+```json
+{  
+ "ipv6": true,  
+ "fixed-cidr-v6": "2001:db8:abc1::/64",  # IPv6前缀可以自定义，请确保符合规则   
+ "experimental": true,  
+ "ip6tables": true  
+}
+```
+
+重启：
+
+```shell
+systemctl restart docker
+```
+
 ### Image 各种镜像
 
 #### Portainer 管理 UI
@@ -626,7 +658,7 @@ Running the container with `--network host`​ *might* improve network performan
 基于 Golang 语言开发的 DDNS 程序。[GitHub - jeessy2/ddns-go: 简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)](https://github.com/jeessy2/ddns-go)
 
 ```shell
-docker run -d --name ddns-go --restart=always --net=host -v /wfwork/ddns-go:/root jeessy/ddns-go
+docker run -d --name ddns-go --restart=always --net=host -v /root/configs/ddns-go:/root jeessy/ddns-go
 ```
 
 #### AdGuardHome DNS
@@ -678,7 +710,8 @@ docker run  \
     superng6/qbittorrentee:latest
 ```
 
-或者不使用 IPV6，在后期设置 IPV6
+或者不使用 IPV6，在后期设置 IPV6  
+需要改成 51782 端口，因为 6881 端口已经被封禁
 
 ```shell
 docker create  \
@@ -687,8 +720,8 @@ docker create  \
     -e PUID=0 \
     -e PGID=0 \
     -e TZ=Asia/Shanghai \
-    -p 6881:6881  \
-    -p 6881:6881/udp  \
+    -p 51782:51782  \
+    -p 51782:51782/udp  \
     -p 8600:8600  \
 	-v /root/configs/qb:/config  \
     -v /mnt/disk/downloads:/downloads  \
@@ -739,21 +772,6 @@ docker pull soulteary/flare
 docker run -d -p 5005:5005 -v /root/configs/flare/:/app soulteary/flare
 ```
 
-## V2ray / Xray Server
-
-一个 代理工具，推荐使用 Xray 内核。
-
-1. [Project X Official Docs](https://xtls.github.io/document/)
-
-### 更新 geoip.dat geosite.dat
-
-[Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
-
-```shell
-wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
-wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
-```
-
 #### Aria2 下载
 
 一个用 C++ 编写的全平台全协议兼容的下载器。
@@ -769,7 +787,7 @@ docker run -d \
 --network host \
 -e PUID=$UID \
 -e PGID=$GID \
--e RPC_SECRET=lovehyy9420 \
+-e RPC_SECRET=loveAlways \
 -e RPC_PORT=6800 \
 -e LISTEN_PORT=6888 \
 -e DISK_CACHE=128M \
@@ -783,10 +801,25 @@ WebGUI AriaNG
 ```shell
 docker run -d \
 --name ariang \
---restart unless-stopped \
+--restart always \
 --log-opt max-size=1m \
 -p 6880:6880 \
 p3terx/ariang
+```
+
+## V2ray / Xray Server
+
+一个 代理工具，推荐使用 Xray 内核。
+
+1. [Project X Official Docs](https://xtls.github.io/document/)
+
+### 更新 geoip.dat geosite.dat
+
+[Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
+
+```shell
+wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 ```
 
 ## Nginx

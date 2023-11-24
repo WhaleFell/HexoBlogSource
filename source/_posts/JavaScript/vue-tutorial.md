@@ -226,3 +226,25 @@ pnpm install @element-plus/icons-vue
 pnpm install vue-route
 
 ```
+
+## Vite Build Single file
+
+[GitHub - richardtallent/vite-plugin-singlefile: Vite plugin for inlining JavaScript and CSS resources](https://github.com/richardtallent/vite-plugin-singlefile)
+
+## 常用 CSS
+
+当谈到 CSS (层叠样式表) 时，有许多常用的属性可用于控制和布局网页元素的外观和行为。以下是几个常用的 CSS 属性的描述：
+
+1. `color`：`color` 属性用于设置文本的颜色。可以使用命名颜色（例如 `red`、`blue`）或十六进制颜色码（例如 `#FF0000`）来指定颜色。
+    
+2. `font-size`：`font-size` 属性用于设置文本的大小。它接受像素值、百分比、em 等单位。例如，`font-size: 16px;` 将文本大小设置为 16 像素。
+    
+3. `margin`：`margin` 属性用于设置元素的外边距。外边距是元素周围的空白区域，用于控制元素与其他元素之间的距离。可以使用单个值设置所有边距，也可以使用上、右、下、左四个值分别设置各个边距。
+    
+4. `padding`：`padding` 属性用于设置元素的内边距。内边距是元素内容与边框之间的空白区域。类似于外边距，可以使用单个值或四个值分别设置各个边的内边距。
+    
+5. `background-color`：`background-color` 属性用于设置元素的背景颜色。可以使用命名颜色或十六进制颜色码来指定颜色。例如，`background-color: #FFFFFF;` 将背景颜色设置为白色。
+    
+6. `display`：`display` 属性用于定义元素的显示类型。常见的值包括 `block`、`inline`、`inline-block` 和 `none`。`block` 元素在页面中以块级元素的形式显示，占据一整行；`inline` 元素则在行内显示，不独占一行；`inline-block` 元素则同时具备块级和行内元素的特性；`none` 则表示元素不显示。
+
+以上只是 CSS 的一小部分常用属性示例。CSS 拥有众多属性，每个属性都有不同的功能和用途，用于控制网页的各个方面，如布局、字体、边框、动画等。

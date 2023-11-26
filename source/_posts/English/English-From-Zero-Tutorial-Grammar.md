@@ -30,7 +30,7 @@ banner_img:
 
 **主语** 人/物 + **谓语** 动作 Verbs / 发生了什么事
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png)
 
 ### 5 种基本句型 Simple Sentences 简单句
 
@@ -40,25 +40,25 @@ banner_img:
 1. 可以独立完成的动作 不及物动词  
 	主语 + **不及物动词（谓语）**  
 	Papa Rabbit **sleep**. 兔老爹睡觉  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-1.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-1.png)
 
 2. 有 1 个动作的承受者 （**动作承受者就是宾语**）  
 	主语 + **单及物动词 (谓语)** + **宾语**(动作承受者)  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-2.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-2.png)
 
 3. 有 2 个动作承受者  
 	主语 + **双及物动词 (谓语)** + 间接宾语 + 直接宾语  
 
 	> Teaches English，English 是直接宾语，承受 teaches，已经句意完整了，但是如果要准确描述教的对象就要加上 you 称为间接宾语。
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-3.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-3.png)
 
 4. 只有 1 个动作承受者（**但需要补充才能使句意完整**）  
 	主语 + **复杂及物动词 (谓语)** + 宾语 + 宾语补语 (宾补)  
 
 	> considers you 认为你，不能构造一个完整的句子，需要加上一个补语 smart 才能构成完整的句子。considers you smart.
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-5.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-5.png)
 
 5. 非 “动作” （赋值）赋予主语某种状态  
 	主语 + **连系动词 (系动词)** + (主语) 补语/表语  
@@ -66,7 +66,7 @@ banner_img:
 
 	> 将 nice 赋值给主语 Rabbit ，中间用 smells **系动词** 连接，也可以使用 is ，相当于编程中的赋值符号 `=`。而赋值给主语的状态词 nice 称作**主语补语**，补充说明主语，或称 **表语**。
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-6.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-6.png)
 
 ### 5 种基本句 总结
 
@@ -81,22 +81,28 @@ banner_img:
 5. 非“动作”，**用于赋予状态之前是主语之后是主语补语 (表语)**：系动词
 
 5 种基本句型：  
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-7.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-7.png)
 
 ### 句子成分
 
 1. **主语**
 2. **谓语动词**
-3. **宾语**
+3. **宾语** （谓语动词动作的承受者）
 4. **宾语补语**
 5. **主语补语**/**表语**
-6. **定语：限定名词**，提供额外信息  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-8.png-picsmall)
-7. **状语：修饰谓语动词**  
+6. **定语**：用来修饰 **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。  
+	**The red** car is mine.  
+	She is a **talented** singer （过去分词做定语）
+
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-8.png)
+
+7. **状语**：是用来 **修饰动词、形容词、副词** 或整个句子的词或词组，用来描述动作的方式、程度、时间、地点等。 状语可以放在句子不同位置  
+	He **speaks** English **fluently**.  
+	I will **go** to the store **tomorrow**.  
 	quickly 修饰谓语动词 ate。吃的快  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-9.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-9.png)
 8. **同位语**：再把主语或宾语说一遍和主语同等地位  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-10.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-10.png)
 
 ## 简单句 VS 复合句
 
@@ -104,7 +110,7 @@ banner_img:
 
 1. 复合句 compound sentence 简单句型的叠加
 2. 复杂句 complex sentence 一个简单句套一个简单句 主句、从句，从属关系  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-12.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-12.png)
 
 ## 词性 (词类)
 
@@ -121,10 +127,10 @@ banner_img:
 
 ## 谓语动词 (verb) 时态 tense
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-13.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-13.png)
 
 动作假设、情感等 **语法的语气**  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-15.png-picsmall)
+	![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-15.png)
 
 ### 助动词
 
@@ -132,31 +138,31 @@ banner_img:
 
 做 **助动词**，**没有实义**，只是帮助谓语动词而已。还可以做 **实义动词**，表其他词意。
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-16.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-16.png)
 
 ## 非谓语动词
 
 取代几乎所有从句，简化句子。
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar.png)
 
 非谓语动词丧失了谓语动词的本领
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-17.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-17.png)
 
 ## 总结
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-18.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-18.png)
 
 ## 动词
 
 ### 及物动词和不及物动词
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-19.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-19.png)
 
 ### 动词分类
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-20.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/English-From-Zero-Tutorial-Grammar-20.png)
 
 ### 动词时态
 
@@ -481,9 +487,9 @@ it 做 **形式宾语**：
 
 ![](English-From-Zero-Tutorial-Grammar-96.png)
 
-##### 不定式做定语
+##### 不定式做定语 定语后置
 
-**to eat** 做后置定语，限定宾语，表示这些胡萝卜是要被吃的。
+**to eat** 做 后置定语，限定宾语，表示这些胡萝卜是要被吃的。
 
 ![](English-From-Zero-Tutorial-Grammar-98.png)
 
@@ -566,7 +572,7 @@ to + 动词原形（完成 进行 完成进行），中的动词原形增加了 
 
 #### 过去分词
 
-**误区**：过去分词是**非谓语动词**，他不能自带时间，**不能表示过去的时间**。
+**误区**：过去分词是 **非谓语动词**，他不能自带时间，**不能表示过去的时间**。
 
 ![](English-From-Zero-Tutorial-Grammar-117.png)
 
@@ -598,3 +604,154 @@ minced 不带时间概念，而只是 **表示被姣的状态**。
 	![](English-From-Zero-Tutorial-Grammar-123.png)  
 	高级用法：让句子中只含有一个谓语动词，其他的变成非谓语动词，用一个简单句写出来。**独立主格**  
 	![](English-From-Zero-Tutorial-Grammar-124.png)
+
+#### 非谓语动词总结
+
+1. 过去分词 （被动/完成）
+2. 现在分词（主动/进行）
+3. 不定式（将要）
+
+### 独立主格
+
+回顾：现在分词做 **状语**
+
+![](English-From-Zero-Tutorial-Grammar-125.png)  
+独立主格：  
+![](English-From-Zero-Tutorial-Grammar-126.png)
+
+独立主格对从句的简化：  
+![](English-From-Zero-Tutorial-Grammar-127.png)  
+![](English-From-Zero-Tutorial-Grammar-128.png)  
+名词 + ~~being~~ + …
+
+![](English-From-Zero-Tutorial-Grammar-129.png)
+
+### 助动词
+
+**助动词**：**辅助构成谓语**，当自己本身**不能单独作谓语动词**的词，助动词除情态动词外无实义。
+
+will 助动词帮助构成 将来时：
+
+![](English-From-Zero-Tutorial-Grammar-130.png)
+
+can 是 **情态 (助) 动词**，辅助谓语动词表能力，也可以算是助动词，但是有实义，表 " 能够 "
+
+The rabbit **can** kill a wolf. 兔子能杀死一只狼
+
+### 基本助动词
+
+be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存在)、do(做)、have(有)  
+可表时态、被动、强调
+
+![](English-From-Zero-Tutorial-Grammar-131.png)
+
+应用：
+
+1. be => is/am/are/was/were  
+	![](English-From-Zero-Tutorial-Grammar-135.png)
+2. have => has/had(过去)  
+	![](English-From-Zero-Tutorial-Grammar-136.png)
+3. do => does(强调/否定)  
+	![](English-From-Zero-Tutorial-Grammar-137.png)
+
+### 情态助动词
+
+情态助动词是有实际含义的，但是不能单独做谓语动词。
+
+![](English-From-Zero-Tutorial-Grammar-132.png)
+
+1. can/could 有能力做 / 表请求或许可 / 表可能性  
+	![](English-From-Zero-Tutorial-Grammar-138.png)  
+	![](English-From-Zero-Tutorial-Grammar-139.png)  
+	![](English-From-Zero-Tutorial-Grammar-140.png)
+2. may/might 表请求或许可 / 表可能性程度比 can 小 也许、可能、大概 / 放在句首表祝愿  
+	![](English-From-Zero-Tutorial-Grammar-141.png)  
+	表可能性程度比 can 小 也许、可能、大概  
+	![](English-From-Zero-Tutorial-Grammar-142.png)  
+	放在句首表祝愿  
+	![](English-From-Zero-Tutorial-Grammar-143.png)
+
+3. must 表必须 / 表禁止 / 表推测 一定肯定
+
+	表必须：
+
+	![](English-From-Zero-Tutorial-Grammar-144.png)  
+
+	表禁止：
+
+	**mustn's 只有禁止的含义**  
+	![](English-From-Zero-Tutorial-Grammar-145.png)  
+
+	表推测 一定肯定 只能用在肯定句里：  
+	![](English-From-Zero-Tutorial-Grammar-146.png)
+
+4. will/would 构成时态
+
+	构成时态：
+
+	![](English-From-Zero-Tutorial-Grammar-147.png)  
+	表示请求、建议：  
+	![](English-From-Zero-Tutorial-Grammar-148.png)  
+	表推测、假设 可能 would 比 will 程度更弱：  
+	![](English-From-Zero-Tutorial-Grammar-149.png)
+
+5. shall/should  
+	构成时态：  
+	![](English-From-Zero-Tutorial-Grammar-150.png)  
+	征求意见：  
+	Shall we meet at 9AM.  
+	我们早上 9 点见面如何。
+
+	表警告命令：  
+	You shall not steal. 你不可偷盗
+
+	表有一定根据的推测：  
+	It should rain tomorrow. 明天 **应该** 会下雨
+
+	表 ”竟然“：  
+	It's surprising that he should be late.  
+	真的很惊讶，他竟然迟到
+
+	构成虚拟语气：  
+	If it should rain tomorrow,I wouldn't go.  
+	如果明天万一下雨，我就不去了
+
+6. ought to 表示应该
+7. need 表需要、有必要  
+	![](English-From-Zero-Tutorial-Grammar-151.png)
+8. dare 敢、挑战、冒险  
+	![](English-From-Zero-Tutorial-Grammar-152.png)
+
+9. used to 习惯做某事  
+	表示现在的动作，尤其是重复的动作，强调和现在对比。  
+	![](English-From-Zero-Tutorial-Grammar-153.png)
+
+### 半助动词
+
+![](English-From-Zero-Tutorial-Grammar-133.png)  
+例句：  
+![](English-From-Zero-Tutorial-Grammar-134.png)
+
+1. be able to 表能力  
+	![](English-From-Zero-Tutorial-Grammar-154.png)
+
+2. be going to 将要 / be about to 马上 / be to 被命令做某事
+3. had better = 'd better 最好做 
+
+### 系动词
+
+**系动词** 的作用就是 **编程中的赋值**。
+
+![](English-From-Zero-Tutorial-Grammar-155.png)
+### 使役动词
+
+![](English-From-Zero-Tutorial-Grammar-159.png)
+
+使役动词后面要加宾语补语：
+
+![](English-From-Zero-Tutorial-Grammar-156.png)
+
+使役动词后接裸不定式，动词原形不加 to：
+
+![](English-From-Zero-Tutorial-Grammar-157.png)
+![](English-From-Zero-Tutorial-Grammar-158.png)

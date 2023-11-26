@@ -6,14 +6,14 @@ updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
 description:
-thumbnail: http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
 
 ---
 
 # Linux Operation Note
 
-​![Banner](http://oss.whaleluo.top/blog/img/Linux-Operation-Note-Banner.png-picsmall)​
+​![Banner](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png)​
 
 ## 硬盘操作
 

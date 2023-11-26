@@ -6,13 +6,13 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python 异步协程百万并发
-thumbnail: http://oss.whaleluo.top/blog/img/Python-Asyncio-banner.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/img/Python-Asyncio-banner.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Python-Asyncio-banner.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Python-Asyncio-banner.png
 excerpt: Python 异步百万并发全文最详细笔记！！
 
 ---
 
-![banner](http://oss.whaleluo.top/blog/img/Python-Asyncio-banner.png-picsmall)
+![banner](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Python-Asyncio-banner.png)
 
 # Python Asyncio 异步协程百万并发
 

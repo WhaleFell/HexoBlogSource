@@ -6,8 +6,8 @@ updated: 2022-05-22 0:44:48
 categories: Golang
 tags: [Golang, Coding]
 description:
-thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
 
 ---
 
@@ -64,7 +64,7 @@ type error interface {
 
 > `fmt.Println(err)` 会在内部执行 Error() 方法,返回错误的字符串信息.
 
-![](http://oss.whaleluo.top/blog/Golang/error-1.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/error-1.png)
 
 ### 从错误中获取更多信息
 
@@ -72,11 +72,11 @@ type error interface {
 
 #### 使用 `struct` 类型属性
 
-![](http://oss.whaleluo.top/blog/Golang/error-4.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/error-4.png)
 
 #### 调用 `struct` 类型的方法
 
-![](http://oss.whaleluo.top/blog/Golang/error-5.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/error-5.png)
 
 #### 直接比较
 
@@ -103,13 +103,13 @@ func main() {
 
 ### 1. 通过 `errors.New("描述")`
 
-![](http://oss.whaleluo.top/blog/Golang/error-2.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/error-2.png)
 
 ### 2. 通过 `fmt.Errorf()`
 
 也可以使用 `fmt.Errorf()` 输出的错误更详细,支持格式化输出错误.
 
-![](http://oss.whaleluo.top/blog/Golang/error-3.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/error-3.png)
 
 ### 3. 定义错误
 

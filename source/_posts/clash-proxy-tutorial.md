@@ -84,10 +84,10 @@ chmod 777
 
 ## Fake-IP
 
-ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https://blog.skk.moe/post/what-happend-to-dns-in-proxy/)
+ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https:/blog.skk.moe/post/what-happend-to-dns-in-proxy/)
 
 在 Client 端设置 Socks5 代理的分流过程：  
-![在 Client 端设置 Socks5 代理的分流过程](http://oss.whaleluo.top//blog/img/202307091454148.png-picsmall)
+![在 Client 端设置 Socks5 代理的分流过程](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307091454148.png)
 
 但是使用 Route 透明代理、全局 tun/tun2socks 代理时，此时应用程序是 **不会感知到代理客户端的存在**，它们会正常的 **发起 TCP 连接**，并且由于 TCP/IP 协议，在拿到 DNS 解析结果之前，连接是不能建立的。  
 
@@ -95,7 +95,7 @@ ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https://blog.
 > 					                                                                                           **—— TCP/IP 协议**
 
 当 Proxy 运行在 tun 模式的透明代理时：  
-![当 Proxy 运行在 tun 模式的透明代理时](http://oss.whaleluo.top//blog/img/202307091516885.png-picsmall)
+![当 Proxy 运行在 tun 模式的透明代理时](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307091516885.png)
 
 和应用程序直接将流量 **封装成 SOCKS5** 大有不同，在类似于透明代理的环境下浏览器和其它应用程序是正常地发起 TCP 连接。因此需要得到一个 DNS 解析结果，才能建立 TCP 连接；代理客户端也会需要通过这个 DNS 查询动作，才能找到之后的 TCP 连接的域名，进行分流。
 
@@ -108,7 +108,7 @@ ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https://blog.
 [Fake-ip 和 Redir-host 两个模式，从速度上看，那个有优势？如果综合看那个更有优势？ · Issue #974 · vernesong/OpenClash · GitHub](https://github.com/vernesong/OpenClash/issues/974)
 
 Fake-IP 实现过程：  
-![Fake-IP 实现过程](http://oss.whaleluo.top/blog/img/202307091530969.png-picsmall)
+![Fake-IP 实现过程](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307091530969.png)
 
 **Fake-IP** 能够省下 Client 向远端 DNS 请求 IP 的过程，就是代理客户端自己不先执行查询动作，丢一个 Fake IP 回去让浏览器、应用程序立刻建立 TCP 连接。
 

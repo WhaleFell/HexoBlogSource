@@ -6,8 +6,8 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
-thumbnail: http://oss.whaleluo.top/blog/old/20210630201524.png
-banner_img: http://oss.whaleluo.top/blog/old/20210630201524.png
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
 
 ---
 
@@ -735,7 +735,7 @@ main(wrap_g)  #调用
 
 > 调用方：**调用委派生成器的客户端代码**；即上面的**main 调用方函数**
 
-![](http://oss.whaleluo.top/blog/old/20210814184753.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210814184753.png)
 
 #### 2. Yield from 的管道传输用法示例
 
@@ -809,15 +809,15 @@ func = parse(100)
 func(100)
 ```
 
-![](http://oss.whaleluo.top/blog/old/20210719211704.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210719211704.png)
 
-![](http://oss.whaleluo.top/blog/old/20210719215011.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210719215011.png)
 
-![](http://oss.whaleluo.top/blog/old/20210719215459.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210719215459.png)
 
-![](http://oss.whaleluo.top/blog/old/20210719215842.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210719215842.png)
 
-![](http://oss.whaleluo.top/blog/old/20210719220126.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210719220126.png)
 
 ```python
 # 编写闭包函数
@@ -849,28 +849,28 @@ mian()
 
 ### 多个修饰器，从下到上修饰
 
-![](http://oss.whaleluo.top/blog/old/20210720161511.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210720161511.png)
 
 > **装饰是倒着装的，执行是顺着执行的。**
 
 ### 装饰有参数的函数
 
-![](http://oss.whaleluo.top/blog/old/20210720162540.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210720162540.png)
 
 > 对不定长参数的传递
 
-![](http://oss.whaleluo.top/blog/old/20210720162754.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210720162754.png)
 
 ### 装饰有返回值的参数
 
-![image-20210720163327239](http://oss.whaleluo.top/blog/old/20210720163328.png-picsmall)
+![image-20210720163327239](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210720163328.png)
 
 ### 通用修饰器
 
-![](http://oss.whaleluo.top/blog/old/20210720164146.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210720164146.png)
 
 ### 带参数的修饰器
 
-![](http://oss.whaleluo.top/blog/old/20210818144548.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210818144548.png)
 
 > 在函数中嵌套闭包函数

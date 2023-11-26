@@ -16,7 +16,7 @@ banner_img:
 
 ## 解决乱码问题
 
-Reference： [Ubuntu的中文乱码问题 [完美解决]\_lubuntu 终端乱码-CSDN博客](https://blog.csdn.net/weixin_39792252/article/details/80415550)
+Reference： [Ubuntu的中文乱码问题 [完美解决]\_lubuntu 终端乱码-CSDN博客](https:/blog.csdn.net/weixin_39792252/article/details/80415550)
 
 ```shell
 sudo apt-get install language-pack-zh-hans

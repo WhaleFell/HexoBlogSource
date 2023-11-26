@@ -31,44 +31,44 @@ RFS 是一款运行在安卓手机端的模拟飞行应用，可能是安卓上�
 
 ### 主界面
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215584.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215584.png)​
 
 ### 地面服务系统
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215586.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215586.png)​
 
 ### 主警报系统
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215587.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215587.png)​
 
 ### 地面装载
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215588.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215588.png)​
 
 ### 自动驾驶
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215589.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215589.png)​
 
 ### 地面绕机检查
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215590.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215590.png)​
 
 ### 主系统
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215591.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215591.png)​
 
 ### 飞行检查单
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215592.png-picsmall) 
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215592.png) 
 
 ### 引擎
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215593.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215593.png)​
 
 ### 地面紧急服务
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215594.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215594.png)​
 
 ### 燃料系统
 
-​![image](http://oss.whaleluo.top//blog/img/202306252215595.png-picsmall)
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202306252215595.png)

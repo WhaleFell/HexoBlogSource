@@ -6,8 +6,8 @@ categories: Golang
 updated: 2022-12-30 18:30:48
 tags: [Golang, Coding]
 description:
-thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
 
 ---
 
@@ -25,62 +25,62 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 定义结构体
 
-![定义结构体](http://oss.whaleluo.top/blog/Golang/struct-1.png-picsmall)
+![定义结构体](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-1.png)
 
 初始化结构体:
 
-![初始化结构体1](http://oss.whaleluo.top/blog/Golang/struct-2.png-picsmall)  
-![初始化结构体2](http://oss.whaleluo.top/blog/Golang/struct-3.png-picsmall)
+![初始化结构体1](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-2.png)  
+![初始化结构体2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-3.png)
 
 如果不赋值,默认存储的是类型的零值.
 
 ## 结构体指针
 
-![结构体指针](http://oss.whaleluo.top/blog/Golang/struct-4.png-picsmall)
+![结构体指针](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-4.png)
 
 ### 定义结构体指针
 
-![定义结构体指针1](http://oss.whaleluo.top/blog/Golang/struct-5.png-picsmall)
+![定义结构体指针1](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-5.png)
 
 `*` 获取指针指向的原始数据.  
 `&` 获取一个对象的地址.
 
-![定义结构体指针2](http://oss.whaleluo.top/blog/Golang/struct-6.png-picsmall)
+![定义结构体指针2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-6.png)
 
 ### 通过 `new` 构建结构体指针
 
 > 内置函数 `new()` 专门用于创建某种类型的指针.
 
-![New函数构建结构体指针1](http://oss.whaleluo.top/blog/Golang/struct-7.png-picsmall)  
-![New函数构建结构体指针2](http://oss.whaleluo.top/blog/Golang/struct-8.png-picsmall)
+![New函数构建结构体指针1](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-7.png)  
+![New函数构建结构体指针2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-8.png)
 
 通过, `new()` 函数 (不为 `nil`,空指针) 指向了 **新分配的类型的内存空间** ,里面存该类型的零值.
 
-![New函数详解](http://oss.whaleluo.top/blog/Golang/struct-10.png-picsmall)
+![New函数详解](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-10.png)
 
 ## 结构体的匿名
 
 ### 匿名结构体
 
-![](http://oss.whaleluo.top/blog/Golang/struct-11.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-11.png)
 
 ### 结构体的匿名字段
 
-![](http://oss.whaleluo.top/blog/Golang/struct-12.png-picsmall)
+![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-12.png)
 
 ## 结构体嵌套
 
 一个结构体可能包含一个字段，而这个字段是一个结构体。这个结构体被称为嵌套结构。
 
-![结构体嵌套1](http://oss.whaleluo.top/blog/Golang/struct-13.png-picsmall)  
-![结构体嵌套2](http://oss.whaleluo.top/blog/Golang/struct-14.png-picsmall)
+![结构体嵌套1](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-13.png)  
+![结构体嵌套2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-14.png)
 
 ### 将结构体的地址作为字段数值 (引用传递) [建议使用]
 
 在嵌套结构体中,结构体字段是结构体指针.使用了引用传递.
 
-![嵌套结构体指针1](http://oss.whaleluo.top/blog/Golang/struct-16.png-picsmall)  
-![嵌套结构体指针2](http://oss.whaleluo.top/blog/Golang/struct-15.png-picsmall)
+![嵌套结构体指针1](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-16.png)  
+![嵌套结构体指针2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-15.png)
 
 ## Golang 中的 OPP(面向对象)
 
@@ -88,12 +88,12 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 通过结构体嵌套模拟面向对象的继承性.
 
-![OPP原理分析](http://oss.whaleluo.top/blog/Golang/struct-17.png-picsmall)  
-![Go结构体嵌套](http://oss.whaleluo.top/blog/Golang/struct-18.png-picsmall)
+![OPP原理分析](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-17.png)  
+![Go结构体嵌套](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-18.png)
 
 ### 通过结构体的嵌套模拟继承性
 
-![模拟继承性](http://oss.whaleluo.top/blog/Golang/struct-19.png-picsmall)
+![模拟继承性](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-19.png)
 
 `s3.Person.name->s3.name`
 
@@ -103,4 +103,4 @@ Student 结构体将 Person 结构体作为一个匿名字段了.
 
 Student 对象直接访问 Person 中的字段
 
-![子结构体直接访问父结构体属性](http://oss.whaleluo.top/blog/Golang/struct-20.png-picsmall)
+![子结构体直接访问父结构体属性](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/struct-20.png)

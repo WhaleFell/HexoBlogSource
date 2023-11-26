@@ -6,8 +6,8 @@ updated: 2022-12-30 11:11:48
 categories: Golang
 tags: [Golang, Coding]
 description:
-thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
 
 ---
 

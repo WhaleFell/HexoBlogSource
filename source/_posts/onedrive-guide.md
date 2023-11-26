@@ -20,7 +20,7 @@ banner_img:
 就选择了 Onedrive 这个云盘，在小咸鱼买了一年 39 CNY 的 office365 家庭版拼车。Onedirve 家庭版可以支持 6 个用户，每个用户有 1T 的 onedrive 空间和 5 台设备的 office365 授权。
 
 Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、oneindex。可以支持直链共享，目测在中国大陆的网速也不错。  
-​![office-365-family](http://oss.whaleluo.top/blog/img/202307191615973.png-picsmall)
+​![office-365-family](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615973.png)
 
 ## 创建 OneDrive API
 
@@ -34,9 +34,9 @@ Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、
 
 填写以下信息：
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615975.png-picsmall)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ==，这个就是== client_id。
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615975.png)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ==，这个就是== client_id。
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615976.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615976.png)​
 
 ### 获取 client_secret
 
@@ -46,11 +46,11 @@ dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEohxy
 
 依次点击 **证书和密码**，**新客户端密码**，在截止期限中将时间选择为最长（即两年）
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615977.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615977.png)​
 
 然后就可以看见值和机密 ID，我们只需要记录下 **值** 就可以，这个就是 client_secret。
 
-​![image](http://oss.whaleluo.top//blog/img/202307191615978.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615978.png)​
 
 ### 添加 API 权限
 
@@ -58,19 +58,19 @@ dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEohxy
 
 需要 **Files.Read, Files.ReadWrite,Files.Read.All, Files.ReadWrite.All, offline_access, User.Read** 。
 
-​​![image](http://oss.whaleluo.top/blog/img/202307191615979.png-picsmall)​
+​​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615979.png)​
 
 添加以下权限：
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615980.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615980.png)​
 
 ### 添加身份验证
 
 依次点击 **身份验证**，**添加平台**，**Web**
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615981.png-picsmall)​在重定向 URI 中输入 ==http://localhost==
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615981.png)​在重定向 URI 中输入 ==http://localhost==
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615982.png-picsmall)​至此，OneDrive API 创建完成
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615982.png)​至此，OneDrive API 创建完成
 
 ## 使用 Rclone
 
@@ -114,7 +114,7 @@ docker run -d \
 
 打开 http://IP:5573 并登录显示以下页面：
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615983.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615983.png)​
 
 进入 docker bash：`docker exec -it rclone sh`​, 输入 rclone config ，按照提示进行 onedrive 设置。
 
@@ -122,7 +122,7 @@ docker run -d \
 
 验证完毕后可以在 Explorer 查看文件：
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615985.png-picsmall)### Rclone 常用命令
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615985.png)### Rclone 常用命令
 
 语法：
 
@@ -186,7 +186,7 @@ rclone copy source:sourcepath dest:destpsth
 rclone copy onedrive:/ /data/sdb1/onedrive_old --transfers=8 -P
 ```
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615986.png-picsmall)​​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615986.png)​​
 
 速度还行，将旧的 onedrive 文件一同迁移到本地硬盘。
 
@@ -227,7 +227,7 @@ rclone sync SOURCE remote:DESTINATION
 rclone sync /data/sdb1/Yellow/ onedrive:/Yellow/ --cache-chunk-size 20M --transfers=8 -P
 ```
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615987.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615987.png)​
 
 这是一个关于 `bisync`​ 命令的错误信息。该错误信息表明，在上一次运行 `bisync`​ 命令时出现了致命错误，导致无法找到先前的 `Path1`​ 或 `Path2`​ 列表。因此，`bisync`​ 命令无法确定哪些文件需要同步，因此它需要使用 `--resync`​ 选项来恢复同步操作。
 
@@ -641,7 +641,7 @@ Quick Start：[https://ovi.swo.moe/docs/getting-started](https://ovi.swo.moe/doc
 
 今天是 2023/6/6 日，上去云盘看突然显示部署错误了：
 
-​![image](http://oss.whaleluo.top/blog/img/202307191615988.png-picsmall)​
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615988.png)​
 
 经过 Github Issue 查找，[#772](https://github.com/spencerwooo/onedrive-vercel-index/discussions/722) 也同样存在这个问题，解决方法：
 

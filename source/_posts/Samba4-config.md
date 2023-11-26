@@ -5,14 +5,14 @@ date: 2022-12-25 19:37:48
 updated: 2022-12-25 19:37:48
 categories: Server
 tags: [Server, Linux]
-thumbnail: http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Smb-banner.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Smb-banner.png
 
 ---
 
 # Samba4 服务器配置最佳实践
 
-![banner](http://oss.whaleluo.top/blog/img/Smb-banner.png-picsmall)
+![banner](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Smb-banner.png)
 
 ## 具体配置文件
 

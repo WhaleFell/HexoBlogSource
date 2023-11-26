@@ -6,8 +6,8 @@ updated: 2022-05-28 21:54:48
 categories: Golang
 tags: [Golang, Coding]
 description:
-thumbnail: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
-banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
+thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
+banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/Golang/icon_img.png
 
 ---
 
@@ -32,7 +32,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 `Global GOPATH` 可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
 
-![GOPATH 设置](http://oss.whaleluo.top/blog/img/Golang-project-gomod-1.png-picsmall)
+![GOPATH 设置](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Golang-project-gomod-1.png)
 
 ## 引用包
 
@@ -44,7 +44,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 | | |____main.go
 ```
 
-![引用自己写的包](http://oss.whaleluo.top/blog/img/Golang-project-gomod-2.png-picsmall)
+![引用自己写的包](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Golang-project-gomod-2.png)
 
 ### 注意点
 
@@ -55,7 +55,7 @@ banner_img: http://oss.whaleluo.top/blog/Golang/icon_img.png-picsmall
 
 ### 引用第三方项目
 
-![引入第三方项目](http://oss.whaleluo.top/blog/img/Golang-project-gomod-3.png-picsmall)
+![引入第三方项目](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Golang-project-gomod-3.png)
 
 ## Go mod 包管理工具
 

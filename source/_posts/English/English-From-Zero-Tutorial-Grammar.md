@@ -256,7 +256,7 @@ banner_img:
 3. 现在完成进行时：**对现在而言已经完成但还会继续**。  
 	兔子现在已经吃完了胡萝卜，但还会继续吃。  
 	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-25.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)![](English-From-Zero-Tutorial-Grammar-45.png)
+	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)![](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English//English-From-Zero-Tutorial-Grammar-45.png)
 
 4. 现在一般时：对现在而言，没有特别指出的状态，陈述事实  
 	这兔子吃胡萝卜  

@@ -53,7 +53,15 @@ sticky: 100
 
 ## MarkDown 语法
 
-## 插入图片并储存在 七牛云 OSS 上
+## 图床
+
+已经部署在 OneDrive 上了，速度快，简洁，方便：
+
+使用的是 Vercel URL 构成：
+
+```
+https://pan.whaleluo.top/api/raw/?path=/PicStorage/图片地址
+```
 
 ## 本地部署
 

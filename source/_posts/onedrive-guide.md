@@ -34,7 +34,7 @@ Onedrive 支持将云空间挂载到各种软件上，例如：Rclone、Alist、
 
 填写以下信息：
 
-​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615975.png)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ==，这个就是== client_id。
+​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615975.png)点击注册后可以看到你的应用的相关信息，复制好 应用程序 (客户端) ID ，这个就是 client_id。
 
 ​![image](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/202307191615976.png)​
 

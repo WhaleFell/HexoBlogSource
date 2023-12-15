@@ -30,7 +30,7 @@ banner_img:
 
 **主语** 人/物 + **谓语** 动作 Verbs / 发生了什么事
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-subject-predicate-pic.png)
 
 ### 5 种基本句型 Simple Sentences 简单句
 
@@ -40,25 +40,25 @@ banner_img:
 1. 可以独立完成的动作 不及物动词  
 	主语 + **不及物动词（谓语）**  
 	Papa Rabbit **sleep**. 兔老爹睡觉  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-1.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-1.png)
 
 2. 有 1 个动作的承受者 （**动作承受者就是宾语**）  
 	主语 + **单及物动词 (谓语)** + **宾语**(动作承受者)  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-2.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-2.png)
 
 3. 有 2 个动作承受者  
 	主语 + **双及物动词 (谓语)** + 间接宾语 + 直接宾语  
 
 	> Teaches English，English 是直接宾语，承受 teaches，已经句意完整了，但是如果要准确描述教的对象就要加上 you 称为间接宾语。
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-3.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-3.png)
 
 4. 只有 1 个动作承受者（**但需要补充才能使句意完整**）  
 	主语 + **复杂及物动词 (谓语)** + 宾语 + 宾语补语 (宾补)  
 
 	> considers you 认为你，不能构造一个完整的句子，需要加上一个补语 smart 才能构成完整的句子。considers you smart.
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-5.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-5.png)
 
 5. 非 “动作” （赋值）赋予主语某种状态  
 	主语 + **连系动词 (系动词)** + (主语) 补语/表语  
@@ -66,7 +66,7 @@ banner_img:
 
 	> 将 nice 赋值给主语 Rabbit ，中间用 smells **系动词** 连接，也可以使用 is ，相当于编程中的赋值符号 `=`。而赋值给主语的状态词 nice 称作**主语补语**，补充说明主语，或称 **表语**。
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-6.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-6.png)
 
 ### 5 种基本句 总结
 
@@ -81,7 +81,7 @@ banner_img:
 5. 非“动作”，**用于赋予状态之前是主语之后是主语补语 (表语)**：系动词
 
 5 种基本句型：  
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-7.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-7.png)
 
 ### 句子成分
 
@@ -92,28 +92,28 @@ banner_img:
 5. **主语补语**/**表语**
 6. **定语**：相当于一个大 **形容词**，用来修饰 **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。定语前置  
 	**The red** car is mine.  
-	She is a **talented** singer （过去分词做定语）
+	She is a **talented** singer （过去分词做定语）talented adj. 有才华的
 
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-8.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-8.png)
 
 7. **状语**：相当于一个大 **副词**，是用来 **补充说明动词、形容词、或整个句子的词或词组，用来**描述动作的方式、程度、时间、地点**等。 状语可以放在句子不同位置 **
 	**He speaks** English **fluently**.  
 	I will **go** to the store **tomorrow**.  
 	quickly 修饰谓语动词 ate。吃的快  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-9.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-9.png)
 8. **同位语**：再把主语或宾语说一遍 和 **主语同等地位**  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-10.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-10.png)
 
 ## 简单句 VS 复合句
 
 1. 简单句 simple sentences 在英语中没法再拆的句子，5 种基本句型。
 2. 复合句 compound sentence 简单句型的叠加，不分主次
 3. 复杂句 complex sentence 一个简单句套一个简单句 主句、从句，从属关系 主句 + 从句  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-12.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-12.png)
 
 总结：
 
-![](English-From-Zero-Tutorial-Grammar-160.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-160.png)
 
 ## 词性 (词类)
 
@@ -130,10 +130,10 @@ banner_img:
 
 ## 谓语动词 (verb) 时态 tense
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-13.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-13.png)
 
 动作假设、情感等 **语法的语气**  
-	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-15.png-picsmall)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-15.png)
 
 ### 助动词
 
@@ -141,44 +141,44 @@ banner_img:
 
 做 **助动词**，**没有实义**，只是帮助谓语动词而已。还可以做 **实义动词**，表其他词意。
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-16.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-16.png)
 
 ## 非谓语动词
 
 取代几乎所有从句，简化句子。
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar.png)
 
 非谓语动词丧失了谓语动词的本领
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-17.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-17.png)
 
 ## 总结
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-18.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-18.png)
 
 ## 动词
 
 ### 及物动词和不及物动词
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-19.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-19.png)
 
 ### 动词分类
 
-![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-20.png-picsmall)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-20.png)
 
 ### 动词时态
 
 动作的**时间** + 动作的**状态**
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-21.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-21.png)
 
 #### 动词时间
 
 1. 过去、现在、将来
 2. 过去将来：对于**过去某一个时间点而言**的将来，昨天是前天这个过去的将来，（过去将来和现在没有必然关系）=> 一般出现在从句中。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-22.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-22.png)
 
 #### 动词状态
 
@@ -189,7 +189,7 @@ banner_img:
 
 #### 组合总述
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-84.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-84.png)  
 
 - 助动词 **be** 变位：  
 	I **am** | You **are** | he/she/it **is**  
@@ -239,157 +239,158 @@ banner_img:
 #### 组合详解
 
 1. 现在进行时：兔子正在吃萝卜  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-23.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-41.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-40.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-23.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-41.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-40.png)
 2. 现在完成时：兔子已经吃完了胡萝卜  
 	指过去某个动作对现在的影响 I have done 我已经完成了 
 
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-24.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-24.png)  
 	have：1. 实义动词 有 2. 助动词，构成时态 I/you/we/they have -> She/he/it has  
 	过去分词 + ed +en    
 
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-42.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-43.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-42.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-43.png)  
 	现在完成时 VS 一般过去时  
 	现在完成时强调过去的事情对现在的影响  
 	一般过去时单独的指出过去曾经的事  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-53.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-53.png)
 
 3. 现在完成进行时：**对现在而言已经完成但还会继续**。  
 	兔子现在已经吃完了胡萝卜，但还会继续吃。  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-25.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)![](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English//English-From-Zero-Tutorial-Grammar-45.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-25.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)
+	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-45.png)
 
 4. 现在一般时：对现在而言，没有特别指出的状态，陈述事实  
 	这兔子吃胡萝卜  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-26.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-26.png)
 
 	1. 表达事实，没有状态和时间的限制，客观实时
 	2. 表达习惯/重复的动作
 	3. 表示预计发生的事  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-39.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-39.png)
 
 5. 过去进行时  
 	这兔子昨天凌晨三点的时候正在吃胡萝卜。  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-27.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-27.png)  
 	助动词 be 的变位  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-51.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-51.png)
 
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-52.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-52.png)  
 	一般过去时态 VS 过去进行时态  
 	一般过去时强调做了没有 -> 图片  
 	过去进行时强调过去正在做的事情 -> 视频  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-54.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-54.png)
 
 6. 过去完成时  
 	这兔子昨天凌晨三点的时候已经吃完了胡萝卜  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-28.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-28.png)  
 	**过去完成时：过去的过去对过去的影响**  
 	**现在完成时：现在的过去对现在的影响**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-55.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-56.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-57.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-58.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-55.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-56.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-57.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-58.png)
 7. 过去完成进行时：对过去而言已经完成了的但接下来还会继续的状态，到什么时候不得而知  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-29.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-29.png)  
 	组成：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-59.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-59.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-60.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-60.png)
 8. 过去一般时：简单的表示发生在过去的动作  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-30.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-49.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-50.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-30.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-49.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-50.png)  
 	直接加动词过去式  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-46.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-47.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-48.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-46.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-47.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-48.png)
 	
 9. 将来进行时  
 	这兔子明天下午三点的时候会正在吃胡萝卜  
 	在将来某个时间，某个动作是进行的过程中  
 	比一般将来时还笃定  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-31.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-31.png)  
 	组成：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-65.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-65.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-66.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-66.png)
 10. 将来完成时  
 	这兔子明天下午三点的时候已经吃完了胡萝卜，之前什么时候开始吃不知道，也可能现在就开始吃了 。  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-32.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-32.png)  
 	组成：  
 	**现在完成时：强调过去对现在的影响**  
 	**将来完成时：强调将来的过去对将来的影响**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-67.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-67.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-68.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-69.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-68.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-69.png)
 11. 将来完成进行时  
 	这兔子明天下午三点的时候已经吃完了胡萝卜，但还要继续吃  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-33.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-33.png)  
 	构成：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-70.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-70.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-71.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-72.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-71.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-72.png)
 12. 一般将来时，单纯表示动作发生在将来  
 	英语中表达将来时态需要助动词 **will** 来帮忙 will + be/have 全部原型  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-34.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-34.png)  
 	特殊表将来的形式：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-61.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-61.png)  
 	will 形式：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-62.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-62.png)  
 	一般将来时态通常表达：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-63.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-63.png)  
 	动词的语气  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-64.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-64.png)
 13. 过去将来 · 进行时  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-78.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-78.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-79.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-79.png)
 14. 过去将来完成时  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-35.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-35.png)  
 	构成：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-80.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-80.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-81.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-81.png)
 15. 过去将来 · 完成进行时  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-36.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-36.png)  
 	构成：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-82.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-82.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-83.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-83.png)
 16. 过去将来 · 一般时  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-37.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-37.png)  
 	形式：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-75.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-75.png)  
 	例句：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-74.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-76.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-74.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-76.png)  
 	would 的多义：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-77.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-77.png)
 
 时态总结：1. 时·态分离 2. 动词变形 (人称变位) 3. 助动词 4. 与其他语法概念混合
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-38.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-38.png)
 
 常用时态：  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-84.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-84.png)
 
 #### 动词语气 Verb Moods
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-85.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-85.png)
 
 陈述语气（描述现实）  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-86.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-86.png)  
 祈使语气（命令/请求）  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-87.png)  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-88.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-87.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-88.png)  
 虚拟语气，基本用于从句中。表示某个描述与现实相反。涉及到**动词变位**。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-89.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-89.png)
 
 **表 " 不可能 " 的假设：**
 
@@ -437,7 +438,7 @@ demand(要求) suggest(建议) insist (坚持) order (命令) + should + 动词�
 	我希望我 **能够** 吃那只胡萝卜。  
 	**言下之意：** 我多半吃不到那只胡萝卜，伤心啊。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-90.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-90.png)
 
 ### 非谓语动词
 
@@ -445,7 +446,7 @@ demand(要求) suggest(建议) insist (坚持) order (命令) + should + 动词�
 
 **谓语动词** 是句子的核心。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-97.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-97.png)
 
 **非谓语动词**（非限定动词）：不受主语限制，不被限定的动词，但失去了谓语动词表达时间和人称的本领。
 
@@ -458,11 +459,11 @@ demand(要求) suggest(建议) insist (坚持) order (命令) + should + 动词�
 to + 动词原形 完全不定式 full infinitive  
 不加 to 裸不定式 bare infinitive
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-92.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-92.png)
 
 ##### 动词不定式做主语
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-93.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-93.png)
 
 It 做形式主语
 
@@ -472,7 +473,7 @@ The rabbit likes **to eat carrots** .
 
 it 做 **形式宾语**：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-94.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-94.png)
 
 ##### 动词不定式做宾补
 
@@ -482,19 +483,19 @@ it 做 **形式宾语**：
 
 **谓语动词** 后接不定式，**省不省略 to 区别不大**，都是正确的表达。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-95.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-95.png)
 
 ##### 不定式做主语
 
 **主系表** 结构 **is** 表赋值：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-96.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-96.png)
 
 ##### 不定式做定语 定语后置
 
 **to eat** 做 后置定语，限定宾语，表示这些胡萝卜是要被吃的。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-98.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-98.png)
 
 ##### 不定式做状语
 
@@ -503,11 +504,11 @@ it 做 **形式宾语**：
 表达原因、目的、结果
 
 1. 表原因  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-99.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-99.png)
 2. 表目的  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-100.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-100.png)
 3. 表结果  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-101.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-101.png)
 
 不定式做状语有简化从句的作用
 
@@ -517,11 +518,11 @@ to + 动词原形（完成 进行 完成进行），中的动词原形增加了 
 
 只是表达了状态，实际还是**不受时间（现在 过去 将来 过去将来）限制**。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-102.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-102.png)
 
 例句：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-103.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-103.png)
 
 #### 动名词
 
@@ -531,24 +532,24 @@ to + 动词原形（完成 进行 完成进行），中的动词原形增加了 
 
 1. 动名词做主语
 
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-104.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-104.png)
 
 2. 动名词做主语补语（表语）  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-105.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-105.png)
 3. 动名词做定语  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-106.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-106.png)  
 	**容易和现在分词做定语混淆。**
 
 4. 动名词做宾语  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-107.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-107.png)  
 	使役动词不能加不定式 to 做宾语 ，必须变为动名词 + ing 做宾语：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-108.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-108.png)  
 	**介词 to** 和 **不定式 to** 易混淆：  
 	介词 + 宾语（非谓语动词 动名词充当宾语，不能使用不定式 to）  
-	  ![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-110.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-109.png)  
+	  ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-110.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-109.png)  
 	动词不定式 to 和 动名词做宾语的区别：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-111.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-111.png)  
 	forget **to do** -> 忘记去做  
 	forget **doing** -> 忘记做过
 
@@ -560,39 +561,39 @@ to + 动词原形（完成 进行 完成进行），中的动词原形增加了 
 
 **现在分词** 相当于一个 **形容词 （用来修饰名词表状态）**，形容词在句子中可以充当的成分，**现在分词** 也可以。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-112.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-112.png)
 
 1. 现在分词 做 **主语补语**（表语 形容词）  
 	interest v. 使人感兴趣的 -> 现在分词 interesting adj. 有趣的  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-113.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-113.png)
 2. 现在分词做 **宾语补足语**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-114.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-114.png)  
 	**现在分词做宾补** 和 **不定式做宾补** 的区别：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-115.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-115.png)
 3. **现在分词** 做 状语（表示谓语动词状态）  
 	表示 时间、原因、条件、结果、让步、目的、方式、伴随情况  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-116.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-116.png)
 
 #### 过去分词
 
 **误区**：过去分词是 **非谓语动词**，他不能自带时间，**不能表示过去的时间**。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-117.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-117.png)
 
 minced 不带时间概念，而只是 **表示被姣的状态**。
 
 **过去分词**：动词原形 + -ed （**看作形容词**）
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-119.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-119.png)
 
 不规则过去分词：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-118.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-118.png)
 
 1. **过去分词** 短语做定语，要放到被修饰的名词之后。**后置定语**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-120.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-120.png)
 2. **过去分词** 和 **现在分词** 一样，可以做表语（主语补语）  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-121.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-121.png)  
 	**现在分词** 暗含 **主动** 关系，即被描述的是 **做出动作的人/物体**  
 	**过去分词** 暗含 **被动** 关系，即被描述的是 **动作的接受者**
 
@@ -601,12 +602,12 @@ minced 不带时间概念，而只是 **表示被姣的状态**。
 	The rabbit found his carrot **stolen**. 兔子发现他的胡萝卜被偷了。
 
 4. **过去分词** 和 **现在分词** 一样，可以做 **状语** （表示谓语动词的状态）  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-122.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-122.png)  
 	**现在分词** 暗含 **主动** 关系，即被描述的是 **做出动作的人/物体**  
 	**过去分词** 暗含 **被动** 关系，即被描述的是 **动作的接受者**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-123.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-123.png)  
 	高级用法：让句子中只含有一个谓语动词，其他的变成非谓语动词，用一个简单句写出来。**独立主格**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-124.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-124.png)
 
 #### 非谓语动词总结
 
@@ -618,16 +619,16 @@ minced 不带时间概念，而只是 **表示被姣的状态**。
 
 回顾：现在分词做 **状语**
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-125.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-125.png)  
 独立主格：  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-126.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-126.png)
 
 独立主格对从句的简化：  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-127.png)  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-128.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-127.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-128.png)  
 名词 + ~~being~~ + …
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-129.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-129.png)
 
 ### 助动词
 
@@ -635,7 +636,7 @@ minced 不带时间概念，而只是 **表示被姣的状态**。
 
 will 助动词帮助构成 将来时：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-130.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-130.png)
 
 can 是 **情态 (助) 动词**，辅助谓语动词表能力，也可以算是助动词，但是有实义，表 " 能够 "
 
@@ -646,61 +647,61 @@ The rabbit **can** kill a wolf. 兔子能杀死一只狼
 be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存在)、do(做)、have(有)  
 可表时态、被动、强调
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-131.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-131.png)
 
 应用：
 
 1. be => is/am/are/was/were  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-135.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-135.png)
 2. have => has/had(过去)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-136.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-136.png)
 3. do => does(强调/否定)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-137.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-137.png)
 
 #### 情态助动词
 
 情态助动词是有实际含义的，但是不能单独做谓语动词。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-132.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-132.png)
 
 1. can/could 有能力做 / 表请求或许可 / 表可能性  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-138.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-139.png)  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-140.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-138.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-139.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-140.png)
 2. may/might 表请求或许可 / 表可能性程度比 can 小 也许、可能、大概 / 放在句首表祝愿  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-141.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-141.png)  
 	表可能性程度比 can 小 也许、可能、大概  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-142.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-142.png)  
 	放在句首表祝愿  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-143.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-143.png)
 
 3. must 表必须 / 表禁止 / 表推测 一定肯定
 
 	表必须：
 
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-144.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-144.png)  
 
 	表禁止：
 
 	**mustn's 只有禁止的含义**  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-145.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-145.png)  
 
 	表推测 一定肯定 只能用在肯定句里：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-146.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-146.png)
 
 4. will/would 构成时态
 
 	构成时态：
 
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-147.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-147.png)  
 	表示请求、建议：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-148.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-148.png)  
 	表推测、假设 可能 would 比 will 程度更弱：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-149.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-149.png)
 
 5. shall/should  
 	构成时态：  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-150.png)  
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-150.png)  
 	征求意见：  
 	Shall we meet at 9AM.  
 	我们早上 9 点见面如何。
@@ -721,22 +722,22 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 
 6. ought to 表示应该
 7. need 表需要、有必要  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-151.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-151.png)
 8. dare 敢、挑战、冒险  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-152.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-152.png)
 
 9. used to 习惯做某事  
 	表示现在的动作，尤其是重复的动作，强调和现在对比。  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-153.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-153.png)
 
 #### 半助动词
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-133.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-133.png)  
 例句：  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-134.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-134.png)
 
 1. be able to 表能力  
-	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-154.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-154.png)
 
 2. be going to 将要 / be about to 马上 / be to 被命令做某事
 3. had better = 'd better 最好做 
@@ -745,19 +746,19 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 
 **系动词** 的作用就是 **编程中的赋值**。
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-155.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-155.png)
 
 ### 使役动词
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-159.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-159.png)
 
 使役动词后面要加宾语补语：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-156.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-156.png)
 
 使役动词后接裸不定式，动词原形不加 to：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-157.png)  
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-158.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-157.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-158.png)
 
 ## 从句 Clause

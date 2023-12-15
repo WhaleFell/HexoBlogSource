@@ -60,7 +60,7 @@ sticky: 100
 使用的是 Vercel URL 构成：
 
 ```
-https://pan.whaleluo.top/api/raw/?path=/PicStorage/图片地址
+https://api.whaleluo.top/onedrive/file/?path=/PicStorage/图片地址
 ```
 
 ## 本地部署

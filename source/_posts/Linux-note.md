@@ -118,6 +118,8 @@ mount -o remount rw /
 hdparm -Tt /dev/sda
 ```
 
+### 查看实时硬盘速率
+
 ### SMB 文件共享
 
 ```shell
@@ -296,29 +298,127 @@ tar -xzvf // unpack
 ./librespeed-cli --server-json http://test.nju.edu.cn/cli.json --server 1
 ```
 
+### 查看实时网卡流量
+
+使用 nload 工具
+
+```shell
+apt-get install nload
+```
+
+### 测速网站
+
+1. NJU 南大测速 支持命令行：[南大测速 NJU Test](https://test.nju.edu.cn/)
+2. 中科大测速：[中国科学技术大学测速网站](https://test.ustc.edu.cn/)
+3. 电信宽带测速：[10000.gd.cn/#/speed](https://10000.gd.cn/#/speed)
+4. 台大测速（测海外）：[NTU Speed5](http://speed5.ntu.edu.tw/speed5/)
+
 ### FRP
+
+2023/12/3： 起猛了，FRP 更新到了 0.52.3 版本，2023/12/3 版本，使用 toml 文件配置。
+
+GitHub：[GitHub - fatedier/frp: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.](https://github.com/fatedier/frp)
+
+完整配置示例：[conf](https://github.com/fatedier/frp/tree/dev/conf)
 
 #### 服务端配置
 
 frps.ini
 
 ```ini
-[common]
-bind_addr = 0.0.0.0
-bind_port = 57700
-bind_udp_port= 57711
+# frps server config
+bindAddr = "0.0.0.0"
+bindPort = 7000
+kcpBindPort = 7000
+quicBindPort = 7002
 
-token = lovehyy
+# TCP MUX
+# transport.tcpMux = true
 
-dashboard_port = 57710
-dashboard_user = admin
-dashboard_pwd = lovehyy
+# tls 
+tls.force = true
 
-max_pool_count = 9999
-max_ports_per_client = 0
 
-tls_only = true
-allow_ports = 57700-57800
+# If you want to support virtual host, you must set the http port for listening (optional)
+# Note: http port and https port can be same with bindPort
+vhostHTTPPort = 80
+vhostHTTPSPort = 443
+
+# admin
+webServer.addr = "0.0.0.0"
+webServer.port = 7500
+webServer.user = "admin"
+webServer.password = "admin"
+
+
+# log config
+log.to = "./frps.log"
+# trace, debug, info, warn, error
+log.level = "info"
+log.maxDays = 3
+log.disablePrintColor = false
+detailedErrorsToClient = true
+
+
+# auth
+auth.method = "token"
+auth.token = "12345678"
+allowPorts = [
+  { start = 2000, end = 3000 },
+  { single = 3001 },
+  { single = 3003 },
+  { start = 4000, end = 50000 }
+]
+
+
+maxPortsPerClient = 0
+
+subDomainHost = "frps.com"
+
+# custom404Page = "/path/to/404.html"
+```
+
+```ini
+# frps server config
+bindAddr = "0.0.0.0"
+bindPort = 43200
+kcpBindPort = 43201
+quicBindPort = 43202
+
+# TCP MUX
+# transport.tcpMux = true
+
+# tls 
+tls.force = true
+
+
+# If you want to support virtual host, you must set the http port for listening (optional)
+# Note: http port and https port can be same with bindPort
+vhostHTTPPort = 43200
+vhostHTTPSPort = 43433
+
+# admin
+webServer.addr = "0.0.0.0"
+webServer.port = 43100
+webServer.user = "admin"
+webServer.password = "admin123"
+
+
+# log config
+# log.to = "./frps.log"
+# trace, debug, info, warn, error
+log.level = "info"
+log.maxDays = 3
+log.disablePrintColor = false
+detailedErrorsToClient = true
+
+
+# auth
+auth.method = "token"
+auth.token = "bobo"
+# allowPorts =
+maxPortsPerClient = 0
+
 ```
 
 #### 客户端
@@ -326,24 +426,84 @@ allow_ports = 57700-57800
 frpc.ini
 
 ```ini
-[common]
-server_addr = vps.lskyl.xyz
-server_port = 57700
-token = lovehyy
-user = dlgz-nas
-login_fail_exit = false
-protocol = tcp
-tcp_mux = true
-dns_server = 223.5.5.5
-tls_enable = true
+# frpc client config
+user = "WF"
+serverAddr = "ifrp.club"
+serverPort = 7000
+loginFailExit = false
 
-[ssh]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 22
-remote_port = 57722
-use_encryption = false
-use_compression = true
+# log config
+# log.to = "./frpc.log"
+log.level = "info"
+log.maxDays = 3
+log.disablePrintColor = false
+
+auth.method = "token"
+# auth token
+auth.token = "123456789"
+
+# Set admin address for control frpc's action by http api such as reload
+webServer.addr = "0.0.0.0"
+webServer.port = 7400
+webServer.user = "admin"
+webServer.password = "admin"
+
+# tcp Mux
+# transport.tcpMux = true
+transport.protocol = "tcp"
+
+# tls
+transport.tls.enable = true
+
+# Proxy
+# transport.proxyURL = "http://user:passwd@192.168.1.128:8080"
+# transport.proxyURL = "socks5://user:passwd@192.168.1.128:1080"
+# transport.proxyURL = "ntlm://user:passwd@192.168.1.128:2080"
+
+
+# dns
+dnsServer = "223.5.5.5"
+
+
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+transport.useEncryption = false
+transport.useCompression = false
+remotePort = 22220
+
+[[proxies]]
+name = "file"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 5244
+transport.useEncryption = false
+transport.useCompression = false
+remotePort = 22225
+
+# socks5 proxy
+[[proxies]]
+name = "plugin_socks5"
+type = "tcp"
+remotePort = 22228
+[proxies.plugin]
+type = "socks5"
+username = "root"
+password = "lovehyy9420"
+
+# file
+[[proxies]]
+name = "plugin_static_file"
+type = "tcp"
+remotePort = 22230
+[proxies.plugin]
+type = "static_file"
+localPath = "/mnt/disk/downloads"
+stripPrefix = "static"
+httpUser = ""
+httpPassword = ""
 ```
 
 ## Shell 相关
@@ -807,6 +967,17 @@ docker run -d \
 p3terx/ariang
 ```
 
+#### Mariadb 数据库
+
+```console
+docker run --name mariadb -d --restart=always \
+-e MARIADB_ROOT_PASSWORD=lovehyy \
+-e MARIADB_DATABASE=tgforward \
+-v /wfwork/data/mariadb:/var/lib/mysql \
+-p 3310:3306 \
+mariadb:latest
+```
+
 ## V2ray / Xray Server
 
 一个 代理工具，推荐使用 Xray 内核。
@@ -1219,6 +1390,16 @@ src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/x86_64/
 src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing  
 src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony
 ```
+
+## Python
+
+### Update latest Python version
+
+[Upgrade Python to latest version (3.12) on Ubuntu Linux or WSL2](https://cloudbytes.dev/snippets/upgrade-python-to-latest-version-on-ubuntu-linux)
+
+## 网络安全
+
+webshell 查杀工具：[SHELLPUB.COM 专注查杀，永久免费](https://www.shellpub.com/)
 
 ## 引用 Reference
 

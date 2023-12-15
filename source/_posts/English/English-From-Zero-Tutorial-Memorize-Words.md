@@ -34,78 +34,136 @@ banner_img:
 
 ## 音标工具
 
-## 词根词缀
+# 英语词根词缀
 
 > 源于英语的派生构词法
 
 **un** | **believ** | **able** adj. 难以置信的
 
 - 前缀 ==> 词向 （词语的方向 反义、否定等） **un** 否定
-- 词根 ==> 词意（词语的意思）**believ** 相信
+- 词根 ==> 词意（词语的意思）**believe** 相信
 - 后缀 ==> 词性 （词语的性质 形容词、副词、名词等）**able** 形容词后缀
 
 欧路词典词根词缀查询 MDX 词典：[扩充词库下载 | 欧路软件官网](https://www.eudic.net/v4/en/home/dictionaryresource)
 
-### 前缀 （词向）
+## 前缀 （词向）
 
-1. 外/出：`e/ex/ef` => **ex**port 出口
-2. 内/进：`in/im` => **in**ject 注射 **im**port 提高
+1. 外/出：`e/ex/ef` =>  
+	**ex**port 出口
+	
+2. 内/进：`in/im` =>  
+	**in**ject 注射 **im**port 进口
+	
 3. 前
-	1. 动态 -- 向前 ：`pro` => **pro**gress 进步
-	2. 静态 -- 在前/预先 ：`pre per` => **pre**pare 准备 **per**mission n.允许
-4. 回/重新/再次：`re` => **re**turn 返回 **re**duce 减少 **re**ply 回复
-5. 聚集 (一起/共同)：`co/con/com/col` => **con**nect 联系 **col**lect 收集 
-6. 分散 (分开)：`di/dis/dif` => **dis**tract 分心 **di**vide v. 使分开
-7. 上/超过：`super/over/sur` => **sur** real ism [英 /sə'rɪəlɪz(ə)m/] 超现实主义 surpass 超过
-8. 下/不足：`under/de/sub/sup` => **de**crease 下降 **de**press v. 压下、使沮丧
-9. 转移/转变：`trans` => **trans**fer 转移、转账、换乘 **trans**late 翻译
-10. 相互之间：`inter` => **inter** net 互联网
-11. `a+ 双写辅音字母`=强调/无意义 => **acc**ompany
+	1. 动态 -- 向前 ：`pro` => **pro**gress 进步 **pro**mise v. 保证 
+	2. 静态 -- 在前/预先 ：`pre` => **pre**pare 准备 **pre**mise v./n. 作..前提 **pre**sent 礼物
+4. 回/重新/再次/反向：`re` =>  
+	**re**turn 返回 **re**duce 减少 **re**ply 回复
+
+5. 聚集 (一起/共同)：`co/con/com/col` =>  
+	**con**nect 连接 **col**lect 收集 **con**tact 联系
+	
+6. 分散 (分开)：`di/dis/dif` =>  
+	**dis**tract 分心 **di**vide v. 使分开 **dis**sident 异意  
+	分开 `se` => **se**parate 分开
+	
+7. 上/超过：`super/over/sur` =>  
+	**sur**·real·ism 超现实主义 **sur**pass 超过 **sur**face 表面 **sur**prise 惊奇 **sur**vey 调查
+	
+8. 下/不足：`under/de/sub/sup` =>  
+	**de**crease 下降 **de**press v. 使沮丧 **de**tect v. 察觉 **sub**way 地铁 **sup**pose 认为 **sup**post 支持
+	
+9. 转移/转变：`trans` =>  
+	**trans**fer 转移、转账、换乘 **trans**late 翻译
+	
+10. 相互之间：`inter` =>  
+	**inter**net 互联网 **inter**view 采访 **inter**est n. 兴趣
+	
+11. `a+ 双写辅音字母`=强调/无意义 =>  
+	**acc**ompany v. 伴同 **acc**ord n. 一致
+
 12. 否定前缀：`un/in/im/dis/ab/il`
 13. 表示数量：`poly/multi` - 多
+14. 反对相反：`anti/op`  
+	**op**pose v. 反对 **op**posite adj. 方面 **anti**-censorship 反审查
 
 ---
 
 1. ab,ac,ad,af,ag,al,an,ap,ar,as,at 来自拉丁介词 ad, 表示“朝、向、去，或弱化为强调”。
-2. anti 反对，相反 **anti**-censorship 
+2. anti 反对，相反 **anti**-censorship 反审查
 3. co/col/com 一起 
-4. counter 反对，相反  
-5. de 否定，除去，向下 
-6. dis 不，除去，分开  
-7. ex 外，前任 
-8. fore 前，先，预先  
-9. in/im 不，向里 
-10. inter 在…之间  
-11. mis 错 
-12. out 超过，外  
-13. over 过度
-14. post 后  
-15. **数字类** mono-1 / bi、di-2 / tri-3 / hemi、semi - 半 / Poly- 多 / multi- 多  
+4. de 否定，除去，向下 
+5. dis 不，除去，分开  
+6. ex 外，前任 
+7. fore 前，先，预先  
+8. in/im 不，向里 
+9. inter 在…之间  
+10. mis 错 
+11. out 超过，外  
+12. over 过度
+13. post 后  
+14. **数字类** mono-1 / bi、di-2 / tri-3 / hemi、semi - 半 / Poly- 多 / multi- 多  
 
-### 后缀（词性）
+## 后缀（词性）
 
-#### V.动词后缀
+### V.动词后缀
 
-1. `-ate` 表动词，“做，造成”。cre **ate** v. 创造
-2. `-ise/-ize` 动词后缀，一般**缀于形容词后**。-ise 是英式英语，-ize 是美式英语： modern**ize** v. 现代化 exerc**ise** v. 锻炼、使用
-3. `-fy/-ify` beaut**ify** v. 美化 
-4. `-ish` abolish v. 废止、废除
+1. `-ate` 表动词，" 做，造成 "  
+	cre**ate** v. 创造 separ**ate** v. 分开
+	
+2. `-ise/-ize` 动词后缀，一般**缀于形容词后**。-ise 是英式英语，-ize 是美式英语  
+	surpr**ise** v. 使惊奇 modern**ize** v. 现代化 exerc**ise** v. 锻炼 advert**ise** v. 宣传
 
-#### Adj. 形容词后缀
+3. `-fy/-ify`  
+	beaut**ify** v. 美化 un**ify** v. 统一 magn**ify** v. 放大 夸大 not**ify** v. 通知 sign**ify** v. 表示 satis**fy** v. 使满意的
+	
+4. `-ish`  
+	 abol**ish** v. 废止、废除 nurse -> nur**ish** v. 培养
 
-- 名词转形容词：n. => adj. `-ed/-ful(充满)/-ish(类似)/-ly(似的)/-y/-al/-ial/-ic/-ous`
-	- point**ed** adj. 语言尖锐的 (表示具有) satis**fy** v.使满意的 => satisfi**ed** adj. 感到满意的
-	- use**ful** adj. 有用的 success**ful** adj. 成功的
-	- child**ish** adj. 孩子气
-	- pract**ice** n. 练习、实习 => pract**ial** adj. 实用的、实践的
-- 动词转形容词：v. => adj. `-able/-ive` 可、能够
-	- drink**able** adj. 可饮用的
-	- attract**ive** adj. 吸引人的
-	- expens**ive** adj. 昂贵的
-- 表示 `….的`  
-	- ent/ful/ous/al/ial spec**ial** adj. 特别的 /lve/ible/able/ant/ic/ry
+### Adj. 形容词后缀
 
-### Adv. 副词
+- 名词转形容词：n. => adj. `-ed(过去分词)/-ful(充满)/-ish(类似)/-ly(似的)/-y/-al[kl]/-ial[ʃl]/-ic/-ous[ə]`  
+
+	1. `-ed` 过去分词做形容词  
+		point**ed** adj. 语言尖锐的 (表示具有) satis**fy** v.使满意的 => satisfi**ed** adj. 感到满意的  
+		advance n. 发展 -> advanc**ed** adj. 高级的
+		
+	2. `-ful` use**ful** adj. 有用的 success**ful** adj. 成功的
+	
+	3. `-al[kl]/-ial[ʃl]`  
+		pract**ice** n. 练习、实习 => practic**al** adj. 实际的  
+		history n. 历史 => historic**al** adj. 历史的 person n. 人 => person**al** adj. 个人的  
+		influence n. 影响 => influent**ial** adj. 有影响的  
+		race n. 种族 => rac**ial** adj. 种族的 spec**ial** adj. 特别的
+		
+	4. `-ous[ə]`  
+		humor n. 幽默 => humor**ous** adj. 幽默的  
+		nerve n. 神经 => nerv**ous** adj. 紧张的  
+		fame n. 名望 => fam**ous** adj. 著名的
+
+- 动词转形容词：v. => adj. `-ble/-able/-ive` 可、能够
+
+	1. `-ble/-able`  
+		terror n. 恐怖 => terri**ble** adj. 可怕的  
+		possi**ble** adj. 可能的  
+		drinkable adj. 可饮用的
+
+	2. `-ive`  
+		expend v. 花费 => expens**ive** adj. 昂贵的  
+		relate v. 有关 => relat**ive** adj. 相对的/亲戚  
+		sense v. 意味、意识到 => sensit**ive** adj. 敏感的
+
+- 表示 `….的` `ent/ful/lve/ible/able/ant/ic/ry`
+		
+	1. `-ent`  
+		convention n. 大会 => conveni**ent** adj. 方便的  
+		appear v. 出现 => appear**ent** adj. 明显的
+		
+	2. `-ant`  
+		import nv. 进口 => import**ant** adj. 重要的  
+		sign n. 标志 => sign**ify** v. 表示..的意思 => signific**ant** adj. 重要的
+
+### Adv. 副词后缀
 
 形容词转副词：adj. => adv. 通常加 `ly` 
 
@@ -162,7 +220,3 @@ lon/tion/ation/ness/ity/ality/meant/ **ence** 表状态 audi**ence** n. 听众 e
 14. vert/vers=turn 转 
 15. vis/vid=see 看 
 16. viv=live 活
-
-## 背词 APP
-
-墨墨背单词，交了 80 学费扩展了 8000 的单词上限量。

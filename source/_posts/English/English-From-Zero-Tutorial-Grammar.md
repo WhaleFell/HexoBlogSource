@@ -90,27 +90,30 @@ banner_img:
 3. **宾语** （谓语动词动作的承受者）
 4. **宾语补语**
 5. **主语补语**/**表语**
-6. **定语**：用来修饰 **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。  
+6. **定语**：相当于一个大 **形容词**，用来修饰 **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。定语前置  
 	**The red** car is mine.  
 	She is a **talented** singer （过去分词做定语）
 
 	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-8.png-picsmall)
 
-7. **状语**：是用来 **修饰动词、形容词、副词** 或整个句子的词或词组，用来描述动作的方式、程度、时间、地点等。 状语可以放在句子不同位置  
-	He **speaks** English **fluently**.  
+7. **状语**：相当于一个大 **副词**，是用来 **补充说明动词、形容词、或整个句子的词或词组，用来**描述动作的方式、程度、时间、地点**等。 状语可以放在句子不同位置 **
+	**He speaks** English **fluently**.  
 	I will **go** to the store **tomorrow**.  
 	quickly 修饰谓语动词 ate。吃的快  
 	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-9.png-picsmall)
-8. **同位语**：再把主语或宾语说一遍和主语同等地位  
+8. **同位语**：再把主语或宾语说一遍 和 **主语同等地位**  
 	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-10.png-picsmall)
 
 ## 简单句 VS 复合句
 
-在英语中没法再拆的句子，5 种基本句型。
-
-1. 复合句 compound sentence 简单句型的叠加
-2. 复杂句 complex sentence 一个简单句套一个简单句 主句、从句，从属关系  
+1. 简单句 simple sentences 在英语中没法再拆的句子，5 种基本句型。
+2. 复合句 compound sentence 简单句型的叠加，不分主次
+3. 复杂句 complex sentence 一个简单句套一个简单句 主句、从句，从属关系 主句 + 从句  
 	![](http://oss.whaleluo.top/blog/img/English-From-Zero-Tutorial-Grammar-12.png-picsmall)
+
+总结：
+
+![](English-From-Zero-Tutorial-Grammar-160.png)
 
 ## 词性 (词类)
 
@@ -119,7 +122,7 @@ banner_img:
 3. **代词** (pronouns)：代替人和物 I **am** a rabbit.
 4. **形容词** (adjectives)：形容人和物体 I am a **supid** rabbit.
 5. **数词** (numerals)：表数量 I ate tow **carrots**
-6. **副词** (adverbs)：**修饰动作或形容词** I ate carrots **quickly**. **副词做状语**
+6. **副词** (adverbs)：**补充说明 动词、形容词 等** I ate carrots **quickly**. **副词做状语**
 7. **介词** (prepositions)：表示和其他词关系的词 I ate two carrots **with** chopsitcks.
 8. **叹词** (interjections)：表感叹 **Ah**,the carrot is tasty.
 9. **连词** (conjunctions)：连接词和句 I ate two carrots and a potato,**because** I was hangry.
@@ -638,7 +641,7 @@ can 是 **情态 (助) 动词**，辅助谓语动词表能力，也可以算是�
 
 The rabbit **can** kill a wolf. 兔子能杀死一只狼
 
-### 基本助动词
+#### 基本助动词
 
 be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存在)、do(做)、have(有)  
 可表时态、被动、强调
@@ -654,7 +657,7 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 3. do => does(强调/否定)  
 	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-137.png)
 
-### 情态助动词
+#### 情态助动词
 
 情态助动词是有实际含义的，但是不能单独做谓语动词。
 
@@ -726,7 +729,7 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 	表示现在的动作，尤其是重复的动作，强调和现在对比。  
 	![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-153.png)
 
-### 半助动词
+#### 半助动词
 
 ![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-133.png)  
 例句：  
@@ -743,6 +746,7 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 **系动词** 的作用就是 **编程中的赋值**。
 
 ![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-155.png)
+
 ### 使役动词
 
 ![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-159.png)
@@ -753,5 +757,7 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 
 使役动词后接裸不定式，动词原形不加 to：
 
-![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-157.png)
+![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-157.png)  
 ![image](https://pan.whaleluo.top/api/raw/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-158.png)
+
+## 从句 Clause

@@ -489,7 +489,7 @@ vendors:
   # Lazyload js
   # https://github.com/verlok/lazyload
   # Version: 17.1.2
-  lazyload: 
+  lazyload: https://api.whaleluo.top/file/?url=https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
   
   # back_to_top button
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/js/b2t.min.js

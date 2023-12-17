@@ -30,6 +30,4 @@ Languages🌏: 简中 / 繁中 / EN
 ## Catch Me
 
 1. [GitHub WhaleFell](https://github.com/whalefell)
-2. 🐧QQ：2734184475 (**加好友请备注来意**)
-3. ✈Telegram
-4. WeChat
+

@@ -130,7 +130,7 @@ dark_mode:
   # 默认的选项（当用户手动切换后则不再按照默认模式），选择 `auto` 会优先遵循 prefers-color-scheme，其次按用户本地时间 18 点到次日 6 点之间进入暗色模式
   # Default option (when the visitor switches manually, the default mode is no longer followed), choosing `auto` will give priority to prefers-color-scheme, and then enter the dark mode from 18:00 to 6:00 in the visitor’s local time
   # Options: auto | light | dark
-  default: dark
+  default: auto
 
 # 主题颜色配置，其他不生效的地方请使用自定义 css 解决，配色可以在下方链接中获得启发
 # Theme color, please use custom CSS to solve other colors, color schema can be inspired by the links below
@@ -456,7 +456,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -528,7 +528,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -679,7 +679,7 @@ post:
     enable: true
     # 放大后图片链接替换规则，可用于将压缩图片链接替换为原图片链接，如 ['-slim', ''] 是将链接中 `-slim` 移除；如果想使用正则请使用 `re:` 前缀，如 ['re:\\d{3,4}\\/\\d{3,4}\\/', '']
     # The image url replacement when zooming, the feature can be used to replace the compressed image to the original image, eg: ['-slim', ''] removes `-slim` from the image url when zooming; if you want to use regular, use prefix `re:`, eg: ['re:\\d{3,4}\\/\\d{3,4}\\/','']
-    img_url_replace: ['-picsmall', '']
+    img_url_replace: ['', '']
 
   # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
   # Support footnote syntax, footnotes will be generated at the bottom of the post page. If the Markdown renderer itself supports it, please disable it, otherwise it may conflict
@@ -903,7 +903,7 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -914,7 +914,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -943,7 +943,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -960,7 +960,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
@@ -983,7 +983,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -994,7 +994,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -1008,7 +1008,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: https://oss.whaleluo.top/blog/banner.jpg-picsmall
+  banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/banner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项

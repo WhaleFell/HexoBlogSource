@@ -15,7 +15,7 @@ toc: false
 > 零落，孤独，不遇合，人生起起落落落。  
 > 也指鲸落海底，哺暗界众生十五年，如星辰入海，侵万鲸成宇宙。
 
-06 / 高二在读学渣 ~~大专预定~~ / 理科生中的美术牲 / Python / Golang / Web / Developer / Ham / QTH GZ / 折腾各种小玩意
+06 / 高三休学 / 理科生中的美术牲 / Python / Golang / Web / Developer / Ham / QTH GZ / 折腾各种小玩意
 
 想做一只小猫咪 / 铲屎官 / 地球猫猫教
 
@@ -30,4 +30,4 @@ Languages🌏: 简中 / 繁中 / EN
 ## Catch Me
 
 1. [GitHub WhaleFell](https://github.com/whalefell)
-
+2. [Email](email://whalefall9420@outlook.com): whalefall9420@outlook.com

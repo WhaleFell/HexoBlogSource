@@ -406,7 +406,7 @@ footer:
 lazyload:
   enable: true
   onlypost: false
-  loadingImage: https://oss.whaleluo.top/blog/loading.gif
+  loadingImage: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/loading.gif
 
 # 站内搜索插件
 search:

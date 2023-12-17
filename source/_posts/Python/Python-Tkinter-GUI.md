@@ -7,8 +7,8 @@ categories:
 - Python
 tags: [Python, Coding, GUI]
 description: Python Tkinter 是一个 Python 自带GUI包，十分轻量。
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
 
 ---
 
@@ -16,17 +16,17 @@ banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/202106302
 
 ## GUI Tkinter 框架结构
 
-![image-20210704162740134](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704162742.png)
+![image-20210704162740134](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162742.png)
 
 ## 常用组件汇总列表
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704162352.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162352.png)
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704162631.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162631.png)
 
 ## 面向对象的方式写 GUI 框架的经典实例
 
-![image-20210704170309065](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704170311.png)
+![image-20210704170309065](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704170311.png)
 
 ### 具体实现代码
 
@@ -101,29 +101,29 @@ if __name__ == "__main__":
 
 ## Label ( 标签 ) 用法
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704193103.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193103.png)
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704193502.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193502.png)
 
 ## 组件 Option 选项设置
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210704203439.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704203439.png)
 
 ### 选项大全
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210705220646.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220646.png)
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210705220636.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220636.png)
 
 ## Button Anchor 位置控制
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210705221052.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705221052.png)
 
 ## Entry StrinngVar 输入框
 
 > 输入框接收变量的类型
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210705223051.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705223051.png)
 
 属性的双向关联
 

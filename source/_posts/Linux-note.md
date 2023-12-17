@@ -6,14 +6,14 @@ updated: 2022-03-20 16:37:48
 categories: Linux
 tags: [Linux]
 description:
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
 
 ---
 
 # Linux Operation Note
 
-​![Banner](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png)​
+​![Banner](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png)​
 
 ## 硬盘操作
 
@@ -551,12 +551,25 @@ service sshd restart
 
 ### 清除 ssh 所有登录日志
 
+适用于 Debian 系和 Centos 系等发行版。
+
 ```shell
-cat /dev/null > /var/log/wtmp
-cat /dev/null > /var/log/btmp
-cat /dev/null > /var/log/lastlog
-cat /dev/null > /var/log/secure
-cat /dev/null > /var/log/auth.log
+echo > /var/log/wtmp
+echo > /var/log/btmp
+echo>/var/log/lastlog
+echo > /var/log/secure
+echo > /var/log/messages
+echo> /var/log/syslog
+echo> /var/log/xferlog
+echo> /var/log/auth.log
+echo> /var/log/user.log
+cat /dev/null > /var/adm/sylog
+cat /dev/null > /var/log/maillog
+cat /dev/null > /var/log/openwebmail.log
+cat /dev/null > /var/log/mail.info
+echo>/var/run/utmp
+echo > .bash_history
+history -cw
 ```
 
 ### ZSH 终端美化

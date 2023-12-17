@@ -6,8 +6,8 @@ updated: 2021-06-18 19:37:48
 categories: Depression
 tags: [Depression, Medicine]
 description: 抑郁症所有用药对照表
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/%E5%89%B2%E8%85%95(%E4%BA%8C%E6%AC%A1%E5%85%83).jpg
 
 ---
 

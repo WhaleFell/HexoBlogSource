@@ -6,14 +6,14 @@ updated: 2021-08-18 19:37:48
 categories: Python
 tags: [Python, Flask, Coding]
 description:
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210818152255.png
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210818152255.png
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png
 
 ---
 
 # Flask Web 框架学习笔记
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210818152255.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png)
 
 ## 1. Flask 初始化参数
 
@@ -322,11 +322,11 @@ def index():
  | |---- views.py
 ```
 
-![蓝图包目录实例](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210725224412.png)
+![蓝图包目录实例](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224412.png)
 
 #### 循环引用问题
 
-![循环引用问题](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210725224744.png)
+![循环引用问题](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224744.png)
 
 > 所以导入视图函数要放在 `__init__.py` 文件的最后
 

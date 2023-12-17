@@ -6,12 +6,12 @@ updated: 2021-06-18 22:16:49
 categories: Linux
 tags: [Linux, Kali]
 description:
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154844.jpg
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154844.jpg
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg
 
 ---
 
-![Kali](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154844.jpg)
+![Kali](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg)
 
 # Kali Linux 漏洞审计 批量扫描 弱密码撞库 教程
 

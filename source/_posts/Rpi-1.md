@@ -6,8 +6,8 @@ updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
 description:
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154345.jpg
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154345.jpg
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
 
 ---
 
@@ -17,14 +17,14 @@ banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/202106191
 
 先用 **SDFormatter** 格式化一下内存卡叭:
 
-![hZkDB8qxtRgQz3S](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152409.png)
+![hZkDB8qxtRgQz3S](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152409.png)
 
 ### 1. 烧写镜像用到的软件： **Win32 Disk Image**
 
-![Zb6CEHnf17oqO5Q](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152403.png)
+![Zb6CEHnf17oqO5Q](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152403.png)
 
 - 然后在 U 盘的根目录建立一个空白的 **ssh 文件 方便 ssh 远程连接**  
-  ![FV5qpvWz7LtsOgi](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/sasw.png)
+  ![FV5qpvWz7LtsOgi](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/sasw.png)
 - 用 **Windows PowerShell** 连接树莓派 ssh  
   `shift+右键` 呼出**Windows PowerShell**  
   **完整连接语法**:
@@ -33,7 +33,7 @@ banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/202106191
 ssh -p 端口号 用户名@主机地址
 ```
 
-> 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152448.png)
+> 树莓派默认的用户名 **pi** 密码 **raspberry**![QLA74lscbwzRWY2](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152448.png)
 
 - 树莓派扩展 TF 卡分区:  
   sudo raspi-config --> Advanced options -->Expand Filesystem, 确认重启
@@ -92,7 +92,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 - 设置终端中文显示: `sudo raspi-config`:  
   选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。  
   往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *  
-  ![3hQeD8k9L1mgTZc](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152513.png)
+  ![3hQeD8k9L1mgTZc](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152513.png)
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
 ### 3. 设置 Vnc 桌面 连接
@@ -174,8 +174,8 @@ sudo service tightvncserver status #查看服务运行状态
 > [vnc官网](https://www.realvnc.com/en/connect/download/viewer/)
 
 连接成功惹~:  
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152521.png)  
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152531.png)  
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152521.png)  
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152531.png)  
 编辑 ./vnc/xstartup 配置文件使其能与 windown 共享剪贴板
 
 ```shell
@@ -214,10 +214,10 @@ cd noVNC
 ./utils/launch.sh --vnc localhost:5901 #监听5901 vnc端口
 ```
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152538.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152538.png)
 
 - 尝试访问: [http://raspiberry:6080](http://raspiberry:6080) 可  
-  ![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152542.png)
+  ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152542.png)
 - 一些**高级设置** :
 
 ```shell
@@ -236,7 +236,7 @@ sudo nano /etc/rc.local
 su pi -c "/home/pi/noVNC/utils/launch.sh --vnc localhost:5901" &
 ```
 
-![fEVci5dlNCMaUs4](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152617.png)
+![fEVci5dlNCMaUs4](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152617.png)
 
 ### 5.安装 `cockpit` Web 可视化管理
 
@@ -266,7 +266,7 @@ sudo systemctl start cockpit.socket
 
 - 页面
 
-  ![image-20200805174634421](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152626.png)
+  ![image-20200805174634421](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152626.png)
 
 ## Python 设置
 
@@ -274,7 +274,7 @@ sudo systemctl start cockpit.socket
 
 > 树莓派默认安装了两个版本的**Python**
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152632.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152632.png)
 
 ### 树莓派 Pip 换源
 
@@ -299,7 +299,7 @@ mirrors = https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 python3 -m pip install --upgrade pip
 ```
 
-![seVOiSZrBKgE827](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619152649.png)
+![seVOiSZrBKgE827](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152649.png)
 
 - **树莓派指定 Python 版本安装模块**
 

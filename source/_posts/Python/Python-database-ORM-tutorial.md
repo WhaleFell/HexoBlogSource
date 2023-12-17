@@ -23,7 +23,7 @@ SQLAlchemy （SQL 炼金术 `/ˈæl.kə.mi/` ）是 Python 中用于操作各种
 
 [SQLAlchemy Offical Tutorial](https://docs.sqlalchemy.org/en/20/intro.html)
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/img/Python-database-ORM-tutorial-components.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-database-ORM-tutorial-components.png)
 
 SQLAlchemy 包含 对象关系映射器 **ORM** 和 核心 **Core** 两部分 API，ORM 构建于 Core 之上，如上图。**DBAPI** 代表底层数据库的驱动，例如：`pymysql` `sqlite3` 与特定数据库交互的第三方驱动程序。
 

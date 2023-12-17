@@ -6,8 +6,8 @@ updated: 2021-06-18 19:37:48
 categories: Linux
 tags: [Respi, Linux]
 description:
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154345.jpg
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619154345.jpg
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
 
 ---
 
@@ -21,7 +21,7 @@ banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/202106191
 
   查询硬盘状态: `sudo fdisk -l`
 
-  ![9XBTemAzD6R8yot](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619153119.png)
+  ![9XBTemAzD6R8yot](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153119.png)
 
 ```shell
 sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更改 
@@ -44,7 +44,7 @@ mount /dev/sda1 /home/pi/disk -o utf8,uid=1000,gid=1000,umask=000 -t vfat
 
 - 重启 ，不出意外的话开机 应该 会自动挂载，且有写权限，用户是 pi：如图挂载至 `/home/pi/disk` 目录，有**777 权限**
 
-  ![3ilg9S1UJ2EcHPV](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619153142.png)
+  ![3ilg9S1UJ2EcHPV](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153142.png)
 
 ## 2.部署 Aria2 离线下载器
 
@@ -143,7 +143,7 @@ sudo apt-get install nginx
   > 到 [**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
   >
 
-  ![UO7c5EItjBHRsgN](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619153158.png)
+  ![UO7c5EItjBHRsgN](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153158.png)
 
   **把源码克隆到** `/website/AriaNg/`：
 
@@ -194,6 +194,6 @@ sudo systemctl restart nginx
 ```
 
 - 尝试访问 [http://树莓派ip/aria2](http://%E6%A0%91%E8%8E%93%E6%B4%BEip/aria2) ，**设置参数**
-- ![wNbqhBl7KWL6Jcx](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619153219.png)
+- ![wNbqhBl7KWL6Jcx](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153219.png)
 
-![2o7a8c3qpFODP4Y](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210619153228.png)
+![2o7a8c3qpFODP4Y](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153228.png)

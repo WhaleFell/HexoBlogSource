@@ -1,22 +1,28 @@
 ---
-title: Hexo 博客写作规范约定
+title: Blog 大事记与写作规范
 date: 2018-12-11T15:51:48.000Z
-updated: 2018-12-11T15:59:48.000Z
+updated: 2023-12-11T15:59:48.000Z
 categories: Hexo
 tags:
   - Hexo
   - Blog
-description: 在编写本 Hexo 博客时需要遵循的既定格式，方便规范和索引。
+description: 记录一些博客的变更，在编写 Blog 时需要遵循的既定格式，方便规范和索引。
 date updated: 2023-06-29 23:18
 ---
 
-# Hexo 博客写作规范约定
+# Blog 大事记与写作规范
 
-于 2023/4/11 因为原域名 [lskyl.xyz](https://lskyl.xyz) 到期了,故把博客域名和 oss 域名整体迁移到 [whaleluo.top](https://whaleluo.top) 取鲸（Whale 英）落（Luo 中）之意.其中带 www 前缀 [www.whaleluo.top](https://www.whaleluo.top) 经过 cloudflare 加速，用于某些不能直接访问到 github pages 的场景。同时搭建在 vercel `/vɜː'sel/` 上的 [https:/blog.whaleluo.top)](https:/blog.whaleluo.top) 作为备份。
+于 2023/12/17，将博客整体迁移到了 [vercel](https://vercel.com/) 上,并写了一个 onedrive 图床程序，用于博客的静态文件存储。    
+[https://whaleluo.top](https://whaleluo.top/) 博客主域名，由 vercel 提供静态托管。
+[https://whalefell.github.io](https://whalefell.github.io/) 博客备用域名，由 github pages 提供静态托管。（好处是域名不会过期，~~大概我死了也可以访问~~）  
+[https://api.whaleluo.top] 搭建在 vercel 的 API 服务，提供代理下载，onedrive 直连等功能。
+[https://api-render.whaleluo.top] 搭建在 render.com 同上，作为备份。数据、日志互通。
 
-于 2023/2/10 更换了更快的博客主题 **Card** [Card](https://github.com/ChrAlpha/hexo-theme-cards).[主题文档](https://theme-cards.ichr.me/)
+~~于 2023/4/11 因为原域名 [lskyl.xyz](https://lskyl.xyz) 到期了,故把博客域名和 oss 域名整体迁移到 [whaleluo.top](https://whaleluo.top) 取鲸（Whale 英）落（Luo 中）之意.其中带 www 前缀 [www.whaleluo.top](https://www.whaleluo.top) 经过 cloudflare 加速，用于某些不能直接访问到 github pages 的场景。同时搭建在 vercel `/vɜː'sel/` 上的 [https:/blog.whaleluo.top)](https:/blog.whaleluo.top) 作为备份。~~
 
-于 2022/12/11 重新拾起荒废已久的 Hexo 博客，就当是给自己的笔记、想法一个家叭。还是得规范一下博客写作的格式方便自己收纳的。
+~~于 2023/2/10 更换了更快的博客主题 **Card** [Card](https://github.com/ChrAlpha/hexo-theme-cards).[主题文档](https://theme-cards.ichr.me/)~~
+
+~~于 2022/12/11 重新拾起荒废已久的 Hexo 博客，就当是给自己的笔记、想法一个家叭。还是得规范一下博客写作的格式方便自己收纳的。~~
 
 ## 头注
 
@@ -57,11 +63,18 @@ sticky: 100
 
 已经部署在 OneDrive 上了，速度快，简洁，方便：
 
-使用的是 Vercel URL 构成：
+使用的是自制的 onedrive 直连提取 python 程序(base on fastapi)，并部署到 vercel 上，使用方法：
 
+```shell
+https://api.whaleluo.top/onedrive/file/?path={path}
 ```
-https://api.whaleluo.top/onedrive/file/?path=/PicStorage/图片地址
+
+vercel 感觉对 FastAPI 的支持不是很好，所以用 render.com 上也部署了一个：
+
+```shell
+https://api-render.whaleluo.top/onedrive/file/?path={path}
 ```
+
 
 ## 本地部署
 

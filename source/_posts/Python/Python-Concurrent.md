@@ -6,8 +6,8 @@ updated: 2021-06-18 19:37:48
 categories: Python
 tags: [Python, Coding]
 description: Python并发编程(多线程,多进程,多协程)
-thumbnail: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
-banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630201524.png
+thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
+banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
 
 ---
 
@@ -15,7 +15,7 @@ banner_img: http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/202106302
 
 ## 各并发技术
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630200927.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630200927.png)
 
 ## 1. 多线程 Thread（threading）
 
@@ -54,9 +54,9 @@ for thread in threads:
 
 - 原理
 
-  ![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630204323.png)
+  ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630204323.png)
 
-  ![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630204353.png)
+  ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630204353.png)
 
 - 代码实现
 
@@ -77,7 +77,7 @@ for thread in threads:
   >> 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 ***** 号操作符，可以将元组解压为列表。
   >>
 >
-  > !["形象"](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210630211154.png)
+  > !["形象"](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630211154.png)
   >
 
   ```python
@@ -159,9 +159,9 @@ for thread in threads:
    > 复杂的事情一般都不会一下子做完，而是会分**很多中间步骤一步步完成**
    >
 
-   ![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210703065209.png)
+   ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210703065209.png)
 
-   ![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210703065255.png)
+   ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210703065255.png)
 
 2. **多线程数据通信的**​**`queue.Queue`**
 
@@ -261,7 +261,7 @@ for thread in threads:
 - 规避方法 2： 使用 `multiprocessing` 多进程，对 CPU 密集型计算，单独启动子进程解释器去执行
 - 规避方法 2： ﻿将计算密集型的任务转移到**C 语言**中，因为 C 语言比 Python 快得多，注意要在 C 语言中自己释放 GIL
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210701000441.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210701000441.png)
 
 > ### 多进程适用于 CPU 密集型计算
 >
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 >
 > 由于**线程的执行随时会发生切换**，就造成了不可预料的结果，出现**线程不安全**(简单来说就是程序串行)
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210702130844.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210702130844.png)
 
 ```python
 import threading
@@ -352,7 +352,7 @@ with lock:
 
 只是操作**共享变量**部分的代码要**上锁**,而不是多线程中所有代码都要上锁,并**不影响多线程**的执行效果.
 
-![image-20210702143100587](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210702143102.png)
+![image-20210702143100587](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210702143102.png)
 
 ## 4. 异步协程
 
@@ -361,9 +361,9 @@ with lock:
 > 同步：执行 IO 操作时，**必须等待执行完成才得到返回结果**。  
 > 异步：执行 IO 操作时，**不必等待执行就能得到返回结果**。
 
-![](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210702150837.jpeg)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210702150837.jpeg)
 
-![image-20210702143832079](http://pan.whaleluo.top/api/raw/?path=/picstorage/blog/old/20210702143833.png)
+![image-20210702143832079](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210702143833.png)
 
 > 注意：要用在**异步 IO 编程中**,依赖的**库必须支持异步 IO 特性.**
 >

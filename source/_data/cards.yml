@@ -455,15 +455,15 @@ vendors:
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/css/style/main.min.css
   # Version: 1.4
   # 如果你有自定义样式，请务必将此项修改为自己的 CDN 地址，或者单纯留空
-  style: /css/style/main.min.css
+  style: /css/style/main.css
 
   # darkmode
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/css/style/dark.min.css
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/js/darkmode.min.js
   # Version 1.4
   darkmode: 
-    css: /css/style/dark.min.css
-    js: /js/darkmode.min.js
+    css: /css/style/dark.css
+    js: /js/darkmode.js
   
   # code highlight css
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/
@@ -473,18 +473,18 @@ vendors:
   # highlight.js theme
   # https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/
   # Version: 10.1.2
-  hljs: https://api.whaleluo.top/proxy/?url=https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/
+  hljs: https://api.whaleluo.top/file/?url=https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/
 
   # prism.js theme
   # https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/
   # Version: 1.21.0
-  prism: https://api.whaleluo.top/proxy/?url=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/
+  prism: https://api.whaleluo.top/file/?url=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/
 
   # tag-plugin note css
   # https://github.com/ChrAlpha/hexo-theme-cards
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/css/style/note.min.css
   # Version 1.4
-  note: /css/style/note.min.css
+  note: https://api.whaleluo.top/file/?url=https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/css/style/note.min.css
 
   # Lazyload js
   # https://github.com/verlok/lazyload
@@ -494,12 +494,12 @@ vendors:
   # back_to_top button
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/js/b2t.min.js
   # Version 1.4
-  back_to_top: /js/b2t.min.js
+  back_to_top: /js/b2t.js
 
   # local search plugin
   # https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.4/dist/js/local-search.min.js
   # Version 1.4
-  local_search: /js/local-search.min.js
+  local_search: /js/local-search.js
 
   # DisqusJS
   # https://github.com/SukkaW/DisqusJS
@@ -570,8 +570,8 @@ vendors:
   # https://github.com/fancyapps/fancybox/
   # Version: 3.5.7
   fancybox: 
-    css: 
-    js: 
+    css: https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css
+    js: https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js
 
   # 自定义 script
   custom_script: 

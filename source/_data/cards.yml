@@ -406,7 +406,7 @@ footer:
 
 # 图片懒加载插件
 lazyload:
-  enable: true
+  enable: false
   onlypost: false
   loadingImage: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/loading.gif
 

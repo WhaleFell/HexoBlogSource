@@ -78,7 +78,7 @@ banner_img:
 2. 有一个动作的承受者，**一个宾语无需补充信息**：单及物动词  
 3. 有两个动作承受者，**有两个宾语一个直接一个间接**：双及物动词  
 4. 只有一个动作承受者，**有一个宾语但是需要宾补补充信息**：复杂及物动词  
-5. 非“动作”，**用于赋予状态之前是主语之后是主语补语 (表语)**：系动词
+5. 非“动作”，**用于赋予状态，之前是主语，之后是主语补语 (表语)**：系动词
 
 5 种基本句型：  
 ![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-7.png)
@@ -90,13 +90,13 @@ banner_img:
 3. **宾语** （谓语动词动作的承受者）
 4. **宾语补语**
 5. **主语补语**/**表语**
-6. **定语**：相当于一个大 **形容词**，用来修饰 **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。定语前置  
+6. **定语**：相当于一个大 **形容词**，用来修饰和**限定** **名词或代词** 的词或词组，用来描述名词或代词的特征、性质、状态等。定语通常位于被 **修饰的名词或代词前**。定语前置  
 	**The red** car is mine.  
 	She is a **talented** singer （过去分词做定语）talented adj. 有才华的
 
 	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-8.png)
 
-7. **状语**：相当于一个大 **副词**，是用来 **补充说明动词、形容词、或整个句子的词或词组，用来**描述动作的方式、程度、时间、地点**等。 状语可以放在句子不同位置 **
+7. **状语**：相当于一个大 **副词**，是用来 **补充说明动词、形容词、或整个句子的词或词组，用来**描述动作的方式、程度、时间、地点**等。 状语可以放在句子不同位置**  
 	**He speaks** English **fluently**.  
 	I will **go** to the store **tomorrow**.  
 	quickly 修饰谓语动词 ate。吃的快  
@@ -124,7 +124,7 @@ banner_img:
 5. **数词** (numerals)：表数量 I ate tow **carrots**
 6. **副词** (adverbs)：**补充说明 动词、形容词 等** I ate carrots **quickly**. **副词做状语**
 7. **介词** (prepositions)：表示和其他词关系的词 I ate two carrots **with** chopsitcks.
-8. **叹词** (interjections)：表感叹 **Ah**,the carrot is tasty.
+8. **叹词** (interjections)：表感叹 **Ah**,the carrot is tasty. **oops**!
 9. **连词** (conjunctions)：连接词和句 I ate two carrots and a potato,**because** I was hangry.
 10. **动词** (verb)：详见上
 
@@ -190,6 +190,8 @@ banner_img:
 #### 组合总述
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-84.png)  
+
+各种助动词的变位：
 
 - 助动词 **be** 变位：  
 	I **am** | You **are** | he/she/it **is**  
@@ -259,7 +261,7 @@ banner_img:
 3. 现在完成进行时：**对现在而言已经完成但还会继续**。  
 	兔子现在已经吃完了胡萝卜，但还会继续吃。  
 	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-25.png)  
-	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)
+	![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-44.png)  
 	![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-45.png)
 
 4. 现在一般时：对现在而言，没有特别指出的状态，陈述事实  
@@ -450,7 +452,7 @@ demand(要求) suggest(建议) insist (坚持) order (命令) + should + 动词�
 
 **非谓语动词**（非限定动词）：不受主语限制，不被限定的动词，但失去了谓语动词表达时间和人称的本领。
 
-**非谓语动词** 出现在句子剩下的非核心部分。一个简单句只允许出现一个谓语动词。
+**非谓语动词** 出现在句子剩下的非核心部分。一个简单句只允许出现一个**谓语动词**。
 
 #### 动词不定式 infinitive infinite adj. 无限的
 
@@ -762,3 +764,201 @@ be、do、have 做**助动词**时，无意义。做**实义动词**时：be(存
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-158.png)
 
 ## 从句 Clause
+
+大宾语：宾语从句
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-161.png)  
+复杂句：主句 + 从句（充当某种句子成分）
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-162.png)
+
+根据 **从句充当的句子成分** 给从句分类：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-163.png)
+
+根据 **从句充当的词性** 给从句分类：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-167.png)
+
+充当名词（名词性从句）：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-164.png)  
+充当形容词（形容词性从句）**定语从句**：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-165.png)
+
+充当副词（副词性从句）**状语从句**：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-166.png)
+
+### 形容词性从句（定语从句）
+
+为了方便下文统一称为 **定语从句**
+
+对某个人或事物进行描述，具有形容词的性质。
+
+思维方式差别：
+
+中文：形容词（句子）+ 的
+
+中文句子的定语都是 **前置的**
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-168.png)
+
+英文：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-169.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-170.png)
+
+英文从句做定语都是后置的：  
+
+定语充当一个大形容词，补充、修饰、限定名词。
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-171.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-172.png)  
+
+#### 关系词
+
+关系词（引导词）用于引导定语从句：
+
+分成：关系代词、关系副词
+
+##### 关系代词
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-173.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-174.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-175.png)
+
+that vs. which：
+
+先行词是唯一的：that / 先行词多选一：which
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-176.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-177.png)
+
+##### 关系副词
+
+关系词是副词：where,why,when
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-178.png)
+
+关系副词 = 介词 + which
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-179.png)
+
+### 限定性与非限定性定语从句 (形容词从句)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-180.png)  
+非限定，接着补充，作为句子的插入语
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-182.png)
+
+非限定性定语从句做插入语，可以直接去掉，不影响句意。  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-183.png)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-184.png)
+
+### 名词性从句 (充当名词)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-185.png)
+
+#### 主语从句
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-186.png)
+
+从句改为不确定的信息：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-187.png)
+
+Whether,Where,When,How,Who,What 在疑问句中是：疑问代词或者疑问副词
+
+在主语从句中属于连接代词、连接副词：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-188.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-189.png)
+
+将主语从句放在句前，会导致主语很长，句子头重脚轻，可以通过形式主语 it 来改写：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-190.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-191.png)
+
+It is + XXX + that 也涉及到虚拟语气
+
+### 宾语从句
+
+从句在整个复杂句中充当宾语（动作承受者）
+
+#### 确定信息做宾语从句
+
+宾语从句中 that 可选
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-192.png)
+
+#### 不确定信息做宾语从句
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-193.png)
+
+#### 否定加在谓语动词前，而非从句中
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-194.png)
+
+#### 宾语从句要和主句的时态保持一致
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-195.png)
+
+#### Be + 形容词 + that 固定句型
+
+应该属于 **宾语从句**，其中的形容词通常表达某种看法或者判断，而 that 引导的从句相当于 看法/判断。和动作后加承受者很相似，可以做宾语。
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-197.png)
+
+### 表语从句
+
+主 + 系 (be) + 表 (主语补语) 结构
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-198.png)
+
+从句充当表语：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-199.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-200.png)  
+表语从句，系动词不是 be 动词的情况：
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-201.png)
+
+### 同位语从句
+
+同位语：用不同的方式把**同一个概念再说一遍**，用逗号隔开。
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-202.png)
+
+同位语从句：
+
+这样的从句常在句中修饰抽象的名词，因为抽象，才需要用另一种方式再说一遍。
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-203.png)
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-204.png)
+
+同位语从句充当 idea 的宾语，是宾语的同位语  
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-205.png)
+
+### 宾语补语从句
+
+主 + 复杂及物动词 (谓语动词) + 宾语 + 宾语补语
+
+call,make,consider…
+
+![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-206.png)
+
+### 副词从句
+
+00:49:00
+
+[从句\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1XY411J7aG?p=11&vd_source=8b588c19ea4cd636da362bae86b1564a)

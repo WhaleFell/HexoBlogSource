@@ -735,7 +735,7 @@ main(wrap_g)  #调用
 
 > 调用方：**调用委派生成器的客户端代码**；即上面的**main 调用方函数**
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210814184753.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210814184753.png&webp=true)
 
 #### 2. Yield from 的管道传输用法示例
 
@@ -809,15 +809,15 @@ func = parse(100)
 func(100)
 ```
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719211704.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719211704.png&webp=true)
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215011.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215011.png&webp=true)
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215459.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215459.png&webp=true)
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215842.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719215842.png&webp=true)
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719220126.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210719220126.png&webp=true)
 
 ```python
 # 编写闭包函数
@@ -849,28 +849,28 @@ mian()
 
 ### 多个修饰器，从下到上修饰
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720161511.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720161511.png&webp=true)
 
 > **装饰是倒着装的，执行是顺着执行的。**
 
 ### 装饰有参数的函数
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720162540.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720162540.png&webp=true)
 
 > 对不定长参数的传递
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720162754.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720162754.png&webp=true)
 
 ### 装饰有返回值的参数
 
-![image-20210720163327239](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720163328.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720163328.png&webp=true)
 
 ### 通用修饰器
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720164146.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210720164146.png&webp=true)
 
 ### 带参数的修饰器
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818144548.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818144548.png&webp=true)
 
 > 在函数中嵌套闭包函数

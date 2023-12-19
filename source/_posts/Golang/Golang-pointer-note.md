@@ -19,59 +19,59 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 
 ## 指针初步
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-1.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-2.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-3.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-1.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-2.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-3.png&webp=true)
 
 ---
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-7.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-7.png&webp=true)
 
 ## 数组指针
 
 " 首先是一个指针,一个数组的地址."  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-4.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-5.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-4.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-5.png&webp=true)
 
 ## 指针数组
 
 " 首先是一个数组,存储的数据类型是指针."  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-6.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-6.png&webp=true)
 
 ## 函数指针
 
 " 一个指针,指向一个函数的指针."  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-8.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-8.png&webp=true)
 
 ## 指针函数
 
 " 一个函数,该函数的返回值是一个指针."  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-9.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-9.png&webp=true)
 
 ### 普通函数的执行分析
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-10.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-10.png&webp=true)
 
 ### 指针函数的执行分析
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-11.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-11.png&webp=true)
 
 ## 指针作为参数
 
 ### 普通函数的值传递
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-12.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-13.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-12.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-13.png&webp=true)
 
 ### 指针作为参数时的引用传递
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-14.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-15.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-14.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-15.png&webp=true)
 
 ### 应用
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-16.png)  
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-17.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-16.png&webp=true)  
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/pointer-17.png&webp=true)
 
 > 切片本来就是 **引用类型**,**不必传递指针.**
 

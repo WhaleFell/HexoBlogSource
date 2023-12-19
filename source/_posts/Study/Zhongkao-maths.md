@@ -23,13 +23,13 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 > **数学最后一题，深圳 18 年高三一模原题**
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023311.jpeg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023311.jpeg&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023333.jpeg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023333.jpeg&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023357.jpeg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023357.jpeg&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023434.jpeg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629023434.jpeg&webp=true)
 
 ---
 
@@ -102,40 +102,40 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 ## **2021** 年 **广东中考数学** (**今年**) 题目 + 解析
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015828.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015828.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015859.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015859.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015950.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015950.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020000.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020000.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020011.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020011.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020026.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020026.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020045.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020045.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020057.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020057.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020109.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020109.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020123.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020123.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020134.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020134.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020207.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020207.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020229.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020229.png&webp=true)
 
-![img](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020320.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629020320.png&webp=true)
 
 > 附: **2020**年 **广东中考数学** (去年的,对比一下)
 
-![第1页(共4页)](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014918.jpg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014918.jpg&webp=true)
 
-![第2页(共4页)](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014936.jpg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014936.jpg&webp=true)
 
-![第3页(共4页)](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015036.jpg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015036.jpg&webp=true)
 
-![第4页(共4页)](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015051.jpeg)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629015051.jpeg&webp=true)

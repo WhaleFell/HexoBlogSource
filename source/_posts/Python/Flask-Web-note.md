@@ -13,7 +13,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 # Flask Web 框架学习笔记
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png&webp=true)
 
 ## 1. Flask 初始化参数
 
@@ -322,11 +322,11 @@ def index():
  | |---- views.py
 ```
 
-![蓝图包目录实例](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224412.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224412.png&webp=true)
 
 #### 循环引用问题
 
-![循环引用问题](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224744.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210725224744.png&webp=true)
 
 > 所以导入视图函数要放在 `__init__.py` 文件的最后
 

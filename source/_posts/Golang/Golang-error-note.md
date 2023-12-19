@@ -64,7 +64,7 @@ type error interface {
 
 > `fmt.Println(err)` 会在内部执行 Error() 方法,返回错误的字符串信息.
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-1.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-1.png&webp=true)
 
 ### 从错误中获取更多信息
 
@@ -72,11 +72,11 @@ type error interface {
 
 #### 使用 `struct` 类型属性
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-4.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-4.png&webp=true)
 
 #### 调用 `struct` 类型的方法
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-5.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-5.png&webp=true)
 
 #### 直接比较
 
@@ -103,13 +103,13 @@ func main() {
 
 ### 1. 通过 `errors.New("描述")`
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-2.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-2.png&webp=true)
 
 ### 2. 通过 `fmt.Errorf()`
 
 也可以使用 `fmt.Errorf()` 输出的错误更详细,支持格式化输出错误.
 
-![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-3.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/error-3.png&webp=true)
 
 ### 3. 定义错误
 

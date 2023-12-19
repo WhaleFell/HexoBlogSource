@@ -32,7 +32,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 
 `Global GOPATH` 可以弄一个公共项目，以后就把第三方的包直接装到这里，就可以**自动**在你的项目里引用了。
 
-![GOPATH 设置](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-1.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-1.png&webp=true)
 
 ## 引用包
 
@@ -44,7 +44,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 | | |____main.go
 ```
 
-![引用自己写的包](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-2.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-2.png&webp=true)
 
 ### 注意点
 
@@ -55,7 +55,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 
 ### 引用第三方项目
 
-![引入第三方项目](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-3.png)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Golang-project-gomod-3.png&webp=true)
 
 ## Go mod 包管理工具
 

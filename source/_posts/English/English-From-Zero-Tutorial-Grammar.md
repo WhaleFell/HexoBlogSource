@@ -1273,3 +1273,174 @@ by + 动作执行者
 与时态、情态动词等结合的复杂被动语态：
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-317.png&webp=true)
+
+## 名词
+
+分为专有名词和普通名词
+
+单数名词和复数名词
+
+可数名词和不可数名词
+
+### 名词所有格
+
+#### 名词宾格主格
+
+格：为了反映某个词在句中的语法功能，“主格”在句子充当主语，“宾格”在句子充当宾语。
+
+Rabbit 充当主语，用主格加 “s”; carrot 充当宾语，用宾格加 “s”.
+
+![](English-From-Zero-Tutorial-Grammar-318.png)
+
+#### 名词所有格
+
+'s 在有生命的人或动物之后表所有权
+
+所有格，通常表示所有、所属关系而存在的：
+
+![](English-From-Zero-Tutorial-Grammar-319.png)
+
+表示共有：
+
+![](English-From-Zero-Tutorial-Grammar-320.png)
+
+表示各自：
+
+![](English-From-Zero-Tutorial-Grammar-321.png)
+
+![](English-From-Zero-Tutorial-Grammar-322.png)
+
+of 构成所有格，用来描述所修饰名词的性质特征，只是顺序要颠倒一下：
+
+![](English-From-Zero-Tutorial-Grammar-323.png)
+
+### 双重所有格
+
+a photo of Michael's. M 拥有的照片中的一张  
+a photo of Michael. M 出镜的照片之一
+
+## 代词
+
+pro(代替)|noun(名词) 替代名词的词
+
+### 人称代词
+
+人称代词的格：
+
+![](English-From-Zero-Tutorial-Grammar-325.png)
+
+人称代词主格宾格：
+
+![](English-From-Zero-Tutorial-Grammar-326.png)  
+常见疑问
+
+![](English-From-Zero-Tutorial-Grammar-327.png)
+
+### 物主代词
+
+my：形容词性物主代词，充当一个形容词的作用：
+
+![](English-From-Zero-Tutorial-Grammar-328.png)
+
+mine：名词性物主代词，代表 my carrot：
+
+![](English-From-Zero-Tutorial-Grammar-329.png)
+
+总表：
+
+![](English-From-Zero-Tutorial-Grammar-330.png)
+
+### 反身代词
+
+![](English-From-Zero-Tutorial-Grammar-331.png)
+
+### 强调代词
+
+![](English-From-Zero-Tutorial-Grammar-332.png)
+
+### 相互代词
+
+We should help **each other**.
+
+each other：两者之间  
+one another 三者之间/三者以上之间
+
+### 指示代词
+
+this these that those：
+
+![](English-From-Zero-Tutorial-Grammar-334.png)
+
+### 不定代词
+
+1. many;much 许多很多  
+	many + 可数名词的复数  
+	much + 不可数名词
+
+2. few little  
+	![](English-From-Zero-Tutorial-Grammar-335.png)  
+	![](English-From-Zero-Tutorial-Grammar-336.png)
+
+3. some(肯定句) any(否定句)  
+	![](English-From-Zero-Tutorial-Grammar-337.png)
+
+4. each every 表示每，后接**单数**  
+	![](English-From-Zero-Tutorial-Grammar-338.png)  
+	![](English-From-Zero-Tutorial-Grammar-339.png)  
+	each 两个以上的每一个 every 3 个以上的每一个  
+	![](English-From-Zero-Tutorial-Grammar-340.png)
+5. either 两者中的每一个 neither 两者中的每一个**都不**  
+	**谓语用单数形式**
+
+	![](English-From-Zero-Tutorial-Grammar-341.png)
+
+6. both all 都 全部  
+	做主语，谓语动词都要用复数  
+	![](English-From-Zero-Tutorial-Grammar-342.png)
+
+7. other / the other / another 另外的，另一个  
+	![](English-From-Zero-Tutorial-Grammar-343.png)
+8. 复合不定代词  
+	![](English-From-Zero-Tutorial-Grammar-344.png)  
+	![](English-From-Zero-Tutorial-Grammar-345.png)
+
+### 疑问代词
+
+什么、谁、什么时候…
+
+  ![](English-From-Zero-Tutorial-Grammar-346.png)  
+  ![](English-From-Zero-Tutorial-Grammar-347.png)
+
+### 连接代词
+
+引导主语从句、宾语从句、表语从句
+
+![](English-From-Zero-Tutorial-Grammar-348.png)
+
+who+ever 表示 “任何、一切” 的意思，起强调作用：
+
+The rabbit wants to eat whatever he likes.  
+兔子想吃他喜欢的任何东西
+
+### 关系代词
+
+关系代词专用于定语从句（补充说明名词，充当一个大形容词）
+
+![](English-From-Zero-Tutorial-Grammar-349.png)
+
+## 副词
+
+副词修饰**动词**(形容词)，起 **状语** 限定句子谓语动词状态的作用
+
+### 副词的用法
+
+![](English-From-Zero-Tutorial-Grammar-350.png)
+
+![](English-From-Zero-Tutorial-Grammar-351.png)
+
+副词修饰句子：
+
+![](English-From-Zero-Tutorial-Grammar-352.png)
+副词修饰的词性：
+
+![](English-From-Zero-Tutorial-Grammar-353.png)

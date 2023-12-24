@@ -137,7 +137,7 @@ banner_img:
 		history n. 历史 => historic**al** adj. 历史的 person n. 人 => person**al** adj. 个人的  
 		influence n. 影响 => influent**ial** adj. 有影响的  
 		race n. 种族 => rac**ial** adj. 种族的 spec**ial** adj. 特别的  
-		nation n. 国家 => national adj. 国际的
+		nation n. 国家 => nation**al** adj. 国际的
 
 	4. `-ous[ə]`  
 		humor n. 幽默 => humor**ous** adj. 幽默的  

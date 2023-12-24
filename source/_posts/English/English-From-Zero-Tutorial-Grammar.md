@@ -1440,7 +1440,40 @@ The rabbit wants to eat whatever he likes.
 
 副词修饰句子：
 
-![](English-From-Zero-Tutorial-Grammar-352.png)
+![](English-From-Zero-Tutorial-Grammar-352.png)  
 副词修饰的词性：
 
 ![](English-From-Zero-Tutorial-Grammar-353.png)
+
+## 冠词
+
+a an the 
+
+![](English-From-Zero-Tutorial-Grammar-354.png)
+
+### 不定冠词 a/an
+
+看单词开头时候为 **元音音素** 例如：  
+a university / an hour.
+
+![](English-From-Zero-Tutorial-Grammar-355.png)
+
+#### 泛指用法
+
+不定冠词最重要的用法是泛指某一个人或物。
+
+![](English-From-Zero-Tutorial-Grammar-356.png)
+
+泛指某一类人的情况：
+
+![](English-From-Zero-Tutorial-Grammar-357.png)
+
+#### 表示数字1
+
+![](English-From-Zero-Tutorial-Grammar-358.png)
+
+#### 主谓一致
+
+不定冠词还能影响主语的单复数。
+
+[冠词\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1XY411J7aG?p=12&vd_source=8b588c19ea4cd636da362bae86b1564a)

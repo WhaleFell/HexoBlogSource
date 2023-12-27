@@ -13,7 +13,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Li
 
 # Linux Operation Note
 
-​[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png&webp=true)​
+​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png&webp=true)​
 
 ## 硬盘操作
 

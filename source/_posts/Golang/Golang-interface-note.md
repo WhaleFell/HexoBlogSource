@@ -23,7 +23,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 
 ## 图示
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-1.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-1.png&webp=true)
 
 ## 示例
 
@@ -40,9 +40,9 @@ rwc = os.Stdout // OK: *os.File has Read, Write, Close methods
 rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 ```
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-2.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-4.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-3.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-2.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-4.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-3.png&webp=true)
 
 > Go 语言中接口和类型的实现方式是 **非侵入式** 的,接口定义的方法没有具体代码.
 
@@ -52,7 +52,7 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 
 " 一个事物的多种形态 "
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-5.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-5.png&webp=true)
 
 就一个接口的实现:
 
@@ -71,17 +71,17 @@ rwc = new(bytes.Buffer) // compile error: *bytes.Buffer lacks Close method
 ## 空接口
 
 `interface{}` 不包含任何的方法,所以**任何类型都是空接口的实现类**,因此空接口可以储存任何类型的数值.  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-7.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-7.png&webp=true)
 
 ### 空接口定义任意类型的数据
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-6.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-6.png&webp=true)
 
 ### 空接口作为函数的参数
 
 表示函数的参数可以是任意类型,相当于 Python 的 `typing.Any`
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-8.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-8.png&webp=true)  
 `fmt` 包就是应用了空接口,可以传入任何参数.  
 `fmt` 包下的 `Print` 系列函数:
 
@@ -93,26 +93,26 @@ func Println(a ...interface{}) (n int,err error)
 
 ### 复合数据结构使用空接口
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-9.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-10.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-9.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-10.png&webp=true)
 
 ## 接口嵌套
 
 接口允许多继承.
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-11.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-11.png&webp=true)
 
 如果 Cat 想实现接口 C,不仅要实现接口 C 自己的方法,还要实现接口 C 继承的接口 A B 中的方法.
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-12.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-13.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/insterface-14.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-12.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-13.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/insterface-14.png&webp=true)
 
 ## 接口断言
 
 前面说过，因为空接口 `interface` 没有定义任何函数，因此 `Go` 中 **所有类型都实现了空接口**。当一个函数的形参是 `interface{}` ，那么在函数中，需要对形参 **进行断言**，从而 **得到它的真实类型**。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-15.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-15.png&webp=true)
 
 方法一: 通过 `x.(T)` 的方式断言
 
@@ -167,7 +167,7 @@ func writeString(w io.Writer, s string) (n int, err error) {
 
 **如果断言操作的对象是一个 nil 接口值**，那么不论被断言的类型是什么这个类型断言都会失败。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-16.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-16.png&webp=true)
 
 ```go
 var w io.Writer = os.Stdout
@@ -202,13 +202,13 @@ switch x := x.(type) {
 }
 ```
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-17.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/interface-17.png&webp=true)
 
 ## 接口值
 
 接口值由两部分组成：一个具体的类型（type）和这个类型的值（value）。**接口是动态类型。**一个接口值可以持有任意大的动态值。实现了这个接口的类型都可以赋值这个接口。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229121130.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229121130.png&webp=true)
 
 定义一个 nil 接口：
 
@@ -228,7 +228,7 @@ io.Writer(os.Stdout)
 
 接口的 value 持有 `os.Stdout` 的拷贝，这是一个代表处理标准输出的 `os.File` 类型的指针。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229122508.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229122508.png&webp=true)
 
 调用一个包含 `*os.File` 类型指针的接口值的 `Write` 方法，得 `(*os.File).Write` 方法被调用。这个调用输出 “hello”。
 
@@ -252,11 +252,11 @@ fmt.Printf("%T\n", w) // "*bytes.Buffer"
 
 一个不包含任何值的 nil 接口值：
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229121130.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229121130.png&webp=true)
 
 一个刚好包含 nil 指针的接口值：
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229123705.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20221229123705.png&webp=true)
 
 ```go
 var w io.Writer

@@ -11,7 +11,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/20
 
 # 【科普向】如何在 China 轻松免费使用 ChatGPT
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307241743871.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307241743871.png&webp=true)
 
 ## Start
 
@@ -19,7 +19,7 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 众所周知，**China Gov** 因为一些原因将 ChatGPT 拒之门外，宛如当年满清慈禧太后将西人的蒸汽机车拒之国门外的场景，十分讽刺。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-chixitaihou.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-chixitaihou.png&webp=true)
 
 > 据记载，1888年清朝政府在北京西苑修建了一条铁路，慈禧太后因火车司机坐在自己前面开车，弃用了从德国引进的蒸汽机车而改用太监牵拉。——《全球通史》
 
@@ -39,11 +39,11 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 （国内网络打开 GitHub 链接缓慢）
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-github-free-gpt-repo.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-github-free-gpt-repo.png&webp=true)
 
 下面是一些网站的 URL，**请注意时效性**。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-url.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-url.png&webp=true)
 
 ### 自用
 
@@ -51,7 +51,7 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 笔者自用的是 [EasyGPT地址发布页](https://site.easygpt.work/) 用了几个月比较稳定，3.5 模型也是免费的，点进去就会出现一个 EasyGPT 的导航页，挑一个延时小的使用。如果一个网址不可使用，返回引导页再尝试另一个。若服务完全不可用，请尝试下文提供的 GitHub 镜像网址合集。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-index.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/how-to-ues-free-ChatGPT-in-China-index.png&webp=true)
 
 **WAN**: 使用第三方 ChatGPT 国内套壳服务时 **请勿提交敏感信息**，网站运营者 **会查看的到你提交的任何内容**. 若提交一些 **NSFW** (NOT SEE FOR WORK) 及一些涉政的内容，**网站运营者可能会把你的 IP 地址提交给网安国保之类的机构，请鼠鼠们注意！**
 

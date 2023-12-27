@@ -32,26 +32,26 @@ fmt.Println(hypot(3,4)) // "5"
 
 Go 使用控制流机制（如 if 和 return）处理异常，这使得编码人员能更多的关注错误处理。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-2.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-2.png&webp=true)
 
 ## 函数调用过程
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-1.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-3.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-4.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-1.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-3.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-4.png&webp=true)
 
 ## 函数的参数使用
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-5.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-5.png&webp=true)
 
 ## 实参和形参
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-6.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-6.png&webp=true)
 
 ## 函数传参
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-7.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-8.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-7.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-8.png&webp=true)
 
 ## 可变参数
 
@@ -70,31 +70,31 @@ values := []int{1, 2, 3, 4}
 fmt.Println(sum(values...)) // "10"
 ```
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-9.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-10.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-9.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-10.png&webp=true)
 
 ## 参数传递
 
 实参通过值的方式传递，因此函数的 **形参是实参的拷贝** 。对形参进行修改不会影响实参。但是，如果实参包括 **引用类型**，如指针，slice(切片)、map、function、channel 等类型，实参可能会由于函数的间接引用被修改。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-13.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-13.png&webp=true)
 
 ### 参数的值传递
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-11.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-11.png&webp=true)
 
 ### 参数的引用传递
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-12.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-12.png&webp=true)
 
 ## 函数的返回值
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-17.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-17.png&webp=true)
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-14.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-15.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-14.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-15.png&webp=true)
 
 > 在定义参数返回值的时候已经初始化了.
 
@@ -102,11 +102,11 @@ fmt.Println(sum(values...)) // "10"
 
 如果一个函数将所有的返回值都显示的变量名，那么该函数的 return 语句可以省略操作数。这称之为 bare return。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-16.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-16.png&webp=true)
 
 ### Return 语句
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-18.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-18.png&webp=true)  
 `return` 语句：词义 " 返回 "
 
 1. 一个函数有返回值，那么使用 return 将返回值返回给调用处
@@ -121,13 +121,13 @@ fmt.Println(sum(values...)) // "10"
 
 ## 函数中变量的作用域
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-19.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-19.png&webp=true)
 
 > 随着函数的结束,函数内的变量自己会销毁.
 
 ### 全局变量和局部变量
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-20.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-20.png&webp=true)
 
 > 全局变量 **不支持简短定义的写法**
 >
@@ -138,13 +138,13 @@ fmt.Println(sum(values...)) // "10"
 
 ## 递归函数
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-21.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-22.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-21.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-22.png&webp=true)
 
 递归函数实现 fibonacci 数列 (斐波那契数列)
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-23.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-24.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-23.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-24.png&webp=true)
 
 ## defer(延迟函数)
 
@@ -278,12 +278,12 @@ panic(bailout{})
 
 ### 栈的结构 (先进后出!后进先出!)
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-25.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-25.png&webp=true)  
 当一个函数有多个延迟调用时，它们被添加到一  
 个堆栈中，并 Last In First Out(LIFO) **先进后出!后进先出!** 的顺序中执行。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-26.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-27.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-26.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-27.png&webp=true)
 
 ### Defer 注意点
 
@@ -313,23 +313,23 @@ fmt.Println(strings.Map(add1, "Admix")) // "Benjy"
 函数的类型：  
 `func(参数列表的数据类型)(返回值列表的数据类型)`
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-31.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-31.png&webp=true)
 
 ### 基本类型回顾
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-28.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-28.png&webp=true)
 
 ## 函数的本质
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-30.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-30.png&webp=true)
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-29.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-29.png&webp=true)
 
 > " 说到底,函数也是一种特殊类型的变量."
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-32.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-32.png&webp=true)
 
 ## 匿名函数
 
@@ -368,23 +368,23 @@ func main() {
 }
 ```
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-36.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-36.png&webp=true)
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-34.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-35.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-34.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-35.png&webp=true)
 
 ## 回调函数
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-41.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-41.png&webp=true)
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-37.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-38.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-39.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-40.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-37.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-38.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-39.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-40.png&webp=true)
 
 ## 闭包
 
@@ -419,9 +419,9 @@ fmt.Println(strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")) // 使�
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-43.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-42.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-44.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-43.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-42.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/func-44.png&webp=true)
 
 ## 捕获迭代变量
 

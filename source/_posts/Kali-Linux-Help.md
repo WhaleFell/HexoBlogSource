@@ -11,7 +11,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 ---
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg&webp=true)
 
 # Kali Linux 漏洞审计 批量扫描 弱密码撞库 教程
 

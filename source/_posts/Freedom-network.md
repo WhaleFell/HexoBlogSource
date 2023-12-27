@@ -13,23 +13,23 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Fr
 
 # 自由上网指北——21 世纪网民天赋的权力
 
-​[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-banner.png&webp=true)​
+​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-banner.png&webp=true)​
 
 {% note warning WARNING %}  
 WARNING：本文可能随时遭到来自 **中国当局** 方面的审查，对此，您需要清楚知悉文章内部分敏感词的代替表达方式。  
 {% endnote %}
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-Network-1.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-Network-1.png&webp=true)
 
 法律依据：[中华人民共和国宪法——保障公民互联网言论自由](http://www.scio.gov.cn/ztk/dtzt/28/6/Document/661401/661401.htm)
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-2.jpeg&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-2.jpeg&webp=true)
 
 ## 前言
 
 自由上网，在种花家指得是 FQ ，等突破网络审查或突破网络封锁的手段。由于少数国家实行了高强度的网络审查，使得一些国际网站及软件遭到政府或组织的**结构性屏蔽**。比如 in China 你可能会发现 Stream 上的游戏怎么下载不动呢？GitHub 怎么打不开呢？YouTube 怎么上不了呢？这都是 ZF 对网络进行屏蔽的结果。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-4.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-4.png&webp=true)
 
 但互联网的 **分布式设计** 从体系上使得任何一个政府或组织完全控制互联网极其困难。俗话说：“ **你有张良计，我有过墙梯！** ”各种 FQ 软件被热爱自由的工程师设计了出来。
 
@@ -69,7 +69,7 @@ FQ 对于个人而言是十分重要的，您可以第一时间知道世界上�
 
 安装上面下载的 apk 文件，打开后点击左上角进行设置
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-5.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-5.png&webp=true)
 
 VPN 设置 -> 启动本地 DNS
 
@@ -77,11 +77,11 @@ VPN 设置 -> 启动本地 DNS
 
 预定义规则 -> 绕过局域网及大陆地址而后代理
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-6.jpg&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-6.jpg&webp=true)
 
 设置好后回到首页选择订阅分组设置
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-7.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-7.png&webp=true)
 
 点击加号添加订阅然后保存，如果你是我的朋友或者同学，可以问我白嫖订阅地址。
 
@@ -89,7 +89,7 @@ VPN 设置 -> 启动本地 DNS
 
 然后再选择测试 **全部配置真链接**，选择延迟较低的节点，然后点击右下角的 V 图标就会建立 VPN 连接。
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-7.jpg&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Freedom-network-7.jpg&webp=true)
 
 #### 测试
 

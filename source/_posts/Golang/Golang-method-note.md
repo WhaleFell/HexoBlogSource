@@ -46,7 +46,7 @@ func (接收者) 方法名(参数列表)(返回值列表){
 
 ### 接收者为一个值
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-1.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-1.png&webp=true)
 
 ### 接收者为一个指针
 
@@ -68,8 +68,8 @@ type P *int
 func (P) f() { /* ... */ } // compile error: invalid receiver type
 ```
 
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-2.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-3.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-2.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-3.png&webp=true)
 
 ### 注意点
 
@@ -100,6 +100,6 @@ func (c *Counter) Reset() { c.n = 0 }
 ### 示例
 
 `method` 是可以继承的，如果匿名字段实现了一个 `method`,那么包含这个匿名字段的 `struct` 也能调用该 `method`  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-4.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-5.png&webp=true)  
-[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-6.png&webp=true)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-4.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-5.png&webp=true)  
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/method-6.png&webp=true)

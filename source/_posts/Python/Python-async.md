@@ -12,7 +12,7 @@ excerpt: Python 异步百万并发全文最详细笔记！！
 
 ---
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-Asyncio-banner.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-Asyncio-banner.png&webp=true)
 
 # Python Asyncio 异步协程百万并发
 

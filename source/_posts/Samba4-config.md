@@ -12,7 +12,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Sm
 
 # Samba4 服务器配置最佳实践
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Smb-banner.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Smb-banner.png&webp=true)
 
 ## 具体配置文件
 

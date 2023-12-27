@@ -16,17 +16,17 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 ## GUI Tkinter 框架结构
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162742.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162742.png&webp=true)
 
 ## 常用组件汇总列表
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162352.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162352.png&webp=true)
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162631.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704162631.png&webp=true)
 
 ## 面向对象的方式写 GUI 框架的经典实例
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704170311.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704170311.png&webp=true)
 
 ### 具体实现代码
 
@@ -101,29 +101,29 @@ if __name__ == "__main__":
 
 ## Label ( 标签 ) 用法
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193103.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193103.png&webp=true)
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193502.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704193502.png&webp=true)
 
 ## 组件 Option 选项设置
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704203439.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210704203439.png&webp=true)
 
 ### 选项大全
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220646.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220646.png&webp=true)
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220636.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705220636.png&webp=true)
 
 ## Button Anchor 位置控制
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705221052.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705221052.png&webp=true)
 
 ## Entry StrinngVar 输入框
 
 > 输入框接收变量的类型
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705223051.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210705223051.png&webp=true)
 
 属性的双向关联
 

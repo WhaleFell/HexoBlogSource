@@ -21,7 +21,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
   查询硬盘状态: `sudo fdisk -l`
 
-  ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153119.png&webp=true)
+  [image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153119.png&webp=true)
 
 ```shell
 sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更改 
@@ -44,7 +44,7 @@ mount /dev/sda1 /home/pi/disk -o utf8,uid=1000,gid=1000,umask=000 -t vfat
 
 - 重启 ，不出意外的话开机 应该 会自动挂载，且有写权限，用户是 pi：如图挂载至 `/home/pi/disk` 目录，有**777 权限**
 
-  ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153142.png&webp=true)
+  [image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153142.png&webp=true)
 
 ## 2.部署 Aria2 离线下载器
 
@@ -143,7 +143,7 @@ sudo apt-get install nginx
   > 到 [**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
   >
 
-  ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153158.png&webp=true)
+  [image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153158.png&webp=true)
 
   **把源码克隆到** `/website/AriaNg/`：
 
@@ -194,6 +194,6 @@ sudo systemctl restart nginx
 ```
 
 - 尝试访问 [http://树莓派ip/aria2](http://%E6%A0%91%E8%8E%93%E6%B4%BEip/aria2) ，**设置参数**
-- ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153219.png&webp=true)
+- [image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153219.png&webp=true)
 
-![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153228.png&webp=true)
+[image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153228.png&webp=true)

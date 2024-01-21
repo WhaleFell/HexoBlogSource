@@ -13,10 +13,13 @@ banner_img:
 
 因为在学习 Vue Framework 的过程中，碰到了很多 TypeScript 之类的知识和语法以及 Vue 源码也是通过 ts 写的，所以有必要去了解一下 TypeScript 这个语言语法。
 
-reference: [TypeScript 教程 | 菜鸟教程](https://www.runoob.com/typescript/ts-tutorial.html)
+reference:
 
-最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)
-[阮一峰](https://www.ruanyifeng.com/) ES6 入门教程：[ES6 入门教程](https://es6.ruanyifeng.com/#docs/class)
+1. [TypeScript 教程 | 菜鸟教程](https://www.runoob.com/typescript/ts-tutorial.html)
+2. 最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)  
+3. [阮一峰](https://www.ruanyifeng.com/) ES6 入门教程：[ES6 入门教程](https://es6.ruanyifeng.com/#docs/class)
+4. 2024/1/21 更：最近又发现一个宝藏 up 主的视频 **小满 zc**：[小满zc自残 TypeScript 基础教程全集（完结）](https://www.bilibili.com/video/BV1wR4y1377K)
+---
 
 1. TypeScript ==> JavaScript 的一个 **超集**，支持 ECMAScript 6 标准
 2. TypeScript 由 **微软** 爸爸开发。
@@ -50,6 +53,13 @@ node main.js # 执行编译完成的 JS 文件
 ```
 
 TypeScript ==> TypeScript Compiler ==> JavaScript
+
+安装 `ts-node` 可以直接运行 ts 文件
+
+```shell
+npm install ts-node -g
+ts-node index.ts
+```
 
 ## 数据类型
 
@@ -88,7 +98,137 @@ x = undefined;    // 编译正确
 x = null;    // 编译正确
 ```
 
-## 各种循环 loop
+### 数据类型的层级关系
+
+1. 顶级类型 (top type) ：any unknown (**unknown 只能赋值给自身或者 Any 且如果赋值给对象不能读取其 attr**)
+2. Object 所有对象的基类
+3. Number String Boolean 对象
+4. number string boolean (instantiation object 实例化对象)
+
+### Object 和 object
+
+object 表示引用类型，常用于**泛型约束**。
+
+```javascript
+// Object 是 TS 中的基类，任何类型都可以是一个 Object 常常用于泛型约束
+a: Object = "123"
+a: Object = {"age":"12"}
+// 也可以用 {} 空对象表示
+a: {} = "123"
+// {} 类型不可更改，少用为好
+
+// object 只能用于引用类型不能用于原始类型
+a: object = "2121" // error:string not reference object
+a: object = [12,12,1,2] // correct list is reference object
+```
+
+### 数组类型 array
+
+```javascript
+let arr: number[] = [1,2,3,4]
+// 使用泛型约束
+let array: Array<boolean> = [true, false]
+// 定义多维数组
+let arr: number[][] = [[1], [2], [3]]
+let arr: Array<Array<number>> = [[1], [2], [3]]
+
+// es6 多参数
+function mutil(...args:any[]) {
+	console.log(args)
+}
+```
+
+在函数内部有一个特殊的 value —— **arguments**，用于记录传入参数的列表，但不是一个常规的 array 类型。
+
+```javascript
+function func(...args){
+	console.log(arguments)
+	let a: IArguments = arguments
+}
+// arguments 其实是一个 object 内部实现了这样一个 interface:
+
+interface Arguments {
+	callee: Function
+	length: number
+	[index:number]: any
+}
+
+```
+
+### 联合类型 类型断言 交叉类型
+
+联合类型
+
+```javascript
+let phone: number | string = "020-12123"
+
+let fn = function (type: number | boolean):boolean {
+	return !!type // 将类型强行转成 boolean 类型，比如 0=>false 1=>true
+}
+```
+
+交叉类型
+
+```javascript
+interface Pople {
+	name: string
+	age: number
+}
+
+// Man 继承自 Pople
+interface Man extands Pople {
+	sex: number | string
+}
+
+// 使用 &
+const wf = (man: Pople & Man):void => {
+	console.log(man);
+}
+ 
+wf({"name":"hyy", age:18, sex: "famale"})
+```
+
+**类型断言**：在联合类型的参数中，用 as 指明是哪个类型。类型断言只能欺骗 ts 的 **静态类型检查**，以编译成功，但无法规避运行时的类型错误。
+
+```javascript
+let fn = function (num: number | string):void {
+	console.log((num as string).length)
+	// another way...
+	console.log(<string>num.length)
+}
+fn("1234")
+
+// 任何东西都可以断言成 any 类型
+(windows as any).adc = 123
+```
+
+### TS 内置对象
+
+JavaScript 中有很多内置对象，它们可以直接在 TypeScript 中当作定义好的类型。
+
+```javascript
+// new 实例化一个对象，返回的值的类型就是这个对象
+let num: Number = new Number(1)
+let xhr: XMLHttpRequest = new XMLHttpRequest()
+
+// HTML(Input)Element
+let div = document.querySelector('footer') as HTMLElement
+// 选择的 HTML dom 元素不确定时
+let div: NodeListOf<HTMLDivElement | HTMLElement> =  document.querySelectorALL('div')
+
+// browser 里面的类型
+let local: Storage = localStorage
+let lo:Location = location
+let promise:Promise<string> = new Promise((r) => r("WF"))
+promise.than(res=>{
+	res.replace()
+})
+
+// Math 数学运算 Math.random() 生成 0-1 的随机数
+Math.floor( (Math.random()*100) / screen.width)
+```
+
+## 流程控制
 
 TypeScript 还支持 for…of 、forEach、every 和 some 循环。
 
@@ -163,11 +303,51 @@ console.log(foo(100))      //输出结果为 110
 
 ```
 
+**ts 可以定义 object 内 this 的类型**，但在 origin JS 中无法使用，必须是 method 的第一个参数定义 this 的类型，传参时不用传 this ，和 Python 中 class 的 self 一样。
+
+```javascript
+interface Obj{
+	user: number[]
+	add: (this: Obj, num: number) => void
+}
+
+let obj: Obj = {
+	user: [1, 2, 3]
+	add(this: Obj, num: number) {
+		this.user.push(num)
+	}
+}
+```
+
+**函数重载**：重载函数传入和返回的数据类型，在**实现函数**内部判断所属的类型进行操作
+
+```typescript
+let user:number[] = [1, 2, 3]
+
+functuon findNum():number[] // 如果没有传入东西就是全部
+function findNum(id: number):number[] // 如果传入了 id 就是单个查询
+function findNum(ids?:number | number[]):number[]{
+	// 实现函数
+	if (typeof ids == 'number'){ // 判断传入了一个 id
+		return user.filter(v => v==ids) // array filter 返回符合 true 的数组
+	} eles if (Array.isArray(ids)) { // 判断传入了一个 array
+		user.push(...ids)
+		return user
+	} eles { // 判断什么都没传入
+		return user
+	}
+}
+```
+
 ## Interface 接口
 
 对象实现接口。类是对象的构造器。
 
 与 Golang 接口的概念一样，接口是 **method** 和 **attribute** 的集合，需要有对应的类去实现，如果类实现了接口中的所有 methods 就可以说这个类实现了这个接口。
+
+**interface 接口来实现一种约束**，让 对象/类 的结构满足约束的格式。
+
+interface 接口命名**第一个字母要大写**。
 
 ```typescript
 interface IPerson { 
@@ -196,6 +376,8 @@ interface RunOptions {
     program:string; 
     // commandline 可以是一个 字符串列表，可以是一个字符串，也可以是一个 return 字符串的函数
     commandline:string[]|string|(()=>string); 
+    // 只读
+    readonly callback: ()=>boolean
 } 
  
 // commandline 是字符串
@@ -214,7 +396,7 @@ var fn:any = options.commandline;
 console.log(fn());
 ```
 
-接口中可以为数组的 index 和 content 设置类型
+**索引签名**：接口中可以为数组的 index 和 content 设置类型
 
 ```typescript
 interface ages { 
@@ -227,6 +409,16 @@ agelist["runoob"] = 15
  
 // 类型错误，输出  error TS2322: Type '"google"' is not assignable to type 'number'.
 // agelist[2] = "google"
+```
+
+可选的值加 `?`
+
+```javascript
+interface Animal {
+	name: string
+	age: number
+	type?: string
+}
 ```
 
 ### 接口继承
@@ -266,6 +458,18 @@ var Iobj:Child = { v1:12, v2:23}
 console.log("value 1: "+Iobj.v1+" value 2: "+Iobj.v2)
 ```
 
+### Interface 接口定义函数类型
+
+```javascript
+interface Fn {
+	(name: string):number[]
+}
+
+const fn:Fn = function (name: string){
+	return [1,2,3]
+}
+```
+
 ## Class 类
 
 Class 类是对象的构造器：与 JS 的使用方法相同
@@ -282,7 +486,7 @@ class Car {
    
    // 方法
    disp():void { 
-      console.log("函数中显示发动机型号  :   "+this.engine) 
+      console.log("函数中显示发动机型号:"+this.engine) 
    } 
 } 
  
@@ -290,7 +494,7 @@ class Car {
 var obj = new Car("XXSY1")
  
 // 访问字段
-console.log("读取发动机型号 :  "+obj.engine)  
+console.log("读取发动机型号:"+obj.engine)  
  
 // 访问方法
 obj.disp()
@@ -399,6 +603,127 @@ var obj = new AgriLoan(10,1)
 console.log("利润为 : "+obj.interest+"，抽成为 : "+obj.rebate )
 ```
 
+### 实现一个 Vue Virtual Dom 虚拟 DOM
+
+```typescript
+// // 1. class 的基本用法，继承和类型约束 implements
+// // 2. class 的修饰符 public private protected readonly static
+// // 3. super() 调用父类的构造函数
+// // 4. static 静态属性和方法
+// // 5. getter 和 setter
+// // private 只能在类的内部访问，子类和实例化类也不能访问
+// // protected 只能在类的内部和子类中访问，实例化类不能访问
+
+interface Options {
+    el: string | HTMLElement
+}
+
+interface VueCls {
+    options: Options
+    init(): void
+}
+
+interface Vnode {
+    tag: string
+    text?: string
+    children?: Vnode[]
+}
+
+// virtual dom 虚拟 DOM 简单实现
+
+class Dom {
+    constructor() {
+        console.log("Dom constructor")
+    }
+
+    // 静态方法 只能通过 Dom.version() 调用
+    static version() {
+        return "0.0.1"
+    }
+
+    // 创建元素
+    private createElement(el: string): HTMLElement {
+        return document.createElement(el)
+    }
+    // 填充文本
+    private setText(el: HTMLElement, text: string | null): void {
+        el.textContent = text
+    }
+    // 渲染函数
+    protected render(data: Vnode): HTMLElement {
+        let root = this.createElement(data.tag)
+        if (data.children && Array.isArray(data.children)) {
+            data.children.forEach((item) => {
+                let child = this.render(item) // 递归渲染子节点
+                root.appendChild(child)
+            })
+        } else {
+            this.setText(root, data.text ? data.text : null)
+        }
+        return root
+    }
+}
+
+// Vue 类 继承 Dom 类 实现 VueCls 接口
+class Vue extends Dom implements VueCls {
+    options: Options
+    constructor(options: Options) {
+        super() // 调用父类的构造函数 prototype.constructor.call(this)
+        this.options = options
+        this.init()
+    }
+    init(): void {
+        // 虚拟 dom 就是通过 js 渲染真实的 dom HTML
+        let data: Vnode = {
+            tag: "div",
+            children: [
+                {
+                    tag: "p",
+                    text: "I am child 1",
+                },
+                {
+                    tag: "p",
+                    text: "I am child 2",
+                },
+            ],
+        }
+        let app =
+            typeof this.options.el === "string"
+                ? document.querySelector(this.options.el)
+                : this.options.el
+        app?.appendChild(this.render(data))
+    }
+}
+
+let vue = new Vue({ el: "#app" })
+```
+
+### 类的 getter 和 setter
+
+```typescript
+// 类 get set 方法
+class Ref {
+    private _value: any // 维护一个内部变量
+    constructor(value: any) {
+        this._value = value
+    }
+
+    get value() {
+        console.log("get value")
+        return "get value: " + this._value
+    }
+
+    set value(newValue: any) {
+        console.log("set value")
+        this._value = "set value: " + newValue
+    }
+}
+
+const ref = new Ref("hyy")
+ref.value = "hyy"
+console.log(ref.value)
+```
+
 ## Dock Typing 鸭子类型
 
 鸭子类型（英语：duck typing）是动态类型的一种风格，是多态 (polymorphism [英 /ˌpɒlɪ'mɔːfɪz(ə)m/]) 的一种形式。
@@ -470,6 +795,6 @@ tsc --module amd main.ts
 tsc --module commonjs TestShape.ts
 ```
 
-## end
+## End
 
 至此，我应该了解了 `TypeScript` 这个语言的大概，继续学习 Vue 去了。

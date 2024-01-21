@@ -69,7 +69,7 @@ banner_img:
 	
 7. 上/超过：`super/over/sur` =>  
 	**sur**·real·ism 超现实主义 **sur**pass 超过 **sur**face 表面 **sur**prise 惊奇 **sur**vey 调查
-	
+
 8. 下/不足：`under/de/sub/sup` =>  
 	**de**crease 下降 **de**press v. 使沮丧 **de**tect v. 察觉 **sub**way 地铁 **sup**pose 认为 **sup**post 支持
 	

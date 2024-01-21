@@ -159,7 +159,28 @@ banner_img:
 
 ## 动词
 
+### 动词第三人称单数
+
+人称：
+
+1. 第一人称：我、我们
+2. 第二人称：你、你们
+3. 第三人称：它、他、她、他们、事物名称：人名、地名…
+
+**第三人称单数：非我，非你、非复数**
+
+we -> 第一人称复数  
+she -> **第三人称单数**  
+Lily -> 单个人名，第三人称单数  
+they -> 他们，第三人称复数  
+Tom and Mike -> 两个人，第三人称复数  
+I -> 第一人称单数  
+my parents -> 第三人称复数
+
 ### 及物动词和不及物动词
+
+及物动词直接加 + 宾语  
+不及物动词不能直接加宾语，构成 **主 + 谓** 结构，或者，**不及物动词 + 介词 + 宾语**，I look **at** you. 我 **看** 你。
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-19.png&webp=true)
 
@@ -1502,9 +1523,11 @@ a university / an hour.
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-364.png&webp=true)
 
-在独一无二的名词前：
+#### 在独一无二的专有名词前
 
-the sun / the moon / the earth / the Great Fire Wall
+the sun / **the moon** / the earth / the Great Fire Wall
+
+#### 西洋古典乐器
 
 the 少数情况下表泛指：
 
@@ -1514,6 +1537,8 @@ the 少数情况下表泛指：
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-366.png&webp=true)
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/English/English-From-Zero-Tutorial-Grammar-367.png&webp=true)
+
+#### 表示一类人
 
 在形容词前，the + 形容词，特指表示一类人：
 

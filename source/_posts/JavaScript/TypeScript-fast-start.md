@@ -1726,6 +1726,185 @@ npm i rollup -g
 
 发布订阅模式有：发布者、订阅者、调度者
 
+## ES6 新类型 weakMap weakSet set map
+
+### Set
+
+集合是由一组无序且唯一 (即不能重复) 的项组成的，可以想象成集合是一个既没有重复元素，也没有顺序概念的数组。
+
+1. attribute
+	- size: 返回 set 数据结构的数据长度
+2. methods
+	- add(value)：添加某个值，返回 Set 结构本身。
+	- delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+	- has(value)：返回一个布尔值，表示该值是否为 Set 的成员。
+	- clear()：清除所有成员，无返回值。
+
+```typescript
+let set:Set<number> = new Set([1,2,3,4])
+set.add(5)
+set.has(5)
+set.delete(5)
+set.size //4
+```
+
+数组去重：
+
+```typescript
+let arr = [...new Set([1,1,1,2,2,3,4,5,5,5,5])]
+ 
+console.log(arr); //[ 1, 2, 3, 4, 5 ]
+```
+
+### Map
+
+它类似于对象，也是**键值对** (key-value) 的集合，但是 key 的 type 不限于 string，各种类型的值（包括 **object** 等 **引用类型**）都可以当作 key，是一种更完善的 Hash 结构实现。如果你需要“**键值对**”的数据结构，Map 比 Object 更合适。
+
+操作方法同 set
+
+```typescript
+let obj = { name: '小满' }
+let map: Map<object, Function> = new Map()
+
+// methods
+map.set(obj, () => 123)
+map.get(obj)
+map.has(obj)
+map.delete(obj)
+map.size
+```
+
+### WeakSet WeakMap
+
+weak: adj. 弱的，weakSet 和 weakMap 的键都是**弱引用**，**不会计入垃圾回收**。
+
+Javascript V8 引擎 GC 是通过 **计数引用** 进行清除的。
+
+首先 obj 引用了这个对象 +1，aahph 也引用了 + 1，wmap 也引用了，但是不会 + 1，因为他是弱引用，不会计入垃圾回收，因此 obj 和 aahph 释放了该引用 weakMap 也会随着消失的，但是有个问题你会发现控制台能输出，值是取不到的。  
+
+因为 V8 的 GC 回收是需要一定时间的，需要延长到 最少 200ms weakMap 才会回收，为了避免这个问题 weakMap 不允许取键值，也不允许遍历，同理 weakSet 也一样。
+
+```typescript
+let obj:any = {name: 'hyy 自残'} // 引用计数 +1
+let aahph:any = obj // 引用计数 +2
+let wmap:WeakMap<object,string> = new WeakMap() // 弱引用 weak
+ 
+wmap.set(obj, "Finland") // WeakMap 的 key 是弱引用，所以 obj 不会计数，obj 当前引用计数为 2
+ 
+obj = null // 对象置空，引用 -1 
+aahph = null // 对象置空，引用 -1
+
+//v8 GC 不稳定 最少200ms
+setTimeout(()=>{
+    console.log(wmap)
+},500)
+```
+
+## Function 函数的二义性 箭头函数
+
+一个函数有两种意义：1. 作为一个普通函数调用 2. 作为对象的构造函数 object construct function
+
+开发者标准：如果一个**普通函数开头大写**，declare 声明这个函数就是对象构造函数。
+
+```javascript
+// 函数的二义性
+function fn(){
+	// 函数内的 this 指向它自身
+	this.name = 'hyy'
+	this.say = () => {
+		console.log("function object say hyy")
+	}
+	console.log("function log")
+}
+
+// 作为函数调用
+fn()
+// 作为构造函数 实例化 作为对象
+fnObject = new fn()
+fnObject.name = 'hyy'
+console.log(fnObject)
+// output: 
+// fn {name: 'hyy', say: ƒ}
+// name: "hyy"
+// say: () => { console.log("function object say hyy") }
+// constructor: ƒ fn()
+// [[Prototype]]: Object // 对象的隐式原型
+```
+
+在 ts 中，如果需要构建对象，可以使用 class 定义一个类，通过 new 实例化类来拿到类实例化后的对象：
+
+```typescript
+class Vue extands Object {
+	construct(name:string) {
+		// 构造函数
+		this.name = name // 类 attribute
+	}
+	// 类方法 methods
+	say(){
+		console.log(`I am ${this.name}`)
+	}
+	// 原型对象
+	prototype:{
+		__proto__: Object.prototype{ // 隐式原型
+			__proto__: null
+		}
+	}
+}
+
+vue = new Vue("hyy")
+console.log(vue)
+// {name:"hyy", say: ƒ}
+```
+
+### 箭头函数
+
+如果想要消除函数的**二义性**需要使用 **箭头函数** `const fn = (x, y)=> x+y `
+
+**this** 指向的不同：
+
+- 普通 function 定义的函数 **this 指向它自身**。
+- 箭头函数 **this 是指向外面环境**的，所以箭头函数本身无法去创建属性。
+
+箭头函数没有 **prototype** 原型对象，所以它不能被 new 成为对象构造函数。
+
+```typescript
+// this 指向外面的环境，在 browser 中 this 是 windows
+const fn = ()=>{ console.log(this) }
+console.log(fn) // 没有 prototype
+```
+
+## TS 进阶代理&反射 proxy & Reflect
+
+**Proxy** 对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。
+
+Vue3 正是通过 **Proxy** 代理对象实现页面的响应式的。
+
+```typescript
+
+type Person = {
+    name: string,
+    age: number,
+    text: string
+}
+ 
+ // 返回一个 proxy 对象
+ // 传入
+const proxy = (object: any, key: any) => {
+    return new Proxy(object, {
+        get(target, prop, receiver) {
+            console.log(`get key======>${key}`);
+            return Reflect.get(target, prop, receiver)
+        },
+ 
+        set(target, prop, value, receiver) {
+            console.log(`set key======>${key}`);
+ 
+            return Reflect.set(target, prop, value, receiver)
+        }
+    })
+}
+```
+
 ## End
 
 至此，我应该了解了 `TypeScript` 这个语言的大概，继续学习 Vue 去了。

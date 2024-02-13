@@ -63,6 +63,7 @@ pnpm create vite
 
 pnpm install
 pnpm install -D typescript ts-node
+pnpm install -D @types/node
 ```
 
 ## Set vite.config.ts/tsconfig.json

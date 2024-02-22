@@ -915,6 +915,8 @@ docker create  \
 [Home | AList文档](https://alist.nn.ci/zh)
 
 ```shell
+docker pull xhofe/alist:latest
+
 docker run -d \
 --restart=always \
 -v /root/configs/alist:/opt/alist/data \
@@ -922,6 +924,8 @@ docker run -d \
 -e PUID=0 \
 -e PGID=0 \
 -e UMASK=022 \
+-e HTTP_PROXY=http://127.0.0.1:20181 \
+-e HTTPS_PROXY=http://127.0.0.1:20181 \
 --name="alist" \
 --network=host \
 xhofe/alist:latest

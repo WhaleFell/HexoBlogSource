@@ -323,9 +323,9 @@ GitHub：[GitHub - fatedier/frp: A fast reverse proxy to help you expose a local
 
 #### 服务端配置
 
-frps.ini
+frps.toml
 
-```ini
+```toml
 # frps server config
 bindAddr = "0.0.0.0"
 bindPort = 7000
@@ -378,7 +378,7 @@ subDomainHost = "frps.com"
 # custom404Page = "/path/to/404.html"
 ```
 
-```ini
+```toml
 # frps server config
 bindAddr = "0.0.0.0"
 bindPort = 43200
@@ -423,9 +423,9 @@ maxPortsPerClient = 0
 
 #### 客户端
 
-frpc.ini
+frpc.toml
 
-```ini
+```toml
 # frpc client config
 user = "WF"
 serverAddr = "ifrp.club"
@@ -504,6 +504,14 @@ localPath = "/mnt/disk/downloads"
 stripPrefix = "static"
 httpUser = ""
 httpPassword = ""
+```
+
+### 配置代理 configure proxy
+
+在 `.bash` 或 `.zshrc` 配置 alias：
+
+```shell
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:20180" alias unsetproxy="unset ALL_PROXY"
 ```
 
 ## Shell 相关

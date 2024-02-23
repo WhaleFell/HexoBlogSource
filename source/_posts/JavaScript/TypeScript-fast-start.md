@@ -1905,6 +1905,27 @@ const proxy = (object: any, key: any) => {
         }
     })
 }
+
+
+const logAccess = (object: Person, key: 'name' | 'age' | 'text') => {
+    return proxy(object, key)
+}
+
+// 使用 keyof + generics 泛型优化
+
+const logAccess = <T>(object: T, key: keyof T): T => {
+	return proxy(object, key)
+}
+ 
+let man: Person = logAccess({
+    name: "hyy",
+    age: 18,
+    text: "刚满18岁"
+}, 'age')
+ 
+man.age  = 30
+ 
+console.log(man);
 ```
 
 ### Reflect
@@ -1922,12 +1943,210 @@ Reflect.get(target, name, receiver)
 
 Reflect.set 方法设置 target 对象的 name 属性等于 value。
 
-```js
+```javascript
+Reflect.set(target, name, value, receiver)
+```
+
+### 实现 mobx observer 观察者模式
+
+```javascript
+// func set
+const list: Set<Function> = new Set()
+
+// add func in func set
+const autorun = (cb: Function) => {
+    if (cb) {
+        list.add(cb)
+    }
+}
+ 
+const observable = <T extends object>(params: T) => {
+    return new Proxy(params, {
+        set(target, key, value, receiver) {
+            const result = Reflect.set(target, key, value, receiver)
+            // run funcs in set when object call set function.
+            list.forEach(fn => fn())
+            console.log(list)
+            return result
+        }
+    })
+}
+ 
+const person = observable({ name: "小满", attr: "威猛先生" })
+ 
+autorun(()=>{
+    console.log('我变化了')
+})
+
+// console.log("我变化了") when proxy object was changed.
+person.attr = '威猛个捶捶'
+```
+
+## Type Guards 类型守卫
+
+在 TypeScript 中，类型守卫（`Type Guards`）是一种用于在 **运行时检查类型** 的机制。它们允许你在代码中执行特定的检查，以确定变量的类型，并在需要时执行相应的操作。
+
+### 1. Typeof 类型收缩
+
+声明一个函数可以接受任意类型，并返回一个 boolean，只筛选出字符串类型，进行类型收缩。
+
+```typescript
+const isString = (str:any): boolean => {
+   return typeof str === 'string';
+}
+
+// typeof returns a type represented(vt. 表现) as string 
+const str = "Hello";
+console.log(typeof str); // 输出: "string"
+
+const num = 42;
+console.log(typeof num); // 输出: "number"
+
+const bool = true;
+console.log(typeof bool); // 输出: "boolean"
+```
+
+typeof 只能返回有限的字符串类型，包括 “string”、“number”、“boolean”、“symbol”、“undefined” 和 “object”。对于函数、数组、null 等类型，typeof 也会返回 “object”。因此，typeof 对于复杂类型和自定义类型的判断是有限的。
+
+### 2. Instanceof
+
+使用 instanceof 类型守卫可以 **检查一个对象是否是特定类的实例**。
+
+```typescript
+const isArr = (value:unknown): number | unknow => {
+    if(value instanceof Array){
+        value.length
+    }
+}
+```
+
+`instanceof` 操作符用于**检查一个对象是否是某个类的实例**。它通过 **检查对象的原型链** 来确定对象是否由指定的类创建。
+
+`instanceof` 操作符主要用于检查对象是否是特定类的实例，它 **无法检查基本类型**。此外，它也**无法检查对象是通过字面量创建**的，因为字面量对象没有显式的构造函数。
+
+The left-hand side of an 'instanceof' expression must be of type **'any'**, an **object type** or a **type parameter**.  
+'instanceof' 表达式的左侧必须是 'any' 类型，对象类型或类型参数。
+
+```typescript
+class Person {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+const person = new Person("Alice");
+console.log(person instanceof Person); // 输出: true
+
+const obj = {};
+console.log(obj instanceof Person); // 输出: false
+
+const num = new String(12)
+console.log(num instanceof String) // true
+
+// 无法判断字面量
+const num2: number = 12
+console.log(num2 as any instanceof String) // false
+```
+
+### Custom Guard 自定义守卫
+
+实现一个函数支持任意类型：
+
+1. 如果是对象，就检查里面的属性，  
+2. 如果里面的属性是 number 就取两位，如果是 string 就去除左右空格  
+3. 如果是函数就执行
+
+编写代码时，需要用到 [类型谓语 （type predicate）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates) 才能拥有良好的 type hint。
+
+```typescript
+// use type predicate
+const isString = (str: any):str is string => typeof str === 'string'
+const isNumber = (num: any):num is number => typeof num === 'number'
+const isFn = (fn: any)=> typeof fn === 'function'
+const isObj = (obj: any)=> ({}).toString.call(obj) === '[object Object]'
+
+const fn = (data:any) => {
+    let value;
+    if(isObj(data)){
+        Object.keys(data).forEach(key=>{
+            value = data[key]
+            if(isString(value)){
+                data[key] = value.trim()
+            }
+            if(isNumber(value)){
+                data[key] = value.toFixed(2)
+            }
+            if(isFn(value)){
+	            // 当函数被单独调用时（例如 value()），
+	            // 函数内部的 this 会指向全局对象（在浏览器环境下是 window）
+                // value()
+                data[key]()
+            }
+        })
+    }
+}
+const obj = {
+    a: 100.22222,
+    b: ' test  ',
+    c: function () {
+        console.log(this.a);
+        return this.a;
+    }
+}
+
+fn(obj)
 
 ```
-Reflect.set(target, name,value, receiver)  
 
+## Type compatible[/kəmˈpætəbl/] 类型兼容
 
+类型兼容，就是用于确定一个类型 **是否能赋值给其他的类型**。TS 中的类型兼容性是基于 **结构类型** 的（也就是形状 shape），如果 A 要兼容 B，那么 A 至少具有 B 相同的属性。
+
+### Duck Type 类型协变&鸭子类型
+
+>什么是鸭子类型？  
+>一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
+>                                                          -- duck type
+
+A B 两个类型完全不同但是可以赋值并无报错，B类型充当A类型的子类型，当子类型里面的属性满足A类型就可以进行赋值，也就是说不能少可以多，这就是协变。
+
+```typescript
+interface A {
+    name:string
+    age:number
+}
+
+// 相当于 B 继承自 A
+interface B extands A {
+    name:string
+    age:number
+    sex:string
+}
+ 
+let a:A = {
+    name: "hyy",
+    age: 18,
+}
+ 
+let b:B = {
+    name: "yyh",
+    age: 30,
+    sex: "女"
+}
+ 
+a = b
+```
+
+### 逆变
+
+逆变一般发生于函数的参数上面。
+
+```typescript
+a = b // a 小 b 大 / b 继承于 a
+
+let fn
+```
 ## End
 
 至此，我应该了解了 `TypeScript` 这个语言的大概，继续学习 Vue 去了。

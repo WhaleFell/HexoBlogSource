@@ -1888,7 +1888,10 @@ type Person = {
 }
  
  // 返回一个 proxy 对象
- // 传入
+ // 传入: 
+ // target 目标对象，可以是任何类型的对象，包括原生数组，函数
+ // handler 一个以 func 作为 attribute 的 object
+ // 定义了在操作 proxy 对象时的行为，例如 get set
 const proxy = (object: any, key: any) => {
     return new Proxy(object, {
         get(target, prop, receiver) {
@@ -1898,12 +1901,32 @@ const proxy = (object: any, key: any) => {
  
         set(target, prop, value, receiver) {
             console.log(`set key======>${key}`);
- 
             return Reflect.set(target, prop, value, receiver)
         }
     })
 }
 ```
+
+### Reflect
+
+与大多数全局对象不同 `Reflect` 并非一个构造函数，所以不能通过 [new运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 对其进行调用。  
+要将 `Reflect` 对象作为一个函数来调用。`Reflect` 的所有属性和方法都是静态的（就像 [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math "Math") 对象）
+
+API：
+
+Reflect.get 方法查找并返回 target 对象的 name 属性，如果没有该属性返回 undefined
+
+```javascript
+Reflect.get(target, name, receiver)
+```
+
+Reflect.set 方法设置 target 对象的 name 属性等于 value。
+
+```js
+
+```
+Reflect.set(target, name,value, receiver)  
+
 
 ## End
 

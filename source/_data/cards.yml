@@ -16,7 +16,7 @@ head:
   
   # 网站图标
   favicon:
-    ico: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
+    ico: 
     small: 
     medium: 
     apple_touch_icon: 
@@ -27,8 +27,8 @@ head:
     enable: true
     type: 
     twitter_card: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
-    twitter_id: whalefall2021
-    twitter_site: https://twitter.com/whalefall2021
+    twitter_id: 
+    twitter_site: 
     image: page.thumbnail
     fb_admins: 
     fb_app_id:

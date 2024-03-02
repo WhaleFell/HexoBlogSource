@@ -16,17 +16,17 @@ head:
   
   # 网站图标
   favicon:
-    ico: 
-    small: 
-    medium: 
-    apple_touch_icon: 
-    safari_pinned_tab: 
+    ico: images/favicon.ico
+    small: images/favicon.ico
+    medium: images/favicon.ico
+    apple_touch_icon: images/favicon.ico
+    safari_pinned_tab: images/favicon.ico
   
   # 社交分享链接
   opengraph: 
     enable: true
     type: 
-    twitter_card: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
+    twitter_card: images/favicon.ico
     twitter_id: 
     twitter_site: 
     image: page.thumbnail
@@ -79,7 +79,7 @@ cover:
   sitename: 落落のBlog
 
   # 若 avatar 配置不为空，则优先使用 avatar 覆盖 sitename
-  avatar: https://q1.qlogo.cn/g?b=qq&nk=2734184475&s=640
+  avatar: images/favicon.ico
   
   # sitename/avatar 下方的一句话介绍
   description: 于无常处知有情,于有情处知众生.

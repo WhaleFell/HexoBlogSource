@@ -2,8 +2,12 @@
 title: LightRoom 后期调色学习笔记
 date: 2024-02-13 21:18:86
 updated: 2024-02-13 21:18:86
-categories: 
-tags: 
+categories:
+  - Design
+tags:
+  - Design
+  - 设计
+  - 后期
 description: 
 thumbnail: 
 banner_img:
@@ -30,11 +34,11 @@ Reference：
 
 **红橙黄绿青蓝紫**
 
-![](LightRoom-Tutorial-1.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/LightRoom-Tutorial.png&webp=true)
 
 **三相色**色盘
 
-![](LightRoom-Tutorial-2.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/LightRoom-Tutorial-1.png&webp=true)
 
 如果想要画面更蓝，就**减少黄色**，或者**增加**与蓝色相邻的过渡色 **品红** 和 **泛蓝**
 
@@ -42,4 +46,4 @@ Reference：
 
 上面比下面的图片 **对比度** 更高，更 **通透**。
 
-![](LightRoom-Tutorial.png)
+![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/LightRoom-Tutorial-2.png&webp=true)

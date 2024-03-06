@@ -1542,7 +1542,7 @@ var person = new Person();
 console.log(person.__proto__ === Person.prototype); // true
 ```
 
-![](TypeScript-fast-start-1.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-1.png&webp=true)
 
 ### Constructor 构造器
 
@@ -1555,7 +1555,7 @@ function Person() {
 console.log(Person === Person.prototype.constructor); // true
 ```
 
-![](TypeScript-fast-start-3.png)  
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-2.png&webp=true)
 综上：
 
 ```javascript
@@ -1610,7 +1610,7 @@ obj {
 
 对象寻找数值，是原型链从下到上一直找到原型链顶端，用 **冒泡** 的方式查找的。
 
-![](TypeScript-fast-start-3-1.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-3.png&webp=true)
 
 ## 【Experiment】装饰器 Decorator
 
@@ -2109,7 +2109,7 @@ fn(obj)
 >一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
 >                                                          -- duck type
 
-A B 两个类型完全不同但是可以赋值并无报错，B类型充当A类型的子类型，当子类型里面的属性满足A类型就可以进行赋值，也就是说不能少可以多，这就是协变。
+A B 两个类型完全不同但是可以赋值并无报错，B 类型充当 A 类型的子类型，当子类型里面的属性满足 A 类型就可以进行赋值，也就是说不能少可以多，这就是协变。
 
 ```typescript
 interface A {
@@ -2145,8 +2145,183 @@ a = b
 ```typescript
 a = b // a 小 b 大 / b 继承于 a
 
-let fn
+let fna = (params:A) => { ... }
+let fnb = (params:B) =>{ ... }
+
+// b 包含 a 中的所有属性 所以 b 可以安全的赋值给 a
+fna = fnb // error
+fnb = fna // correct
 ```
+
+开启双向协变
+
+tsconfig strictFunctionTypes 设置为 false 支持双向协变 fna fnb 随便可以来回赋值
+
+## TS 泛型工具
+
+**泛型工具** 是一组预定义的泛型类型和操作符，用于**操作和转换类型**。它们可以帮助我们编写更灵活、更通用的代码，并提高代码的可读性和可维护性。
+
+### Partial(adj. 局部的) 和 Required(adj. 必须的)
+
+`Partial` 是一个泛型类型，用于将一个类型的所有属性变为可选。  
+与之相反，`Required` 是一个泛型类型，用于将一个类型的所有属性变为必选
+
+```typescript
+// Partial: makes all attributes of a type optional
+interface User {
+    name: string;
+    age: number;
+}
+type test = Partial<User>
+// 转换完成之后的结果
+type test = {
+    name?: string | undefined;
+    age?: number | undefined;
+}
+ 
+// 原理
+type PratialUser<T, K extends keyof T> = {
+    [P in K]?: T[P]
+}
+
+// Required: makes all attributes of a type required
+interface User {
+    name?: string;
+    age?: number;
+}
+// 原理
+type CustomRequired<T> = {
+    [P in keyof T]-?: T[P]
+}
+ 
+type test = Required<User>
+type test2 = CustomRequired<User>
+ 
+// 结果
+interface User {
+    name: string;
+    age: number;
+}
+
+```
+
+### Pick(选取) 和 Exclude(排除)
+
+`Pick` 用于从一个类型中选取指定的属性。  
+`Exclude` 是一个类型操作符，用于从一个类型的属性集合中排除指定的属性。
+
+```typescript
+// pick: Used to select the specified property from a type
+interface User {
+    name?: string;
+    age?: number;
+}
+// 原理
+type CoustomPick<T, K extends keyof T> = {
+    [P in K]: T[P]
+}
+ 
+type test = Pick<User,'age'>
+ 
+// 结果
+type test = {
+    age?: number | undefined;
+}
+
+// Exclude: Used to exclude a specified property from a type's property collection
+
+// 原理
+type CustomExclude<T, K> = T extends K ? never : T 
+type test = Exclude<'a' | 'b' | 'c', 'a' | 'b'>
+
+// 结果
+type test = "c"
+```
+
+### Omit
+
+用于创建一个新类型，该新类型从原始类型中排除指定的属性。
+
+```typescript
+interface User {
+    address?: string;
+    name?: string;
+    age?: number;
+}
+// 原理
+type coustomOmit<T,K> = Pick<T,Exclude<keyof T, K>>
+type test = Omit<User,'age'>
+ 
+// 结果
+type test = {
+    address?: string | undefined;
+    name?: string | undefined;
+}
+```
+
+### Record
+
+**约束一个 object 对象的 key，value。**
+
+`Record` 工具类型接收两个泛型参数 K 和 T，其中：
+
+- K 表示创建的新对象需要具有哪些属性，属性可以只有一个，也可以有多个，多个属性时采用 " 联合类型 " 的写法。
+- T 表示对象属性的类型。
+
+```typescript
+// record is used to constrain(v. 约束) the key and value of an object.
+type Key = "c" | "x" | "k";
+type Value = '唱' | '跳'  | 'rap' | '篮球'
+ 
+let obj:Record<Key, Value> = {
+    'c':'唱',
+    "x":'跳',
+    "k":'rap'
+}
+
+// 原理
+// 对象的key 只能是symbol string number 那么keyof any正好获取这三个类型
+type CustomRecord<K extends keyof any,T> = {
+    [P in K]: T
+}
+
+
+// 支持嵌套约束
+let obj: CustomRecord<Key, Record<Key, Value>> = {
+    'c': {
+        'c': '唱',
+        'x': '跳',
+        'k': 'rap'
+    },
+    "x": {
+        'c': '唱',
+        'x': '跳',
+        'k': 'rap'
+    },
+    "k": {
+        'c': '唱',
+        'x': '跳',
+        'k': 'rap'
+    }
+}
+```
+
+### ReturnType
+
+这个工具主要适用于函数，能够提取函数所返回的类型。
+
+```typescript
+const fn = () => [1,2,3,'sad'];
+ 
+type num = ReturnType<typeof fn>;
+// type num = (string | number)[]
+
+// 原理
+type CustomFn<F extends Function>  = F extends (…args:any[])=> infer Res  ? Res :never 
+```
+
+## Infer
+
 ## End
 
 至此，我应该了解了 `TypeScript` 这个语言的大概，继续学习 Vue 去了。

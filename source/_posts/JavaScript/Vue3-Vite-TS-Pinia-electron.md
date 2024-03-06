@@ -138,7 +138,7 @@ Sass.hk 中文网： [Sass教程 Sass中文文档 | Sass中文网](https://sass.
 
 > Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能.
 
-## 夫子组件传参
+## 父子组件传参
 
 子组件 children
 

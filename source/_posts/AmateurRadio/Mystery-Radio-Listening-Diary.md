@@ -24,13 +24,17 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/My
 
 ![Banner](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Mystery-Radio-Listening-Diary-Banner.png&webp=true)
 
+## Reference
+
+1. [HFCC - International Broadcasting Delivery](https://new.hfcc.org/index.php)
+
 ## 历史背景
 
 “敌台”是 **文革时期** 的一个流行语，泛指中国以外的华语或者英语等短波广播电台。这些短波电台通常和当局口径不一，持批评态度居多，所以经常受到来自官方机构强大的电子干扰对抗，如有重大敏感事件发生时尤其这样。而当时一些有 **独立思考、自由意志** 的知识份子就利用无线电台收听国外报道，以此满足求知欲。这种行为如果被当局发现，就会被安上“收听敌台”的罪名，轻则没收收音机，重则批判致死，遭受牢狱之灾。
 
 直到 1978 年，邓小平改革开放以后，社会风气逐渐开明，获取信息的控制、禁忌渐趋松弛，“偷听敌台罪”成为历史。直至，1989 年，天安门的一场学运改变了现状。在学运前后，各种媒体被封锁，各地学生运动组织为了解北京的情况曾大量购买过短波收音机，以通过 BBC 或者美国之音的广播收集信息，导致短波收音机脱销。此后，中国政府恢复了对国外短波电台的干扰直到今天。
 
-国际广播很多是 **冷战时期** 的产物，这场没有硝烟的战争打了半个多世纪。在思想禁锢、文艺刻板、生活艰苦的文革岁月，**进步青年** 冒着偷听敌台的风险，打破信息闭塞，了解外部世界，为后来中国逐步开发打下基础。
+国际广播很多是 **冷战时期** 的产物，这场没有硝烟的战争打了半个多世纪。在思想禁锢、文艺刻板、生活艰苦的文革岁月，**进步青年** 冒着偷听敌台的风险，打破信息闭塞，了解外部世界。很多 7080 后对于 **民主政治运营** 的理解和期待，最早就是从短波广播开始的。
 
 ## 着眼当下
 
@@ -60,7 +64,8 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 
 普通话：晚上 7 点半开始，每半点就开始广播，每次持续 30min。
 
-晚上 6090 或 6190 KHz 南方接收不太清晰，有邻频的新疆电台。
+晚上 6090 或 6190 KHz 南方接收不太清晰，有邻频的新疆电台。  
+中午的效果极差，完全收不到。
 
 ```text
 1200-1230 11825  
@@ -119,7 +124,7 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 2145-次日0030 1566(MW)
 ```
 
-少数民族语言：良友电台是为数不多播出那么多少数民族语言的电台了，**基督福音真是传遍中国大地了**。估计中国基督教徒也不少。
+少数民族语言：良友电台是为数不多播出那么多少数民族语言的电台了，**基督福音真是传遍中国大地了**。
 
 ```text
 ##### 良友电台(香港)
@@ -225,6 +230,28 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 2200-2300 9390
 ```
 
+### VOK 朝鲜之声
+
+赢麻了，不过多评论。
+
+普通话：
+
+```text
+##### 中国关内方向
+0500-0700 9875, 11635  
+1900-2000 7220, 9445
+
+##### 中国东北方向(ND全向)
+0500-0700 7235, 9445  
+1300-1400 7220, 9445, 9730  
+1600-1700 7220, 9445
+
+##### 东南亚方向
+1100-1200 13650, 15105  无法收听
+1400-1500 13650, 15105  
+2100-2200 6185, 9850
+```
+
 ### SOH （Sound of Hope 希望之声）
 
 轮子电台，节目丰富，但比较反感他的宗教宣传。可以说是为 anti-CCP 而成立的宗教。除了新闻以外，其他节目都比较弱智，不做阐述。  
@@ -244,14 +271,24 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 
 台标：**“这里是希望之声广播电台 `*2`，希望就在你耳边”**
 
+![](Mystery-Radio-Listening-Diary-2.png)
+
 ## 神秘电台 Number Station
 
 Number Station 一般是指在短波上的 **不知名报数电台**，用机器或者人声用 **航空数字朗读法** 朗读数字：“洞四拐八，洞拐勾四….”，普遍认为与 Military 有关，例如中文机器人 VC01 被认为是 China Air Force (CAF) 所有。
 
-在 2024-3-5 UTC 19:00 听到在 `8093KHz USB` 上的男声报数电台，有别于 VC01 的机器人报数，他是语速正常应该是人类报数，大概率是 Southern Military Region of China (SARC) 正在训练。
+相关网站：
+
+1. [Number Stations › Priyom.org](https://priyom.org/number-stations/)
+2. [VC01 – The Chinese Robot](https://www.numbers-stations.com/china/vc01-the-chinese-robot/)
+3. Youtube FirstToken [Oddity station, VC01, Chinese Robot, mid transmission signal changes, 2012 and 2014 - YouTube](https://www.youtube.com/watch?v=-3xY_V2-yL0)
+4. 有关 China Military 的分析报告: [numbersoddities.nl/Chinese-military-nets.pdf](http://numbersoddities.nl/Chinese-military-nets.pdf)
+5. NumberSoddities.nl oddity 古怪广播网站，存放一些神秘电台的录音： [Numbers stations](http://numbersoddities.nl/)
+
+在 2024-3-5 UTC 19:00 听到在 `8093KHz USB` 上的男声报数电台（四个数为一组，一组报两次，属于 VC03），有别于 VC01 的机器人报数，他是语速正常应该是人类报数，大概率是 Southern Military Region of China (SARC) 正在训练。
 
 <video src="https://api.whaleluo.top/onedrive/file/?path=/HamRadio/Frequency-Spectrum/China-Number-Station-8093KHz-USB-2024-3-5.mp4" position= "absolute" width="100%" height="100%" controls="controls"></video>  
 
-在 2024-3-6 UTC 13:14 `4452.4KHz USB` 上听到的 VC01 中国机器人，正在快速报数。一直持续大概 4 个小时。
+在 2024-3-6 UTC 13:14 `4452.4KHz USB` 上听到的 **VC01** 中国机器人，正在快速报数。一直持续大概 4 个小时。
 
 <video src="https://api.whaleluo.top/onedrive/file/?path=/HamRadio/Frequency-Spectrum/China-Number-Station-VC01-4452.4KHz-20240306011743.mkv" position= "absolute" width="100%" height="100%" controls="controls"></video>

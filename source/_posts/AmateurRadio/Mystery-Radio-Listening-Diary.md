@@ -257,7 +257,7 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 轮子电台，节目丰富，但比较反感他的宗教宣传。可以说是为 anti-CCP 而成立的宗教。除了新闻以外，其他节目都比较弱智，不做阐述。  
 只有短波上没有上面的电台可听时，才会扫描去听听他的新闻。
 
-这个电台比较有意思，之前是 **台湾央广** 进行转播，后来因为 CPP 施压撤约了。现在是采用 **海鸥电台** 的形式，指的是在 **台湾屏东高山** 及**中国周边的国家** 设置很多个小功率的 AM 短波电台（义工团队），全天侯 24 小时用 100 多个频率进行广播，频率甚至去到短波非广播频段，`10000-12000KHz` 常常出现数个 `SOH` 的电台，这些电台由于 **功率小**，所以 **背噪很大**，有时候强台还可能被中国之声、台海之声盖台。
+这个电台比较有意思，之前是 **台湾央广** 进行转播，后来因为 CPP 施压撤约了。现在是采用 **海鸥电台** 的形式，指的是在 **台湾屏东高山** 及**中国周边的国家** 设置很多个小功率的 AM 短波电台（义工团队），全天侯 24 小时用 100 多个频率进行广播，频率甚至去到**短波非广播频段**，`10000-12000KHz` 常常出现数个 `SOH` 的电台，这些电台由于 **功率小**，所以 **背噪很大**，有时候强台还可能被中国之声、台海之声盖台。
 
 ![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Mystery-Radio-Listening-Diary-1.png&webp=true)
 
@@ -271,19 +271,29 @@ NHK 日本国际传媒广播电台，节目比较 **温和**，通常是日本�
 
 台标：**“这里是希望之声广播电台 `*2`，希望就在你耳边”**
 
-![](Mystery-Radio-Listening-Diary-2.png)
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Mystery-Radio-Listening-Diary-2.png&webp=true)
+
+完整频率表：（可见 SOH 的大多数频率位于非广播业务频段，乱占频率）
+
+![](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Mystery-Radio-Listening-Diary-3.png&webp=true)
 
 ## 神秘电台 Number Station
 
+> We seek to understand and document all radio transmissions, legal and otherwise, as part of the radio listening hobby.  
+> 我们寻求了解和记录所有无线电传输，无论其是否合法，都作为无线电收听爱好的一部分。
+
 Number Station 一般是指在短波上的 **不知名报数电台**，用机器或者人声用 **航空数字朗读法** 朗读数字：“洞四拐八，洞拐勾四….”，普遍认为与 Military 有关，例如中文机器人 VC01 被认为是 China Air Force (CAF) 所有。
 
-相关网站：
+Related Website：
 
 1. [Number Stations › Priyom.org](https://priyom.org/number-stations/)
 2. [VC01 – The Chinese Robot](https://www.numbers-stations.com/china/vc01-the-chinese-robot/)
-3. Youtube FirstToken [Oddity station, VC01, Chinese Robot, mid transmission signal changes, 2012 and 2014 - YouTube](https://www.youtube.com/watch?v=-3xY_V2-yL0)
-4. 有关 China Military 的分析报告: [numbersoddities.nl/Chinese-military-nets.pdf](http://numbersoddities.nl/Chinese-military-nets.pdf)
+3. Youtube FirstToken VC01 Video [Oddity station, VC01, Chinese Robot, mid transmission signal changes, 2012 and 2014 - YouTube](https://www.youtube.com/watch?v=-3xY_V2-yL0)
+4. 有关 China Military 的 PDF 分析报告: [numbersoddities.nl/Chinese-military-nets.pdf](http://numbersoddities.nl/Chinese-military-nets.pdf)
 5. NumberSoddities.nl oddity 古怪广播网站，存放一些神秘电台的录音： [Numbers stations](http://numbersoddities.nl/)
+6. hfunderground.This site is dedicated to documenting ShortWave anything： [hfunderground](https://www.hfunderground.com/wiki/index.php/Main_Page)
+7. Maritime Weather Transmissions：[Site Unreachable](https://www.hfunderground.com/wiki/Maritime_Weather_Transmissions)  
+8. Number stations Reserach and Information Center [Number stations Reserach and Infomation Center](https://www.numbers-stations.com/)
 
 在 2024-3-5 UTC 19:00 听到在 `8093KHz USB` 上的男声报数电台（四个数为一组，一组报两次，属于 VC03），有别于 VC01 的机器人报数，他是语速正常应该是人类报数，大概率是 Southern Military Region of China (SARC) 正在训练。
 
@@ -292,3 +302,13 @@ Number Station 一般是指在短波上的 **不知名报数电台**，用机器
 在 2024-3-6 UTC 13:14 `4452.4KHz USB` 上听到的 **VC01** 中国机器人，正在快速报数。一直持续大概 4 个小时。
 
 <video src="https://api.whaleluo.top/onedrive/file/?path=/HamRadio/Frequency-Spectrum/China-Number-Station-VC01-4452.4KHz-20240306011743.mkv" position= "absolute" width="100%" height="100%" controls="controls"></video>
+
+Most of these Chinese military nets are on the air for many years. The ALE transmissions were first reported in early 2012. 
+
+This net is using 2G ALE to link stations and a `FSK-8/PSK` proprietary(专有) modem to exchange(交换) data. The ALE signals are usually transmitted(传输) in USB. Sometimes you can hear clear Chinese voice traffic. Also used is 4+4 75/1000 or 4+4 75/3000 LSB.
+
+The well known(总所周知) “numbers stations” `M89`, `V26`, `M95`, and `Q26` are also part of the military system. Messages are identical(相同) but their behavior is somewhat(adv.有点) different. Most likely(很有可能) because they belong(属于) to a different branch of the military. 
+
+The traffic of `VC01`,`VC03` and `MC03` is very different from the other stations mentioned here. They serve(服务) a different purpose(目的)
+
+sigint [英 /'siɡint/] （**Sig**nals **int**elligence）：信号情报,通信情报 (指对无线电信号监听、截获和破译获得的情报)

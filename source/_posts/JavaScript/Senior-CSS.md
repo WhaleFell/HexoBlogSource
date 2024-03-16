@@ -156,12 +156,12 @@ background-attachment: fixed;
 ```css
 body {
   background: #6e28d9;
-  padding: 0 24px;
-  color: white; /* Change my color to yellow */
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 24px; /* 内边距 **/
+  color: white; /* text color */
+  margin: 0; /* 外边距 **/
+  height: 100vh; /* 高度占满 **/
+  display: flex; /* 弹性布局 **/
+  justify-content: center; /* 内容对齐方式 居中 **/
+  align-items: center; /* 元素组对其方式 居中 **/
 }
 ```

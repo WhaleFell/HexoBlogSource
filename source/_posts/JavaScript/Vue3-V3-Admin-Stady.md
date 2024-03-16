@@ -111,6 +111,42 @@ plugins: [
   ],
 ```
 
+configure：
+
+```ts
+AutoImport({
+      // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+      imports: ["vue"],
+      // eslint auto import
+      eslintrc: {
+        enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false
+        filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件
+      },
+      //
+      resolvers: [ElementPlusResolver(), IconsResolver({})],
+      vueTemplate: true, // 是否在 vue 模板中自动导入
+      dts: path.resolve(pathSrc, "types", "auto-imports.d.ts"), // 指定自动导入函数TS类型声明文件路径
+    }),
+    // 组件
+    Components({
+      resolvers: [
+        // 自动导入 Element Plus 组件
+        ElementPlusResolver(),
+        // 自动注册图标组件
+        IconsResolver({
+          enabledCollections: ["ep"],
+        }),
+      ],
+      dts: path.resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
+    }),
+    // 图标
+    Icons({
+      // 自动安装图标库
+      autoInstall: true,
+    }),
+```
+
+
 ## Configure 配置项
 
 ### Vscode code snippets
@@ -598,3 +634,13 @@ settings.json
 - **wip:** 开发中  
 
 **完成一件事情，就提交一次 commit**。而不是等到你写完一整天的代码后，才在下班前只提交一次。
+
+## vue-router 路由
+
+CH Document：[安装 | Vue Router](https://router.vuejs.org/zh/installation.html)
+
+### Install
+
+```shell
+pnpm add vue-router@4
+```

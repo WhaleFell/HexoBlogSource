@@ -319,6 +319,23 @@ npx tailwindcss -o ./src/tail.css --watch
 </div>
 ```
 
+Keywords:
+
+p: padding 内边距
+m: margin 外边距
+w: width 宽度
+x: 水平方向
+y: 垂直方向
+
+通过断点使用媒体查询：
+
+```cs
+sm: '480px', // Small screen
+md: '768px', // Medium screen
+lg: '976px',  // Large screen
+xl: '1440px', // Extra large screen
+```
+
 `p-6` 表示设置内边距(padding)为 6。
 `max-w-sm` 表示设置最大宽度为 small(小屏幕) 的宽度。
 `mx-auto` 表示在水平方向上居中对齐。
@@ -326,3 +343,18 @@ npx tailwindcss -o ./src/tail.css --watch
 `rounded-xl` 表示设置圆角为 extra large(特别大)。
 `shadow-md` 表示设置阴影效果，阴影大小为 medium(中等)。
 `flex items-center space-x-4` 表示使用 Flexbox 布局，子元素水平排列，元素之间的间距为 4。
+
+`container` 用于创建一个包含内容的容器，通常用于限制内容的最大宽度，使内容在大屏幕上不至于过宽，提高内容的可读性和美观性。
+
+`mx-auto`: 这个类名用于水平居中元素，将元素的左右外边距设置为 auto，使元素在父容器中水平居中显示。
+
+`px-4`: 这个类名用于设置元素的水平内边距（padding），px 代表水平方向（左右），4 代表内边距的大小。在这种情况下，px-4 代表水平方向上的内边距为 4 个 CSS 像素。
+
+`gap`: 这个类名用于设置元素之间的间距，gap-4 代表元素之间的间距为 4 个 CSS 像素。
+
+Flexbox 布局：
+
+同时运用这两个可以使得元素在正中间：
+
+-   `items-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **垂直居中** 。
+-   `justify-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **水平居中** 。

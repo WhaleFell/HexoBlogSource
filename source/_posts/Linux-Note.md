@@ -904,10 +904,10 @@ docker create  \
     -p 51782:51782  \
     -p 51782:51782/udp  \
     -p 8600:8600  \
-	-v /root/configs/qb:/config  \
+ -v /root/configs/qb:/config  \
     -v /mnt/disk/downloads:/downloads  \
     --restart always  \
-	superng6/qbittorrentee:latest
+ superng6/qbittorrentee:latest
 ```
 
 #### Alist
@@ -1273,133 +1273,133 @@ error_log /var/log/nginx/error.log notice;
 pid /var/run/nginx.pid;
 events {
 
-	worker_connections 1024;
+ worker_connections 1024;
 }
 http {
 
-	include /etc/nginx/mime.types;
-	default_type application/octet-stream;
+ include /etc/nginx/mime.types;
+ default_type application/octet-stream;
 
-	log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-	'$status $body_bytes_sent "$http_referer" '
-	'"$http_user_agent" "$http_x_forwarded_for"';
+ log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+ '$status $body_bytes_sent "$http_referer" '
+ '"$http_user_agent" "$http_x_forwarded_for"';
 
-	access_log /var/log/nginx/access.log main;
-	sendfile on;
-	keepalive_timeout 65;
-	gzip on;
+ access_log /var/log/nginx/access.log main;
+ sendfile on;
+ keepalive_timeout 65;
+ gzip on;
 
-	server {
+ server {
 
-		listen 8080 ssl http2;
-		server_name _;
+  listen 8080 ssl http2;
+  server_name _;
 
-		# ssl off;
-		ssl_certificate /usr/local/nginx/cert/cert.pem;
-		ssl_certificate_key /usr/local/nginx/cert/private.key;
+  # ssl off;
+  ssl_certificate /usr/local/nginx/cert/cert.pem;
+  ssl_certificate_key /usr/local/nginx/cert/private.key;
 
-		ssl_session_timeout 5m;
-		ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-		ssl_prefer_server_ciphers on;
+  ssl_session_timeout 5m;
+  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl_prefer_server_ciphers on;
 
-		error_page 497 https://$host:8080$request_uri;
+  error_page 497 https://$host:8080$request_uri;
 
-		client_max_body_size 5G;
-		client_header_timeout 1m;
-		client_body_timeout 1m;
-		proxy_connect_timeout 60s;
-		proxy_read_timeout 60m;
-		proxy_send_timeout 60m;
-
-
-		location / {
-
-			alias /usr/share/nginx/html;
-			index index.html;
-		}
+  client_max_body_size 5G;
+  client_header_timeout 1m;
+  client_body_timeout 1m;
+  proxy_connect_timeout 60s;
+  proxy_read_timeout 60m;
+  proxy_send_timeout 60m;
 
 
-		location /sdr/ {
+  location / {
 
-			proxy_pass http://192.168.8.1:8073/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
+   alias /usr/share/nginx/html;
+   index index.html;
+  }
 
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
 
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
+  location /sdr/ {
 
-		location /wss/ {
+   proxy_pass http://192.168.8.1:8073/;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header x-wiz-real-ip $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header X-Forwarded-Proto $scheme;
+   proxy_set_header X-NginX-Proxy true;
 
-			proxy_pass http://192.168.8.1:10000/wss/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection "upgrade";
+   proxy_set_header Connection "keep-alive";
 
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
+   proxy_set_header Host $http_host;
+   proxy_ssl_session_reuse off;
+   proxy_cache_bypass $http_upgrade;
+   proxy_redirect off;
+  }
 
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
+  location /wss/ {
 
-		location /dav/ {
+   proxy_pass http://192.168.8.1:10000/wss/;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header x-wiz-real-ip $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header X-Forwarded-Proto $scheme;
+   proxy_set_header X-NginX-Proxy true;
 
-			proxy_pass http://192.168.8.1:5244/dav/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection "upgrade";
+   proxy_set_header Connection "keep-alive";
 
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
+   proxy_set_header Host $http_host;
+   proxy_ssl_session_reuse off;
+   proxy_cache_bypass $http_upgrade;
+   proxy_redirect off;
+  }
 
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
+  location /dav/ {
 
-		location /test/ {
+   proxy_pass http://192.168.8.1:5244/dav/;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header x-wiz-real-ip $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header X-Forwarded-Proto $scheme;
+   proxy_set_header X-NginX-Proxy true;
 
-			proxy_pass http://192.168.8.1:3300/;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header x-wiz-real-ip $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-NginX-Proxy true;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection "upgrade";
+   proxy_set_header Connection "keep-alive";
 
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "upgrade";
-			proxy_set_header Connection "keep-alive";
+   proxy_set_header Host $http_host;
+   proxy_ssl_session_reuse off;
+   proxy_cache_bypass $http_upgrade;
+   proxy_redirect off;
+  }
 
-			proxy_set_header Host $http_host;
-			proxy_ssl_session_reuse off;
-			proxy_cache_bypass $http_upgrade;
-			proxy_redirect off;
-		}
-	}
+  location /test/ {
+
+   proxy_pass http://192.168.8.1:3300/;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header x-wiz-real-ip $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header X-Forwarded-Proto $scheme;
+   proxy_set_header X-NginX-Proxy true;
+
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection "upgrade";
+   proxy_set_header Connection "keep-alive";
+
+   proxy_set_header Host $http_host;
+   proxy_ssl_session_reuse off;
+   proxy_cache_bypass $http_upgrade;
+   proxy_redirect off;
+  }
+ }
 }
 ```
 
@@ -1418,13 +1418,32 @@ src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packag
 
 ## Python
 
-### Update latest Python version
+### Update latest Python version 更新 Python 版本
 
 [Upgrade Python to latest version (3.12) on Ubuntu Linux or WSL2](https://cloudbytes.dev/snippets/upgrade-python-to-latest-version-on-ubuntu-linux)
 
-## 网络安全
+## Network Tools
 
-webshell 查杀工具：[SHELLPUB.COM 专注查杀，永久免费](https://www.shellpub.com/)
+1. WebShell 查杀工具：[SHELLPUB.COM 专注查杀，永久免费](https://www.shellpub.com/)
+
+2. IP 纯净度查询 IP Fraud Check
+    - <https://scamalytics.com/>
+    - <https://ping0.cc/>
+    - <https://ipdata.co/>
+
+## Windowns 实用命令
+
+### Restart Windows Explorer
+
+restart-explorer.cmd
+
+```shell
+taskkill /im explorer.exe /f
+cd /d %userprofile%\appdata\local
+del iconcache.db /a
+start explorer.exe
+exit
+```
 
 ## 引用 Reference
 

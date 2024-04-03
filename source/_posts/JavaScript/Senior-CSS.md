@@ -193,9 +193,8 @@ body {
 2. Flexbox 弹性布局
 3. Grid 网格布局
 4. 相对单位 rem、em、vw、vh
-
--   em：相对于父元素的字体大小
--   rem：相对于根元素的字体大小
+    - em：相对于父元素的字体大小
+    - rem：相对于根元素的字体大小
 
 ## CSS 动画
 
@@ -268,7 +267,9 @@ body div {
 
 ## Tailwind CSS
 
-Taiwind CSS 无需离开 HTML 通过**类名**快速实现各种样式，支持响应式设计和媒体查询。
+Taiwind CSS 无需离开 HTML 通过 **类名** 快速实现各种样式，支持响应式设计和媒体查询。
+
+Online P
 
 ### Install
 
@@ -301,14 +302,63 @@ npx tailwindcss -o ./src/tail.css --watch
 
 #### vue3
 
-## Base 基础
+[Offial Guides in vue3](https://tailwindcss.com/docs/guides/vite#vue)
+
+```shell
+pnpm add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# edit tailwind.config.js
+content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+
+# add the tailwind directives to your CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+# Start your build process
+pnpm run dev
+```
+
+也支持使用 TS 进行配置：`tailwind.config.ts` [configuration#using-esm-or-type-script](https://tailwindcss.com/docs/configuration#using-esm-or-type-script)
+
+```ts
+// tailwind.config.ts
+import { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+import { createVariableColors, variableColorsPlugin } from 'tailwindcss-variable-colors'
+
+const config: Config = {
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  theme: {
+    // You can also not pass the colors parameter,
+    // it will use the colors from tailwindcss by default.
+    colors: createVariableColors(colors),
+  },
+  plugins: [variableColorsPlugin(colors)],
+}
+
+export default config satisfies Config
+```
+
+使用 tailwind ui 组件库：
+
+```shell
+pnpm add @headlessui/vue @heroicons/vue
+```
+
+- headlessui/vue: 无样式组件库 [headlessui](https://headlessui.com/)
+- heroicons/vue: 图标库 [heroicons](https://heroicons.com/)
+
+### Base 基础
 
 设计一个卡片：
 
 ```html
-<div
-    class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
->
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
     <div class="flex-shrink-0">
         <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo" />
     </div>
@@ -356,5 +406,52 @@ Flexbox 布局：
 
 同时运用这两个可以使得元素在正中间：
 
--   `items-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **垂直居中** 。
--   `justify-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **水平居中** 。
+- `items-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **垂直居中** 。
+- `justify-center` 应用于 flex 容器，用于在 **主轴方向** 上将子元素 **水平居中** 。
+
+Flex 参数：
+
+`flex-wrap` 类用于控制 Flex 容器中的项目在一行上 **是否换行** 显示。
+`flex-wrap-reverse`：允许项目在需要时换行显示，并且反转换行的方向。
+`flex-nowrap`：阻止项目换行，强制所有项目在一行上显示。
+举个例子，如果你想要一个 Flex 容器中的项目在需要时自动换行
+
+```html
+<div
+    class="m-2 mx-auto flex h-screen flex-wrap content-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 align-middle text-2xl md:container">
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+</div>
+```
+
+prettier 自动排序 order
+
+```shell
+pnpm install -D prettier-plugin-tailwindcss
+```
+
+正则安全清除所有暗黑模式：
+
+```regex
+\S*dark:[^" >]*
+```
+
+## Gsap Animation
+
+GSAP 是一个高性能的动画库，可以实现更复杂的动画效果。
+
+ref:
+
+1. GSAP 中文文档 [GSAP 中文文档](https://gsap.framer.wiki/state)

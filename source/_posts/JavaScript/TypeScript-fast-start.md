@@ -19,6 +19,7 @@ reference:
 2. 最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)  
 3. [阮一峰](https://www.ruanyifeng.com/) ES6 入门教程：[ES6 入门教程](https://es6.ruanyifeng.com/#docs/class)
 4. 2024/1/21 更：最近又发现一个宝藏 up 主的视频 **小满 zc**：[小满zc自残 TypeScript 基础教程全集（完结）](https://www.bilibili.com/video/BV1wR4y1377K)
+
 ---
 
 1. TypeScript ==> JavaScript 的一个 **超集**，支持 ECMAScript 6 标准
@@ -136,7 +137,7 @@ let arr: Array<Array<number>> = [[1], [2], [3]]
 
 // es6 多参数
 function mutil(...args:any[]) {
-	console.log(args)
+ console.log(args)
 }
 ```
 
@@ -144,15 +145,15 @@ function mutil(...args:any[]) {
 
 ```javascript
 function func(...args){
-	console.log(arguments)
-	let a: IArguments = arguments
+ console.log(arguments)
+ let a: IArguments = arguments
 }
 // arguments 其实是一个 object 内部实现了这样一个 interface:
 
 interface Arguments {
-	callee: Function
-	length: number
-	[index:number]: any
+ callee: Function
+ length: number
+ [index:number]: any
 }
 
 ```
@@ -232,7 +233,7 @@ never 是最底层的类型，
 
 ```typescript
 function fn(): nerver {
-	throw new Error("error")
+ throw new Error("error")
 }
 
 function fn(): never {
@@ -299,7 +300,7 @@ Reflect.ownKeys(obj)
 let phone: number | string = "020-12123"
 
 let fn = function (type: number | boolean):boolean {
-	return !!type // 将类型强行转成 boolean 类型，比如 0=>false 1=>true
+ return !!type // 将类型强行转成 boolean 类型，比如 0=>false 1=>true
 }
 ```
 
@@ -307,18 +308,18 @@ let fn = function (type: number | boolean):boolean {
 
 ```javascript
 interface Pople {
-	name: string
-	age: number
+ name: string
+ age: number
 }
 
 // Man 继承自 Pople
 interface Man extands Pople {
-	sex: number | string
+ sex: number | string
 }
 
 // 使用 &
 const wf = (man: Pople & Man):void => {
-	console.log(man);
+ console.log(man);
 }
  
 wf({"name":"hyy", age:18, sex: "famale"})
@@ -328,9 +329,9 @@ wf({"name":"hyy", age:18, sex: "famale"})
 
 ```javascript
 let fn = function (num: number | string):void {
-	console.log((num as string).length)
-	// another way...
-	console.log(<string>num.length)
+ console.log((num as string).length)
+ // another way...
+ console.log(<string>num.length)
 }
 fn("1234")
 
@@ -357,7 +358,7 @@ let local: Storage = localStorage
 let lo:Location = location
 let promise:Promise<string> = new Promise((r) => r("WF"))
 promise.than(res=>{
-	res.replace()
+ res.replace()
 })
 
 // Math 数学运算 Math.random() 生成 0-1 的随机数
@@ -443,15 +444,15 @@ console.log(foo(100))      //输出结果为 110
 
 ```javascript
 interface Obj{
-	user: number[]
-	add: (this: Obj, num: number) => void
+ user: number[]
+ add: (this: Obj, num: number) => void
 }
 
 let obj: Obj = {
-	user: [1, 2, 3]
-	add(this: Obj, num: number) {
-		this.user.push(num)
-	}
+ user: [1, 2, 3]
+ add(this: Obj, num: number) {
+  this.user.push(num)
+ }
 }
 ```
 
@@ -463,15 +464,15 @@ let user:number[] = [1, 2, 3]
 functuon findNum():number[] // 如果没有传入东西就是全部
 function findNum(id: number):number[] // 如果传入了 id 就是单个查询
 function findNum(ids?:number | number[]):number[]{
-	// 实现函数
-	if (typeof ids == 'number'){ // 判断传入了一个 id
-		return user.filter(v => v==ids) // array filter 返回符合 true 的数组
-	} eles if (Array.isArray(ids)) { // 判断传入了一个 array
-		user.push(...ids)
-		return user
-	} eles { // 判断什么都没传入
-		return user
-	}
+ // 实现函数
+ if (typeof ids == 'number'){ // 判断传入了一个 id
+  return user.filter(v => v==ids) // array filter 返回符合 true 的数组
+ } eles if (Array.isArray(ids)) { // 判断传入了一个 array
+  user.push(...ids)
+  return user
+ } eles { // 判断什么都没传入
+  return user
+ }
 }
 ```
 
@@ -553,9 +554,9 @@ agelist["runoob"] = 15
 
 ```javascript
 interface Animal {
-	name: string
-	age: number
-	type?: string
+ name: string
+ age: number
+ type?: string
 }
 ```
 
@@ -600,11 +601,11 @@ console.log("value 1: "+Iobj.v1+" value 2: "+Iobj.v2)
 
 ```javascript
 interface Fn {
-	(name: string):number[]
+ (name: string):number[]
 }
 
 const fn:Fn = function (name: string){
-	return [1,2,3]
+ return [1,2,3]
 }
 ```
 
@@ -1006,7 +1007,7 @@ function args(…args: any[]) {
 let lst = document.querySelectorAll("div") // 类数组
 ```
 
-以上类数组 他们都有迭代器 ` Symbol.iterator`，所以可以使用迭代器来遍历他们：
+以上类数组 他们都有迭代器 `Symbol.iterator`，所以可以使用迭代器来遍历他们：
 
 ```typescript
 const each = (value: any) => {
@@ -1312,7 +1313,7 @@ namespace android {
 
 ## 声明文件 declare d.ts
 
-初始化一个项目 
+初始化一个项目
 
 ```shell
 tsc --init
@@ -1477,11 +1478,11 @@ app.run()
 
 ```javascript
 let People = function(name, age){
-	this.name = name
-	this.age = age
-	this.say = ()=>{
-		console.log(`${this.name} say she had just turned ${this.age} y.o.`)
-	}
+ this.name = name
+ this.age = age
+ this.say = ()=>{
+  console.log(`${this.name} say she had just turned ${this.age} y.o.`)
+ }
 }
 
 let girl = new People()
@@ -1492,13 +1493,13 @@ girl.say()
 
 ```typescript
 class People() {
-	constructor(name: string, age: number) {
-		this.name:string = name
-		this.age:number = age
-	}
-	public say():void {
-		console.log(`${this.name} say she had just turned ${this.age} y.o.`)
-	}
+ constructor(name: string, age: number) {
+  this.name:string = name
+  this.age:number = age
+ }
+ public say():void {
+  console.log(`${this.name} say she had just turned ${this.age} y.o.`)
+ }
 }
 
 let girl = new People()
@@ -1589,7 +1590,7 @@ Person.prototype.__proto__ // 原型对象的隐式原型 指向 Object.prototyp
 
 ```javascript
 function Test(name){
-	this.name = name
+ this.name = name
 }
 
 const obj = new test("hyy")
@@ -1598,13 +1599,13 @@ obj.prototype.__proto__ === Object.prototype
 Test.prototype.__proto__ === Object.prototype
 
 obj {
-	a:1
-	__proto__: Test.prototype = {
-		b:2
-		__proto__: Object.prototype = {
-			__proto__:null // 原型链顶层
-		}
-	}
+ a:1
+ __proto__: Test.prototype = {
+  b:2
+  __proto__: Object.prototype = {
+   __proto__:null // 原型链顶层
+  }
+ }
 }
 ```
 
@@ -1627,8 +1628,8 @@ obj {
 
 ```typescript
 const watcher: ClassDecorator = (target: Function) => {
-	// target 是构造函数(类)
-	target.prototype.getParams = <T>(params: T):T => {
+ // target 是构造函数(类)
+ target.prototype.getParams = <T>(params: T):T => {
         return params
     }
 }
@@ -1676,11 +1677,11 @@ console.log((a as any).getOptions('123'));
 
 ```typescript
 const met: MethodDecorator = (target, key, descriptor) => {
-	// 接收三个参数
-	// 1. static method -> 类的构造函数 methods -> 类的原型对象 prototype
-	// 2. 成员的名字
-	// 3. 成员的属性描述符 
-	console.log(args);
+ // 接收三个参数
+ // 1. static method -> 类的构造函数 methods -> 类的原型对象 prototype
+ // 2. 成员的名字
+ // 3. 成员的属性描述符 
+ console.log(args);
 }
  
 class A {
@@ -1733,12 +1734,15 @@ npm i rollup -g
 集合是由一组无序且唯一 (即不能重复) 的项组成的，可以想象成集合是一个既没有重复元素，也没有顺序概念的数组。
 
 1. attribute
-	- size: 返回 set 数据结构的数据长度
+
+- size: 返回 set 数据结构的数据长度
+
 2. methods
-	- add(value)：添加某个值，返回 Set 结构本身。
-	- delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
-	- has(value)：返回一个布尔值，表示该值是否为 Set 的成员。
-	- clear()：清除所有成员，无返回值。
+
+- add(value)：添加某个值，返回 Set 结构本身。
+- delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+- has(value)：返回一个布尔值，表示该值是否为 Set 的成员。
+- clear()：清除所有成员，无返回值。
 
 ```typescript
 let set:Set<number> = new Set([1,2,3,4])
@@ -1809,12 +1813,12 @@ setTimeout(()=>{
 ```javascript
 // 函数的二义性
 function fn(){
-	// 函数内的 this 指向它自身
-	this.name = 'hyy'
-	this.say = () => {
-		console.log("function object say hyy")
-	}
-	console.log("function log")
+ // 函数内的 this 指向它自身
+ this.name = 'hyy'
+ this.say = () => {
+  console.log("function object say hyy")
+ }
+ console.log("function log")
 }
 
 // 作为函数调用
@@ -1835,20 +1839,20 @@ console.log(fnObject)
 
 ```typescript
 class Vue extands Object {
-	construct(name:string) {
-		// 构造函数
-		this.name = name // 类 attribute
-	}
-	// 类方法 methods
-	say(){
-		console.log(`I am ${this.name}`)
-	}
-	// 原型对象
-	prototype:{
-		__proto__: Object.prototype{ // 隐式原型
-			__proto__: null
-		}
-	}
+ construct(name:string) {
+  // 构造函数
+  this.name = name // 类 attribute
+ }
+ // 类方法 methods
+ say(){
+  console.log(`I am ${this.name}`)
+ }
+ // 原型对象
+ prototype:{
+  __proto__: Object.prototype{ // 隐式原型
+   __proto__: null
+  }
+ }
 }
 
 vue = new Vue("hyy")
@@ -1858,7 +1862,7 @@ console.log(vue)
 
 ### 箭头函数
 
-如果想要消除函数的**二义性**需要使用 **箭头函数** `const fn = (x, y)=> x+y `
+如果想要消除函数的**二义性**需要使用 **箭头函数** `const fn = (x, y)=> x+y`
 
 **this** 指向的不同：
 
@@ -1914,7 +1918,7 @@ const logAccess = (object: Person, key: 'name' | 'age' | 'text') => {
 // 使用 keyof + generics 泛型优化
 
 const logAccess = <T>(object: T, key: keyof T): T => {
-	return proxy(object, key)
+ return proxy(object, key)
 }
  
 let man: Person = logAccess({
@@ -2078,8 +2082,8 @@ const fn = (data:any) => {
                 data[key] = value.toFixed(2)
             }
             if(isFn(value)){
-	            // 当函数被单独调用时（例如 value()），
-	            // 函数内部的 this 会指向全局对象（在浏览器环境下是 window）
+             // 当函数被单独调用时（例如 value()），
+             // 函数内部的 this 会指向全局对象（在浏览器环境下是 window）
                 // value()
                 data[key]()
             }
@@ -2107,7 +2111,7 @@ fn(obj)
 
 >什么是鸭子类型？  
 >一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
->                                                          -- duck type
+> -- duck type
 
 A B 两个类型完全不同但是可以赋值并无报错，B 类型充当 A 类型的子类型，当子类型里面的属性满足 A 类型就可以进行赋值，也就是说不能少可以多，这就是协变。
 

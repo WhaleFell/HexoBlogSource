@@ -4,9 +4,9 @@
 
 # Site
 title: 😊落落のBlog😊
-subtitle: 落日归了山海
-description: 一个笔记本
-keywords: 技术,Python,Golang,简中,高中生,鼠鼠,猫猫控
+subtitle: 落落的迷思念想,一个存放在乌托邦之上的笔记本。
+description: 理想主义的花最终会盛开在浪漫主义的土壤里，我的热情永不会熄灭在现实的平凡之中。
+keywords: 编程,博客,记录,技术,生活,前端,摄影,LGBT,计算机,网络安全,Life,Cybersecurity,Python,Golang,Vue,Javascript,Java,Linux
 author: WhaleFall
 language: zh-CN
 timezone: ''
@@ -25,20 +25,6 @@ permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
-
-# 代码高亮
-highlight:
-  enable: true
-  line_number: false
-  auto_detect: false
-  tab_replace: ''
-  wrap: false
-  hljs: true
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: false
-  tab_replace: ''
 
 # Directory
 source_dir: source

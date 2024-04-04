@@ -37,6 +37,7 @@ head:
   custom_head: 
     # 升级 https
     - '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">'
+    - '<meta name="google-site-verification" content="bka9Mdyvo7g1v-jQq8CzqcaY9zE2QGltMwsvO63rAUw" />'
     # - ''
 
 

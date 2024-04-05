@@ -132,6 +132,20 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
+# code highlight
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: ''
+  wrap: false
+  hljs: true
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: false
+  tab_replace: ''
+
 ## Themes: https://hexo.io/themes/
 theme: cards
 

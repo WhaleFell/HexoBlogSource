@@ -86,6 +86,49 @@ git add .
 git commit -m "initiation"
 ```
 
+### Git Proxy
+
+由于高墙的存在, 需要使用代理进行访问. I know this because it's necessary for Chinese guys, lol.
+
+```shell
+# set http proxy but it only working in http(s) git protocol
+git config --global http.proxy http://127.0.0.1:10809
+git config --global https.proxy https://127.0.0.1:10809
+
+# clear proxy
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# SSH proxy
+# edit `~/.ssh/config`
+# socks5
+Host *
+    ProxyCommand connect -S {proxyserver}:{port} %h %p
+
+# http
+Host *
+    ProxyCommand connect -H {proxyserver}:{port} %h %p
+
+# windows
+Host *
+ProxyCommand "D:\Git\mingw64\bin\connect.exe" -S 127.0.0.1:10808 %h %p
+
+```
+
+解决了一个迷思: 为什么 HTTP 代理能够代理很多非 HTTP 协议的请求?
+
+ref: [stackoverflow: why-are-http-proxies-able-to-support-protocols-like-irc-and-ftp](https://stackoverflow.com/questions/12026247/why-are-http-proxies-able-to-support-protocols-like-irc-and-ftp)
+
+> Q: Why are HTTP proxies able to support protocols like socks and FTP?
+>
+> A: HTTP proxy is able to support high level protocols other than HTTP,Because it supports CONNECT method,  
+> HTTP 代理能够支持除了HTTP以外很多高级别的协议, 因为它支持 **CONNECT** 方法.  
+>
+> The CONNECT method is a way **to tunnel any kind of connection** through an HTTP proxy. By default, the proxy establishes a TCP connection to the specified server, responds with an HTTP 200 (Connection Established) response, and then shovels packets back and forth between the client and the server, **without understanding or interpreting the tunnelled traffic**
+> CONNECT 方法是一种通过HTTP代理隧道化任何连接的方法. 代理默认建立一个到指定服务器的TCP连接, 响应一个HTTP 200 (Connection Established) 响应, 然后在客户端和服务器之间来回传输数据包, 而不理解或解释隧道流量.  
+>
+> 简单理解, HTTP 代理通过 CONNECT 方法将 TCP 的数据打包转发给目标服务器, 然后将数据包原封不动的返回给客户端, 从而实现了对非 HTTP 协议的支持. HTTP 代理支持所有基于 TCP 的协议, 但是不支持 UDP 协议.
+
 ### Use SSH over HTTPS prot
 
 Use SSH over HTTPS prot: 通过 443 端口使用 SSH 协议，避免被 Firewall 阻挡。

@@ -1,6 +1,8 @@
 ---
 layout: links
 title: 友链 | Friends Link
+comments: 
+  use: gitalk
 links:
     - name: 'zikin'
       desc: '中学生 / 偶尔拍拍照片'

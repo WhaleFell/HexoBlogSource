@@ -66,6 +66,8 @@ navbar:
       url: /friends/
     - name: 关于
       url: /about/
+    - name: 大事记
+      url: /friends/
     - name: RSS
       url: /atom.xml
 
@@ -80,7 +82,7 @@ cover:
   sitename: 落落のBlog
 
   # 若 avatar 配置不为空，则优先使用 avatar 覆盖 sitename
-  avatar: images/favicon.ico
+  avatar: 
   
   # sitename/avatar 下方的一句话介绍
   description: 于无常处知有情,于有情处知众生.

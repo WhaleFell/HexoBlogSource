@@ -67,7 +67,7 @@ navbar:
     - name: 关于
       url: /about/
     - name: 大事记
-      url: /friends/
+      url: /event/
     - name: RSS
       url: /atom.xml
 

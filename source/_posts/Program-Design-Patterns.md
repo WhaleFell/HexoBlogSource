@@ -41,8 +41,8 @@ class Creator(ABC):
     object of a Product class. The Creator's subclasses usually provide the
     implementation of this method.
 
-	Creator 类声明了一个工厂方法，该方法用于返回 Product 类的对象。
-	工厂方法的子类通常会提供该方法的实现，
+ Creator 类声明了一个工厂方法，该方法用于返回 Product 类的对象。
+ 工厂方法的子类通常会提供该方法的实现，
     """
 
     @abstractmethod
@@ -51,7 +51,7 @@ class Creator(ABC):
         Note that the Creator may also provide some default implementation of
         the factory method.
 
-		注意：Creator 还可能提供工厂方法的一些默认实现
+  注意：Creator 还可能提供工厂方法的一些默认实现
         """
         pass
 
@@ -91,7 +91,7 @@ class ConcreteCreator1(Creator):
     even though the concrete product is actually returned from the method. This
     way the Creator can stay independent of concrete product classes.
 
-	
+ 
     """
 
     def factory_method(self) -> Product:

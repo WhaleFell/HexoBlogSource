@@ -34,7 +34,7 @@ Python `Typing` Official Document：[typing — Support for type hints — Pytho
 - Open the "User Settings"  
     打开“用户设置”
 - Search for `Type Checking Mode`  
-	搜索 `Type Checking Mode`
+ 搜索 `Type Checking Mode`
 - You will find an option under `Python › Analysis: Type Checking Mode`  
     您将在 `Python › Analysis: Type Checking Mode` 下找到一个选项
 - Set it to `basic` or `strict` (by default it's `off`)  
@@ -139,8 +139,8 @@ y: list[int, str] = [1, 'foo']
 # Type checker will infer that all keys in ``z`` are meant to be strings,
 # and that all values in ``z`` are meant to be either strings or ints
 z: Mapping[str, str | int] = {
-	"name":"cherry",
-	"age":int
+ "name":"cherry",
+ "age":int
 }
 ```
 
@@ -238,7 +238,7 @@ class Model(BaseModel):
 
 
 def infinite_ints():
-	# 无限生成器 Infinite Generators
+ # 无限生成器 Infinite Generators
     i = 0
     while True:
         yield i
@@ -275,8 +275,8 @@ for i in m.infinite:
 ```python
 from pydantic import BaseModel
 class UserModel(BaseModel): 
-	id: int 
-	name: str
+ id: int 
+ name: str
 ```
 
 ### Validator 验证器
@@ -303,7 +303,7 @@ class UserModel(BaseModel):
     id: int
     name: str
 
-	# 验证名字
+ # 验证名字
     @field_validator('name')
     @classmethod
     def name_must_contain_space(cls, v: str) -> str:
@@ -336,7 +336,7 @@ class UserModel(BaseModel):
     password1: str
     password2: str
 
-	# 在进入模型之前处理
+ # 在进入模型之前处理
     @model_validator(mode='before')
     @classmethod
     def check_card_number_omitted(cls, data: Any) -> Any:
@@ -346,7 +346,7 @@ class UserModel(BaseModel):
             ), 'card_number should not be included'
         return data
 
-	# 在进入模型处理之后运行，只在模型成功验证后处理。
+ # 在进入模型处理之后运行，只在模型成功验证后处理。
     @model_validator(mode='after')
     def check_passwords_match(self) -> 'UserModel':
         pw1 = self.password1
@@ -365,15 +365,15 @@ from pydantic import BaseModel, Field
 
 
 class User(BaseModel):
-	# 提供默认值
+ # 提供默认值
     name: str = Field(default='John Doe')
-	# 提供 factory function 生成默认数据
-	id: int = Field(default_factory=lambda: uuid4().hex)
-	# alias 别名
-	...
-	# constrain 约束 gt/lt/ge 限制大小
-	...
-	# 
+ # 提供 factory function 生成默认数据
+ id: int = Field(default_factory=lambda: uuid4().hex)
+ # alias 别名
+ ...
+ # constrain 约束 gt/lt/ge 限制大小
+ ...
+ # 
 ```
 
 ### 序列化 Serialization [英 /ˈsɪəri:əˌlaɪz/]
@@ -420,7 +420,7 @@ class SubModel(BaseModel):
 
 
 class Settings(BaseSettings):
-	# 配置 alias 实际读取 `my_auth_key` 环境变量
+ # 配置 alias 实际读取 `my_auth_key` 环境变量
     auth_key: str = Field(validation_alias='my_auth_key')  
 
     api_key: str = Field(alias='my_api_key')  
@@ -442,7 +442,7 @@ class Settings(BaseSettings):
     # export my_prefix_more_settings='{"foo": "x", "apple": 1}'
     more_settings: SubModel = SubModel()
 
-	# model 配置，为所有环境变量设置 prefix [英 /'priːfɪks/]
+ # model 配置，为所有环境变量设置 prefix [英 /'priːfɪks/]
     model_config = SettingsConfigDict(env_prefix='my_prefix_')  (5)
 
 

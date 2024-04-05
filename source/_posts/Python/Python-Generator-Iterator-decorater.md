@@ -11,7 +11,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 
 ---
 
-# Python-Generator-Iterator-decorater
+# Python-Generator-Iterator-Decorater
 
 ## 迭代器
 

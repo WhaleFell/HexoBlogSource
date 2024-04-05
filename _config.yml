@@ -8,8 +8,8 @@ subtitle: 落落的迷思念想,一个存放在乌托邦之上的笔记本。
 description: 理想主义的花最终会盛开在浪漫主义的土壤里，我的热情永不会熄灭在现实的平凡之中。
 keywords: 编程,博客,记录,技术,生活,前端,摄影,LGBT,计算机,网络安全,Life,Cybersecurity,Python,Golang,Vue,Javascript,Java,Linux
 author: WhaleFall
-language: zh-CN
-timezone: ''
+language: zh-Hans
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

@@ -43,7 +43,7 @@ https://files.pythonhosted.org/packages/18/93/1f005bbe044471a0444a82cdd7356f5120
 
 每天数以百万计的机器人在 GitHub 上检索代码，匹配代码中的敏感信息，各种 Key/Session/Token/password/数据库密码/CardID/CreditCard 等。很多开发者贪图方便，开发时将这些敏感信息硬编码在代码中，这样一来，如果开源到 GitHub 上，就自我开盒了。
 
-有证据表明，中国政府会重点关注敏感项目(如FQ、Politics等)的 contributor ，尝试通过 profile、commit、issue、email、social media 精准定位墙内信息，精准喝茶。
+有证据表明，中国政府会重点关注敏感项目(如FQ、Politics等)的 contributor 甚至 star ，尝试通过 profile、commit、issue、email、social media 精准定位墙内信息，精准喝茶。
 
 解决方法也很简单：
 
@@ -193,8 +193,6 @@ sub  =>    Public Subkey
 ### 生成密钥
 
 PGP 的密钥分为两种：**主密钥** 和 **子密钥**，主密钥用于签名和认证，子密钥用于加密。只需要主密钥的公钥就行，包含了子密钥的信息。
-
-```shell
 
 生成主密钥：
 

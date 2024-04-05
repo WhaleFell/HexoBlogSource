@@ -68,7 +68,9 @@ dHd8Q~Nu8~IRN25ihNt3x-sIGrkE9n1tpFYGYbEohxy
 
 依次点击 **身份验证**，**添加平台**，**Web**
 
-​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307191615981.png&webp=true)​在重定向 URI 中输入 ==http://localhost==
+​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307191615981.png&webp=true)
+
+​在重定向 URI 中输入 <http://localhost>
 
 ​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307191615982.png&webp=true)​至此，OneDrive API 创建完成
 
@@ -112,7 +114,7 @@ docker run -d \
     --rc-pass lovehyy9420
 ```
 
-打开 http://IP:5573 并登录显示以下页面：
+打开 <http://IP:5573> 并登录显示以下页面：
 
 ​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307191615983.png&webp=true)​
 
@@ -614,8 +616,15 @@ ps -ef | grep rclone
 > fix [OneDrive mount - extremely slow](https://forum.rclone.org/t/onedrive-mount-extremely-slow/28267)
 
 ```shell
-rclone mount onedrive: q: --network-mode --cache-dir E:\onedrive --volname=rclone_od --vfs-cache-mode=full --vfs-cache-max-size=20G --vfs-read-chunk-size-limit=256M --user-agent=Chrome --no-checksum --no-modtime --drive-chunk-size=256M
+rclone mount onedrive: q: --network-mode --cache-dir E:\onedrive --volname=rclone_od --vfs-cache-mode=minimal --vfs-cache-max-size=20G --vfs-read-chunk-size-limit=256M --user-agent=Chrome --no-checksum --no-modtime --drive-chunk-size=256M
 ```
+
+--vfs-cache-mode writes or full is recommended for this remote as it can't stream
+
+> off： In this mode the cache will read di­rectly from the re­mote and write di­rectly to the re­mote with­out caching any­thing on disk. (本地不做任何缓存，所有文件直接从云端获取并写入。建议网速特别好时使用。)
+> minimal： This is very sim­i­lar to “off” ex­cept that files opened for read AND write will be buffered to disks. This means that files opened for write will be a lot more com­pat­i­ble, but uses the min­i­mal disk space. (和 off 类似，但是已经打开的文件会被缓存到本地。个人推荐，小文件基本够用，但是如果你的网络情况 (梯子) 不是特别好的话，用 writes 也行)
+> writes： In this mode files opened for read only are still read di­rectly from the re­mote, write only and read/​write files are buffered to disk first. (如果文件属性为只读则只从云端获取，不然先缓存在本地进行读写操作，随后被同步。个人推荐使用，但是在直接从本地复制文件到 GoogleDrive 时还是看网络情况)
+> full：In this mode all reads and writes are buffered to and from disk. When a file is opened for read it will be down­loaded in its en­tirety first. [所有的读写操作都会缓存到磁盘中。然后才会同步。不是很推荐。会导致所有文件均被缓存到本地。直到达到你缓存总额 (–cache-to­tal-chunk-size，默认大小 10G)。但是你网速特别差时也可以使用。]
 
 * `--allow-other`：指的是允许非当前 Rclone 用户外的用户进行访问
 * `--attr-timeout 5m`：文件属性缓存，（大小，修改时间等）的时间。如果小鸡配置比较低，建议适当提高这个值，避免过多的和内核交互，占用资源。

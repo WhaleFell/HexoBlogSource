@@ -113,6 +113,9 @@ Host *
 Host *
 ProxyCommand "D:\Git\mingw64\bin\connect.exe" -S 127.0.0.1:10808 %h %p
 
+# temporary proxy
+-o ProxyCommand="path\to\connect.exe -S 127.0.0.1:7891 %h %p"
+
 ```
 
 解决了一个迷思: 为什么 HTTP 代理能够代理很多非 HTTP 协议的请求?

@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://whaleluo.top/
+url: https://www.whaleluo.top/
 # permalink: :year/:month/:day/:title/
 # permalink_defaults:
 # 根据 避免过长的文件路径

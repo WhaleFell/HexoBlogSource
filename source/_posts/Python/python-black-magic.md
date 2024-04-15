@@ -17,7 +17,7 @@ banner_img:
 
 source code: [Pyrogram Conversation-Pyrogram](https://github.com/Ripeey/Conversation-Pyrogram/blob/main/src/convopyro/__init__.py)
 
-### Getattr
+### getattr
 
 `getattr()` 是 Python 的一个内置函数，用于获取对象的属性值。它接受两个参数：对象和属性名，并返回属性值。
 
@@ -66,9 +66,9 @@ print(obj.foo)  # 输出: Accessing attribute foo
 
 在上述示例中，当访问 obj.foo 属性时，由于该属性不存在，Python 解释器会调用  `__getattr__` 方法，并将属性名 "foo" 作为参数传入。 `__getattr__` 方法打印了一条消息并返回了 42。
 
-需要注意的是，如果一个类定义了 `__getattr__` 方法，那么该方法只会在访问不存在的属性时被调用。对于已经存在的属性，仍然会直接访问。如果需要在访问任何属性时都进行一些处理，可以使用 `__getattribute__` 方法。
+需要注意的是，如果一个类定义了 `__getattr__` 方法，那么该方法只会在访问不存在的属性时被调用。对于已经存在的属性，仍然会直接访问。如果需要在访问任何属性时都进行拦截，可以使用 `__getattribute__` 方法。
 
-## asyncio.run Vs asyncio.run
+## loop.run_until_complete() Vs asyncio.run
 
 [python - asyncio run or run\_until\_complete - Stack Overflow](https://stackoverflow.com/questions/55590343/asyncio-run-or-run-until-complete)
 
@@ -90,19 +90,13 @@ async def my_coroutine():
     print("Coroutine completed")
 
 # 使用 loop.run_until_complete()
-loop = asyncio.get_event_loop()
-loop.run_until_complete(my_coroutine())
-loop.close()
+loop = asyncio.get_event_loop() # get new event loop
+loop.run_until_complete(my_coroutine()) # run coroutine
+loop.close() # close event loop
 
 # 使用 asyncio.run()
 asyncio.run(my_coroutine())
 ```
-
-在上面的示例中，`my_coroutine` 是一个简单的协程，它会等待 1 秒钟然后打印一条消息。
-
-在第一个示例中，我们使用 `loop.run_until_complete()` 来运行协程。我们首先通过 `asyncio.get_event_loop()` 获取一个事件循环对象，然后通过 `run_until_complete()` 运行协程。最后，我们手动关闭事件循环。
-
-在第二个示例中，我们使用 `asyncio.run()` 来运行协程。我们只需要调用 `asyncio.run()` 并传入协程，它会自动创建和关闭事件循环。
 
 总结来说，`loop.run_until_complete()` 适用于在已存在的事件循环中运行协程，而 `asyncio.run()` 适用于创建一个新的事件循环并运行协程，并且它能够自动处理事件循环的创建和关闭。在 Python 3.7 及更高版本中，推荐使用 `asyncio.run()` 来运行协程。
 
@@ -162,7 +156,62 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
         yield session
 ```
 
-
 ## @dataclass 装饰器
 
-reference： [微信推文 用好 Python 标准库！少写几百行](https://mp.weixin.qq.com/s?__biz=Mzk0NjI5NTE0Ng==&amp;mid=2247483979&amp;idx=1&amp;sn=4e858741765c44552a12df957013a8ff&amp;chksm=c3091a4ef47e93582695c6998f25d661541baa06ae25c48697e734d92d17b771ecf773a142a1&amp;scene=21#wechat_redirect)
+`@dataclass` 是 Python 3.7 中引入的一个装饰器，用于简化数据类的定义。数据类是一种用于存储数据的类，通常包含一些属性和方法，用于表示和操作数据。
+
+```python
+# Python 3.7+ frozen: not allow to change value
+@dataclass(frozen=True)
+class Person(object):
+    first_name: str
+    last_name: str
+    age: int
+```
+
+## Python 3.10 新特性
+
+海象运算符 `:=` (walrus operator) 是 Python 3.8 中引入的一个新特性，它允许在 **表达式中同时进行赋值和比较操作**。在 Python 3.10 中，海象运算符的使用范围得到了扩展，可以在 `if` 语句中使用海象运算符。其实借鉴了 Go 语言的写法。这使得代码更加简洁，并且避免了引入不必要的临时变量。
+
+before:
+
+```python
+data = get_data()
+if data is not None:
+    print(len(data))
+```
+
+now:
+
+```python
+if (data := get_data()) is not None:
+    print(len(data))
+```
+
+对某些需要跳出 while 循环的情况, 尤其是分片读取文件时, 这个特性非常有用。
+
+```python
+import aiofiles
+from fastapi import UploadFile
+
+# 默认分片大小 50MB
+DEFAULT_CHUNK_SIZE = 1024 * 1024 * 50  # 50 megabytes
+
+# 使用海象运算符
+async def save_video(video_file: UploadFile):
+  async with aiofiles.open("/file/path/name.mp4", "wb") as f:
+    # while 直到 chunk 为空
+    while chunk := await video_file.read(DEFAULT_CHUNK_SIZE):
+      await f.write(chunk)
+
+# 不使用海象运算符
+async def save_video(video_file: UploadFile):
+  async with aiofiles.open("/file/path/name.mp4", "wb") as f:
+    while True:
+      chunk = await video_file.read(DEFAULT_CHUNK_SIZE)
+      # skip loop if chunk is empty
+      if not chunk:
+        break
+      await f.write(chunk)
+
+```

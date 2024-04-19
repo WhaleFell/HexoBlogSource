@@ -213,7 +213,8 @@ ulimit -SHn 65536
 echo "* soft nofile 65536" >>/etc/security/limits.conf
 echo "* hard nofile 65536" >>/etc/security/limits.conf
 
-ab -n 10000 -c 1000 "http://usa1.whaleluo.top:9810/"
+ab -n 500 -c 64 "https://api.whaleluo.top/onedrive/check/"
+ab -n 1000 -c 256 "https://api.whaleluo.top/"
 ```
 
 ### OpenVPN

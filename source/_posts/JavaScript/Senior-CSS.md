@@ -269,8 +269,6 @@ body div {
 
 Taiwind CSS 无需离开 HTML 通过 **类名** 快速实现各种样式，支持响应式设计和媒体查询。
 
-Online P
-
 ### Install
 
 #### raw HTML
@@ -305,7 +303,7 @@ npx tailwindcss -o ./src/tail.css --watch
 [Offial Guides in vue3](https://tailwindcss.com/docs/guides/vite#vue)
 
 ```shell
-pnpm add -D tailwindcss postcss autoprefixer
+pnpm add -D tailwindcss postcss autoprefixer daisyui@latest
 npx tailwindcss init -p
 
 # edit tailwind.config.js
@@ -318,6 +316,9 @@ content: [
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+# App.vue
+import "./style.css"
 
 # Start your build process
 pnpm run dev
@@ -352,6 +353,20 @@ pnpm add @headlessui/vue @heroicons/vue
 
 - headlessui/vue: 无样式组件库 [headlessui](https://headlessui.com/)
 - heroicons/vue: 图标库 [heroicons](https://heroicons.com/)
+
+### Plugins
+
+DaisyUI Tailwind CSS 组件库(as plugins): <https://daisyui.com/?lang=zh_hans>
+
+```shell
+pnpm i -D daisyui@latest
+
+# tailwind.config.js
+module.exports = {
+  //...
+  plugins: [require("daisyui")],
+}
+```
 
 ### Base 基础
 
@@ -440,6 +455,12 @@ prettier 自动排序 order
 
 ```shell
 pnpm install -D prettier-plugin-tailwindcss
+
+// .prettierrc
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+  "tailwindConfig": "./tailwind.config.js"
+}
 ```
 
 正则安全清除所有暗黑模式：

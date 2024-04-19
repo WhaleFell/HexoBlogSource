@@ -25,21 +25,21 @@ reference：
 
 ## Technology Stack 技术栈
 
--   **Vue3**：采用 Vue3 + script setup 最新的 Vue3 组合式 API
--   **Element Plus**：Element UI 的 Vue3 版本
--   **Pinia**: 传说中的 Vuex5
--   **Vite**：真的很快，取代 webpack
--   **Vue Router**：路由路由
--   **TypeScript**：JavaScript 语言的超集
--   **PNPM**：更快速的，节省磁盘空间的包管理工具
--   **Scss**：和 Element Plus 保持一致
--   **CSS 变量**：主要控制项目的布局和颜色
--   **ESlint**：代码校验
--   **Prettier**：代码格式化
--   **Axios**：发送网络请求（已封装好）
--   **UnoCSS**：具有高性能且极具灵活性的即时原子化 CSS 引擎
--   **注释**：各个配置项都写有尽可能详细的注释
--   **兼容移动端**: 布局兼容移动端页面分辨率
+- **Vue3**：采用 Vue3 + script setup 最新的 Vue3 组合式 API
+- **Element Plus**：Element UI 的 Vue3 版本
+- **Pinia**: 传说中的 Vuex5
+- **Vite**：真的很快，取代 webpack
+- **Vue Router**：路由路由
+- **TypeScript**：JavaScript 语言的超集
+- **PNPM**：更快速的，节省磁盘空间的包管理工具
+- **Scss**：和 Element Plus 保持一致
+- **CSS 变量**：主要控制项目的布局和颜色
+- **ESlint**：代码校验
+- **Prettier**：代码格式化
+- **Axios**：发送网络请求（已封装好）
+- **UnoCSS**：具有高性能且极具灵活性的即时原子化 CSS 引擎
+- **注释**：各个配置项都写有尽可能详细的注释
+- **兼容移动端**: 布局兼容移动端页面分辨率
 
 ## Prepare 准备
 
@@ -65,7 +65,7 @@ pnpm add vite -g
 pnpm create vite@latest
 pnpm install
 pnpm add -D typescript ts-node @types/node less
-pnpm add --save-dev --save-exact prettier
+pnpm add --save-dev prettier
 ```
 
 ### Install ElementUI-Plus
@@ -214,9 +214,9 @@ const props = defineProps({
 
 ### 代码规范
 
--   prop 的定义应该尽量详细，至少需要指定其类型
--   在组件上总是必须用 key 配合 v-for，以便维护内部组件及其子树的状态。
--   避免 v-if 和 v-for 用在一起。
+- prop 的定义应该尽量详细，至少需要指定其类型
+- 在组件上总是必须用 key 配合 v-for，以便维护内部组件及其子树的状态。
+- 避免 v-if 和 v-for 用在一起。
 
 ### Annotation 注释规范
 
@@ -283,9 +283,9 @@ const props = defineProps({
 
 #### ESlint
 
--   `package.json` 文件的 `devDependencies` 中有所需的 ESlint 依赖包。
--   `ESlint` 的**配置文件**是根目录下的 `.eslintrc.cjs`，它里面定义了很多校验规则
--   `ESlint` 的**忽略文件**是根目录下的 `.eslintignore`，它里面定义的目录和文件都不会被 ESlint 检查
+- `package.json` 文件的 `devDependencies` 中有所需的 ESlint 依赖包。
+- `ESlint` 的**配置文件**是根目录下的 `.eslintrc.cjs`，它里面定义了很多校验规则
+- `ESlint` 的**忽略文件**是根目录下的 `.eslintignore`，它里面定义的目录和文件都不会被 ESlint 检查
 
 .eslintrc.cjs
 
@@ -381,9 +381,9 @@ dist-ssr
 
 #### Prettier
 
--   `package.json` 文件的 `devDependencies` 中有所需的 Prettier 依赖包
--   `Prettier` 的**配置文件**是根目录下的 `prettier.config.js`，它里面定义了很多格式化规则
--   `Prettier` 的**忽略文件**是根目录下的 `.prettierignore`，它里面定义的目录和文件都不会被 Prettier 格式化
+- `package.json` 文件的 `devDependencies` 中有所需的 Prettier 依赖包
+- `Prettier` 的**配置文件**是根目录下的 `prettier.config.js`，它里面定义了很多格式化规则
+- `Prettier` 的**忽略文件**是根目录下的 `.prettierignore`，它里面定义的目录和文件都不会被 Prettier 格式化
 
 `prettier.config.js`：
 
@@ -628,19 +628,19 @@ settings.json
 
 ### Git commit 规范
 
--   **feat:** 增加新的业务功能
--   **fix:** 修复业务问题/BUG
--   **perf:** 优化性能
--   **style:** 更改代码风格, 不影响运行结果
--   **refactor:** 重构代码
--   **revert:** 撤销更改
--   **test:** 测试相关, 不涉及业务代码的更改
--   **docs:** 文档和注释相关
--   **chore:** 更新依赖/修改脚手架配置等琐事
--   **workflow:** 工作流改进
--   **ci:** 持续集成相关
--   **types:** 类型定义文件更改
--   **wip:** 开发中
+- **feat:** 增加新的业务功能
+- **fix:** 修复业务问题/BUG
+- **perf:** 优化性能
+- **style:** 更改代码风格, 不影响运行结果
+- **refactor:** 重构代码
+- **revert:** 撤销更改
+- **test:** 测试相关, 不涉及业务代码的更改
+- **docs:** 文档和注释相关
+- **chore:** 更新依赖/修改脚手架配置等琐事
+- **workflow:** 工作流改进
+- **ci:** 持续集成相关
+- **types:** 类型定义文件更改
+- **wip:** 开发中
 
 **完成一件事情，就提交一次 commit**。而不是等到你写完一整天的代码后，才在下班前只提交一次。
 

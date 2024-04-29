@@ -3,11 +3,11 @@ title: CSS 樣式入門
 date: 2024-03-03 16:35:83
 updated: 2024-03-03 16:35:83
 categories:
-    - JavaScript
+  - JavaScript
 tags:
-    - Design
-    - 前端
-    - CSS
+  - Design
+  - 前端
+  - CSS
 description:
 thumbnail:
 banner_img:
@@ -52,14 +52,14 @@ h1, h2, .intro // , 表示分别设置
 
 ```css
 .outer {
-    border: 5px solid black;
+  border: 5px solid black;
 }
 
 .box {
-    padding: 10px;
-    width: calc(90% - 30px);
-    background-color: rebeccapurple;
-    color: white;
+  padding: 10px;
+  width: calc(90% - 30px);
+  background-color: rebeccapurple;
+  color: white;
 }
 ```
 
@@ -67,16 +67,16 @@ h1, h2, .intro // , 表示分别设置
 
 ```css
 .box {
-    margin: 30px;
-    width: 100px;
-    height: 100px;
-    background-color: rebeccapurple;
-    transform: rotate(0.8turn);
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  transform: rotate(0.8turn);
 }
 
 .box {
-    /* 圆角 */
-    border-radius: 10px;
+  /* 圆角 */
+  border-radius: 10px;
 }
 ```
 
@@ -88,13 +88,13 @@ CSS 的  [`@rules`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/At-rule)�
 
 ```css
 body {
-    background-color: pink;
+  background-color: pink;
 }
 
 @media (min-width: 30em) {
-    body {
-        background-color: blue;
-    }
+  body {
+    background-color: blue;
+  }
 }
 ```
 
@@ -152,7 +152,7 @@ background-attachment: fixed;
 3. **边框盒子**：边框盒子包住内容和任何填充；使用`border`  和相关属性确定其大小。
 4. **外边距盒子**：外边距是最外层，其包裹内容、内边距和边框，作为该盒子与其他元素之间的空白；使用 `margin`和相关属性确定其大小。
 
-![](Senior-CSS.png)
+![Senior-CSS.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/Senior-CSS.png&webp=true)
 
 ```css
 body {
@@ -193,8 +193,8 @@ body {
 2. Flexbox 弹性布局
 3. Grid 网格布局
 4. 相对单位 rem、em、vw、vh
-    - em：相对于父元素的字体大小
-    - rem：相对于根元素的字体大小
+   - em：相对于父元素的字体大小
+   - rem：相对于根元素的字体大小
 
 ## CSS 动画
 
@@ -204,54 +204,54 @@ CSS 动画也叫 **补间动画**（Tweening Animation），确定了元素的�
 
 ```css
 .box {
-    animation-name: animation-name; /* 动画名称 */
-    animation-duration: 4s; /* 动画持续时间 */
-    animation-timing-function: ease-in-out; /* 动画速度曲线 */
-    animation-delay: 2s; /* 动画延迟时间 */
-    animation-iteration-count: infinite; /* 动画播放次数 */
-    animation-direction: alternate; /* 动画方向 设置动画在每次运行完后是反向运行还是重新回到开始位置重复运行。 */
-    /* normal 正向 reverse 反向 alternate 正反交替  */
+  animation-name: animation-name; /* 动画名称 */
+  animation-duration: 4s; /* 动画持续时间 */
+  animation-timing-function: ease-in-out; /* 动画速度曲线 */
+  animation-delay: 2s; /* 动画延迟时间 */
+  animation-iteration-count: infinite; /* 动画播放次数 */
+  animation-direction: alternate; /* 动画方向 设置动画在每次运行完后是反向运行还是重新回到开始位置重复运行。 */
+  /* normal 正向 reverse 反向 alternate 正反交替  */
 }
 
 /* 简写 */
 /* animation: animation-name 4s ease-in-out 2s infinite alternate; */
 
 body div {
-    width: 200px;
-    height: 20px;
-    background: #000;
-    rotate: 1px;
-    animation: animationname 4s ease 2s infinite normal;
+  width: 200px;
+  height: 20px;
+  background: #000;
+  rotate: 1px;
+  animation: animationname 4s ease 2s infinite normal;
 }
 
 @keyframes animationname {
-    0% {
-        transform: translateX(0);
-        background-color: red;
-        transform: rotate(0turn);
-    }
-    25% {
-        transform: translateX(5vw);
-        background-color: yellow;
-        transform: rotate(0.25turn);
-    }
-    50% {
-        transform: translateX(5vw);
-        background-color: blue;
-        transform: rotate(0.5turn);
-    }
+  0% {
+    transform: translateX(0);
+    background-color: red;
+    transform: rotate(0turn);
+  }
+  25% {
+    transform: translateX(5vw);
+    background-color: yellow;
+    transform: rotate(0.25turn);
+  }
+  50% {
+    transform: translateX(5vw);
+    background-color: blue;
+    transform: rotate(0.5turn);
+  }
 
-    75% {
-        transform: translateX(5vw);
-        background-color: blue;
-        transform: rotate(0.75turn);
-    }
+  75% {
+    transform: translateX(5vw);
+    background-color: blue;
+    transform: rotate(0.75turn);
+  }
 
-    100% {
-        transform: translateX(5vw);
-        background-color: green;
-        transform: rotate(1turn);
-    }
+  100% {
+    transform: translateX(5vw);
+    background-color: green;
+    transform: rotate(1turn);
+  }
 }
 ```
 
@@ -281,7 +281,7 @@ npx tailwindcss init
 edit `tailwind.config.js` file:
 
 ```js
-"./src/**/*.{html,js}", "index.html"
+'./src/**/*.{html,js}', 'index.html'
 ```
 
 add in to `tail.css`
@@ -330,10 +330,13 @@ pnpm run dev
 // tailwind.config.ts
 import { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
-import { createVariableColors, variableColorsPlugin } from 'tailwindcss-variable-colors'
+import {
+  createVariableColors,
+  variableColorsPlugin,
+} from 'tailwindcss-variable-colors'
 
 const config: Config = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     // You can also not pass the colors parameter,
     // it will use the colors from tailwindcss by default.
@@ -373,14 +376,16 @@ module.exports = {
 设计一个卡片：
 
 ```html
-<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-    <div class="flex-shrink-0">
-        <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo" />
-    </div>
-    <div>
-        <div class="text-xl font-medium text-black">ChitChat</div>
-        <p class="text-gray-500">You have a new message!</p>
-    </div>
+<div
+  class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+>
+  <div class="flex-shrink-0">
+    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo" />
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-gray-500">You have a new message!</p>
+  </div>
 </div>
 ```
 
@@ -433,21 +438,70 @@ Flex 参数：
 
 ```html
 <div
-    class="m-2 mx-auto flex h-screen flex-wrap content-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 align-middle text-2xl md:container">
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+  class="m-2 mx-auto flex h-screen flex-wrap content-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 align-middle text-2xl md:container"
+>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    01
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    02
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    03
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    04
+  </div>
 
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    01
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    02
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    03
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    04
+  </div>
 
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">01</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">02</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">03</div>
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl">04</div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    01
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    02
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    03
+  </div>
+  <div
+    class="flex h-20 w-20 items-center justify-center rounded-full bg-pink-200 hover:shadow-2xl"
+  >
+    04
+  </div>
 </div>
 ```
 

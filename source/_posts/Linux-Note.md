@@ -1446,9 +1446,51 @@ start explorer.exe
 exit
 ```
 
+### Clear_Event_Viewer_Logs.bat
+
+清除 Windows 事件查看器日志
+
+```shell
+@echo off
+
+FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
+IF (%adminTest%)==(Access) goto noAdmin
+for /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
+echo.
+echo All Event Logs have been cleared!
+goto theEnd
+
+:do_clear
+echo clearing %1
+wevtutil.exe cl %1
+goto :eof
+
+:noAdmin
+echo Current user permissions to execute this .BAT file are inadequate.
+echo This .BAT file must be run with administrative privileges.
+echo Exit now, right click on this .BAT file, and select "Run as administrator".  
+pause >nul
+
+:theEnd
+Exit
+```
+
+### delete-history.cmd
+
+清除 Windows 历史记录
+
+```shell
+@echo off
+del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\*
+del /F /Q %APPDATA%\Microsoft\Windows\Recent\CustomDestinations\*
+del /F /Q %APPDATA%\Microsoft\Windows\Recent\*
+taskkill /f /im explorer.exe
+start explorer.exe
+```
+
 ## 引用 Reference
 
-> 感谢以下博客的作者和教程网站，如有侵权请及时联系博主删除。
+> 感谢以下博客的作者和教程网站,如有侵权请及时联系博主删除。
 
 1. Golang 和 Linux 学习笔记合集 [https://www.huweihuang.com/](https://www.huweihuang.com/)
 

@@ -4,21 +4,21 @@ date: 2023-09-01 21:50:74
 updated: 2023-09-01 21:50:74
 categories: JavaScript
 tags: [Vue, TypeScript, TS, Javascript]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
-# TypeScript 快速入门☞北
+# TypeScript 快速入门 ☞ 北
 
 因为在学习 Vue Framework 的过程中，碰到了很多 TypeScript 之类的知识和语法以及 Vue 源码也是通过 ts 写的，所以有必要去了解一下 TypeScript 这个语言语法。
 
 reference:
 
 1. [TypeScript 教程 | 菜鸟教程](https://www.runoob.com/typescript/ts-tutorial.html)
-2. 最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)  
+2. 最近发现一本好书：[TypeScript 入门教程](http://ts.xcatliu.com/)
 3. [阮一峰](https://www.ruanyifeng.com/) ES6 入门教程：[ES6 入门教程](https://es6.ruanyifeng.com/#docs/class)
-4. 2024/1/21 更：最近又发现一个宝藏 up 主的视频 **小满 zc**：[小满zc自残 TypeScript 基础教程全集（完结）](https://www.bilibili.com/video/BV1wR4y1377K)
+4. 2024/1/21 更：最近又发现一个宝藏 up 主的视频 **小满 zc**：[小满 zc 自残 TypeScript 基础教程全集（完结）](https://www.bilibili.com/video/BV1wR4y1377K)
 
 ---
 
@@ -42,7 +42,7 @@ tsc -v # 查看 version
 编写 main.ts
 
 ```typescript
-var message:string = "Hello World"
+var message: string = 'Hello World'
 console.log(message)
 ```
 
@@ -65,38 +65,42 @@ ts-node index.ts
 ## 数据类型
 
 ```typescript
-let anywhere: any = null; // any 任何类型
-let decLiteral: number = 6;    // 数字类型
-let name: string = "Runoob"; // 字符串
-let flag: boolean = true; // 布尔
-let array:number[] = [1, 2]; // 数组
+let anywhere: any = null // any 任何类型
+let decLiteral: number = 6 // 数字类型
+let name: string = 'Runoob' // 字符串
+let flag: boolean = true // 布尔
+let array: number[] = [1, 2] // 数组
 // 元组
-let x: [string, number];
-x = ['Runoob', 1];
+let x: [string, number]
+x = ['Runoob', 1]
 
 // enumerate 枚举
-enum Color {Red, Green, Blue};
-let c: Color = Color.Blue;
-console.log(c);    // 输出 2
+enum Color {
+  Red,
+  Green,
+  Blue,
+}
+let c: Color = Color.Blue
+console.log(c) // 输出 2
 
 // void 空的 用于标记方法返回值的类型，表示没有返回值
 function hello(): void {
-    alert("Hello Runoob");
+  alert('Hello Runoob')
 }
 // never 是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。
 // 函数中它通常表现为抛出异常或无法执行到终止点 例如无限循环
 never
 // 返回值为 never 的函数可以是无法被执行到的终止点的情况
 function loop(): never {
-    while (true) {}
+  while (true) {}
 }
 
 // 可以用 | 来支持多种类型
 // 启用 --strictNullChecks
-let x: number | null | undefined;
-x = 1; // 编译正确
-x = undefined;    // 编译正确
-x = null;    // 编译正确
+let x: number | null | undefined
+x = 1 // 编译正确
+x = undefined // 编译正确
+x = null // 编译正确
 ```
 
 ### 数据类型的层级关系
@@ -128,7 +132,7 @@ a: object = [12,12,1,2] // correct list is reference object
 ### 数组类型 array
 
 ```javascript
-let arr: number[] = [1,2,3,4]
+let arr: number[] = [1, 2, 3, 4]
 // 使用泛型约束
 let array: Array<boolean> = [true, false]
 // 定义多维数组
@@ -136,8 +140,8 @@ let arr: number[][] = [[1], [2], [3]]
 let arr: Array<Array<number>> = [[1], [2], [3]]
 
 // es6 多参数
-function mutil(...args:any[]) {
- console.log(args)
+function mutil(...args: any[]) {
+  console.log(args)
 }
 ```
 
@@ -167,21 +171,21 @@ interface Arguments {
 ```typescript
 // 元组
 
-let arr: [number, boolean, string] = [1, false, "str"]
+let arr: [number, boolean, string] = [1, false, 'str']
 
 arr[0] = 2
-const lst = arr[2].split("")
+const lst = arr[2].split('')
 
 // 使用 readonly 修饰符，可以将元组中的元素设置为只读
 
-let arrReadonly: readonly [number, boolean, string] = [1, false, "str"]
+let arrReadonly: readonly [number, boolean, string] = [1, false, 'str']
 
 let xyz: readonly [x: number, y: number, z?: number] = [1, 2, 3]
 
 let excel: [no: number, name: string, age: number][] = [
-    [1, "张三", 18],
-    [2, "李四", 19],
-    [3, "王五", 20],
+  [1, '张三', 18],
+  [2, '李四', 19],
+  [3, '王五', 20],
 ]
 
 type first = (typeof excel)[0][1]
@@ -193,9 +197,9 @@ type first = (typeof excel)[0][1]
 // enumeration 枚举类型
 // auto increment 自增序列枚举
 enum Color {
-    Red = 0,
-    Green = 1,
-    Blue = 2,
+  Red = 0,
+  Green = 1,
+  Blue = 2,
 }
 
 // enum Color {
@@ -204,13 +208,12 @@ enum Color {
 //     DarkBlue = "DarkBlue",
 // }
 
-console.log("Color.Red", Color.Red)
+console.log('Color.Red', Color.Red)
 
 // enum 反射 only support number
 let red: number = Color.Red
 let key = Color[red]
 console.log(`key: ${key} value: ${red}`)
-
 ```
 
 ### 类型推断和类型别名
@@ -233,13 +236,13 @@ never 是最底层的类型，
 
 ```typescript
 function fn(): nerver {
- throw new Error("error")
+  throw new Error('error')
 }
 
 function fn(): never {
-    while (true) {
-        console.log("diediedie")
-    }
+  while (true) {
+    console.log('diediedie')
+  }
 }
 ```
 
@@ -247,20 +250,20 @@ never 用于 switch 兜底的场景：
 
 ```typescript
 // never 用于 switch 兜底的场景
-type A = "sing" | "dance" | "rap" | "basketball"
+type A = 'sing' | 'dance' | 'rap' | 'basketball'
 
 function ikun(value: A): string | never {
-    switch (value) {
-        case "sing":
-            return "唱歌"
-        case "dance":
-            return "跳舞"
-        case "rap":
-            return "rap"
-        default:
-            const check: never = value // 不能将类型“string”分配给类型“never”。
-            return check
-    }
+  switch (value) {
+    case 'sing':
+      return '唱歌'
+    case 'dance':
+      return '跳舞'
+    case 'rap':
+      return 'rap'
+    default:
+      const check: never = value // 不能将类型“string”分配给类型“never”。
+      return check
+  }
 }
 ```
 
@@ -273,15 +276,15 @@ function ikun(value: A): string | never {
 ```typescript
 // symbol 应用
 let obj = {
-    name: "WF",
-    age: 18,
-    // [age]: 27, 相同的 key 会覆盖
-    [Symbol("age")]: 27, // 不能被覆盖
+  name: 'WF',
+  age: 18,
+  // [age]: 27, 相同的 key 会覆盖
+  [Symbol('age')]: 27, // 不能被覆盖
 }
 
 // for in 不能遍历到 symbol
 for (let key in obj) {
-    console.log(key)
+  console.log(key)
 }
 
 console.log(Object.keys(obj)) // 也不能遍历到 symbol
@@ -289,7 +292,6 @@ Object.getOwnPropertyNames(obj) // 也不能遍历到 symbol
 Object.getOwnPropertySymbols(obj) // 只可以遍历到 symbol
 // es6 新增的方法反射 Reflect.ownKeys(obj) 可以遍历到 symbol
 Reflect.ownKeys(obj)
-
 ```
 
 ### 联合类型 类型断言 交叉类型
@@ -297,10 +299,10 @@ Reflect.ownKeys(obj)
 联合类型
 
 ```javascript
-let phone: number | string = "020-12123"
+let phone: number | string = '020-12123'
 
-let fn = function (type: number | boolean):boolean {
- return !!type // 将类型强行转成 boolean 类型，比如 0=>false 1=>true
+let fn = function (type: number | boolean): boolean {
+  return !!type // 将类型强行转成 boolean 类型，比如 0=>false 1=>true
 }
 ```
 
@@ -321,7 +323,7 @@ interface Man extands Pople {
 const wf = (man: Pople & Man):void => {
  console.log(man);
 }
- 
+
 wf({"name":"hyy", age:18, sex: "famale"})
 ```
 
@@ -370,74 +372,71 @@ Math.floor( (Math.random()*100) / screen.width)
 TypeScript 还支持 for…of 、forEach、every 和 some 循环。
 
 ```typescript
-let someArray = [1, "string", false];
- 
+let someArray = [1, 'string', false]
+
 for (let entry of someArray) {
-    console.log(entry); // 1, "string", false
+  console.log(entry) // 1, "string", false
 }
 
-let list = [4, 5, 6];
+let list = [4, 5, 6]
 list.forEach((val, idx, array) => {
-    // val: 当前值
-    // idx：当前index
-    // array: Array
-});
+  // val: 当前值
+  // idx：当前index
+  // array: Array
+})
 
-let list = [4, 5, 6];
+let list = [4, 5, 6]
 list.every((val, idx, array) => {
-    // val: 当前值
-    // idx：当前index
-    // array: Array
-    return true; // Continues
-    // Return false will quit the iteration
-});
+  // val: 当前值
+  // idx：当前index
+  // array: Array
+  return true // Continues
+  // Return false will quit the iteration
+})
 ```
 
 ## Function 函数
 
 ```typescript
-function function_name():return_type { 
-    // 语句
-    return value; 
+function function_name(): return_type {
+  // 语句
+  return value
 }
 
 // 带参数
 function add(x: number, y: number): number {
-    return x + y;
+  return x + y
 }
-console.log(add(1,2))
+console.log(add(1, 2))
 
 // parameter? 可选参数
 function buildName(firstName: string, lastName?: string) {
-    if (lastName)
-        return firstName + " " + lastName;
-    else
-        return firstName;
+  if (lastName) return firstName + ' ' + lastName
+  else return firstName
 }
- 
-let result1 = buildName("Bob");  // 正确
-let result2 = buildName("Bob", "Adams", "Sr.");  // 错误，参数太多了
-let result3 = buildName("Bob", "Adams");  // 正确
+
+let result1 = buildName('Bob') // 正确
+let result2 = buildName('Bob', 'Adams', 'Sr.') // 错误，参数太多了
+let result3 = buildName('Bob', 'Adams') // 正确
 
 // set default parameter
-function calculate_discount(price:number,rate:number = 0.50) { 
-    var discount = price * rate; 
-    console.log("计算结果: ",discount); 
-} 
-calculate_discount(1000) 
-calculate_discount(1000,0.30)
+function calculate_discount(price: number, rate: number = 0.5) {
+  var discount = price * rate
+  console.log('计算结果: ', discount)
+}
+calculate_discount(1000)
+calculate_discount(1000, 0.3)
 
 // 剩余参数 ...parameter 得到一个参数 list Array
 function buildName(firstName: string, ...restOfName: string[]) {
-    return firstName + " " + restOfName.join(" ");
+  return firstName + ' ' + restOfName.join(' ')
 }
-  
-let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+
+let employeeName = buildName('Joseph', 'Samuel', 'Lucas', 'MacKinzie')
 
 // Lambda 函数 箭头函数
-var foo = (x:number)=>10 + x 
-console.log(foo(100))      //输出结果为 110
-
+var foo = (x: number) => 10 + x
+console.log(foo(100)) //输出结果为 110
 ```
 
 **ts 可以定义 object 内 this 的类型**，但在 origin JS 中无法使用，必须是 method 的第一个参数定义 this 的类型，传参时不用传 this ，和 Python 中 class 的 self 一样。
@@ -489,63 +488,70 @@ interface 接口命名**第一个字母要大写**。
 遇到重名 interface 时，会自动进行合并。
 
 ```typescript
-interface IPerson { 
-    firstName:string, 
-    lastName:string, 
-    sayHi: ()=>string 
-} 
+interface IPerson {
+  firstName: string
+  lastName: string
+  sayHi: () => string
+}
 
 // customer 类实现了 IPerson 接口
-var customer:IPerson = { 
-    firstName:"Tom",
-    lastName:"Hanks", 
-    sayHi: ():string =>{return "Hi there"} 
-} 
- 
-console.log("Customer 对象 ") 
-console.log(customer.firstName) 
-console.log(customer.lastName) 
-console.log(customer.sayHi())  
+var customer: IPerson = {
+  firstName: 'Tom',
+  lastName: 'Hanks',
+  sayHi: (): string => {
+    return 'Hi there'
+  },
+}
+
+console.log('Customer 对象 ')
+console.log(customer.firstName)
+console.log(customer.lastName)
+console.log(customer.sayHi())
 ```
 
 interface 中使用 union type
 
 ```typescript
-interface RunOptions { 
-    program:string; 
-    // commandline 可以是一个 字符串列表，可以是一个字符串，也可以是一个 return 字符串的函数
-    commandline:string[]|string|(()=>string); 
-    // 只读
-    readonly callback: ()=>boolean
-} 
- 
+interface RunOptions {
+  program: string
+  // commandline 可以是一个 字符串列表，可以是一个字符串，也可以是一个 return 字符串的函数
+  commandline: string[] | string | (() => string)
+  // 只读
+  readonly callback: () => boolean
+}
+
 // commandline 是字符串
-var options:RunOptions = {program:"test1",commandline:"Hello"}; 
-console.log(options.commandline)  
- 
+var options: RunOptions = { program: 'test1', commandline: 'Hello' }
+console.log(options.commandline)
+
 // commandline 是字符串数组
-options = {program:"test1",commandline:["Hello","World"]}; 
-console.log(options.commandline[0]); 
-console.log(options.commandline[1]);  
- 
+options = { program: 'test1', commandline: ['Hello', 'World'] }
+console.log(options.commandline[0])
+console.log(options.commandline[1])
+
 // commandline 是一个函数表达式
-options = {program:"test1",commandline:()=>{return "**Hello World**";}}; 
- 
-var fn:any = options.commandline; 
-console.log(fn());
+options = {
+  program: 'test1',
+  commandline: () => {
+    return '**Hello World**'
+  },
+}
+
+var fn: any = options.commandline
+console.log(fn())
 ```
 
 **索引签名**：接口中可以为数组的 index 和 content 设置类型
 
 ```typescript
-interface ages { 
-   [index:string]:number 
-} 
- 
-var agelist:ages; 
- // 类型正确 
-agelist["runoob"] = 15  
- 
+interface ages {
+  [index: string]: number
+}
+
+var agelist: ages
+// 类型正确
+agelist['runoob'] = 15
+
 // 类型错误，输出  error TS2322: Type '"google"' is not assignable to type 'number'.
 // agelist[2] = "google"
 ```
@@ -565,47 +571,47 @@ interface Animal {
 接口可以通过其他接口来扩展自己，可以继承多个接口，使用 `extends` 语句
 
 ```typescript
-interface Person { 
-   age:number 
-} 
+interface Person {
+  age: number
+}
 
 // Musician 继承了 Person 接口，有 Person 接口的所有 methods 和 attribute
-interface Musician extends Person { 
-   instrument:string 
-} 
- 
-var drummer = <Musician>{}; 
-drummer.age = 27 
-drummer.instrument = "Drums" 
-console.log("年龄:  "+drummer.age)
-console.log("喜欢的乐器:  "+drummer.instrument)
+interface Musician extends Person {
+  instrument: string
+}
+
+var drummer = <Musician>{}
+drummer.age = 27
+drummer.instrument = 'Drums'
+console.log('年龄:  ' + drummer.age)
+console.log('喜欢的乐器:  ' + drummer.instrument)
 ```
 
 允许多继承：
 
 ```typescript
-interface IParent1 { 
-    v1:number 
-} 
- 
-interface IParent2 { 
-    v2:number 
-} 
- 
-interface Child extends IParent1, IParent2 { } 
-var Iobj:Child = { v1:12, v2:23} 
-console.log("value 1: "+Iobj.v1+" value 2: "+Iobj.v2)
+interface IParent1 {
+  v1: number
+}
+
+interface IParent2 {
+  v2: number
+}
+
+interface Child extends IParent1, IParent2 {}
+var Iobj: Child = { v1: 12, v2: 23 }
+console.log('value 1: ' + Iobj.v1 + ' value 2: ' + Iobj.v2)
 ```
 
 ### Interface 接口定义函数类型
 
 ```javascript
 interface Fn {
- (name: string):number[]
+  (name: string): number[];
 }
 
-const fn:Fn = function (name: string){
- return [1,2,3]
+const fn: Fn = function (name: string) {
+  return [1, 2, 3]
 }
 ```
 
@@ -614,27 +620,27 @@ const fn:Fn = function (name: string){
 Class 类是对象的构造器：与 JS 的使用方法相同
 
 ```typescript
-class Car { 
-   // 字段
-   engine:string; 
-   
-   // 构造函数
-   constructor(engine:string) { 
-      this.engine = engine 
-   }  
-   
-   // 方法
-   disp():void { 
-      console.log("函数中显示发动机型号:"+this.engine) 
-   } 
-} 
- 
+class Car {
+  // 字段
+  engine: string
+
+  // 构造函数
+  constructor(engine: string) {
+    this.engine = engine
+  }
+
+  // 方法
+  disp(): void {
+    console.log('函数中显示发动机型号:' + this.engine)
+  }
+}
+
 // 创建一个对象
-var obj = new Car("XXSY1")
- 
+var obj = new Car('XXSY1')
+
 // 访问字段
-console.log("读取发动机型号:"+obj.engine)  
- 
+console.log('读取发动机型号:' + obj.engine)
+
 // 访问方法
 obj.disp()
 ```
@@ -642,61 +648,61 @@ obj.disp()
 类的继承：
 
 ```typescript
-class Shape { 
-   Area:number // 指定 attribute 的 type
-   
-   constructor(a:number) { 
-      this.Area = a 
-   } 
-} 
- 
-class Circle extends Shape { 
-   disp():void { 
-      console.log("圆的面积:  "+this.Area) 
-   } 
+class Shape {
+  Area: number // 指定 attribute 的 type
+
+  constructor(a: number) {
+    this.Area = a
+  }
 }
-  
-var obj = new Circle(223); 
+
+class Circle extends Shape {
+  disp(): void {
+    console.log('圆的面积:  ' + this.Area)
+  }
+}
+
+var obj = new Circle(223)
 obj.disp()
 ```
 
 需要注意的是 **子类只能继承一个父类**，TypeScript **不支持继承多个类**，但支持多重继承：
 
 ```typescript
-class Root { 
-   str:string; 
-} 
- 
-class Child extends Root {} 
+class Root {
+  str: string
+}
+
+class Child extends Root {}
 class Leaf extends Child {} // 多重继承，继承了 Child 和 Root 类
- 
-var obj = new Leaf(); 
-obj.str ="hello" 
+
+var obj = new Leaf()
+obj.str = 'hello'
 console.log(obj.str)
 ```
 
 static 静态 methods 、attribute，可直接通过类名来调用，不需要 `New`
 
 ```typescript
-class StaticMem {  
-   static num:number; 
-   
-   static disp():void { 
-      console.log("num 值为 "+ StaticMem.num) 
-   } 
-} 
- 
-StaticMem.num = 12     // 初始化静态变量
-StaticMem.disp()       // 调用静态方法
+class StaticMem {
+  static num: number
+
+  static disp(): void {
+    console.log('num 值为 ' + StaticMem.num)
+  }
+}
+
+StaticMem.num = 12 // 初始化静态变量
+StaticMem.disp() // 调用静态方法
 ```
 
 instanceof [/ˈɪnstəns/] 运算符，用于判断对象是否为指定类：
 
 ```typescript
-class Person{ } 
-var obj = new Person() 
-var isPerson = obj instanceof Person; 
-console.log("obj 对象是 Person 类实例化来的吗？ " + isPerson);
+class Person {}
+var obj = new Person()
+var isPerson = obj instanceof Person
+console.log('obj 对象是 Person 类实例化来的吗？ ' + isPerson)
 ```
 
 类的访问控制：
@@ -706,15 +712,14 @@ console.log("obj 对象是 Person 类实例化来的吗？ " + isPerson);
 - **private** : **私有**，只能被其定义所在的类访问。
 
 ```typescript
-class Encapsulate { 
-   str1:string = "hello" 
-   private str2:string = "world" 
+class Encapsulate {
+  str1: string = 'hello'
+  private str2: string = 'world'
 }
- 
-var obj = new Encapsulate() 
-console.log(obj.str1)     // 可访问 
-console.log(obj.str2)   // 编译错误， str2 是私有的
 
+var obj = new Encapsulate()
+console.log(obj.str1) // 可访问
+console.log(obj.str2) // 编译错误， str2 是私有的
 ```
 
 ### 类实现接口
@@ -724,22 +729,22 @@ console.log(obj.str2)   // 编译错误， str2 是私有的
 使用 implements [英 /ˈɪmplɪment/ vt. 使生效 n.用具] 关键字
 
 ```typescript
-interface ILoan { 
-   interest:number 
-} 
- 
-class AgriLoan implements ILoan { 
-   interest:number 
-   rebate:number 
-   
-   constructor(interest:number,rebate:number) { 
-      this.interest = interest 
-      this.rebate = rebate 
-   } 
-} 
- 
-var obj = new AgriLoan(10,1) 
-console.log("利润为 : "+obj.interest+"，抽成为 : "+obj.rebate )
+interface ILoan {
+  interest: number
+}
+
+class AgriLoan implements ILoan {
+  interest: number
+  rebate: number
+
+  constructor(interest: number, rebate: number) {
+    this.interest = interest
+    this.rebate = rebate
+  }
+}
+
+var obj = new AgriLoan(10, 1)
+console.log('利润为 : ' + obj.interest + '，抽成为 : ' + obj.rebate)
 ```
 
 ### 实现一个 Vue Virtual Dom 虚拟 DOM
@@ -754,87 +759,87 @@ console.log("利润为 : "+obj.interest+"，抽成为 : "+obj.rebate )
 // // protected 只能在类的内部和子类中访问，实例化类不能访问
 
 interface Options {
-    el: string | HTMLElement
+  el: string | HTMLElement
 }
 
 interface VueCls {
-    options: Options
-    init(): void
+  options: Options
+  init(): void
 }
 
 interface Vnode {
-    tag: string
-    text?: string
-    children?: Vnode[]
+  tag: string
+  text?: string
+  children?: Vnode[]
 }
 
 // virtual dom 虚拟 DOM 简单实现
 
 class Dom {
-    constructor() {
-        console.log("Dom constructor")
-    }
+  constructor() {
+    console.log('Dom constructor')
+  }
 
-    // 静态方法 只能通过 Dom.version() 调用
-    static version() {
-        return "0.0.1"
-    }
+  // 静态方法 只能通过 Dom.version() 调用
+  static version() {
+    return '0.0.1'
+  }
 
-    // 创建元素
-    private createElement(el: string): HTMLElement {
-        return document.createElement(el)
+  // 创建元素
+  private createElement(el: string): HTMLElement {
+    return document.createElement(el)
+  }
+  // 填充文本
+  private setText(el: HTMLElement, text: string | null): void {
+    el.textContent = text
+  }
+  // 渲染函数
+  protected render(data: Vnode): HTMLElement {
+    let root = this.createElement(data.tag)
+    if (data.children && Array.isArray(data.children)) {
+      data.children.forEach((item) => {
+        let child = this.render(item) // 递归渲染子节点
+        root.appendChild(child)
+      })
+    } else {
+      this.setText(root, data.text ? data.text : null)
     }
-    // 填充文本
-    private setText(el: HTMLElement, text: string | null): void {
-        el.textContent = text
-    }
-    // 渲染函数
-    protected render(data: Vnode): HTMLElement {
-        let root = this.createElement(data.tag)
-        if (data.children && Array.isArray(data.children)) {
-            data.children.forEach((item) => {
-                let child = this.render(item) // 递归渲染子节点
-                root.appendChild(child)
-            })
-        } else {
-            this.setText(root, data.text ? data.text : null)
-        }
-        return root
-    }
+    return root
+  }
 }
 
 // Vue 类 继承 Dom 类 实现 VueCls 接口
 class Vue extends Dom implements VueCls {
-    options: Options
-    constructor(options: Options) {
-        super() // 调用父类的构造函数 prototype.constructor.call(this)
-        this.options = options
-        this.init()
+  options: Options
+  constructor(options: Options) {
+    super() // 调用父类的构造函数 prototype.constructor.call(this)
+    this.options = options
+    this.init()
+  }
+  init(): void {
+    // 虚拟 dom 就是通过 js 渲染真实的 dom HTML
+    let data: Vnode = {
+      tag: 'div',
+      children: [
+        {
+          tag: 'p',
+          text: 'I am child 1',
+        },
+        {
+          tag: 'p',
+          text: 'I am child 2',
+        },
+      ],
     }
-    init(): void {
-        // 虚拟 dom 就是通过 js 渲染真实的 dom HTML
-        let data: Vnode = {
-            tag: "div",
-            children: [
-                {
-                    tag: "p",
-                    text: "I am child 1",
-                },
-                {
-                    tag: "p",
-                    text: "I am child 2",
-                },
-            ],
-        }
-        let app =
-            typeof this.options.el === "string"
-                ? document.querySelector(this.options.el)
-                : this.options.el
-        app?.appendChild(this.render(data))
-    }
+    let app =
+      typeof this.options.el === 'string'
+        ? document.querySelector(this.options.el)
+        : this.options.el
+    app?.appendChild(this.render(data))
+  }
 }
 
-let vue = new Vue({ el: "#app" })
+let vue = new Vue({ el: '#app' })
 ```
 
 ### 类的 getter 和 setter
@@ -842,24 +847,24 @@ let vue = new Vue({ el: "#app" })
 ```typescript
 // 类 get set 方法
 class Ref {
-    private _value: any // 维护一个内部变量
-    constructor(value: any) {
-        this._value = value
-    }
+  private _value: any // 维护一个内部变量
+  constructor(value: any) {
+    this._value = value
+  }
 
-    get value() {
-        console.log("get value")
-        return "get value: " + this._value
-    }
+  get value() {
+    console.log('get value')
+    return 'get value: ' + this._value
+  }
 
-    set value(newValue: any) {
-        console.log("set value")
-        this._value = "set value: " + newValue
-    }
+  set value(newValue: any) {
+    console.log('set value')
+    this._value = 'set value: ' + newValue
+  }
 }
 
-const ref = new Ref("hyy")
-ref.value = "hyy"
+const ref = new Ref('hyy')
+ref.value = 'hyy'
 console.log(ref.value)
 ```
 
@@ -871,27 +876,27 @@ console.log(ref.value)
 
 ```typescript
 abstract class animal {
-    _name: string
-    constructor(name: string) {
-        this._name = name
-    }
-    abstract say(word: string): void
-    getName(): string {
-        return this._name
-    }
+  _name: string
+  constructor(name: string) {
+    this._name = name
+  }
+  abstract say(word: string): void
+  getName(): string {
+    return this._name
+  }
 }
 
 class Cat extends animal {
-    constructor(name: string) {
-        super(name)
-    }
-    say(word: string): void {
-        console.log(`${this._name} say ${word}`)
-    }
+  constructor(name: string) {
+    super(name)
+  }
+  say(word: string): void {
+    console.log(`${this._name} say ${word}`)
+  }
 }
 
-const cat = new Cat("tom")
-cat.say("hello")
+const cat = new Cat('tom')
+cat.say('hello')
 ```
 
 ## Dock Typing 鸭子类型
@@ -904,23 +909,22 @@ cat.say("hello")
 换言之如果一个类型 A 实现了 `run()` 和 `eat()` 的方法（即实现了行为接口）就可以通过接口类型调用这个方法，**不需要知道类型是什么**。
 
 ```typescript
-interface IPoint { 
-    x:number 
-    y:number 
-} 
+interface IPoint {
+  x: number
+  y: number
+}
 // p1： 实现了 IPoint 接口的对象，即有 x,y 两个 parameter
-function addPoints(p1:IPoint,p2:IPoint):IPoint { 
-    var x = p1.x + p2.x 
-    var y = p1.y + p2.y 
-    return {x:x, y:y} 
-} 
- 
-// 正确
-var newPoint = addPoints({x:3,y:4},{x:5,y:1})  
- 
-// 错误 
-var newPoint2 = addPoints({x:1},{x:4,y:3})
+function addPoints(p1: IPoint, p2: IPoint): IPoint {
+  var x = p1.x + p2.x
+  var y = p1.y + p2.y
+  return { x: x, y: y }
+}
 
+// 正确
+var newPoint = addPoints({ x: 3, y: 4 }, { x: 5, y: 1 })
+
+// 错误
+var newPoint2 = addPoints({ x: 1 }, { x: 4, y: 3 })
 ```
 
 ## 命名空间
@@ -929,10 +933,10 @@ var newPoint2 = addPoints({x:1},{x:4,y:3})
 
 ```typescript
 // 定义了一个命名空间 SomeNameSpaceName
-namespace SomeNameSpaceName { 
-   // export 用于在外部导入 SomeNameSpaceName 中的类和接口
-   export interface ISomeInterfaceName {      }  
-   export class SomeClassName {      }  
+namespace SomeNameSpaceName {
+  // export 用于在外部导入 SomeNameSpaceName 中的类和接口
+  export interface ISomeInterfaceName {}
+  export class SomeClassName {}
 }
 ```
 
@@ -945,8 +949,8 @@ SomeInterFace.ts
 
 ```typescript
 // 使用 export 导出
-export interface SomeInterface { 
-   // 代码部分
+export interface SomeInterface {
+  // 代码部分
 }
 ```
 
@@ -954,7 +958,7 @@ mian.ts
 
 ```typescript
 // 使用 import 导入
-import someInterfaceRef = require("./SomeInterface");
+import someInterfaceRef = require('./SomeInterface')
 ```
 
 使用 tsc 编译代码：
@@ -972,10 +976,10 @@ tsc --module commonjs TestShape.ts
 ```typescript
 // 生成器
 function* generator() {
-    yield Promise.resolve("hello")
-    yield "hyy"
-    yield 123
-    yield { name: "hyy" }
+  yield Promise.resolve('hello')
+  yield 'hyy'
+  yield 123
+  yield { name: 'hyy' }
 }
 
 const girls = generator()
@@ -1021,7 +1025,7 @@ const each = (value: any) => {
     }
 }
 
-// 迭代器的语法糖 for of 
+// 迭代器的语法糖 for of
 // object 不能使用 for of, 因为 object 没有 Symbol.iterator 迭代器
 for (let value of arr) {
     console.log(value)
@@ -1068,7 +1072,7 @@ let { max, current } = obj
 
 ```typescript
 function echo<T>(arg: T): T {
-    return arg
+  return arg
 }
 echo<number>(1, 2)
 
@@ -1076,17 +1080,17 @@ type A<T> = string | number | T
 let a: A<boolean> = true
 
 interface Data<T> {
-    code: number
-    data: T
+  code: number
+  data: T
 }
 let data: Data<string[]> = {
-    code: 200,
-    data: ["1", "2"],
+  code: 200,
+  data: ['1', '2'],
 }
 
 // 泛型支持设置默认值 多个值
 function add<T = number, K = number>(a: T, b: K): Array<T | K> {
-    return [a, b]
+  return [a, b]
 }
 add(false, 1)
 ```
@@ -1095,27 +1099,27 @@ add(false, 1)
 
 ```typescript
 const axios = {
-    get<T>(url: string): Promise<T> {
-        return new Promise<T>((resolve, reject) => {
-            let xhr = new XMLHttpRequest()
-            xhr.open("GET", url, true)
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    resolve(JSON.parse(xhr.responseText))
-                }
-            }
-            xhr.send(null)
-        })
-    },
+  get<T>(url: string): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      let xhr = new XMLHttpRequest()
+      xhr.open('GET', url, true)
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          resolve(JSON.parse(xhr.responseText))
+        }
+      }
+      xhr.send(null)
+    })
+  },
 }
 
 interface Data {
-    message: string
-    code: number
+  message: string
+  code: number
 }
 
-axios.get<Data>("https://jsonplaceholder.typicode.com/todos/1").then((res) => {
-    console.log(res.code)
+axios.get<Data>('https://jsonplaceholder.typicode.com/todos/1').then((res) => {
+  console.log(res.code)
 })
 ```
 
@@ -1125,16 +1129,16 @@ axios.get<Data>("https://jsonplaceholder.typicode.com/todos/1").then((res) => {
 
 ```typescript
 interface Len {
-    length: number
+  length: number
 }
 
 // 约束泛型 T 要有 length attribute
 function fn<T extends Len>(arg: T): T {
-    console.log(arg.length)
-    return arg
+  console.log(arg.length)
+  return arg
 }
 
-fn("123")
+fn('123')
 fn([1, 2, 3])
 fn({ length: 10 })
 fn(123) // error
@@ -1146,20 +1150,19 @@ keyof 读取对象的所有属性名 实现安全的对象访问：
 // keyof 读取对象的所有属性名 实现安全的对象访问
 
 let obj = {
-    name: "wf",
-    age: 18,
-    sex: "famale",
+  name: 'wf',
+  age: 18,
+  sex: 'famale',
 }
 
 // 获取对象的所有属性名的 Union type
 type ObjKey = keyof typeof obj
 
 function objPick<T, K extends keyof T>(obj: T, key: K): T[K] {
-    return obj[key]
+  return obj[key]
 }
 
-objPick(obj, "name")
-
+objPick(obj, 'name')
 ```
 
 keyof 的高级用法，将 interface 的 key 变可选
@@ -1169,12 +1172,12 @@ keyof 的高级用法，将 interface 的 key 变可选
 // 将 interface 的 key 变可选
 
 interface Data {
-    name: string
-    age: number
+  name: string
+  age: number
 }
 
 type Option = {
-    [K in keyof Data]?: Data[K]
+  [K in keyof Data]?: Data[K]
 }
 type B = Option<Data>
 ```
@@ -1189,7 +1192,7 @@ tsconfig.json
 "compilerOptions": {
   "incremental": true, // TS编译器在第一次编译之后会生成一个存储编译信息的文件，第二次编译会在第一次的基础上进行增量编译，可以提高编译的速度
   "tsBuildInfoFile": "./buildFile", // 增量编译文件的存储位置
-  "diagnostics": true, // 打印诊断信息 
+  "diagnostics": true, // 打印诊断信息
   "target": "ES5", // 目标语言的版本
   "module": "CommonJS", // 生成代码的模板标准
   "outFile": "./app.js", // 将多个相互依赖的文件生成一个文件，可以用在AMD模块中，即开启时应设置"module": "AMD",
@@ -1206,7 +1209,7 @@ tsconfig.json
   "declarationMap": true, // 为声明文件生成sourceMap
   "typeRoots": [], // 声明文件目录，默认时node_modules/@types
   "types": [], // 加载的声明文件包
-  "removeComments":true, // 删除注释 
+  "removeComments":true, // 删除注释
   "noEmit": true, // 不输出文件,即编译后不会生成任何js文件
   "noEmitOnError": true, // 发送错误时不输出任何文件
   "noEmitHelpers": true, // 不生成helper函数，减小体积，需要额外安装，常配合importHelpers一起使用
@@ -1236,7 +1239,7 @@ tsconfig.json
   "listEmittedFiles": true, // 打印输出文件
   "listFiles": true// 打印编译的文件(包括引用的声明文件)
 }
- 
+
 // 指定一个匹配列表（属于自动指定该路径下的所有ts相关文件）
 "include": [
    "src/**/*"
@@ -1264,7 +1267,7 @@ tsconfig.json
 // namespace 所有的东西包括 variable 和 function 必须要 export 导出才能访问
 // 同名 namespace 会合并
 // 支持把整个 namespace export 导出
-// 导入简写 
+// 导入简写
 import a=Test.fn from './vue'
 a()
 
@@ -1282,18 +1285,18 @@ export namespace Test {
 
 ```typescript
 namespace ios {
-    export const pushNotification = (msg: string, type: number) => {
-        console.log("IOS pushNotification")
-    }
+  export const pushNotification = (msg: string, type: number) => {
+    console.log('IOS pushNotification')
+  }
 }
 
 namespace android {
-    export const pushNotification = (msg: string) => {
-        console.log("Android pushNotification")
-    }
-    export const callPhone = (phone: string) => {
-        console.log("Android callPhone")
-    }
+  export const pushNotification = (msg: string) => {
+    console.log('Android pushNotification')
+  }
+  export const callPhone = (phone: string) => {
+    console.log('Android callPhone')
+  }
 }
 ```
 
@@ -1348,13 +1351,13 @@ const app = express()
 const router = express.Router()
 app.use('/api', router)
 router.get('/list', (req, res) => {
-    res.json({
-        code: 200
-    })
+  res.json({
+    code: 200,
+  })
 })
- 
-app.listen(9001,()=>{
-    console.log(9001)
+
+app.listen(9001, () => {
+  console.log(9001)
 })
 ```
 
@@ -1362,18 +1365,18 @@ express.d.ts
 
 ```typescript
 declare module 'express' {
-    interface Router {
-        get(path: string, cb: (req: any, res: any) => void): void
-    }
-    interface App {
-        use(path: string, router: any): void
-        listen(port: number, cb?: () => void): void
-    }
-    interface Express {
-        (): App
-    }
-    const express: Express
-    export default express
+  interface Router {
+    get(path: string, cb: (req: any, res: any) => void): void
+  }
+  interface App {
+    use(path: string, router: any): void
+    listen(port: number, cb?: () => void): void
+  }
+  interface Express {
+    (): App
+  }
+  const express: Express
+  export default express
 }
 ```
 
@@ -1383,23 +1386,23 @@ declare module 'express' {
 
 ```typescript
 interface Name {
-    name: string
+  name: string
 }
 interface Age {
-    age: number
+  age: number
 }
 interface Sex {
-    sex: number
+  sex: number
 }
- 
-let people1: Name = { name: "小满" }
+
+let people1: Name = { name: '小满' }
 let people2: Age = { age: 20 }
 let people3: Sex = { sex: 1 }
 
 // ES6 新方法 Object.assign 浅拷贝 只能脱离第一层引用
 const people = Object.assign(people1, people2, people3)
 // ES6 对象解构 浅拷贝 只能脱离第一层引用
-const people = {...people1, ...people2, ...people3}
+const people = { ...people1, ...people2, ...people3 }
 // ES6 深拷贝 结构克隆
 structedClone(a)
 ```
@@ -1477,12 +1480,12 @@ app.run()
 在构造函数中的 this 原先是 null，可以在函数内部通过 `this.xx` 的方式赋予 `value` 和 `method`，new 这个函数返回的就是 this 这个对象。
 
 ```javascript
-let People = function(name, age){
- this.name = name
- this.age = age
- this.say = ()=>{
-  console.log(`${this.name} say she had just turned ${this.age} y.o.`)
- }
+let People = function (name, age) {
+  this.name = name
+  this.age = age
+  this.say = () => {
+    console.log(`${this.name} say she had just turned ${this.age} y.o.`)
+  }
 }
 
 let girl = new People()
@@ -1511,14 +1514,11 @@ girl.say()
 `prototype` 是 **构造函数**、**class 类**，独有的一个 **对象**。`prototype` 是 **函数才会有的属性**
 
 ```javascript
-function Person() {
-
-}
-// 虽然写在注释里，但是你要注意：
-// prototype是函数才会有的属性 
-Person.prototype.name = 'Kevin';
-var person1 = new Person();
-var person2 = new Person();
+function Person() {}
+// Note: prototype 函数内置的属性
+Person.prototype.name = 'Kevin'
+var person1 = new Person()
+var person2 = new Person()
 console.log(person1.name) // Kevin
 console.log(person2.name) // Kevin
 ```
@@ -1534,13 +1534,11 @@ console.log(person2.name) // Kevin
 `__proto__` 被称为 **对象** 的 **隐式原型**，对应的是构造函数（类）的 `prototype` 原型**对象**
 
 ```javascript
-function Person() {
-
-}
+function Person() {}
 // 实例化构造函数(类)返回对象
-var person = new Person();
+var person = new Person()
 // 对象的 __proto__ 属性指向构造函数(类)的 prototype
-console.log(person.__proto__ === Person.prototype); // true
+console.log(person.__proto__ === Person.prototype) // true
 ```
 
 ![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-1.png&webp=true)
@@ -1550,26 +1548,22 @@ console.log(person.__proto__ === Person.prototype); // true
 每个原型对象都有一个 **constructor** 属性指向关联的构造函数。
 
 ```javascript
-function Person() {
-
-}
-console.log(Person === Person.prototype.constructor); // true
+function Person() {}
+console.log(Person === Person.prototype.constructor) // true
 ```
 
 ![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-2.png&webp=true)
 综上：
 
 ```javascript
-function Person() {
+function Person() {}
 
-}
-
-var person = new Person();
+var person = new Person()
 
 console.log(person.__proto__ === Person.prototype) // true
 console.log(Person.prototype.constructor === Person) // true
 
-// 顺便学习一个ES5的方法,可以获得对象的原型
+// 一个ES5的方法 `Object.getPrototypeOf()`, 可以获得对象的原型
 console.log(Object.getPrototypeOf(person) === Person.prototype) // true
 ```
 
@@ -1578,11 +1572,9 @@ console.log(Object.getPrototypeOf(person) === Person.prototype) // true
 构造函数（类）的原型对象也是一个对象 **object**，所以他也具有 `__proto__` 隐式原型属性，指向 object 对象的构造函数（类）的原型对象 `Object.prototype` 。
 
 ```javascript
-function Person(){
+function Person() {}
 
-}
-
-Person.prototype // 构造函数(类)的原型对象
+Person.prototype // 构造函数(类)的 **原型对象**
 Person.prototype.__proto__ // 原型对象的隐式原型 指向 Object.prototype
 ```
 
@@ -1628,21 +1620,19 @@ obj {
 
 ```typescript
 const watcher: ClassDecorator = (target: Function) => {
- // target 是构造函数(类)
- target.prototype.getParams = <T>(params: T):T => {
-        return params
-    }
+  // target 是构造函数(类)
+  target.prototype.getParams = <T>(params: T): T => {
+    return params
+  }
 }
 
 @watcher
 class A {
-    constructor() {
- 
-    }
+  constructor() {}
 }
 
-const a = new A();
-console.log((a as any).getParams('123'));
+const a = new A()
+console.log((a as any).getParams('123'))
 // 装饰器其实就是一个语法糖，本质上是
 const wrapper = watcher(A) // 将源对象放入装饰器函数
 const a = new wrapper() // 返回装饰过后的构造函数
@@ -1652,50 +1642,45 @@ decorator factory 装饰器工厂：允许往装饰器内传参，也就是一�
 
 ```typescript
 const watcher = (name: string): ClassDecorator => {
-    return (target: Function) => {
-        target.prototype.getParams = <T>(params: T): T => {
-            return params
-        }
-        target.prototype.getOptions = (): string => {
-            return name
-        }
+  return (target: Function) => {
+    target.prototype.getParams = <T>(params: T): T => {
+      return params
     }
+    target.prototype.getOptions = (): string => {
+      return name
+    }
+  }
 }
- 
+
 @watcher('name')
 class A {
-    constructor() {
- 
-    }
+  constructor() {}
 }
- 
-const a = new A();
-console.log((a as any).getOptions('123'));
+
+const a = new A()
+console.log((a as any).getOptions('123'))
 ```
 
 ### Method decorator 方法装饰器
 
 ```typescript
 const met: MethodDecorator = (target, key, descriptor) => {
- // 接收三个参数
- // 1. static method -> 类的构造函数 methods -> 类的原型对象 prototype
- // 2. 成员的名字
- // 3. 成员的属性描述符 
- console.log(args);
+  // 接收三个参数
+  // 1. static method -> 类的构造函数 methods -> 类的原型对象 prototype
+  // 2. 成员的名字
+  // 3. 成员的属性描述符
+  console.log(args)
 }
- 
+
 class A {
-    constructor() {
- 
-    }
-    @met
-    getName ():string {
-        return '小满'
-    }
+  constructor() {}
+  @met
+  getName(): string {
+    return '小满'
+  }
 }
- 
- 
-const a = new A();
+
+const a = new A()
 ```
 
 返回的参数：可以在 `descriptor` 更改 value 的数值，达到直接改传参的目的。
@@ -1716,7 +1701,7 @@ const a = new A();
 ## 通过 Rollup 构建 TS 项目
 
 ```shell
-npm init -y # Generate package.json  
+npm init -y # Generate package.json
 tsc --init # Generate tsconfig.json
 npm i rollup -g
 ```
@@ -1745,7 +1730,7 @@ npm i rollup -g
 - clear()：清除所有成员，无返回值。
 
 ```typescript
-let set:Set<number> = new Set([1,2,3,4])
+let set: Set<number> = new Set([1, 2, 3, 4])
 set.add(5)
 set.has(5)
 set.delete(5)
@@ -1755,9 +1740,9 @@ set.size //4
 数组去重：
 
 ```typescript
-let arr = [...new Set([1,1,1,2,2,3,4,5,5,5,5])]
- 
-console.log(arr); //[ 1, 2, 3, 4, 5 ]
+let arr = [...new Set([1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 5])]
+
+console.log(arr) //[ 1, 2, 3, 4, 5 ]
 ```
 
 ### Map
@@ -1784,24 +1769,24 @@ weak: adj. 弱的，weakSet 和 weakMap 的键都是**弱引用**，**不会计�
 
 Javascript V8 引擎 GC 是通过 **计数引用** 进行清除的。
 
-首先 obj 引用了这个对象 +1，aahph 也引用了 + 1，wmap 也引用了，但是不会 + 1，因为他是弱引用，不会计入垃圾回收，因此 obj 和 aahph 释放了该引用 weakMap 也会随着消失的，但是有个问题你会发现控制台能输出，值是取不到的。  
+首先 obj 引用了这个对象 +1，aahph 也引用了 + 1，wmap 也引用了，但是不会 + 1，因为他是弱引用，不会计入垃圾回收，因此 obj 和 aahph 释放了该引用 weakMap 也会随着消失的，但是有个问题你会发现控制台能输出，值是取不到的。
 
 因为 V8 的 GC 回收是需要一定时间的，需要延长到 最少 200ms weakMap 才会回收，为了避免这个问题 weakMap 不允许取键值，也不允许遍历，同理 weakSet 也一样。
 
 ```typescript
-let obj:any = {name: 'hyy 自残'} // 引用计数 +1
-let aahph:any = obj // 引用计数 +2
-let wmap:WeakMap<object,string> = new WeakMap() // 弱引用 weak
- 
-wmap.set(obj, "Finland") // WeakMap 的 key 是弱引用，所以 obj 不会计数，obj 当前引用计数为 2
- 
-obj = null // 对象置空，引用 -1 
+let obj: any = { name: 'hyy 自残' } // 引用计数 +1
+let aahph: any = obj // 引用计数 +2
+let wmap: WeakMap<object, string> = new WeakMap() // 弱引用 weak
+
+wmap.set(obj, 'Finland') // WeakMap 的 key 是弱引用，所以 obj 不会计数，obj 当前引用计数为 2
+
+obj = null // 对象置空，引用 -1
 aahph = null // 对象置空，引用 -1
 
 //v8 GC 不稳定 最少200ms
-setTimeout(()=>{
-    console.log(wmap)
-},500)
+setTimeout(() => {
+  console.log(wmap)
+}, 500)
 ```
 
 ## Function 函数的二义性 箭头函数
@@ -1812,13 +1797,13 @@ setTimeout(()=>{
 
 ```javascript
 // 函数的二义性
-function fn(){
- // 函数内的 this 指向它自身
- this.name = 'hyy'
- this.say = () => {
-  console.log("function object say hyy")
- }
- console.log("function log")
+function fn() {
+  // 函数内的 this 指向它自身
+  this.name = 'hyy'
+  this.say = () => {
+    console.log('function object say hyy')
+  }
+  console.log('function log')
 }
 
 // 作为函数调用
@@ -1827,7 +1812,7 @@ fn()
 fnObject = new fn()
 fnObject.name = 'hyy'
 console.log(fnObject)
-// output: 
+// output:
 // fn {name: 'hyy', say: ƒ}
 // name: "hyy"
 // say: () => { console.log("function object say hyy") }
@@ -1873,69 +1858,72 @@ console.log(vue)
 
 ```typescript
 // this 指向外面的环境，在 browser 中 this 是 windows
-const fn = ()=>{ console.log(this) }
+const fn = () => {
+  console.log(this)
+}
 console.log(fn) // 没有 prototype
 ```
 
 ## TS 进阶代理&反射 proxy & Reflect
 
-**Proxy** 对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。
+**Proxy**  对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。
 
 Vue3 正是通过 **Proxy** 代理对象实现页面的响应式的。
 
 ```typescript
-
 type Person = {
-    name: string,
-    age: number,
-    text: string
-}
- 
- // 返回一个 proxy 对象
- // 传入: 
- // target 目标对象，可以是任何类型的对象，包括原生数组，函数
- // handler 一个以 func 作为 attribute 的 object
- // 定义了在操作 proxy 对象时的行为，例如 get set
-const proxy = (object: any, key: any) => {
-    return new Proxy(object, {
-        get(target, prop, receiver) {
-            console.log(`get key======>${key}`);
-            return Reflect.get(target, prop, receiver)
-        },
- 
-        set(target, prop, value, receiver) {
-            console.log(`set key======>${key}`);
-            return Reflect.set(target, prop, value, receiver)
-        }
-    })
+  name: string
+  age: number
+  text: string
 }
 
+// 返回一个 proxy 对象
+// 传入:
+// target 目标对象，可以是任何类型的对象，包括原生数组，函数
+// handler 一个以 func 作为 attribute 的 object
+// 定义了在操作 proxy 对象时的行为，例如 get set
+const proxy = (object: any, key: any) => {
+  return new Proxy(object, {
+    get(target, prop, receiver) {
+      console.log(`get key======>${key}`)
+      return Reflect.get(target, prop, receiver)
+    },
+
+    set(target, prop, value, receiver) {
+      console.log(`set key======>${key}`)
+      return Reflect.set(target, prop, value, receiver)
+    },
+  })
+}
 
 const logAccess = (object: Person, key: 'name' | 'age' | 'text') => {
-    return proxy(object, key)
+  return proxy(object, key)
 }
 
 // 使用 keyof + generics 泛型优化
 
 const logAccess = <T>(object: T, key: keyof T): T => {
- return proxy(object, key)
+  return proxy(object, key)
 }
- 
-let man: Person = logAccess({
-    name: "hyy",
+
+let man: Person = logAccess(
+  {
+    name: 'hyy',
     age: 18,
-    text: "刚满18岁"
-}, 'age')
- 
-man.age  = 30
- 
-console.log(man);
+    text: '刚满18岁',
+  },
+  'age'
+)
+
+man.age = 30
+
+console.log(man)
 ```
 
 ### Reflect
 
-与大多数全局对象不同 `Reflect` 并非一个构造函数，所以不能通过 [new运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 对其进行调用。  
-要将 `Reflect` 对象作为一个函数来调用。`Reflect` 的所有属性和方法都是静态的（就像 [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math "Math") 对象）
+与大多数全局对象不同 `Reflect` 并非一个构造函数，所以不能通过 [new 运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 对其进行调用。  
+要将 `Reflect` 对象作为一个函数来调用。`Reflect` 的所有属性和方法都是静态的（就像 [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math 'Math') 对象）
 
 API：
 
@@ -1963,7 +1951,7 @@ const autorun = (cb: Function) => {
         list.add(cb)
     }
 }
- 
+
 const observable = <T extends object>(params: T) => {
     return new Proxy(params, {
         set(target, key, value, receiver) {
@@ -1975,9 +1963,9 @@ const observable = <T extends object>(params: T) => {
         }
     })
 }
- 
+
 const person = observable({ name: "小满", attr: "威猛先生" })
- 
+
 autorun(()=>{
     console.log('我变化了')
 })
@@ -1995,19 +1983,19 @@ person.attr = '威猛个捶捶'
 声明一个函数可以接受任意类型，并返回一个 boolean，只筛选出字符串类型，进行类型收缩。
 
 ```typescript
-const isString = (str:any): boolean => {
-   return typeof str === 'string';
+const isString = (str: any): boolean => {
+  return typeof str === 'string'
 }
 
-// typeof returns a type represented(vt. 表现) as string 
-const str = "Hello";
-console.log(typeof str); // 输出: "string"
+// typeof returns a type represented(vt. 表现) as string
+const str = 'Hello'
+console.log(typeof str) // 输出: "string"
 
-const num = 42;
-console.log(typeof num); // 输出: "number"
+const num = 42
+console.log(typeof num) // 输出: "number"
 
-const bool = true;
-console.log(typeof bool); // 输出: "boolean"
+const bool = true
+console.log(typeof bool) // 输出: "boolean"
 ```
 
 typeof 只能返回有限的字符串类型，包括 “string”、“number”、“boolean”、“symbol”、“undefined” 和 “object”。对于函数、数组、null 等类型，typeof 也会返回 “object”。因此，typeof 对于复杂类型和自定义类型的判断是有限的。
@@ -2017,10 +2005,10 @@ typeof 只能返回有限的字符串类型，包括 “string”、“number”
 使用 instanceof 类型守卫可以 **检查一个对象是否是特定类的实例**。
 
 ```typescript
-const isArr = (value:unknown): number | unknow => {
-    if(value instanceof Array){
-        value.length
-    }
+const isArr = (value: unknown): number | unknow => {
+  if (value instanceof Array) {
+    value.length
+  }
 }
 ```
 
@@ -2033,74 +2021,73 @@ The left-hand side of an 'instanceof' expression must be of type **'any'**, an *
 
 ```typescript
 class Person {
-  name: string;
+  name: string
   constructor(name: string) {
-    this.name = name;
+    this.name = name
   }
 }
 
-const person = new Person("Alice");
-console.log(person instanceof Person); // 输出: true
+const person = new Person('Alice')
+console.log(person instanceof Person) // 输出: true
 
-const obj = {};
-console.log(obj instanceof Person); // 输出: false
+const obj = {}
+console.log(obj instanceof Person) // 输出: false
 
 const num = new String(12)
 console.log(num instanceof String) // true
 
 // 无法判断字面量
 const num2: number = 12
-console.log(num2 as any instanceof String) // false
+console.log((num2 as any) instanceof String) // false
 ```
 
 ### Custom Guard 自定义守卫
 
 实现一个函数支持任意类型：
 
-1. 如果是对象，就检查里面的属性，  
-2. 如果里面的属性是 number 就取两位，如果是 string 就去除左右空格  
+1. 如果是对象，就检查里面的属性，
+2. 如果里面的属性是 number 就取两位，如果是 string 就去除左右空格
 3. 如果是函数就执行
 
 编写代码时，需要用到 [类型谓语 （type predicate）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates) 才能拥有良好的 type hint。
 
 ```typescript
 // use type predicate
-const isString = (str: any):str is string => typeof str === 'string'
-const isNumber = (num: any):num is number => typeof num === 'number'
-const isFn = (fn: any)=> typeof fn === 'function'
-const isObj = (obj: any)=> ({}).toString.call(obj) === '[object Object]'
+const isString = (str: any): str is string => typeof str === 'string'
+const isNumber = (num: any): num is number => typeof num === 'number'
+const isFn = (fn: any) => typeof fn === 'function'
+const isObj = (obj: any) => ({}.toString.call(obj) === '[object Object]')
 
-const fn = (data:any) => {
-    let value;
-    if(isObj(data)){
-        Object.keys(data).forEach(key=>{
-            value = data[key]
-            if(isString(value)){
-                data[key] = value.trim()
-            }
-            if(isNumber(value)){
-                data[key] = value.toFixed(2)
-            }
-            if(isFn(value)){
-             // 当函数被单独调用时（例如 value()），
-             // 函数内部的 this 会指向全局对象（在浏览器环境下是 window）
-                // value()
-                data[key]()
-            }
-        })
-    }
+const fn = (data: any) => {
+  let value
+  if (isObj(data)) {
+    Object.keys(data).forEach((key) => {
+      value = data[key]
+      if (isString(value)) {
+        data[key] = value.trim()
+      }
+      if (isNumber(value)) {
+        data[key] = value.toFixed(2)
+      }
+      if (isFn(value)) {
+        // 当函数被单独调用时（例如 value()），
+        // 函数内部的 this 会指向全局对象（在浏览器环境下是 window）
+        // value()
+        data[key]()
+      }
+    })
+  }
 }
 const obj = {
-    a: 100.22222,
-    b: ' test  ',
-    c: function () {
-        console.log(this.a);
-        return this.a;
-    }
+  a: 100.22222,
+  b: ' test  ',
+  c: function () {
+    console.log(this.a)
+    return this.a
+  },
 }
 
 fn(obj)
-
 ```
 
 ## Type compatible[/kəmˈpætəbl/] 类型兼容
@@ -2109,8 +2096,8 @@ fn(obj)
 
 ### Duck Type 类型协变&鸭子类型
 
->什么是鸭子类型？  
->一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
+> 什么是鸭子类型？  
+> 一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
 > -- duck type
 
 A B 两个类型完全不同但是可以赋值并无报错，B 类型充当 A 类型的子类型，当子类型里面的属性满足 A 类型就可以进行赋值，也就是说不能少可以多，这就是协变。
@@ -2127,18 +2114,18 @@ interface B extands A {
     age:number
     sex:string
 }
- 
+
 let a:A = {
     name: "hyy",
     age: 18,
 }
- 
+
 let b:B = {
     name: "yyh",
     age: 30,
     sex: "女"
 }
- 
+
 a = b
 ```
 
@@ -2167,79 +2154,78 @@ tsconfig strictFunctionTypes 设置为 false 支持双向协变 fna fnb 随便�
 
 ### Partial(adj. 局部的) 和 Required(adj. 必须的)
 
-`Partial` 是一个泛型类型，用于将一个类型的所有属性变为可选。  
-与之相反，`Required` 是一个泛型类型，用于将一个类型的所有属性变为必选
+`Partial`  是一个泛型类型，用于将一个类型的所有属性变为可选。  
+与之相反，`Required`  是一个泛型类型，用于将一个类型的所有属性变为必选
 
 ```typescript
 // Partial: makes all attributes of a type optional
 interface User {
-    name: string;
-    age: number;
+  name: string
+  age: number
 }
 type test = Partial<User>
 // 转换完成之后的结果
 type test = {
-    name?: string | undefined;
-    age?: number | undefined;
+  name?: string | undefined
+  age?: number | undefined
 }
- 
+
 // 原理
 type PratialUser<T, K extends keyof T> = {
-    [P in K]?: T[P]
+  [P in K]?: T[P]
 }
 
 // Required: makes all attributes of a type required
 interface User {
-    name?: string;
-    age?: number;
+  name?: string
+  age?: number
 }
 // 原理
 type CustomRequired<T> = {
-    [P in keyof T]-?: T[P]
-}
- 
-type test = Required<User>
-type test2 = CustomRequired<User>
- 
-// 结果
-interface User {
-    name: string;
-    age: number;
+  [P in keyof T]-?: T[P]
 }
 
+type test = Required<User>
+type test2 = CustomRequired<User>
+
+// 结果
+interface User {
+  name: string
+  age: number
+}
 ```
 
 ### Pick(选取) 和 Exclude(排除)
 
 `Pick` 用于从一个类型中选取指定的属性。  
-`Exclude` 是一个类型操作符，用于从一个类型的属性集合中排除指定的属性。
+`Exclude`  是一个类型操作符，用于从一个类型的属性集合中排除指定的属性。
 
 ```typescript
 // pick: Used to select the specified property from a type
 interface User {
-    name?: string;
-    age?: number;
+  name?: string
+  age?: number
 }
 // 原理
 type CoustomPick<T, K extends keyof T> = {
-    [P in K]: T[P]
+  [P in K]: T[P]
 }
- 
-type test = Pick<User,'age'>
- 
+
+type test = Pick<User, 'age'>
+
 // 结果
 type test = {
-    age?: number | undefined;
+  age?: number | undefined
 }
 
 // Exclude: Used to exclude a specified property from a type's property collection
 
 // 原理
-type CustomExclude<T, K> = T extends K ? never : T 
+type CustomExclude<T, K> = T extends K ? never : T
 type test = Exclude<'a' | 'b' | 'c', 'a' | 'b'>
 
 // 结果
-type test = "c"
+type test = 'c'
 ```
 
 ### Omit
@@ -2248,18 +2234,18 @@ type test = "c"
 
 ```typescript
 interface User {
-    address?: string;
-    name?: string;
-    age?: number;
+  address?: string
+  name?: string
+  age?: number
 }
 // 原理
-type coustomOmit<T,K> = Pick<T,Exclude<keyof T, K>>
-type test = Omit<User,'age'>
- 
+type coustomOmit<T, K> = Pick<T, Exclude<keyof T, K>>
+type test = Omit<User, 'age'>
+
 // 结果
 type test = {
-    address?: string | undefined;
-    name?: string | undefined;
+  address?: string | undefined
+  name?: string | undefined
 }
 ```
 
@@ -2274,39 +2260,38 @@ type test = {
 
 ```typescript
 // record is used to constrain(v. 约束) the key and value of an object.
-type Key = "c" | "x" | "k";
-type Value = '唱' | '跳'  | 'rap' | '篮球'
- 
-let obj:Record<Key, Value> = {
-    'c':'唱',
-    "x":'跳',
-    "k":'rap'
+type Key = 'c' | 'x' | 'k'
+type Value = '唱' | '跳' | 'rap' | '篮球'
+
+let obj: Record<Key, Value> = {
+  c: '唱',
+  x: '跳',
+  k: 'rap',
 }
 
 // 原理
 // 对象的key 只能是symbol string number 那么keyof any正好获取这三个类型
-type CustomRecord<K extends keyof any,T> = {
-    [P in K]: T
+type CustomRecord<K extends keyof any, T> = {
+  [P in K]: T
 }
-
 
 // 支持嵌套约束
 let obj: CustomRecord<Key, Record<Key, Value>> = {
-    'c': {
-        'c': '唱',
-        'x': '跳',
-        'k': 'rap'
-    },
-    "x": {
-        'c': '唱',
-        'x': '跳',
-        'k': 'rap'
-    },
-    "k": {
-        'c': '唱',
-        'x': '跳',
-        'k': 'rap'
-    }
+  c: {
+    c: '唱',
+    x: '跳',
+    k: 'rap',
+  },
+  x: {
+    c: '唱',
+    x: '跳',
+    k: 'rap',
+  },
+  k: {
+    c: '唱',
+    x: '跳',
+    k: 'rap',
+  },
 }
 ```
 
@@ -2316,12 +2301,12 @@ let obj: CustomRecord<Key, Record<Key, Value>> = {
 
 ```typescript
 const fn = () => [1,2,3,'sad'];
- 
+
 type num = ReturnType<typeof fn>;
 // type num = (string | number)[]
 
 // 原理
-type CustomFn<F extends Function>  = F extends (…args:any[])=> infer Res  ? Res :never 
+type CustomFn<F extends Function>  = F extends (…args:any[])=> infer Res  ? Res :never
 ```
 
 ## Infer

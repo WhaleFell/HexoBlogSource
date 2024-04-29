@@ -7,7 +7,7 @@ categories:
 tags:
   - Hexo
   - Blog
-description: 编写博客时的规范约束,优化 SEO,提高检索效率. 
+description: 编写博客时的规范约束,优化 SEO,提高检索效率.
 date updated: 2023-06-29 23:18
 ---
 
@@ -26,8 +26,8 @@ date updated: 2023-06-29 23:18
 title: Hexo 博客写作规范约定
 date: 2022-12-11 15:51:48
 updated: 2022-12-11 15:59:48
-categories: 
-    - Hexo
+categories:
+  - Hexo
 tags: [Hexo, Blog]
 description: Hexo 博客写作规范约定
 thumbnail: http://....jpg
@@ -64,6 +64,14 @@ vercel 感觉对 FastAPI 的支持不是很好，所以用 render.com 上也部�
 
 ```shell
 https://api-render.whaleluo.top/onedrive/file/?path={path}
+```
+
+使用正则进行本地图片替换:
+
+```shell
+!\[.*?\]\((.*?)\)
+# replace
+![$1](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/$1&webp=true)
 ```
 
 ## 本地部署

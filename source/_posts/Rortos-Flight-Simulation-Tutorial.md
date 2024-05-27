@@ -10,8 +10,8 @@ tags:
   - 模拟飞行
   - RFS
   - 航空爱好
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -25,7 +25,7 @@ RFS 是一款运行在安卓手机端的模拟飞行应用，可能是安卓上�
 
 1. 在此链接下载正版的 rfs，不要打开 [123pan.com/s/qDuLVv-wMFed.html](https://www.123pan.com/s/qDuLVv-wMFed.html)
 2. 安装通用 Google Framework <https://m.ourplay.net/> 之后下载这个在这里边导入刚刚下载的本体 ，会显示更新 更新完成之后登录 Google Account。
-3. 登录之后在设置账户里点一下谷歌授权 就可以玩耍了 
+3. 登录之后在设置账户里点一下谷歌授权 就可以玩耍了
 
 ## Translation 配置翻译
 
@@ -59,7 +59,7 @@ RFS 是一款运行在安卓手机端的模拟飞行应用，可能是安卓上�
 
 ### 飞行检查单
 
-​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202306252215592.png&webp=true) 
+​![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202306252215592.png&webp=true)
 
 ### 引擎
 

@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——Type关键字
 date: 2022-05-21 8:30:48
 updated: 2022-05-21 8:30:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go Type 关键字
@@ -35,7 +33,7 @@ Go 语言支持 **高阶函数** ,所以可以把函数作为一个函数的返�
 
 ```go
 //不是重新定义新的数据类型，只是给int起别名，和int可以通用,%T打印的类型还是int
-type myint = int 
+type myint = int
 ```
 
 ## 非本地类型不能定义方法

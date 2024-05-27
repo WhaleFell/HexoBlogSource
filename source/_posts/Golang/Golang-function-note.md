@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——func函数
 date: 2022-05-2 2:17:48
 updated: 2022-05-2 2:17:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 函数
@@ -360,7 +358,7 @@ func squares() func() int {
 }
 func main() {
    // f是匿名函数，可以访问到 squares 保持的 x 局部变量
-   f := squares() 
+   f := squares()
    fmt.Println(f()) // "1"
    fmt.Println(f()) // "4"
    fmt.Println(f()) // "9"

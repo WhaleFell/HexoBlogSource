@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——go 包的使用
 date: 2022-05-28 21:54:48
 updated: 2022-05-28 21:54:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 包的使用

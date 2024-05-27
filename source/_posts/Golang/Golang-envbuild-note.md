@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——Go环境搭建
 date: 2022-04-19 18:30:48
 updated: 2022-04-19 18:30:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 环境搭建

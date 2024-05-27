@@ -4,9 +4,9 @@ date: 2023-07-15 14:49:21
 updated: 2023-07-15 14:49:21
 categories: OpenWRT
 tags: [OpenWRT, Linux]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
 # Openwrt LEDE 固件自定义编译笔记
@@ -38,32 +38,32 @@ make menuconfig
 ```
 
 ```text
-Target System (x86)  --->   目标系统（x86）  
-Subtarget (x86_64)  --->   子目标（x86_64）  
-Target Profile (Generic)  --->目标配置文件（通用）  
-Target Images  ---> 保存目标镜像的格式  
-Global build settings  --->      全局构建设置  
-Advanced configuration options (for developers)  ---- 高级配置选项（适用于开发人员）  
-Build the OpenWrt Image Builder 构建OpenWrt图像生成器  
-Build the OpenWrt SDK  构建OpenWrt SDK  
-Package the OpenWrt-based Toolchain 打包基于OpenWrt的工具链  
-Image configuration  --->图像配置  
-Base system  --->     基本系统  
-Administration  --->     管理  
-Boot Loaders  ---> 引导加载程序  
-Development  --->   开发  
-Extra packages  --->  额外包  
-Firmware  --->固件  
-Fonts  --->字体  
-Kernel modules  --->  内核模块  
-Languages  --->语言  
-Libraries  --->  图书馆  
-LuCI  --->      LuCI  
-Mail  ---> 邮件  
-Multimedia  --->多媒体  
-Network  --->网络  
-Sound  ---> 声音  
-Utilities  --->实用程序  
+Target System (x86)  --->   目标系统（x86）
+Subtarget (x86_64)  --->   子目标（x86_64）
+Target Profile (Generic)  --->目标配置文件（通用）
+Target Images  ---> 保存目标镜像的格式
+Global build settings  --->      全局构建设置
+Advanced configuration options (for developers)  ---- 高级配置选项（适用于开发人员）
+Build the OpenWrt Image Builder 构建OpenWrt图像生成器
+Build the OpenWrt SDK  构建OpenWrt SDK
+Package the OpenWrt-based Toolchain 打包基于OpenWrt的工具链
+Image configuration  --->图像配置
+Base system  --->     基本系统
+Administration  --->     管理
+Boot Loaders  ---> 引导加载程序
+Development  --->   开发
+Extra packages  --->  额外包
+Firmware  --->固件
+Fonts  --->字体
+Kernel modules  --->  内核模块
+Languages  --->语言
+Libraries  --->  图书馆
+LuCI  --->      LuCI
+Mail  ---> 邮件
+Multimedia  --->多媒体
+Network  --->网络
+Sound  ---> 声音
+Utilities  --->实用程序
 Xorg  --->Xorg
 ```
 
@@ -77,7 +77,7 @@ Subtarget -> x86_64
 Target Images -> squashfs
 
 ## 选择构建X86_X64的GRUB固件
-Target Images -> Build GRUB images (Linux x86 or x86_64 host only) 
+Target Images -> Build GRUB images (Linux x86 or x86_64 host only)
 
 ## 选择更小的压缩格式固件，方便复制
 Target Images -> GZip images
@@ -95,7 +95,7 @@ LuCI > Modules -> luci-compat
 LuCI > Modules -> Translations -> Chinese Simplified
 
 ## 添加openclash
-LuCI > Applications -> luci-app-openclash  
+LuCI > Applications -> luci-app-openclash
 
 ## 添加主题
 LuCI -> Themes
@@ -107,7 +107,7 @@ Nerwork -> File Transfer -> wget-ssl
 Kernel modules -> Network Support -> kmod-tun
 
 ## 排除dnsmasq，由于默认会安装dnsmasq-full，这里需要排除dnsmasq，否则会冲突报错。
-Base system -> dnsmasq 
+Base system -> dnsmasq
 
 ```
 
@@ -152,12 +152,12 @@ bash
 
 ```yaml
 config core main
-        option lang "zh_cn"
-        option mediaurlbase /luci-static/material
-        option resourcebase /luci-static/resources
-               
+option lang "zh_cn"
+option mediaurlbase /luci-static/material
+option resourcebase /luci-static/resources
+
 config internal languages
-        option zh_cn "普通话 (Chinese)"
+option zh_cn "普通话 (Chinese)"
 ```
 
 修改主机名，设定时区，IP 地址:
@@ -259,4 +259,4 @@ src/gz openwrt_koolshare_mod_telephony http://downloads.openwrt.org/snapshots/pa
 
 ## OpenClash Docs
 
-[DNS污染对Clash（for Windows）的影响 · Fndroid/clash\_for\_windows\_pkg Wiki · GitHub](https://github.com/Fndroid/clash_for_windows_pkg/wiki/DNS%E6%B1%A1%E6%9F%93%E5%AF%B9Clash%EF%BC%88for-Windows%EF%BC%89%E7%9A%84%E5%BD%B1%E5%93%8D)
+[DNS污染对Clash（for Windows）的影响 · Fndroid/clash_for_windows_pkg Wiki · GitHub](https://github.com/Fndroid/clash_for_windows_pkg/wiki/DNS%E6%B1%A1%E6%9F%93%E5%AF%B9Clash%EF%BC%88for-Windows%EF%BC%89%E7%9A%84%E5%BD%B1%E5%93%8D)

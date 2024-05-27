@@ -3,13 +3,13 @@ title: GIT 安全使用指南
 date: 2024-04-03 16:35:83
 updated: 2024-04-03 16:35:83
 categories:
-    - Git
+  - Git
 tags:
-    - GitHub
-    - Cybersecurity
-    - OpenSourceSecurity
-    - 开源安全
-    - 网络安全
+  - GitHub
+  - Cybersecurity
+  - OpenSourceSecurity
+  - 开源安全
+  - 网络安全
 description:
 thumbnail:
 banner_img:
@@ -70,7 +70,7 @@ git config --list
 ssh-keygen 使用 **RSA算法** 生成 SSH key ，并将公钥添加到 GitHub 上。  
 可以选择输入 `passphrase` 更加安全。
 位置：公钥 `~/.ssh/id_rsa.pub` 私钥 `~/.ssh/id_rsa`  
-妥善保管上面两个文件，一同放在 KeePass 中。  
+妥善保管上面两个文件，一同放在 KeePass 中。
 
 ```shell
 ssh-keygen -t rsa -C "youremail@example.com"
@@ -125,10 +125,10 @@ ref: [stackoverflow: why-are-http-proxies-able-to-support-protocols-like-irc-and
 > Q: Why are HTTP proxies able to support protocols like socks and FTP?
 >
 > A: HTTP proxy is able to support high level protocols other than HTTP,Because it supports CONNECT method,  
-> HTTP 代理能够支持除了HTTP以外很多高级别的协议, 因为它支持 **CONNECT** 方法.  
+> HTTP 代理能够支持除了HTTP以外很多高级别的协议, 因为它支持 **CONNECT** 方法.
 >
 > The CONNECT method is a way **to tunnel any kind of connection** through an HTTP proxy. By default, the proxy establishes a TCP connection to the specified server, responds with an HTTP 200 (Connection Established) response, and then shovels packets back and forth between the client and the server, **without understanding or interpreting the tunnelled traffic**
-> CONNECT 方法是一种通过HTTP代理隧道化任何连接的方法. 代理默认建立一个到指定服务器的TCP连接, 响应一个HTTP 200 (Connection Established) 响应, 然后在客户端和服务器之间来回传输数据包, 而不理解或解释隧道流量.  
+> CONNECT 方法是一种通过HTTP代理隧道化任何连接的方法. 代理默认建立一个到指定服务器的TCP连接, 响应一个HTTP 200 (Connection Established) 响应, 然后在客户端和服务器之间来回传输数据包, 而不理解或解释隧道流量.
 >
 > 简单理解, HTTP 代理通过 CONNECT 方法将 TCP 的数据打包转发给目标服务器, 然后将数据包原封不动的返回给客户端, 从而实现了对非 HTTP 协议的支持. HTTP 代理支持所有基于 TCP 的协议, 但是不支持 UDP 协议.
 
@@ -261,7 +261,7 @@ PGP 的密钥分为两种：**主密钥** 和 **子密钥**，主密钥用于签
 生成主密钥：
 
 ```shell
-# step 0 
+# step 0
 # 这里不推荐使用的 `gpg --gen-key`
 gpg --full-gen-key
 
@@ -296,8 +296,8 @@ Key is valid for? (0)  2y
 # 注意了： 这里的邮箱， 如果你不打算使用PGP为你的Git记录认证， 这里其实是可以随便输入的，不需要是你的邮箱， 甚至不需要是一个真实存在的邮箱，只要接受你信息的人知道就行。隐私泄漏问题很严重，你一旦设置了，并且发布到公钥服务器，就永远删不掉了 😅
 
 GnuPG needs to construct a user ID to identify your key.
-Real name:  linus   # 这里名字可以是网名，可以是任意名字，如果你注重隐私就不要输入自己真名了 
-Email address: linus@outlook.com  
+Real name:  linus   # 这里名字可以是网名，可以是任意名字，如果你注重隐私就不要输入自己真名了
+Email address: linus@outlook.com
 Comment:     # 备注可以留空
 
 # step 6
@@ -311,7 +311,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
 # 输入一个复杂的密码 并确认
 ┌──────────────────────────────────────────────────────┐
 │ Please enter the passphrase to                       │
-│ protect your new key                                 │ 
+│ protect your new key                                 │
 │                                                      │
 │ Passphrase: │________________________________________│
 │                                                      │
@@ -341,7 +341,7 @@ sub   rsa3072 2021-01-11 [E]    # 这个是自动生成的用于加密的子密�
 
 ```shell
 # step 0
-gpg --edit-key linus # 或者key id  
+gpg --edit-key linus # 或者key id
 
 # step 1  进入gpg交互界面
 gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
@@ -357,7 +357,7 @@ ssb  rsa3072/6FE9C71CFED44076
      created: 2021-01-11  expires: never       usage: E
 [ultimate] (1). linus <linus@outlook.com>C
 
-# step 2  
+# step 2
 gpg>   addkey
 Please select what kind of key you want:
    (3) DSA (sign only)
@@ -365,7 +365,7 @@ Please select what kind of key you want:
    (5) Elgamal (encrypt only)
    (6) RSA (encrypt only)
   (14) Existing key from card
-Your selection? 4   
+Your selection? 4
 # 根据你的用途选择， 这里生成一个只用于签名的子密钥（sign only）
 
 #  后面的选择和主密钥生成的大同小异，按提示操作即可
@@ -444,8 +444,8 @@ uid           [revoked] linus <linus@outlook.com>
 撤销子密钥：
 
 ```shell
-gpg --edit-key linus  
-  
+gpg --edit-key linus
+
 gpg >   list  # 列出你所有的子密钥
 gpg >   key  {n}  # 选择你要销毁的子密钥的 序号
 gpg >   revkey
@@ -460,17 +460,17 @@ gpg >   save    # 退出前一定要save, 不然所有更改不会生效
 
 ```shell
 # 列出所有公钥、子公钥
-gpg --list-keys 
+gpg --list-keys
 # 列出所有密钥、子密钥
-gpg --list-secret-keys 
+gpg --list-secret-keys
 
 # 简化
-gpg -k 
+gpg -k
 gpg -K
 
 # 这样并没有列出子密钥的id, 而且没有打印出指纹信息， 是不安全的。所以在你查看密钥时应该
 gpg --fingerprint -K --keyid-format long
- 
+
  # 输出
 sec   rsa3072/0x99F583599B7E31F1 2021-01-11 [SC]  # 长ID
       Key fingerprint = 7053 58AB 8536 6CAB 05C0  220F 99F5 8359 9B7E 31F1 #指纹信息
@@ -556,8 +556,8 @@ gpg --verify demo.txt.asc demo.txt
 gpg --recipient {keyid/uid} --output encrypt.txt --encrypt input.txt
 # 也可以按喜好加上--armor选项等
 
-# 我更喜欢用 
-gpg  -se  -o  encrypt.txt  -r  {keyid/uid}   input.txt  
+# 我更喜欢用
+gpg  -se  -o  encrypt.txt  -r  {keyid/uid}   input.txt
 # s代表签名  e代表加密
 # o是 将结果 输出到文件  encrypt.txt
 # r后面跟 接收者的 uid或者 key id， 接收者的公钥必须已经导入过

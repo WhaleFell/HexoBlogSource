@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——struct结构体
 date: 2022-12-30 18:30:48
 categories: Golang
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 结构体

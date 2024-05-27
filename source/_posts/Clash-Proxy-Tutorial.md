@@ -4,9 +4,9 @@ date: 2023-07-09 10:26:56
 updated: 2023-07-09 10:26:56
 categories: Proxy
 tags: [Proxy, Clash]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
 # Clash 小猫咪使用备忘
@@ -14,7 +14,7 @@ banner_img:
 Clash is a rule-based tunnel in Go.
 
 > Clash is a **cross-platform** **rule-based** proxy utility that runs on the network and application layer, supporting various proxy and **anti-censorship protocols** out-of-the-box.
-> 
+>
 > It has been adopted widely by the Internet users in some countries and regions **where the Internet is heavily censored or blocked.**
 
 **China Anti-censorship**: [censorship.ai | 揭示和规避中国对加密SNI（ESNI）的封锁](https://geneva.cs.umd.edu/zh/posts/china-censors-esni/esni/)
@@ -73,12 +73,12 @@ opkg install ...ipk
 
 wget https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-386.tar.gz
 tar -zxvf .
-chmod 777 
+chmod 777
 ```
 
->curl 故障：  
->重新安装 libmbedtls  
-[[Bug] 升级后更新功能错误 · Issue #3386 · vernesong/OpenClash · GitHub](https://github.com/vernesong/OpenClash/issues/3386)
+> curl 故障：  
+> 重新安装 libmbedtls  
+> [[Bug] 升级后更新功能错误 · Issue #3386 · vernesong/OpenClash · GitHub](https://github.com/vernesong/OpenClash/issues/3386)
 
 ## Config File
 
@@ -89,17 +89,17 @@ ref: [浅谈在代理环境中的 DNS 解析行为 | Sukka's Blog](https:/blog.s
 在 Client 端设置 Socks5 代理的分流过程：  
 ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307091454148.png&webp=true)
 
-但是使用 Route 透明代理、全局 tun/tun2socks 代理时，此时应用程序是 **不会感知到代理客户端的存在**，它们会正常的 **发起 TCP 连接**，并且由于 TCP/IP 协议，在拿到 DNS 解析结果之前，连接是不能建立的。  
+但是使用 Route 透明代理、全局 tun/tun2socks 代理时，此时应用程序是 **不会感知到代理客户端的存在**，它们会正常的 **发起 TCP 连接**，并且由于 TCP/IP 协议，在拿到 DNS 解析结果之前，连接是不能建立的。
 
 > **在应用发起 TCP 连接时，会先发出一个 DNS question（发一个 IP Packet），获取要连接的服务器的 IP 地址，然后直接向这个 IP 地址发起连接。**  
-> 					                                                                                           **—— TCP/IP 协议**
+>  **—— TCP/IP 协议**
 
 当 Proxy 运行在 tun 模式的透明代理时：  
 ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307091516885.png&webp=true)
 
 和应用程序直接将流量 **封装成 SOCKS5** 大有不同，在类似于透明代理的环境下浏览器和其它应用程序是正常地发起 TCP 连接。因此需要得到一个 DNS 解析结果，才能建立 TCP 连接；代理客户端也会需要通过这个 DNS 查询动作，才能找到之后的 TCP 连接的域名，进行分流。
 
-浏览器、应用程序直接设置 SOCKS5 代理的话，**可以不在代理客户端发起 DNS 解析请求** 就能将流量发送给远端服务器；而在 **透明代理模式** 下，不论是否需要 IP 规则分流都需要**先进行一次 DNS 解析**才能建立连接。  
+浏览器、应用程序直接设置 SOCKS5 代理的话，**可以不在代理客户端发起 DNS 解析请求** 就能将流量发送给远端服务器；而在 **透明代理模式** 下，不论是否需要 IP 规则分流都需要**先进行一次 DNS 解析**才能建立连接。
 
 **而且 DNS 解析的过程在 Proxy Server 上实现，远端服务器只能获取到解析出来的 IP，对于 CDN 优化不好。**
 
@@ -112,7 +112,7 @@ Fake-IP 实现过程：
 
 **Fake-IP** 能够省下 Client 向远端 DNS 请求 IP 的过程，就是代理客户端自己不先执行查询动作，丢一个 Fake IP 回去让浏览器、应用程序立刻建立 TCP 连接。
 
-**Fake-IP** 技术更加适合根据 **IP 规则分流、Route 透明代理** 的情景，如果应用程序直接将流量封装成 SOCKS5 可以不在 Client 发起 DNS 请求就能把浏览转发到 Proxy Server.而在透明代理模式下，不论是否需要 IP 规则分流都需要先进行一次 DNS 解析才能建立连接。  
+**Fake-IP** 技术更加适合根据 **IP 规则分流、Route 透明代理** 的情景，如果应用程序直接将流量封装成 SOCKS5 可以不在 Client 发起 DNS 请求就能把浏览转发到 Proxy Server.而在透明代理模式下，不论是否需要 IP 规则分流都需要先进行一次 DNS 解析才能建立连接。
 
 **Fake-IP** 可以使域名解析在远端服务器上进行，能有效优化 DNS 解析速度。
 

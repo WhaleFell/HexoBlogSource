@@ -10,8 +10,8 @@ tags:
   - Vue3
   - JavaScript
   - JS
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -47,7 +47,7 @@ npm install -g pnpm
 安装以下 extension：
 
 1. `Vue Language Features (Volar)` Volar -- Vue3 支持
-2.  `TypeScript Vue Plugin (Volar)` Volar -- TS 支持
+2. `TypeScript Vue Plugin (Volar)` Volar -- TS 支持
 3. Auto Close Tag -- 标签自动合并
 4. Auto Rename Tag -- 标签自动修改
 5. EditorConfig for VSCode -- editorconfig code rule
@@ -59,7 +59,7 @@ npm install -g pnpm
 选择 ts vue3 技术栈
 
 ```shell
-pnpm create vite
+pnpm create vite@latest
 
 pnpm install
 pnpm install -D typescript ts-node
@@ -84,11 +84,11 @@ export default defineConfig({
   // …
   resolve: {
     alias: {
-      '@': pathSrc,// 源码根目录
+      "@": pathSrc, // 源码根目录
     },
   },
   // …
-})
+});
 ```
 
 ### tsconfig.json TS 配置
@@ -97,26 +97,26 @@ export default defineConfig({
 {
   "compilerOptions": {
     // …
- // path alias
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"],
-    }
+    // path alias
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
     // …
-  },
+  }
   // …
 }
 ```
 
 ## Code rule 代码规范
 
-规范先行：[【vue3-element-admin】ESLint+Prettier+Stylelint+EditorConfig 约束和统一前端代码规范\_有来技术的博客-CSDN博客](https://blog.csdn.net/u013737132/article/details/130190788)
+规范先行：[【vue3-element-admin】ESLint+Prettier+Stylelint+EditorConfig 约束和统一前端代码规范\_有来技术的博客-CSDN 博客](https://blog.csdn.net/u013737132/article/details/130190788)
 
 ### .editorconfig
 
 `.editorconfig`：这个文件的作用是强制编辑器以该配置来进行编码，比如缩进统一为空格而不是 Tab ，每次缩进都是 2 个空格而不是 4 个等等。
 
-VSCode 需要安装 [EditorConfig for VSCode 扩展](https://vue3.chengpeiquan.com/upgrade.html#editorconfig-for-vs-code) 。
+VSCode 需要安装  [EditorConfig for VSCode 扩展](https://vue3.chengpeiquan.com/upgrade.html#editorconfig-for-vs-code) 。
 
 ```ini
 # http://editorconfig.org
@@ -140,7 +140,7 @@ trim_trailing_whitespace = false # 关闭末尾空格修剪
 
 `.prettierrc`
 
-配合 VSCode 的 [VSCode Prettier](https://vue3.chengpeiquan.com/upgrade.html#vscode-prettier) 扩展，可以在编辑器里使用该规则格式化文件。
+配合 VSCode 的  [VSCode Prettier](https://vue3.chengpeiquan.com/upgrade.html#vscode-prettier)  扩展，可以在编辑器里使用该规则格式化文件。
 
 ```json
 {
@@ -153,9 +153,9 @@ trim_trailing_whitespace = false # 关闭末尾空格修剪
 
 ### ESLint （MAIN)
 
-[ESLint](https://github.com/eslint/eslint) 是一个查找 JavaScript / TypeScript 代码问题并提供修复建议的工具，换句话说就是可以约束的代码不会写出一堆 BUG ，它是代码健壮性的重要保障。
+[ESLint](https://github.com/eslint/eslint)  是一个查找 JavaScript / TypeScript 代码问题并提供修复建议的工具，换句话说就是可以约束的代码不会写出一堆 BUG ，它是代码健壮性的重要保障。
 
-这里以一个 Vite + TypeScript + [Prettier](https://vue3.chengpeiquan.com/upgrade.html#prettier) 的 Vue 3 项目为例，在项目根目录下创建一个名为 `.eslintrc.js` 文件，写入以下内容：
+这里以一个 Vite + TypeScript + [Prettier](https://vue3.chengpeiquan.com/upgrade.html#prettier)  的 Vue 3 项目为例，在项目根目录下创建一个名为  `.eslintrc.js`  文件，写入以下内容：
 
 ```js
 module.exports = {
@@ -164,27 +164,27 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'prettier'],
-  parser: 'vue-eslint-parser',
+  extends: ["plugin:vue/vue3-essential", "eslint:recommended", "prettier"],
+  parser: "vue-eslint-parser",
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
     ecmaVersion: 2020,
-    sourceType: 'module',
+    sourceType: "module",
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'prettier/prettier': 'warn',
-    'vue/multi-word-component-names': 'off',
+    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "prettier/prettier": "warn",
+    "vue/multi-word-component-names": "off",
   },
   globals: {
-    defineProps: 'readonly',
-    defineEmits: 'readonly',
-    defineExpose: 'readonly',
-    withDefaults: 'readonly',
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    defineExpose: "readonly",
+    withDefaults: "readonly",
   },
-}
+};
 ```
 
 pnpm 安装对应的依赖 dependents：
@@ -220,7 +220,7 @@ plugins: [
     // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
     imports: ["vue"],
     eslintrc: {
-      enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false 
+      enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false
       filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件
     },
     dts: path.resolve(pathSrc, "types", "auto-imports.d.ts"), // 指定自动导入函数TS类型声明文件路径
@@ -228,7 +228,7 @@ plugins: [
   Components({
     dts: path.resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
   }),
-]
+];
 ```
 
 `.eslintrc.cjs`
@@ -257,7 +257,7 @@ pnpm i -D sass
 
 ## Environment variate
 
-项目根目录新建 `.env.development` 、`.env.production`
+项目根目录新建  `.env.development` 、`.env.production`
 
 - 开发环境变量配置：.env.development
 
@@ -314,12 +314,12 @@ pnpm install vue-router
 修改 main.ts 文件：
 
 ```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-const app = createApp(App)
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+const app = createApp(App);
 
-app.use(router).mount('#app')
+app.use(router).mount("#app");
 ```
 
 ### Import 导入
@@ -359,26 +359,26 @@ src/router/routes.ts
 ```js
 // src/router/routes.ts 路由定义
 
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from "vue-router";
 
 // define routes
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
-    component: () => import('@/App.vue'),
+    path: "/",
+    name: "home",
+    component: () => import("@/App.vue"),
     meta: {
-      title: 'main page',
+      title: "main page",
     },
   },
   {
-    path: '/:pathMatch(.*)*',
-    name: '404',
-    component: () => import('@/views/404.vue'),
+    path: "/:pathMatch(.*)*",
+    name: "404",
+    component: () => import("@/views/404.vue"),
   },
-]
+];
 
-export default routes
+export default routes;
 ```
 
 ## Pinia 全局状态管理
@@ -393,16 +393,12 @@ pnpm install pinia
 src/main.ts
 
 ```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import { createPinia } from "pinia";
 
-createApp(App)
-  .use(router)
-  .use(createPinia())
-  .mount('#app')
-
+createApp(App).use(router).use(createPinia()).mount("#app");
 ```
 
 ### Stores Folder
@@ -455,20 +451,20 @@ pnpm install -D unplugin-vue-components unplugin-auto-import unplugin-icons
 修改 `vite.config.js`：
 
 ```js
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
-import path from 'path'
-const pathSrc = path.resolve(__dirname, 'src')
+import path from "path";
+const pathSrc = path.resolve(__dirname, "src");
 
 // Auto import
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
 // Element UI
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import IconsResolver from 'unplugin-icons/resolver'
-import Icons from 'unplugin-icons/vite'
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import IconsResolver from "unplugin-icons/resolver";
+import Icons from "unplugin-icons/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -476,17 +472,13 @@ export default defineConfig({
     vue(),
     AutoImport({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-      imports: ['vue'],
+      imports: ["vue"],
       eslintrc: {
         enabled: true, // 是否自动生成 eslint 规则，建议生成之后设置 false
-        filepath: './.eslintrc-auto-import.json', // 指定自动导入函数 eslint 规则的文件
+        filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件
       },
       // 指定自动导入函数TS类型声明文件路径
-      dts: path.resolve(
-        pathSrc,
-        'types',
-        'auto-imports.d.ts',
-      ),
+      dts: path.resolve(pathSrc, "types", "auto-imports.d.ts"),
       resolvers: [
         ElementPlusResolver(), // element func
         IconsResolver({}), // element Icon
@@ -494,15 +486,11 @@ export default defineConfig({
       vueTemplate: true, // 在 vue 模板中自动导入
     }),
     Components({
-      dts: path.resolve(
-        pathSrc,
-        'types',
-        'components.d.ts',
-      ), // 指定自动导入组件TS类型声明文件路径
+      dts: path.resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          enabledCollections: ['ep'],
+          enabledCollections: ["ep"],
         }),
         // 自动安装图标库
       ],
@@ -512,11 +500,10 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': pathSrc,
+      "@": pathSrc,
     },
   },
-})
-
+});
 ```
 
 ### Import
@@ -524,16 +511,13 @@ export default defineConfig({
 src/main.ts
 
 ```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import { createPinia } from 'pinia'
-import 'element-plus/dist/index.css'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import { createPinia } from "pinia";
+import "element-plus/dist/index.css";
 
-createApp(App)
-  .use(router)
-  .use(createPinia())
-  .mount('#app')
+createApp(App).use(router).use(createPinia()).mount("#app");
 ```
 
 ### 封装一个 Element UI 的 notice
@@ -596,44 +580,37 @@ pnpm install axios
 
 ### Axios 工具类封装
 
-`src/utils/request.js`  
+`src/utils/request.js`
 
 初始化 axios instance 实例，包含异常处理等：
 
 ```js
-import axios from 'axios'
-import { AxiosResponse } from 'axios'
-import { NoticeType, useNotice } from './notice'
-import { config } from '@/stores'
-import {
-  InternalAxiosRequestConfig,
-  AxiosError,
-} from 'axios'
+import axios from "axios";
+import { AxiosResponse } from "axios";
+import { NoticeType, useNotice } from "./notice";
+import { config } from "@/stores";
+import { InternalAxiosRequestConfig, AxiosError } from "axios";
 
 export const request = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: 5000,
-})
+});
 
 // 添加请求拦截器
 request.interceptors.request.use(
   (axiosConfig: InternalAxiosRequestConfig) => {
     // 在发送请求之前做些什么
     if (config.debug.value) {
-      useNotice(
-        'Response',
-        `url:${axiosConfig.url}`,
-        NoticeType.INFO,
-      )
+      useNotice("Response", `url:${axiosConfig.url}`, NoticeType.INFO);
     }
 
-    return axiosConfig
+    return axiosConfig;
   },
   (error) => {
     // 对请求错误做些什么
-    return Promise.reject(error)
-  },
-)
+    return Promise.reject(error);
+  }
+);
 
 // 添加响应拦截器
 request.interceptors.response.use(
@@ -641,23 +618,19 @@ request.interceptors.response.use(
     // 对响应数据做点什么
     // 成功响应数据
     if (config.debug.value) {
-      useNotice(
-        'Response',
-        `url:${response.config.url}`,
-        NoticeType.SUCCESS,
-      )
+      useNotice("Response", `url:${response.config.url}`, NoticeType.SUCCESS);
     }
-    return response
+    return response;
   },
   (error: AxiosError) => {
-    console.log(error)
+    console.log(error);
     if (error.response) {
       // 请求成功发出且服务器也响应了状态码，但状态代码超出了 2xx 的范围
       useNotice(
         `Response ERROR ${error.code}`,
         `${error.config?.url}\n${error.response.data}`,
-        NoticeType.WARNING,
-      )
+        NoticeType.WARNING
+      );
     } else if (error.request) {
       // 请求已经成功发起，但没有收到响应
       // `error.request` 在浏览器中是 XMLHttpRequest 的实例，
@@ -665,33 +638,32 @@ request.interceptors.response.use(
       useNotice(
         `Response ERROR`,
         `${error.config?.url}\n${error}`,
-        NoticeType.ERROR,
-      )
+        NoticeType.ERROR
+      );
     } else {
       useNotice(
         `Response ERROR`,
         `${error.config?.url}\nunknow http request error:${error}`,
-        NoticeType.ERROR,
-      )
+        NoticeType.ERROR
+      );
     }
-    return Promise.reject(error)
-  },
-)
-
+    return Promise.reject(error);
+  }
+);
 ```
 
 高级封装：
 
 ```js
 //  src/utils/request.ts
-import axios, { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
-import { useUserStoreHook } from '@/store/modules/user';
+import axios, { InternalAxiosRequestConfig, AxiosResponse } from "axios";
+import { useUserStoreHook } from "@/store/modules/user";
 
 // 创建 axios 实例
 const service = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 50000,
-  headers: { 'Content-Type': 'application/json;charset=utf-8' }
+  headers: { "Content-Type": "application/json;charset=utf-8" },
 });
 
 // 请求拦截器
@@ -714,27 +686,27 @@ service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { code, msg } = response.data;
     // 登录成功
-    if (code === '00000') {
+    if (code === "00000") {
       return response.data;
     }
 
-    ElMessage.error(msg || '系统出错');
-    return Promise.reject(new Error(msg || 'Error'));
+    ElMessage.error(msg || "系统出错");
+    return Promise.reject(new Error(msg || "Error"));
   },
   (error: AxiosError) => {
     if (error.response.data) {
       const { code, msg } = error.response.data;
       // token 过期，跳转登录页
-      if (code === 'A0230') {
-        ElMessageBox.confirm('当前页面已失效，请重新登录', '提示', {
-          confirmButtonText: '确定',
-          type: 'warning'
+      if (code === "A0230") {
+        ElMessageBox.confirm("当前页面已失效，请重新登录", "提示", {
+          confirmButtonText: "确定",
+          type: "warning",
         }).then(() => {
           localStorage.clear(); // @vueuse/core 自动导入
-          window.location.href = '/';
+          window.location.href = "/";
         });
-      }else{
-          ElMessage.error(msg || '系统出错');
+      } else {
+        ElMessage.error(msg || "系统出错");
       }
     }
     return Promise.reject(error.message);
@@ -743,8 +715,6 @@ service.interceptors.response.use(
 
 // 导出 axios 实例
 export default service;
-
-
 ```
 
 src/plugins/api.ts 具体请求：
@@ -766,7 +736,7 @@ export async function getChats(): Promise<Array<ChatInfo> | void> {
 
 ## Vueuse
 
-[起步 | VueUse中文文档](https://www.vueusejs.com/guide/)
+[起步 | VueUse 中文文档](https://www.vueusejs.com/guide/)
 
 ### Install
 

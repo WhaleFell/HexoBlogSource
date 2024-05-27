@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——Go 接口
 date: 2022-05-16 18:30:48
 updated: 2022-05-16 18:30:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 接口
@@ -222,7 +220,7 @@ w.Writer([]byte("hello")) // panic: nil pointer
 
 ```go
 w = os.Stdout
-// 隐式转换 
+// 隐式转换
 io.Writer(os.Stdout)
 ```
 
@@ -307,13 +305,13 @@ sort.Strings(names) // 简化
 
 ### `http.Handler` 接口
 
-<u>*net/http*</u>
+<u>_net/http_</u>
 
 ```go
 package http
-type Handler interface { 
+type Handler interface {
     ServeHTTP(w ResponseWriter, r*Request)
-} 
+}
 func ListenAndServe(address string, h Handler) error
 ```
 

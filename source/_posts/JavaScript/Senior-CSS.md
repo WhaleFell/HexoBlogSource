@@ -281,7 +281,7 @@ npx tailwindcss init
 edit `tailwind.config.js` file:
 
 ```js
-'./src/**/*.{html,js}', 'index.html'
+"./src/**/*.{html,js}", "index.html";
 ```
 
 add in to `tail.css`
@@ -328,24 +328,24 @@ pnpm run dev
 
 ```ts
 // tailwind.config.ts
-import { Config } from 'tailwindcss'
-import colors from 'tailwindcss/colors'
+import { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 import {
   createVariableColors,
   variableColorsPlugin,
-} from 'tailwindcss-variable-colors'
+} from "tailwindcss-variable-colors";
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     // You can also not pass the colors parameter,
     // it will use the colors from tailwindcss by default.
     colors: createVariableColors(colors),
   },
   plugins: [variableColorsPlugin(colors)],
-}
+};
 
-export default config satisfies Config
+export default config satisfies Config;
 ```
 
 使用 tailwind ui 组件库：

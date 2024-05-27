@@ -5,8 +5,8 @@ updated: 2024-04-25 19:37:48
 categories: Coding
 tags: [Coding, English]
 description: 程序员常用单词词汇表
-thumbnail: 
-banner_img: 
+thumbnail:
+banner_img:
 ---
 
 # 程序员常用词汇表

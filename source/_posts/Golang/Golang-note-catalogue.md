@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——目录
 date: 2023-02-03 8:30:48
 updated: 2023-02-03 8:30:48
@@ -9,7 +8,6 @@ sticky: 1
 description: 博客中 Golang 学习内容相关笔记的索引
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # 【Catalogue】 Golang 学习笔记目录

@@ -1,5 +1,4 @@
 ---
-
 title: Python 迭代器生成器修饰器
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
@@ -8,7 +7,6 @@ tags: [Python, Coding]
 description: Python 迭代器生成器修饰器,Python 中三大名器的完全总结！个人总结，算是比较详细的了。
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
-
 ---
 
 # Python-Generator-Iterator-Decorater
@@ -31,7 +29,6 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
    > **可迭代不一定是迭代对象**
    >
    > (列表不是可迭代对象,但是可迭代.)
-   >
 
    ```python
    from collections import Iterable
@@ -176,7 +173,7 @@ class MyNumbers:
     # 初始化迭代器
     self.a = 1
     return self
- 
+
   def __next__(self):
     # 迭代器返回值
     if self.a <= 20:
@@ -185,10 +182,10 @@ class MyNumbers:
       return x
     else:
       raise StopIteration
- 
+
 myclass = MyNumbers()
 myiter = iter(myclass)
- 
+
 for x in myiter:
   print(x)
 
@@ -314,10 +311,10 @@ yield 关键字的作用是**函数与调用者**的通信，它不光能够将*
   n = yield number
   print('我是yield关键字下面一行代码')
   print('调用者传递过来的值为:', n)
- 
-  
+
+
 >>> t = test()
->>> t.send(None)  
+>>> t.send(None)
 # 当第一次执行生成器的时候，需要传入None
 
 >>> t.send(1)
@@ -361,8 +358,8 @@ t.close() 关闭generator后再调用，会出现StopIteration异常
    0
    传入的None
    1
-   传入的100 
-   我是2     
+   传入的100
+   我是2
    传入的None
    3
    传入的None
@@ -399,9 +396,9 @@ StopIteration
 
 1. **生成器的启动**
 
-   **方法 1：**​****直接使用****​****`next(g)`****​****，这会****​**直接开始迭代第一个元素**（**推荐使用这个启动**）
+   **方法 1：**​\***\*直接使用\*\***​\***\*`next(g)`\*\***​\***\*，这会\*\***​**直接开始迭代第一个元素**（**推荐使用这个启动**）
 
-   **方法 2：**​****使用****​****`g.send(None)`****​****进行启动，注意****​**第一次启动的时候只能传入**​**`None`**，如果传入其他具体的指则会**报错**哦！
+   **方法 2：**​\***\*使用\*\***​\***\*`g.send(None)`\*\***​\***\*进行启动，注意\*\***​**第一次启动的时候只能传入**​**`None`**，如果传入其他具体的指则会**报错**哦！
 
    ```python
    def my_generator():
@@ -504,7 +501,7 @@ StopIteration: 这是错误说明
 '''
 ```
 
-> **注意：**​****生成器没有办法使用****​****`return`****​****来返回值。因为****​****`return`****​****返回的那个值是通过****​**StopIteration 的异常信息**返回的，所以没办法**直接获取这个 return 返回的值**。
+> **注意：**​\***\*生成器没有办法使用\*\***​\***\*`return`\*\***​\***\*来返回值。因为\*\***​\***\*`return`\*\***​\***\*返回的那个值是通过\*\***​**StopIteration 的异常信息**返回的，所以没办法**直接获取这个 return 返回的值**。
 
 当然上面所说的无法获取**return 返回值**，我们指的是没有办法通过 `result=g3()` 这种形式获取**return 的返回值**。实际上还是有手段获取这个**return 的值的**，有两种方法：
 
@@ -518,7 +515,7 @@ StopIteration: 这是错误说明
        yield 'b'
    g=g3()
 
-   try:   
+   try:
        print(next(g))  #a
        print(next(g))  #触发异常
    except StopIteration as exc:
@@ -618,7 +615,7 @@ def generator2():
     yield from [11,22,33,44]
     yield from (12,23,34)
     yield from range(3)
-    
+
 for i in generator2():
     print(i,end=' , ')
 '''运行的结果为：
@@ -643,14 +640,14 @@ def my_generator():
             return '我被迫中断了'
         else:
             yield i
- 
+
 def main(generator):
     try:
         for i in generator:  #不会显式触发异常，故而无法获取到return的值
             print(i)
     except StopIteration as exc:
         print(exc.value)
- 
+
 g = my_generator()  #调用
 main(g)
 '''运行结果为：
@@ -670,7 +667,7 @@ def my_generator():
             return '我被迫中断了'
         else:
             yield i
- 
+
 def main(generator):
     try:
         print(next(generator))   #每次迭代一个值，则会显式出发StopIteration
@@ -704,15 +701,15 @@ def my_generator():
             return '我被迫中断了'
         else:
             yield i
- 
+
 def wrap_my_generator(generator):  # 定义一个包装“生成器”的生成器，它的本质还是生成器
     result = yield from generator    # 自动触发StopIteration异常，并且将return的返回值赋值给yield from表达式的结果，即result
     print(result)
- 
+
 def main(generator):
     for j in generator:
         print(j)
- 
+
 g = my_generator()
 wrap_g = wrap_my_generator(g)
 main(wrap_g)  #调用
@@ -751,10 +748,10 @@ def average():
         total += num
         count += 1
         avg = total/count
- 
+
 def wrap_average(generator):
     yield from generator
- 
+
 #定义一个函数，通过这个函数向average函数发送数值
 def main(wrap):
     print(next(wrap))  #启动生成器
@@ -762,11 +759,11 @@ def main(wrap):
     print(wrap.send(20))  # 15
     print(wrap.send(30))  # 20
     print(wrap.send(40))  # 25
-  
+
 g = average()
 wrap = wrap_average(g)
 main(wrap)
- 
+
 '''运行结果为：
 None
 10.0

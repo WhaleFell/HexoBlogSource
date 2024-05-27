@@ -4,9 +4,9 @@ date: 2023-08-22 14:40:10
 updated: 2023-08-22 14:40:10
 categories: JavaScript
 tags: [NodeJS, JS, JavaScript]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
 # NodeJS 速通笔记
@@ -15,7 +15,7 @@ banner_img:
 
 Nodejs 是运行在服务端的 JavaScript 环境。速通 NodeJS 也可以为开发 **Vue** 应用打下基础。  
 使用 NodeJs 时，不仅实现了应用还实现了一整个 HTTP 服务器，可以避免使用 Nginx 进行提供 HTTP 服务。  
-`NPM` 是 `NodeJS` 的一个包管理工具，类似 `Python pip`。  
+`NPM` 是 `NodeJS` 的一个包管理工具，类似 `Python pip`。
 
 NodeJS 是 **单线程单进程** 的应用程序，但是 V8 引擎提供了异步执行回调的接口，通过接口可以处理大量并发。
 
@@ -50,7 +50,7 @@ npm install
 本地安装好之后，`express` 包就放在了工程目录下的 `node_modules` 目录中，因此在代码中只需要通过 `require('express')` 的方式就好，无需指定第三方包路径。
 
 ```js
-var express = require("express") 
+var express = require("express");
 ```
 
 npm 的包安装分为本地安装（local）、全局安装（global）两种。使用 `-g` 指定全局安装。
@@ -79,21 +79,20 @@ function foo(name, age, dealine, callback){
 ```js
 var fs = require("fs"); // 导入文件操作包
 
-var data = fs.readFileSync('input.txt'); // 堵塞了
+var data = fs.readFileSync("input.txt"); // 堵塞了
 
 console.log(data.toString());
 console.log("程序执行结束!");
-
 ```
 
 非堵塞：
 
 ```js
 var fs = require("fs");
-fs.readFile('input.txt', function (err, data) {
-	// 回调函数
-    if (err) return console.error(err);
-    console.log(data.toString());
+fs.readFile("input.txt", function (err, data) {
+  // 回调函数
+  if (err) return console.error(err);
+  console.log(data.toString());
 });
 console.log("程序执行结束!"); // 先弹出
 ```
@@ -108,31 +107,31 @@ Node.js 单线程类似进入一个 `while(true)` 的事件循环，直到没有
 
 ```js
 // 引入 events 模块
-var events = require('events');
+var events = require("events");
 // 创建 eventEmitter 对象 事件发射器
-var eventEmitter = new events.EventEmitter(); 
- 
+var eventEmitter = new events.EventEmitter();
+
 // 创建事件处理程序
 var connectHandler = function connected() {
-   console.log('连接成功。');
-  
-   // 触发 data_received 事件 
-   eventEmitter.emit('data_received');
-}
- 
+  console.log("连接成功。");
+
+  // 触发 data_received 事件
+  eventEmitter.emit("data_received");
+};
+
 // 绑定 connection 事件处理程序
-eventEmitter.on('connection', connectHandler);
- 
+eventEmitter.on("connection", connectHandler);
+
 // 使用匿名函数绑定 data_received 事件
-eventEmitter.on('data_received', function(args){
-   console.log('数据接收成功。'+args);
+eventEmitter.on("data_received", function (args) {
+  console.log("数据接收成功。" + args);
 });
- 
-// 触发 connection 事件 
+
+// 触发 connection 事件
 // 发射一个 connection 事件到事件队列
 // nodejs 触发对应的回调函数,可以跟参数发射到回调函数
-eventEmitter.emit('connection', "param");
- 
+eventEmitter.emit("connection", "param");
+
 console.log("程序执行完毕。");
 ```
 
@@ -142,18 +141,18 @@ Node.js 里面的许多对象都会分发事件：一个 `net.Server` 对象会�
 
 ## Nodejs Buffer 缓冲区
 
-js 语言没有二进制类型，但是处理 tcp 流或者文件流时候必须使用二进制数据。  
+js 语言没有二进制类型，但是处理 tcp 流或者文件流时候必须使用二进制数据。
 
 使用 **Buffer** 类（自带的不需要引入），可以创建一个专门存放二进制数据的缓冲区。
 
 ```js
-const buf = Buffer.from('runoob', 'ascii');
+const buf = Buffer.from("runoob", "ascii");
 
 // 输出 72756e6f6f62
-console.log(buf.toString('hex'));
+console.log(buf.toString("hex"));
 
 // 输出 cnVub29i
-console.log(buf.toString('base64'));
+console.log(buf.toString("base64"));
 ```
 
 详细请参考：[Node.js Buffer(缓冲区) | 菜鸟教程](https://www.runoob.com/nodejs/nodejs-buffer.html)
@@ -164,7 +163,7 @@ console.log(buf.toString('base64'));
 
 ```js
 // 引入当前目录下的 hello.js 文件
-var hello = require('./hello');
+var hello = require("./hello");
 hello.world(); // 调用 hello.js 文件的 world() 函数
 ```
 
@@ -174,23 +173,22 @@ hello.js
 
 ```js
 // 可以从外部引入，导出到外部
-exports.world = function() {
-  console.log('Hello World');
-}
+exports.world = function () {
+  console.log("Hello World");
+};
 
-// hello.js 
+// hello.js
 function Hello() {
-	// object create 对象构造器
-    var name; 
-    this.setName = function(thyName) { 
-        name = thyName; 
-    }; 
-    this.sayHello = function() { 
-        console.log('Hello ' + name); 
-    }; 
-}; 
-module.exports = Hello;  // 把一个对象封装到模块中
-
+  // object create 对象构造器
+  var name;
+  this.setName = function (thyName) {
+    name = thyName;
+  };
+  this.sayHello = function () {
+    console.log("Hello " + name);
+  };
+}
+module.exports = Hello; // 把一个对象封装到模块中
 ```
 
 在以上示例中，hello.js 通过 exports 对象把 world 作为 **模块的访问接口**，在 main.js 中通过 `require('./hello')` 加载这个模块，然后就可以直接访 问 hello.js 中 exports 对象的成员函数了。
@@ -198,9 +196,9 @@ module.exports = Hello;  // 把一个对象封装到模块中
 main.js
 
 ```js
-//main.js 
-var Hello = require('./hello'); 
-hello = new Hello(); // 直接引用 
-hello.setName('BYVoid'); 
-hello.sayHello(); 
+//main.js
+var Hello = require("./hello");
+hello = new Hello(); // 直接引用
+hello.setName("BYVoid");
+hello.sayHello();
 ```

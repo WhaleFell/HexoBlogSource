@@ -78,13 +78,13 @@ In `main.ts`
 
 ```ts
 // Element Plus
-import ElementPlus from "element-plus"
-import "element-plus/dist/index.css"
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(ElementPlus)
-app.mount("#app")
+app.use(ElementPlus);
+app.mount("#app");
 ```
 
 ### 安装按需引入
@@ -154,18 +154,18 @@ vue3 code snippet：
 
 ```json
 {
-    "Vue3 SFC template": {
-        "prefix": "Vue3 SFC",
-        "body": [
-            "<template>",
-            "\t<div class=\"app-container\">…</div>",
-            "</template>\n",
-            "<script lang=\"ts\" setup></script>\n",
-            "<style scoped></style>",
-            "$1"
-        ],
-        "description": "Vue3 SFC"
-    }
+  "Vue3 SFC template": {
+    "prefix": "Vue3 SFC",
+    "body": [
+      "<template>",
+      "\t<div class=\"app-container\">…</div>",
+      "</template>\n",
+      "<script lang=\"ts\" setup></script>\n",
+      "<style scoped></style>",
+      "$1"
+    ],
+    "description": "Vue3 SFC"
+  }
 }
 ```
 
@@ -173,20 +173,20 @@ vue3 hook code snippet:
 
 ```json
 {
-    "Vue3 Hook 代码结构一键生成": {
-        "prefix": "Vue3 Hook",
-        "body": [
-            "import { ref } from \"vue\"\n",
-            "const refName1 = ref<string>(\"This is a ref variable\")\n",
-            "export function useHookName() {",
-            "\tconst refName2 = ref<string>(\"This is a ref variable\")\n",
-            "\tconst fnName = () => {}\n",
-            "\treturn { refName1, refName2, fnName }",
-            "}",
-            "$1"
-        ],
-        "description": "Vue3 Hook"
-    }
+  "Vue3 Hook 代码结构一键生成": {
+    "prefix": "Vue3 Hook",
+    "body": [
+      "import { ref } from \"vue\"\n",
+      "const refName1 = ref<string>(\"This is a ref variable\")\n",
+      "export function useHookName() {",
+      "\tconst refName2 = ref<string>(\"This is a ref variable\")\n",
+      "\tconst fnName = () => {}\n",
+      "\treturn { refName1, refName2, fnName }",
+      "}",
+      "$1"
+    ],
+    "description": "Vue3 Hook"
+  }
 }
 ```
 
@@ -205,11 +205,11 @@ Components 组件和 Views 页面命名规范，这样做是为了更好的区�
 
 ```ts
 const props = defineProps({
-    /** 打开全屏提示语 */
-    openTips: {type: String, default: "全屏"},
-    /** 关闭全屏提示语 */
-    exitTips: {type: String, default: "退出全屏"},
-})
+  /** 打开全屏提示语 */
+  openTips: { type: String, default: "全屏" },
+  /** 关闭全屏提示语 */
+  exitTips: { type: String, default: "退出全屏" },
+});
 ```
 
 ### 代码规范
@@ -232,52 +232,52 @@ const props = defineProps({
 
 ```json
 {
-    "compilerOptions": {
-        "target": "esnext",
-        /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
-        "useDefineForClassFields": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        /** TS 严格模式 */
-        "strict": true,
-        "jsx": "preserve",
-        "jsxImportSource": "vue",
-        "importHelpers": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "resolveJsonModule": true,
-        /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
-        "isolatedModules": true,
-        "esModuleInterop": true,
-        "lib": ["esnext", "dom"],
-        "skipLibCheck": true,
-        "types": [
-            "node",
-            "vite/client",
-            /** Element Plus 的 Volar 插件支持 */
-            "element-plus/global",
-            "vitest"
-        ],
-        /** baseUrl 用来告诉编译器到哪里去查找模块，使用非相对模块时必须配置此项 */
-        "baseUrl": ".",
-        /** 非相对模块导入的路径映射配置，根据 baseUrl 配置进行路径计算 */
-        "paths": {
-            "@/*": ["src/*"]
-        }
-    },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "types/**/*.d.ts",
-        "vite.config.ts",
-        "vitest.config.ts"
+  "compilerOptions": {
+    "target": "esnext",
+    /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    /** TS 严格模式 */
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "vite/client",
+      /** Element Plus 的 Volar 插件支持 */
+      "element-plus/global",
+      "vitest"
     ],
-    /** 编译器默认排除的编译文件 */
-    "exclude": ["node_modules", "dist"]
+    /** baseUrl 用来告诉编译器到哪里去查找模块，使用非相对模块时必须配置此项 */
+    "baseUrl": ".",
+    /** 非相对模块导入的路径映射配置，根据 baseUrl 配置进行路径计算 */
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "types/**/*.d.ts",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  /** 编译器默认排除的编译文件 */
+  "exclude": ["node_modules", "dist"]
 }
 ```
 
@@ -291,79 +291,79 @@ const props = defineProps({
 
 ```js
 module.exports = {
-    root: true,
-    env: {
-        browser: true,
-        node: true,
-        es6: true,
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  extends: [
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
+    "@vue/prettier",
+    "@vue/eslint-config-typescript",
+  ],
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    parser: "@typescript-eslint/parser",
+    ecmaVersion: 2020,
+    sourceType: "module",
+    jsxPragma: "React",
+    ecmaFeatures: {
+      jsx: true,
+      tsx: true,
     },
-    extends: [
-        "plugin:vue/vue3-essential",
-        "eslint:recommended",
-        "@vue/typescript/recommended",
-        "@vue/prettier",
-        "@vue/eslint-config-typescript",
+  },
+  rules: {
+    // TS
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-debugger": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
     ],
-    parser: "vue-eslint-parser",
-    parserOptions: {
-        parser: "@typescript-eslint/parser",
-        ecmaVersion: 2020,
-        sourceType: "module",
-        jsxPragma: "React",
-        ecmaFeatures: {
-            jsx: true,
-            tsx: true,
+    "no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
+    ],
+    // Vue
+    "vue/no-v-html": "off",
+    "vue/require-default-prop": "off",
+    "vue/require-explicit-emits": "off",
+    "vue/multi-word-component-names": "off",
+    "vue/html-self-closing": [
+      "error",
+      {
+        html: {
+          void: "always",
+          normal: "always",
+          component: "always",
         },
-    },
-    rules: {
-        // TS
-        "@typescript-eslint/no-explicit-any": "off",
-        "no-debugger": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-                argsIgnorePattern: "^_",
-                varsIgnorePattern: "^_",
-            },
-        ],
-        "no-unused-vars": [
-            "error",
-            {
-                argsIgnorePattern: "^_",
-                varsIgnorePattern: "^_",
-            },
-        ],
-        // Vue
-        "vue/no-v-html": "off",
-        "vue/require-default-prop": "off",
-        "vue/require-explicit-emits": "off",
-        "vue/multi-word-component-names": "off",
-        "vue/html-self-closing": [
-            "error",
-            {
-                html: {
-                    void: "always",
-                    normal: "always",
-                    component: "always",
-                },
-                svg: "always",
-                math: "always",
-            },
-        ],
-        // Prettier
-        "prettier/prettier": [
-            "error",
-            {
-                endOfLine: "auto",
-            },
-        ],
-    },
-}
+        svg: "always",
+        math: "always",
+      },
+    ],
+    // Prettier
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
+};
 ```
 
 .eslintignore：
@@ -395,23 +395,23 @@ dist-ssr
  */
 
 export default {
-    /** 每一行的宽度 */
-    printWidth: 120,
-    /** 在对象中的括号之间是否用空格来间隔 */
-    bracketSpacing: true,
-    /** 箭头函数的参数无论有几个，都要括号包裹 */
-    arrowParens: "always",
-    /** 换行符的使用 */
-    endOfLine: "auto",
-    /** 是否采用单引号 */
-    singleQuote: false,
-    /** 对象或者数组的最后一个元素后面不要加逗号 */
-    trailingComma: "none",
-    /** 是否加分号 */
-    semi: false,
-    /** 缩进 */
-    tabWidth: 2,
-}
+  /** 每一行的宽度 */
+  printWidth: 120,
+  /** 在对象中的括号之间是否用空格来间隔 */
+  bracketSpacing: true,
+  /** 箭头函数的参数无论有几个，都要括号包裹 */
+  arrowParens: "always",
+  /** 换行符的使用 */
+  endOfLine: "auto",
+  /** 是否采用单引号 */
+  singleQuote: false,
+  /** 对象或者数组的最后一个元素后面不要加逗号 */
+  trailingComma: "none",
+  /** 是否加分号 */
+  semi: false,
+  /** 缩进 */
+  tabWidth: 2,
+};
 ```
 
 `.prettierignore`
@@ -614,15 +614,15 @@ settings.json
 
 ```json
 {
-    "editor.codeActionsOnSave": {"source.fixAll.eslint": "explicit"},
-    "[vue]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[javascript]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[typescript]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[json]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[jsonc]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[html]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[css]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
-    "[scss]": {"editor.defaultFormatter": "esbenp.prettier-vscode"}
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
 }
 ```
 

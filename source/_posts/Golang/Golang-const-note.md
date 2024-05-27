@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——const常量
 date: 2022-04-22 18:30:48
 categories: Golang
@@ -9,7 +8,6 @@ description:
 
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 语言常量
@@ -22,11 +20,11 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 
 ```go
 const constantName [type] = value
-/* 
+/*
 const:定义常量关键字
 constantName:常量名称
 type:常量类型
-value:常量的值 
+value:常量的值
 */
 ```
 

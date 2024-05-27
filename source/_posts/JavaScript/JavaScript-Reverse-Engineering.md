@@ -44,6 +44,36 @@ Thx the author of the following articles:
 
 ![JavaScript-Reverse-Engineering-3.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-3.png&webp=true)
 
+Cookie:
+
+- 存储在客户端的小型数据文件。
+- 每次 HTTP 请求时，浏览器会自动发送 cookie 给服务器。
+- 通常用于存储用户偏好或登录状态。
+- 安全性较低，容易受到 CSRF 等攻击。(篡改 overwriting)
+- 存储大小限制约为 4KB。
+- 默认不支持跨越, 需要配置 nginx 和前端允许传递跨域 cookie.
+
+Session:
+
+- 存储在服务器端的数据结构。
+- 通过在客户端 cookie 中存储唯一的 session ID 来识别用户。`set-cookie: sessionID=123456` 后端 `123456` --> `{ user: 'wf', age: 18 }`
+- 可以存储更多的数据，但会增加服务器的存储压力。
+- 比 cookie 更安全，因为数据不直接暴露在客户端。
+
+Token:
+
+- 服务端生成的一串加密的字符串，客户端在每次请求时发送给服务器。
+- 不依赖于 cookie，因此可以用于移动应用或跨域请求。
+- 可以包含用户的身份信息和权限数据。
+- 通常用于 **实现无状态** 的身份验证。
+- 简而言之，cookie 和 session 通常结合使用，通过在客户端存储 session ID 来维持用户状态，而 token 则是一种更灵活的方式，可以支持不同的客户端和跨域请求。
+
+JWT (JSON Web Token):
+
+structure: `header.payload.signature`
+
+传递 header: `{Authorization: 'token'}`
+
 ### 跨域资源共享 Cross-Origin Resource Sharing (CORS)
 
 ![JavaScript-Reverse-Engineering-4.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-4.png&webp=true)
@@ -65,6 +95,54 @@ AST 是抽象语法树（Abstract Syntax Tree）的缩写。它是在计算机�
 在编程过程中，源代码首先会被 **解析器或编译器** 读入，并生成对应的 **抽象语法树**。抽象语法树可以看作是源代码的树状表示，其中每个节点代表源代码中的一个语法构造（例如表达式、语句、函数定义等），而节点之间的关系代表了语法结构中的层次关系和依赖关系。
 
 通过使用抽象语法树，编译器、解释器和其他代码分析工具可以对源代码进行静态分析、语法检查、语义分析、优化等操作。抽象语法树在编程语言领域中具有广泛的应用，是理解和处理源代码的重要工具之一。
+
+### Function call stack 函数调用栈
+
+调用栈是解释器（比如浏览器中的 JavaScript 解释器）**追踪函数执行流** 的一种机制。当执行环境中调用了**多个函数**时，通过这种机制，我们能够追踪到**哪个函数正在执行**，执行的函数体中又调用了哪个函数。
+
+1. 每调用一个函数，解释器就会把该函数添加**进调用栈**并开始执行。
+2. 正在调用栈中执行的函数还调用了其他函数，那么新函数也将会**被添加进调用栈**，一旦这个函数被调用，便会立即执行。
+3. 当前函数执行完毕后，解释器将其**清出调用栈**，继续执行当前执行环境下的剩余的代码。
+4. 当分配的调用栈空间被占满时，会引发“堆栈溢出”错误。 **stack overflow**
+
+调用栈是动态变化的. 在写递归(Recursive)函数时, 一定要注意递归的终止条件, 否则会导致调用栈溢出.
+
+<!-- prettier-ignore -->
+```javascript
+// 一开始调用栈是空的
+// the call stack is empty at the beginning
+function nestedCall() {
+  console.log('nested call')
+  // 依次把执行的函数放入栈中
+  // put the executed function into the stack one by one
+  nestedFunc1(
+    nestedFunc2(
+       nestedFunc3(
+        // 如果执行到 nestedFunc3 内部, 那么调用栈会是这样的 
+        // if the execution reaches inside nestedFunc3, the call stack will look like this:
+        // call stack: (栈顶) nestedFunc3 -> nestedFunc2 -> nestedFunc1 -> nestedCall (栈底)
+        // 然后依次从栈顶开始调用函数
+        // then call the functions from the top of the stack
+        'sasa'
+        )
+       , 21), 
+    { a: 1 }
+  )
+}
+
+function mian(){
+  nestedCall()
+  // 执行完 nestedCall 后, 调用栈会是这样的 因为栈是先进后出的
+  // after nestedCall is executed, the call stack will look like this:
+  // call stack: (栈顶) main (栈底)
+}
+// 执行完所有代码后, 调用栈会是空的
+// after all the code is executed, the call stack will be empty
+```
+
+<!-- prettier-ignore-end -->
+
+![JS Content stack](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2.png&webp=true)
 
 ## Chrome DevTools (Chrome 开发者工具使用)
 
@@ -114,38 +192,51 @@ breakpoint debug: 断点调试按钮
 
 ![JavaScript-Reverse-Engineering-9.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-9.png&webp=true)
 
+1. resume/pause script execution
+   恢复/暂停脚本执行
+2. step over next function call
+   跨过，实际表现是不遇到函数时，执行下一步。遇到函数时，不进入函数直接执行下一步。
+3. step into next function call
+   跨入，实际表现是不遇到函数时，执行下一步。遇到到函数时，进入函数执行上下文。
+4. step out of current function
+   跳出当前函数
+5. deactivate breakpoints
+   停用断点
+6. don‘t pause on exceptions
+   不暂停异常捕获
+
 Console: 控制台
 
 output log: 输出日志
 
 ```javascript
-console.log('Hello World')
-console.info('Hello World')
-console.warn('Hello World')
-console.error('Hello World')
+console.log("Hello World");
+console.info("Hello World");
+console.warn("Hello World");
+console.error("Hello World");
 // 记录函数调用的次数
-console.count('The number of times this line has been called')
+console.count("The number of times this line has been called");
 
 // 断言
-console.assert
+console.assert;
 
 // output table: perfect for displaying arrays or objects 方便查看 structed data 结构化数据
 let data = [
   { a: 1, b: 2 },
-  { a: 'foo', b: 'bar' },
-]
+  { a: "foo", b: "bar" },
+];
 
-console.table(data)
+console.table(data);
 // copy data to clipboard
-copy(data)
+copy(data);
 // clear console
-clear()
+clear();
 
 // $_: last evaluated expression 最后一次记录的表达式
 // $: as a shortcut for `document.querySelector()`
-$('.my-element-class')
+$(".my-element-class");
 // xpath selector
-$x('//h1')
+$x("//h1");
 ```
 
 ## 抓包工具 (Packet Sniffer)
@@ -165,7 +256,7 @@ Check if a function is native, if not, it has been hooked.
 
 ```javascript
 // `String.indexOf()` returns the position of the first occurrence of a specified value in a string. if not found, return -1.
-if ((eval + '').indexOf('[native code]') === -1) {
+if ((eval + "").indexOf("[native code]") === -1) {
   // eval is not native
   // eval function has been hooked
 }
@@ -239,6 +330,16 @@ Hook inject script Time: 代码注入时期, 当页面加载完成时
 2. Network type initator: 网络请求的发起者
 3. Console log XMLHttpRequest: 控制台输出网络请求
 
+分析流程:
+
+1. 抓包分析哪些参数是加密的.
+2. 搜索参数
+3. 查看 Network 的 Initiator 发起者
+4. xhr breakpoint 网络断点
+5. hook 逻辑
+6. 分析加密
+7. 补全加密逻辑
+
 ## Code obfuscation 代码混淆
 
 - 代码压缩: 去除空格 换行
@@ -287,4 +388,109 @@ use:
 
 ![JavaScript-Reverse-Engineering-14.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-14.png&webp=true)
 
-https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-14.png&webp=true
+处理混淆后的代码:
+
+e.g:
+
+1. emoji 颜文字编码
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-1.png&webp=true)
+
+2. 操作原型链
+
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-2.png&webp=true)
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-3.png&webp=true)
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-4.png&webp=true)
+
+3. eval
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-5.png&webp=true)
+
+4. 严重混淆
+   ![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-6.png&webp=true)
+
+## 常见加解密 编码解码 算法
+
+> 密码学是一个很庞大的分支, 对数学要求很高.
+
+### Ascii 码
+
+**ASCII** [/ˈæskiː/](American Standard Code For Information Interchange): 美国标准信息交换代码, 一种将字符编码成**二进制**的方式. 用于显示现代英语以及其他的一些西欧语言.
+
+在 Pytion 中 使用 `ord()` 获取字符的 ASCII 码.
+
+### Base64
+
+将二进制数据转换为文本数据, 对于非二进制方式都先转成二进制, 连续使用 6bit 计算十进制的值, 对应检索码表.
+
+特征: 以 `==` 结尾
+
+引用: 嵌入 base64 格式图片 | 有些厂商非定制特定的码表达到 obfuscation 的目的
+
+### MD5 信息指纹
+
+MD5 计算做 Hash 校验, 对数据的完整性进行校验.
+
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-7.png&webp=true)
+
+Python Code:
+
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-8.png&webp=true)
+
+MD5 已经不具备抗碰撞性了, 不再是一种安全的散列算法, 真的不安全了吗? 查彩虹表(Hash Table) 有没有这个值.
+
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-9.png&webp=true)
+
+### AES (Advanced Encryption Standard) 高级加密标准 对称加密
+
+用于替代原来的 DES(Data Encryption Standard) 数据加密标准. AES 是一种**对称加密算法**, 使用相同的密钥进行加密和解密. (只有一个密钥)
+
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-10.png&webp=true)
+
+Python 加解密库: Pycrpto
+
+非对称加密: RSA(Rivest-Shamir-Adleman): 有公钥私钥两种密钥, 避免了密钥传输过程中的泄露问题.
+
+## 控制流平坦化 (Control Flow Flattening)
+
+通过引入**状态机**(根据条件的值做出相应的动作)与循环，破坏代码上下文之间的阅读连续性和代码块之间的关联性，将若干个分散的小整体整合成一个巨大的循环体。无法还原成原来具体的函数。
+
+![JavaScript-Reverse-Engineering-15.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-15.png&webp=true)
+
+目的 Purpose:
+
+1. 无法以函数为单位的调试方法，大幅度增加调试难度。
+2. 降低代码运行效率，提高爬虫运行时执行 js 的资源成本.
+3. 可根据 js 运行时检测到的某些因素自由跳转到蜜罐或跳出代码执行.
+
+实现方法:
+
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-11.png&webp=true)
+![alt text](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-p2-12.png&webp=true)
+
+1. 大量的 switch case 语句 模拟状态机分发代码
+2. 大量的 if else 语句
+3. 多维数组
+4. 数值计算比较
+
+混淆原理 Obfuscation Principle:
+
+通过 AST (Abstract Syntax Tree) 抽象语法树，将代码中的函数、变量、语句等元素转换为树状结构，再通过对树状结构的提取, 重新组合, 实现代码的混淆。
+
+ATSexplorer: AST 可视化工具 <https://astexplorer.net/>
+
+应对三部曲:
+
+1. **全局观察:**
+   大致观察每一个代码结构，是否有类似于 dom 操作的代码，是否为纯计算型的循环体，是否有 try-catch 异常捕获结构。
+
+2. **整体分析与载入:**
+   断点定于 while 开头部分(状态机跳转判断),  
+   断点定于 try 代码体第一行, while 循环体整体取出构造原始函数.
+
+3. **构造函数**
+   查缺补漏，在运行的过程中通过不断地运行报错，补充缺失的函数或者数据.
+
+通过 AST 增强代码可读性: via AST to enhance code readability.
+
+通过 `recast` 库将代码转换为 AST 树, 通过 AST 树的遍历, 逐步还原代码, 增强代码可读性.
+
+switch case 语句还原, 每个 case 打印每个 case 的代码, 还原每个 case 的执行顺序.

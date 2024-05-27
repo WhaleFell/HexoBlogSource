@@ -2,10 +2,10 @@
 title: 高中课程自学 Tutorial
 date: 2023-09-18 18:00:56
 updated: 2023-09-18 18:00:56
-categories: Study 
+categories: Study
 tags: [高考, 自学, 语文, 数学, 英语, 物理, 化学, 地理]
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -17,7 +17,7 @@ Reference：
 
 1. [B站高中最全9科网课老师推荐，一数，黄夫人，学过石油的语文老师准高中生必备！](https://www.bilibili.com/video/BV1Sp4y137h1/?)
 2. [【高中网课·白嫖指南】高中优质网课，免费白嫖指南！](https://www.bilibili.com/video/BV15u4y1S7ew/?)
-3. 
+3.
 
 ## 英语
 

@@ -1,11 +1,11 @@
 ---
-title: Pydantic & Typing —— Python 类型注解深入 
+title: Pydantic & Typing —— Python 类型注解深入
 date: 2023-09-24 00:41:23
 updated: 2023-09-24 00:41:23
-categories: 
-tags: 
-description: 
-thumbnail: 
+categories:
+tags:
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -32,13 +32,13 @@ Python `Typing` Official Document：[typing — Support for type hints — Pytho
 使用 VS Code 的 **Pylance** 扩展。它是推荐的下一代 Python 官方 VS Code 插件。
 
 - Open the "User Settings"  
-    打开“用户设置”
+   打开“用户设置”
 - Search for `Type Checking Mode`  
- 搜索 `Type Checking Mode`
+  搜索 `Type Checking Mode`
 - You will find an option under `Python › Analysis: Type Checking Mode`  
-    您将在 `Python › Analysis: Type Checking Mode` 下找到一个选项
+   您将在 `Python › Analysis: Type Checking Mode` 下找到一个选项
 - Set it to `basic` or `strict` (by default it's `off`)  
-    将其设置为 `basic` 或 `strict` （默认情况下为 `off` ）
+   将其设置为 `basic` 或 `strict` （默认情况下为 `off` ）
 
 ## Callable 回调函数签名注释
 
@@ -274,8 +274,8 @@ for i in m.infinite:
 
 ```python
 from pydantic import BaseModel
-class UserModel(BaseModel): 
- id: int 
+class UserModel(BaseModel):
+ id: int
  name: str
 ```
 
@@ -373,7 +373,7 @@ class User(BaseModel):
  ...
  # constrain 约束 gt/lt/ge 限制大小
  ...
- # 
+ #
 ```
 
 ### 序列化 Serialization [英 /ˈsɪəri:əˌlaɪz/]
@@ -421,9 +421,9 @@ class SubModel(BaseModel):
 
 class Settings(BaseSettings):
  # 配置 alias 实际读取 `my_auth_key` 环境变量
-    auth_key: str = Field(validation_alias='my_auth_key')  
+    auth_key: str = Field(validation_alias='my_auth_key')
 
-    api_key: str = Field(alias='my_api_key')  
+    api_key: str = Field(alias='my_api_key')
 
     redis_dsn: RedisDsn = Field(
         'redis://user:pass@localhost:6379/1',

@@ -10,8 +10,8 @@ tags:
   - Python
   - 设计模式
   - DesignPattern
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -33,7 +33,7 @@ Reference：
 
 例如， 如果需要向应用中添加一种新产品， 你只需要开发新的创建者子类， 然后重写其工厂方法即可。
 
-**开闭原则:**  在扩展新的类时，尽量不要修改原有代码。
+**开闭原则:** 在扩展新的类时，尽量不要修改原有代码。
 
 伪代码:
 
@@ -48,7 +48,7 @@ class Dialog is
     // 请注意，创建者的主要职责并非是创建产品。其中通常会包含一些核心业务逻辑
     // 这些逻辑依赖于由工厂方法返回的产品对象。
     // 子类可通过重写工厂方法并使其返回不同类型的产品来间接修改业务逻辑。
-    
+
     method render() is
         // 调用工厂方法创建一个产品对象.
         // 子类可以重写 createButton 方法以更改产品类型
@@ -142,9 +142,9 @@ class Creator(ABC):
         is not creating products. Usually, it contains(包含) some core business logic(核心业务)
         that relies on(依赖于) Product objects, returned by the factory method.
         Subclasses(子类) can indirectly(间接) change that business logic by / overriding(重写) the factory method and returning a different type of product from it.
-        
+
         注意：Creator 工厂方法的主要职责不是创建产品。
-        通常，它包含一些依赖于工厂方法返回的 Product 对象的核心业务逻辑。 
+        通常，它包含一些依赖于工厂方法返回的 Product 对象的核心业务逻辑。
         子类可以通过重写工厂方法并从中返回不同类型的产品来间接更改该业务逻辑。
         """
 
@@ -170,7 +170,7 @@ class ConcreteCreator1(Creator):
     Note that the signature of the method still uses the abstract product type,
     even though the concrete product is actually returned from the method. This
     way the Creator can stay independent of concrete product classes.
-    
+
     请注意，该方法的签名仍然使用抽象产品类型、
     尽管该方法实际返回的是具体产品。这样
     这样，创建者就可以独立于具体的产品类别。

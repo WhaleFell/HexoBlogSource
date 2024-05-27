@@ -1,5 +1,4 @@
 ---
-
 title: Linux 运维笔记(持续更新)
 date: 2022-03-20 16:37:48
 updated: 2022-03-20 16:37:48
@@ -8,7 +7,6 @@ tags: [Linux]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Linux-Operation-Note-Banner.png
-
 ---
 
 # Linux Operation Note
@@ -19,7 +17,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Li
 
 了解两个特殊的设备：
 
-1. /dev/null：回收站、无底洞。  
+1. /dev/null：回收站、无底洞。
 2. /dev/zero：产生字符。
 
 ### 格式化硬盘为 ETX4 格式
@@ -59,7 +57,7 @@ df -h
 tar -czvf backup.tar.gz /path/to/directory
 ```
 
-这将使用 `tar` 命令将指定目录打包成一个压缩文件 `backup.tar.gz`。你可以将 `/path/to/directory` 替换为要备份的目录路径。使用 `-c` 参数表示创建新的备份，`-z` 参数表示使用 gzip 压缩，`-v` 参数表示显示备份过程中的详细信息。
+这将使用  `tar`  命令将指定目录打包成一个压缩文件  `backup.tar.gz`。你可以将  `/path/to/directory`  替换为要备份的目录路径。使用  `-c`  参数表示创建新的备份，`-z`  参数表示使用 gzip 压缩，`-v`  参数表示显示备份过程中的详细信息。
 
 还原备份：
 
@@ -67,7 +65,7 @@ tar -czvf backup.tar.gz /path/to/directory
 tar -xzvf backup.tar.gz -C /path/to/destination
 ```
 
-这将使用 `tar` 命令解压缩备份文件 `backup.tar.gz` 并将文件还原到目标目录 `/path/to/destination`。使用 `-x` 参数表示解压缩，`-z` 参数表示使用 gzip 解压缩，`-v` 参数表示显示还原过程中的详细信息，`-C` 参数指定还原到的目标目录。
+这将使用  `tar`  命令解压缩备份文件  `backup.tar.gz`  并将文件还原到目标目录  `/path/to/destination`。使用  `-x`  参数表示解压缩，`-z`  参数表示使用 gzip 解压缩，`-v`  参数表示显示还原过程中的详细信息，`-C`  参数指定还原到的目标目录。
 
 ### HDParm 硬盘休眠
 
@@ -91,7 +89,7 @@ vim /etc/hdparm.conf
 
 ### 硬盘自动挂载
 
-在 `/etc/fstab` 文件中为硬盘指定了 `nofail` 选项，系统将忽略找不到硬盘的错误，并继续启动过程。
+在  `/etc/fstab`  文件中为硬盘指定了  `nofail`  选项，系统将忽略找不到硬盘的错误，并继续启动过程。
 
 ```shell
 mkdir /mnt/disk/
@@ -219,7 +217,7 @@ ab -n 1000 -c 256 "https://api.whaleluo.top/"
 
 ### OpenVPN
 
-> 参考：[窗口 - 使用OpenVPN，我如何只能让局域网通过VPN？- 服务器故障 (serverfault.com)](https://serverfault.com/questions/785767/with-openvpn-how-can-i-only-let-lan-go-through-the-vpn) **重要**
+> 参考：[窗口 - 使用 OpenVPN，我如何只能让局域网通过 VPN？- 服务器故障 (serverfault.com)](https://serverfault.com/questions/785767/with-openvpn-how-can-i-only-let-lan-go-through-the-vpn) **重要**
 >
 > [ROUTE: route addition failed - lsgxeva - 博客园 (cnblogs.com)](https://www.cnblogs.com/lsgxeva/p/11378768.html)
 >
@@ -336,7 +334,7 @@ quicBindPort = 7002
 # TCP MUX
 # transport.tcpMux = true
 
-# tls 
+# tls
 tls.force = true
 
 
@@ -389,7 +387,7 @@ quicBindPort = 43202
 # TCP MUX
 # transport.tcpMux = true
 
-# tls 
+# tls
 tls.force = true
 
 
@@ -523,10 +521,10 @@ alias setproxy="export ALL_PROXY=socks5://127.0.0.1:20180" alias unsetproxy="uns
 
 ```shell
 # server每隔60秒发送一次请求给client，然后client响应，从而保持连接
-ClientAliveInterval 60 
+ClientAliveInterval 60
 
 # server发出请求后，客户端没有响应得次数达到3，就自动断开连接，正常情况下，client不会不响应
-ClientAliveCountMax 3 
+ClientAliveCountMax 3
 ```
 
 ### SSH 配置密钥登陆
@@ -591,16 +589,16 @@ sudo apt-get install git zsh wget -y
 sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 
 # 从马云安装
-export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git 
+export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git
 sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 
 # 原Github安装
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # 解决 OpenWRT git 异常
-opkg update  
-opkg remove git  
-opkg install git-http  
+opkg update
+opkg remove git
+opkg install git-http
 opkg install ca-bundle
 
 # 解决收手机字体问题
@@ -646,6 +644,19 @@ compaudit | xargs chmod g-w,o-w
 curl -sSL https://raw.githubusercontent.com/WhaleFell/TGBot/main/exc.sh | sudo /bin/bash
 ```
 
+### 使用 SCP(secure copy) 命令传输文件
+
+```shell
+# from local to remote
+scp -C local_file remote_username@remote_ip:remote_file
+
+# from remote to local
+scp -C remote_username@remote_ip:remote_file local_file
+
+# tranfer directory
+scp -C -r local_dir remote_username@remote_ip:remote_dir
+```
+
 ## Docker
 
 ### 安装
@@ -677,16 +688,16 @@ docker run -d --name tg_forwardMsgBot -v /wfwork/tgbot_base/:/wkdir/ tgbot_base 
 
 ### 开启 IPV6
 
-[【有用的小知识】Docker-qBittorrent 开启IPv6 笔记 | 我不是咕咕鸽](https://blog.laoda.de/archives/docker-qbittorrent-ipv6/index.html)
+[【有用的小知识】Docker-qBittorrent 开启 IPv6 笔记 | 我不是咕咕鸽](https://blog.laoda.de/archives/docker-qbittorrent-ipv6/index.html)
 
-编辑 `/etc/docker/daemon.json` ，添加以下内容：（如果没有这个文件直接创建）
+编辑  `/etc/docker/daemon.json` ，添加以下内容：（如果没有这个文件直接创建）
 
 ```json
-{  
- "ipv6": true,  
- "fixed-cidr-v6": "2001:db8:abc1::/64",  # IPv6前缀可以自定义，请确保符合规则   
- "experimental": true,  
- "ip6tables": true  
+{
+ "ipv6": true,
+ "fixed-cidr-v6": "2001:db8:abc1::/64",  # IPv6前缀可以自定义，请确保符合规则
+ "experimental": true,
+ "ip6tables": true
 }
 ```
 
@@ -806,7 +817,7 @@ docker run                                            \
 > ```
 >
 > - ​`<目录路径>`​：指定要共享的目录的路径。可以是绝对路径或相对路径。
-> - ​`<允许访问的客户端>`​：指定被允许访问该共享目录的客户端。可以使用 IP 地址、域名或子网掩码来指定。也可以使用通配符进行模式匹配，如 `*`​表示允许所有客户端访问。
+> - ​`<允许访问的客户端>`​：指定被允许访问该共享目录的客户端。可以使用 IP 地址、域名或子网掩码来指定。也可以使用通配符进行模式匹配，如 `*`​ 表示允许所有客户端访问。
 > - ​`(选项)`​：可选项，用于指定共享选项。常用的选项包括：
 >
 >   - ​`rw`​：允许读写访问权限。
@@ -819,7 +830,7 @@ docker run                                            \
 >   - ​`insecure`​：允许不安全的访问请求，如非特权端口。
 >   - ​`no_subtree_check`​：不进行子树检查。
 >
-> /etc/exports 文件的作用是定义 NFS 共享的配置信息，以便服务器将指定的目录和选项提供给客户端进行挂载和访问。每当修改 /etc/exports 文件后，需要使用 `exportfs`​命令重新加载 NFS 服务器的配置，以使更改生效。
+> /etc/exports 文件的作用是定义 NFS 共享的配置信息，以便服务器将指定的目录和选项提供给客户端进行挂载和访问。每当修改 /etc/exports 文件后，需要使用 `exportfs`​ 命令重新加载 NFS 服务器的配置，以使更改生效。
 
 仅通过 NFSv4 连接，则只需使用 TCP 端口 `2049`​
 
@@ -827,7 +838,7 @@ performance-tuning：[https://github.com/ehough/docker-nfs-server/blob/develop/d
 
 Set the **`NFS_SERVER_THREAD_COUNT`**​ environment variable to control how many server threads `rpc.nfsd`​ will use. A good minimum is one thread per CPU core, but 4 or 8 threads per core is probably better. The default is one thread per CPU core.
 
-Running the container with `--network host`​ *might* improve network performance by 10% - 20% on a heavily-loaded server [[1](https://jtway.co/docker-network-performance-b95bce32b4b9),[2](https://www.percona.com/blog/2016/08/03/testing-docker-multi-host-network-performance/)], **though this hasn't been tested.**
+Running the container with `--network host`​ _might_ improve network performance by 10% - 20% on a heavily-loaded server [[1](https://jtway.co/docker-network-performance-b95bce32b4b9),[2](https://www.percona.com/blog/2016/08/03/testing-docker-multi-host-network-performance/)], **though this hasn't been tested.**
 
 查看 CPU 内核数：`cat /proc/cpuinfo| grep "cpu cores"| uniq`​
 
@@ -837,7 +848,7 @@ Running the container with `--network host`​ *might* improve network performan
 
 #### DDNS-GO
 
-基于 Golang 语言开发的 DDNS 程序。[GitHub - jeessy2/ddns-go: 简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)](https://github.com/jeessy2/ddns-go)
+基于 Golang 语言开发的 DDNS 程序。[GitHub - jeessy2/ddns-go: 简单好用的 DDNS。自动更新域名解析到公网 IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)](https://github.com/jeessy2/ddns-go)
 
 ```shell
 docker run -d --name ddns-go --restart=always --net=host -v /root/configs/ddns-go:/root jeessy/ddns-go
@@ -913,7 +924,7 @@ docker create  \
 
 #### Alist
 
-[Home | AList文档](https://alist.nn.ci/zh)
+[Home | AList 文档](https://alist.nn.ci/zh)
 
 ```shell
 docker pull xhofe/alist:latest
@@ -1045,7 +1056,7 @@ client_header_timeout 1m;
 client_body_timeout 1m;
 proxy_connect_timeout 60s;
 proxy_read_timeout 1m;
-proxy_send_timeout 1m;      
+proxy_send_timeout 1m;
 ```
 
 ### 反向代理
@@ -1122,7 +1133,7 @@ location /chat/ {
 ```nginx
 proxy_connect_timeout 60s;
 proxy_read_timeout 60m;
-proxy_send_timeout 60m; 
+proxy_send_timeout 60m;
 ```
 
 自动添加 `/`​ 在 server 字段下添加:
@@ -1173,7 +1184,7 @@ neilpang/acme.sh daemon
 docker exec -it acme.sh sh
 
 # 设置自动更新
-docker exec acme.sh --upgrade --auto-upgrade 
+docker exec acme.sh --upgrade --auto-upgrade
 
 # 使用 letsencrypt 签发证书
 docker exec acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf -d *.whaleluo.top
@@ -1231,14 +1242,14 @@ http {
         ssl                      on;
         ssl_certificate     /usr/local/nginx/cert/cert.pem;
         ssl_certificate_key  /usr/local/nginx/cert/private.key;
-      
+
         ssl_session_timeout  5m;
         ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
 
         error_page 497 https://$host:8080$uris;
-      
+
         if ($scheme = http) {
             return 301 https://$host$request_uri;
         }
@@ -1263,7 +1274,7 @@ add_header Access-Control-Allow-Headers Content-Type,Authorization;
 
 ### 自用完整的 nginx.conf
 
-nginx file format： [https://nginxbeautifier.github.io/](https://nginxbeautifier.github.io/ "在线整理 nginx 配置文件")  
+nginx file format： [https://nginxbeautifier.github.io/](https://nginxbeautifier.github.io/ "在线整理 nginx 配置文件")
 
 github repo: [https://github.com/nginxbeautifier/nginxbeautifier.github.io](https://github.com/nginxbeautifier/nginxbeautifier.github.io)
 
@@ -1409,11 +1420,11 @@ http {
 x86 官方源
 
 ```shell
-src/gz openwrt_core http://downloads.openwrt.org/releases/21.02.0/targets/x86/64/packages  
-src/gz openwrt_base https://downloads.openwrt.org/snapshots/packages/x86_64/base  
-src/gz openwrt_luci    https://downloads.openwrt.org/snapshots/packages/x86_64/luci  
-src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/x86_64/packages  
-src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing  
+src/gz openwrt_core http://downloads.openwrt.org/releases/21.02.0/targets/x86/64/packages
+src/gz openwrt_base https://downloads.openwrt.org/snapshots/packages/x86_64/base
+src/gz openwrt_luci    https://downloads.openwrt.org/snapshots/packages/x86_64/luci
+src/gz openwrt_packages https://downloads.openwrt.org/snapshots/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing
 src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony
 ```
 
@@ -1428,9 +1439,9 @@ src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packag
 1. WebShell 查杀工具：[SHELLPUB.COM 专注查杀，永久免费](https://www.shellpub.com/)
 
 2. IP 纯净度查询 IP Fraud Check
-    - <https://scamalytics.com/>
-    - <https://ping0.cc/>
-    - <https://ipdata.co/>
+   - <https://scamalytics.com/>
+   - <https://ping0.cc/>
+   - <https://ipdata.co/>
 
 ## Windowns 实用命令
 
@@ -1468,7 +1479,7 @@ goto :eof
 :noAdmin
 echo Current user permissions to execute this .BAT file are inadequate.
 echo This .BAT file must be run with administrative privileges.
-echo Exit now, right click on this .BAT file, and select "Run as administrator".  
+echo Exit now, right click on this .BAT file, and select "Run as administrator".
 pause >nul
 
 :theEnd

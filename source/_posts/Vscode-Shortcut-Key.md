@@ -7,8 +7,8 @@ categories:
 tags:
   - Vscode
   - Vim
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -25,7 +25,7 @@ banner_img:
 5. **隔单词跳转**：Ctrl+ left / right
 6. **快速回到顶部** ： ctrl + Fn +home
 7. **快速回到底部** : ctrl + Fn + end
-8. **选择整行** CTRL + L 
+8. **选择整行** CTRL + L
 9. **删除整行** CTRL + SHIFT + K / Ctrl+d
 10. |Home| **光标跳转行头**| |End|**光标跳转行尾**|
 11. **回到上一次编辑的位置**：Alt + ←

@@ -1,5 +1,4 @@
 ---
-
 title: Python asyncio 异步协程百万并发
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
@@ -9,7 +8,6 @@ description: Python 异步协程百万并发
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-Asyncio-banner.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-Asyncio-banner.png
 excerpt: Python 异步百万并发全文最详细笔记！！
-
 ---
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Python-Asyncio-banner.png&webp=true)
@@ -30,13 +28,13 @@ import asyncio
 async def say_after_time(delay,what):
         await asyncio.sleep(delay)
         print(what)
- 
+
 async def main():
         print(f"开始时间为： {time.time()}")
         await say_after_time(1,"hello")
         await say_after_time(2,"world")
         print(f"结束时间为： {time.time()}")
- 
+
 loop=asyncio.get_event_loop()    #创建事件循环对象
 # loop=asyncio.new_event_loop()   #与上面等价，创建新的事件循环
 loop.run_until_complete(main())  #通过事件循环对象运行协程函数
@@ -83,11 +81,11 @@ loop = asyncio.get_event_loop()
 ### 获取某一个任务的方法
 
 1. `task=asyncio.current_task(loop=None)`  
-	返回在某一个指定的 loop 中，**当前正在运行的任务**，**如果没有任务正在运行，则返回 None**；  
-	如果 loop 为 None，**则默认为在当前的事件循环中获取**.
+   返回在某一个指定的 loop 中，**当前正在运行的任务**，**如果没有任务正在运行，则返回 None**；  
+   如果 loop 为 None，**则默认为在当前的事件循环中获取**.
 
 2. `asyncio.all_tasks(loop=None)`  
-	返回某一个**loop 中还没有结束的任务**
+   返回某一个**loop 中还没有结束的任务**
 
 ## 异步函数的结果获取
 
@@ -112,7 +110,7 @@ loop = asyncio.get_event_loop()
    loop.run_until_complete(task)                  #第三步：通过事件循环运行
    print('-------------------------------------')
    print(task.result())
-   loop.close() 
+   loop.close()
 
    '''运行结果为
    Hello world 01 begin
@@ -127,24 +125,24 @@ loop = asyncio.get_event_loop()
 ```python
 import asyncio
 import time
-   
+
   async def hello1(a,b):
       print("Hello world 01 begin")
       await asyncio.sleep(3)  # 模拟耗时任务3秒
       print("Hello again 01 end")
     return a+b
-   
+
 def callback(future):   # 定义的回调函数,需要传future参数
     print(future.result())
- 
+
 loop = asyncio.get_event_loop()                # 第一步：创建事件循环
 task = asyncio.ensure_future(hello1(10,5))       # 第二步:将多个协程函数包装成任务
 task.add_done_callback(callback)                      # 并被任务绑定一个回调函数，默认传入结果参数
- 
+
 loop.run_until_complete(task)                  # 第三步：通过事件循环运行
 loop.close()                                   # 第四步：关闭事件循环
- 
- 
+
+
 '''运行结果为：
 Hello world 01 begin
 Hello again 01 end
@@ -159,38 +157,38 @@ Hello again 01 end
 ### 第一步：构造事件循环
 
 1. `loop = asyncio.get_running_loop()`  
-	返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7 中新添加的**
+   返回（获取）在当前线程中**正在运行的事件循环**，如果没有正在运行的事件循环，则会显示错误；它是**python3.7 中新添加的**
 
 2. `loop = asyncio.get_event_loop()`  
-	**获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环 loop**；
+   **获得一个事件循环**，如果当前线程还没有事件循环，则**创建一个新的事件循环 loop**；
 
 3. `loop=asyncio.set_event_loop(thread)`  
-	 设置一个事件循环**为当前线程的事件循环**；
+    设置一个事件循环**为当前线程的事件循环**；
 
 4. `loop=asyncio.new_event_loop()`  
-	**创建一个新的事件循环**
+   **创建一个新的事件循环**
 
 ### 第二步：将一个或者是多个协程函数包装成任务 Task
 
 1. `task = asyncio.create_task(coro(参数列表))`  
-	**这是 3.7 版本新添加的**
+   **这是 3.7 版本新添加的**
 
 2. `task = asyncio.ensure_future(coro(参数列表))`  
-	需要注意的是，在使用 `Task.result()` 获取 **协程函数结果**的 时候，使用 `asyncio.create_task()` 却会显示错，但是使用 `asyncio.ensure_future` 却正确
+   需要注意的是，在使用 `Task.result()` 获取 **协程函数结果**的 时候，使用 `asyncio.create_task()` 却会显示错，但是使用 `asyncio.ensure_future` 却正确
 
 ### 第三步：通过事件循环运行
 
 1. `loop.run_until_complete(asyncio.wait(tasks))`  
-	通过 `asyncio.wait()`​**整合多个 task**
+   通过 `asyncio.wait()`​**整合多个 task**
 
 2. `loop.run_until_complete(asyncio.gather(tasks))`  
-	通过 `asyncio.gather()`​**整合多个 task**
+   通过 `asyncio.gather()`​**整合多个 task**
 
 3. `loop.run_until_complete(task_1)`  
-	**单个任务则不需要整合**
+   **单个任务则不需要整合**
 
 4. ~~loop.run_forever()~~  
-	 ~~但是这个方法在新版本已经取消，不再推荐使用，因为使用起来不简洁~~
+    ~~但是这个方法在新版本已经取消，不再推荐使用，因为使用起来不简洁~~
 
 #### 使用 `gather` 和 `wait` 整合 Task 注册多个服务
 
@@ -215,16 +213,16 @@ Hello again 01 end
 
    **gather 返回的是每一个任务运行的结果**：
 
-  要以传入一个列表可变参数
+要以传入一个列表可变参数
 
-   **可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个 tuple**
+**可变参数允许在调用参数的时候传入多个参数,这些参数在调用时被自动组装为一个 tuple**
 
-   `results = await asyncio.gather(*[tasks])`
+`results = await asyncio.gather(*[tasks])`
 
-   `results = await asyncio.gather(task1,task2,task3)`
+`results = await asyncio.gather(task1,task2,task3)`
 
-   **wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型**：  
-   `done, pending = yield from asyncio.wait(fs)`
+**wait 返回 dones 是已经完成的任务，pending 是未完成的任务，都是集合类型**：  
+ `done, pending = yield from asyncio.wait(fs)`
 
 简单来说：**async.wait 会返回两个值:done 和 pending**，done 为已完成的协程 Task，pending 为超时未完成的协程 Task，**需通过 future.result 调用 Task 的 result。**  
 而 `async.gather` 返回的是**已完成 Task 的 result**。
@@ -256,31 +254,31 @@ async def hello1(a,b):
     await asyncio.sleep(3)  #模拟耗时任务3秒
     print("Hello again 01 end")
     return a+b
- 
+
 async def hello2(a,b):
     print("Hello world 02 begin")
     await asyncio.sleep(2)   #模拟耗时任务2秒
     print("Hello again 02 end")
     return a-b
- 
+
 async def hello3(a,b):
     print("Hello world 03 begin")
     await asyncio.sleep(4)   #模拟耗时任务4秒
     print("Hello again 03 end")
     return a*b
- 
+
 async def main():  #封装多任务的入口函数
     # 用列表表达式创建任务
     tasks = [
         asyncio.ensure_future(hello1(10,5))
         for i in range(10)
     ]
-    results = await asyncio.gather(tasks)   
+    results = await asyncio.gather(tasks)
     for result in results:    #通过迭代获取函数的结果，每一个元素就是相对应的任务的返回值，顺序都没变
         print(result)
- 
- 
-loop = asyncio.get_event_loop()               
+
+
+loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 loop.close()
 ```
@@ -288,41 +286,41 @@ loop.close()
 ### 异步 + 多线程
 
 ```python
-import asyncio 
+import asyncio
 import asyncio,time,threading
- 
+
 #需要执行的耗时异步任务
 async def func(num):
     print(f'准备调用func,大约耗时{num}')
     await asyncio.sleep(num)
     print(f'耗时{num}之后,func函数运行结束')
- 
+
 #定义一个专门创建事件循环loop的函数，在另一个线程中启动它
 def start_loop(loop):
     asyncio.set_event_loop(loop)
     # 启动事件循环并持续运行
     loop.run_forever()
- 
+
 #定义一个main函数
 def main():
     coroutine1 = func(3)
     coroutine2 = func(2)
     coroutine3 = func(1)
- 
+
     new_loop = asyncio.new_event_loop()                        #在当前线程下创建时间循环，（未启用），在start_loop里面启动它
     t = threading.Thread(target=start_loop,args=(new_loop,))   #通过当前线程开启新的线程去启动事件循环
     t.start()
- 
+
     asyncio.run_coroutine_threadsafe(coroutine1, new_loop)  #这几个是关键，代表在新线程中事件循环不断“游走”执行
     asyncio.run_coroutine_threadsafe(coroutine2, new_loop)
     asyncio.run_coroutine_threadsafe(coroutine3, new_loop)
- 
+
     for i in "iloveu":
         print(str(i)+"    ")
- 
+
 if __name__ == "__main__":
     main()
- 
+
 '''运行结果为：
 i    准备调用func,大约耗时3
 l    准备调用func,大约耗时2
@@ -343,7 +341,7 @@ u
 ```python
 import aiohttp
 import asyncio
- 
+
 async def main():
     async with aiohttp.ClientSession() as client:
          async with client.get('http://httpbin.org/get') as resp:
@@ -496,7 +494,7 @@ if __name__ == "__main__":
 
 ## 运行 Asyncio 协程
 
-`asyncio.run(coro, *, debug=False)`  
+`asyncio.run(coro, *, debug=False)`
 
 执行 `coroutine coro` 并返回结果。  
 此函数会运行传入的协程，负责管理 asyncio 事件循环，终结异步生成器，并关闭线程池。
@@ -647,7 +645,7 @@ Asyncio 并不能带来真正的并行（parallelism）。当然，因为 GIL（
 协程的定义，需要使用 `async def` 语句。
 
 ```python
-async def do_some_work(x): 
+async def do_some_work(x):
 	pass
 ```
 
@@ -661,8 +659,8 @@ print(asyncio.iscoroutinefunction(do_some_work)) # True
 这个协程什么都没做，我们让它睡眠几秒，以模拟实际的工作量 ：
 
 ```python
-async def do_some_work(x):  
-    print("Waiting " + str(x))  
+async def do_some_work(x):
+    print("Waiting " + str(x))
     await asyncio.sleep(x)
 ```
 
@@ -692,7 +690,7 @@ print(asyncio.iscoroutine(do_some_work(3))) # True
 此处还会引发一条警告：
 
 ```text
-async1.py:16: RuntimeWarning: coroutine 'do_some_work' was never awaited  
+async1.py:16: RuntimeWarning: coroutine 'do_some_work' was never awaited
   print(asyncio.iscoroutine(do_some_work(3)))
 ```
 
@@ -705,7 +703,7 @@ async1.py:16: RuntimeWarning: coroutine 'do_some_work' was never awaited
 下面先拿到当前线程缺省的 loop ，然后把协程对象交给 `loop.run_until_complete`，协程对象随后会在 loop 里得到运行。
 
 ```python
-loop = asyncio.get_event_loop()  
+loop = asyncio.get_event_loop()
 loop.run_until_complete(do_some_work(3))
 ```
 
@@ -721,11 +719,11 @@ loop.run_until_complete(asyncio.ensure_future(do_some_work(3)))
 ```python
 import asyncio
 
-async def do_some_work(x):  
-    print("Waiting " + str(x))  
+async def do_some_work(x):
+    print("Waiting " + str(x))
     await asyncio.sleep(x)
 
-loop = asyncio.get_event_loop()  
+loop = asyncio.get_event_loop()
 loop.run_until_complete(do_some_work(3))
 ```
 
@@ -739,10 +737,10 @@ Waiting 3
 假如协程是一个 IO 的读操作，等它读完数据后，我们希望得到通知，以便下一步数据的处理。这一需求可以通过往 future 添加回调来实现。
 
 ```python
-def done_callback(futu):  
+def done_callback(futu):
     print('Done')
 
-futu = asyncio.ensure_future(do_some_work(3))  
+futu = asyncio.ensure_future(do_some_work(3))
 futu.add_done_callback(done_callback)
 
 loop.run_until_complete(futu)
@@ -759,16 +757,16 @@ loop.run_until_complete(asyncio.gather(do_some_work(1), do_some_work(3)))
 或者先把协程存在列表里：
 
 ```python
-coros = [do_some_work(1), do_some_work(3)]  
+coros = [do_some_work(1), do_some_work(3)]
 loop.run_until_complete(asyncio.gather(*coros))
 ```
 
 运行结果：
 
 ```text
-Waiting 3  
-Waiting 1  
-<等待三秒钟>  
+Waiting 3
+Waiting 1
+<等待三秒钟>
 Done
 ```
 
@@ -777,7 +775,7 @@ Done
 参考函数 `gather` 的文档：
 
 ```text
-gather(*coros_or_futures, loop=None, return_exceptions=False)  
+gather(*coros_or_futures, loop=None, return_exceptions=False)
 
 Return a future aggregating results from the given coroutines or futures.
 返回来自给定协程或 `futures` 的 `future` 聚合结果。
@@ -787,7 +785,7 @@ Return a future aggregating results from the given coroutines or futures.
 
 ```python
 futus = [
-	asyncio.ensure_future(do_some_work(1)),  
+	asyncio.ensure_future(do_some_work(1)),
     asyncio.ensure_future(do_some_work(3))
 ]
 
@@ -824,14 +822,14 @@ Done
 现在改用 `run_forever`：
 
 ```python
-async def do_some_work(x):  
-    print('Waiting ' + str(x))  
-    await asyncio.sleep(x)  
+async def do_some_work(x):
+    print('Waiting ' + str(x))
+    await asyncio.sleep(x)
     print('Done')
 
 loop = asyncio.get_event_loop()
 
-coro = do_some_work(3)  
+coro = do_some_work(3)
 asyncio.ensure_future(coro)
 
 loop.run_forever()
@@ -840,33 +838,33 @@ loop.run_forever()
 输出：
 
 ```text
-Waiting 3  
-<等待三秒钟>  
-Done  
+Waiting 3
+<等待三秒钟>
+Done
 <程序没有退出>
 ```
 
 三秒钟过后，future 结束，但是程序并不会退出。`run_forever` 会一直运行，直到 `stop` 被调用，但是你不能像下面这样调 `stop`：
 
 ```python
-loop.run_forever()  
+loop.run_forever()
 loop.stop()
 ```
 
 `run_forever` 不返回，`stop` 永远也不会被调用。所以，只能在协程中调 `stop`：
 
 ```python
-async def do_some_work(loop, x):  
-    print('Waiting ' + str(x))  
-    await asyncio.sleep(x)  
-    print('Done')  
+async def do_some_work(loop, x):
+    print('Waiting ' + str(x))
+    await asyncio.sleep(x)
+    print('Done')
     loop.stop()
 ```
 
 这样并非没有问题，假如有多个协程在 loop 里运行：
 
 ```python
-asyncio.ensure_future(do_some_work(loop, 1))  
+asyncio.ensure_future(do_some_work(loop, 1))
 asyncio.ensure_future(do_some_work(loop, 3))
 
 loop.run_forever()
@@ -876,17 +874,17 @@ loop.run_forever()
 要解决这个问题，可以用 `gather` 把多个协程合并成一个 future，并添加回调，然后在回调里再去停止 loop。
 
 ```python
-async def do_some_work(loop, x):  
-    print('Waiting ' + str(x))  
-    await asyncio.sleep(x)  
+async def do_some_work(loop, x):
+    print('Waiting ' + str(x))
+    await asyncio.sleep(x)
     print('Done')
 
-def done_callback(loop, futu):  
+def done_callback(loop, futu):
     loop.stop()
 
 loop = asyncio.get_event_loop()
 
-futus = asyncio.gather(do_some_work(loop, 1), do_some_work(loop, 3))  
+futus = asyncio.gather(do_some_work(loop, 1), do_some_work(loop, 3))
 futus.add_done_callback(functools.partial(done_callback, loop))
 
 loop.run_forever()
@@ -900,16 +898,16 @@ loop.run_forever()
 简单来说，loop 只要不关闭，就还可以再运行。：
 
 ```python
-loop.run_until_complete(do_some_work(loop, 1))  
-loop.run_until_complete(do_some_work(loop, 3))  
+loop.run_until_complete(do_some_work(loop, 1))
+loop.run_until_complete(do_some_work(loop, 3))
 loop.close()
 ```
 
 但是如果关闭了，就不能再运行了：
 
 ```python
-loop.run_until_complete(do_some_work(loop, 1))  
-loop.close()  
+loop.run_until_complete(do_some_work(loop, 1))
+loop.close()
 loop.run_until_complete(do_some_work(loop, 3)) # 此处异常
 ```
 
@@ -920,7 +918,7 @@ loop.run_until_complete(do_some_work(loop, 3)) # 此处异常
 `asyncio.gather` 和 `asyncio.wait` 功能相似。
 
 ```python
-coros = [do_some_work(loop, 1), do_some_work(loop, 3)]  
+coros = [do_some_work(loop, 1), do_some_work(loop, 3)]
 loop.run_until_complete(asyncio.wait(coros))
 ```
 
@@ -940,11 +938,11 @@ for result_or_exc in results:
 C++ Boost.Asio 提供了 IO 对象 timer，但是 Python 并没有原生支持 timer，不过可以用 `asyncio.sleep` 模拟。
 
 ```python
-async def timer(x, cb):  
-    futu = asyncio.ensure_future(asyncio.sleep(x))  
-    futu.add_done_callback(cb)  
+async def timer(x, cb):
+    futu = asyncio.ensure_future(asyncio.sleep(x))
+    futu.add_done_callback(cb)
     await futu
 
-t = timer(3, lambda futu: print('Done'))  
+t = timer(3, lambda futu: print('Done'))
 loop.run_until_complete(t)
 ```

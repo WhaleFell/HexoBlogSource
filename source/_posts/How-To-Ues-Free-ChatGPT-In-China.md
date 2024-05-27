@@ -4,7 +4,7 @@ date: 2023-07-24 17:39:67
 updated: 2023-07-24 17:39:67
 categories: ChatGPT
 tags: [AI, ChatGPT, 小白, 科普]
-description: 
+description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307241743871.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/202307241743871.png
 ---
@@ -57,46 +57,46 @@ ChatGPT，是一个由美国公司 **OpenAI** 开发的一个基于大数据文�
 
 ## 镜像合集 2023/7/24 update
 
-|序号|网站|标签|添加时间|备注|
-|---|---|---|---|---|
-|1|[https://free.icoding.ink/](https://free.icoding.ink/)|🆓 💪|2023-07-11||
-|2|[https://doai.c1ns.cn](https://doai.c1ns.cn/)|🆓 💪|2023-07-07||
-|3|[https://gptleg.zeabur.app/](https://gptleg.zeabur.app/)|🆓 💪|2023-07-07||
-|4|[https://py.c1ns.cn](https://py.c1ns.cn/)|🆓 💪|2023-06-25||
-|5|[https://free.easychat.work](https://free.easychat.work/)|🆓 💪|2023-06-18|备用链接: [https://www.easygpt.work](https://www.easygpt.work/)|
-|6|[http://chat3.aiyunos.top](http://chat3.aiyunos.top/)|🆓 💪|2023-06-17||
-|7|[https://chatc.free2gpt.xyz/](https://chatc.free2gpt.xyz/)|🆓|2023-07-13||
-|8|[http://c.newstop.uk](http://c.newstop.uk/)|🆓|2023-07-12||
-|9|[https://openai.aifree.site/](https://openai.aifree.site/)|🆓|2023-07-11||
-|10|[https://ai.azstudio.top/](https://ai.azstudio.top/)|🆓|2023-07-10||
-|11|[https://ai.zenglingkun.cn/](https://ai.zenglingkun.cn/)|🆓|2023-07-10||
-|12|[https://chatgpt.kiask.xyz/](https://chatgpt.kiask.xyz/)|🆓|2023-07-09||
-|13|[https://xiaoc.eu.org/](https://xiaoc.eu.org/)|🆓|2023-07-08|访问码:754685.|
-|14|[https://xiaor.eu.org/](https://xiaor.eu.org/)|🆓|2023-07-04||
-|15|[https://chat.acytoo.com/](https://chat.acytoo.com/)|🆓|2023-07-01||
-|16|[https://chat.dfehub.com](https://chat.dfehub.com/)|🆓|2023-06-30||
-|17|[http://g01.plitun.com/](http://g01.plitun.com/)|🆓|2023-06-29||
-|18|[https://gpt4.ezchat.top/](https://gpt4.ezchat.top/)|🆓|2023-06-28||
-|19|[https://c1ns.cn/chat/](https://c1ns.cn/chat/)|🆓|2023-06-26||
-|20|[https://macqv.com](https://macqv.com/)|🆓|2023-06-26||
-|21|[https://newstop.c1ns.cn/](https://newstop.c1ns.cn/)|🆓|2023-06-25||
-|22|[https://gpt.aifree.site/](https://gpt.aifree.site/)|🆓|2023-06-24||
-|23|[https://hteyun.com/](https://hteyun.com/)|🆓|2023-06-23||
-|24|[https://chat.weuseing.com/](https://chat.weuseing.com/)|🆓|2023-06-17||
-|25|[https://zyq-chatgpt.github.io](https://zyq-chatgpt.github.io/)|🆓|2023-06-16||
-|26|[http://chat.aisoftworks.com](http://chat.aisoftworks.com/)|🆓|2023-06-15||
-|27|[https://gptdidi.com/](https://gptdidi.com/)|🆓|2023-06-14||
-|28|[http://chat.darkflow.top/](http://chat.darkflow.top/)|🆓|2023-06-13||
-|29|[http://chat3.aiyunos.top](http://chat3.aiyunos.top/)|🆓|2023-06-13||
-|30|[https://chat.flares.ai/](https://chat.flares.ai/)|🆓|2023-06-08||
-|31|[https://devgpt.com/](https://devgpt.com/)|🆓|2023-06-08||
-|32|[https://chat.newstop.asia/](https://chat.newstop.asia/)|🆓|2023-06-06||
-|33|[https://nb8.c1ns.cn/](https://nb8.c1ns.cn/)|🆓|2023-06-02||
-|34|[https://chatyou.lovebaby.today/](https://chatyou.lovebaby.today/)|🆓|2023-06-01||
-|35|[https://www.magicaibot.com/talk](https://www.magicaibot.com/talk)|🆓|2023-06-01||
-|36|[https://521.zeabur.app/](https://521.zeabur.app/)|🆓|2023-06-01||
-|37|[https://chat.kunshanyuxin.com/](https://chat.kunshanyuxin.com/)|🆓|2023-05-31||
-|38|[https://chat.jubianxingqiu.com/](https://chat.jubianxingqiu.com/)|🆓|2023-05-31||
-|39|[https://tchat.c1ns.cn/](https://tchat.c1ns.cn/)|🆓|2023-05-29||
-|40|[https://a.aiask.me/](https://a.aiask.me/)|🆓|2023-05-26||
-|41|[https://ai.gptforlove.com/](https://ai.gptforlove.com/)|🆓|2023-05-26|
+| 序号 | 网站                                                               | 标签  | 添加时间   | 备注                                                            |
+| ---- | ------------------------------------------------------------------ | ----- | ---------- | --------------------------------------------------------------- |
+| 1    | [https://free.icoding.ink/](https://free.icoding.ink/)             | 🆓 💪 | 2023-07-11 |                                                                 |
+| 2    | [https://doai.c1ns.cn](https://doai.c1ns.cn/)                      | 🆓 💪 | 2023-07-07 |                                                                 |
+| 3    | [https://gptleg.zeabur.app/](https://gptleg.zeabur.app/)           | 🆓 💪 | 2023-07-07 |                                                                 |
+| 4    | [https://py.c1ns.cn](https://py.c1ns.cn/)                          | 🆓 💪 | 2023-06-25 |                                                                 |
+| 5    | [https://free.easychat.work](https://free.easychat.work/)          | 🆓 💪 | 2023-06-18 | 备用链接: [https://www.easygpt.work](https://www.easygpt.work/) |
+| 6    | [http://chat3.aiyunos.top](http://chat3.aiyunos.top/)              | 🆓 💪 | 2023-06-17 |                                                                 |
+| 7    | [https://chatc.free2gpt.xyz/](https://chatc.free2gpt.xyz/)         | 🆓    | 2023-07-13 |                                                                 |
+| 8    | [http://c.newstop.uk](http://c.newstop.uk/)                        | 🆓    | 2023-07-12 |                                                                 |
+| 9    | [https://openai.aifree.site/](https://openai.aifree.site/)         | 🆓    | 2023-07-11 |                                                                 |
+| 10   | [https://ai.azstudio.top/](https://ai.azstudio.top/)               | 🆓    | 2023-07-10 |                                                                 |
+| 11   | [https://ai.zenglingkun.cn/](https://ai.zenglingkun.cn/)           | 🆓    | 2023-07-10 |                                                                 |
+| 12   | [https://chatgpt.kiask.xyz/](https://chatgpt.kiask.xyz/)           | 🆓    | 2023-07-09 |                                                                 |
+| 13   | [https://xiaoc.eu.org/](https://xiaoc.eu.org/)                     | 🆓    | 2023-07-08 | 访问码:754685.                                                  |
+| 14   | [https://xiaor.eu.org/](https://xiaor.eu.org/)                     | 🆓    | 2023-07-04 |                                                                 |
+| 15   | [https://chat.acytoo.com/](https://chat.acytoo.com/)               | 🆓    | 2023-07-01 |                                                                 |
+| 16   | [https://chat.dfehub.com](https://chat.dfehub.com/)                | 🆓    | 2023-06-30 |                                                                 |
+| 17   | [http://g01.plitun.com/](http://g01.plitun.com/)                   | 🆓    | 2023-06-29 |                                                                 |
+| 18   | [https://gpt4.ezchat.top/](https://gpt4.ezchat.top/)               | 🆓    | 2023-06-28 |                                                                 |
+| 19   | [https://c1ns.cn/chat/](https://c1ns.cn/chat/)                     | 🆓    | 2023-06-26 |                                                                 |
+| 20   | [https://macqv.com](https://macqv.com/)                            | 🆓    | 2023-06-26 |                                                                 |
+| 21   | [https://newstop.c1ns.cn/](https://newstop.c1ns.cn/)               | 🆓    | 2023-06-25 |                                                                 |
+| 22   | [https://gpt.aifree.site/](https://gpt.aifree.site/)               | 🆓    | 2023-06-24 |                                                                 |
+| 23   | [https://hteyun.com/](https://hteyun.com/)                         | 🆓    | 2023-06-23 |                                                                 |
+| 24   | [https://chat.weuseing.com/](https://chat.weuseing.com/)           | 🆓    | 2023-06-17 |                                                                 |
+| 25   | [https://zyq-chatgpt.github.io](https://zyq-chatgpt.github.io/)    | 🆓    | 2023-06-16 |                                                                 |
+| 26   | [http://chat.aisoftworks.com](http://chat.aisoftworks.com/)        | 🆓    | 2023-06-15 |                                                                 |
+| 27   | [https://gptdidi.com/](https://gptdidi.com/)                       | 🆓    | 2023-06-14 |                                                                 |
+| 28   | [http://chat.darkflow.top/](http://chat.darkflow.top/)             | 🆓    | 2023-06-13 |                                                                 |
+| 29   | [http://chat3.aiyunos.top](http://chat3.aiyunos.top/)              | 🆓    | 2023-06-13 |                                                                 |
+| 30   | [https://chat.flares.ai/](https://chat.flares.ai/)                 | 🆓    | 2023-06-08 |                                                                 |
+| 31   | [https://devgpt.com/](https://devgpt.com/)                         | 🆓    | 2023-06-08 |                                                                 |
+| 32   | [https://chat.newstop.asia/](https://chat.newstop.asia/)           | 🆓    | 2023-06-06 |                                                                 |
+| 33   | [https://nb8.c1ns.cn/](https://nb8.c1ns.cn/)                       | 🆓    | 2023-06-02 |                                                                 |
+| 34   | [https://chatyou.lovebaby.today/](https://chatyou.lovebaby.today/) | 🆓    | 2023-06-01 |                                                                 |
+| 35   | [https://www.magicaibot.com/talk](https://www.magicaibot.com/talk) | 🆓    | 2023-06-01 |                                                                 |
+| 36   | [https://521.zeabur.app/](https://521.zeabur.app/)                 | 🆓    | 2023-06-01 |                                                                 |
+| 37   | [https://chat.kunshanyuxin.com/](https://chat.kunshanyuxin.com/)   | 🆓    | 2023-05-31 |                                                                 |
+| 38   | [https://chat.jubianxingqiu.com/](https://chat.jubianxingqiu.com/) | 🆓    | 2023-05-31 |                                                                 |
+| 39   | [https://tchat.c1ns.cn/](https://tchat.c1ns.cn/)                   | 🆓    | 2023-05-29 |                                                                 |
+| 40   | [https://a.aiask.me/](https://a.aiask.me/)                         | 🆓    | 2023-05-26 |                                                                 |
+| 41   | [https://ai.gptforlove.com/](https://ai.gptforlove.com/)           | 🆓    | 2023-05-26 |

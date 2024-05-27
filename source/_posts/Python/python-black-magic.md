@@ -4,9 +4,9 @@ date: 2023-08-11 10:51:51
 updated: 2023-08-11 10:51:51
 categories: Python
 tags: [coding, Python, 高级编程]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
 # Python 黑魔法
@@ -70,7 +70,7 @@ print(obj.foo)  # 输出: Accessing attribute foo
 
 ## loop.run_until_complete() Vs asyncio.run
 
-[python - asyncio run or run\_until\_complete - Stack Overflow](https://stackoverflow.com/questions/55590343/asyncio-run-or-run-until-complete)
+[python - asyncio run or run_until_complete - Stack Overflow](https://stackoverflow.com/questions/55590343/asyncio-run-or-run-until-complete)
 
 `loop.run_until_complete()` 是用于在一个已存在的事件循环中运行一个协程，它会一直运行直到协程完成或抛出异常。这个函数在 Python 3.7 之前是主要的运行协程的方法。
 

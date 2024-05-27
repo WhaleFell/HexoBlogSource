@@ -1,5 +1,4 @@
 ---
-
 title: Flask Web 框架学习笔记
 date: 2021-08-18 19:37:48
 updated: 2021-08-18 19:37:48
@@ -8,7 +7,6 @@ tags: [Python, Flask, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210818152255.png
-
 ---
 
 # Flask Web 框架学习笔记
@@ -22,11 +20,11 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 - import name
   - Flask 程序所在的包 (模块),传 `__name__` 就可以
   - 其可以决定 Flask 在访问静态文件时查找的路径
-- static__url__path
+- static**url**path
   - 静态文件访问路径，可以不传，默认为: /+ 静态文件目录名
-- static_ folder
+- static\_ folder
   - 静态文件存储的文件夹，可以不传，默认为 static
-- template_ folder
+- template\_ folder
   - 模板文件存储的文件夹，可以不传，默认为 templates
 
 ### Flask 基本编写
@@ -94,7 +92,6 @@ app.config[name] # 修改
 - **从环境变量中加载**
 
   > **环境变量 (environment variables)** 一般是指在操作系统中用来指定操作系统运行环境的一些参数，如: 临时文件夹位置和系统文件夹位置等。环境变量是在操作系统中一个具有特定名字的对象，它包含了一个或者多个应用程序所将使用到的信息。
-  >
 
   **通俗的理解，环境变量就是我们设置在操作系统中，由操作系统代为保存的变量值**:
 
@@ -120,7 +117,7 @@ app.config[name] # 修改
   ```
 
 - **各配置方式优缺点**
-  - **app.config.from _object(配置对象)**
+  - **app.config.from \_object(配置对象)**
     - 继承 - ->优点复用
     - 敏感数据暴露缺点
   - **app.config.from_pyfile(配置文件)**
@@ -247,12 +244,10 @@ flask run # 在项目文件下执行
   > CORS 跨域:  
   > <www.meiduo.site> -> api.meiduo.site/users/1  
   > options api.meiduo.site/uses/1
-  >
 
 - **HEAD**(自带) -> 简化版的 GET 请求
 
   > 只返回 GET 请求处理时的响应头，不返回响应体。
-  >
 
 ### 指定接口请求方式
 

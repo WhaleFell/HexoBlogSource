@@ -1,5 +1,4 @@
 ---
-
 title: 😏 树莓派折腾手册（三）——搭建离线下载器 👀
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
@@ -8,7 +7,6 @@ tags: [Respi, Linux]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
-
 ---
 
 # 😏 树莓派折腾手册（三）——搭建离线下载器 👀
@@ -24,10 +22,10 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
   ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153119.png&webp=true)
 
 ```shell
-sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更改 
+sudo umount /media/pi/PI   #这里不能照抄命令，要根据实际情况更改
 
-#如果出现 target is busy 的情况，我们要强行结束U盘目录下的进程 
-sudo fuser -mv -k /media/U盘 名字    # 然后再执行umount卸载命令 
+#如果出现 target is busy 的情况，我们要强行结束U盘目录下的进程
+sudo fuser -mv -k /media/U盘 名字    # 然后再执行umount卸载命令
 ```
 
 - 编辑 `/etc/fstab` 中添加像下面这样的挂载配置：
@@ -58,7 +56,6 @@ sudo apt-get install aria2
 - 安装 nginx：
 
   > 上面已经安装过的**小可爱**可以**跳过**
-  >
 
 ```
 sudo apt-get install nginx
@@ -67,47 +64,47 @@ sudo apt-get install nginx
 - 配置 Aria2， 创建配置文件：
 
   ```
-  #创建目录 
-  sudo mkdir /etc/aria2/ 
-  #创建配置文件 
-  sudo touch /etc/aria2/aria2.conf 
-  #创建aria2用户 
-  sudo useradd -M -s /usr/sbin/nologin aria2 
-  #创建session文件，用于保存进度: 
-  sudo touch /etc/aria2/aria2.session 
-  #修改文件拥有者为aria2： 
+  #创建目录
+  sudo mkdir /etc/aria2/
+  #创建配置文件
+  sudo touch /etc/aria2/aria2.conf
+  #创建aria2用户
+  sudo useradd -M -s /usr/sbin/nologin aria2
+  #创建session文件，用于保存进度:
+  sudo touch /etc/aria2/aria2.session
+  #修改文件拥有者为aria2：
   sudo chown aria2 /etc/aria2 /etc/aria2/aria2.session
   ```
 
 - 编辑 `Aria2配置` 文件:
 
   ```
-  #根据需要编辑文件: 
-  sudo nano /etc/aria2/aria2.conf 
+  #根据需要编辑文件:
+  sudo nano /etc/aria2/aria2.conf
   #配置实例
 
-  #默认下载位置，需要改这里！！ 
-  dir=/home/pi/disk 
-  #断点续传 
-  continue=true 
-  min-split-size=10M 
-  input-file=/etc/aria2/aria2.session 
-  save-session=/etc/aria2/aria2.session 
-  enable-rpc=true 
-  rpc-allow-origin-all=true 
-  #只让本机访问6800端口，因为下面让nginx代理 
-  rpc-listen-all=false 
-  #rpc秘钥，需要改这里 
-  rpc-secret=123456 
+  #默认下载位置，需要改这里！！
+  dir=/home/pi/disk
+  #断点续传
+  continue=true
+  min-split-size=10M
+  input-file=/etc/aria2/aria2.session
+  save-session=/etc/aria2/aria2.session
+  enable-rpc=true
+  rpc-allow-origin-all=true
+  #只让本机访问6800端口，因为下面让nginx代理
+  rpc-listen-all=false
+  #rpc秘钥，需要改这里
+  rpc-secret=123456
   rpc默认端口为6800
-  #rpc-listen-port=6800 
-  listen-port=51413  
-  enable-dht=false 
-  enable-peer-exchange=false 
-  peer-id-prefix=-TR2770- 
-  user-agent=Transmission/2.77 
-  seed-ratio=0 
-  bt-seed-unverified=true 
+  #rpc-listen-port=6800
+  listen-port=51413
+  enable-dht=false
+  enable-peer-exchange=false
+  peer-id-prefix=-TR2770-
+  user-agent=Transmission/2.77
+  seed-ratio=0
+  bt-seed-unverified=true
   bt-save-metadata=true
   ```
 
@@ -116,32 +113,31 @@ sudo apt-get install nginx
   ```
   sudo nano /lib/systemd/system/aria2.service
 
-  #配置实例 
-  [Unit] 
-  Description=Aria2c download manager 
-  After=network.target  
-  [Service] 
-  Type=simple 
-  User=aria2 
-  ExecStart=/usr/bin/aria2c  --conf-path=/etc/aria2/aria2.conf  [Install] 
-  WantedBy=multi-user.target 
+  #配置实例
+  [Unit]
+  Description=Aria2c download manager
+  After=network.target
+  [Service]
+  Type=simple
+  User=aria2
+  ExecStart=/usr/bin/aria2c  --conf-path=/etc/aria2/aria2.conf  [Install]
+  WantedBy=multi-user.target
   ```
 
 - 启动**Aria2**:
 
   ```
-  #启动Aria2 
-  sudo systemctl start aria2.service 
-  #可以设置开机启动 
-  sudo systemctl enable aria2.service 
-  #如果要关闭开机启动 
+  #启动Aria2
+  sudo systemctl start aria2.service
+  #可以设置开机启动
+  sudo systemctl enable aria2.service
+  #如果要关闭开机启动
   sudo systemctl disable aria2.service
   ```
 
 - 配置**nginx+ariaNg**可视化管理页面：
 
   > 到 [**AriaNG**](https://github.com/mayswind/AriaNg/releases)​[开源项目页面](https://github.com/mayswind/AriaNg/releases) 获取最新版版本
-  >
 
   ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619153158.png&webp=true)
 
@@ -168,29 +164,29 @@ sudo apt-get install nginx
 > 为了方便使用，我把**AriaNg**和**jsonrpc**都配置在了 **80 端口**，利用 nginx 的**代理功能**，把本机 6800 端口隐藏,对外**只暴露 80 端口.**
 
 ```shell
-#修改nginx配置文件 
+#修改nginx配置文件
 sudo nano /etc/nginx/sites-enabled/default
 
-#添加配置aria2Ng 
-location /aria2 { 
-            alias /website/AriaNg/; 
-            index index.html; 
-    } 
-#代理jsonrpc 
-location /jsonrpc { 
-       proxy_pass http://localhost:6800/jsonrpc; 
-            proxy_redirect off; 
-            proxy_set_header        X-Real-IP       $remote_addr; 
-            proxy_set_header        X-Forwarded-For     $proxy_add_x_forwarded_for; 
-            proxy_set_header Host $host; 
-            #以下代码使支持WebSocket 
-            proxy_http_version 1.1; 
-            proxy_set_header Upgrade $http_upgrade; 
-            proxy_set_header Connection "upgrade"; 
-} 
+#添加配置aria2Ng
+location /aria2 {
+            alias /website/AriaNg/;
+            index index.html;
+    }
+#代理jsonrpc
+location /jsonrpc {
+       proxy_pass http://localhost:6800/jsonrpc;
+            proxy_redirect off;
+            proxy_set_header        X-Real-IP       $remote_addr;
+            proxy_set_header        X-Forwarded-For     $proxy_add_x_forwarded_for;
+            proxy_set_header Host $host;
+            #以下代码使支持WebSocket
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+}
 
-#最后别忘记重启nginx 
-sudo systemctl restart nginx 
+#最后别忘记重启nginx
+sudo systemctl restart nginx
 ```
 
 - 尝试访问 [http://树莓派ip/aria2](http://%E6%A0%91%E8%8E%93%E6%B4%BEip/aria2) ，**设置参数**

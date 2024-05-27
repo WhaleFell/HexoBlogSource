@@ -1,5 +1,4 @@
 ---
-
 title: Linux iptables 命令笔记
 date: 2022-12-25 22:51:48
 updated: 2022-12-25 22:59:48
@@ -8,7 +7,6 @@ tags: [Network, Linux]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Iptables-banner.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Iptables-banner.png
-
 ---
 
 # Linux Iptables 命令笔记
@@ -66,7 +64,7 @@ NAT 表包含了 PREROUTING 链（修改即将到来的数据包），POSTROUTIN
 ## Iptables 命令
 
 ```shell
-iptables [-t 表名] 命令选项 [链名] [条件匹配] [-j 目标动作或跳转] 
+iptables [-t 表名] 命令选项 [链名] [条件匹配] [-j 目标动作或跳转]
 ```
 
 ### 表名
@@ -112,8 +110,8 @@ iptables [-t 表名] 命令选项 [链名] [条件匹配] [-j 目标动作或跳
 可以根据数据流向来确定具体使用哪个链，在 Filter 中的使用情况如下：
 
 ```shell
-INPUT链 – 处理来自外部的数据。 
-OUTPUT链 – 处理向外发送的数据。 
+INPUT链 – 处理来自外部的数据。
+OUTPUT链 – 处理向外发送的数据。
 FORWARD链 – 将数据转发到本机的其他网卡设备上。
 ```
 

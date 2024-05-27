@@ -1,5 +1,4 @@
 ---
-
 title: 😃 树莓派折腾手册 (一)——准备系统 😃
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
@@ -8,7 +7,6 @@ tags: [Respi, Linux]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154345.jpg
-
 ---
 
 # 😃 树莓派折腾手册 (一)——准备系统 😃
@@ -49,7 +47,6 @@ ssh -p 端口号 用户名@主机地址
 
   > 不出意外的话应该可以接上，但是我的没有声音输出诶  
   > 注：如果还是不能的话，找到#hdmi_group=1 这句话，把前面的#注释符号去掉，把数字改成 2 强行指定显示器类型：1 是连接老式电视，2 代表连接新电视。
-  >
 
 ## 树莓派 `Debian 10 buster` 换清华源
 
@@ -91,7 +88,7 @@ sudo apt-get install ttf-wqy-zenhei ttf-wqy-microhei
 
 - 设置终端中文显示: `sudo raspi-config`:  
   选择 change_locale，在 Default locale for the system environment: 中选择 zh_CN.UTF-8。  
-  往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 *  
+  往下翻一会儿直到找到 zh_CN UTF-8 把光标移动到前面，然后按下空格键打上 \*  
   ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619152513.png&webp=true)
 - 改变键盘布局: `sudo dpkg-reconfigure keyboard-configuration`
 
@@ -199,7 +196,7 @@ sudo apt-get install git
 
 - **克隆** novnc 项目:
 
-> 在中国大陆听说~~加上 ​~~​~~**~~​~~​ 就可以加速 ​~~​~~**克隆**~~​~~​ 速度丫~~ 改口 应换成 [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
+> 在中国大陆听说~~加上 ​~~​~~\*\*~~​~~​ 就可以加速 ​~~​~~**克隆**~~​~~​ 速度丫~~ 改口 应换成 [https://github.com.cnpmjs.org/](https://github.com.cnpmjs.org/)
 
 ```shell
 git clone https://github.com/kanaka/noVNC #源地址
@@ -316,6 +313,6 @@ sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.s
 git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
  git clone https://github.com.cnpmjs.org/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
- 
+
  ZSH_DISABLE_COMPFIX=true
 ```

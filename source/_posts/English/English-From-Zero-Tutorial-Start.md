@@ -8,8 +8,8 @@ tags:
   - English
   - Study
   - GK
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 

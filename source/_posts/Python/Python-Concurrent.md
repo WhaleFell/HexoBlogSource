@@ -1,5 +1,4 @@
 ---
-
 title: Python 并发编程笔记
 date: 2021-06-18 19:37:48
 updated: 2021-06-18 19:37:48
@@ -8,7 +7,6 @@ tags: [Python, Coding]
 description: Python并发编程(多线程,多进程,多协程)
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630201524.png
-
 ---
 
 # Python 并发编程
@@ -24,6 +22,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20
 >
 >   - 相比进程：多线程只能**并发执行**，**不能利用多 CPU（GIL）**
 >   - 相比协程：启动数目**有限制**，占用内存资源，**有线程切换开销**
+>
 > - 适用于：**IO 密集型计算**、同时运行的任务数目要求不多
 
 ### 多进程普通写法
@@ -63,22 +62,18 @@ for thread in threads:
   1. **map 方式提交**
 
   > `map` 的结果和入参是顺序对应的,且 map 传入函数参数时要传入**参数列表**
-  >
 
   > [Python Zip()函数](https://www.runoob.com/python3/python3-func-zip.html)
->>
->>
-  >> **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
-  >>
-  >> 我们可以使用 `list()` 转换来输出列表。
-  >>
-  >> **元素个数与最短的列表一致**.
-  >>
-  >> 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 ***** 号操作符，可以将元组解压为列表。
-  >>
->
-  > ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630211154.png&webp=true)
   >
+  > > **zip()** 函数用于将**可迭代的对象作为参数**，将对象中**对应的元素打包成一个个元组**，然后返回由这些**元组组成的对象**，这样做的好处是**节约了不少的内存**。
+  > >
+  > > 我们可以使用 `list()` 转换来输出列表。
+  > >
+  > > **元素个数与最短的列表一致**.
+  > >
+  > > 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 **\*** 号操作符，可以将元组解压为列表。
+  >
+  > ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210630211154.png&webp=true)
 
   ```python
 
@@ -97,15 +92,12 @@ for thread in threads:
   1. **submit 方式提交**
 
   > **future 模式，更强大**,注意如果用 `as_completed` 顺序是不定的
-  >
 
   > [Python3 字典 items方法](https://www.runoob.com/python3/python3-att-dictionary-items.html)
->
-  >> Python 字典 items() 方法以列表**返回视图对象**，是一个**可遍历的 key/value 对**。
-  >>
->
-  > 将: `{'Name': 'Runoob', 'Age': 7}` 变为: `[('Age', 7), ('Name', 'Runoob')]`
   >
+  > > Python 字典 items() 方法以列表**返回视图对象**，是一个**可遍历的 key/value 对**。
+  >
+  > 将: `{'Name': 'Runoob', 'Age': 7}` 变为: `[('Age', 7), ('Name', 'Runoob')]`
 
   - **方法一**
 
@@ -131,7 +123,6 @@ for thread in threads:
   - **方法二**
 
     > **适合需要与某一个量一一对应建立联系**
-    >
 
     ```python
     from concurrent.futures import ThreadPoolExecutor
@@ -157,7 +148,6 @@ for thread in threads:
 1. 多组件的 `Pipeline` 技术架构
 
    > 复杂的事情一般都不会一下子做完，而是会分**很多中间步骤一步步完成**
-   >
 
    ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210703065209.png&webp=true)
 
@@ -168,7 +158,6 @@ for thread in threads:
    > `queue.Queue` 可以用于**多线程之间**的、**线程安全**的数据通信
    >
    > **多个线程** 可以 **同时** 读取 **同一个队列**
-   >
 
    ```python
    # 1、导入类库
@@ -267,13 +256,13 @@ for thread in threads:
 >
 > 多进程的 API 与 **多线程的实现十分类似**
 
-|语法条目|多线程|多进程|
-| :-------------------| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|引入模块|from threading import Thread|from multiprocessing import Process|
-|新建  启动  等待结束|t=Thread(target=func, args=(100, ))  t.start()  t.join()|p = Process(target=f, args=('bob',))  p.start()  p.join()|
-|数据通信|import queue  q = queue.Queue()  q.put(item)  item = q.get()|from multiprocessing import Queue  q = Queue()  q.put([42, None, 'hello'])  item = q.get()|
-|线程安全加锁|from threading import Lock  lock = Lock()  with lock:      # do something|from multiprocessing import Lock  lock = Lock()  with lock:      # do something|
-|池化技术|from concurrent.futures import  ThreadPoolExecutor    with ThreadPoolExecutor() as executor:      # 方法 1      results = executor.map(func, [1,2,3])        # 方法 2      future = executor.submit(func, 1)      result = future.result()|from concurrent.futures import ProcessPoolExecutor    with ProcessPoolExecutor() as executor:      # 方法 1      results = executor.map(func, [1,2,3])        # 方法 2      future = executor.submit(func, 1)      result = future.result()|
+| 语法条目           |                                                                                                   多线程                                                                                                    |                                                                                                    多进程                                                                                                     |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| 引入模块           |                                                                                        from threading import Thread                                                                                         |                                                                                      from multiprocessing import Process                                                                                      |
+| 新建 启动 等待结束 |                                                                           t=Thread(target=func, args=(100, )) t.start() t.join()                                                                            |                                                                            p = Process(target=f, args=('bob',)) p.start() p.join()                                                                            |
+| 数据通信           |                                                                          import queue q = queue.Queue() q.put(item) item = q.get()                                                                          |                                                            from multiprocessing import Queue q = Queue() q.put([42, None, 'hello']) item = q.get()                                                            |
+| 线程安全加锁       |                                                                     from threading import Lock lock = Lock() with lock: # do something                                                                      |                                                                   from multiprocessing import Lock lock = Lock() with lock: # do something                                                                    |
+| 池化技术           | from concurrent.futures import ThreadPoolExecutor with ThreadPoolExecutor() as executor: # 方法 1 results = executor.map(func, [1,2,3]) # 方法 2 future = executor.submit(func, 1) result = future.result() | from concurrent.futures import ProcessPoolExecutor with ProcessPoolExecutor() as executor: # 方法 1 results = executor.map(func, [1,2,3]) # 方法 2 future = executor.submit(func, 1) result = future.result() |
 
 ### **利用进程池技术实现多进程**
 
@@ -457,7 +446,7 @@ loop = asyncio.get_event_loop()
 # 事件列表
 tasks=[
     loop.create_task(async_get(url))
-    for url in urls 
+    for url in urls
 ]
 # 用 wait 方法遍历事件列表.协程列表需要设置等待运行完成
 loop.run_until_complete(asyncio.wait(tasks))

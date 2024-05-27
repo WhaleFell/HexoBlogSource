@@ -1,5 +1,4 @@
 ---
-
 title: Kali 平台渗透教程
 date: 2021-06-18 22:16:49
 updated: 2021-06-18 22:16:49
@@ -8,7 +7,6 @@ tags: [Linux, Kali]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg
-
 ---
 
 ![image](https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210619154844.jpg&webp=true)

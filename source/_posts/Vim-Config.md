@@ -1,5 +1,4 @@
 ---
-
 title: 个人常用的 Vim 配置
 date: 2023-01-29 1:37:48
 updated: 2023-01-29 1:37:48
@@ -7,7 +6,6 @@ categories: Linux
 tags: [Vim, Linux]
 thumbnail:
 banner_img:
-
 ---
 
 # Vim 常用配置
@@ -91,10 +89,10 @@ set showmatch
 
 " 在搜索的时候忽略大小写
 set ignorecase
- 
+
 " 高亮被搜索的句子
 set hlsearch
- 
+
 " 在搜索时，输入的词句的逐字符高亮（类似firefox的搜索）
 set incsearch
 
@@ -134,7 +132,7 @@ set scrolloff=3
 " 设定默认解码
 set fenc=utf-8
 set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
- 
+
 " 设定编码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -274,8 +272,6 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 ```
-
-
 
 ## 使用现成的配置
 

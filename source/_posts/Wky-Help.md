@@ -7,7 +7,7 @@ categories:
 tags:
   - WKY
   - Linux
-description: 
+description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/old/20220329204745.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/old/20220329204745.png
 ---
@@ -40,7 +40,6 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/old/20
 1. **换源**
 
    > 参考：[玩客云刷armbian更新源报错The repository ‘http://apt.armbian.com stretch Release‘ does not have a Release file](https://blog.csdn.net/qq_42877824/article/details/119332805)
-   >
 
    **修改源配置文件**
 
@@ -168,7 +167,6 @@ sudo apu upgrade
 4. 部署**校园网自动登录 ​**​**`FRPC`**​**​ 配置自动获取脚本**
 
    > 项目地址：[AdminWhaleFall/rpi-ping: 树莓派自动上传信息工具. (github.com)](https://github.com/AdminWhaleFall/rpi-ping)
-   >
 
    ```shell
    cd ~
@@ -207,7 +205,6 @@ sudo apu upgrade
 1. 设置静态 ip：
 
    > 我们学校的校园网没有 dhcp 服务器，要手动设置 IP，教学楼的网段是：**192.168.5.0/24**
-   >
 
    ```shell
    nano /etc/network/interfaces

@@ -43,38 +43,38 @@ banner_img:
 3. Array 数组
 
 ```javascript
-var length = 16 // Number 通过数字字面量赋值
-var points = x * 10 // Number 通过表达式字面量赋值
-var lastName = 'Johnson' // String 通过字符串字面量赋值
-var cars = ['Saab', 'Volvo', 'BMW'] // Array  通过数组字面量赋值
-var person = { firstName: 'John', lastName: 'Doe' } // Object 通过对象字面量赋值
+var length = 16; // Number 通过数字字面量赋值
+var points = x * 10; // Number 通过表达式字面量赋值
+var lastName = "Johnson"; // String 通过字符串字面量赋值
+var cars = ["Saab", "Volvo", "BMW"]; // Array  通过数组字面量赋值
+var person = { firstName: "John", lastName: "Doe" }; // Object 通过对象字面量赋值
 // 声明变量类型
-var carname = new String()
-var x = new Number()
-var y = new Boolean()
-var cars = new Array()
-var person = new Object()
+var carname = new String();
+var x = new Number();
+var y = new Boolean();
+var cars = new Array();
+var person = new Object();
 
 // 类型转换
-String(obj)
-Number(obj)
+String(obj);
+Number(obj);
 
 // 设置 null 来清空变量
-cars = null
-person = null
+cars = null;
+person = null;
 
 // 你可以使用 typeof 操作符来检测变量的数据类型。
-typeof 'John' // 返回 string
-typeof 3.14 // 返回 number
-typeof false // 返回 boolean
-typeof [1, 2, 3, 4] // 返回 object
-typeof { name: 'John', age: 34 } // 返回 object
+typeof "John"; // 返回 string
+typeof 3.14; // 返回 number
+typeof false; // 返回 boolean
+typeof [1, 2, 3, 4]; // 返回 object
+typeof { name: "John", age: 34 }; // 返回 object
 // null 和 undefined 的值相等，但类型不等：
-typeof undefined // undefined
-typeof null // object
+typeof undefined; // undefined
+typeof null; // object
 // === ：值和类型进行比较；==：只比较值
-null === undefined // false
-null == undefined // true
+null === undefined; // false
+null == undefined; // true
 ```
 
 ### String 字符串
@@ -82,10 +82,10 @@ null == undefined // true
 字符串可以是对象
 
 ```javascript
-var x = 'John'
-var y = new String('John')
-typeof x //  返回 String
-typeof y // 返回 Object
+var x = "John";
+var y = new String("John");
+typeof x; //  返回 String
+typeof y; // 返回 Object
 ```
 
 属性：
@@ -116,9 +116,9 @@ typeof y // 返回 Object
 模板字符串：
 
 ```javascript
-const name = 'Runoob'
-const age = 30
-const message = `My name is ${name} and I'm ${age} years old.`
+const name = "Runoob";
+const age = 30;
+const message = `My name is ${name} and I'm ${age} years old.`;
 ```
 
 ### Array 数组
@@ -126,14 +126,14 @@ const message = `My name is ${name} and I'm ${age} years old.`
 相当于 Python List 列表
 
 ```javascript
-var cars = new Array()
-cars[0] = 'Saab'
-cars[1] = 'Volvo'
-cars[2] = 'BMW'
+var cars = new Array();
+cars[0] = "Saab";
+cars[1] = "Volvo";
+cars[2] = "BMW";
 // 或者  (condensed array)
-var cars = new Array('Saab', 'Volvo', 'BMW')
+var cars = new Array("Saab", "Volvo", "BMW");
 // 或者  (literal array)
-var cars = ['Saab', 'Volvo', 'BMW']
+var cars = ["Saab", "Volvo", "BMW"];
 ```
 
 ### Object 对象
@@ -141,24 +141,24 @@ var cars = ['Saab', 'Volvo', 'BMW']
 相当于 Python 字典 Dict，JavaScript 对象是变量的容器。
 
 ```javascript
-var person = { firstname: 'John', lastname: 'Doe', id: 5566 }
+var person = { firstname: "John", lastname: "Doe", id: 5566 };
 
 var person = {
-  firstname: 'John',
-  lastname: 'Doe',
+  firstname: "John",
+  lastname: "Doe",
   id: 5566,
   // 可以添加对象方法
   methodName: function () {
     // 代码
   },
-}
+};
 
 // 访问对象方法
-person.methodName()
+person.methodName();
 
 // 对象寻址
-name = person.lastname
-name = person['lastname']
+name = person.lastname;
+name = person["lastname"];
 ```
 
 ### 变量
@@ -168,13 +168,13 @@ name = person['lastname']
 3. 变量名称对大小写敏感（y 和 Y 是不同的变量）
 
 ```javascript
-var lastname = 'Doe',
+var lastname = "Doe",
   age = 30,
-  job = 'carpenter'
-var lastname = 'Doe',
+  job = "carpenter";
+var lastname = "Doe",
   age = 30,
-  job = 'carpenter'
-var carname // undefined
+  job = "carpenter";
+var carname; // undefined
 ```
 
 使用 let 和 const (ES6):
@@ -184,12 +184,12 @@ const 声明一个只读的常量，一旦声明，常量的值就不能改变�
 在 ES6 之前，JavaScript 只有两种作用域： **全局变量**  与  **函数内的局部变量**。
 
 ```javascript
-var carName = 'Volvo' // 使用 var 定义为全局变量
-const pi = 3.14 // 只读变量
+var carName = "Volvo"; // 使用 var 定义为全局变量
+const pi = 3.14; // 只读变量
 function myFunction() {
   // 使用 let 定义的变量只能在 Block Scope 块级作用域 {}
-  let carName = 'inner'
-  console.log(carName)
+  let carName = "inner";
+  console.log(carName);
 }
 ```
 
@@ -201,24 +201,24 @@ function myFunction() {
 4. 初始化变量不会提升.
 
 ```javascript
-catName('Chloe')
+catName("Chloe");
 
 // function hoisting
 function catName(name) {
-  console.log('我的猫名叫 ' + name)
+  console.log("我的猫名叫 " + name);
 }
 
 // var hoisting 只提升声明，不提升赋值
 // 可以先赋值再声明
-a = 5 // use before declaration
-console.log(a) // 5
-var a // hoisted
+a = 5; // use before declaration
+console.log(a); // 5
+var a; // hoisted
 
 // but initialization not hoisted
 // 但初始化变量不会提升
-var x = 5
-console.log(x, y) // 5, undefined
-var y = 1
+var x = 5;
+console.log(x, y); // 5, undefined
+var y = 1;
 ```
 
 ### 生命周期
@@ -252,7 +252,7 @@ Block Scope 块级作用域:
 Loop scope 循环作用域:
 
 ```javascript
-var i = 5
+var i = 5;
 // i 变量溢出去了
 for (var i = 0; i < 10; i++) {
   // 一些代码...
@@ -260,7 +260,7 @@ for (var i = 0; i < 10; i++) {
 // 这里输出 i 为 10
 
 // 使用 let i 变量不溢出
-var i = 5
+var i = 5;
 for (let i = 0; i < 10; i++) {
   // 一些代码...
   // 这里输出 i 为 5
@@ -273,21 +273,21 @@ for (let i = 0; i < 10; i++) {
 
 ```javascript
 if (time < 20) {
-  x = 'Good day'
+  x = "Good day";
 }
 
 if (time < 20) {
-  x = 'Good day'
+  x = "Good day";
 } else {
-  x = 'Good evening'
+  x = "Good evening";
 }
 
 if (time < 10) {
-  document.write('<b>早上好</b>')
+  document.write("<b>早上好</b>");
 } else if (time >= 10 && time < 20) {
-  document.write('<b>今天好</b>')
+  document.write("<b>今天好</b>");
 } else {
-  document.write('<b>晚上好!</b>')
+  document.write("<b>晚上好!</b>");
 }
 ```
 
@@ -334,16 +334,16 @@ while 循环会在指定条件为真时循环执行代码块。
 
 ```javascript
 while (i < 5) {
-  x = x + 'The number is ' + i + '<br>'
-  i++
+  x = x + "The number is " + i + "<br>";
+  i++;
 }
 
 do {
   // do 里面的语句至少会执行一次
   // 即使为 false 也会执行一次
-  x = x + 'The number is ' + i + '<br>'
-  i++
-} while (i < 5)
+  x = x + "The number is " + i + "<br>";
+  i++;
+} while (i < 5);
 ```
 
 ## 函数&模块 （Functions）
@@ -364,10 +364,10 @@ function myFunction(var1, var2) {
 
 // 带返回值的参数
 function myFunction() {
-  var x = 5
-  return x
+  var x = 5;
+  return x;
 }
-var myVar = myFunction()
+var myVar = myFunction();
 ```
 
 ### 函数表达式
@@ -378,9 +378,9 @@ JavaScript 函数可以通过一个表达式定义。
 ```javascript
 // 以分号结尾，因为这是一个执行语句
 var x = function (a, b) {
-  return a * b
-}
-var z = x(4, 3)
+  return a * b;
+};
+var z = x(4, 3);
 ```
 
 以上函数实际上是一个  **匿名函数**  (类似 Python `limbda a:a+1` 函数没有名称)。  
@@ -407,10 +407,10 @@ var x = myFunction(4, 3);
 - 提升（Hoisting）应用在变量的声明与函数的声明。
 
 ```javascript
-myFunction(5)
+myFunction(5);
 
 function myFunction(y) {
-  return y * y
+  return y * y;
 }
 ```
 
@@ -426,9 +426,9 @@ function myFunction(y) {
 
 ```javascript
 // self invoking function
-;(function () {
-  var x = 'Hello!!' // 我将调用自己
-})()
+(function () {
+  var x = "Hello!!"; // 我将调用自己
+})();
 ```
 
 以上函数实际上是一个  **匿名自我调用的函数** (没有函数名)。
@@ -455,33 +455,33 @@ e.g. for example:
 // 当只有一个参数时，圆括号是可选的
 const func = (parameter) => {
   // declaration
-}
+};
 
 // or. Can ignore () if only one parameter
 
 const func = (parameter) => {
   // declaration
-}
+};
 
 // 没有参数的函数应该写成一对圆括号
 // not parameters function should be written a pair of parentheses
 const func = () => {
   // declaration
-}
+};
 
 // full example
 // ES5
 var x = function (x, y) {
-  return x * y
-}
+  return x * y;
+};
 
 // ES6
-const x = (x, y) => x * y
+const x = (x, y) => x * y;
 // if function content just one line statement, can ignore return and {}
-const x = (x, y) => x * y
+const x = (x, y) => x * y;
 const x = (x, y) => {
-  return x * y
-}
+  return x * y;
+};
 ```
 
 ### 函数参数 (args ==> arguments)
@@ -493,32 +493,32 @@ arguments 对象包含了函数调用的参数数组，**可以传入不定数�
 
 ```javascript
 // 找到最大的数
-x = findMax(1, 123, 500, 115, 44, 88)
+x = findMax(1, 123, 500, 115, 44, 88);
 
 function findMax() {
   // arguments 包含传入函数参数的数组;
-  let arg = arguments[0]
+  let arg = arguments[0];
 
-  if (arguments.length < 2) return arg
+  if (arguments.length < 2) return arg;
 
   for (let i = 0; i < arguments.length; i++) {
     if (arguments[i] > max) {
-      max = arguments[i]
+      max = arguments[i];
     }
   }
-  return max
+  return max;
 }
 
 // 计算加和
-x = sumAll(1, 123, 500, 115, 44, 88)
+x = sumAll(1, 123, 500, 115, 44, 88);
 
 function sumAll() {
   let i,
-    sum = 0
+    sum = 0;
   for (i = 0; i < arguments.length; i++) {
-    sum += arguments[i]
+    sum += arguments[i];
   }
-  return sum
+  return sum;
 }
 ```
 
@@ -529,25 +529,25 @@ function sumAll() {
 ```javascript
 function myFunction(x, y) {
   if (y === undefined) {
-    y = 0
+    y = 0;
   }
 }
 
 // simple way
 // 如果 y 已经定义，y || 0 返回 y，因为 y 是 true，否则返回 0，因为 undefined 为 false。
 function myFunction(x, y) {
-  y = y || 0
+  y = y || 0;
 }
 
 // in ES6
 // ES6 支持函数带有默认参数，就判断 undefined 和 || 的操作：
 function myFunction(x, y = 10) {
   // y is 10 if not passed or undefined
-  return x + y
+  return x + y;
 }
 
-myFunction(0, 2) // 输出 2
-myFunction(5) // 输出 15, y 参数的默认值
+myFunction(0, 2); // 输出 2
+myFunction(5); // 输出 15, y 参数的默认值
 ```
 
 #### 值传递和引用对象传递
@@ -562,32 +562,32 @@ in general. `this` 指向函数执行时当前的对象。
 
 ```javascript
 function myFunction(a, b) {
-  return a * b
+  return a * b;
 }
-window.myFunction(10, 2) // window.myFunction(10, 2) 返回 20
+window.myFunction(10, 2); // window.myFunction(10, 2) 返回 20
 ```
 
 全局对象：
 
 ```javascript
 function myFunction() {
-  return this
+  return this;
 }
-myFunction() // 返回 window 对象
+myFunction(); // 返回 window 对象
 ```
 
 func as obj methods invoking:
 
 ```javascript
 var myObject = {
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: "John",
+  lastName: "Doe",
   fullName: function () {
     // this 值为对象本身
-    return this
+    return this;
   },
-}
-myObject.fullName() // 返回 [object Object] (所有者对象)
+};
+myObject.fullName(); // 返回 [object Object] (所有者对象)
 ```
 
 使用构造函数调用函数：  
@@ -598,13 +598,13 @@ myObject.fullName() // 返回 [object Object] (所有者对象)
 // 构造函数中 this 关键字没有任何的值。
 // this 的值在实例化 new object 时候创建
 function myFunction(arg1, arg2) {
-  this.firstName = arg1
-  this.lastName = arg2
+  this.firstName = arg1;
+  this.lastName = arg2;
 }
 
 // This creates a new object
-var x = new myFunction('John', 'Doe')
-x.firstName // 返回 "John"
+var x = new myFunction("John", "Doe");
+x.firstName; // 返回 "John"
 ```
 
 作为函数方法调用函数：
@@ -615,26 +615,26 @@ function 就是一个 `Object` 他有自己的 attribute 和 methods.
 
 ```javascript
 myObject = {
-  name: '21211',
+  name: "21211",
   method: (args) => {
-    console.log('test' + args)
+    console.log("test" + args);
   },
-}
+};
 
 function myFunction(a, b) {
   // 输出 21211
-  console.log(this.name)
-  return a * b
+  console.log(this.name);
+  return a * b;
 }
 // call() 按顺序传入参数 第一个参数会成为函数 this 的值
-myObject = myFunction.call(myObject, 10, 2) // 返回 20
+myObject = myFunction.call(myObject, 10, 2); // 返回 20
 
 function myFunction(a, b) {
-  return a * b
+  return a * b;
 }
-myArray = [10, 2]
+myArray = [10, 2];
 // apply() 传入一个参数数组
-myObject = myFunction.apply(myObject, myArray) // 返回 20
+myObject = myFunction.apply(myObject, myArray); // 返回 20
 ```
 
 ### 函数闭包 （Function Closure）
@@ -644,13 +644,13 @@ myObject = myFunction.apply(myObject, myArray) // 返回 20
 
 ```javascript
 function add() {
-  var counter = 0
+  var counter = 0;
   function plus() {
     // 可以访问到父函数的 counter 变量
-    counter += 1
+    counter += 1;
   }
-  plus()
-  return counter
+  plus();
+  return counter;
 }
 ```
 
@@ -664,15 +664,15 @@ function add() {
 // 使得 add() 函数拥有私有变量 counter
 // 计数器受匿名函数的作用域保护，只能通过 add 方法修改。
 var add = (function () {
-  let counter = 0 // 立即 invoke 且只会执行一次,设置计数器为0并返回函数表达式
+  let counter = 0; // 立即 invoke 且只会执行一次,设置计数器为0并返回函数表达式
   return function () {
-    return (counter += 1)
-  }
-})()
+    return (counter += 1);
+  };
+})();
 
-add()
-add()
-add()
+add();
+add();
+add();
 
 // 计数器为 3
 ```
@@ -685,24 +685,24 @@ add()
 // callback 回调
 function sayHello(callback) {
   try {
-    callback()
+    callback();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-  return 'Hello,'
+  return "Hello,";
 }
 
 // Array [/əˈreɪ/] function
 // 操作数组的一些方法
-let array = [1, 2, 3, 4, 5]
+let array = [1, 2, 3, 4, 5];
 // map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。
-let newArray = array.map((item) => item * 2)
+let newArray = array.map((item) => item * 2);
 // filter() 方法返回一个新数组, 其包含通过所提供函数实现的测试的所有元素。
-let newArray = array.filter((item) => item > 2)
+let newArray = array.filter((item) => item > 2);
 // reduce() 方法对数组中的每个元素执行一个由您提供的函数（升序执行），将其结果汇总为单个返回值。
-let newArray = array.reduce((prev, next) => prev + next)
+let newArray = array.reduce((prev, next) => prev + next);
 // traversal 遍历数组
-let newArray = array.forEach((item) => console.log(item))
+let newArray = array.forEach((item) => console.log(item));
 ```
 
 ### JS import 模块
@@ -746,21 +746,21 @@ console.log(site.age())
 // 未命名/匿名类
 let Runoob = class {
   constructor(name, url) {
-    this.name = name
-    this.url = url
+    this.name = name;
+    this.url = url;
   }
-}
-console.log(Runoob.name)
+};
+console.log(Runoob.name);
 // output: "Runoob"
 
 // 命名类
 let Runoob = class Runoob2 {
   constructor(name, url) {
-    this.name = name
-    this.url = url
+    this.name = name;
+    this.url = url;
   }
-}
-console.log(Runoob.name)
+};
+console.log(Runoob.name);
 // 输出: "Runoob2"
 ```
 
@@ -803,29 +803,29 @@ JavaScript 并没有像其他编程语言一样具有传统的类，而是基于
 
 ```javascript
 function Animal(name) {
-  this.name = name
+  this.name = name;
 }
 
 Animal.prototype.eat = function () {
-  console.log(this.name + ' is eating.')
-}
+  console.log(this.name + " is eating.");
+};
 
 function Dog(name, breed) {
-  Animal.call(this, name)
-  this.breed = breed
+  Animal.call(this, name);
+  this.breed = breed;
 }
 
 // 建立原型链，让 Dog 继承 Animal
-Dog.prototype = Object.create(Animal.prototype)
-Dog.prototype.constructor = Dog
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
 
 Dog.prototype.bark = function () {
-  console.log(this.name + ' is barking.')
-}
+  console.log(this.name + " is barking.");
+};
 
-var dog = new Dog('Buddy', 'Labrador')
-dog.eat() // 调用从 Animal 继承的方法
-dog.bark() // 调用 Dog 的方法
+var dog = new Dog("Buddy", "Labrador");
+dog.eat(); // 调用从 Animal 继承的方法
+dog.bark(); // 调用 Dog 的方法
 ```
 
 ### Getter and setter
@@ -841,19 +841,19 @@ dog.bark() // 调用 Dog 的方法
 ```javascript
 class Runoob {
   constructor(name) {
-    this._sitename = name
+    this._sitename = name;
   }
   get sitename() {
-    return this.sitename
+    return this.sitename;
   }
   set sitename(x) {
-    this.sitename = x
+    this.sitename = x;
   }
 }
 
-let noob = new Runoob('菜鸟教程')
-noob.sitename = '121' // 相当于调用 sitename("121")
-documen2t.getElementById('demo').innerHTML = noob.sitename
+let noob = new Runoob("菜鸟教程");
+noob.sitename = "121"; // 相当于调用 sitename("121")
+documen2t.getElementById("demo").innerHTML = noob.sitename;
 ```
 
 ### 类提升（class not hoisting）
@@ -870,26 +870,26 @@ documen2t.getElementById('demo').innerHTML = noob.sitename
 ```javascript
 class Animal {
   constructor(name) {
-    this._name = name
+    this._name = name;
   }
   // 类初始化后对象的方法
   hello() {
-    return 'The ' + this.name + 'say hello!'
+    return "The " + this.name + "say hello!";
   }
   // 类的静态方法
   static state() {
-    return 'static method'
+    return "static method";
   }
   get name() {
-    return this._name()
+    return this._name();
   }
 }
 
 // 可以在类上直接调用 static 方法,不用 new 实例化类
-Animal.state()
+Animal.state();
 
-let dog = new Animal()
-dog.state() // 不可以在类实例化后的对象中调用类的静态方法
+let dog = new Animal();
+dog.state(); // 不可以在类实例化后的对象中调用类的静态方法
 ```
 
 ### This keyword this 关键字
@@ -907,17 +907,17 @@ dog.state() // 不可以在类实例化后的对象中调用类的静态方法
 
 ```javascript
 // 单独使用 this 在浏览器中，window 就是该全局对象为 [**object Window**]:
-var x = this
+var x = this;
 
 var person = {
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: "John",
+  lastName: "Doe",
   id: 5566,
   // 方法中的 this 表示方法所属于的对象
   fullName: function () {
-    return this.firstName + ' ' + this.lastName
+    return this.firstName + " " + this.lastName;
   },
-}
+};
 ```
 
 显式函数绑定：
@@ -928,14 +928,14 @@ var person = {
 ```javascript
 var person1 = {
   fullName: function () {
-    return this.firstName + ' ' + this.lastName
+    return this.firstName + " " + this.lastName;
   },
-}
+};
 var person2 = {
-  firstName: 'John',
-  lastName: 'Doe',
-}
-person1.fullName.call(person2) // 返回 "John Doe"
+  firstName: "John",
+  lastName: "Doe",
+};
+person1.fullName.call(person2); // 返回 "John Doe"
 ```
 
 ## 异常处理 （Exception handling）
@@ -960,14 +960,14 @@ try {
 `javascript:void(0)`  中最关键的是  **void**  关键字， **void**  是 JavaScript 中非常重要的关键字，**该操作符指定要计算一个表达式但是不返回值。**
 
 ```javascript
-void func()
-javascript: void func()
+void func();
+javascript: void func();
 
 function getValue() {
-  var a, b, c
-  a = void ((b = 5), (c = 7)) // 运行 b = 5, c = 7 但不赋值给 a
+  var a, b, c;
+  a = void ((b = 5), (c = 7)); // 运行 b = 5, c = 7 但不赋值给 a
   // a = undefind
-  document.write('a = ' + a + ' b = ' + b + ' c = ' + c)
+  document.write("a = " + a + " b = " + b + " c = " + c);
 }
 ```
 
@@ -978,13 +978,13 @@ JavaScript 中的异步操作函数往往通过 **回调函数** 来实现异步
 
 ```javascript
 function print() {
-  document.getElementById('demo').innerHTML = 'RUNOOB!'
+  document.getElementById("demo").innerHTML = "RUNOOB!";
 }
-setTimeout(print, 3000)
+setTimeout(print, 3000);
 
 setTimeout(function () {
-  document.getElementById('demo').innerHTML = 'RUNOOB!'
-}, 3000)
+  document.getElementById("demo").innerHTML = "RUNOOB!";
+}, 3000);
 ```
 
 [JavaScript Promise | 菜鸟教程](https://www.runoob.com/js/js-promise.html)
@@ -1002,21 +1002,21 @@ Promise 对象代表一个异步操作，有三种状态：**Pending**（进行�
 ```javascript
 new Promise(function (resolve, reject) {
   // 要做的事情…
-})
+});
 ```
 
 用于多次调用异步函数，避免回调地狱，如：
 
 ```javascript
 setTimeout(function () {
-  console.log('First')
+  console.log("First");
   setTimeout(function () {
-    console.log('Second')
+    console.log("Second");
     setTimeout(function () {
-      console.log('Third')
-    }, 3000)
-  }, 4000)
-}, 1000)
+      console.log("Third");
+    }, 3000);
+  }, 4000);
+}, 1000);
 ```
 
 用 Promise 实现相同功能：
@@ -1026,23 +1026,23 @@ setTimeout(function () {
 ```javascript
 new Promise(function (resolve, reject) {
   setTimeout(function () {
-    console.log('First')
-    resolve()
-  }, 1000)
+    console.log("First");
+    resolve();
+  }, 1000);
 })
   .then(function () {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
-        console.log('Second')
-        resolve()
-      }, 4000)
-    })
+        console.log("Second");
+        resolve();
+      }, 4000);
+    });
   })
   .then(function () {
     setTimeout(function () {
-      console.log('Third')
-    }, 3000)
-  })
+      console.log("Third");
+    }, 3000);
+  });
 ```
 
 Promise 构造函数是 JavaScript 中用于创建 Promise 对象的内置构造函数。
@@ -1065,27 +1065,27 @@ const promise = new Promise((resolve, reject) => {
   // 使用 setTimeout 模拟了一个异步操作。如果异步操作成功，则调用 resolve 函数并传递成功的结果；如果异步操作失败，则调用 reject 函数并传递失败的原因。
   setTimeout(() => {
     if (Math.random() < 0.5) {
-      resolve('success') // 执行成功传递给 than 方法 result
+      resolve("success"); // 执行成功传递给 than 方法 result
     } else {
-      reject('error') // 执行错误传递给 catch 方法 error
+      reject("error"); // 执行错误传递给 catch 方法 error
     }
-  }, 1000)
-})
+  }, 1000);
+});
 
 // 使用 then 方法处理 Promise 成功状态的回调函数，使用 catch 方法处理 Promise 失败状态的回调函数。
 promise
   .then((result) => {
-    console.log(result)
+    console.log(result);
   })
   .catch((error) => {
-    console.log(error)
+    console.log(error);
   })
   .finally(
     // 成功与否都会执行的函数
     () => {
-      console.log('End')
-    }
-  )
+      console.log("End");
+    },
+  );
 ```
 
 - resolve 和 reject 的作用域只有起始函数，不包括 then 以及其他序列；
@@ -1099,40 +1099,40 @@ var promise = new Promise(function (resolve, reject) {
   // 下面测试代码，人为设置为rejected状态;
   // 当然此处也可以设置为fulfilled(已完成)状态
   reject(
-    '将当前构建的Promise对象的状态由pending（进行中）设置为rejected（已拒绝）'
-  )
-})
+    "将当前构建的Promise对象的状态由pending（进行中）设置为rejected（已拒绝）",
+  );
+});
 
 promise
   .then(
     //调用第一个then()
     (success) => {
       console.log(
-        '异步执行成功，状态为：fulfilled，成功后返回的结果是：' + success
-      )
-      return ' 当前 success '
+        "异步执行成功，状态为：fulfilled，成功后返回的结果是：" + success,
+      );
+      return " 当前 success ";
     },
     (error) => {
-      console.log('异步执行失败，状态为rejected，失败后返回的结果是：' + error)
-      return ' 当前 error '
-    }
+      console.log("异步执行失败，状态为rejected，失败后返回的结果是：" + error);
+      return " 当前 error ";
+    },
   )
   .then(
     // 调用第二个then() 因为调用第一个then()方法返回的是一个新的promise对象，此对象的状态由上面的success或者error两个回调函数的执行情况决定的：
     // 如果回调函数能正常执行完毕，则新的promise对象的状态为fulfilled，下面执行success2,如果回调函数无法正常执行，则promise状态为rejected;下面执行error2
     (success2) => {
-      console.log('第一个then的回调函数执行成功 成功返回结果：' + success2)
-      throw ' 当前 success2 ' //自定义异常抛出
+      console.log("第一个then的回调函数执行成功 成功返回结果：" + success2);
+      throw " 当前 success2 "; //自定义异常抛出
     },
     (error2) => {
-      console.log('第一个then的回调函数执行失败 失败返回结果：' + error2)
-      return ' 当前 error2 '
-    }
+      console.log("第一个then的回调函数执行失败 失败返回结果：" + error2);
+      return " 当前 error2 ";
+    },
   )
   .catch((err) => {
     //当success2或者error2执行报错时，catch会捕获异常;
-    console.log('捕获异常：' + err)
-  })
+    console.log("捕获异常：" + err);
+  });
 
 // 上述代码,打印如下:
 // 异步执行失败，状态为rejected，失败后返回的结果是：将当前构建的Promise对象的状态由pending（进行中）设置为rejected（已拒绝）
@@ -1146,19 +1146,19 @@ promise
 function print(delay, message) {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      console.log(message)
-      resolve()
-    }, delay)
-  })
+      console.log(message);
+      resolve();
+    }, delay);
+  });
 }
 
-print(1000, 'First')
+print(1000, "First")
   .then(function () {
-    return print(4000, 'Second')
+    return print(4000, "Second");
   })
   .then(function () {
-    print(3000, 'Third')
-  })
+    print(3000, "Third");
+  });
 ```
 
 ### 异步函数 async function
@@ -1169,24 +1169,24 @@ print(1000, 'First')
 function print(delay, message) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(message)
-      resolve()
-    })
-    return
-  })
+      console.log(message);
+      resolve();
+    });
+    return;
+  });
 }
 ```
 
 用不同的时间将 **顺序输出** 三行文本：
 
 ```javascript
-print(1000, 'First')
+print(1000, "First")
   .than(() => {
-    return print(4000, 'Second')
+    return print(4000, "Second");
   })
   .than(() => {
-    return print(3000, 'Third')
-  })
+    return print(3000, "Third");
+  });
 ```
 
 可以使用 `await` 等待异步函数的执行完成，增加代码可读性：  
@@ -1194,12 +1194,12 @@ print(1000, 'First')
 
 ```javascript
 async function asyncFunc() {
-  await print(1000, 'First')
-  await print(4000, 'Second')
-  await print(3000, 'Third')
+  await print(1000, "First");
+  await print(4000, "Second");
+  await print(3000, "Third");
 }
 
-asyncFunc()
+asyncFunc();
 ```
 
 处理异常也可以用 `thy-catch` 机制实现：
@@ -1208,16 +1208,16 @@ asyncFunc()
 async function asyncFunc() {
   try {
     await new Promise((resolve, reject) => {
-      throw 'Some Error'
+      throw "Some Error";
       // 或者 reject("Some Eroor");
-    })
+    });
   } catch (err) {
     // 输出 "Some Error"
-    console.log(err)
+    console.log(err);
   }
 }
 
-asyncFunc()
+asyncFunc();
 ```
 
 如果 Promise 有一个正常的返回值，await 语句也会返回它：
@@ -1226,11 +1226,11 @@ asyncFunc()
 async function asyncFunc() {
   let value = await new Promise(function (resolve, reject) {
     // 相当于 return "Return value"
-    resolve('Return value')
-  })
-  console.log(value)
+    resolve("Return value");
+  });
+  console.log(value);
 }
-asyncFunc()
+asyncFunc();
 ```
 
 ## 进阶 (Advanced)

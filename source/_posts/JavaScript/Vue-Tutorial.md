@@ -4,16 +4,16 @@ date: 2023-08-22 15:35:04
 updated: 2023-08-22 15:35:04
 categories: Vue
 tags: [JS, JavaScript, 前端, Vue, Element-UI, UI]
-description: 
-thumbnail: 
-banner_img: 
+description:
+thumbnail:
+banner_img:
 ---
 
 # Vue3 正式学习笔记
 
 经过了前面 Javascript 和 Nodejs 前置知识的铺垫，我想我应该可以正式学习 Vue 这个前端框架了叭。
 
-先看视频放松下过一遍：  
+先看视频放松下过一遍：
 
 [【2023最新版】Vue3从入门到精通，零基础小白也能听得懂，写得出，web前端快速入门教程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Rs4y127j8/?)
 
@@ -28,7 +28,7 @@ reference：[创建一个 Vue 应用 | Vue.js](https://cn.vuejs.org/guide/essent
    - [基本用例 | Axios 中文文档 | Axios 中文网](https://www.axios-http.cn/docs/example)
    - [Vue.js 3 HTTP & Axios Tutorial | KoderHQ](https://www.koderhq.com/tutorial/vue/http-axios/)
 3. Vue Route 路由
-4. Pinia 全局状态管理，类似于 LocalStore ？  
+4. Pinia 全局状态管理，类似于 LocalStore ？
    - [Pinia | The intuitive store for Vue.js](https://pinia.vuejs.org/zh/)
    - [一文搞懂pinia状态管理（保姆级教程） - 知乎](https://zhuanlan.zhihu.com/p/533233367)
 5. JavaScript ES6 Asynchronous Promise：[箭头函数 - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions#%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F)
@@ -76,42 +76,38 @@ HelloWorld.vue
 
 <script setup>
   // 响应式 API 写法
-  import { ref } from 'vue'
+  import { ref } from "vue";
   const msg = ref("WhaleFall");
 
   // switch name
   function switchName() {
-      msg.value = msg.value == "WhaleFall" ? "颖怡" : "WhaleFall";
+    msg.value = msg.value == "WhaleFall" ? "颖怡" : "WhaleFall";
   }
 </script>
 
 <script>
   // 组合式 API 写法
   export default {
-      data: function () {
-          return {
-              msg: "Mess"
-          }
+    data: function () {
+      return {
+        msg: "Mess",
+      };
+    },
+    methods: {
+      switchName() {
+        this.msg = this.msg == "WhaleFall" ? "颖怡" : "WhaleFall";
       },
-      methods: {
-          switchName() {
-              this.msg = this.msg == "WhaleFall" ? "颖怡" : "WhaleFall";
-          }
-      },
-
-  }
+    },
+  };
 </script>
-
 ```
 
 App.vue
 
 ```html
-<template>
-    <HelloWorld />
-</template>
+<template>     <HelloWorld /> </template>
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
+  import HelloWorld from "./components/HelloWorld.vue";
 </script>
 <style scoped></style>
 ```
@@ -119,10 +115,10 @@ import HelloWorld from './components/HelloWorld.vue';
 main.js
 
 ```js
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 const app = createApp(App);
-app.mount('#app');
+app.mount("#app");
 ```
 
 ## 声明响应式状态
@@ -130,8 +126,8 @@ app.mount('#app');
 在组合式 API 中，推荐使用 [`ref()`](https://cn.vuejs.org/api/reactivity-core.html#ref) 函数来声明响应式状态，定义响应式依赖。
 
 ```javascript
-import { ref } from 'vue'
-const count = ref(0) // 初始化数值
+import { ref } from "vue";
+const count = ref(0); // 初始化数值
 ```
 
 ## 计算属性 computed
@@ -142,10 +138,12 @@ const count = ref(0) // 初始化数值
 
 ```javascript
 const publishedBooksMessage = computed(
-// 依赖于 author 对象
-// 只要 `author.books` 不改变，无论多少次访问 `publishedBooksMessage` 都会立即返回先前的计算结果，而不用重复执行 getter 函数。
-() => { return author.books.length > 0 ? 'Yes' : 'No' }
-)
+  // 依赖于 author 对象
+  // 只要 `author.books` 不改变，无论多少次访问 `publishedBooksMessage` 都会立即返回先前的计算结果，而不用重复执行 getter 函数。
+  () => {
+    return author.books.length > 0 ? "Yes" : "No";
+  },
+);
 ```
 
 计算属性默认是只读的。当你尝试修改一个计算属性时，你会收到一个运行时警告。只在某些特殊场景中你可能才需要用到“可写”的属性，你可以通过同时提供 getter 和 setter 来创建。

@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——标识符-关键字-命名规则
 date: 2022-04-20 18:30:48
 updated: 2022-04-20 18:30:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 标识符 - 关键字 - 命名规则
@@ -21,7 +19,7 @@ banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang
 标识符的组成:
 
 1. 标识符由数字、字母和下划线 (_) 组成。`123abc_`
-2. 只能以字母和下划线 (_) 开头。`abc123_sysVar123abc`
+2. 只能以字母和下划线 (\_) 开头。`abc123_sysVar123abc`
 3. 标识符区分大小写。`nameName NAMET`
 
 ## 标识符的命名
@@ -61,7 +59,7 @@ Go 是一门区分大小写的语言。
 保持 package 的名字和目录保持一致，尽量采取有意义的包名，简短，有意义，尽量和标准库不要冲突。包名应该为小写单词，不要使用下划线或者混合大小写。
 
 ```go
-package dao  
+package dao
 package service
 ```
 

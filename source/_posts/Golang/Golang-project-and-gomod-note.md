@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——Go 项目结构和 Go mod
 date: 2022-05-28 21:54:48
 updated: 2022-05-28 21:54:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go 项目结构和 Go mod 最佳实践
@@ -99,7 +97,7 @@ go mod tidy
 
 ```go
 // 模块的引用路径
-module github.com/BingmingWong/module-test 
+module github.com/BingmingWong/module-test
 
 // 项目使用的 go 版本
 go 1.14

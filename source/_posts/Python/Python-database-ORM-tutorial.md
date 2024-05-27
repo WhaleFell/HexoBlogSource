@@ -8,8 +8,8 @@ tags:
   - python
   - ORM
   - mysql
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 
@@ -56,17 +56,17 @@ from sqlalchemy import text
 
 # 获取数据库游标
 with engine.connect() as conn:
-	
-	# 返回 Result 对象	
+
+	# 返回 Result 对象
     result = conn.execute(text("select 'hello world'"))
     print(result.all())
-    
+
     # 提交变更
     conn.commit()
 	result = conn.execute(text("SELECT x, y FROM some_table"))
 	for row in result:
 		print(f"x: {row.x}  y: {row.y}")
-	
+
 	# 带参数的 sql 语句拼接
     result = conn.execute(text("SELECT x, y FROM some_table WHERE y > :y"), {"y": 2})
     for row in result:
@@ -93,7 +93,7 @@ with Session(engine) as session:
     result = session.execute(stmt, {"y": 6})
     for row in result:
         print(f"x: {row.x}  y: {row.y}")
-    
+
     result = session.execute(
          text("UPDATE some_table SET y=:y WHERE x=:x"),
         [{"x": 9, "y": 11}, {"x": 13, "y": 15}],
@@ -204,11 +204,11 @@ class User(Base):
     # 为了指示 `Table` 中的列，使用 `mapped_column()` 构造，并结合基于 `Mapped` 类型的键入注释。该对象将生成应用于 `Table` 构造的 `Column` 对象。
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(30))
-    
+
 	# 对于具有简单数据类型且没有其他选项的列，我们可以单独指示 `Mapped` 类型注释，使用简单的 Python 类型
     fullname: Mapped[Optional[str]]
     addresses: Mapped[List["Address"]] = relationship(back_populates="user")
-	
+
 	# 获得可读的字符串输出
     def __repr__(self) -> str:
         return f"User(id={self.id!r}, name={self.name!r}, fullname={self.fullname!r})"
@@ -675,11 +675,11 @@ class User(Base):
 
     id: Mapped[str] = mapped_column(
         String(20), primary_key=True, comment="用户 ID")
-        
+       
 	# lazy='subquery'
     configs: Mapped[List["TGForwardConfig"]] = relationship(
         'TGForwardConfig', backref='user', lazy='subquery')
-    
+   
     reg_at: Mapped[datetime] = mapped_column(
         nullable=False, server_default=func.now(), comment='注册时间'
     )
@@ -701,7 +701,7 @@ DB_URL = os.environ.get("DB_URL") or "mysql+aiomysql://root:123456@localhost/tgf
 
 ## Alembic [英 /ə'lembɪk/ 蒸馏器] sqlalchemy 数据库迁移
 
-reference: 
+reference:
 
 1. [FastAPI with Async SQLAlchemy, SQLModel, and Alembic | TestDriven.io](https://testdriven.io/blog/fastapi-sqlmodel/)
 2. using asyncio with alembic（异步支持）： [Cookbook — Alembic 1.12.0 documentation](https://alembic.sqlalchemy.org/en/latest/cookbook.html#using-asyncio-with-alembic)
@@ -826,10 +826,10 @@ alembic init -t async alembic
 
 ### 经典错误
 
-|错误描述|原因|解决办法|
-|---|---|---|
-|`FAILED: Target database is not up to date.`|主要是 `heads` 和 `current` 不相同。`current` 落后于 heads 的版本。|将 `current` 移动到 `head` 上。`alembic upgrade head`|
-|`FAILED: Can't locate revision identified by '77525ee61b5b'`|数据库中存的版本号不在迁移脚本文件中|删除数据库的 `alembic_version` 表中的数据，重新执行 `alembic upgrade head`|
+| 错误描述                                                     | 原因                                                                | 解决办法                                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `FAILED: Target database is not up to date.`                 | 主要是 `heads` 和 `current` 不相同。`current` 落后于 heads 的版本。 | 将 `current` 移动到 `head` 上。`alembic upgrade head`                      |
+| `FAILED: Can't locate revision identified by '77525ee61b5b'` | 数据库中存的版本号不在迁移脚本文件中                                | 删除数据库的 `alembic_version` 表中的数据，重新执行 `alembic upgrade head` |
 
 ### Is it possible to store the alembic connect string outside of `alembic.ini`
 

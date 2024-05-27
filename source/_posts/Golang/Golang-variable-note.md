@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——变量
 date: 2022-04-25 18:30:48
 updated: 2022-04-25 18:30:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Golang 变量
@@ -23,7 +21,7 @@ G0 语言中的**变量需要声明后才能使用**，同一作用域内不支�
 
 ```go
 var identifier type
-/* 
+/*
 var:声明变量关键字
 1dent1fier:变量名称
 type:变量类型
@@ -153,7 +151,7 @@ func main() {
 
 ## 匿名变量
 
-如果我们接收到**多个变量**，有一些**变量使用不到**，可以**使用下划线 _ 表示变量名称**，这种变量叫做匿名变量。e.g.
+如果我们接收到**多个变量**，有一些**变量使用不到**，可以**使用下划线 \_ 表示变量名称**，这种变量叫做匿名变量。e.g.
 
 1. 函数定义
 

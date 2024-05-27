@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——Goruntine并发协程
 date: 2022-12-30 11:11:48
 updated: 2022-12-30 11:11:48
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Golang 学习笔记——Goruntine 并发协程
@@ -148,7 +146,7 @@ func outChannel(out chan<-int) // 仅发送
 
 调用 `inChannel` 时 in 的类型将隐式地从 chan int 转换成 chan<- int。任何双向 channel 向单向 channel 变量的赋值操作都将导致该隐式转换。但是反之不能将单向 channel 赋值给 双向 channel
 
-### 带缓存 (*buffer*) 的 Channels
+### 带缓存 (_buffer_) 的 Channels
 
 ```go
 ch = make(chan string, 3)

@@ -1,5 +1,4 @@
 ---
-
 title: Samba4 服务器配置最佳实践
 date: 2022-12-25 19:37:48
 updated: 2022-12-25 19:37:48
@@ -7,7 +6,6 @@ categories: Server
 tags: [Server, Linux]
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Smb-banner.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/img/Smb-banner.png
-
 ---
 
 # Samba4 服务器配置最佳实践
@@ -39,7 +37,7 @@ smb.conf.ini
 
    security = user
 
-   
+
    #smb encrypt = default
 
    ## set invalid users
@@ -58,15 +56,15 @@ smb.conf.ini
 
    ## Set location of smbpasswd ('smbd -b' will show default compiled location)
    ## 设置smbpasswd的位置（'smbd-b'将显示默认的编译位置）
-   #smb passwd file = /etc/samba/smbpasswd 
+   #smb passwd file = /etc/samba/smbpasswd
 
    ## LAN (IPTOS_LOWDELAY TCP_NODELAY) WAN (IPTOS_THROUGHPUT) WiFi (SO_KEEPALIVE) try&error for buffer sizes (SO_RCVBUF=65536 SO_SNDBUF=65536)
    ## 用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度
    #socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192
    socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
    #socket options = IPTOS_LOWDELAY TCP_NODELAY
-   
-   
+
+
    aio read size = 0
    #aio write size = 0
 
@@ -116,7 +114,7 @@ smb.conf.ini
    ## 将此值设置为 no 将导致 nmbd 永远不会成为本地主浏览器。
    #local master = no
 
-   ## (auto, yes) If this is set to yes, on startup, nmbd will force an election, and it will have a slight advantage in winning the election. It is recommended that this parameter is used in conjunction with domain master = yes, so that nmbd can guarantee becoming a domain master. 
+   ## (auto, yes) If this is set to yes, on startup, nmbd will force an election, and it will have a slight advantage in winning the election. It is recommended that this parameter is used in conjunction with domain master = yes, so that nmbd can guarantee becoming a domain master.
    ##（自动，是）如果设置为是，在启动时，nmbd将强制进行选举，并且在赢得选举时会有一点优势。建议将此参数与domain master=yes结合使用，这样nmbd就可以保证成为域主机。
    #preferred master = yes
 

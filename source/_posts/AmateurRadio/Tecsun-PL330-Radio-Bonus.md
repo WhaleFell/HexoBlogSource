@@ -10,8 +10,8 @@ tags:
   - 短波
   - 收音机
   - 业余无线电
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 

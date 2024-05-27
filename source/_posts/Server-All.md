@@ -1,5 +1,4 @@
 ---
-
 title: 服务器备忘录✨
 date: 2022-03-20 19:37:48
 updated: 2022-03-20 19:37:48
@@ -7,7 +6,6 @@ categories: Server
 tags: [Server, Linux]
 thumbnail: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
 banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutions/applications/server/3-kf-energy-efficiency-mobile.jpg?$ORIGIN_JPG$
-
 ---
 
 # 服务器备忘录
@@ -36,7 +34,7 @@ banner_img: https://images.samsung.com/is/image/samsung/p5/semiconductor/solutio
 - **网络：** `ifconfig`
 
   ```shell
-  enp2s0:  # 主网卡 
+  enp2s0:  # 主网卡
           inet 192.168.5.123  netmask 255.255.255.0  broadcast 192.168.5.255
   enp1s0:  # 副网卡
           inet 192.168.5.124  netmask 255.255.255.0  broadcast 192.168.5.255
@@ -189,12 +187,12 @@ server {
 
 ```shell
 # 运行汉化版 Portainer
-docker run -d -p 9000:9000 
---name portainer \ 
---restart always \ 
--v /var/run/docker.sock:/var/run/docker.sock \ 
--v portainer_data:/data \ 
--v /root/public:/public \ 
+docker run -d -p 9000:9000
+--name portainer \
+--restart always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_data:/data \
+-v /root/public:/public \
 portainer/portainer
 ```
 
@@ -230,7 +228,7 @@ config interface 'lan'
         option gateway '192.168.5.1'
         option dns '192.168.5.1'
         option ipaddr '192.168.5.66'
-        
+
 # openwrt 防火墙自定义规则添加
 iptables -t nat -I POSTROUTING -o eth0 -jMASQUERADE
 ```

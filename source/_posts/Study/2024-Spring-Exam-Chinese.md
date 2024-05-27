@@ -6,8 +6,8 @@ categories:
   - Study
 tags:
   - Chinese
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 

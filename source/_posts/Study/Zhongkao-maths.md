@@ -1,5 +1,4 @@
 ---
-
 title: 😭2021年广东数学中考体验
 date: 2021-06-28 19:37:48
 updated: 2021-06-28 19:37:48
@@ -8,7 +7,6 @@ tags: [Maths, Study]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014311.png
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/old/20210629014311.png
-
 ---
 
 # 😭😭😭2021 年广东数学中考体验

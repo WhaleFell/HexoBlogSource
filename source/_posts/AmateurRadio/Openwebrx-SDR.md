@@ -1,11 +1,9 @@
 ---
-
 title: 基于 Openwebrx 搭建 Rsp1 Websdr
 date: 2023-04-29 15:51:48
 updated: 2023-04-29 15:59:48
 categories: Radio
 tags: [Ham, Radio, 业余无线电, 软件无线电, Openwebrx]
-
 ---
 
 # 基于 Openwebrx 搭建 Rsp1 Websdr
@@ -77,7 +75,7 @@ cd SoapySDR
 mkdir build
 cd build
 cmake ..
-make 
+make
 sudo make install
 sudo ldconfig
 cd ..
@@ -105,7 +103,7 @@ cd rx_tools
 mkdir build
 cd build
 cmake ..
-make 
+make
 sudo make install
 sudo ldconfig
 cd ..
@@ -179,20 +177,20 @@ sudo ldconfig
 
 ```html
 <script type="text/javascript">
-$(document).ready(function() {
-$('#openwebrx-waterfall-colors-auto').contextmenu();
-  setTimeout(function() { 
-    $('#openwebrx-waterfall-colors-auto').contextmenu();
-		$('#openwebrx-waterfall-colors-auto').click(); 
-		}, 2000);
-  $('#openwebrx-sdr-profiles-listbox').change(function() {
-		console.log("change profiles!");
-    $('#openwebrx-waterfall-colors-auto').contextmenu();
-		setTimeout(function() { 
-    $('#openwebrx-waterfall-colors-auto').contextmenu();
-		$('#openwebrx-waterfall-colors-auto').click(); 
-		}, 2000);
+  $(document).ready(function () {
+    $("#openwebrx-waterfall-colors-auto").contextmenu();
+    setTimeout(function () {
+      $("#openwebrx-waterfall-colors-auto").contextmenu();
+      $("#openwebrx-waterfall-colors-auto").click();
+    }, 2000);
+    $("#openwebrx-sdr-profiles-listbox").change(function () {
+      console.log("change profiles!");
+      $("#openwebrx-waterfall-colors-auto").contextmenu();
+      setTimeout(function () {
+        $("#openwebrx-waterfall-colors-auto").contextmenu();
+        $("#openwebrx-waterfall-colors-auto").click();
+      }, 2000);
+    });
   });
-});
 </script>
 ```

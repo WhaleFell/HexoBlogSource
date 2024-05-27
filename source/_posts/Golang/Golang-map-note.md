@@ -1,5 +1,4 @@
 ---
-
 title: Golang 学习笔记——map映射数据结构
 date: 2022-05-1 18:30:48
 categories: Golang
@@ -8,7 +7,6 @@ tags: [Golang, Coding]
 description:
 thumbnail: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
 banner_img: https://api.whaleluo.top/onedrive/file/?path=/picstorage/blog/Golang/icon_img.png&webp=true
-
 ---
 
 # Go Map 数据类型

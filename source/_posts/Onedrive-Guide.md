@@ -1,5 +1,4 @@
 ---
-
 title: Onedrive 完全使用指南
 date: 2023-06-03 11:05:50
 updated: 2023-06-03 11:05:50
@@ -8,7 +7,6 @@ tags: [onedrive, 云盘, Rclone]
 description:
 thumbnail:
 banner_img:
-
 ---
 
 # Onedrive 完全使用指南
@@ -80,10 +78,10 @@ Rclone 是一个用于多个云平台之间同步文件和目录的命令行工�
 
 支持 RC 接口可以通过 API 或 Web UI 操作。
 
-* 官网网址：[https://rclone.org](https://www.moewah.com/go/aHR0cHM6Ly9yY2xvbmUub3Jn)
-* 开源地址：[https://github.com/ncw/rclone](https://github.com/ncw/rclone)
-* 中文文档部分翻译： [https://ld246.com/article/1600853705300](https://ld246.com/article/1600853705300)
-* rclone 中文站点： [https://rclone.cn/](https://rclone.cn/)
+- 官网网址：[https://rclone.org](https://www.moewah.com/go/aHR0cHM6Ly9yY2xvbmUub3Jn)
+- 开源地址：[https://github.com/ncw/rclone](https://github.com/ncw/rclone)
+- 中文文档部分翻译： [https://ld246.com/article/1600853705300](https://ld246.com/article/1600853705300)
+- rclone 中文站点： [https://rclone.cn/](https://rclone.cn/)
 
 ### Docker
 
@@ -459,7 +457,7 @@ DATE=`date +%Y%m%d`
 
 ARCHIVE_LOG_FILE=/root/backup.log
 
-# Yellow 
+# Yellow
 docker run --rm -v /root/rclone:/config/rclone -v /mnt/:/data -v /root/rclone/bisync:/root/.cache/rclone/bisync --user $(id -u):$(id -g) rclone/rclone bisync /data/sdb1/Yellow/ onedrive:/Yellow/ --check-access --resync --workdir=/root/.cache/rclone/bisync --cache-chunk-size 20M --transfers=8 --verbose >> $ARCHIVE_LOG_FILE 2>&1
 
 # AMediaBack
@@ -497,10 +495,10 @@ echo -e "\e[1;32m---------------------------------------------\e[0m\n" >> $ARCHI
 
 ### 简单同步
 
-将源同步到目标，只修改目标。  
+将源同步到目标，只修改目标。
 
->参考：[performance - rclone to OneDrive is excruciatingly slow - Super User](https://superuser.com/questions/1729603/rclone-to-onedrive-is-excruciatingly-slow)  
->`--drive-chunk-size 128M` 增加上传文件分块的大小。
+> 参考：[performance - rclone to OneDrive is excruciatingly slow - Super User](https://superuser.com/questions/1729603/rclone-to-onedrive-is-excruciatingly-slow)  
+> `--drive-chunk-size 128M` 增加上传文件分块的大小。
 
 ```shell
 docker run --rm \
@@ -583,7 +581,7 @@ rclone bisync --config="/root/rclone/rclone.conf" \
 --transfers=10 --verbose --cache-chunk-size=20M --check-first --stats=1s --checksum --retries 3 --low-level-retries 10 \
 /mnt/sdb1/Onedrive-Sync \
 onedrive: \
---resync --check-access --dry-run -vvv --localtime --timeout=10s 
+--resync --check-access --dry-run -vvv --localtime --timeout=10s
 
 
 # rclone browser generate command
@@ -626,15 +624,15 @@ rclone mount onedrive: q: --network-mode --cache-dir E:\onedrive --volname=rclon
 > writes： In this mode files opened for read only are still read di­rectly from the re­mote, write only and read/​write files are buffered to disk first. (如果文件属性为只读则只从云端获取，不然先缓存在本地进行读写操作，随后被同步。个人推荐使用，但是在直接从本地复制文件到 GoogleDrive 时还是看网络情况)
 > full：In this mode all reads and writes are buffered to and from disk. When a file is opened for read it will be down­loaded in its en­tirety first. [所有的读写操作都会缓存到磁盘中。然后才会同步。不是很推荐。会导致所有文件均被缓存到本地。直到达到你缓存总额 (–cache-to­tal-chunk-size，默认大小 10G)。但是你网速特别差时也可以使用。]
 
-* `--allow-other`：指的是允许非当前 Rclone 用户外的用户进行访问
-* `--attr-timeout 5m`：文件属性缓存，（大小，修改时间等）的时间。如果小鸡配置比较低，建议适当提高这个值，避免过多的和内核交互，占用资源。
-* `-vfs-cache-mode full`：开启 VFS 文件缓存，这样可减少 Rclone 与 API 交互，同时可提高文件读写效率
-* `--vfs-cache-max-age 24h`：VFS 文件缓存时间，这里设置的 24 小时，如果文件很少更改，建议设置更长的时间
-* `--vfs-cache-max-size 10G`：VFS 文件缓存上限大小，建议不超过当前空余磁盘的 50%
-* `vfs-read-chunk-size-limit 100M`：分块读取大小，这里设置的是 100M，可提高文件读的效率，比如 1G 的文件，大致分为 10 个块进行读取，但与此同时 API 请求次数也会增多
-* `--buffer-size 100M`：内存缓存，如果您内存比较小，可降低此值，如果内存比较大，可适当提高
-* `--daemon`：指后台方式运行
-* `--drive-chunk-size 128M`：增加上传文件分块的大小。
+- `--allow-other`：指的是允许非当前 Rclone 用户外的用户进行访问
+- `--attr-timeout 5m`：文件属性缓存，（大小，修改时间等）的时间。如果小鸡配置比较低，建议适当提高这个值，避免过多的和内核交互，占用资源。
+- `-vfs-cache-mode full`：开启 VFS 文件缓存，这样可减少 Rclone 与 API 交互，同时可提高文件读写效率
+- `--vfs-cache-max-age 24h`：VFS 文件缓存时间，这里设置的 24 小时，如果文件很少更改，建议设置更长的时间
+- `--vfs-cache-max-size 10G`：VFS 文件缓存上限大小，建议不超过当前空余磁盘的 50%
+- `vfs-read-chunk-size-limit 100M`：分块读取大小，这里设置的是 100M，可提高文件读的效率，比如 1G 的文件，大致分为 10 个块进行读取，但与此同时 API 请求次数也会增多
+- `--buffer-size 100M`：内存缓存，如果您内存比较小，可降低此值，如果内存比较大，可适当提高
+- `--daemon`：指后台方式运行
+- `--drive-chunk-size 128M`：增加上传文件分块的大小。
 
 ## Onedrive Index 在线列出网盘
 

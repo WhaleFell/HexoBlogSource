@@ -8,8 +8,8 @@ tags:
   - Design
   - 设计
   - 后期
-description: 
-thumbnail: 
+description:
+thumbnail:
 banner_img:
 ---
 

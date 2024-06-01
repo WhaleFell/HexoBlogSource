@@ -110,7 +110,7 @@ banner_img:
 3. `-fy/-ify`  
    beaut**ify** v. 美化 un**ify** v. 统一 magn**ify** v. 放大 夸大 not**ify** v. 通知 sign**ify** v. 表示 satis**fy** v. 使满意的
 4. `-ish`  
-    abol**ish** v. 废止、废除 nurse -> nur**ish** v. 培养
+   abol**ish** v. 废止、废除 nurse -> nur**ish** v. 培养
 
 ### Adj. 形容词后缀
 

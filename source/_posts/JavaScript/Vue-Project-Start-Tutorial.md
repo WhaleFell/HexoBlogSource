@@ -151,7 +151,7 @@ trim_trailing_whitespace = false # 关闭末尾空格修剪
 }
 ```
 
-### ESLint （MAIN)
+### ESLint (MAIN)
 
 [ESLint](https://github.com/eslint/eslint)  是一个查找 JavaScript / TypeScript 代码问题并提供修复建议的工具，换句话说就是可以约束的代码不会写出一堆 BUG ，它是代码健壮性的重要保障。
 
@@ -195,7 +195,7 @@ pnpm install -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plug
 
 排除检查：`.eslintignore`
 
-```
+```shell
 dist/*
 ```
 

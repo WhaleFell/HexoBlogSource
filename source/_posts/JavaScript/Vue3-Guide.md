@@ -23,7 +23,7 @@ banner_img:
 
 ## 概述
 
-1. MMVVM 架构
+1. MVVM 架构
 2. Options API and Composition API
 3. Vue3 的优化：重写双向数据绑定，基于 ES6 Proxy
 

@@ -460,12 +460,12 @@ let obj: Obj = {
 ```typescript
 let user:number[] = [1, 2, 3]
 
-functuon findNum():number[] // 如果没有传入东西就是全部
-function findNum(id: number):number[] // 如果传入了 id 就是单个查询
-function findNum(ids?:number | number[]):number[]{
+function findNum(): number[] // 如果没有传入东西就是全部
+function findNum(id: number): number[] // 如果传入了 id 就是单个查询
+function findNum(ids?:number | number[]): number[] {
  // 实现函数
  if (typeof ids == 'number'){ // 判断传入了一个 id
-  return user.filter(v => v==ids) // array filter 返回符合 true 的数组
+  return user.filter(v => v == ids) // array filter 返回符合 true 的数组
  } eles if (Array.isArray(ids)) { // 判断传入了一个 array
   user.push(...ids)
   return user
@@ -483,7 +483,7 @@ function findNum(ids?:number | number[]):number[]{
 
 **interface 接口来实现一种约束**，让 对象/类 的结构满足约束的格式。
 
-interface 接口命名**第一个字母要大写**。
+interface 接口命名 **第一个字母要大写**。
 
 遇到重名 interface 时，会自动进行合并。
 
@@ -750,13 +750,13 @@ console.log("利润为 : " + obj.interest + "，抽成为 : " + obj.rebate);
 ### 实现一个 Vue Virtual Dom 虚拟 DOM
 
 ```typescript
-// // 1. class 的基本用法，继承和类型约束 implements
-// // 2. class 的修饰符 public private protected readonly static
-// // 3. super() 调用父类的构造函数
-// // 4. static 静态属性和方法
-// // 5. getter 和 setter
-// // private 只能在类的内部访问，子类和实例化类也不能访问
-// // protected 只能在类的内部和子类中访问，实例化类不能访问
+// 1. class 的基本用法，继承和类型约束 implements
+// 2. class 的修饰符 public private protected readonly static
+// 3. super() 调用父类的构造函数
+// 4. static 静态属性和方法
+// 5. getter 和 setter
+// private 只能在类的内部访问，子类和实例化类也不能访问
+// protected 只能在类的内部和子类中访问，实例化类不能访问
 
 interface Options {
   el: string | HTMLElement;
@@ -997,18 +997,18 @@ console.log(girls.next()); // { value: 123, done: false }
 ```typescript
 // es6 新增的数据类型
 // set 元组
-let set: Set<number> = new Set([1, 2, 3, 4, 5, 6]) // 无序不重复 自动去重
+let set: Set<number> = new Set([1, 2, 3, 4, 5, 6]); // 无序不重复 自动去重
 // map 映射 对象 字典
 // 和 object 不同的的是 key 可以是任意类型, object 的 key 只能是字符串
-let map: Map<any, any> = new Map()
-let arr = [1, 2, 3, 4, 5, 6]
-map.set("name", "hyy")
-map.set(arr, "hyy")
+let map: Map<any, any> = new Map();
+let arr = [1, 2, 3, 4, 5, 6];
+map.set("name", "hyy");
+map.set(arr, "hyy");
 
-function args(…args: any[]) {
-    console.log(arguments) // arguments 是一个类数组
+function args(...args: any[]) {
+  console.log(arguments); // arguments 是一个类数组
 }
-let lst = document.querySelectorAll("div") // 类数组
+let lst = document.querySelectorAll("div"); // 类数组
 ```
 
 以上类数组 他们都有迭代器 `Symbol.iterator`，所以可以使用迭代器来遍历他们：
@@ -1027,13 +1027,15 @@ const each = (value: any) => {
 
 // 迭代器的语法糖 for of
 // object 不能使用 for of, 因为 object 没有 Symbol.iterator 迭代器
+// object 使用  `key for in object` 遍历
+// 或者 `[key, value] for of Object.entries(obj)`
 for (let value of arr) {
     console.log(value)
 }
 
 // 解构 底层原理也是调用 Symbol.iterator
 let [a, b, c] = [1, 2, 3]
-let copy = […arr] // 拷贝数组
+let copy = [...arr] // 拷贝数组
 let [first, …rest] = arr // 解构赋值
 
 // 对象支持 for of
@@ -1105,6 +1107,7 @@ const axios = {
       xhr.open("GET", url, true);
       xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
+          // return response
           resolve(JSON.parse(xhr.responseText));
         }
       };
@@ -1470,7 +1473,7 @@ const app = new mixins() // 实例化 mixin 后的类
 app.run()
 ```
 
-## JS 原型链
+## JS 原型链 (JS prototype chain)
 
 好像不是 TS 的知识，但为了更好的理解原理我放到这里来了。
 
@@ -1552,7 +1555,7 @@ function Person() {}
 console.log(Person === Person.prototype.constructor); // true
 ```
 
-![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-2.png&webp=true)
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-2.png&webp=true)  
 综上：
 
 ```javascript
@@ -1829,12 +1832,12 @@ class Vue extands Object {
   this.name = name // 类 attribute
  }
  // 类方法 methods
- say(){
+ say() {
   console.log(`I am ${this.name}`)
  }
  // 原型对象
  prototype:{
-  __proto__: Object.prototype{ // 隐式原型
+  __proto__: Object.prototype { // 隐式原型
    __proto__: null
   }
  }
@@ -1978,7 +1981,7 @@ person.attr = '威猛个捶捶'
 
 在 TypeScript 中，类型守卫（`Type Guards`）是一种用于在 **运行时检查类型** 的机制。它们允许你在代码中执行特定的检查，以确定变量的类型，并在需要时执行相应的操作。
 
-### 1. Typeof 类型收缩
+### Typeof 类型收缩
 
 声明一个函数可以接受任意类型，并返回一个 boolean，只筛选出字符串类型，进行类型收缩。
 
@@ -2000,7 +2003,7 @@ console.log(typeof bool); // 输出: "boolean"
 
 typeof 只能返回有限的字符串类型，包括 “string”、“number”、“boolean”、“symbol”、“undefined” 和 “object”。对于函数、数组、null 等类型，typeof 也会返回 “object”。因此，typeof 对于复杂类型和自定义类型的判断是有限的。
 
-### 2. Instanceof
+### Instanceof
 
 使用 instanceof 类型守卫可以 **检查一个对象是否是特定类的实例**。
 
@@ -2094,7 +2097,7 @@ fn(obj);
 
 类型兼容，就是用于确定一个类型 **是否能赋值给其他的类型**。TS 中的类型兼容性是基于 **结构类型** 的（也就是形状 shape），如果 A 要兼容 B，那么 A 至少具有 B 相同的属性。
 
-### Duck Type 类型协变&鸭子类型
+### 型变 (协变/逆变) & Duck Type 鸭子类型
 
 > 什么是鸭子类型？  
 > 一只鸟 走路像鸭子 ，游泳也像，做什么都像，那么这只鸟就可以成为鸭子类型。  
@@ -2115,12 +2118,12 @@ interface B extands A {
     sex:string
 }
 
-let a:A = {
+let a: A = {
     name: "hyy",
     age: 18,
 }
 
-let b:B = {
+let b: B = {
     name: "yyh",
     age: 30,
     sex: "女"
@@ -2131,18 +2134,39 @@ a = b
 
 ### 逆变
 
-逆变一般发生于函数的参数上面。
+TypeScript 给 JavaScript 添加了一套静态类型系统，是为了保证类型安全的，也就是保证变量只能赋同类型的值，对象只能访问它有的属性、方法。这是类型检查做的事情，遇到类型安全问题会在编译时报错。
+
+子类型是可以赋值给父类型的变量的，可以完全当成父类型来使用，也就是“型变（variant）”（类型改变）。
+
+这种“型变”分为两种，一种是子类型可以赋值给父类型，叫做协变（covariant），一种是父类型可以赋值给子类型，叫做逆变（contravariant）。
+
+对于 **字面量类型** 采用 **协变** 的变换规则，即 子类型 => 父类型, 看下面，因为 a 具备 string 的可能，没办法直接赋值给 b。但 b 可以赋值给 a, 子类型可以赋值给父类类型, 这就是协变. covariant (variant [/'veərɪənt/] n. 变体 adj. 不同的)
 
 ```typescript
-a = b // a 小 b 大 / b 继承于 a
+// parent
+const parent: string | number;
+// child
+// Error: a may be string
+const child: number = parent;
 
-let fna = (params:A) => { ... }
-let fnb = (params:B) =>{ ... }
-
-// b 包含 a 中的所有属性 所以 b 可以安全的赋值给 a
-fna = fnb // error
-fnb = fna // correct
+// correct
+const parent = child;
 ```
+
+而对于 **函数的参数类型**，采用完全相反的规则，即**逆变 (contravariant)**，允许父类型赋值给子类型，因为函数中是以父类型进行的约束，赋值一个限制更明确的子类型反而会造成意料之外的问题.
+
+```typescript
+let parent = (c: number | string) => {...}
+let child = (c: number) => {...}
+
+// correct
+child = parent
+// error
+parent = child
+
+```
+
+协变和逆变在类型体操的时候会常常出现。当然不论是协变还是逆变，它们首先得是 **型变**。型变都是针对父子类型来说的，非父子类型自然就不会型变也就是不变（invariant）。ts 中父子类型的判定是按照**结构** 来看的，更具体的那个是子类型。
 
 开启双向协变
 
@@ -2309,8 +2333,149 @@ type num = ReturnType<typeof fn>;
 type CustomFn<F extends Function>  = F extends (…args:any[])=> infer Res  ? Res :never
 ```
 
-## Infer
+## 类型体操
+
+**类型编程中类型才是一等公民，我们并不能直接传入一个变量或是函数**。需要通过 `typeof` `infer` 将值转换为类型才可.
+
+### Extands (扩展)
+
+extends 关键词它可以保证某个参数**至少具备某个类型**, 也就是子类型是父类型的延伸, 扩展.
+
+e.g. `arr extends unknown[]` 意思就是 arr 至少需要满足 `unknown[]` 的类型, `arr` 是 `unknown[]` 类型的延伸, 扩展.
+
+### Infer 类型推断
+
+infer 关键词只能用于 extends 右侧，他们两个需要联动来使用，它的作用是可以完成**类型的推**导，我们知道在 ts 类型编程中，**类型是一等公民**，而不使用 infer 的时候，restArr 是无法被推导成一个类型的。
+
+简单来说，在类型编程我们就可以使用 `yy extends xx<infer xxx> ? xxx : never` 的方式，提取出和 yy 相关的类型，比如这个例子中的去除第一个元素后，剩下的数组类型。
+
+```typescript
+type shiftArr<arr extands unknown[]> = arr extand [unknown, ...infer restArr] ? restArr : never;
+
+type footArr = shiftArr<[1, 2, 3]>
+// footArr = [2, 3]
+```
+
+### 类型条件判断
+
+在上面提到 extends 可以用来限制参数的类型，extends 关键词它可以保证某个参数**至少具备某个类型**，同样地，我们也可以将 extends 与 **三元符** 来结合，达到类 if 的作用。
+
+以上面的代码为例，`arr extends [unknown, …infer restArr] ? restArr : never` 可以理解成，arr 可以按照 `[unknown, …infer restArr]` 来解析吗？如果可以的得到有效值的话，就返回 restArr, 反之返回 never。
+
+### never(从不) unknown(未知) any(任意) 对对碰
+
+在 ts 中，`never` 表示 **永远不可能存在的值**, **永远不能取得任何值的地方**, 这个类型兜底了所有我们预料之外的情况，并且可以在用户触发这种场景的时候提供编译报错进行报警. 通常在类型编程中，遇到我们 **预料之外** 不知道该如何对应的值时（对应 null), 应该去使用 `never`。
+
+`unknown` 则是 **可以取得任何值**，但是不知道类型的地方.
+
+`any` 大家都很熟悉，使用它将 **丧失所有的类型检查**, 如果不考虑维护性, 做完就跑路, 大可以将 typescript 写成 anyscript。
+
+### 映射类型 (Map Type)
+
+在 TypeScript 中对象、class 对应的类型是 **索引类型**（Index Type），映射类型可以用于修改索引类型，也就是将一个集合映射到另一个集合中，比如下面的例子，我们通过定义 MapType 作为映射类型，就可以很轻松地将一系列对象转化成我们需要的类型。
+
+```typescript
+type MapType<T> = {
+  [Key in keyof T]: [T[Key], T[Key]];
+};
+
+type res = MapType<{ a: 1; b: 2 }>;
+// res = {a: [1, 1], b: [2, 2]}
+```
+
+### 类型提取 (Type Extraction)
+
+使用 `泛型 (generics) / infer (类型推断) / extands` 结合. 这个是类型编程中最为常用的技巧.
+
+提取函数的返回值和参数类型
+
+```typescript
+type getFuncParams<func extends Function> = func extends (…parmas: infer params) => unknown ? params : never;
+
+type getFuncReturnType<func extends Function> = func extends (…args:any) => infer res ? res : never
+
+const func = (a: string, b: number): string => {
+    return "111"
+}
+
+type params = getFuncParams<typeof func>
+// type params = [a: string, b: number]
+
+type res = getFuncReturnType<typeof func>
+// type res = string
+```
+
+### 递归处理 (recursion processing)
+
+类型编程所提供的能力并不完全等同于一个普通的编程语言，它是不支持循环的，对于一些需要循环的场景我们不能通过单次类型提取或是直接处理得到我们需要的结果。虽然不支持循环，但是 ts 的类型编程可以**支持递归的实现**，通过这种方式我们也可以处理这一类复杂场景.
+
+如何深度（即也要处理子对象）将一个对象的属性转换为 readonly?
+
+涉及到两个知识点，一个是 **映射类型 (Map type)**，另一个就是 **递归 (Recursion)**，需要先遍历对象的所有 key，并将每个 key 转化为 readonly，对应 key 映射的 value 我们需要做一个判断，如果这个 value 对应 object 类型，那么我们就对这个 value 再执行一遍我们定义的这个类型函数，反之，直接返回。
+
+需要注意的是，这里额外加上了 `T extends any`，是为了触发对 **完整类型** 的计算，ts 只会 **对用到的类型展开计算**，所以不加的话，后续的 `readonly` 会由 `deepReadonly` 代替，而不是深度计算.
+
+```typescript
+type deepTransformToReadonly<T extends object> = T extends any
+  ? {
+      readonly [key in keyof T]: T[key] extends object
+        ? deepTransformToReadonly<T[key]>
+        : T[key];
+    }
+  : never;
+
+const nestedObj = { a: "12", b: 21, c: { c1: "c1", c2: 1 } };
+
+type nestedObjType = deepTransformToReadonly<typeof nestedObj>;
+
+// no T extands any
+// type nestedObjType = {
+//     readonly a: string;
+//     readonly b: number;
+//     readonly c: deepTransformToReadonly<{
+//         c1: string;
+//         c2: number;
+//     }>;
+// }
+
+// add T extands any
+// type nestedObjType = {
+//     readonly a: string;
+//     readonly b: number;
+//     readonly c: {
+//         readonly c1: string;
+//         readonly c2: number;
+//     };
+// }
+```
+
+递归获取多层 Promise 的返回值.
+
+```typescript
+type getPromise<T extends Promise<unknown>> = T extends Promise<infer valueType>
+  ? valueType extends Promise<unknown>
+    ? getPromise<valueType>
+    : valueType
+  : never;
+
+
+type test = getPromise<Promise<Promise<Promise<boolean>>
+// type test = boolean
+```
+
+递归反转数组, 每次我们反转一个元素和剩下的数组序列，然后对剩下的数组序列执行同样的操作即可.
+
+```typescript
+type ReverseArray<T extends any[]> = T extends [infer first, ...infer rest]
+  ? [...ReverseArray<rest>, first]
+  : T;
+
+type reversedArray = ReverseArray<[1, 2, 3, 4]>;
+// type reversedArray = [4, 3, 2, 1]
+```
 
 ## End
 
 至此，我应该了解了 `TypeScript` 这个语言的大概，继续学习 Vue 去了。
+
+对于 TypeScript，它是一个很有价值，甚至能对 Pure JavaScript 应用于大型项目中缺陷进行有效弥补的超类。如果遇到阻塞的类型就使用 any，项目的劣化程度只会越来越严重，甚至 typeScript 也会形同虚设。好好地学习一下 typeScript 和类型编程是有意义的.

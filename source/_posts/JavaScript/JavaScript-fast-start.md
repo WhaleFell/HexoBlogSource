@@ -111,7 +111,7 @@ typeof y; // 返回 Object
 | slice()       | 提取字符串的片断，并在新的字符串中返回被提取的部分 |
 | split()       | 把字符串分割为字符串数组                           |
 
-....
+….
 
 模板字符串：
 
@@ -193,7 +193,7 @@ function myFunction() {
 }
 ```
 
-声明提升(Declare Hoisting [/hɔɪst/]):
+声明提升 (Declare Hoisting [/hɔɪst/]):
 
 1. JavaScript 在执行任何代码段之前，将 **函数和变量声明**放入内存中, **但不会赋值**。
 2. 这意味着 **变量和函数的声明** 会在物理层面移动到代码的最前面.
@@ -403,7 +403,6 @@ var x = myFunction(4, 3);
 类似 `var` 时的变量提升，使用表达式定义函数时无法提升。
 
 - 提升（Hoisting）是 JavaScript 默认将当前作用域提升到前面去的行为。
-
 - 提升（Hoisting）应用在变量的声明与函数的声明。
 
 ```javascript
@@ -418,7 +417,7 @@ function myFunction(y) {
 
 ### 自调用函数 | 立即执行函数 （self invoking）
 
-- **函数表达式** 可以"自调用"。
+- **函数表达式** 可以 " 自调用 "。
 - 自调用函数会随着浏览器启动自动运行。
 - 如果表达式后面紧跟 () ，则会自动调用。
 - 不能自调用声明的函数。
@@ -856,7 +855,7 @@ noob.sitename = "121"; // 相当于调用 sitename("121")
 documen2t.getElementById("demo").innerHTML = noob.sitename;
 ```
 
-### 类提升（class not hoisting）
+### 类提升（class Not hoisting）
 
 函数声明和类声明之间的一个重要区别在于, **函数声明会提升，类声明不会。**  
 你首先需要声明你的类，然后再访问它，否则将抛出 ReferenceError
@@ -1237,24 +1236,227 @@ asyncFunc();
 
 ### 事件循环 event loop
 
-定义: 在 Chrome V8 引擎中, 主线程不断地重复获取执行信息, 再执行. 不断循环的机制称为事件循环.
+Ref: [Youtube: JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue](https://www.youtube.com/watch?v=eiC58R16hb8)
+
+定义: JS 是单线程 (single thread) 的在 Chrome V8 引擎中, 主线程不断地重复获取执行信息, 再执行. 不断循环的机制称为事件循环.
 
 为什么:
 
 - JS 是单线程的
 - 再处理异步操作的时候需要事件循环机制
 
-概念:
+JS 运行时概念 (JavaScript Runtime Concept):
 
-- 堆(Heap): 大块非结构化内存区域, 储存对象,数据.
-- 栈(Stack): 调用栈 储存该次循环待主程序执行的任务
-- 队列(Queue): 事件队列, 先进先出被推入调用栈中
+- 堆 (Heap): 大块非结构化内存区域, 储存对象,数据.
+- 栈 (Call Stack): 调用栈 储存该次循环待主程序执行的任务.
+- 队列 (Queue): 事件队列, 先进先出被推入调用栈中.
+- Web APIs 提供异步操作, 回调的宏任务
+- 微任务队列 (Tasks queue / microtask): Primise.then(…).catch(…).finally(…)
+- 宏任务队列 (macros[/'mækrəʊ/] queue): 一些 Web Api: fecth setTime IntervalTime
+- 事件循环 (Event Loop) : 负责 **调度** tasks queue 和 macros queue 将其放入到 Call stack 中. 具体是检测 Call stack 中是否有函数执行, 如果没有就先从 macros queue(微任务队列) 拿函数到 call stack 运行, 再从 tasks queue(宏任务队列) 拿取执行. Loop's responsibility to check if the call stack is empty, and if that is case so if nothing is running and then gets the first available task from the task queue.
 
-![JavaScript-Reverse-Engineering.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering.png&webp=true)
+![](JavaScript-Fast-Start.png)
 
-### 原型链 (Prototype Chain)
+Call stack (调用栈) 处理函数嵌套调用:
 
-![JavaScript-Reverse-Engineering-1.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/JavaScript-Reverse-Engineering-1.png&webp=true)
+![](JavaScript-Fast-Start-1.png)
+
+WebAPI 提供与浏览器交互的能力, 常用于耗时的异步任务:
+
+![](JavaScript-Fast-Start-2.png)
+
+Web api 的调度过程 (Scheduling process)
+
+![](JavaScript-Fast-Start-3.png)
+
+microtask queue(微任务队列):
+
+![](JavaScript-Fast-Start-4.png)
+
+微任务 (microtask) 与 宏任务 (macro task) 的优先级
+
+![](JavaScript-Fast-Start-5.png)
+
+#### Process.nextTick(callback)
+
+这是一个 nodeJS 的方法, 他的 callback 是一个微任务 micro task, 他的 **优先级最高**, 会排在所有 microtask 的前面. **用于将异步任务尽可能早得执行**.
+
+在全部代码执行完成之后, **进入 event loop 事件循环之前**会立即调用.
+
+如果下面代码不加 `process.nextTick(callback)` callback 可能在主线程中直接执行, 也可能在 eventloop 的 IO 轮询阶段被调用. 不可预测. 加上能使得 readFile full asynchronous 完全异步.
+
+```javascript
+import "fs";
+
+function readFile(filename, callback) {
+  if (typeof filename !== "string") {
+    return process.nextTick(
+      callback,
+      new TypeError("filename must be string type!"),
+    );
+  }
+  fs.readFile(filename, (error, data) => {
+    if (error) return callback(error);
+    return callback(null, data);
+  });
+}
+```
+
+#### setImmediate(callback)
+
+表示立即执行, 它是 macro task(宏任务), callback 会被放置在 event loop 的 check 阶段, 这个阶段不会阻塞 main thread 和 event loop.
+
+在应用中, 如果有大量的 CPU binding(CPU 计算密集型) 任务, 它是不适合放在主线程中执行的, 因为计算任务会 block 主线程, 所以这种类型的任务最好交给由 C++ 维护的线程执行.
+
+```js
+function sleep(delay) {
+  let start = new Date().getTime();
+  while (new Data().getTime() - start < delay) {
+    continue;
+  }
+  console.log("sleep ending....");
+}
+
+console.log("before sleep");
+sleep(2000); // block main thread 2000ms
+setImmediate(sleep, 2000); // not block, immediate return
+console.log("after sleep");
+```
+
+### JS 原型链 (JS prototype chain)
+
+原型链是 JS 实现继承的重要原理.
+
+#### 构造函数
+
+如果一个函数用 `new xxx()` 的方式调用，这个函数就称为**构造函数**，相当于 ES6 中的 `class` 语法糖。  
+在构造函数中的 this 原先是 null，可以在函数内部通过 `this.xx` 的方式赋予 `value` 和 `method`，new 这个函数返回的就是 this 这个对象。
+
+```javascript
+let People = function (name, age) {
+  this.name = name;
+  this.age = age;
+  this.say = () => {
+    console.log(`${this.name} say she had just turned ${this.age} y.o.`);
+  };
+};
+
+let girl = new People();
+girl.say();
+```
+
+使用 class 语法糖：
+
+```typescript
+class People() {
+ constructor(name: string, age: number) {
+  this.name:string = name
+  this.age:number = age
+ }
+ public say():void {
+  console.log(`${this.name} say she had just turned ${this.age} y.o.`)
+ }
+}
+
+let girl = new People()
+girl.say()
+```
+
+#### `prototype` Attribute
+
+`prototype` 是 **构造函数**、**class 类**，独有的一个 **对象**。`prototype` 是 **函数才会有的属性**
+
+```javascript
+function Person() {}
+// Note: prototype 函数内置的属性
+Person.prototype.name = "Kevin";
+var person1 = new Person();
+var person2 = new Person();
+console.log(person1.name); // Kevin
+console.log(person2.name); // Kevin
+```
+
+函数的 prototype 属性指向了一个 **原型对象**，这个对象正是调用该构造函数而创建的 **实例** 的原型，也就是这个例子中的 person1 和 person2 的原型。
+
+那什么是原型呢？你可以这样理解：每一个 JavaScript 对象 (null 除外) 在创建的时候就会与之关联另一个对象，这个对象就是我们所说的 **原型**，每一个对象都会从原型 " 继承 " 属性。
+
+#### `__proto__` Attribute
+
+`__proto__` 这是每一个 JavaScript **对象** (除了 null ) 都具有的一个属性，叫 **proto**，这个属性会指向该对象的原型。
+
+`__proto__` 被称为 **对象** 的 **隐式原型**，对应的是构造函数（类）的 `prototype` 原型**对象**
+
+```javascript
+function Person() {}
+// 实例化构造函数(类)返回对象
+var person = new Person();
+// 对象的 __proto__ 属性指向构造函数(类)的 prototype
+console.log(person.__proto__ === Person.prototype); // true
+```
+
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-1.png&webp=true)
+
+#### Constructor 构造器
+
+每个原型对象都有一个 **constructor** 属性指向关联的构造函数。
+
+```javascript
+function Person() {}
+console.log(Person === Person.prototype.constructor); // true
+```
+
+![](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-2.png&webp=true)  
+综上：
+
+```javascript
+function Person() {}
+
+var person = new Person();
+
+console.log(person.__proto__ === Person.prototype); // true
+console.log(Person.prototype.constructor === Person); // true
+
+// 一个ES5的方法 `Object.getPrototypeOf()`, 可以获得对象的原型
+console.log(Object.getPrototypeOf(person) === Person.prototype); // true
+```
+
+#### 原型链
+
+构造函数（类）的原型对象也是一个对象 **object**，所以他也具有 `__proto__` 隐式原型属性，指向 object 对象的构造函数（类）的原型对象 `Object.prototype` 。
+
+```javascript
+function Person() {}
+
+Person.prototype; // 构造函数(类)的 **原型对象**
+Person.prototype.__proto__; // 原型对象的隐式原型 指向 Object.prototype
+```
+
+所以对象的隐式原型的原型对象构成一条原型链：
+
+```javascript
+function Test(name){
+ this.name = name
+}
+
+const obj = new test("hyy")
+Test.prototype === obj.prototype
+obj.prototype.__proto__ === Object.prototype
+Test.prototype.__proto__ === Object.prototype
+
+obj {
+ a:1
+ __proto__: Test.prototype = {
+  b:2
+  __proto__: Object.prototype = {
+   __proto__:null // 原型链顶层
+  }
+ }
+}
+```
+
+对象寻找数值，是原型链从下到上一直找到原型链顶端，用 **冒泡** 的方式查找的。
+
+![TypeScript-fast-start-3.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/TypeScript-fast-start-3.png&webp=true)
 
 ### 浏览器储存 (Browser Storage [/ˈstɔːrɪdʒ/])
 

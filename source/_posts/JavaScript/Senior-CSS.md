@@ -147,10 +147,10 @@ background-attachment: fixed;
 
 盒子模型的各个部分：
 
-1. **内容盒子**：显示内容的区域；使用  `inline-size`  和  `block-size`或  `width` 和 `height` 等属性确定其大小。
+1. **内容盒子**：显示内容的区域；使用  `inline-size`  和  `block-size` 或  `width` 和 `height` 等属性确定其大小。
 2. **内边距盒子**：填充位于内容周围的空白处；使用 `padding`  和相关属性确定其大小。
-3. **边框盒子**：边框盒子包住内容和任何填充；使用`border`  和相关属性确定其大小。
-4. **外边距盒子**：外边距是最外层，其包裹内容、内边距和边框，作为该盒子与其他元素之间的空白；使用 `margin`和相关属性确定其大小。
+3. **边框盒子**：边框盒子包住内容和任何填充；使用 `border`  和相关属性确定其大小。
+4. **外边距盒子**：外边距是最外层，其包裹内容、内边距和边框，作为该盒子与其他元素之间的空白；使用 `margin` 和相关属性确定其大小。
 
 ![Senior-CSS.png](https://api.whaleluo.top/onedrive/file/?path=/PicStorage/blog/JS/Senior-CSS.png&webp=true)
 
@@ -168,7 +168,7 @@ body {
 }
 ```
 
-## flexbox 弹性布局
+## Flexbox 弹性布局
 
 建立一个 container div，设置 `display: flex`，div 内子元素会 **自动排列**，无需手动布局，可以自适应屏幕大小。尤其是在子元素个数和容器尺寸不确定的情况下，非常方便。
 
@@ -271,7 +271,7 @@ Taiwind CSS 无需离开 HTML 通过 **类名** 快速实现各种样式，支�
 
 ### Install
 
-#### raw HTML
+#### Raw HTML
 
 ```shell
 pnpm install -D tailwindcss
@@ -298,7 +298,7 @@ run compiler:
 npx tailwindcss -o ./src/tail.css --watch
 ```
 
-#### vue3
+#### Vue3
 
 [Offial Guides in vue3](https://tailwindcss.com/docs/guides/vite#vue)
 
@@ -359,7 +359,7 @@ pnpm add @headlessui/vue @heroicons/vue
 
 ### Plugins
 
-DaisyUI Tailwind CSS 组件库(as plugins): <https://daisyui.com/?lang=zh_hans>
+DaisyUI Tailwind CSS 组件库 (as plugins): <https://daisyui.com/?lang=zh_hans>
 
 ```shell
 pnpm i -D daisyui@latest
@@ -391,10 +391,10 @@ module.exports = {
 
 Keywords:
 
-p: padding 内边距
-m: margin 外边距
-w: width 宽度
-x: 水平方向
+p: padding 内边距  
+m: margin 外边距  
+w: width 宽度  
+x: 水平方向  
 y: 垂直方向
 
 通过断点使用媒体查询：
@@ -406,12 +406,12 @@ lg: '976px',  // Large screen
 xl: '1440px', // Extra large screen
 ```
 
-`p-6` 表示设置内边距(padding)为 6。
-`max-w-sm` 表示设置最大宽度为 small(小屏幕) 的宽度。
-`mx-auto` 表示在水平方向上居中对齐。
-`bg-white` 表示设置背景颜色为白色。
-`rounded-xl` 表示设置圆角为 extra large(特别大)。
-`shadow-md` 表示设置阴影效果，阴影大小为 medium(中等)。
+`p-6` 表示设置内边距 (padding) 为 6。  
+`max-w-sm` 表示设置最大宽度为 small(小屏幕) 的宽度。  
+`mx-auto` 表示在水平方向上居中对齐。  
+`bg-white` 表示设置背景颜色为白色。  
+`rounded-xl` 表示设置圆角为 extra large(特别大)。  
+`shadow-md` 表示设置阴影效果，阴影大小为 medium(中等)。  
 `flex items-center space-x-4` 表示使用 Flexbox 布局，子元素水平排列，元素之间的间距为 4。
 
 `container` 用于创建一个包含内容的容器，通常用于限制内容的最大宽度，使内容在大屏幕上不至于过宽，提高内容的可读性和美观性。
@@ -431,9 +431,9 @@ Flexbox 布局：
 
 Flex 参数：
 
-`flex-wrap` 类用于控制 Flex 容器中的项目在一行上 **是否换行** 显示。
-`flex-wrap-reverse`：允许项目在需要时换行显示，并且反转换行的方向。
-`flex-nowrap`：阻止项目换行，强制所有项目在一行上显示。
+`flex-wrap` 类用于控制 Flex 容器中的项目在一行上 **是否换行** 显示。  
+`flex-wrap-reverse`：允许项目在需要时换行显示，并且反转换行的方向。  
+`flex-nowrap`：阻止项目换行，强制所有项目在一行上显示。  
 举个例子，如果你想要一个 Flex 容器中的项目在需要时自动换行
 
 ```html
@@ -530,3 +530,9 @@ GSAP 是一个高性能的动画库，可以实现更复杂的动画效果。
 ref:
 
 1. GSAP 中文文档 [GSAP 中文文档](https://gsap.framer.wiki/state)
+
+## 高度塌陷
+
+## 相对定位 (relative) 和绝对定位 (absolute)
+
+ref: [CSS相对定位和绝对定位详解\_css绝对定位代码-CSDN博客](https://blog.csdn.net/gnail_oug/article/details/77564684)

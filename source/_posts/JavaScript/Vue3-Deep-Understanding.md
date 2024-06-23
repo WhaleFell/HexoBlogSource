@@ -73,6 +73,18 @@ const props = withDefaults(defineProps<Props>(), {
   text: "Snack Bar Text"
 })
 
+// or ...
+
+// Simple DefineProps
+defineProps({
+  refreshMap: {
+    type: Function,
+    default: () => {
+      console.log("refresh map deault function")
+    }
+  }
+})
+
 // Parent.vue
 <child v-bind:text="hello"></child>
 

@@ -932,7 +932,7 @@ JavaScript's handling of this is indeed unusual (JS 对于 This 的处理的确�
 
 当使用箭头函数(arrow function)时, `this` 的值取决于函数的**定义位置**. 箭头函数不会绑定 this,而是从定义时的作用域中继承 `this`.
 
-使用了箭头函数, 就不能在派生类(derived class)中使用 super 调用定义的 箭头函数. 因为 **原型链** 中没有箭头函数的定义. (可能是没有绑定到基类的 this)
+使用了箭头函数, 就不能在派生类(derived class) 中使用 super 调用定义的 箭头函数. 因为 **原型链** 中没有箭头函数的定义. (可能是没有绑定到基类的 this)
 
 > You can't use `super.getName()` in a derived class, because there's no entry in the prototype chain(原型链) to fetch the base class method from.
 
@@ -946,7 +946,7 @@ class MyClass {
 const c = new MyClass()
 const obj = {
   name: "obj",
-  getName: c.getName // bind this to the nearest object
+  getName: c.getName // bind this to the nearest object when be called
 }
 
 // called by obj, `this` is obj.
@@ -964,6 +964,70 @@ const c = new MyClass()
 const g = c.getName
 // Prints "MyClass" instead of crashing
 console.log(g())
+```
+
+### Explicitly Declared `this` parameters 显式声明 class 中的 this
+
+在方法或函数定义中,名为 this 的初始参数在 TypeScript 中具有特殊含义.这些参数在编译期间被删除.
+
+```typescript
+// TypeScript input with 'this' parameter
+function fn(this: SomeType, x: number) {
+  /* ... */
+}
+// JavaScript output
+function fn(x) {
+  /* ... */
+}
+```
+
+TypeScript 会检查函数是否以指定的 this 上下文调用, 可以在方法定义中添加一个 this 参数来静态强制(statically enforce) 调用该方法, 而不是使用箭头函数:
+
+```typescript
+class MyClass {
+  name = "MyClass"
+  getName(this: MyClass) {
+    return this.name
+  }
+}
+const c = new MyClass()
+// OK
+c.getName()
+
+// Error, would crash:
+// The 'this' context of type 'void' is not assignable(adj. 可分配的) to method's 'this' of type 'MyClass'.
+const g = c.getName
+console.log(g())
+```
+
+这样, 函数也可以正确的在 派生类(derived class) 中使用 super 调用.
+
+### Constructor Signature 构造函数签名
+
+JavaScript 类使用 new 运算符进行实例化. 给定类本身的类型, 使用 `InstanceType` 实用程序类型(utility type models) 获取实例类型.
+
+```typescript
+class Point {
+  createdAt: number
+  x: number
+  y: number
+  constructor(x: number, y: number) {
+    this.createdAt = Date.now()
+    this.x = x
+    this.y = y
+  }
+}
+
+// get class instance type
+type PointInstance = InstanceType<typeof Point>
+
+function moveRight(point: PointInstance) {
+  point.x += 5
+}
+
+const point = new Point(3, 4)
+moveRight(point)
+point.x // => 8
 ```
 
 ## Dock Typing 鸭子类型
@@ -1915,7 +1979,7 @@ console.log(vue)
 // {name:"hyy", say: ƒ}
 ```
 
-### 箭头函数
+### 箭头函数 Arrow Function
 
 如果想要消除函数的**二义性**需要使用 **箭头函数** `const fn = (x, y)=> x+y`
 
@@ -1956,8 +2020,8 @@ obj.fn() // this 指向 obj
 
 **Note**: 箭头函数(Arrow Functions) 和 普通函数 (Function Declarations) (Function Expressions) 在 this 的处理上有一个很大的不同:
 
-- 普通函数: this 的值是在 **运行时根据调用方式动态确定的** .比如在方法中,this 通常指向调用该方法的对象.
-- 箭头函数: 箭头函数**没有自己的 this 绑定**,它会捕获其**定义时所在上下文**的 this 值,作为自己的 this.这意味着箭头函数的 this 是静态的,不会根据调用方式改变.
+- 普通函数: this 的值是在 **运行时根据调用方式动态确定的** .比如在对象方法中, this 通常指向调用该方法的对象.
+- 箭头函数: 箭头函数 **没有自己的 this 绑定**, 它会捕获其 **定义时所在上下文** 的 this 值,作为自己的 this.这意味着箭头函数的 this 是静态的,不会根据调用方式改变.
 
 ## TS 进阶代理&反射 proxy & Reflect
 
